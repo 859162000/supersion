@@ -1,0 +1,67 @@
+<?xml version="1.0"?>
+<desktop>
+	<desk_ico id ="d01" value="南云分行" ico="1.png" type="path" scr="LoadMeum.htm" des="描述信息">
+		<Lv_1 id ="d0101" value="企鹅路支行" ico="2.png" type="path"  scr="LoadMeum.htm" des="描述信息">
+			<Lv_2 id ="d010101" value="张浩" ico="3.png" type="funct" scr="LoadMeum.htm" des="描述信息"></Lv_2>
+			<Lv_2 id ="d010102" value="王金" ico="4.png" type="funct" scr="LoadMeum.htm" des="描述信息"></Lv_2>
+			<Lv_2 id ="d010103" value="欧阳代文" ico="5.png" type="funct" scr="LoadMeum.htm" des="描述信息"></Lv_2>
+			<Lv_2 id ="d010104" value="武帝" ico="6.png" type="funct" scr="LoadMeum.htm" des="描述信息"></Lv_2>
+			<Lv_2 id ="d010105" value="苏伟" ico="7.png" type="funct" scr="LoadMeum.htm" des="描述信息"></Lv_2>
+			<Lv_2 id ="d010106" value="张长亮" ico="8.png" type="funct" scr="LoadMeum.htm" des="描述信息"></Lv_2>
+			<Lv_2 id ="d010107" value="马季三" ico="9.png" type="funct" scr="LoadMeum.htm" des="描述信息"></Lv_2>
+			<Lv_2 id ="d010108" value="王迪克尔" ico="10.png" type="funct" scr="LoadMeum.htm" des="描述信息"></Lv_2>
+			<Lv_2 id ="d010109" value="李思看" ico="11.png" type="funct" scr="LoadMeum.htm" des="描述信息"></Lv_2>
+			<Lv_2 id ="d010110" value="时代淇" ico="12.png" type="funct" scr="LoadMeum.htm" des="描述信息"></Lv_2>
+			<Lv_2 id ="d010111" value="旭晓" ico="13.png" type="funct" scr="LoadMeum.htm" des="描述信息"></Lv_2>
+			<Lv_2 id ="d010112" value="王强" ico="14.png" type="funct" scr="LoadMeum.htm" des="描述信息"></Lv_2>
+		</Lv_1>
+		<Lv_1 id ="d0102" value="技术管理员" ico="15.png" type="funct" scr="LoadMeum.htm" des="描述信息"></Lv_1>
+		<Lv_1 id ="d0103" value="业务管理员" ico="22.png" type="funct" scr="LoadMeum.htm" des="描述信息"></Lv_1>
+	</desk_ico>
+	<desk_ico id ="d02" value="峰回分行" ico="16.png" type="path" scr="LoadMeum.htm" des="描述信息">
+		<Lv_1 id ="d0201" value="张良" ico="21.png" type="funct" scr="LoadMeum.htm" des="描述信息"></Lv_1>
+		<Lv_1 id ="d0202" value="范长一" ico="12.png" type="funct" scr="LoadMeum.htm" des="描述信息"></Lv_1>
+		<Lv_1 id ="d0203" value="Jimm Zhang" ico="17.png" type="funct" scr="LoadMeum.htm" des="描述信息"></Lv_1>
+		<Lv_1 id ="d0204" value="吴自由" ico="20.png" type="funct" scr="LoadMeum.htm" des="描述信息"></Lv_1>
+	</desk_ico>
+	<desk_ico id ="d03" value="长山分行" ico="18.png" type="path" scr="LoadMeum.htm" des="描述信息">
+		<Lv_1 id ="d0301" value="武宗宣" ico="19.png" type="funct" scr="LoadMeum.htm" des="描述信息"></Lv_1>
+		<Lv_1 id ="d0302" value="李白" ico="20.png" type="funct" scr="LoadMeum.htm" des="描述信息"></Lv_1>
+		<Lv_1 id ="d0303" value="马景川岛" ico="21.png" type="funct" scr="LoadMeum.htm" des="描述信息"></Lv_1>
+		<Lv_1 id ="d0304" value="三和" ico="20.png" type="funct" scr="LoadMeum.htm" des="描述信息"></Lv_1>
+	</desk_ico>
+	<desk_ico id ="d04" value="建业分行" ico="22.png" type="path" scr="LoadMeum.htm" des="描述信息">
+		<Lv_1 id ="d0401" value="苏三" ico="23.png" type="funct" scr="LoadMeum.htm" des="描述信息"></Lv_1>
+		<Lv_1 id ="d0402" value="杜十娘" ico="24.png" type="funct" scr="LoadMeum.htm" des="描述信息"></Lv_1>
+		<Lv_1 id ="d0403" value="赵佳晖" ico="25.png" type="funct" scr="LoadMeum.htm" des="描述信息"></Lv_1>
+		<Lv_1 id ="d0404" value="赵回家" ico="26.png" type="funct" scr="LoadMeum.htm" des="描述信息"></Lv_1>
+		<Lv_1 id ="d0405" value="赵昱婷" ico="27.png" type="funct" scr="LoadMeum.htm" des="描述信息"></Lv_1>
+	</desk_ico>
+	<desk_ico id ="d05" value="凤凰分行" ico="28.png" type="path" scr="LoadMeum.htm" des="描述信息">
+		<Lv_1 id ="d0501" value="马书涵" ico="29.png" type="funct" scr="LoadMeum.htm" des="描述信息"></Lv_1>
+		<Lv_1 id ="d0502" value="马砚宸" ico="30.png" type="funct" scr="LoadMeum.htm" des="描述信息"></Lv_1>
+		<Lv_1 id ="d0503" value="马铭剑" ico="1.png" type="funct" scr="LoadMeum.htm" des="描述信息"></Lv_1>
+		<Lv_1 id ="d0504" value="马林锡" ico="21.png" type="funct" scr="LoadMeum.htm" des="描述信息"></Lv_1>
+		<Lv_1 id ="d0505" value="马珊" ico="22.png" type="funct" scr="LoadMeum.htm" des="描述信息"></Lv_1>
+		<Lv_1 id ="d0506" value="张飞" ico="23.png" type="funct" scr="LoadMeum.htm" des="描述信息"></Lv_1>
+	</desk_ico>
+	<desk_ico id ="d06" value="万方长业分行" ico="6.png" type="path" scr="LoadMeum.htm" des="描述信息">
+		<Lv_1 id ="d0601" value="万瑛丽" ico="21.png" type="funct" scr="LoadMeum.htm" des="描述信息"></Lv_1>
+		<Lv_1 id ="d0602" value="万佳顺" ico="12.png" type="funct" scr="LoadMeum.htm" des="描述信息"></Lv_1>
+		<Lv_1 id ="d0603" value="万鑫" ico="2.png" type="funct" scr="LoadMeum.htm" des="描述信息"></Lv_1>
+	</desk_ico>
+	<desk_ico id ="d07" value="东方分行" ico="7.png" type="path" scr="LoadMeum.htm" des="描述信息">
+		<Lv_1 id ="d0701" value="张卫东" ico="14.png" type="funct" scr="LoadMeum.htm" des="描述信息"></Lv_1>
+		<Lv_1 id ="d0702" value="旭日" ico="18.png" type="funct" scr="LoadMeum.htm" des="描述信息"></Lv_1>
+	</desk_ico>
+	<desk_ico id ="d08" value="基业分行" ico="8.png" type="path" scr="LoadMeum.htm" des="描述信息">
+		<Lv_1 id ="d0801" value="吴自大" ico="19.png" type="funct" scr="LoadMeum.htm" des="描述信息"></Lv_1>
+		<Lv_1 id ="d0802" value="张望" ico="12.png" type="funct" scr="LoadMeum.htm" des="描述信息"></Lv_1>
+		<Lv_1 id ="d0803" value="贺际天" ico="20.png" type="funct" scr="LoadMeum.htm" des="描述信息"></Lv_1>
+	</desk_ico>
+	<desk_ico id ="d09" value="蔡峰" ico="9.png" type="funct" scr="LoadMeum.htm" des="描述信息"></desk_ico>
+	<desk_ico id ="d10" value="罗凯" ico="9.png" type="funct" scr="LoadMeum.htm" des="描述信息"></desk_ico>
+	<desk_ico id ="d11" value="会计结算部用户" ico="9.png" type="funct" scr="LoadMeum.htm" des="描述信息"></desk_ico>
+	<desk_ico id ="d11" value="计划财务部用户" ico="9.png" type="funct" scr="LoadMeum.htm" des="描述信息"></desk_ico>
+	<desk_ico id ="d12" value="风险管理部用户" ico="9.png" type="funct" scr="LoadMeum.htm" des="描述信息"></desk_ico>
+</desktop>

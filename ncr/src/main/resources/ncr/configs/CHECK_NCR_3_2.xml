@@ -1,0 +1,154 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<reportCheckRoot>
+	<checkInstance name="Check_NCR_3_2">				
+		<paramValueList>
+			<paramValue name="DTDATE" value="2013-12-09"></paramValue>
+			 <paramValue name="strInstCode" value=""></paramValue>
+			 <!--
+		    <paramValue name="strTaskRptInstID" value="000000"></paramValue>
+			  <paramValue name="strFreq" value="000000"></paramValue> 
+			  -->
+		</paramValueList>		
+
+		<freqCode value="4"></freqCode>	
+
+		<checkTable procedureName="CHECK_NCR_3_2" procedureParam="DTDATE,strInstCode,rt" procedureDiscription="法定代表人、高管及重要关联人信息"
+			originTable="NCR_3_2" errorStateField="RPTCHECKTYPE" errorStateValue="3"  successStateValue="2" 
+			defaultLogicDaoBeanId="oracleProcedureResultSetDao">
+			<paramFieldList>
+				<paramField paramName="DTDATE" field="DTDATE"	 type="2"></paramField>
+				<paramField paramName="strInstCode" field="INSTINFO" type="1"></paramField>
+			</paramFieldList>
+
+			<checkUniqueFieldList>
+				<checkUniqueField name="AUTOID" discription="主键" originField="AUTOID"></checkUniqueField>
+			</checkUniqueFieldList>
+      <!--表内基础性校验-->
+			<checkFieldBasicList discription="表内基础校验">
+				<!--JBL3-033	A	关系人类型		非空。	1位数字字符。-->
+				<checkFieldBasic name="A" discription="关系人类型" emptyCheck="true" digitalCheck="true" startLength="1" endLength="1"></checkFieldBasic>
+				<!--JBL3-034	B	姓名			非空。	长度大于等于2个字符。-->
+				<checkFieldBasic name="B" discription="姓名" emptyCheck="true" startLength="2" ignoreVal="*********"></checkFieldBasic>
+				<!--JBL3-035	C	国别代码			根据《世界各国和地区名称代码》（GB/T 2659）填报。	非空。	3位大写字母。-->
+				<checkFieldBasic name="C" discription="国别代码" emptyCheck="true" startLength="3" endLength="3" upperCheck="true"></checkFieldBasic>
+				<!--JBL3-037	E	护照号码			长度大于等于2个字符。-->
+				<checkFieldBasic name="E_1" discription="护照1-护照号码" startLength="2"></checkFieldBasic>
+				<!--JBL3-037	E	护照号码			长度大于等于2个字符。-->
+				<checkFieldBasic name="E_2" discription="护照2-护照号码" startLength="2"></checkFieldBasic>
+				<!--JBL3-037	E	护照号码			长度大于等于2个字符。-->
+				<checkFieldBasic name="E_N" discription="护照N-护照号码" startLength="2"></checkFieldBasic>
+				<!--JBL3-038	F	签发日期		合法的年月日组合。1-4位：年；5-6位：月，其中1-9月，表示为：01-09；7-8位：日，其中1-9日表示为01-09。银行不掌握相关情况的，可填报为八个9：“99999999”。8位数字字符。-->
+				<checkFieldBasic name="F_1" discription="护照1-签发日期" dateCheck="true" startLength="8" endLength="8"></checkFieldBasic>
+				<!--JBL3-038	F	签发日期		合法的年月日组合。1-4位：年；5-6位：月，其中1-9月，表示为：01-09；7-8位：日，其中1-9日表示为01-09。银行不掌握相关情况的，可填报为八个9：“99999999”。8位数字字符。-->
+				<checkFieldBasic name="F_2" discription="护照2-签发日期" dateCheck="true" startLength="8" endLength="8"></checkFieldBasic>
+				<!--JBL3-038	F	签发日期	  合法的年月日组合。1-4位：年；5-6位：月，其中1-9月，表示为：01-09；7-8位：日，其中1-9日表示为01-09。银行不掌握相关情况的，可填报为八个9：“99999999”。8位数字字符。-->
+				<checkFieldBasic name="F_N" discription="护照N-签发日期" dateCheck="true" startLength="8" endLength="8"></checkFieldBasic>
+				<!--JBL3-039	G	到期日期		合法的年月日组合。1-4位：年；5-6位：月，其中1-9月，表示为：01-09；7-8位：日，其中1-9日表示为01-09。银行不掌握相关情况的，可填报为八个9：“99999999”。8位数字字符。-->
+				<checkFieldBasic name="G_1" discription="护照1-到期日期" dateCheck="true" startLength="8" endLength="8"></checkFieldBasic>
+				<!--JBL3-039	G	到期日期		合法的年月日组合。1-4位：年；5-6位：月，其中1-9月，表示为：01-09；7-8位：日，其中1-9日表示为01-09。银行不掌握相关情况的，可填报为八个9：“99999999”。8位数字字符。-->
+				<checkFieldBasic name="G_2" discription="护照2-到期日期" dateCheck="true" startLength="8" endLength="8"></checkFieldBasic>
+				<!--JBL3-039	G	到期日期		合法的年月日组合。1-4位：年；5-6位：月，其中1-9月，表示为：01-09；7-8位：日，其中1-9日表示为01-09。银行不掌握相关情况的，可填报为八个9：“99999999”。8位数字字符。-->
+				<checkFieldBasic name="G_N" discription="护照N-到期日期" dateCheck="true" startLength="8" endLength="8"></checkFieldBasic>
+				<!--JBL3-040	H	其他证件类型		1位数字字符。-->
+				<checkFieldBasic name="H_1" discription="其他证件1-证件类型" digitalCheck="true" startLength="1" endLength="1"></checkFieldBasic>
+				<!--JBL3-040	H	其他证件类型		1位数字字符。-->
+				<checkFieldBasic name="H_N" discription="其他证件N-证件类型" digitalCheck="true" startLength="1" endLength="1"></checkFieldBasic>
+				<!--JBL3-041	I	证件号码				长度大于等于2个字符。-->
+				<checkFieldBasic name="I_1" discription="其他证件1-证件号码" startLength="2"></checkFieldBasic>
+				<!--JBL3-041	I	证件号码				长度大于等于2个字符。-->
+				<checkFieldBasic name="I_N" discription="其他证件N-证件号码" startLength="2"></checkFieldBasic>
+				<!--JBL3-042	J	更新信息日期		合法的年月日组合。1-4位：年；5-6位：月，其中1-9月，表示为：01-09；7-8位：日，其中1-9日表示为01-09。银行不掌握相关情况的，可填报为八个9：“99999999”。8位数字字符。-->
+				<checkFieldBasic name="J" discription="更新信息日期"  startLength="8" endLength="8"></checkFieldBasic>
+				<!--JBL3-043	K	实际控制人标识		非空。	1位数字字符。-->
+				<checkFieldBasic name="K" discription="实际控制人标识" emptyCheck="true" digitalCheck="true" startLength="1" endLength="1"></checkFieldBasic>
+			</checkFieldBasicList>
+      
+      <!--基本类中值域类型的校验-->
+			<checkFieldEffectiveList discription="有效性校验">
+				<!--JBL3-033	A	关系人类型	1-法定代表人、2-董事长，3-监事长，4-总经理，5-财务主管，6-个人股东，7-其他。	单选。填写1/2/3/4/5/6/7中的1个。	非空。 -->
+				<checkFieldEffective name="A" discription="关系人类型">
+                    <value>1</value>
+                    <value>2</value>
+                    <value>3</value>
+                    <value>4</value>
+                    <value>5</value>
+                    <value>6</value>
+                    <value>7</value>
+        </checkFieldEffective>
+        <!--JBL3-040	H	其他证件类型		3-军官证，4-文职干部证，5-警官证，6-士兵证，7-户口本，8-临时身份证，9-其他有效通行旅行证件。	单选。填写3/4/5/6/7/8/9中的1个。-->
+        <checkFieldEffective name="H_1" discription="其他证件1-证件类型">                   
+                    <value>3</value>
+                    <value>4</value>
+                    <value>5</value>
+                    <value>6</value>
+                    <value>7</value>
+                    <value>8</value>
+                    <value>9</value>
+        </checkFieldEffective>
+        <!--JBL3-040	H	其他证件类型		3-军官证，4-文职干部证，5-警官证，6-士兵证，7-户口本，8-临时身份证，9-其他有效通行旅行证件。	单选。填写3/4/5/6/7/8/9中的1个。-->
+        <checkFieldEffective name="H_N" discription="其他证件N-证件类型">                   
+                    <value>3</value>
+                    <value>4</value>
+                    <value>5</value>
+                    <value>6</value>
+                    <value>7</value>
+                    <value>8</value>
+                    <value>9</value>
+        </checkFieldEffective>
+        <!--JBL3-043	K	实际控制人标识	1-是，2-否。	单选。填写1/2中的1个。-->
+        <checkFieldEffective name="K" discription="实际控制人标识">                   
+                    <value>1</value>
+                    <value>2</value>                  
+        </checkFieldEffective>
+			</checkFieldEffectiveList>
+      <!--逻辑性校验-->
+			<checkFieldLineList discription="非聚合校验">
+				<!--LJX-050	表3 PARTⅡ中[签发日期]小于等于[数据日期] -->
+				<checkFieldLine compareType=">=" fieldType="2">
+        	<leftFieldList><checkFieldLineField name="DTDATE" discription="数据日期" ></checkFieldLineField></leftFieldList>
+         	<rightFieldList><checkFieldLineField name="F_1" discription="护照1-签发日期"></checkFieldLineField></rightFieldList>
+        </checkFieldLine>  
+        <!--LJX-050	表3 PARTⅡ中[签发日期]小于等于[数据日期] -->      
+       	<checkFieldLine compareType=">=" fieldType="2">
+        	<leftFieldList><checkFieldLineField name="DTDATE" discription="数据日期"></checkFieldLineField></leftFieldList>
+         	<rightFieldList><checkFieldLineField name="F_2" discription="护照2-签发日期"></checkFieldLineField></rightFieldList>
+        </checkFieldLine> 
+        <!--LJX-050	表3 PARTⅡ中[签发日期]小于等于[数据日期] --> 
+       	<checkFieldLine compareType=">=" fieldType="2">
+        	<leftFieldList><checkFieldLineField name="DTDATE" discription="数据日期"></checkFieldLineField></leftFieldList>
+         	<rightFieldList><checkFieldLineField name="F_N" discription="护照N-签发日期"></checkFieldLineField></rightFieldList>
+        </checkFieldLine> 
+        <!--LJX-051	表3 PARTⅡ中[到期日期]大于[签发日期] --> 
+        <checkFieldLine compareType=">" fieldType="2"> 
+        	<leftFieldList><checkFieldLineField name="G_1" discription="护照1-到期日期"></checkFieldLineField></leftFieldList>
+         	<rightFieldList><checkFieldLineField name="F_1" discription="护照1-签发日期"></checkFieldLineField></rightFieldList>
+        </checkFieldLine>
+        <!--LJX-051	表3 PARTⅡ中[到期日期]大于[签发日期] --> 
+        <checkFieldLine compareType=">" fieldType="2">
+        	<leftFieldList><checkFieldLineField name="G_2" discription="护照2-到期日期"></checkFieldLineField></leftFieldList>
+         	<rightFieldList><checkFieldLineField name="F_2" discription="护照2-签发日期"></checkFieldLineField></rightFieldList>
+        </checkFieldLine>
+        <!--LJX-051	表3 PARTⅡ中[到期日期]大于[签发日期] --> 
+        <checkFieldLine compareType=">" fieldType="2">
+        	<leftFieldList><checkFieldLineField name="G_N" discription="护照N-到期日期"></checkFieldLineField></leftFieldList>
+         	<rightFieldList><checkFieldLineField name="F_N" discription="护照N-签发日期"></checkFieldLineField></rightFieldList>
+        </checkFieldLine> 
+        <!--LJX-052	表3 PARTⅡ中[更新信息日期]小于等于[数据日期] --> 
+        <checkFieldLine compareType=">=" fieldType="2">
+        	<leftFieldList><checkFieldLineField name="DTDATE" discription="数据日期"></checkFieldLineField></leftFieldList>
+         	<rightFieldList><checkFieldLineField name="J" discription="更新信息日期"></checkFieldLineField></rightFieldList>
+        </checkFieldLine>         
+			</checkFieldLineList>
+      <!--JBL3-036	D	身份证号码	char()	符合居民身份证号码校验规则。-->
+			<checkFieldOrList discription="条件校验">	
+				<checkFieldOr type="1">
+         	<checkFieldBasic name="D" discription="身份证号码"  startLength="15" endLength="15"  ></checkFieldBasic>
+          <checkFieldBasic name="D" discription="身份证号码"  startLength="18" endLength="18" ></checkFieldBasic>
+        </checkFieldOr>       
+        
+			</checkFieldOrList>			
+		</checkTable>
+	
+									
+	</checkInstance>
+</reportCheckRoot>

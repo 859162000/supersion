@@ -1,0 +1,206 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<reportCheckRoot>                             
+	<checkInstance name="Check_TestImportExport">	                                                                 
+		<checkTable>           
+			<!-- 表内基础校验：被设置的字段每条数都需要校验                                                    
+				emptyCheck代表为空校验,digitalCheck代表数字校验,dateCheck代表日期校验,upperCheck代表全大写字母校验,
+				chnCheck代表汉字校验（可扩展其他特殊校验）,startLength代表起始长度,endLength代表结束长度,valueDecimalLength的值代表小数位数的校验-->                                                      
+			<checkFieldBasicList discription="基础校验">
+				<checkFieldBasic name="bookName" discription="书名" emptyCheck="true" endLength="60"></checkFieldBasic>  
+				<checkFieldBasic name="bookColor" discription="书面颜色" emptyCheck="true"></checkFieldBasic>   
+				<checkFieldBasic name="money" discription="金额" emptyCheck="true" valueDecimalLength="2" mustValueDecimalLength="2"></checkFieldBasic>
+				<checkFieldBasic name="numbers" discription="数量" digitalCheck="true"></checkFieldBasic>
+				<checkFieldBasic name="dtDate" discription="买书时间" emptyCheck="true" dateCheck="true" startLength="8" endLength="8"></checkFieldBasic>
+			</checkFieldBasicList> 	
+		</checkTable>              	
+	</checkInstance>
+	<checkInstance name="E214">		
+		<paramValueList>
+			<paramValue name="dtDate" value="2013-12-31"></paramValue>
+		</paramValueList>
+
+		<freqCode value="4"></freqCode>
+		
+		<checkTable procedureName="CHECK_12_E214" procedureParam="dtDate,RS" procedureDiscription="重要股东及主要关联企业">
+			<paramFieldList>
+				<paramField paramName="dtDate" field="dtDate" type="1"></paramField>
+			</paramFieldList>
+
+			<checkUniqueFieldList>
+				<checkUniqueField name="E214212" discription="客户编号"></checkUniqueField>
+			</checkUniqueFieldList>
+
+			<checkFieldBasicList discription="表内基础性校验">
+				<checkFieldBasic name="E214200" discription="关联类型" emptyCheck="true" digitalCheck="true" startLength="1" endLength="1"></checkFieldBasic>
+				<checkFieldBasic name="E214201" discription="股东/关联企业名称" emptyCheck="true" startLength="2" ignoreVal="*********"></checkFieldBasic>
+				<checkFieldBasic name="E214202" discription="股东/关联企业类型" emptyCheck="true" digitalCheck="true" startLength="1" endLength="1"></checkFieldBasic>
+				<checkFieldBasic name="E214203" discription="股东/关联企业证件类型" emptyCheck="true" digitalCheck="true"></checkFieldBasic>
+				<checkFieldBasic name="E214204" discription="股东/关联企业证件代码" startLength="2"></checkFieldBasic>
+				<checkFieldBasic name="E214205" discription="登记注册代码" startLength="2"></checkFieldBasic>
+				<checkFieldBasic name="E214206" discription="股东/关联企业客户代码" startLength="2"></checkFieldBasic>
+				<checkFieldBasic name="E214207" discription="国别代码" emptyCheck="true" startLength="3" endLength="3" upperCheck="true"></checkFieldBasic>
+				<checkFieldBasic name="E214208" discription="持股比例" valueDecimalLength="2"></checkFieldBasic>
+				<checkFieldBasic name="E214209" discription="股东结构对应日期" startLength="8" endLength="8" digitalCheck="true"></checkFieldBasic>
+				<checkFieldBasic name="E214210" discription="更新信息日期" startLength="8" endLength="8" digitalCheck="true"></checkFieldBasic>
+				<checkFieldBasic name="E214211" discription="实际控制人标识" emptyCheck="true" digitalCheck="true" startLength="1" endLength="1"></checkFieldBasic>
+			</checkFieldBasicList>
+
+	<checkFieldCaseWhenList discription="CaseWhen校验">			
+			<!-- 	<checkFieldCaseWhen name="E214204" discription="股东/关联企业证件代码" caseValue="notNull" whenValueScope="1,2,3,4,5,6,7,8,9,10,11">
+        	<checkFieldCaseWhenField name="E214203" discription="股东/关联企业证件类型"  ></checkFieldCaseWhenField>
+        </checkFieldCaseWhen>
+      	<checkFieldCaseWhen name="E214204" discription="股东/关联企业证件代码" caseValue="null" whenValue="12">
+        	<checkFieldCaseWhenField name="E214203" discription="股东/关联企业证件类型"  ></checkFieldCaseWhenField>
+        </checkFieldCaseWhen>
+        <checkFieldCaseWhen name="E214209" discription="股东结构对应日期" caseValue="notNull" whenCompareType=">" whenValue="0">
+        	<checkFieldCaseWhenField name="E214208" discription="持股比例"></checkFieldCaseWhenField>
+        </checkFieldCaseWhen> -->
+        <!--LJX-057|表3 PART III中机关不能为关联企业|若[关联类型]为2/3/4/5之一，则[股东/关联企业类型]不能为“2-机关”-->
+        <!--<checkFieldCaseWhen name="E214202" discription="股东/关联企业类型" caseValue="2" whenType="5" whenValueScope="2,3,4,5">
+        	<checkFieldCaseWhenField name="E214200" discription="关联类型"  ></checkFieldCaseWhenField>
+        </checkFieldCaseWhen> -->
+        <!--LJX-074	表3 PART Ⅲ中，若[股东/关联企业类型]=“1/2/3/4/5”中的一个，则[股东/关联企业证件类型]为“1”或“12”；
+        			若[股东/关联企业类型]=“6”，则[股东/关联企业证件类型]为“2”至“12”中的一个-->
+        			
+        <checkFieldCaseWhen name="E214203" discription="股东/关联企业证件类型" caseValueScope="1,12" whenValueScope="1,2,3,4,5">
+        	<checkFieldCaseWhenField name="E214202" discription="股东/关联企业类型"  ></checkFieldCaseWhenField>
+        </checkFieldCaseWhen>
+        <!--<checkFieldCaseWhen name="E214203" discription="股东/关联企业证件类型" caseValueScope="2,3,4,5,6,7,8,9,10,11,12" whenValue="6">
+        	<checkFieldCaseWhenField name="E214202" discription="股东/关联企业类型"  ></checkFieldCaseWhenField>
+        </checkFieldCaseWhen>-->
+       
+        <!--TSL-003 若[组织机构代码]非空，或[实际控制人证件类型]、[股东/关联企业证件类型]为“1-组织机构代码”且非空，则[国别代码]必须为“CHN”-->
+        <checkFieldCaseWhen name="E214207" discription="国别代码" caseValue="CHN" whenValue="1">
+       		<checkFieldCaseWhenField name="E214203" discription="股东/关联企业证件类型"></checkFieldCaseWhenField>
+        </checkFieldCaseWhen> 
+	</checkFieldCaseWhenList>
+
+			<checkFieldEffectiveList discription="有效性校验">
+				<checkFieldEffective name="E214200" discription="关联类型">
+                    <value>1</value>
+                    <value>2</value>
+                    <value>3</value>
+                    <value>4</value>
+                    <value>5</value>
+        </checkFieldEffective>
+        <checkFieldEffective name="E214202" discription="股东/关联企业类型">    
+        	          <value>1</value>
+                    <value>2</value>     
+                    <value>3</value>
+                    <value>4</value>
+                    <value>5</value>
+                    <value>6</value>                    
+        </checkFieldEffective>
+        <checkFieldEffective name="E214203" discription="股东/关联企业证件类型">     
+        	          <value>1</value>
+                    <value>2</value>   
+                    <value>3</value>
+                    <value>4</value>
+                    <value>5</value>
+                    <value>6</value>
+                    <value>7</value>
+                    <value>8</value>
+                    <value>9</value>                    
+                    <value>10</value>
+                    <value>11</value>
+                    <value>12</value>
+        </checkFieldEffective>
+        <checkFieldEffective name="E214211" discription="实际控制人标识">                   
+                    <value>1</value>
+                    <value>2</value>                  
+        </checkFieldEffective>
+			</checkFieldEffectiveList>	
+
+			<checkFieldLineList discription="非聚合校验">
+				<checkFieldLine compareType=">=">
+        	<leftFieldList><checkFieldLineField name="E214208" discription="持股比例"></checkFieldLineField></leftFieldList>
+         	<rightFieldList><checkFieldLineField value="0"></checkFieldLineField></rightFieldList>
+        </checkFieldLine>        
+       <checkFieldLine compareType=">=">
+       		<leftFieldList><checkFieldLineField value="100"></checkFieldLineField></leftFieldList>
+        	<rightFieldList><checkFieldLineField name="E214208" discription="持股比例"></checkFieldLineField></rightFieldList>        	
+       </checkFieldLine> 
+       <!--LJX-055	表3 PART III中[股东结构对应日期]小于等于[数据日期]-->  
+       <checkFieldLine compareType=">=" fieldType="2">
+       		<leftFieldList><checkFieldLineField name="dataDate" discription="数据日期"></checkFieldLineField></leftFieldList>
+        	<rightFieldList><checkFieldLineField name="E214209" discription="股东结构对应日期"></checkFieldLineField></rightFieldList>        	
+       </checkFieldLine>
+       <!--LJX-056	表3 PART III中[更新信息日期]小于等于[数据日期]-->
+       <checkFieldLine compareType=">=" fieldType="2">
+       		<leftFieldList><checkFieldLineField name="dataDate" discription="数据日期"></checkFieldLineField></leftFieldList>
+        	<rightFieldList><checkFieldLineField name="E214210" discription="更新信息日期"></checkFieldLineField></rightFieldList>        	
+       </checkFieldLine>           
+			</checkFieldLineList>
+
+			<checkFieldOrList discription="条件校验">	
+				<checkFieldOr type="1">
+         	<checkFieldBasic name="E214203" discription="股东/关联企业证件类型" startLength="1" endLength="1"  ></checkFieldBasic>
+          <checkFieldBasic name="E214203" discription="股东/关联企业证件类型" startLength="2" endLength="2" ></checkFieldBasic>
+        </checkFieldOr>
+			</checkFieldOrList>					
+		</checkTable>
+	
+		<checkFieldAggregationList discription="聚合校验">
+			<paramFieldList>
+				<paramField paramName="dtDate" field="dtDate" type="1"></paramField>
+			</paramFieldList>
+			<!-- LJX-053|表3 PART III中同一客户（表3 PART Ⅰ中同一[客户代码]），各重要股东及主要关联企业[持股比例]之和小于等于100 -->	
+		<checkFieldAggregation compareType=">="	splitDiscription="客户代码_授信号码" leftSplitField="SPLITFIELD" rightSplitField="SPLITFIELD">
+				<leftFieldList>
+					<checkFieldAggregationField procedureName="CHECK_12_E214_LJX_053" procedureParam="dtDate,RS" procedureDiscription="100" procedureResultField="ARG"></checkFieldAggregationField>
+				</leftFieldList>
+				<rightFieldList>
+					<checkFieldAggregationField procedureName="CHECK_12_E214_LJX_053" procedureParam="dtDate,RS" procedureDiscription="SUM(持股比例)" procedureResultField="TOTAL"></checkFieldAggregationField>
+				</rightFieldList>
+			</checkFieldAggregation>
+		</checkFieldAggregationList>
+		
+		<checkFieldConsistentList consistenttype="2" discription="唯一性校验">
+			<paramFieldList>
+				<paramField paramName="dtDate" field="DTDATE" type="1"></paramField>
+			</paramFieldList>
+			<!--WYX-021|表3《PART III：重要股东及主要关联企业》|对于PARTⅠ中，同一“[客户代码]-[关联类型]-[股东/关联企业证件类型]”下|[股东/关联企业证件代码] -->		
+			<checkFieldConsistent>
+				<consistentGroup keyField="CONDITOIN" keyDiscription="客户代码-关联类型-股东/关联企业证件类型" nameField="E214204" nameDiscription="股东/关联企业证件代码" procedureName="CHECK_12_E214_WYX_021" procedureDiscription="E214重要股东及主要关联企业" procedureParam="dtDate,RS"></consistentGroup>
+			</checkFieldConsistent>												
+		</checkFieldConsistentList>
+		
+		<checkFieldConsistentList consistenttype="1" discription="一致性校验">
+			<paramFieldList>
+				<paramField paramName="dtDate" field="DTDATE" type="1"></paramField>
+			</paramFieldList>
+			<!--LJX-054|表3 PART III中同一客户，各股东的[股东结构对应日期]相同。-->	
+			<checkFieldConsistent>
+				<consistentGroup keyField="E214212"  keyDiscription="客户代码" nameField="E214209" nameDiscription="股东结构对应日期" procedureName="CHECK_12_E214" procedureDiscription="E214重要股东及主要关联企业" procedureParam="dtDate,RS"></consistentGroup>
+			</checkFieldConsistent>		
+			<!--HNYZ-GB-001|相同信息值中：任意两个法人客户代码相同，国别需一致-->
+			<checkFieldConsistent>
+				<consistentGroup keyField="E214206" keyDiscription="股东/关联企业客户代码"  nameField="E214207" nameDiscription="国别代码" procedureName="CHECK_12_E214_HNYZ_GB_001" procedureDiscription="E214重要股东及主要关联企业" procedureParam="dtDate,RS"></consistentGroup>
+			</checkFieldConsistent>		
+			<!-- HNYZ-GB-002|法定代表人、高管、重要关联人、股东、实际控制人代码相同，国别需一致-->		
+			<checkFieldConsistent>
+				<consistentGroup keyField="CONDITION" keyDiscription="股东/关联企业证件类型-证件代码" nameField="E213202" nameDiscription="国别代码" procedureName="CHECK_12_E214_HNYZ_GB_002" procedureDiscription="E214重要股东及主要关联企业" procedureParam="dtDate,RS"></consistentGroup>
+			</checkFieldConsistent>		
+			<!-- HNYZ-FR-001|表内及表间，同一个内部客户代码，对应的组织机构代码应一致-->
+			<checkFieldConsistent>
+				<consistentGroup keyField="E214206" keyDiscription="股东/关联企业客户代码"  nameField="E214204" nameDiscription="股东/关联企业证件代码" procedureName="CHECK_12_E214_HNYZ_FR" procedureDiscription="E214重要股东及主要关联企业" procedureParam="dtDate,RS"></consistentGroup>
+			</checkFieldConsistent>
+			<!-- HNYZ-FR-003|表内及表间，同一个内部客户代码，对应的名称应一致-->
+			<checkFieldConsistent>
+				<consistentGroup keyField="E214206" keyDiscription="股东/关联企业客户代码"  nameField="E214201" nameDiscription="股东/关联企业名称" procedureName="CHECK_12_E214_HNYZ_FR_2" procedureDiscription="E214重要股东及主要关联企业" procedureParam="dtDate,RS"></consistentGroup>
+			</checkFieldConsistent>
+			<!-- HNYZ-FR-004|表内及表间，同一个组织机构代码，对应的名称应一致-->
+			<checkFieldConsistent>
+				<consistentGroup keyField="E214204" keyDiscription="股东/关联企业证件代码"  nameField="E214201" nameDiscription="股东/关联企业名称" procedureName="CHECK_12_E214_HNYZ_FR" procedureDiscription="E214重要股东及主要关联企业" procedureParam="dtDate,RS"></consistentGroup>
+			</checkFieldConsistent>
+			<!-- HNYZ-FR-005|表内及表间，同一个名称，对应的组织机构代码应一致。对于某一企业确实有多个组织机构代码的，银监会定期维护例外名单，名单中的企业除外-->
+			<checkFieldConsistent>
+				<consistentGroup keyField="E214201" keyDiscription="股东/关联企业名称"  nameField="E214204" nameDiscription="股东/关联企业证件代码" procedureName="CHECK_12_E214_HNYZ_FR" procedureDiscription="E214重要股东及主要关联企业" procedureParam="dtDate,RS"></consistentGroup>
+			</checkFieldConsistent>	
+			<!-- HNYZ-GR-001|个人的代码任意两个相同，名称应一致。此处“代码”指国别代码+证件类型+证件号码-->		
+			<checkFieldConsistent>
+				<consistentGroup keyField="SPLITFIELD" keyDiscription="国别代码-股东/关联企业证件类型-股东/关联企业证件代码" nameField="E214201" nameDiscription="股东/关联企业名称" procedureName="CHECK_12_E214_HNYZ_GR_001" procedureDiscription="E214重要股东及主要关联企业" procedureParam="dtDate,RS"></consistentGroup>
+			</checkFieldConsistent>									
+		</checkFieldConsistentList>														
+	</checkInstance>
+</reportCheckRoot>

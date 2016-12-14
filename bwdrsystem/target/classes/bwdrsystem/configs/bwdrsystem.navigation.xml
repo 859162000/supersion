@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<navigationRoot>
+	<navigation>
+		<level>1</level>
+		<navigationName>报文导入</navigationName>
+		<navigationUrl>framework/bwdrsystem.dto.ReportFileImportLog</navigationUrl>
+	</navigation>
+	
+	<navigationComponentList>
+		<navigationComponent id="DeskTop" name="桌面" url="Framework/NavigationPage.jsp"  ico="bg.png" treeIco="bg.png" treeExpandIco="bg.png" des="">
+			<navigationComponent id="BWDR" name="报文导入" url="framework/ShowZXReportImportView-bwdrsystem.dto.ReportFileImportLog"  ico="128_InstInfo.png" treeIco="64_InstInfo.png" treeExpandIco="32_InstInfo.png" des="" />
+		</navigationComponent>
+	</navigationComponentList>
+</navigationRoot>

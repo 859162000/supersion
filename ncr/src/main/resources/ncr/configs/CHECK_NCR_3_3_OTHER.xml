@@ -1,0 +1,95 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<reportCheckRoot>
+	<checkInstance name="CHECK_NCR_3_3_OTHER">		
+		<paramValueList>
+			<paramValue name="DTDATE" value="2013-12-31"></paramValue>
+			<paramValue name="strInstCode" value=""></paramValue>
+	      <!--
+		    <paramValue name="strTaskRptInstID" value="000000"></paramValue>
+			  <paramValue name="strFreq" value="000000"></paramValue> 
+			  -->
+		</paramValueList>
+
+		<freqCode value="4"></freqCode>
+		
+		<checkTable procedureName="Check_NCR_3_3" procedureParam="DTDATE,strInstCode" procedureDiscription="重要股东及主要关联企业"
+			originTable="NCR_3_3" errorStateField="RPTCHECKTYPE" errorStateValue="3"  successStateValue="2" 
+      	defaultLogicDaoBeanId="oracleProcedureResultSetDao">
+			<paramFieldList>
+				<paramField paramName="DTDATE" field="DTDATE" type="2"></paramField>
+				<paramField paramName="strInstCode" field="INSTINFO" type="1"></paramField>
+			</paramFieldList>
+
+			<checkUniqueFieldList>
+				<checkUniqueField name="AUTOID" discription="主键" originField="AUTOID"></checkUniqueField>
+			</checkUniqueFieldList>
+   </checkTable>	
+	
+		<checkFieldAggregationList discription="聚合校验">
+			<paramFieldList>
+				<paramField paramName="DTDATE" field="DTDATE" type="2"></paramField>
+				<paramField paramName="strInstCode" field="INSTINFO" type="1"></paramField>
+			</paramFieldList>
+			<!-- LJX-053|表3 PART III中同一客户（表3 PART Ⅰ中同一[客户代码]），各重要股东及主要关联企业[持股比例]之和小于等于100 -->	
+		<checkFieldAggregation compareType=">="	splitDiscription="客户代码_授信号码" leftSplitField="SPLITFIELD" rightSplitField="SPLITFIELD">
+				<leftFieldList>
+					<checkFieldAggregationField procedureName="Check_NCR_3_3_LJX_053" procedureParam="DTDATE,strInstCode,rt" procedureDiscription="100" procedureResultField="ARG"></checkFieldAggregationField>
+				</leftFieldList>
+				<rightFieldList>
+					<checkFieldAggregationField procedureName="Check_NCR_3_3_LJX_053" procedureParam="DTDATE,strInstCode,rt" procedureDiscription="SUM(持股比例)" procedureResultField="TOTAL"></checkFieldAggregationField>
+				</rightFieldList>
+			</checkFieldAggregation>
+		</checkFieldAggregationList>
+		
+		<checkFieldConsistentList consistenttype="2" discription="唯一性校验">
+			<paramFieldList>
+				<paramField paramName="DTDATE" field="DTDATE" type="2"></paramField>
+				<paramField paramName="strInstCode" field="INSTINFO" type="1"></paramField>
+			</paramFieldList>
+			<!--WYX-021|表3《PART III：重要股东及主要关联企业》|对于PARTⅠ中，同一“[客户代码]-[关联类型]-[股东/关联企业证件类型]”下|[股东/关联企业证件代码] -->		
+			<checkFieldConsistent>
+				<consistentGroup keyField="CONDITION" keyDiscription="客户代码-关联类型-股东/关联企业证件类型" nameField="E" nameDiscription="股东/关联企业证件代码" procedureName="Check_NCR_3_3_WYX_021" procedureDiscription="E214重要股东及主要关联企业" procedureParam="DTDATE,strInstCode,rt"></consistentGroup>
+			</checkFieldConsistent>												
+		</checkFieldConsistentList>
+		
+		<checkFieldConsistentList consistenttype="1" discription="一致性校验">
+			<paramFieldList>
+				<paramField paramName="DTDATE" field="DTDATE" type="2"></paramField>
+				<paramField paramName="strInstCode" field="INSTINFO" type="1"></paramField>
+			</paramFieldList>
+			<!--LJX-054|表3 PART III中同一客户，各股东的[股东结构对应日期]相同。-->	
+			<checkFieldConsistent>
+				<consistentGroup keyField="REL_3_1_A"  keyDiscription="客户代码" nameField="J" nameDiscription="股东结构对应日期" procedureName="Check_NCR_3_3_LJX_054" procedureDiscription="E214重要股东及主要关联企业" procedureParam="DTDATE,strInstCode,rt"></consistentGroup>
+			</checkFieldConsistent>		
+			<!--HNYZ-GB-001|相同信息值中：[成员单位的客户代码]，国别需一致 -->
+			<checkFieldConsistent>
+				<consistentGroup keyField="G" keyDiscription="股东/关联企业客户代码"  nameField="H" nameDiscription="国别代码" procedureName="Check_NCR_3_3_HNYZ_GB_001" procedureDiscription="E214重要股东及主要关联企业" procedureParam="DTDATE,strInstCode,rt"></consistentGroup>
+			</checkFieldConsistent>		
+			<!-- HNYZ-GB-002|[股东/关联企业客户代码]，国别需一致 -->		
+			<checkFieldConsistent>
+				<consistentGroup keyField="REL_3_1_A,A,D" keyDiscription="股东/关联企业证件类型-证件代码" nameField="C" nameDiscription="国别代码" procedureName="Check_NCR_3_3_HNYZ_GB_002" procedureDiscription="E214重要股东及主要关联企业" procedureParam="DTDATE,strInstCode,rt"></consistentGroup>
+			</checkFieldConsistent>		
+			<!-- HNYZ-FR-001|表内及表间，同一个内部客户代码，对应的组织机构代码应一致 -->
+			<checkFieldConsistent>
+				<consistentGroup keyField="G" keyDiscription="股东/关联企业客户代码"  nameField="E" nameDiscription="股东/关联企业证件代码" procedureName="Check_NCR_3_3_HNYZ_FR" procedureDiscription="E214重要股东及主要关联企业" procedureParam="DTDATE,strInstCode,rt"></consistentGroup>
+			</checkFieldConsistent>
+			<!-- HNYZ-FR-003|表内及表间，同一个内部客户代码，对应的名称应一致 -->
+			<checkFieldConsistent>
+				<consistentGroup keyField="G" keyDiscription="股东/关联企业客户代码"  nameField="B" nameDiscription="股东/关联企业名称" procedureName="Check_NCR_3_3_HNYZ_FR_2" procedureDiscription="E214重要股东及主要关联企业" procedureParam="DTDATE,strInstCode,rt"></consistentGroup>
+			</checkFieldConsistent>
+			<!-- HNYZ-FR-004|表内及表间，同一个组织机构代码，对应的名称应一致 -->
+			<checkFieldConsistent>
+				<consistentGroup keyField="E" keyDiscription="股东/关联企业证件代码"  nameField="B" nameDiscription="股东/关联企业名称" procedureName="Check_NCR_3_3_HNYZ_FR" procedureDiscription="E214重要股东及主要关联企业" procedureParam="DTDATE,strInstCode,rt"></consistentGroup>
+			</checkFieldConsistent>
+			<!-- HNYZ-FR-005|表内及表间，同一个名称，对应的组织机构代码应一致。对于某一企业确实有多个组织机构代码的，银监会定期维护例外名单，名单中的企业除外 -->
+			<checkFieldConsistent>
+				<consistentGroup keyField="B" keyDiscription="股东/关联企业名称"  nameField="E" nameDiscription="股东/关联企业证件代码" procedureName="Check_NCR_3_3_HNYZ_FR" procedureDiscription="E214重要股东及主要关联企业" procedureParam="DTDATE,strInstCode,rt"></consistentGroup>
+			</checkFieldConsistent>	
+			<!-- HNYZ-GR-001|个人的代码任意两个相同，名称应一致。此处“代码”指国别代码+证件类型+证件号码 -->		
+			<checkFieldConsistent>
+				<consistentGroup keyField="D,E,H" keyDiscription="国别代码-股东/关联企业证件类型-股东/关联企业证件代码" nameField="B" nameDiscription="股东/关联企业名称" procedureName="Check_NCR_3_3_HNYZ_GR_001" procedureDiscription="E214重要股东及主要关联企业" procedureParam="DTDATE,strInstCode,rt"></consistentGroup>
+			</checkFieldConsistent>									
+		</checkFieldConsistentList>	
+														
+	</checkInstance>
+</reportCheckRoot>

@@ -1,0 +1,63 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<reportCheckRoot> 
+	<checkInstance name="Check_NCR_2_3">
+	    <paramValueList>
+	      <paramValue name="DTDATE" value="2013-12-31"></paramValue>
+	      <paramValue name="strInstCode" value=""></paramValue>
+			<!--
+		  <paramValue name="strTaskRptInstID" value="000000"></paramValue>
+			<paramValue name="strFreq" value="000000"></paramValue> 
+			-->
+	    </paramValueList>
+
+	    <freqCode value="4"></freqCode>
+	                 
+	    <checkTable procedureName="CHECK_NCR_2_3"  procedureParam="DTDATE,strInstCode,rt" procedureDiscription="成员名单"
+	    originTable="NCR_2_3" errorStateField="RPTCHECKTYPE" errorStateValue="3"  successStateValue="2" 
+			defaultLogicDaoBeanId="oracleProcedureResultSetDao">    
+				<paramFieldList>
+					<paramField paramName="DTDATE" field="DTDATE" type="2"></paramField>
+					<paramField paramName="strInstCode" field="INSTINFO" type="1"></paramField>
+				</paramFieldList>
+
+		    <checkUniqueFieldList>
+				<checkUniqueField name="AUTOID" discription="主键" originField="AUTOID"></checkUniqueField>
+			  </checkUniqueFieldList>
+	      <checkFieldBasicList>                            
+					<checkFieldBasic name="A" discription="国别代码" upperCheck="true"  emptyCheck="true" startLength="2" endLength="3"></checkFieldBasic>
+					<checkFieldBasic name="B" discription="成员单位的名称" emptyCheck="true" startLength="2"></checkFieldBasic>
+					<checkFieldBasic name="C" discription="成员单位的客户代码" startLength="2"></checkFieldBasic>
+					<checkFieldBasic name="D" discription="组织机构代码" startLength="9" endLength="9"></checkFieldBasic>
+		      <checkFieldBasic name="E" discription="登记注册代码" startLength="2"></checkFieldBasic>
+					<checkFieldBasic name="F" discription="成员类型" emptyCheck="true" digitalCheck="true" startLength="1" endLength="1"></checkFieldBasic>
+					<checkFieldBasic name="G" discription="母公司标识" digitalCheck="true" startLength="1" endLength="1"></checkFieldBasic>
+	      </checkFieldBasicList>
+
+	      <checkFieldOrList>
+	      </checkFieldOrList>
+
+	      <checkFieldEffectiveList>
+	         	<checkFieldEffective name="G" discription="母公司标识">
+	             <value>1</value>
+	             <value>2</value>
+	          </checkFieldEffective>
+	         	<checkFieldEffective name="F" discription="成员类型">
+	              <value>1</value>
+	              <value>2</value>
+	           </checkFieldEffective>	           
+	      </checkFieldEffectiveList>
+
+	      <checkFieldCaseWhenList>
+	      	
+    			<checkFieldCaseWhen name="D" discription="D组织机构代码" caseValue="notNull" whenValueScope="CHN">
+              <checkFieldCaseWhenField name="A" discription="国别代码" ></checkFieldCaseWhenField>
+          </checkFieldCaseWhen>					
+	      </checkFieldCaseWhenList>
+
+	      <checkFieldLineList>
+				</checkFieldLineList>
+	    </checkTable>
+	      
+	   
+    	</checkInstance>	
+</reportCheckRoot>

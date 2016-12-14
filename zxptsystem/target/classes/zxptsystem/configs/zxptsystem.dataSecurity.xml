@@ -1,0 +1,147 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<dataSecurityRoot>
+ <dataSecurityMap>
+    <dataSecurityName>coresystem.dto.RoleClassInst</dataSecurityName>
+ 	  
+ 	   <dataSecurity>
+      	 <className>report.dto.TaskModelInst</className>
+	     <fieldName>instInfo</fieldName>
+      </dataSecurity>
+ 	  
+      <dataSecurity>
+      	 <className>zxptsystem.dto.AutoDTO_QY_JKRGK_JC</className>
+	     <fieldName>instInfo</fieldName>
+      </dataSecurity>
+      
+      <dataSecurity>
+      	 <className>zxptsystem.dto.AutoDTO_QY_JKRZBGC_JC</className>
+	     <fieldName>instInfo</fieldName>
+      </dataSecurity>
+      
+       <dataSecurity>
+      	 <className>zxptsystem.dto.AutoDTO_QY_JKRCWBB_JC</className>
+	     <fieldName>instInfo</fieldName>
+      </dataSecurity>
+      
+       <dataSecurity>
+      	 <className>zxptsystem.dto.AutoDTO_QY_JKRGZ_JC</className>
+	     <fieldName>instInfo</fieldName>
+      </dataSecurity>
+      
+       <dataSecurity>
+      	 <className>zxptsystem.dto.AutoDTO_QY_DKYW_JC</className>
+	     <fieldName>instInfo</fieldName>
+      </dataSecurity>
+      
+       <dataSecurity>
+      	 <className>zxptsystem.dto.AutoDTO_QY_BLYW_JC</className>
+	     <fieldName>instInfo</fieldName>
+      </dataSecurity>
+      
+       <dataSecurity>
+      	 <className>zxptsystem.dto.AutoDTO_QY_PJTX_JC</className>
+	     <fieldName>instInfo</fieldName>
+      </dataSecurity>
+      
+       <dataSecurity>
+      	 <className>zxptsystem.dto.AutoDTO_QY_MYRZ_JC</className>
+	     <fieldName>instInfo</fieldName>
+      </dataSecurity>
+       <dataSecurity>
+      	 <className>zxptsystem.dto.AutoDTO_QY_XYZYW_JC</className>
+	     <fieldName>instInfo</fieldName>
+      </dataSecurity>
+      
+      <dataSecurity>
+      	 <className>zxptsystem.dto.AutoDTO_QY_BHYW_JC</className>
+	     <fieldName>instInfo</fieldName>
+      </dataSecurity>
+      
+       <dataSecurity>
+      	 <className>zxptsystem.dto.AutoDTO_QY_YHCDHP_JC</className>
+	     <fieldName>instInfo</fieldName>
+      </dataSecurity>
+      
+       <dataSecurity>
+      	 <className>zxptsystem.dto.AutoDTO_QY_GKSX_JC</className>
+	     <fieldName>instInfo</fieldName>
+      </dataSecurity>
+      
+       <dataSecurity>
+      	 <className>zxptsystem.dto.AutoDTO_QY_DBXX_JC</className>
+	     <fieldName>instInfo</fieldName>
+      </dataSecurity>
+      
+       <dataSecurity>
+      	 <className>zxptsystem.dto.AutoDTO_QY_DKXX_JC</className>
+	     <fieldName>instInfo</fieldName>
+      </dataSecurity>
+      
+       <dataSecurity>
+      	 <className>zxptsystem.dto.AutoDTO_QY_QXXX_JC</className>
+	     <fieldName>instInfo</fieldName>
+      </dataSecurity>
+      
+       <dataSecurity>
+      	 <className>zxptsystem.dto.AutoDTO_QY_BLXDZCCL_JC</className>
+	     <fieldName>instInfo</fieldName>
+      </dataSecurity>
+      
+       <dataSecurity>
+      	 <className>zxptsystem.dto.AutoDTO_GR_GRXX_JC</className>
+	     <fieldName>instInfo</fieldName>
+      </dataSecurity>
+      
+       <dataSecurity>
+      	 <className>zxptsystem.dto.AutoDTO_JG_JGJBXX_JC</className>
+	     <fieldName>instInfo</fieldName>
+      </dataSecurity>
+      
+      <dataSecurity>
+      	 <className>zxptsystem.dto.AutoDTO_JZ_JZCYXX_JC</className>
+	     <fieldName>instInfo</fieldName>
+      </dataSecurity>
+      
+      <dataSecurity>
+      	 <className>zxptsystem.dto.AutoDTO_JGXXJBXXSC</className>
+	     <fieldName>instInfo</fieldName>
+      </dataSecurity>
+      
+       <dataSecurity>
+      	 <className>zxptsystem.dto.AutoDTO_JGXXJZCYXXSC</className>
+	     <fieldName>instInfo</fieldName>
+      </dataSecurity>
+      
+      <dataSecurity>
+      	 <className>zxptsystem.dto.AutoDTO_QYZXPLXDYWSJSC</className>
+	     <fieldName>instInfo</fieldName>
+      </dataSecurity>
+      
+      
+    </dataSecurityMap>
+    
+    <dataSecurityMap>
+    	<dataSecurityName>coresystem.dto.RoleClassUser</dataSecurityName>
+ 	  
+	 	   <dataSecurity>
+	      	 <className>zxptsystem.dto.QYZXCreditReportInfo</className>
+		     <fieldName>operationUser</fieldName>
+	      </dataSecurity>
+	      
+	       <dataSecurity>
+	      	 <className>zxptsystem.dto.EIS_ENTCustomernBasicInfo</className>
+		     <fieldName>strUserID</fieldName>
+	      </dataSecurity>
+	      
+	      <dataSecurity>
+	      	 <className>zxptsystem.dto.GRZXCreditReportInfo</className>
+		     <fieldName>operationUser</fieldName>
+	      </dataSecurity>
+	      
+	      <dataSecurity>
+	      	 <className>zxptsystem.dto.EIS_PERCustomernBasicInfo</className>
+		     <fieldName>strUserID</fieldName>
+	      </dataSecurity>
+	   
+ 	</dataSecurityMap>
+</dataSecurityRoot>

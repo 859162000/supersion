@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<fieldShowsRoot>
+	<fieldShowsEntity>
+		<className>bwdrsystem.dto.ReportFileImportLog</className>
+		<showInstance>
+			<showInstanceName>1</showInstanceName>
+			<fieldName fieldName="reportFileName" width="150" intOrder="1"></fieldName>
+			<fieldName fieldName="reportName" width="150" intOrder="2"></fieldName>
+			<fieldName fieldName="reportType" width="150" intOrder="3"></fieldName>
+			<fieldName fieldName="strReportInstCode" width="150" listVisible="false"></fieldName>
+			<fieldName fieldName="strReportInstName" width="150" intOrder="4"></fieldName>
+			<fieldName fieldName="dtDate" width="150" intOrder="5"></fieldName>
+			<fieldName fieldName="importDate" width="150" intOrder="6"></fieldName>
+			<fieldName fieldName="operator" width="50" intOrder="7"></fieldName>
+			<fieldName fieldName="importDataCount" width="150" intOrder="8"></fieldName>
+			<fieldName fieldName="result" width="50" intOrder="9"></fieldName>
+			<fieldName fieldName="remark" width="300" intOrder="10"></fieldName>
+		</showInstance>
+	</fieldShowsEntity>
+</fieldShowsRoot>

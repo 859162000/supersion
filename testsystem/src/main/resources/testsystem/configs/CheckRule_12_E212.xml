@@ -1,0 +1,120 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<reportCheckRoot>
+
+	<checkInstance name="Check_QYZX_TEST9">
+	      <checkTable procedureName="Proc_QYZX_TEST9" procedureParam="rt,dtDate1" procedureDiscription="Proc_QYZX_TEST9" originTable="QYZX_TEST9" errorMsgField="" errorStateField="RPTCheckType"  successStateValue="2" errorStateValue="3" defaultLogicDaoBeanId="oracleProcedureListMapDao">
+	           <paramFieldList>
+				   <paramField paramName="dtDate1" field="dtDate" type="1"></paramField>
+			  </paramFieldList>
+			  <checkUniqueFieldList>
+				  <checkUniqueField name="AUTOID" discription="主键" originField="autoID"></checkUniqueField>
+			</checkUniqueFieldList>
+			<checkFieldBasicList discription="基础校验">
+			    <checkFieldBasic name="FIELD1" discription="字段1" emptyCheck="true"></checkFieldBasic>
+			    <checkFieldBasic name="FIELD2" discription="企业规模" emptyCheck="true"></checkFieldBasic>
+			    <checkFieldBasic name="FIELD3" discription="还款日期" emptyCheck="true" dateCheck="true"></checkFieldBasic>
+			</checkFieldBasicList>
+	    </checkTable>
+	</checkInstance>
+
+	<checkInstance name="E212">
+		<paramValueList>
+			<paramValue name="dtDate" value="2013-12-09"></paramValue>
+		</paramValueList>
+
+		<freqCode value="4"></freqCode>
+
+		<checkTable procedureName="CHECK_12_E212" procedureParam="dtDate,RS" procedureDiscription="E212单一法人基本情况">
+			<paramFieldList>
+				<paramField paramName="dtDate" field="dtDate" type="1"></paramField>
+			</paramFieldList>
+
+			<checkUniqueFieldList>
+				<checkUniqueField name="E212201" discription="客户代码"></checkUniqueField>
+			</checkUniqueFieldList>
+
+			<!--<checkFieldBasicList discription="表内基础校验">
+				<checkFieldBasic name="E212200" discription="客户名称" emptyCheck="true" startLength="2" ignoreVal="*********"></checkFieldBasic>
+				<checkFieldBasic name="E212201" discription="客户代码" emptyCheck="true" startLength="2"></checkFieldBasic>
+				<checkFieldBasic name="E212202" discription="组织机构代码"  startLength="9" endLength="9" ></checkFieldBasic>
+				<checkFieldBasic name="E212203" discription="组织机构登记-年检-更新日期" dateCheck="true" ignoreVal="99999999" startLength="8" endLength="8"></checkFieldBasic>
+				<checkFieldBasic name="E212204" discription="登记注册代码"  startLength="2" ></checkFieldBasic>
+				<checkFieldBasic name="E212205" discription="登记注册-年检-更新日期"  dateCheck="true" ignoreVal="99999999" startLength="8" endLength="8" ></checkFieldBasic>
+				<checkFieldBasic name="E212206" discription="注册国家或地区" emptyCheck="true" startLength="2" ></checkFieldBasic>
+				<checkFieldBasic name="E212207" discription="国别代码" emptyCheck="true" startLength="3"  endLength="3"  upperCheck="true"></checkFieldBasic>
+				<checkFieldBasic name="E212208" discription="注册地址" emptyCheck="true" startLength="2" ></checkFieldBasic>
+				<checkFieldBasic name="E212209" discription="行政区划代码" emptyCheck="true" digitalCheck="true" ignoreVal="999999" startLength="6" endLength="6" ></checkFieldBasic>
+				<checkFieldBasic name="E212210" discription="上市公司标志-国别代码-上市公司代码"  startLength="8" ></checkFieldBasic>
+				<checkFieldBasic name="E212213" discription="违约概率"  valueDecimalLength="4" ></checkFieldBasic>
+				<checkFieldBasic name="E212215" discription="资产总额"  valueDecimalLength="2" ></checkFieldBasic>
+				<checkFieldBasic name="E212216" discription="负债总额"  valueDecimalLength="2" ></checkFieldBasic>
+				<checkFieldBasic name="E212217" discription="税前利润"  valueDecimalLength="2" ></checkFieldBasic>
+				<checkFieldBasic name="E212218" discription="主营业务收入"  valueDecimalLength="2" ></checkFieldBasic>
+				<checkFieldBasic name="E212219" discription="存货"  valueDecimalLength="2" ></checkFieldBasic>
+				<checkFieldBasic name="E212220" discription="应收账款"  valueDecimalLength="2" ></checkFieldBasic>
+				<checkFieldBasic name="E212221" discription="其他应收款"  valueDecimalLength="2" ></checkFieldBasic>
+				<checkFieldBasic name="E212222" discription="流动资产合计"  valueDecimalLength="2" ></checkFieldBasic>
+				<checkFieldBasic name="E212223" discription="流动负债合计"  valueDecimalLength="2" ></checkFieldBasic>
+				<checkFieldBasic name="E212224" discription="财务报表类型"  startLength="1" endLength="1" ></checkFieldBasic>
+				<checkFieldBasic name="E212225" discription="财务报表日期"  dateCheck="true" startLength="8" endLength="8" ></checkFieldBasic>
+				<checkFieldBasic name="E212227" discription="客户所属行业代码"  emptyCheck="true" ignore="99999" startLength="5" endLength="5" ></checkFieldBasic>
+				<checkFieldBasic name="E212228" discription="贷款卡号"  digitalCheck="true"></checkFieldBasic>
+			</checkFieldBasicList>--> 
+
+	<checkFieldCaseWhenList discription="caseWhen校验">
+		<!-- 		<checkFieldCaseWhen name="E212203" discription="组织机构代码" caseValue="notNull" whenValue="CHN">
+        	<checkFieldCaseWhenField name="E212207" discription="国别代码"  ></checkFieldCaseWhenField>
+        </checkFieldCaseWhen>			
+				<checkFieldCaseWhen name="E212203" discription="组织机构登记-年检-更新日期" caseValue="notNull" whenValue="notNull">
+        	<checkFieldCaseWhenField name="E212202" discription="组织机构代码"  ></checkFieldCaseWhenField>
+        </checkFieldCaseWhen>
+        <checkFieldCaseWhen name="E212205" discription="登记注册-年检-更新日期" caseValue="notNull" whenValue="notNull">
+        	<checkFieldCaseWhenField name="E212204" discription="登记注册代码"  ></checkFieldCaseWhenField>
+        </checkFieldCaseWhen>--> 
+        <!-- caseWhen校验：每条数据被设置的字段都需要校验，有可能存在表外校验 
+				caseValue代表"为值" caseValueScope代表范围值，以逗号分隔 
+				whenValue代表"当值" whenValueScope代表范围值，以逗号分隔 
+				whenType不填或者等于1代表等号右边为一个字段，不运算；
+				whenType等于2代表等号右边为多个字段运算；
+				whenType等于3代表多个when并且关系；
+				whenType等于4代表两个when时间比较关系 
+				whenType等于5代表1的反向（当***不为***）
+				whenType等于6代表3的反向（当***不为***）
+				caseCompareType运算符（当***>=***为***）&lt;小于号
+				whenCompareType运算符（当***为***>=***）&lt;小于号
+				whenValueRule不填或则等于1代表当前值，whenValueRule等于2代表绝对值 
+				joinType不填或者等于1代表正，jionType等于2代表负-->
+        <!--若P+Q+|R|+S大于0则非空。--> 
+        <checkFieldCaseWhen name="E212224" discription="财务报表类型" caseValue="notNull" whenType="2" whenCompareType=">" whenCompareValue="0">
+        	<checkFieldCaseWhenField name="E212215" discription="资产总额" joinType="1" whenValueRule="1"></checkFieldCaseWhenField>
+        	<checkFieldCaseWhenField name="E212216" discription="负债总额" joinType="1" whenValueRule="1"></checkFieldCaseWhenField>
+        	<checkFieldCaseWhenField name="E212217" discription="税前利润" joinType="1" whenValueRule="2"></checkFieldCaseWhenField>
+        	<checkFieldCaseWhenField name="E212218" discription="主营业务收入" joinType="1" whenValueRule="1"></checkFieldCaseWhenField>
+        </checkFieldCaseWhen>
+        
+        
+        <checkFieldCaseWhen name="REMARK" discription="备注" caseValue="notNull" whenType="3">
+			<checkFieldCaseWhenField name="A0232" discription="投资金额" whenCompareType=">" whenValue="0"></checkFieldCaseWhenField>
+			<checkFieldCaseWhenField name="A233" discription="外方持有表决权比例增减"  whenCompareType="&lt;" whenValue="0"></checkFieldCaseWhenField>
+		</checkFieldCaseWhen>
+        
+        <!--<checkFieldCaseWhen name="E212225" discription="财务报表日期" caseValue="notNull" whenType="2" whenCompareType=">" whenValue="0">
+        	<checkFieldCaseWhenField name="E212215" discription="资产总额" joinType="1" whenValueRule="1"></checkFieldCaseWhenField>
+        	<checkFieldCaseWhenField name="E212216" discription="负债总额" joinType="1" whenValueRule="1"></checkFieldCaseWhenField>
+        	<checkFieldCaseWhenField name="E212217" discription="税前利润" joinType="1" whenValueRule="2"></checkFieldCaseWhenField>
+        	<checkFieldCaseWhenField name="E212218" discription="主营业务收入" joinType="1" whenValueRule="1"></checkFieldCaseWhenField>
+        </checkFieldCaseWhen>  -->
+              
+        <!--LJX-049	表3 PARTⅠ中，若[财务报表类型]为“1-年报”则必须是年末日期；若[财务报表类型]为“2-半年报”则必须是半年末日期；
+        						若[财务报表类型]为“3-季报”则必须是季末日期；若[财务报表类型]为“4-月报”则必须是月末日期-->      
+       
+	</checkFieldCaseWhenList>
+
+
+		</checkTable>
+		
+							
+				
+						
+	</checkInstance>
+</reportCheckRoot>

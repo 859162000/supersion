@@ -1,0 +1,86 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<dataSecurityRoot>
+<dataSecurityMap>
+    <dataSecurityName>coresystem.dto.RoleClassInst</dataSecurityName>
+
+		<dataSecurity>
+			<className>ncr.dto.AutoDTO_NCR_1_1</className>
+			<fieldName>instInfo</fieldName>
+		</dataSecurity>
+  
+		<dataSecurity>
+			<className>ncr.dto.AutoDTO_NCR_1_1</className>
+			<fieldName>instInfo</fieldName>
+		</dataSecurity>
+		<dataSecurity>
+			<className>ncr.dto.AutoDTO_NCR_1_2</className>
+			<fieldName>instInfo</fieldName>
+		</dataSecurity>
+		<dataSecurity>
+			<className>ncr.dto.AutoDTO_NCR_1_3</className>
+			<fieldName>instInfo</fieldName>
+		</dataSecurity>
+		<dataSecurity>
+			<className>ncr.dto.AutoDTO_NCR_1_4</className>
+			<fieldName>instInfo</fieldName>
+		</dataSecurity>
+		<dataSecurity>
+			<className>ncr.dto.AutoDTO_NCR_1_5</className>
+			<fieldName>instInfo</fieldName>
+		</dataSecurity>
+		<dataSecurity>
+			<className>ncr.dto.AutoDTO_NCR_1_6</className>
+			<fieldName>instInfo</fieldName>
+		</dataSecurity>
+		<dataSecurity>
+			<className>ncr.dto.AutoDTO_NCR_1_7</className>
+			<fieldName>instInfo</fieldName>
+		</dataSecurity>
+		<dataSecurity>
+			<className>ncr.dto.AutoDTO_NCR_2_1</className>
+			<fieldName>instInfo</fieldName>
+		</dataSecurity>
+		<dataSecurity>
+			<className>ncr.dto.AutoDTO_NCR_2_2</className>
+			<fieldName>instInfo</fieldName>
+		</dataSecurity>
+		<dataSecurity>
+			<className>ncr.dto.AutoDTO_NCR_2_3</className>
+			<fieldName>instInfo</fieldName>
+		</dataSecurity>
+		<dataSecurity>
+			<className>ncr.dto.AutoDTO_NCR_2_4</className>
+			<fieldName>instInfo</fieldName>
+		</dataSecurity>
+		<dataSecurity>
+			<className>ncr.dto.AutoDTO_NCR_2_5</className>
+			<fieldName>instInfo</fieldName>
+		</dataSecurity>
+		<dataSecurity>
+			<className>ncr.dto.AutoDTO_NCR_3_1</className>
+			<fieldName>instInfo</fieldName>
+		</dataSecurity>
+		<dataSecurity>
+			<className>ncr.dto.AutoDTO_NCR_3_2</className>
+			<fieldName>instInfo</fieldName>
+		</dataSecurity>
+		<dataSecurity>
+			<className>ncr.dto.AutoDTO_NCR_3_3</className>
+			<fieldName>instInfo</fieldName>
+		</dataSecurity>
+		<dataSecurity>
+			<className>ncr.dto.AutoDTO_NCR_4_1</className>
+			<fieldName>instInfo</fieldName>
+		</dataSecurity>
+		<dataSecurity>
+			<className>ncr.dto.AutoDTO_NCR_5_1</className>
+			<fieldName>instInfo</fieldName>
+		</dataSecurity>
+		<dataSecurity>
+			<className>ncr.dto.AutoDTO_NCR_6_1</className>
+			<fieldName>instInfo</fieldName>
+		</dataSecurity>
+		
+		
+</dataSecurityMap>
+</dataSecurityRoot>

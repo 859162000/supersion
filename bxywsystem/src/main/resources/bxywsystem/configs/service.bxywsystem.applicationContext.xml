@@ -1,0 +1,262 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans
+	xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns:p="http://www.springframework.org/schema/p"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-3.0.xsd">
+	
+	 <!-- 数据补录 -->                        
+	<bean id="autoDTO_BX_BXYW_JCShowListLevelAUTODTOService" parent="singleObjectShowListLevelAUTODTOService">
+	 	<property name="operationMap">
+            <map>
+                <entry key="查询" value="Select-ShowList"></entry>
+                <entry key="新增" value="Get-ShowSaveLevelAUTODTO"></entry>
+                <entry key="删除" value="PostConfirm-ForReportDeleteListByIdList"></entry>
+                <entry key="提交" value="Post-RptSubmitStatusUpdateField"></entry>
+                <entry key="批量数据导入" value="Upload-ImportFixedLineExcleData"></entry> 
+                <entry key="模板下载" value="Post-ExportTemplate"></entry>
+                <entry key="批量数据导出" value="Post-ExportTemplateWithData"></entry>
+                <entry key="返回" value="Get-BackPreviousFirst"></entry>
+            </map>
+        </property>
+        <property name="linkedMap">
+            <map>
+                <entry key="修改" value="Get-JumpByType"></entry>
+                <entry key="保险合同" value="Get-ShowListLevelAutoDTOMX-bxywsystem.dto.AutoDTO_BX_BXHTXX,,,orangered*RPTCheckType:1%3|forestgreen*RPTCheckType:2@RPTSendType:1"></entry>
+                <entry key="债权人" value="Get-ShowListLevelAutoDTOMX-bxywsystem.dto.AutoDTO_BX_ZQRJZHTXX,,,orangered*RPTCheckType:1%3|forestgreen*RPTCheckType:2@RPTSendType:1"></entry>
+                <entry key="实际代偿" value="Get-ShowListLevelAutoDTOMX-bxywsystem.dto.AutoDTO_BX_SJDCZRXX,,,orangered*RPTCheckType:1%3|forestgreen*RPTCheckType:2@RPTSendType:1"></entry>
+                <entry key="代偿概况" value="Get-ShowListLevelAutoDTOMX-bxywsystem.dto.AutoDTO_BX_DCGKXX,,,orangered*RPTCheckType:1%3|forestgreen*RPTCheckType:2@RPTSendType:1"></entry>
+                <entry key="代偿明细" value="Get-ShowListLevelAutoDTOMX-bxywsystem.dto.AutoDTO_BX_DCMXXX,,,orangered*RPTCheckType:1%3|forestgreen*RPTCheckType:2@RPTSendType:1"></entry>
+                <entry key="追偿明细" value="Get-ShowListLevelAutoDTOMX-bxywsystem.dto.AutoDTO_BX_ZCMXXX,,,orangered*RPTCheckType:1%3|forestgreen*RPTCheckType:2@RPTSendType:1"></entry>
+                <entry key="保费缴纳概况" value="Get-ShowListLevelAutoDTOMX-bxywsystem.dto.AutoDTO_BX_BFJNGKXX,,,orangered*RPTCheckType:1%3|forestgreen*RPTCheckType:2@RPTSendType:1"></entry>
+                <entry key="保费缴纳明细" value="Get-ShowListLevelAutoDTOMX-bxywsystem.dto.AutoDTO_BX_BFJNMXXX,,,orangered*RPTCheckType:1%3|forestgreen*RPTCheckType:2@RPTSendType:1"></entry>
+            </map>
+        </property>
+    </bean>
+    
+    <!-- 数据审核 -->
+    <bean id="autoDTO_BX_BXYW_JCSHShowListLevelAUTODTOSHService" parent="singleObjectSHShowListLevelAUTODTOSHService">
+        <property name="linkedMap">
+            <map>
+               <entry key="查看" value="Get-JumpByType"></entry>
+                <entry key="保险合同" value="Get-SHShowListLevelAUTODTOSHMX-bxywsystem.dto.AutoDTO_BX_BXHTXX,,,forestgreen*RPTCheckType:2@RPTSendType:1"></entry>
+                <entry key="债权人" value="Get-SHShowListLevelAUTODTOSHMX-bxywsystem.dto.AutoDTO_BX_ZQRJZHTXX,,,forestgreen*RPTCheckType:2@RPTSendType:1"></entry>
+                <entry key="实际代偿" value="Get-SHShowListLevelAUTODTOSHMX-bxywsystem.dto.AutoDTO_BX_SJDCZRXX,,,forestgreen*RPTCheckType:2@RPTSendType:1"></entry>
+                <entry key="代偿概况" value="Get-SHShowListLevelAUTODTOSHMX-bxywsystem.dto.AutoDTO_BX_DCGKXX,,,forestgreen*RPTCheckType:2@RPTSendType:1"></entry>
+                <entry key="代偿明细" value="Get-SHShowListLevelAUTODTOSHMX-bxywsystem.dto.AutoDTO_BX_DCMXXX,,,forestgreen*RPTCheckType:2@RPTSendType:1"></entry>
+                <entry key="追偿明细" value="Get-SHShowListLevelAUTODTOSHMX-bxywsystem.dto.AutoDTO_BX_ZCMXXX,,,forestgreen*RPTCheckType:2@RPTSendType:1"></entry>
+                <entry key="保费概况" value="Get-SHShowListLevelAUTODTOSHMX-bxywsystem.dto.AutoDTO_BX_BFJNGKXX,,,forestgreen*RPTCheckType:2@RPTSendType:1"></entry>
+                <entry key="保费明细" value="Get-SHShowListLevelAUTODTOSHMX-bxywsystem.dto.AutoDTO_BX_BFJNMXXX,,,forestgreen*RPTCheckType:2@RPTSendType:1"></entry>
+            </map>
+        </property>
+    </bean>
+    
+    <bean id="bXYWDownloadShowListService" class="bxywsystem.service.imps.ShowDownLoadBXYWRportService" scope="prototype">
+        <property name="pageSize" value="20"></property>
+        <property name="defaultDaoBeanId" value="singleObjectFindByPageCriteriaDao"></property>
+        <property name="defaultLogicDaoBeanId" value="singleObjectFindByCriteriaDao"></property>
+        <property name="showInstanceName" value="1"></property>
+        <property name="defaultAddClassList">
+            <list>
+              <value>bxywsystem.service.add.ShowDownLoadRportAdd</value>
+            </list>
+        </property>
+        <property name="defaultProceseClassList">
+            <list>
+                <value>framework.services.procese.ShowListProcese</value>
+                <value>framework.services.procese.LevelDataProcese</value>
+                <value>framework.services.procese.ShowListTreeProcese</value>
+                <value>framework.services.procese.SelectTagSortByNameProcese</value>
+                <value>framework.services.procese.ShowPowerButtonProcese</value>
+            </list>
+        </property>
+        <property name="defaultTranslateClassList">
+            <list>
+                <value>framework.services.translate.LevelDataTranslate</value>
+                <value>framework.services.translate.ConditionCriteriaTranslate</value>
+                <value>framework.services.translate.SecurityTranslate</value>
+		        <value>framework.services.translate.DefaultValueTranslate</value>
+		        <value>framework.services.translate.ShowListTreeTranslate</value>
+            </list>
+        </property>
+        <property name="operationMap">
+            <map>
+                <entry key="生成报文" value="Select-DownLoadBXYWRport"></entry>
+            </map>                                    
+        </property>
+        <property name="linkedMap">
+            <map> 
+            </map>
+        </property>
+    </bean>
+    
+    <!-- 生成报文 -->
+    <bean id="downLoadBXYWReportService" class="bxywsystem.service.imps.DownLoadBXYWRportService" scope="prototype">
+    	<property name="instType" value="1"></property>
+    	<property name="strVersion" value="1.0"></property>
+    	
+    	<property name="crypConfig_qy" value="conf/bxyw/qy/Crypt.xml"></property>
+    	<property name="crypPublickey_qy" value="conf/bxyw/qy/public.key"></property>
+    	<property name="cryptKeystore_qy" value="conf/bxyw/qy/.keystore"></property>
+    	<property name="v_file_qy" value="conf/bxyw/qy/validator_BX.xml"></property>
+    	<property name="dic_file_qy" value="conf/bxyw/qy/dic.xml"></property>
+    	<property name="batchFile_qy" value="conf/bxyw/qy/batch.xml"></property>
+    	
+        <property name="crypConfig_gr" value="conf/bxyw/gr/Crypt.xml"></property>
+    	<property name="crypPublickey_gr" value="conf/bxyw/gr/public.key"></property>
+    	<property name="cryptKeystore_gr" value="conf/bxyw/gr/.keystore"></property>
+    	<property name="v_file_gr" value="conf/bxyw/gr/validator.xml"></property>
+    	<property name="dic_file_gr" value="conf/bxyw/gr/dic.xml"></property>
+    	<property name="batchFile_gr" value="conf/bxyw/gr/batch.xml"></property>
+    	
+    	<property name="reportFilePath" value="D:\test\"></property>
+    	<property name="downloadJudgeStatusMap">
+            <map>
+                <entry key="RPTVerifyType" value="2"></entry><!-- 审核状态为：审核通过 -->
+               <entry key="RPTSendType" value="1,5"></entry>  <!--报送状态为：未报送、未全部报送 -->
+                 <entry key="RPTFeedbackType" value="1,3,4"></entry><!--回执状态：未回执、回执失败 -->
+            </map>
+        </property>
+    	<property name="reportMap">
+            <map>
+                <entry key="81" value="B%bxywsystem.dto.AutoDTO_BX_BXYW_JC,D%bxywsystem.dto.AutoDTO_BX_BXHTXX,F%bxywsystem.dto.AutoDTO_BX_ZQRJZHTXX,H%bxywsystem.dto.AutoDTO_BX_SJDCZRXX,I%bxywsystem.dto.AutoDTO_BX_DCGKXX,J%bxywsystem.dto.AutoDTO_BX_DCMXXX,K%bxywsystem.dto.AutoDTO_BX_ZCMXXX,L%bxywsystem.dto.AutoDTO_BX_BFJNGKXX,M%bxywsystem.dto.AutoDTO_BX_BFJNMXXX"></entry>
+                <entry key="82" value="C%bxywsystem.dto.AutoDTO_BX_BXYWBSBGJL"></entry>
+                <entry key="83" value="S%bxywsystem.dto.AutoDTO_BX_BXYWSCQQJL"></entry>
+            </map>
+        </property>
+        <property name="mxOneToOneDtoNameList">
+            <list>
+            </list>
+        </property>
+    </bean>
+    
+    
+    <!-- 采集反馈报文 -->
+    <bean id="bXYWCJFKBWUploadFileService" class="bxywsystem.service.imps.BXYWCJFKBWUploadFileService" scope="prototype">
+    	<property name="statusMap">
+            <map>
+                <entry key="RPTSubmitStatus" value="1"></entry>
+                <entry key="RPTVerifyType" value="1"></entry>
+                <entry key="RPTSendType" value="1"></entry>
+            </map>
+        </property>
+    </bean>
+    
+    <bean id="bXYWCJFKBWShowListService" parent="singleObjectShowListService">
+        <property name="operationMap">
+            <map>
+                <entry key="查询" value="Select-ShowList"></entry>
+                <entry key="报文解析" value="Upload-UploadBXYWBWJX-bxywsystem.dto.BXYWCJFKBW"></entry>
+            </map>                            
+        </property>
+        <property name="linkedMap">
+            <map> 
+                <entry key="详情" value="Get-ShowListLevelBXYWCJFKBWSub-bxywsystem.dto.BXYWCJFKBWSub"></entry>
+            </map>
+        </property>
+    </bean>
+    
+    <bean id="bXYWCJFKBWSubShowListLevelBXYWCJFKBWSubService" parent="singleObjectShowListLevelService">
+        <property name="operationMap">
+            <map>
+                <entry key="查询" value="Select-ShowListLevelBXYWCJFKBWSub"></entry>
+                <entry key="返回" value="Get-ShowList-bxywsystem.dto.BXYWCJFKBW"></entry>
+            </map>
+        </property>
+        <property name="linkedMap">
+            <map> 
+            </map>
+        </property>
+    </bean>
+
+	<!-- 添加校验 -->
+    <bean id="autoDTO_BX_BXYW_JCSaveLevelAUTODTOService" parent="singleObjectSaveLevelAUTODTOService">
+    	 <property name="defaultCheckClassList">
+            <list>
+                <value>framework.services.check.PrimaryKeyRepeatCheck</value>
+                <value>framework.services.check.XMLSingleObjectContainClassInstanceCheck</value>
+                <value>framework.services.check.LogicPrimaryKeyCheck</value>
+                <value>bxywsystem.service.check.CheckForBXYW</value>
+            </list>
+        </property>
+    </bean>
+    
+    <bean id="autoDTO_BX_BXYW_JCUpdateLevelAUTODTOService" parent="singleObjectUpdateLevelAUTODTOService">
+    	 <property name="defaultCheckClassList">
+            <list>
+                <value>framework.services.check.XMLSingleObjectContainClassInstanceCheck</value>
+                <value>framework.services.check.LogicPrimaryKeyCheck</value>
+                <value>bxywsystem.service.check.CheckForBXYW</value>
+            </list>
+        </property>
+    </bean>
+    
+    <bean id="autoDTO_BX_BXYW_JCCopySaveLevelAUTODTOService" parent="singleObjectCopySaveLevelAUTODTOService">
+    	 <property name="defaultCheckClassList">
+            <list>
+                <value>framework.services.check.PrimaryKeyRepeatCheck</value>
+                <value>framework.services.check.XMLSingleObjectContainClassInstanceCheck</value>
+                <value>framework.services.check.LogicPrimaryKeyCheck</value>
+                <value>bxywsystem.service.check.CheckForBXYW</value>
+            </list>
+        </property>
+    </bean>
+    
+     <bean id="autoDTO_BX_BXYW_JCShowCheckUpdateLevelAUTODTOService" parent="singleObjectShowCheckUpdateLevelAUTODTOService">
+    	<property name="defaultCheckClassList">
+            <list>
+                <value>framework.services.check.XMLSingleObjectContainClassInstanceCheck</value>
+                <value>bxywsystem.service.check.CheckForBXYW</value>
+            </list>
+        </property>
+    </bean>
+    
+    <bean id="AutoDTO_BX_ZQRJZHTXXOtherSaveService" parent="otherSaveService">
+    	<property name="defaultCheckClassList">
+            <list>
+                <value>framework.services.check.XMLSingleObjectContainClassInstanceCheck</value>
+				<value>zxptsystem.service.check.HistorySaveCheck</value>
+				<value>bxywsystem.service.check.CheckForBXYW</value>
+            </list>
+        </property>
+    </bean>
+    
+    <bean id="AutoDTO_BX_ZQRJZHTXXSaveLevelAutoDTOMXService" parent="singleObjectSaveLevelAutoDTOMXService">
+    	<property name="defaultCheckClassList">
+            <list>
+                <value>framework.services.check.XMLSingleObjectContainClassInstanceCheck</value>
+                <value>bxywsystem.service.check.CheckForBXYW</value>
+            </list>
+        </property>
+    </bean>
+    
+     <bean id="AutoDTO_BX_ZQRJZHTXXMXCopySaveLevelAutoDTOMXService" parent="singleObjectMXCopySaveLevelAutoDTOMXService">
+    	<property name="defaultCheckClassList">
+            <list>
+                <value>framework.services.check.XMLSingleObjectContainClassInstanceCheck</value>
+                <value>bxywsystem.service.check.CheckForBXYW</value>
+            </list>
+        </property>
+    </bean>
+    
+     <bean id="AutoDTO_BX_ZQRJZHTXXMXUpdateLevelAutoDTOMXService" parent="singleObjectUpdateLevelAutoDTOMXService">
+    	<property name="defaultCheckClassList">
+            <list>
+               <value>framework.services.check.XMLSingleObjectContainClassInstanceCheck</value>
+               <value>bxywsystem.service.check.CheckForBXYW</value>
+            </list>
+        </property>
+    </bean>
+    
+     <bean id="AutoDTO_BX_ZQRJZHTXXMXShowCheckUpdateLevelAutoDTOMXService" parent="singleObjectShowCheckUpdateLevelAutoDTOMXService">
+    	<property name="defaultCheckClassList">
+            <list>
+               <value>framework.services.check.XMLSingleObjectContainClassInstanceCheck</value>
+               <value>bxywsystem.service.check.CheckForBXYW</value>
+            </list>
+        </property>
+    </bean>
+    
+ </beans>
+ 
+ 

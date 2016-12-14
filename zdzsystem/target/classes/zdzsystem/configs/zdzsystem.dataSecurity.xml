@@ -1,0 +1,92 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<dataSecurityRoot>
+	<dataSecurityMap>
+    <dataSecurityName>coresystem.dto.RoleClassInst</dataSecurityName>
+ 	  
+ 	   <dataSecurity>
+      	 <className>report.dto.TaskModelInst</className>
+	     <fieldName>instInfo</fieldName>
+      </dataSecurity>
+ 	  
+      <dataSecurity>
+      	 <className>zdzsystem.dto.AutoDTO_ZDZ_BZXRZHXX</className>
+	     <fieldName>instInfo</fieldName>
+      </dataSecurity>
+      
+       <dataSecurity>
+      	 <className>zdzsystem.dto.AutoDTO_ZDZ_CXQQNR</className>
+	     <fieldName>instInfo</fieldName>
+      </dataSecurity>
+      
+      <dataSecurity>
+      	 <className>zdzsystem.dto.AutoDTO_ZDZ_FYDFKCXCLSBNR</className>
+	     <fieldName>instInfo</fieldName>
+      </dataSecurity>
+      
+      <dataSecurity>
+      	 <className>zdzsystem.dto.AutoDTO_ZDZ_FYDFKKZCLSBNR</className>
+	     <fieldName>instInfo</fieldName>
+      </dataSecurity>
+      
+      <dataSecurity>
+      	 <className>zdzsystem.dto.AutoDTO_ZDZ_GLZLZHXX</className>
+	     <fieldName>instInfo</fieldName>
+      </dataSecurity>
+      
+      <dataSecurity>
+      	 <className>zdzsystem.dto.AutoDTO_ZDZ_GYQYXQXX</className>
+	     <fieldName>instInfo</fieldName>
+      </dataSecurity>
+      
+      <dataSecurity>
+      	 <className>zdzsystem.dto.AutoDTO_ZDZ_JRJGKZHTNR</className>
+	     <fieldName>instInfo</fieldName>
+      </dataSecurity>
+            
+       <dataSecurity>
+      	 <className>zdzsystem.dto.AutoDTO_ZDZ_JRJJFKCXHTNR</className>
+	     <fieldName>instInfo</fieldName>
+      </dataSecurity>
+      
+       <dataSecurity>
+      	 <className>zdzsystem.dto.AutoDTO_ZDZ_JRZCXX</className>
+	     <fieldName>instInfo</fieldName>
+      </dataSecurity>
+      
+      <dataSecurity>
+      	 <className>zdzsystem.dto.AutoDTO_ZDZ_JTZHXX</className>
+	     <fieldName>instInfo</fieldName>
+      </dataSecurity>
+      
+       <dataSecurity>
+      	 <className>zdzsystem.dto.AutoDTO_ZDZ_KZCLJG</className>
+	     <fieldName>instInfo</fieldName>
+      </dataSecurity>
+      
+      <dataSecurity>
+      	 <className>zdzsystem.dto.AutoDTO_ZDZ_KZQQJTNR</className>
+	     <fieldName>instInfo</fieldName>
+      </dataSecurity>
+      
+      <dataSecurity>
+      	 <className>zdzsystem.dto.AutoDTO_ZDZ_SFQZCSXX</className>
+	     <fieldName>instInfo</fieldName>
+      </dataSecurity>
+      
+      <dataSecurity>
+      	 <className>zdzsystem.dto.AutoDTO_ZDZ_YXQXX</className>
+	     <fieldName>instInfo</fieldName>
+      </dataSecurity>
+      
+       <dataSecurity>
+      	 <className>zdzsystem.dto.AutoDTO_ZDZ_ZJWLXX</className>
+	     <fieldName>instInfo</fieldName>
+      </dataSecurity>
+      
+      <dataSecurity>
+      	 <className>zdzsystem.dto.AutoDTO_ZDZ_ZXDJXX</className>
+	     <fieldName>instInfo</fieldName>
+      </dataSecurity>
+            
+    </dataSecurityMap>
+</dataSecurityRoot>

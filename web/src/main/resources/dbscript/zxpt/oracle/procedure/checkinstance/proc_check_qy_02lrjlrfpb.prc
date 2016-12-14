@@ -1,0 +1,172 @@
+create or replace procedure Proc_Check_QY_02LRJLRFPB(rt out DevelopmentFramework.packageCheck,dtDate varchar2,strInstCode  varchar2)
+is
+ tempDate  varchar2(50);
+ V_CURSQL VARCHAR2(4000);  
+begin
+tempDate := dtDate;
+IF dtDate='*****'  and strInstCode='*****'
+	THEN
+	V_CURSQL :='select
+        a.dtdate,
+        a.instinfo,
+       b.autoID
+      ,b.BCLDZB
+      ,b.BTSR
+      ,b.BTSRBT9719
+      ,b.CWFY
+      ,b.DGDXSR
+      ,b.DXLYDLR
+      ,b.DYSY
+      ,b.GLFY
+      ,b.JLR
+      ,b.JYFY
+      ,b.KGFPDLR
+      ,b.KGTZZFPDLR
+      ,b.LRGHTZ
+      ,b.LRZR
+      ,b.NCWFPLR
+      ,b.QHSY
+      ,b.QT9691
+      ,b.QT9699
+      ,b.QT9907
+      ,b.QT9909
+      ,b.QT9911
+      ,b.QT9913
+      ,b.QTTZYS
+      ,b.QTYWLR
+      ,b.QTYYQN9731
+      ,b.QTZC
+      ,b.QTZCJZ9745
+      ,b.RPTCheckType
+      ,b.RPTFeedbackType
+      ,b.RPTSendType
+      ,b.SDS
+      ,b.SSGDSY
+      ,b.TQCBJJ
+      ,b.TQFDGYJ
+      ,b.TQFDYYGJ
+      ,b.TQQYFZJJ
+      ,b.TQRYYYGJ
+      ,b.TQZGJJJFLJJ
+      ,b.TZSY
+      ,b.WFPLR
+      ,b.WFPLR9793
+      ,b.WQRDTZSS
+      ,b.YFPTGGL
+      ,b.YFYXGGL
+      ,b.YYFY
+      ,b.YYGJBK
+      ,b.YYLR
+      ,b.YYWSR
+      ,b.YYWSRC9723
+      ,b.YYWSRC9727
+      ,b.YYWSRF9725
+      ,b.YYWSRFKJSR
+      ,b.YYWZC
+      ,b.YYWZCC9735
+      ,b.YYWZCFKZC
+      ,b.YYWZCJZZC
+      ,b.YYWZCZ9737
+      ,b.ZKYCR
+      ,b.ZYYWCB
+      ,b.ZYYWCB9687
+      ,b.ZYYWLR
+      ,b.ZYYWSJJFJ
+      ,b.ZYYWSR
+      ,b.ZYYWSR9677
+      ,b.ZYYWSR9679
+      ,b.ZYYWSRJE
+      ,b.ZZZBDPTGGL
+      ,b.extend1
+      ,b.extend2
+      ,b.extend3
+      ,b.extend4
+      ,b.extend5
+      ,b.FOREIGNID
+    from QY_JKRCWBB_JC a,QY_02LRJLRFPB b
+    where a.autoid=b.foreignid';
+
+ELSE
+   V_CURSQL :='select
+        a.dtdate,
+        a.instinfo,
+       b.autoID
+      ,b.BCLDZB
+      ,b.BTSR
+      ,b.BTSRBT9719
+      ,b.CWFY
+      ,b.DGDXSR
+      ,b.DXLYDLR
+      ,b.DYSY
+      ,b.GLFY
+      ,b.JLR
+      ,b.JYFY
+      ,b.KGFPDLR
+      ,b.KGTZZFPDLR
+      ,b.LRGHTZ
+      ,b.LRZR
+      ,b.NCWFPLR
+      ,b.QHSY
+      ,b.QT9691
+      ,b.QT9699
+      ,b.QT9907
+      ,b.QT9909
+      ,b.QT9911
+      ,b.QT9913
+      ,b.QTTZYS
+      ,b.QTYWLR
+      ,b.QTYYQN9731
+      ,b.QTZC
+      ,b.QTZCJZ9745
+      ,b.RPTCheckType
+      ,b.RPTFeedbackType
+      ,b.RPTSendType
+      ,b.SDS
+      ,b.SSGDSY
+      ,b.TQCBJJ
+      ,b.TQFDGYJ
+      ,b.TQFDYYGJ
+      ,b.TQQYFZJJ
+      ,b.TQRYYYGJ
+      ,b.TQZGJJJFLJJ
+      ,b.TZSY
+      ,b.WFPLR
+      ,b.WFPLR9793
+      ,b.WQRDTZSS
+      ,b.YFPTGGL
+      ,b.YFYXGGL
+      ,b.YYFY
+      ,b.YYGJBK
+      ,b.YYLR
+      ,b.YYWSR
+      ,b.YYWSRC9723
+      ,b.YYWSRC9727
+      ,b.YYWSRF9725
+      ,b.YYWSRFKJSR
+      ,b.YYWZC
+      ,b.YYWZCC9735
+      ,b.YYWZCFKZC
+      ,b.YYWZCJZZC
+      ,b.YYWZCZ9737
+      ,b.ZKYCR
+      ,b.ZYYWCB
+      ,b.ZYYWCB9687
+      ,b.ZYYWLR
+      ,b.ZYYWSJJFJ
+      ,b.ZYYWSR
+      ,b.ZYYWSR9677
+      ,b.ZYYWSR9679
+      ,b.ZYYWSRJE
+      ,b.ZZZBDPTGGL
+      ,b.extend1
+      ,b.extend2
+      ,b.extend3
+      ,b.extend4
+      ,b.extend5
+      ,b.FOREIGNID
+    from QY_JKRCWBB_JC a,QY_02LRJLRFPB b
+    where to_Date('''||tempDate||''', ''yyyy-MM-dd'')=dtDate and  Instinfo= '''||strInstCode||''' and a.autoid=b.foreignid';
+END IF;
+OPEN rt FOR V_CURSQL;
+END;  
+

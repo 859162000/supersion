@@ -1,0 +1,372 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<reportCheckRoot>
+	<!-- 校验名称：校验根据此名称做为校验实例-->
+	<checkInstance name="Check_NCR_1_3">
+		<!-- 参数值：配置的值为默认值，也可以通过系统传递进行替换-->
+		<paramValueList>
+			<paramValue name="DTDATE" value="REPORT_DATE"></paramValue>
+			<paramValue name="strInstCode" value=""></paramValue>
+			<!--
+		    <paramValue name="strTaskRptInstID" value="000000"></paramValue>
+			  <paramValue name="strFreq" value="000000"></paramValue> 
+			  -->
+		</paramValueList>
+    <!-- 频度标志：可通过系统参数传递进行替换:1代表年报，2代表半年报，3代表季报，4代表月报，5代表日报-->
+		<freqCode value="4"></freqCode>
+    <!-- 表名：真实数据库表的名称，一个校验实例中应具备唯一性--> 
+		<checkTable procedureName="CHECK_NCR_1_3" procedureParam="DTDATE,strInstCode,rt" procedureDiscription="对公及同业客户统计表-贷款明细"
+			originTable="NCR_1_3" errorStateField="RPTCHECKTYPE" errorStateValue="3"  successStateValue="2" 
+			defaultLogicDaoBeanId="oracleProcedureResultSetDao">
+			<paramFieldList>
+				<paramField paramName="DTDATE" field="DTDATE" type="2"></paramField>
+				<paramField paramName="strInstCode" field="INSTINFO" type="1"></paramField>
+			</paramFieldList>
+
+			<checkUniqueFieldList>
+				<checkUniqueField name="AUTOID" discription="主键" originField="AUTOID"></checkUniqueField>
+			</checkUniqueFieldList>		
+
+			<checkFieldBasicList discription="表内基础性校验">
+				<!--JBL1-038	A	贷款客户名称  非空	长度大于等于2个字符。-->
+        <checkFieldBasic name="A" discription="贷款客户名称" emptyCheck="true" startLength="2" ignoreVal="*********"></checkFieldBasic>
+        <!--JBL1-039	B	贷款客户代码	非空	长度大于等于2个字符。-->
+        <checkFieldBasic name="B" discription="贷款客户代码" emptyCheck="true" startLength="2" ></checkFieldBasic>
+        <!--JBL1-040	C	贷款发放行代码		非空	17位代码。-->
+        <checkFieldBasic name="C" discription="贷款发放行代码" emptyCheck="true" startLength="17" endLength="17"></checkFieldBasic>
+        <!--JBL1-041	D	授信号码			非空	长度大于等于2个字符。-->
+        <checkFieldBasic name="D" discription="授信号码 " emptyCheck="true" startLength="2" ></checkFieldBasic>
+        <!--JBL1-042	E	贷款合同号	非空	长度大于等于2个字符。-->
+        <checkFieldBasic name="E" discription="贷款合同号 " emptyCheck="true" startLength="2" ></checkFieldBasic>
+        <!--JBL1-043	F	借据号		非空	长度大于等于2个字符。-->
+        <checkFieldBasic name="F" discription="借据号  " emptyCheck="true" startLength="2" ></checkFieldBasic>
+        <!--JBL1-044	G	发放日期	非空	8位数字字符。-->
+        <checkFieldBasic name="G" discription="发放日期 " dateCheck="true" startLength="8" endLength="8"></checkFieldBasic>
+        <!--JBL1-045	H	到期日期	非空	8位数字字符。-->
+        <checkFieldBasic name="H" discription="到期日期 " dateCheck="true"  startLength="8" endLength="8"></checkFieldBasic>
+				<!--JBL1-046	I	发放金额	decimal(,2)		数据单位为：万元。	非空。保留两位小数。-->
+				<checkFieldBasic name="I" discription="发放金额 " emptyCheck="true"  valueDecimalLength="2" ></checkFieldBasic>
+				<!--JBL1-047	J	贷款余额	decimal(,2)		数据单位为：万元。	保留两位小数。-->
+				<checkFieldBasic name="J" discription="贷款余额 " valueDecimalLength="2" ></checkFieldBasic>
+        <!--JBL1-048	K	五级分类		1位数字字符。-->
+        <checkFieldBasic name="K" discription="五级分类 " startLength="1" endLength="1" digitalCheck="true"></checkFieldBasic> 
+        <!--JBL1-049	L	贷款类型		1位数字字符。-->
+        <checkFieldBasic name="L" discription="贷款类型 " emptyCheck="true"  startLength="1" endLength="1" ></checkFieldBasic> 
+        <!--JBL1-050	M	贷款业务种类		1位数字字符。-->
+        <checkFieldBasic name="M" discription="贷款业务种类   " startLength="1" endLength="1"></checkFieldBasic> 
+        <!--JBL1-051	N	投向行业		填报该笔贷款投向行业的代码。详细填报至小类。投向境外的贷款按五个9：“99999”填报。	参见《国民经济行业分类》（GB/T 4754），及“99999”。5位字符。-->
+        <checkFieldBasic name="N" discription="投向行业" startLength="5" endLength="5" ignore="99999" ></checkFieldBasic> 
+        <!--JBL1-052	O	币种代码		填报该笔贷款对应的币种代码。	参见《币种代码表》。	非空。	3位字符。-->
+        <checkFieldBasic name="O" discription="币种代码" emptyCheck="true" startLength="3" endLength="3"></checkFieldBasic> 
+        <!--JBL1-053	P	担保方式		1位数字字符。-->
+        <checkFieldBasic name="P" discription="担保方式" startLength="1" endLength="1" digitalCheck="true"></checkFieldBasic> 
+        <!--JBL1-054	Q	欠本余额	decimal(,2)		数据单位为：万元。	保留两位小数。-->
+        <checkFieldBasic name="Q" discription="欠本余额" valueDecimalLength="2"></checkFieldBasic> 
+        <!--JBL1-055	R	欠本天数		数据单位为：天数。		大于等于0的整数。-->
+        <checkFieldBasic name="R" discription="欠本天数" digitalCheck="true"></checkFieldBasic> 
+        <!--JBL1-056	S	欠息余额	decimal(,2)		数据单位为：万元。	保留两位小数。-->
+        <checkFieldBasic name="S" discription="欠息余额"  valueDecimalLength="2" ></checkFieldBasic> 
+        <!--JBL1-057	T	欠息天数	dec		数据单位为：天数。		大于等于0的整数。-->
+        <checkFieldBasic name="T" discription="欠息天数" digitalCheck="true" ></checkFieldBasic> 
+        <!--JBL1-058	U	本期还款	decimal(,2)		数据单位为：万元。		保留两位小数。-->
+        <checkFieldBasic name="U" discription="本期还款"  valueDecimalLength="2"></checkFieldBasic> 
+        <!--JBL1-059	V	还本方式		非空。	1位数字字符。-->
+        <checkFieldBasic name="V" discription="还本方式" emptyCheck="true" digitalCheck="true" startLength="1" endLength="1"></checkFieldBasic> 
+        <!--JBL1-060	W	还息方式		非空。	1位数字字符。-->
+        <checkFieldBasic name="W" discription="还息方式" emptyCheck="true" digitalCheck="true" startLength="1" endLength="1" ></checkFieldBasic> 
+        <!--JBL1-061	X	下期还本日期		8位数字字符。-->
+        <checkFieldBasic name="X" discription="下期还本日期 " dateCheck="true" startLength="8" endLength="8" ></checkFieldBasic> 
+        <!--JBL1-062	Y	下期还本金额	decimal(,2)		数据单位为：万元。	 -->
+        <checkFieldBasic name="Y" discription="下期还本金额 "  valueDecimalLength="2"></checkFieldBasic> 
+        <!--JBL1-063	Z	下期还息日期		8位数字字符。-->
+        <checkFieldBasic name="Z" discription="下期还息日期 " dateCheck="true" startLength="8" endLength="8" ></checkFieldBasic> 
+        <!--JBL1-064	AA	下期还息金额	decimal(,2)		数据单位为：万元。-->
+        <checkFieldBasic name="AA" discription="下期还息金额 "  valueDecimalLength="2"></checkFieldBasic> 
+        <!--JBL1-065	AB	贷款发放类型		非空。	1位数字字符。-->
+        <checkFieldBasic name="AB" discription="贷款发放类型 " emptyCheck="true" digitalCheck="true" startLength="1" endLength="1"></checkFieldBasic>   
+        <!--JBL1-066	AC	减值准备	decimal(,2)		数据单位为：万元。	保留两位小数。-->
+        <checkFieldBasic name="AC" discription="减值准备 "  valueDecimalLength="2"></checkFieldBasic> 
+        <!--JBL1-067	AD	产业结构调整类型		1位数字字符。-->
+        <checkFieldBasic name="AD" discription="产业结构调整类型"  startLength="1" endLength="1" ></checkFieldBasic> 
+        <!--JBL1-068	AE	工业转型升级标识		1位数字字符。-->
+        <checkFieldBasic name="AE" discription="工业转型升级标识"  startLength="1" endLength="1" ></checkFieldBasic> 
+        <!--JBL1-069	AF	战略新兴产业类型	1位数字字符。-->
+        <checkFieldBasic name="AF" discription="战略新兴产业类型"  startLength="1" endLength="1"></checkFieldBasic>
+        <!--JBL1-070	AG	银团标识	1位数字字符。-->
+        <checkFieldBasic name="AG" discription="银团贷款标识  "  startLength="1" endLength="1"></checkFieldBasic>    
+        <!--JBL1-071	AH	支付方式	1位数字字符。-->
+        <checkFieldBasic name="AH" discription="支付方式    "  startLength="1" endLength="1"></checkFieldBasic> 
+			</checkFieldBasicList>
+			<checkFieldCaseWhenList discription="caseWhen校验">
+				<!--JBL1-048	K	五级分类		 若[贷款余额]JBL1-047-02_J大于0，则非空。-->
+				<checkFieldCaseWhen name="K" discription="五级分类" caseValue="notNull" whenValue="0" whenCompareType=">">
+					<checkFieldCaseWhenField name="J" discription="贷款余额"></checkFieldCaseWhenField>					
+				</checkFieldCaseWhen>
+				<!--JBL1-050  M	贷款业务种类  若[贷款余额]JBL1-047-02_J贷款余额大于0，或[发放日期]大于2010年2月13日，则非空。-->
+				<checkFieldCaseWhen name="M" discription="贷款业务种类" caseValue="notNull" whenValue="0" whenCompareType=">">
+					<checkFieldCaseWhenField name="J" discription="贷款余额"></checkFieldCaseWhenField>
+				</checkFieldCaseWhen>	
+        <checkFieldCaseWhen name="M" discription="贷款业务种类" caseValue="notNull" whenType="4"  whenValue="2010-02-13" whenCompareType=">">
+					<checkFieldCaseWhenField name="G" discription="发放日期"></checkFieldCaseWhenField>
+				</checkFieldCaseWhen>
+				<!--JBL1-051  N 投向行业    若[贷款余额]大于0，或[发放日期]大于2012年1月1日，则非空。-->
+				<checkFieldCaseWhen name="N" discription="投向行业" caseValue="notNull" whenValue="0" whenCompareType=">">
+					<checkFieldCaseWhenField name="J" discription="贷款余额"></checkFieldCaseWhenField>					
+				</checkFieldCaseWhen>					
+	
+        <checkFieldCaseWhen name="N" discription="投向行业" caseValue="notNull" whenType="4" whenValue="2010-01-01" whenCompareType=">">
+					<checkFieldCaseWhenField name="G" discription="发放日期"></checkFieldCaseWhenField>
+				</checkFieldCaseWhen>	
+				<!--JBL1-053 P	担保方式	若[贷款类型]为“2-贴现”，则为空。其他非空。-->		
+				<checkFieldCaseWhen name="P" discription="担保方式" caseValue="null" whenValue="2">
+					<checkFieldCaseWhenField name="L" discription="贷款类型"></checkFieldCaseWhenField>
+				</checkFieldCaseWhen>	
+				<checkFieldCaseWhen name="P" discription="担保方式" caseValue="notNull" whenType="5" whenValue="2">
+					<checkFieldCaseWhenField name="L" discription="贷款类型"></checkFieldCaseWhenField>
+				</checkFieldCaseWhen>	
+				<!--JBL1-061  X  若下期还本金额>0，则下期还本日期非空。  若下期还本金额等于0或空，则下期还本日期为空。-->
+				<checkFieldCaseWhen name="X" discription="下期还本日期" caseValue="notNull" whenValue="0" whenCompareType=">">
+					<checkFieldCaseWhenField name="Y" discription="下期还本金额"></checkFieldCaseWhenField>
+				</checkFieldCaseWhen>	
+				<checkFieldCaseWhen name="X" discription="下期还本日期" caseValue="null" whenValue="0">
+					<checkFieldCaseWhenField name="Y" discription="下期还本金额"></checkFieldCaseWhenField>
+				</checkFieldCaseWhen>	
+				<checkFieldCaseWhen name="X" discription="下期还本日期" caseValue="null" whenValue="null">
+					<checkFieldCaseWhenField name="Y" discription="下期还本金额"></checkFieldCaseWhenField>
+				</checkFieldCaseWhen>	
+				<!--JBL1-063  Z若下期还息金额>0，则下期还息日期非空。若下期还息金额等于0或空，则下期还息日期为空。-->
+				<checkFieldCaseWhen name="Y" discription="下期还息日期" caseValue="notNull" whenValue="0" whenCompareType=">">
+					<checkFieldCaseWhenField name="AA" discription="下期还息金额"></checkFieldCaseWhenField>
+				</checkFieldCaseWhen>	
+				<checkFieldCaseWhen name="Y" discription="下期还息日期" caseValue="null" whenValue="0">
+					<checkFieldCaseWhenField name="AA" discription="下期还息金额"></checkFieldCaseWhenField>
+				</checkFieldCaseWhen>	
+				<checkFieldCaseWhen name="Y" discription="下期还息日期" caseValue="null" whenValue="null">
+					<checkFieldCaseWhenField name="AA" discription="下期还息金额"></checkFieldCaseWhenField>
+				</checkFieldCaseWhen>	
+				<!--JBL1-068  AE工业转型升级标识若[贷款余额]大于0，或[发放日期]大于2012年1月1日，则非空。-->
+				<checkFieldCaseWhen name="AE" discription="工业转型升级标识" caseValue="notNull" whenValue="0" whenCompareType=">">
+					<checkFieldCaseWhenField name="J" discription="贷款余额"></checkFieldCaseWhenField>
+				</checkFieldCaseWhen>
+        <checkFieldCaseWhen name="AE" discription="工业转型升级标识" caseValue="notNull" whenType="4" whenValue="2010-01-01" whenCompareType=">">
+					<checkFieldCaseWhenField name="G" discription="发放日期"></checkFieldCaseWhenField>
+				</checkFieldCaseWhen>		  									
+				<!--LJX-077	表1 PART III中，若欠本余额大于0，则欠本天数必须大于0-->				
+	      <checkFieldCaseWhen name="R" discription="欠本天数" caseCompareType=">" caseValue="0"  whenCompareType=">" whenValue="0" >
+	         <checkFieldCaseWhenField name="Q" discription="欠本余额"  ></checkFieldCaseWhenField>
+	      </checkFieldCaseWhen>
+	      <!--LJX-078	表1 PART III中，若欠息余额大于0，则欠息天数必须大于0-->
+				<checkFieldCaseWhen name="T" discription="欠息天数" caseCompareType=">" caseValue="0"  whenCompareType=">" whenValue="0" >
+	         <checkFieldCaseWhenField name="S" discription="欠息余额"  ></checkFieldCaseWhenField>
+	      </checkFieldCaseWhen>		          
+			</checkFieldCaseWhenList>
+      <!--JBL1-048	 K	五级分类	1-正常，2-关注，3-次级，4-可疑，5-损失。单选。填写1/2/3/4/5中的一个。-->
+			<checkFieldEffectiveList discription="有效性校验">
+				<checkFieldEffective name="K" discription="五级分类">
+					<value>1</value>
+					<value>2</value>
+					<value>3</value>
+					<value>4</value>
+					<value>5</value>
+				</checkFieldEffective>
+				<!--JBL1-049	L	贷款类型	1-贷款，2-贴现，3-贸易融资，4-垫款，5-法人账户透支，6-其他。	单选。填写1/2/3/4/5/6中的1个。-->
+				<checkFieldEffective name="L" discription="贷款类型">
+					<value>1</value>
+					<value>2</value>
+					<value>3</value>
+					<value>4</value>
+					<value>5</value>
+					<value>6</value>
+				</checkFieldEffective>
+				<!--JBL1-050	M	贷款业务种类	填报该笔贷款所属的业务类型。1-流动资金贷款，2-项目贷款，3-一般固定资产贷款（除项目贷款外的固定资产贷款），4-其他贷款。	单选。填写1/2/3/4中的1个。-->
+				<checkFieldEffective name="M" discription="贷款业务种类">
+					<value>1</value>
+					<value>2</value>
+					<value>3</value>
+					<value>4</value>
+				</checkFieldEffective>
+				<!--JBL1-053	P	担保方式		1-保证，2-抵押，3-质押，4-信用。贴现不填报该指标。	单选。填写1/2/3/4中的1个。-->
+				<checkFieldEffective name="P" discription="担保方式">
+					<value>1</value>
+					<value>2</value>
+					<value>3</value>
+					<value>4</value>
+				</checkFieldEffective>
+			   <!--JBL1-059  V 还本方式  1-按月，2-按季，3-按半年，4-按年，5-到期一次还本，6-按进度还款，7-其他。单选。填写1/2/3/4/5/6/7中的1个。-->  
+				<checkFieldEffective name="V" discription="还本方式">
+					<value>1</value>
+					<value>2</value>
+					<value>3</value>
+					<value>4</value>
+					<value>5</value>
+					<value>6</value>
+					<value>7</value>
+				</checkFieldEffective>
+				 <!--JBL1-060	  W	还息方式	char()	1-按月，2-按季，3-按半年，4-按年，5-利随本清，6-其他。	单选。填写1/2/3/4/5/6中的1个。-->
+				<checkFieldEffective name="W" discription="还息方式">
+					<value>1</value>
+					<value>2</value>
+					<value>3</value>
+					<value>4</value>
+					<value>5</value>
+					<value>6</value>
+				</checkFieldEffective>	
+				<!--JBL1-065	AB	贷款发放类型	char()	1-新增，2-展期，3-借新还旧，4-重组。	单选。填写1/2/3/4中的1个。-->
+	
+				<checkFieldEffective name="AB" discription="贷款发放类型">
+					<value>1</value>
+					<value>2</value>
+					<value>3</value>
+					<value>4</value>
+				</checkFieldEffective>
+				<!--JBL1-067	AD	产业结构调整类型	char()	1-鼓励，2-限制，3-淘汰。	单选。填写1/2/3中的1个。-->
+
+				<checkFieldEffective name="AD" discription="产业结构调整类型">
+					<value>1</value>
+					<value>2</value>
+					<value>3</value>
+				</checkFieldEffective>
+				<!--JBL1-068	AE	工业转型升级标识	char()	1-是，2-否。	单选。填写1/2中的1个。-->
+				<checkFieldEffective name="AE" discription="工业转型升级标识">
+					<value>1</value>
+					<value>2</value>
+					<value>3</value>
+				</checkFieldEffective>	
+				<!--JBL1-069	AF	战略新兴产业类型	char()	1-节能环保，2-新一代信息技术，3-生物医药，4-高端装备制造，5-新能源，6-新材料，7-新能源汽车。	单选。填写1/2/3/4/5/6/7中的1个。-->
+
+				<checkFieldEffective name="AF" discription="战略新兴产业类型">
+					<value>1</value>
+					<value>2</value>
+					<value>3</value>
+					<value>4</value>
+					<value>5</value>
+					<value>6</value>
+					<value>7</value>
+				</checkFieldEffective>
+				<!--JBL1-070	AG	银团标识	char()	1-牵头行，2-参与行。	单选。填写1/2中的1个。-->
+	
+				<checkFieldEffective name="AG" discription="银团贷款标识">
+					<value>1</value>
+					<value>2</value>
+				</checkFieldEffective>	
+				<!--JBL1-071	AH	支付方式	char()	1-受托支付，2-自主支付。	单选。填写1/2中的1个。-->
+
+				<checkFieldEffective name="AH" discription="支付方式">
+					<value>1</value>
+					<value>2</value>
+				</checkFieldEffective>										
+			</checkFieldEffectiveList>
+
+			<checkFieldLineList discription="非聚合校验">
+				<!--JBL1-046	I	发放金额	decimal(,2)		数据单位为：万元。	大于0-->
+
+				<checkFieldLine compareType=">">
+					<leftFieldList><checkFieldLineField name="I" discription="发放金额"></checkFieldLineField></leftFieldList>
+					<rightFieldList><checkFieldLineField value="0"></checkFieldLineField></rightFieldList>
+				</checkFieldLine>
+				<!--JBL1-047	J	贷款余额		数据单位为：万元。		大于等于0-->
+
+				<checkFieldLine compareType=">=">
+					<leftFieldList><checkFieldLineField name="J" discription="贷款余额"></checkFieldLineField></leftFieldList>
+					<rightFieldList><checkFieldLineField value="0"></checkFieldLineField></rightFieldList>
+				</checkFieldLine>
+				<checkFieldLine compareType=">=">
+				<!--JBL1-054	Q	欠本余额	数据单位为：万元。		大于等于0-->
+
+					<leftFieldList><checkFieldLineField name="Q" discription="贷款余额"></checkFieldLineField></leftFieldList>
+					<rightFieldList><checkFieldLineField value="0"></checkFieldLineField></rightFieldList>
+				</checkFieldLine>
+				<!--JBL1-055	R	欠本天数	数据单位为：天数。		-->
+
+				<checkFieldLine compareType=">=">
+					<leftFieldList><checkFieldLineField name="R" discription="欠本天数"></checkFieldLineField></leftFieldList>
+					<rightFieldList><checkFieldLineField value="0"></checkFieldLineField></rightFieldList>
+				</checkFieldLine>  
+				<!--JBL1-056	S	欠息余额	大于等于0-->
+
+				<checkFieldLine compareType=">=">
+					<leftFieldList><checkFieldLineField name="S" discription="欠息余额"></checkFieldLineField></leftFieldList>
+					<rightFieldList><checkFieldLineField value="0"></checkFieldLineField></rightFieldList>
+				</checkFieldLine>
+				<!--JBL1-057	T	欠息天数	大于等于0的整数-->
+
+				<checkFieldLine compareType=">=">
+					<leftFieldList><checkFieldLineField name="T" discription="欠息天数"></checkFieldLineField></leftFieldList>
+					<rightFieldList><checkFieldLineField value="0"></checkFieldLineField></rightFieldList>
+				</checkFieldLine>
+				<!--JBL1-058	U	本期还款  大于等于0-->
+
+				<checkFieldLine compareType=">=">
+					<leftFieldList><checkFieldLineField name="U" discription="本期还款"></checkFieldLineField></leftFieldList>
+					<rightFieldList><checkFieldLineField value="0"></checkFieldLineField></rightFieldList>
+				</checkFieldLine>
+				<!--JBL1-062	Y	下期还本金额大于等于0-->
+
+
+				<checkFieldLine compareType=">=">
+					<leftFieldList><checkFieldLineField name="Y" discription="下期还本金额"></checkFieldLineField></leftFieldList>
+					<rightFieldList><checkFieldLineField value="0"></checkFieldLineField></rightFieldList>
+				</checkFieldLine>
+				<!--JBL1-064	 AA 下期还息金额大于等于0-->	
+
+				<checkFieldLine compareType=">=">
+					<leftFieldList><checkFieldLineField name="AA" discription="下期还息金额"></checkFieldLineField></leftFieldList>
+					<rightFieldList><checkFieldLineField value="0"></checkFieldLineField></rightFieldList>
+				</checkFieldLine>
+				<!--JBL1-066	AC	减值准备大于等于0-->
+
+				<checkFieldLine compareType=">=">
+					<leftFieldList><checkFieldLineField name="AC" discription="减值准备"></checkFieldLineField></leftFieldList>
+					<rightFieldList><checkFieldLineField value="0"></checkFieldLineField></rightFieldList>
+				</checkFieldLine>
+				<!--LJX-024	表1 PART III中[发放日期]小于等于[数据日期]-->
+				<checkFieldLine compareType=">=" fieldType="2">
+					<leftFieldList><checkFieldLineField name="DTDATE" discription="数据日期"></checkFieldLineField></leftFieldList>
+					<rightFieldList><checkFieldLineField name="G" discription="发放日期"></checkFieldLineField></rightFieldList>
+				</checkFieldLine>		
+				<!--LJX-025	表1 PART III中[到期日期]大于等于[发放日期]-->
+				<checkFieldLine compareType=">="  fieldType="2">
+					<leftFieldList><checkFieldLineField name="H" discription="到期日期"></checkFieldLineField></leftFieldList>
+					<rightFieldList><checkFieldLineField name="G" discription="发放日期"></checkFieldLineField></rightFieldList>
+				</checkFieldLine>	
+				<!--LJX-026	表1 PART III中[发放金额]大于等于[贷款余额]-->
+				<checkFieldLine compareType=">=">
+					<leftFieldList><checkFieldLineField name="I" discription="发放金额"></checkFieldLineField></leftFieldList>
+					<rightFieldList><checkFieldLineField name="J" discription="贷款余额"></checkFieldLineField></rightFieldList>
+				</checkFieldLine>	
+				<!--LJX-027	表1 PART III中[欠本余额]小于等于[贷款余额] -->
+				<checkFieldLine compareType=">=">
+					<leftFieldList><checkFieldLineField name="J" discription="贷款余额"></checkFieldLineField></leftFieldList>
+					<rightFieldList><checkFieldLineField name="Q" discription="欠本余额"></checkFieldLineField></rightFieldList>
+				</checkFieldLine>	
+				<!--LJX-028	表1 PART III中[欠本天数]小于等于[数据日期]-[发放日期]+1 -->
+        	
+				<!--LJX-029	表1 PART III中[欠息天数]小于等于[数据日期]-[发放日期] -->
+	
+				<!--LJX-030	表1 PART III中[下期还本日期]大于[数据日期]；小于等于[到期日期] -->
+				<checkFieldLine compareType=">="  fieldType="2">
+					<leftFieldList><checkFieldLineField name="X" discription="下期还本日期"></checkFieldLineField></leftFieldList>
+					<rightFieldList><checkFieldLineField name="DTDATE" discription="数据日期"></checkFieldLineField></rightFieldList>
+				</checkFieldLine>	
+				<checkFieldLine compareType=">="  fieldType="2">
+					<leftFieldList><checkFieldLineField name="H" discription="到期日期"></checkFieldLineField></leftFieldList>
+					<rightFieldList><checkFieldLineField name="X" discription="下期还本日期"></checkFieldLineField></rightFieldList>
+				</checkFieldLine>	
+				<!--LJX-031	表1 PART III中[下期还本金额]小于等于[贷款余额] -->
+				<checkFieldLine compareType=">=">
+					<leftFieldList><checkFieldLineField name="J" discription="贷款余额"></checkFieldLineField></leftFieldList>
+					<rightFieldList><checkFieldLineField name="Y" discription="下期还本金额"></checkFieldLineField></rightFieldList>
+				</checkFieldLine>
+				<!--LJX-032	表1 PART III中[下期还息日期]大于[数据日期]；小于等于[到期日期] -->
+				<checkFieldLine compareType=">="  fieldType="2">
+					<leftFieldList><checkFieldLineField name="Z" discription="下期还息日期"></checkFieldLineField></leftFieldList>
+					<rightFieldList><checkFieldLineField name="DTDATE" discription="数据日期"></checkFieldLineField></rightFieldList>
+				</checkFieldLine>
+				<checkFieldLine compareType=">="  fieldType="2">
+					<leftFieldList><checkFieldLineField name="H" discription="到期日期"></checkFieldLineField></leftFieldList>
+					<rightFieldList><checkFieldLineField name="Z" discription="下期还息日期"></checkFieldLineField></rightFieldList>
+				</checkFieldLine>
+				<!--LJX-033	表1 PART III中[贷款余额]+[欠本余额]+[欠息余额]大于0-->
+			</checkFieldLineList>
+			</checkTable>
+	</checkInstance>
+</reportCheckRoot>

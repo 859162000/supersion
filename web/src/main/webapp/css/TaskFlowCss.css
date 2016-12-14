@@ -1,0 +1,148 @@
+.Suit_Ico_Div
+{
+	width:80px; 
+	height:75px; 
+	text-align:center;
+	margin-left:10px;
+	margin-top:10px;
+	cursor:pointer;
+	float:left;
+	position:relative;
+	
+}
+.Suit_Ico_Div:hover
+{
+	box-shadow:0px 0px 10px 2px black;
+	border-radius:5px;
+	background-color:Transparent;
+	font-weight:bolder;
+	background-color:White;
+}
+.Suit_Ico_Div div
+{
+	 font-family:Î¢ÈíÑÅºÚ;
+	 font-size:12px;
+	 color:Black;
+	 /*margin-left:auto;
+	 margin-right:auto;*/
+}
+.Task_Ico_Div
+{
+	width:250px; 
+	height:60px; 
+	text-align:center;
+	margin-left:20px;
+	margin-right:20px;
+	margin-top:10px;
+	cursor:pointer;
+	float:left;
+	margin-bottom:10px;
+	border-radius:2px;
+	/*border:solid 1px #CCCCCC;
+	box-shadow:0px 0px 10px black;*/
+    border-top: 1px solid #808080;
+    border-right: 1px solid #D4D0C8;
+    border-bottom: 1px solid #D4D0C8;
+    border-left: 1px solid #808080;
+    /*dotted/dashed/solid*/
+
+}
+.Task_Ico_Div:hover
+{
+	box-shadow: 0 0px 5px 0px black;
+	border-radius: 2px;
+	background-color: #F7F7F7
+}
+.Task_Ico_Div img
+{
+	float:left;
+}
+.Task_Ico_Div div
+{
+	font-family: Î¢ÈíÑÅºÚ;
+	font-size: 11px;
+	color: Black;
+	float: left;
+	width: 185px;
+	height: 16px;
+	text-align: left;
+	line-height: 20px;
+	padding-left: 5px;
+	
+}
+.Task_Ico_Div div:hover
+{
+	color:Blue;
+	/*font-weight:bolder;*/
+}
+.Suit_Ico_Select_Div
+{
+	margin-top:5px;
+	margin-left:10px;
+	width:80px; 
+	height:80px; 
+	float:left;
+	margin-top:20px;
+	text-align:center;
+	position:relative;
+	padding-top:5px;
+	cursor:pointer;
+	
+}
+.Suit_Ico_Select_Div:hover
+{
+	box-shadow:0px 0px 2px 1px black;
+	border-radius:5px;
+	background-color:Transparent;
+	font-weight:bolder;
+	background-color:White;
+	
+}
+
+.Suit_Ico_Select_Div div
+{
+	 font-family:Î¢ÈíÑÅºÚ;
+	 font-size:12px;
+	 color:Black;
+	 width:80px;
+}
+.Suit_Ico_Select_Div input
+{
+	 position:absolute;
+	 top:40px;
+	 left:50px;
+
+}
+.TaskStatusBar
+{
+	height:26px;
+	width: 150px;
+	float: left;
+	margin-top:2px;
+    text-align:center;
+    line-height:26px;
+	font-family:Î¢ÈíÑÅºÚ;
+	font-size:12px;
+	margin-left:5px;
+}
+.TaskDateTimeBar
+{
+	height:20px;
+	width: 200px;
+	float: left;
+	margin-top:2px;
+	line-height:20px;
+	font-family:Î¢ÈíÑÅºÚ;
+	font-size:12px;
+	margin-left:5px;
+}
+.TaskBarText
+{
+	height:30px;
+	width: auto;
+	float: left;
+	line-height:30px;
+	font-family:Î¢ÈíÑÅºÚ;
+	font-size:12px;
+	margin-left:10px;
+}

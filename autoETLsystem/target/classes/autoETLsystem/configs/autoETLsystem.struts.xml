@@ -1,0 +1,144 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE struts PUBLIC "-//Apache Software Foundation//DTD Struts Configuration 2.1//EN" "http://struts.apache.org/dtds/struts-2.1.dtd">
+<struts>
+ 
+ <package name="autoETLsystem" extends="framework.default" namespace="/framework">   
+     
+      <action name="ShowActivityNodeForSqlLevelActivityNodeaShow-EmptyEntity" class="showActivityNodeForSqlAction">
+            <result name="success">/Framework/ShowSaveOrUpdate.jsp</result>
+	  </action> 
+	  
+	   <action name="ShowActivityNodeForSqlLevelActivityNodeaTableShow-EmptyEntity" class="showActivityNodeForTableSqlAction">
+            <result name="success">/Framework/ShowSaveOrUpdate.jsp</result>
+	  </action> 
+	  
+	  <action name="ShowActivityNodeForCVLevelActivityNodeaCVShow-EmptyEntity" class="showActivityNodeForCVSqlAction">
+            <result name="success">/Framework/ShowSaveOrUpdate.jsp</result>
+	  </action>
+
+		<action name="ExcuteWorkflow-autoETLsystem.dto.AutoETL_Workflow" class="excuteWorkflowAction">
+            <result name="success" type="redirectAction">
+            	<param name="message">${serviceResult.message}</param>
+			    <param name="actionName">ShowAlertMessage.action</param>
+			</result>
+			<result name="error" type="redirectAction">
+			    <param name="actionName">ShowAlertMessage</param>
+			    <param name="message">${serviceResult.message}</param>
+			</result>
+		</action>
+		
+		<action name="ExcuteDatabaseLevelDatabase-autoETLsystem.dto.AutoETL_Database" class="excuteDatabaseAction">
+            <result name="success" type="redirectAction">
+            	<param name="message">${serviceResult.message}</param>
+			    <param name="actionName">ShowAlertMessage.action</param>
+			</result>
+			<result name="error" type="redirectAction">
+			    <param name="actionName">ShowAlertMessage</param>
+			    <param name="message">${serviceResult.message}</param>
+			</result>
+		</action>
+		<action name="ExcuteDatabaseLevelTable-extend.dto.ReportModel_Field" class="excuteDatabaseAction">
+            <result name="success" type="redirectAction">
+            	<param name="message">${serviceResult.message}</param>
+			    <param name="actionName">ShowAlertMessage.action</param>
+			</result>
+			<result name="error" type="redirectAction">
+			    <param name="actionName">ShowAlertMessage</param>
+			    <param name="message">${serviceResult.message}</param>
+			</result>
+		</action>
+		<action name="ExcuteDatabaseLevelProcedure-extend.dto.AutoETL_Procedure" class="excuteDatabaseAction">
+            <result name="success" type="redirectAction">
+            	<param name="message">${serviceResult.message}</param>
+			    <param name="actionName">ShowAlertMessage.action</param>
+			</result>
+			<result name="error" type="redirectAction">
+			    <param name="actionName">ShowAlertMessage</param>
+			    <param name="message">${serviceResult.message}</param>
+			</result>
+		</action>
+		
+		<action name="Programming*" class="programmingAction">
+            <result name="success" type="redirectAction">
+            	<param name="message">${serviceResult.message}</param>
+			    <param name="actionName">ShowAlertMessage.action</param>
+			</result>
+			<result name="error" type="redirectAction">
+			    <param name="actionName">ShowAlertMessage</param>
+			    <param name="message">${serviceResult.message}</param>
+			</result>
+		</action>
+		
+		<action name="TestConnection*" class="testConnectionAction">
+            <result name="success" type="redirectAction">
+            	<param name="message">${serviceResult.message}</param>
+			    <param name="actionName">ShowAlertMessage.action</param>
+			</result>
+			<result name="error" type="redirectAction">
+			    <param name="actionName">ShowAlertMessage</param>
+			    <param name="message">${serviceResult.message}</param>
+			</result>
+		</action>
+		<action name="DDLETLLevelDDL-extend.dto.ReportModel_Table" class="createETLTableAction">
+            <result name="success" type="redirectAction">
+	            <param name="message">${serviceResult.message}</param>
+	            <param name="actionName">ShowAlertMessage</param>
+			</result>
+			<result name="error" type="redirectAction">
+			    <param name="actionName">ShowAlertMessage</param>
+			    <param name="message">${serviceResult.message}</param>
+			</result>
+		</action>
+		
+		<action name="CreateSameSameMappingLevelActivityNodeForCT-autoETLsystem.dto.AutoETL_ActivityNodeForCT" class="createSameSameMappingAction">
+            <result name="success" type="redirectAction">
+            	<param name="message">${serviceResult.message}</param>
+			    <param name="actionName">ShowAlertMessage.action</param>
+			</result>
+			<result name="error" type="redirectAction">
+			    <param name="actionName">ShowAlertMessage</param>
+			    <param name="message">${serviceResult.message}</param>
+			</result>
+		</action>
+		<action name="CreateSameSameForViewMappingLevelActivityNodeForCV-autoETLsystem.dto.AutoETL_ActivityNodeForCV" class="createSameSameForViewMappingAction">
+            <result name="success" type="redirectAction">
+            	<param name="message">${serviceResult.message}</param>
+			    <param name="actionName">ShowAlertMessage.action</param>
+			</result>
+			<result name="error" type="redirectAction">
+			    <param name="actionName">ShowAlertMessage</param>
+			    <param name="message">${serviceResult.message}</param>
+			</result>
+		</action>
+		
+		<action name="CreateAllFieldExportLevelActivityNodeForFile-autoETLsystem.dto.AutoETL_ActivityNodeForFile" class="createAllFieldExportAction">
+            <result name="success" type="redirectAction">
+            	<param name="message">${serviceResult.message}</param>
+			    <param name="actionName">ShowAlertMessage.action</param>
+			</result>
+			<result name="error" type="redirectAction">
+			    <param name="actionName">ShowAlertMessage</param>
+			    <param name="message">${serviceResult.message}</param>
+			</result>
+		</action>
+		
+		<action name="DDLAutoETL-extend.dto.ReportModel_Table" class="createAutoETLTableAction">
+            <result name="success" type="redirectAction">
+	            <param name="message">${serviceResult.message}</param>
+	            <param name="actionName">ShowAlertMessage</param>
+			</result>
+			<result name="error" type="redirectAction">
+			    <param name="actionName">ShowAlertMessage</param>
+			    <param name="message">${serviceResult.message}</param>
+			</result>
+		</action>
+		
+	<action name="ShowWorkFlow*-*" class="showWorkFlowAction">
+		<result name="success">/Framework/ShowList.jsp</result>
+		<param name="redirectActionName">ShowList{1}-{2}</param>
+	    <param name="redirectActionNamespace">/framework</param>
+	</action>
+	
+	</package>
+	<include file="report/configs/report.struts.xml"/>
+</struts>    

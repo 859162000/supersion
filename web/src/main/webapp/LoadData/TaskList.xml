@@ -1,0 +1,63 @@
+<?xml version="1.0"?>
+<desktop>
+	<desk_ico id ="d01" value="大集中月报第一批" ico="1.png" type="path" scr="LoadMeum.htm" des="描述信息">
+		<Lv_1 id ="d0101" value="白鹭分行" ico="2.png" type="path"  scr="LoadMeum.htm" des="描述信息">
+			<Lv_2 id ="d010101" value="阿狸支行" ico="3.png" type="funct" scr="LoadMeum.htm" des="描述信息"></Lv_2>
+			<Lv_2 id ="d010102" value="速度支行" ico="4.png" type="funct" scr="LoadMeum.htm" des="描述信息"></Lv_2>
+			<Lv_2 id ="d010103" value="涤纶支行" ico="5.png" type="funct" scr="LoadMeum.htm" des="描述信息"></Lv_2>
+			<Lv_2 id ="d010104" value="阿狸支行" ico="6.png" type="funct" scr="LoadMeum.htm" des="描述信息"></Lv_2>
+			<Lv_2 id ="d010105" value="阿狸支行" ico="7.png" type="funct" scr="LoadMeum.htm" des="描述信息"></Lv_2>
+			<Lv_2 id ="d010106" value="阿狸支行" ico="8.png" type="funct" scr="LoadMeum.htm" des="描述信息"></Lv_2>
+			<Lv_2 id ="d010107" value="阿狸支行" ico="9.png" type="funct" scr="LoadMeum.htm" des="描述信息"></Lv_2>
+			<Lv_2 id ="d010108" value="阿狸支行" ico="10.png" type="funct" scr="LoadMeum.htm" des="描述信息"></Lv_2>
+			<Lv_2 id ="d010109" value="阿狸支行" ico="11.png" type="funct" scr="LoadMeum.htm" des="描述信息"></Lv_2>
+			<Lv_2 id ="d010110" value="阿狸支行" ico="12.png" type="funct" scr="LoadMeum.htm" des="描述信息"></Lv_2>
+			<Lv_2 id ="d010111" value="阿狸支行" ico="13.png" type="funct" scr="LoadMeum.htm" des="描述信息"></Lv_2>
+			<Lv_2 id ="d010112" value="阿狸支行" ico="14.png" type="funct" scr="LoadMeum.htm" des="描述信息"></Lv_2>
+		</Lv_1>
+		<Lv_1 id ="d0102" value="吴淞口分行" ico="15.png" type="funct" scr="LoadMeum.htm" des="描述信息"></Lv_1>
+		<Lv_1 id ="d0103" value="跨世纪分行" ico="22.png" type="funct" scr="LoadMeum.htm" des="描述信息"></Lv_1>
+	</desk_ico>
+	<desk_ico id ="d02" value="大集中月报第二批" ico="16.png" type="path" scr="LoadMeum.htm" des="描述信息">
+		<Lv_1 id ="d0201" value="涤纶支行" ico="21.png" type="funct" scr="LoadMeum.htm" des="描述信息"></Lv_1>
+		<Lv_1 id ="d0202" value="阿狸支行" ico="12.png" type="funct" scr="LoadMeum.htm" des="描述信息"></Lv_1>
+		<Lv_1 id ="d0203" value="三个数支行" ico="17.png" type="funct" scr="LoadMeum.htm" des="描述信息"></Lv_1>
+		<Lv_1 id ="d0204" value="阿狸支行" ico="20.png" type="funct" scr="LoadMeum.htm" des="描述信息"></Lv_1>
+	</desk_ico>
+	<desk_ico id ="d03" value="1104月报第一批" ico="18.png" type="path" scr="LoadMeum.htm" des="描述信息">
+		<Lv_1 id ="d0301" value="阿狸支行" ico="19.png" type="funct" scr="LoadMeum.htm" des="描述信息"></Lv_1>
+		<Lv_1 id ="d0302" value="阿狸支行" ico="20.png" type="funct" scr="LoadMeum.htm" des="描述信息"></Lv_1>
+		<Lv_1 id ="d0303" value="阿狸支行" ico="21.png" type="funct" scr="LoadMeum.htm" des="描述信息"></Lv_1>
+		<Lv_1 id ="d0304" value="阿狸支行" ico="20.png" type="funct" scr="LoadMeum.htm" des="描述信息"></Lv_1>
+	</desk_ico>
+	<desk_ico id ="d04" value="1104月报第二批" ico="22.png" type="path" scr="LoadMeum.htm" des="描述信息">
+		<Lv_1 id ="d0401" value="阿狸支行" ico="23.png" type="funct" scr="LoadMeum.htm" des="描述信息"></Lv_1>
+		<Lv_1 id ="d0402" value="阿狸支行" ico="24.png" type="funct" scr="LoadMeum.htm" des="描述信息"></Lv_1>
+		<Lv_1 id ="d0403" value="阿狸支行" ico="25.png" type="funct" scr="LoadMeum.htm" des="描述信息"></Lv_1>
+		<Lv_1 id ="d0404" value="阿狸支行" ico="26.png" type="funct" scr="LoadMeum.htm" des="描述信息"></Lv_1>
+		<Lv_1 id ="d0405" value="阿狸支行" ico="27.png" type="funct" scr="LoadMeum.htm" des="描述信息"></Lv_1>
+	</desk_ico>
+	<desk_ico id ="d05" value="1104月报第三批" ico="28.png" type="path" scr="LoadMeum.htm" des="描述信息">
+		<Lv_1 id ="d0501" value="阿狸支行" ico="29.png" type="funct" scr="LoadMeum.htm" des="描述信息"></Lv_1>
+		<Lv_1 id ="d0502" value="阿狸支行" ico="30.png" type="funct" scr="LoadMeum.htm" des="描述信息"></Lv_1>
+		<Lv_1 id ="d0503" value="阿狸支行" ico="1.png" type="funct" scr="LoadMeum.htm" des="描述信息"></Lv_1>
+		<Lv_1 id ="d0504" value="阿狸支行" ico="21.png" type="funct" scr="LoadMeum.htm" des="描述信息"></Lv_1>
+		<Lv_1 id ="d0505" value="阿狸支行" ico="22.png" type="funct" scr="LoadMeum.htm" des="描述信息"></Lv_1>
+		<Lv_1 id ="d0506" value="阿狸支行" ico="23.png" type="funct" scr="LoadMeum.htm" des="描述信息"></Lv_1>
+	</desk_ico>
+	<desk_ico id ="d06" value="EAST月报第一批" ico="6.png" type="path" scr="LoadMeum.htm" des="描述信息">
+		<Lv_1 id ="d0601" value="阿狸支行" ico="21.png" type="funct" scr="LoadMeum.htm" des="描述信息"></Lv_1>
+		<Lv_1 id ="d0602" value="阿狸支行" ico="12.png" type="funct" scr="LoadMeum.htm" des="描述信息"></Lv_1>
+		<Lv_1 id ="d0603" value="阿狸支行" ico="2.png" type="funct" scr="LoadMeum.htm" des="描述信息"></Lv_1>
+	</desk_ico>
+	<desk_ico id ="d07" value="新客服风险月报第一批" ico="7.png" type="path" scr="LoadMeum.htm" des="描述信息">
+		<Lv_1 id ="d0701" value="阿狸支行" ico="14.png" type="funct" scr="LoadMeum.htm" des="描述信息"></Lv_1>
+		<Lv_1 id ="d0702" value="阿狸支行" ico="18.png" type="funct" scr="LoadMeum.htm" des="描述信息"></Lv_1>
+	</desk_ico>
+	<desk_ico id ="d08" value="AML月报第一批" ico="8.png" type="path" scr="LoadMeum.htm" des="描述信息">
+		<Lv_1 id ="d0801" value="阿狸支行" ico="19.png" type="funct" scr="LoadMeum.htm" des="描述信息"></Lv_1>
+		<Lv_1 id ="d0802" value="阿狸支行" ico="12.png" type="funct" scr="LoadMeum.htm" des="描述信息"></Lv_1>
+		<Lv_1 id ="d0803" value="阿狸支行" ico="20.png" type="funct" scr="LoadMeum.htm" des="描述信息"></Lv_1>
+	</desk_ico>
+
+</desktop>

@@ -1,0 +1,156 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans
+	xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns:p="http://www.springframework.org/schema/p"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-3.0.xsd">
+    
+	<bean id="baseDao" class="framework.dao.imps.BaseHibernateDao" abstract="true">
+    	<property name="sessionFactory">
+			<ref bean="sessionFactory" />
+		</property>  	
+     </bean>
+     
+    <bean id="transactionManager" class="org.springframework.orm.hibernate3.HibernateTransactionManager">
+		<property name="sessionFactory">
+			<ref bean="sessionFactory" />
+		</property>
+	</bean>
+	
+    <bean id="transactionInterceptor" class="org.springframework.transaction.interceptor.TransactionInterceptor"> 
+        <property name="transactionManager"> 
+           <ref bean="transactionManager" /> 
+        </property> 
+        <property name="transactionAttributes"> 
+           <props> 
+             <prop key="paramVoidResultExecute">PROPAGATION_REQUIRED</prop> 
+           </props> 
+        </property> 
+    </bean> 
+    
+    <bean id="autoproxy" class="org.springframework.aop.framework.autoproxy.BeanNameAutoProxyCreator"> 
+      <property name="beanNames"> 
+         <list> 
+            <value>*Dao</value> 
+         </list> 
+      </property> 
+      <property name="interceptorNames"> 
+         <list> 
+            <value>transactionInterceptor</value> 
+         </list> 
+      </property> 
+    </bean> 
+    
+     <bean id="singleObjectSaveDao" class="framework.dao.imps.SingleObjectSaveDao" parent="baseDao" scope="prototype">
+     </bean>
+     <bean id="singleObjectSaveAllDao" class="framework.dao.imps.SingleObjectSaveAllDao" parent="baseDao" scope="prototype">
+     </bean>
+     
+     <bean id="singleObjectSaveOrUpdateAllDao" class="framework.dao.imps.SingleObjectSaveOrUpdateAllDao" parent="baseDao" scope="prototype">
+     </bean>
+
+     <bean id="singleObjectFindAllDao" class="framework.dao.imps.SingleObjectFindAllDao" parent="baseDao" scope="prototype">
+     </bean>
+
+     <bean id="singleObjectFindByIdDao" class="framework.dao.imps.SingleObjectFindByIdDao" parent="baseDao" scope="prototype">
+     </bean>
+
+     <bean id="singleObjectUpdateDao" class="framework.dao.imps.SingleObjectUpdateDao" parent="baseDao" scope="prototype">
+     </bean>
+     
+     <bean id="singleObjectUpdateListDao" class="framework.dao.imps.SingleObjectUpdateListDao" parent="baseDao" scope="prototype">
+     </bean>
+     
+     <bean id="singleObjectDeleteByIdDao" class="framework.dao.imps.SingleObjectDeleteByIdDao" parent="baseDao" scope="prototype">
+     </bean>
+
+     <bean id="singleObjectDeleteListByIdListDao" class="framework.dao.imps.SingleObjectDeleteListByIdListDao" parent="baseDao" scope="prototype">
+     </bean>
+     
+     <bean id="singleObjectDeleteByCriteriaDao" class="framework.dao.imps.SingleObjectDeleteByCriteriaDao" parent="baseDao" scope="prototype">
+     </bean>
+     
+     <bean id="singleObjectFindByCriteriaDao" class="framework.dao.imps.SingleObjectFindByCriteriaDao" parent="baseDao" scope="prototype">
+     </bean>
+     
+     <bean id="singleObjectFindByPageCriteriaDao" class="framework.dao.imps.SingleObjectFindByPageCriteriaDao" parent="baseDao" scope="prototype">
+     </bean>
+
+     <bean id="singleObjectUpdateFieldDao" class="framework.dao.imps.SingleObjectUpdateFieldDao" parent="baseDao" scope="prototype">
+     </bean>
+     
+      <bean id="createSqlQueryListMapDao" class="framework.dao.imps.CreateSqlQueryListMapDao" parent="baseDao" scope="prototype">
+     </bean>
+     
+      <bean id="sqlQueryListDao" class="framework.dao.imps.SqlQueryListDao" parent="baseDao" scope="prototype">
+     </bean>
+     
+     <bean id="oracleProcedureListMapDao" class="framework.dao.imps.OracleProcedureListMapDao" parent="baseDao" scope="prototype">
+     </bean>
+     
+     <bean id="sqlserverProcedureListMapDao" class="framework.dao.imps.SqlserverProcedureListMapDao" parent="baseDao" scope="prototype">
+     </bean>
+     
+     <bean id="sQLExecVoidResultDao" class="framework.dao.imps.SQLExecVoidResultDao" parent="baseDao" scope="prototype">
+     </bean>
+     
+     <bean id="singleObjectSaveTableDao" class="framework.dao.imps.SingleObjectSaveTableDao" parent="baseDao" scope="prototype">
+     </bean>
+     
+     <bean id="singleObjectFindByPageCriteriaTableDao" class="framework.dao.imps.SingleObjectFindByPageCriteriaTableDao" parent="baseDao" scope="prototype">
+     </bean>
+     
+     <bean id="createSqlQueryListMapTableDao" class="framework.dao.imps.CreateSqlQueryListMapTableDao" parent="baseDao" scope="prototype">
+     </bean>
+    
+     <bean id="createQueryScrollableResultDao" class="framework.dao.imps.CreateQueryScrollableResultDao" parent="baseDao" scope="prototype">
+     </bean>
+     
+     <bean id="createSqlQueryResultSetDao" class="framework.dao.imps.CreateSqlQueryResultSetDao" parent="baseDao" scope="prototype">
+     </bean>
+     
+     <bean id="excuteProcedureDao" class="framework.dao.imps.ExcuteProcedureDao" parent="baseDao" scope="prototype">
+     </bean>
+     
+     <bean id="excuteSqlDao" class="framework.dao.imps.ExcuteSqlDao" parent="baseDao" scope="prototype">
+     </bean>
+     
+     <bean id="sqlserverProcedureResultSetDao" class="framework.dao.imps.SqlserverProcedureResultSetDao" parent="baseDao" scope="prototype">
+     </bean>
+     
+     <bean id="oracleProcedureResultSetDao" class="framework.dao.imps.OracleProcedureResultSetDao" parent="baseDao" scope="prototype">
+     </bean>
+     
+     <bean id="excuteDialectSqlDao" class="framework.dao.imps.ExcuteDialectSqlDao" parent="baseDao" scope="prototype">
+     </bean>
+     
+     <bean id="oracleSqlProcedureResultSetDao" class="framework.dao.imps.OracleSqlProcedureResultSetDao" parent="baseDao" scope="prototype">
+     </bean>
+     
+     <bean id="sqlserverSqlProcedureResultSetDao" class="framework.dao.imps.SqlserverSqlProcedureResultSetDao" parent="baseDao" scope="prototype">
+     </bean>
+     <bean id="queryDataBaseEditionDao" class="framework.dao.imps.QueryDataBaseEditionDao" parent="baseDao" scope="prototype">
+     </bean>
+     
+     <bean id="singleObjectFindCountByCriteriaDao" class="framework.dao.imps.SingleObjectFindCountByCriteriaDao" parent="baseDao" scope="prototype">
+     </bean>
+     
+     <bean id="excuteProcedureContainEmptyValueDao" class="framework.dao.imps.ExcuteProcedureContainEmptyValueDao" parent="baseDao" scope="prototype">
+     </bean>
+     
+     <bean id="updateSqlListDao" class="framework.dao.imps.UpdateSqlListDao" parent="baseDao" scope="prototype">
+     </bean>
+     
+      <bean id="db2ProcedureListMapDao" class="framework.dao.imps.Db2ProcedureListMapDao" parent="baseDao" scope="prototype">
+     </bean>
+     <bean id="db2ProcedureResultSetDao" class="framework.dao.imps.Db2ProcedureResultSetDao" parent="baseDao" scope="prototype">
+     </bean>
+     <bean id="singleObjectDeleteByObjectDao" class="framework.dao.imps.SingleObjectDeleteByObjectDao" parent="baseDao" scope="prototype">
+     </bean>
+     
+     <bean id="hqlQueryListDao" class="framework.dao.imps.HqlQueryListDao" parent="baseDao" scope="prototype">
+     </bean>
+      <bean id="clearSessionCacheByEntitysDao" class="framework.dao.imps.ClearSessionCacheEntitiesDao" parent="baseDao" scope="prototype">
+     </bean>
+     
+</beans>

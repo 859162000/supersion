@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans
+	xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns:p="http://www.springframework.org/schema/p"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-3.0.xsd">
+      <bean id="exportXmlFileAllAction" class="framework.actions.imps.BaseSTModelDrivenConditionAction" scope="prototype">
+        <property name="defaultServiceBeanId" value="exportXmlFileALLService"></property>
+    </bean>
+      <bean id="exportXmlFileByOrgAction" class="framework.actions.imps.BaseSTModelDrivenConditionAction" scope="prototype">
+        <property name="defaultServiceBeanId" value="exportXmlFileByOrgService"></property>
+    </bean>
+    <bean id="exportXmlFileBySingleAction" class="framework.actions.imps.BaseSTModelDrivenConditionAction" scope="prototype">
+        <property name="defaultServiceBeanId" value="exportXmlFileBySingleService"></property>
+    </bean>
+    
+     <!-- TopN数据汇总任务树 -->
+    <bean id="taskTopNShowTreeAction" class="framework.actions.imps.BaseSTModelDrivenAction" scope="prototype">
+        <property name="defaultServiceBeanId" value="taskFlowShowTreeTopNService"></property>
+    </bean>
+    
+</beans>

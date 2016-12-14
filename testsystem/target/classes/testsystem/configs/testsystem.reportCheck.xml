@@ -1,0 +1,398 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<!-- 
+1 所有boolean类型值，如果不填则默认为false
+2 fieldName如有关联表校验，加表名前缀，例如Table1.field1，以主外键关联
+3 特殊值：notNull代表非空 、null代表空、nullDate代表空时间、dataDate代表数据日期、previousDataDate代表上期数据日期、yearEndDate代表年末日期、halfYearEndDate代表半年末日期、yearEndDate代表年末日期、seasonEndDate代表季末日期、monthEndDate代表月末日期、max代表正无穷、-max代表负无穷
+4 每个同级校验类型结点作为一种校验类型，下一级结点作为一条具体的校验项
+5 checkType每条校验项都有的校验类型，checkType不填或者等于1代表强制校验，checkType等于2代表提示校验，checkType等于3代表备注校验
+6 表内校验概念指具体的一张数据库实体表，而非几张表组合的大表
+7 procedureName代表存储过程的名字，procedureParam 代表存储过程的参数，procedureDiscription 代表存储过程的描述。
+8 程序对存储过程的调用，当参数不匹配或存储过程不存在时，程序将报错，根据具体报错信息对参数或存储过程进行更正。
+-->
+
+<reportCheckRoot> 
+
+
+
+    <!-- 校验名称，校验根据此名称做为校验实例 -->   
+	<checkInstance name="CustomRisk">
+	<!-- 参数值，配置的值为默认值，也可以通过系统传递进行替换 -->
+	  <paramValueList>
+	    <paramValue name="dtDate" value="2013-12-09"></paramValue>
+	  </paramValueList>
+
+	  <!-- 1.授信情况表   -->                         
+      <checkTable procedureName="CHECK_12_E201"  procedureParam="dtDate,rs" procedureDiscription="E201授信情况表" >    
+  		<!-- 参数字段，如果不配置此项为全表数据校验 -->
+        <!-- type不填或则等于1代表字符，等于2代表时间 -->
+  		<paramFieldList>
+  		  <paramField paramName="dtDate" type="1"></paramField>
+  		</paramFieldList>
+  		
+        <!-- 唯一性字段组合， 可理解为联合主键，用于未作说明的主外键关联-->
+        <checkUniqueFieldList>
+          <checkUniqueField name="E201202"></checkUniqueField>
+          <checkUniqueField name="E201206"></checkUniqueField>         	
+        </checkUniqueFieldList>
+       
+        <!-- 
+                                表内基础校验，据被设置的字段每条数都需要校验
+            emptyCheck代表为空校验，digitalCheck代表数字校验，dateCheck代表日期校验 ，upperCheck代表全大写字母校验，chnCheck代表汉字校验，可扩展其他特殊校验
+            startLength代表起始长度，endLength代表结束长度
+            valueDecimalLength的值代表小数位数的校验
+        -->
+        <checkFieldBasicList>
+          <checkFieldBasic name="E201200" discription="客户类型" emptyCheck="true"  digitalCheck="true" startLength="1" endLength="1"></checkFieldBasic>
+          <checkFieldBasic name="E201201" discription="客户名称" emptyCheck="true" startLength="2"></checkFieldBasic>
+          <checkFieldBasic name="E201202" discription="客户代码" emptyCheck="true"  startLength="2"></checkFieldBasic>
+          <checkFieldBasic name="E201203" discription="客户国籍代码" emptyCheck="true" upperCheck="true"  startLength="3" endLength="3"></checkFieldBasic>
+          <checkFieldBasic name="E201204" discription="授信银行代码" emptyCheck="true" startLength="17" endLength="17"></checkFieldBasic>
+          <checkFieldBasic name="E201206" discription="授信号码" emptyCheck="true" startLength="2" ></checkFieldBasic>
+          <checkFieldBasic name="E201207" discription="授信额度"  valueDecimalLength="2" ></checkFieldBasic>
+          <checkFieldBasic name="E201208" discription="贷款授信额度" valueDecimalLength="2" ></checkFieldBasic>
+          <checkFieldBasic name="E201209" discription="授信起始日期"  dateCheck="true" startLength="8" endLength="8"></checkFieldBasic>
+          <checkFieldBasic name="E201210" discription="授信到期日期"  dateCheck="true"  startLength="8" endLength="8"></checkFieldBasic>
+		  <checkFieldBasic name="E201211" discription="贷款余额"  valueDecimalLength="2" ></checkFieldBasic>
+          <checkFieldBasic name="E201212" discription="持有债卷余额"  valueDecimalLength="2" ></checkFieldBasic> 
+          <checkFieldBasic name="E201213" discription="持有股权余额"  valueDecimalLength="2" ></checkFieldBasic> 
+          <checkFieldBasic name="E201214" discription="其它表内信用风险资产余额"  valueDecimalLength="2" ></checkFieldBasic> 
+          <checkFieldBasic name="E201215" discription="表外业务余额"  valueDecimalLength="2" ></checkFieldBasic> 
+          <checkFieldBasic name="E201216" discription="现有业务余额占用授信额度"  valueDecimalLength="2" ></checkFieldBasic> 
+          <checkFieldBasic name="E201217" discription="贷款余额占用贷款授信额"  valueDecimalLength="2" ></checkFieldBasic> 
+          <checkFieldBasic name="E201218" discription="尚可使用授信额度"  valueDecimalLength="2" ></checkFieldBasic> 
+          <checkFieldBasic name="E201219" discription="尚可使用贷款授信额度"  valueDecimalLength="2" ></checkFieldBasic> 
+          <checkFieldBasic name="E201220" discription="关联方授信标识"  emptyCheck="true"></checkFieldBasic> 
+        </checkFieldBasicList>
+         
+        <!-- 或校验，一般用于多种情况都可以满足的校验，取其一就能通过校验 
+                field或校验一般为表内校验，caseField或校验有可能存在表外校验 
+                type="1"代表基础校验或，type="2"代表casewhen校验或
+        -->
+        <checkFieldOrList>
+          <checkFieldOr type="1">
+            <checkFieldBasic name="E201" discription="客户名称"  startLength="3" ></checkFieldBasic>
+            <checkFieldBasic name="E201" discription="客户名称" chnCheck="true" startLength="2" ></checkFieldBasic>
+            </checkFieldOr>
+        </checkFieldOrList>
+            
+        <!-- 表内数据有效性校验，value为值域-->
+        <checkFieldEffectiveList>
+          <checkFieldEffective name="E201200" discription="客户类型">
+                    <value>1</value>
+                    <value>2</value>
+                    <value>3</value>
+            </checkFieldEffective>
+            <checkFieldEffective name="E201220" discription="关联方授信标识">
+                    <value>1</value>
+                    <value>2</value>
+          </checkFieldEffective>
+
+        </checkFieldEffectiveList>
+          
+        <!-- 当***为***校验，每条数据被设置的字段都需要校验，有可能存在表外校验
+            caseValue代表"为值"
+            caseValueScope代表范围值，以逗号分隔
+            whenValue代表"当值"
+            whenValueScope代表范围值，以逗号分隔
+            whenType不填或则等于1代表等号右边为一个字段，不运算、whenType等于2代表等号右边为多个字段运算、whenType等于3代表多个when并且关系、whenType等于4代表两个when时间比较关系
+            whenCompareValue比较的具体值
+            whenValueRule不填或则等于1代表当前值，valueRule等于2代表绝对值
+            joinType不填或则的等于1代表正，jionType等于2代表负，jionType等于3代表and，jionType等于4代表or
+        -->
+        <checkFieldCaseWhenList>
+      			<checkFieldCaseWhen name="E201211" discription="贷款余额" caseValue="0" joinType="1" whenValue="3">
+                    <checkFieldCaseWhenField name="E201200" discription="客户类型"  ></checkFieldCaseWhenField>
+                </checkFieldCaseWhen>
+                <checkFieldCaseWhen name="E201207" discription="贷款授信额度" caseValue="0" joinType="1" whenValue="3">
+                    <checkFieldCaseWhenField name="E201200" discription="客户类型"  ></checkFieldCaseWhenField>
+                </checkFieldCaseWhen>
+                <checkFieldCaseWhen name="E201212" discription="持有债卷余额" caseValue="0" joinType="1" whenValue="3">
+                    <checkFieldCaseWhenField name="E201200" discription="客户类型"  ></checkFieldCaseWhenField>
+                </checkFieldCaseWhen>
+                <checkFieldCaseWhen name="E201213" discription="持有股权余额" caseValue="0" joinType="1" whenValue="3">
+                    <checkFieldCaseWhenField name="E201200" discription="客户类型"  ></checkFieldCaseWhenField>
+                </checkFieldCaseWhen>
+                <checkFieldCaseWhen name="E201214" discription="其它表内信用风险资产余额" caseValue="0" joinType="1" whenValue="3">
+                    <checkFieldCaseWhenField name="E201200" discription="客户类型" ></checkFieldCaseWhenField>
+                </checkFieldCaseWhen>
+                 <checkFieldCaseWhen name="E201215" discription="表外业务余额" caseValue="0" joinType="1" whenValue="3">
+                    <checkFieldCaseWhenField name="E201200" discription="客户类型"  ></checkFieldCaseWhenField>
+                </checkFieldCaseWhen>
+                  <checkFieldCaseWhen name="E201216" discription="现有业务余额占用授信额度" caseValue="0" joinType="1" whenValue="3">
+                  <checkFieldCaseWhenField name="E201200" discription="客户类型"  ></checkFieldCaseWhenField>
+                </checkFieldCaseWhen>
+                 <checkFieldCaseWhen name="E201217" discription="贷款余额占用贷款授信额" caseValue="0" joinType="1" whenValue="3">
+                    <checkFieldCaseWhenField name="E201200" discription="客户类型"  ></checkFieldCaseWhenField>
+                </checkFieldCaseWhen>
+                 <checkFieldCaseWhen name="E201218" discription="尚可使用授信额度" caseValue="0" joinType="1" whenValue="3">
+                    <checkFieldCaseWhenField name="E201200" discription="客户类型"  ></checkFieldCaseWhenField>
+                </checkFieldCaseWhen>
+                 <checkFieldCaseWhen name="E201219" discription="尚可使用贷款授信额度" caseValue="0" joinType="1" whenValue="3">
+                    <checkFieldCaseWhenField name="E201200" discription="客户类型"  ></checkFieldCaseWhenField>
+                </checkFieldCaseWhen>
+        </checkFieldCaseWhenList>
+            
+       	<!-- 非聚合校验 ，有可能存在表外校验和期数校验
+            dataPeriod不填或则的等于1代表本期，dataPeriod等于2代表上期
+            startRate代表起始变动率endRate代表结束变动率
+            valueRule不填或则等于1代表当前值，valueRule等于2代表绝对值
+            compareType不填代表求等，compareType=1代表求变动率，compareType=2代表求差值
+        -->
+        <checkFieldLineList>
+        	<checkFieldLine compareType=">=">
+                  <leftFieldList>
+                      <checkFieldLineField name="E201207" discription="授信额度"></checkFieldLineField>
+                  </leftFieldList>
+                  <rightFieldList>
+                      <checkFieldLineField value="0"></checkFieldLineField>
+                  </rightFieldList>
+            </checkFieldLine>
+              <checkFieldLine compareType=">=">
+                    <leftFieldList>
+                        <checkFieldLineField name="E201208" discription="贷款授信额度"></checkFieldLineField>
+                    </leftFieldList>
+                    <rightFieldList>
+                        <checkFieldLineField value="0" discription="贷款授信额度"></checkFieldLineField>
+                    </rightFieldList>
+              </checkFieldLine>
+              <checkFieldLine compareType=">=">
+                    <leftFieldList>
+                        <checkFieldLineField name="E201211" discription="贷款余额"></checkFieldLineField>
+                    </leftFieldList>
+                    <rightFieldList>
+                        <checkFieldLineField value="0" discription="贷款余额"></checkFieldLineField>
+                    </rightFieldList>
+               </checkFieldLine>
+               
+              <checkFieldLine compareType=">=">
+                    <leftFieldList>
+                        <checkFieldLineField name="E201212" discription="持有债券余额"></checkFieldLineField>
+                    </leftFieldList>`	
+                    <rightFieldList>
+                        <checkFieldLineField value="0" discription="持有债券余额"></checkFieldLineField>
+                    </rightFieldList>
+               </checkFieldLine>
+               <checkFieldLine compareType=">=">
+                    <leftFieldList>
+                        <checkFieldLineField name="E201213" discription="持有股权余额"></checkFieldLineField>
+                    </leftFieldList>
+                    <rightFieldList>
+                        <checkFieldLineField value="0" discription="持有股权余额"></checkFieldLineField>
+                    </rightFieldList>
+                </checkFieldLine>
+                <checkFieldLine compareType=">=">
+                    <leftFieldList>
+                        <checkFieldLineField name="E201214" discription="其他表内信用风险资产余额"></checkFieldLineField>
+                    </leftFieldList>
+                    <rightFieldList>
+                        <checkFieldLineField value="0" discription="其他表内信用风险资产余额"></checkFieldLineField>
+                    </rightFieldList>
+                </checkFieldLine>
+                 <checkFieldLine compareType=">=">
+                    <leftFieldList>
+                        <checkFieldLineField name="E201215" discription="表外业务余额"></checkFieldLineField>
+                    </leftFieldList>
+                    <rightFieldList>
+                        <checkFieldLineField value="0" discription="表外业务余额"></checkFieldLineField>
+                    </rightFieldList>
+                </checkFieldLine>
+                <checkFieldLine compareType=">=">
+                    <leftFieldList>
+                        <checkFieldLineField name="E201216" discription="现有业务余额占用授信额度"></checkFieldLineField>
+                    </leftFieldList>
+                    <rightFieldList>
+                        <checkFieldLineField value="0" discription="现有业务余额占用授信额度"></checkFieldLineField>
+                    </rightFieldList>
+                </checkFieldLine>
+                 <checkFieldLine compareType=">=">
+                    <leftFieldList>
+                        <checkFieldLineField name="E201217" discription="贷款余额占用贷款授信额度"></checkFieldLineField>
+                    </leftFieldList>
+                    <rightFieldList>
+                        <checkFieldLineField value="0" discription="贷款余额占用贷款授信额度"></checkFieldLineField>
+                    </rightFieldList>
+                </checkFieldLine>
+                <checkFieldLine compareType=">=">
+                    <leftFieldList>
+                        <checkFieldLineField name="E201218" discription="尚可使用授信额度"></checkFieldLineField>
+                    </leftFieldList>
+                    <rightFieldList>
+                        <checkFieldLineField value="0" discription="尚可使用授信额度"></checkFieldLineField>
+                    </rightFieldList>
+                </checkFieldLine>
+                <checkFieldLine compareType=">=">
+                    <leftFieldList>
+                        <checkFieldLineField name="E201219" discription="尚可使用贷款授信额度"></checkFieldLineField>
+                    </leftFieldList>
+                    <rightFieldList>
+                        <checkFieldLineField value="0" discription="尚可使用贷款授信额度"></checkFieldLineField>
+                    </rightFieldList>
+                </checkFieldLine>
+              <checkFieldLine compareType=">=" >
+                    <leftFieldList>
+                        <checkFieldLineField name="E201207" discription="授信额度" joinType="1"></checkFieldLineField>
+                    </leftFieldList>
+                    <rightFieldList>
+                        <checkFieldLineField name="E201216" discription="现有业务余额占用授信额度" joinType="1"></checkFieldLineField>
+                        <checkFieldLineField name="E201218" discription="尚可使用授信额度" joinType="1"></checkFieldLineField>
+                    </rightFieldList>
+                </checkFieldLine>
+
+                <checkFieldLine compareType=">=" >
+                    <leftFieldList>
+                        <checkFieldLineField name="E201207" discription="贷款授信额度" joinType="1"></checkFieldLineField>
+                    </leftFieldList>
+                    <rightFieldList>
+                        <checkFieldLineField name="E201217" discription="现有贷款余额占用贷款授信额度" joinType="1"></checkFieldLineField>
+                        <checkFieldLineField name="E201219" discription="尚可使用贷款授信额度" joinType="1"></checkFieldLineField>
+                    </rightFieldList>
+                </checkFieldLine>
+            
+                 <checkFieldLine compareType=">" fieldType="2">
+                    <leftFieldList>
+                        <checkFieldLineField name="DTDATE" discription="数据日期"></checkFieldLineField>
+                    </leftFieldList>
+                    <rightFieldList>
+                        <checkFieldLineField name="E201209" discription="授信起始日期"></checkFieldLineField>
+                    </rightFieldList>
+                </checkFieldLine>
+               <checkFieldLine compareType=">" fieldType="2">
+                    <leftFieldList>
+                        <checkFieldLineField name="E201210" discription="授信到期日期"></checkFieldLineField>
+                    </leftFieldList>
+                    <rightFieldList>
+                        <checkFieldLineField name="E201209" discription="授信起始日期"></checkFieldLineField>
+                    </rightFieldList>
+               </checkFieldLine>
+                
+                <checkFieldLine compareType=">=" >
+                    <leftFieldList>
+                        <checkFieldLineField name="E201207" discription="授信额度" joinType="1"></checkFieldLineField>
+                    </leftFieldList>
+                    <rightFieldList>
+                        <checkFieldLineField name="E201216" discription="现有业务余额占用授信额度" joinType="1"></checkFieldLineField>
+                    </rightFieldList>
+                </checkFieldLine>
+                <checkFieldLine compareType=">=" >
+                    <leftFieldList>
+                        <checkFieldLineField name="E201207" discription="授信额度" joinType="1"></checkFieldLineField>
+                    </leftFieldList>
+                    <rightFieldList>
+                        <checkFieldLineField name="E201207" discription="贷款授信额度" joinType="1"></checkFieldLineField>
+                    </rightFieldList>
+                </checkFieldLine>
+                <checkFieldLine compareType=">=" >
+                    <leftFieldList>
+                        <checkFieldLineField name="E201207" discription="贷款授信额度" joinType="1"></checkFieldLineField>
+                    </leftFieldList>
+                    <rightFieldList>
+                        <checkFieldLineField name="E201217" discription="贷款余额占用贷款授信额度" joinType="1"></checkFieldLineField>
+                    </rightFieldList>
+                </checkFieldLine>
+                 <checkFieldLine compareType=">=" >
+                    <leftFieldList>
+                        <checkFieldLineField name="E201211" discription="贷款余额" joinType="1"></checkFieldLineField>
+                    </leftFieldList>
+                    <rightFieldList>
+                        <checkFieldLineField name="E201217" discription="贷款余额占用贷款授信额度" joinType="1"></checkFieldLineField>
+                    </rightFieldList>
+                </checkFieldLine>
+                <checkFieldLine compareType=">=" >
+                    <leftFieldList>
+                        <checkFieldLineField name="E201216" discription="现有业务余额占用授信额度" joinType="1"></checkFieldLineField>
+                    </leftFieldList>
+                    <rightFieldList>
+                        <checkFieldLineField name="E201217" discription="贷款余额占用贷款授信额度" joinType="1"></checkFieldLineField>
+                    </rightFieldList>
+                </checkFieldLine>
+                  <checkFieldLine compareType=">=" >
+                    <leftFieldList>
+                        <checkFieldLineField name="E201207" discription="授信额度" joinType="1"></checkFieldLineField>
+                    </leftFieldList>
+                    <rightFieldList>
+                        <checkFieldLineField name="E201218" discription="尚可使用授信额度" joinType="1"></checkFieldLineField>
+                    </rightFieldList>
+                </checkFieldLine>
+                <checkFieldLine compareType=">=" >
+                    <leftFieldList>
+                       <checkFieldLineField name="E201218" discription="尚可使用授信额度" joinType="1"></checkFieldLineField>
+                    </leftFieldList>
+                    <rightFieldList>
+                        <checkFieldLineField name="E201219" discription="尚可使用贷款授信额度" joinType="1"></checkFieldLineField> 
+                    </rightFieldList>
+                </checkFieldLine>
+              <checkFieldLine compareType=">=" >
+                   <leftFieldList>
+                       <checkFieldLineField name="E201211" discription="贷款余额" joinType="1"></checkFieldLineField>
+                       <checkFieldLineField name="E201212" discription="持有债券余额" joinType="1"></checkFieldLineField>
+                       <checkFieldLineField name="E201213" discription="持有股权余额" joinType="1"></checkFieldLineField>
+                       <checkFieldLineField name="E201214" discription="其他表内信用风险资产余额" joinType="1"></checkFieldLineField>
+                       <checkFieldLineField name="E201215" discription="表外业务余额" joinType="1"></checkFieldLineField>
+                   </leftFieldList>
+                   <rightFieldList>
+                       <checkFieldLineField name="E201216" discription="现有业务余额占用授信额度" joinType="1"></checkFieldLineField>
+                   </rightFieldList>
+              </checkFieldLine>
+
+        </checkFieldLineList>
+        	
+
+        
+
+        <!-- 一致性校验 -->
+        <checkFieldConsistentList>
+        </checkFieldConsistentList>
+       
+        <!-- 多方校验，当name有值，至少一条数据校验，当field、fieldValue有值，特定数据校验-->
+        <checkFieldMultiList>
+       	</checkFieldMultiList>
+       	
+        <!-- 相对上期变化的数据 -->
+        <checkFieldPeriodList></checkFieldPeriodList>
+        
+        <!-- 数据完整性校验-->
+        <checkFieldScopeList></checkFieldScopeList>
+        
+        <!-- 唯一性校验 -->
+        <checkFieldUniqueValueList></checkFieldUniqueValueList>
+         
+      </checkTable>
+
+      <!-- 聚合校验 
+      jionType不填或则的等于1代表正，jionType等于2代表负
+      conditionJoinType等于1代表并且，conditionJoinType等于2代表或则
+      procedureSplitField为拆分比较字段，procedureResultField代表字段求和值
+      -->
+      <checkFieldAggregationList>    
+         <paramFieldList>
+  			<paramField paramName="dtDate" type="1"></paramField>
+  		 </paramFieldList>
+         <checkFieldAggregation compareType="="  splitDiscription="客户代码_授信号码" leftSplitField="E201206" rightSplitField="CREDITNUM">
+              <leftFieldList>
+                   <checkFieldAggregationField name="E201202" discription="授信表-贷款余额"  procedureName="CHECK_12_E201_LXJ_008_L" procedureParam="dtDate,rs" procedureDiscription="求和值" procedureResultField="E201211" procedureSplitField="E201202" ></checkFieldAggregationField>
+              </leftFieldList>
+              
+              <rightFieldList>
+	              <checkFieldAggregationField name="E200201" discription="贷款明细表-贷款余额" procedureName="CHECK_12_E200_LXJ_008_R" procedureParam="dtDate,rs" procedureDiscription="求和值" procedureResultField="E200209" procedureSplitField="E200201"></checkFieldAggregationField>
+              </rightFieldList>
+         </checkFieldAggregation> 
+
+         <checkFieldAggregation compareType="="  splitDiscription="客户代码_授信号码" leftSplitField="E201206" rightSplitField="CREDITNUM">
+              <leftFieldList>
+                   <checkFieldAggregationField name="E201202" discription="授信表-表外业务余额"  procedureName="CHECK_12_E201_LXJ_011_L" procedureParam="dtDate,rs" procedureDiscription="求和值" procedureResultField="E201215" procedureSplitField="E201202" ></checkFieldAggregationField>
+              </leftFieldList>
+              
+              <rightFieldList>
+	              <checkFieldAggregationField name="E204201" discription="表外业务明细-业务余额" procedureName="CHECK_12_E204_LXJ_011_R" procedureParam="dtDate,rs" procedureDiscription="求和值" procedureResultField="E204207" procedureSplitField="E204201"></checkFieldAggregationField>
+              </rightFieldList>
+         </checkFieldAggregation> 
+       </checkFieldAggregationList>
+
+       <checkFieldConsistentList>
+          <paramFieldList>
+  			<paramField paramName="dtDate" type="1"></paramField>
+  		  </paramFieldList>
+       </checkFieldConsistentList>
+    
+	 </checkInstance>
+</reportCheckRoot>

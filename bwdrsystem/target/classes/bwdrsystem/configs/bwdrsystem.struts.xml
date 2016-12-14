@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE struts PUBLIC "-//Apache Software Foundation//DTD Struts Configuration 2.1//EN" "http://struts.apache.org/dtds/struts-2.1.dtd">
+<struts>
+	<package name="bwdrsystemJson" extends="json-default" namespace="/framework">
+		<action name="ConfirmReportImport-bwdrsystem.dto.ReportFileImportLog" class="ConfirmReportImportAction">
+			<result name="success" type="json">
+				<param name="root">serviceResult</param>
+			</result>
+			<result name="error" type="json">
+				<param name="root">serviceResult</param>
+			</result>
+		</action>
+		
+		<action name="GetInstInfoJson" class="GetInstInfoJsonAction">
+			<result name="success" type="json">
+				<param name="root">serviceResult</param>
+			</result>
+			<result name="error" type="json">
+				<param name="root">serviceResult</param>
+			</result>
+		</action>
+	</package>
+
+	<package name="bwdrsystem" extends="framework.default" namespace="/framework">
+		<action name="ShowZXReportImportView-bwdrsystem.dto.ReportFileImportLog" class="singleObjectShowListAction">
+			<result name="success">/ZXPTSystem/ReportImport.jsp</result>
+		</action>
+	
+		<action name="ReportImport-bwdrsystem.dto.ReportFileImportLog" class="ReportImportAction">
+			<result name="success" type="redirectAction">
+				<param name="message">${serviceResult.message}</param>
+				<param name="actionName">ShowAlertMessage.action</param>
+				<param name="redirectActionName">ShowZXReportImportView-bwdrsystem.dto.ReportFileImportLog</param>
+				<param name="redirectActionNamespace">/framework</param>
+			</result>
+			<result name="error" type="redirectAction">
+				<param name="message">${serviceResult.message}</param>
+				<param name="actionName">ShowAlertMessage.action</param>
+				<param name="redirectActionName">ShowZXReportImportView-bwdrsystem.dto.ReportFileImportLog</param>
+				<param name="redirectActionNamespace">/framework</param>
+			</result>
+		</action>
+		
+		<!-- 报文导入时的历史数据清空Action -->
+		<action name="ClearZXBusinessHistoryData-bwdrsystem.dto.ReportFileImportLog" class="ClearZXBusinessHistoryDataAction">
+			<result name="success" type="redirectAction">
+				<param name="message">${serviceResult.message}</param>
+				<param name="actionName">ShowAlertMessage.action</param>
+				<param name="redirectActionName">ShowZXReportImportView-bwdrsystem.dto.ReportFileImportLog</param>
+				<param name="redirectActionNamespace">/framework</param>
+			</result>
+			<result name="error" type="redirectAction">
+				<param name="message">${serviceResult.message}</param>
+				<param name="actionName">ShowAlertMessage.action</param>
+				<param name="redirectActionName">ShowZXReportImportView-bwdrsystem.dto.ReportFileImportLog</param>
+				<param name="redirectActionNamespace">/framework</param>
+			</result>
+		</action>
+	</package>
+</struts>    

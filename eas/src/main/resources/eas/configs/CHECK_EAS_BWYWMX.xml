@@ -1,0 +1,63 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<reportCheckRoot>
+	<!-- 校验名称：校验根据此名称做为校验实例-->
+	<checkInstance name="CHECK_EAS_BWYWMX">	
+		<!-- 参数值：配置的值为默认值，也可以通过系统传递进行替换-->		
+		<paramValueList>
+			<paramValue name="DTDATE" value="2014-08-31"></paramValue>
+			<paramValue name="strInstCode" value=""></paramValue>
+			<!--
+		  <paramValue name="strTaskRptInstID" value="000000"></paramValue>
+			<paramValue name="strFreq" value="000000"></paramValue> 
+			-->
+		</paramValueList>		
+		
+		<!-- 频度标志：可通过系统参数传递进行替换:1代表年报，2代表半年报，3代表季报，4代表月报，5代表日报-->
+		<freqCode value="4"></freqCode>	
+		<!-- 表名：真实数据库表的名称，一个校验实例中应具备唯一性-->
+		<checkTable procedureName="CHECK_EAS_BWYWMX" procedureParam="DTDATE,strInstCode,rt" procedureDiscription="表外业务明细"
+			originTable="EAS_BWYWMX" errorStateField="RPTCHECKTYPE" errorStateValue="3" successStateValue="2" 
+			defaultLogicDaoBeanId="oracleProcedureResultSetDao">
+			<!-- 参数字段：如果不配置此项为全表数据校验 
+				type不填或则等于1代表字符，等于2代表时间-->
+			<paramFieldList>
+				<paramField paramName="DTDATE" field="DTDATE" type="2"></paramField>
+				<paramField paramName="strInstCode" field="INSTINFO" type="1"></paramField>
+			</paramFieldList>
+			
+			<!-- 唯一性字段组合：可理解为联合主键，用于未作说明的主外键关联-->
+			<checkUniqueFieldList>
+				<checkUniqueField name="AUTOID" discription="主键" originField="AUTOID"></checkUniqueField>
+			</checkUniqueFieldList>
+			
+			<!-- 表内基础校验：被设置的字段每条数都需要校验 
+				emptyCheck代表为空校验
+				digitalCheck代表数字校验，dateCheck代表日期校验 
+				upperCheck代表全大写字母校验，chnCheck代表汉字校验（可扩展其他特殊校验）
+				startLength代表起始长度，endLength代表结束长度 
+				valueDecimalLength的值代表小数位数的校验-->
+				<checkFieldBasicList>
+					<checkFieldBasic name="KHDM"  discription="客户代码" emptyCheck="true" endLength="30" ></checkFieldBasic>
+          <checkFieldBasic name="KHMC"  discription="客户名称" emptyCheck="true" endLength="200" ></checkFieldBasic>
+          <checkFieldBasic name="YWBLX"  discription="业务办理行" emptyCheck="true" endLength="30" ></checkFieldBasic>
+          <checkFieldBasic name="JRXKZH"  discription="金融许可证号" emptyCheck="true" startLength="15" endLength="15" ></checkFieldBasic>
+          <checkFieldBasic name="NBJGH"  discription="内部机构号" emptyCheck="true" endLength="30" ></checkFieldBasic>
+          <checkFieldBasic name="BWYWZL"  discription="表外业务种类" emptyCheck="true" endLength="30" ></checkFieldBasic>
+          <checkFieldBasic name="BWYWLSH"  discription="表外业务流水号" emptyCheck="true" endLength="30" ></checkFieldBasic>
+          <checkFieldBasic name="BWYWJE"  discription="表外业务金额" emptyCheck="true"  valueDecimalLength="2" endLength="20" ></checkFieldBasic>
+          <checkFieldBasic name="BZJJE"  discription="保证金金额" emptyCheck="true"  valueDecimalLength="2" endLength="20" ></checkFieldBasic>
+          <checkFieldBasic name="FSRQ"  discription="发生日期" ignoreVal="999991231" emptyCheck="true"  dateCheck="true"  startLength="8" endLength="8" ></checkFieldBasic>
+          <checkFieldBasic name="BWYWDQRQ"  discription="表外业务到期日期" ignoreVal="999991231" emptyCheck="true"  dateCheck="true"  startLength="8" endLength="8" ></checkFieldBasic>
+          <checkFieldBasic name="SFFSDK"  discription="是否发生垫款" emptyCheck="true" endLength="4" ></checkFieldBasic>
+          <checkFieldBasic name="TJRQ"  discription="统计日期" ignoreVal="999991231" emptyCheck="true"  dateCheck="true"  startLength="8" endLength="8" ></checkFieldBasic>
+          <checkFieldBasic name="CJRQ"  discription="采集日期" ignoreVal="999991231" emptyCheck="true"  dateCheck="true"  startLength="8" endLength="8" ></checkFieldBasic>			
+				</checkFieldBasicList>
+				<checkFieldEffectiveList>                                      
+         <checkFieldEffective name="SFFSDK" discription="是否发生垫款" >
+         	<value>是</value>
+          <value>否</value>                                              
+         </checkFieldEffective>                                           
+       </checkFieldEffectiveList>                             
+				</checkTable>
+				</checkInstance>
+</reportCheckRoot>

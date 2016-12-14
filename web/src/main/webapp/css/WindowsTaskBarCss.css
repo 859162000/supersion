@@ -1,0 +1,231 @@
+﻿#TaskBarLine
+{
+	/*border: 1px inset #999999;7DD5FF*/
+	box-shadow:0px 0px 20px 1px #7DD5FF inset;
+	/*box-shadow:0px 0px 20px White inset,0px -2px 8px White inset,0px 2px 8px White inset,2px 0px 8px White inset;*/
+	width:100%; 
+	height:30px; 
+	bottom:0px; 
+	left:-2px; 
+	position:absolute;
+	z-index:10000;
+	/*
+	IE6 下默认的字体尺寸大致在 12 - 14px 之间，当你试图定义一个高度小于这个默认值的 DIV 的时候， 
+	IE6 会固执的认为这个层的高度不应该小于字体的行高。所以即使你用 height:5px; 	
+	来定义了一个 DIV 的高度，实际在 IE6 下显示的仍然是一个 12px 左右高度的层。
+	<div style="height: 5px; font: 0px Arial; line-height:0;"></div>
+	<div style="height: 5px; overflow: hidden;"></div>  
+	值得注意的是，设置 font-size:0 时这个容器的高度最小为 2px ，
+	如果要设置 DIV 高度为 0 或 1px ，则需要使用 overflow:hidden; 来实现。
+	*/
+	overflow:hidden;
+	
+}
+#TaskBarLine_Frame
+{
+	/*border: 1px inset #999999; */
+	/*White*/
+	box-shadow:0px 0px 10px 5px black;
+	width:100%; 
+	height:30px; 
+	bottom:0px; 
+	left:-2px; 
+	position:absolute;
+	z-index:10000;
+	
+	/*
+	IE6 下默认的字体尺寸大致在 12 - 14px 之间，当你试图定义一个高度小于这个默认值的 DIV 的时候， 
+	IE6 会固执的认为这个层的高度不应该小于字体的行高。所以即使你用 height:5px; 	
+	来定义了一个 DIV 的高度，实际在 IE6 下显示的仍然是一个 12px 左右高度的层。
+	<div style="height: 5px; font: 0px Arial; line-height:0;"></div>
+	<div style="height: 5px; overflow: hidden;"></div>  
+	值得注意的是，设置 font-size:0 时这个容器的高度最小为 2px ，
+	如果要设置 DIV 高度为 0 或 1px ，则需要使用 overflow:hidden; 来实现。
+	*/
+	overflow:hidden;
+	background-image:url('../images/windows/taskbar.png');
+	
+	-webkit-filter: blur(10px); /* Chrome, Opera */
+    -moz-filter: blur(10px);
+    -ms-filter: blur(10px);    
+    filter: blur(10px);
+	
+}
+
+.TaskBar
+{
+	font-family:微软雅黑;
+	width:auto;
+	cursor:pointer;
+	height:26px;
+	line-height:26px;
+	font-weight:bolder;
+	color:White;
+	text-align:center;
+	font-size:13px;
+	margin-left:5px;
+	margin-top:2px;
+	padding-left:10px;
+	padding-right:10px;
+	float:left;
+	text-shadow:0px 0px 20px 5px #8282FF;
+	max-width:150px;
+	text-overflow:ellipsis; 
+	white-space:nowrap; 
+	overflow:hidden;
+
+}
+.TaskBar:hover
+{
+	/*text-shadow:0px 0px 20px 1px #8AFFFF;*/
+	text-shadow:0px 0px 20px 1px red;
+	border:solid 1px #CCCCCC;
+}
+
+.MsgBtn
+{
+	font-family:微软雅黑;
+	width:auto;
+	cursor:pointer;
+	height:26px;
+	line-height:26px;
+	font-weight:bolder;
+	color:white;
+	text-align:center;
+	font-size:13px;
+	margin-left:5px;
+	margin-top:2px;
+	padding-left:10px;
+	padding-right:10px;
+	float:left;
+	text-shadow:0px 0px 20px 5px #8282FF;
+	max-width:150px;
+	text-overflow:ellipsis; 
+	white-space:nowrap; 
+	overflow:hidden;
+
+}
+.MsgBtn:hover
+{
+	/*text-shadow:0px 0px 20px 1px #8AFFFF;*/
+	text-shadow:0px 0px 20px 1px red;
+	border:solid 1px #CCCCCC;
+}
+
+
+.Report_Merge_MEUM
+{
+	position:absolute; 
+	background-color:White;
+	width:300px;
+    height:auto;
+    bottom:30px;
+    border:solid 1px #CCCCCC;
+    box-shadow:0px 0px 20px 1px Black;
+    border-radius:2px;
+    padding-bottom:5px;
+    /*box-shadow:-2px 0px 8px #f00,0px -2px 8px #000,0px 2px 8px #9e038a,2px 0px 8px #0f0;*/
+}
+.Report_Merge_MEUM div
+{
+	
+	position:relative;
+	height:20px;
+	width:100%;
+	margin-top:5px;
+	margin-left:5px;
+	margin-right:5px;
+	font-family:微软雅黑;
+	font-weight:normal;
+	font-size:13px;
+	cursor:pointer;
+	float:left;
+
+}
+.Report_Merge_MEUM img
+{
+	height:16px;
+	display:block;
+	position:absolute;
+	margin-top:2px;
+}
+.Report_Merge_MEUM div div
+{
+	margin-top:0px;
+	left:30px;
+	height:20px;
+	position:absolute;
+	line-height:20px;
+	top:0px;
+	width:auto;
+	cursor:pointer;
+	-moz-user-select:none;
+    -webkit-user-select:none;
+    user-select:none;
+	text-overflow:ellipsis; 
+	white-space:nowrap; 
+	overflow:hidden;
+	width:250px;
+}
+.Report_Merge_MEUM div a:hover
+{
+	 /*background-color:#000099;
+	color:White;*/
+	 text-shadow:0px 0px 10px 1px #996600;
+	 
+}
+.TASK_RIGRH_MEUM
+{
+	position:absolute; 
+	background-color:White;
+	width:150px;
+    height:auto;
+    border:solid 1px #CCCCCC;
+    box-shadow:0px 0px 20px 1px Black;
+    border-radius:2px;
+    padding-bottom:5px;
+    /*box-shadow:-2px 0px 8px #f00,0px -2px 8px #000,0px 2px 8px #9e038a,2px 0px 8px #0f0;*/
+}
+.TASK_RIGRH_MEUM div
+{
+	
+	position:relative;
+	height:20px;
+	width:100%;
+	margin-top:5px;
+	margin-left:5px;
+	margin-right:5px;
+	font-family:微软雅黑;
+	font-weight:normal;
+	font-size:13px;
+	cursor:pointer;
+	float:left;
+}
+.TASK_RIGRH_MEUM img
+{
+	height:16px;
+	display:block;
+	position:absolute;
+	margin-top:2px;
+}
+.TASK_RIGRH_MEUM div a
+{
+	margin-top:0px;
+	left:30px;
+	height:20px;
+	position:absolute;
+	line-height:20px;
+	top:0px;
+	width:110px;
+	cursor:pointer;
+	-moz-user-select:none;
+    -webkit-user-select:none;
+    user-select:none;
+}
+.TASK_RIGRH_MEUM div a:hover
+{
+	 /*background-color:#000099;
+	color:White;*/
+	 text-shadow:0px 0px 10px 1px #996600;
+	 
+}

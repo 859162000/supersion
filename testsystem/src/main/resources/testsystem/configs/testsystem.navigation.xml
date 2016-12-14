@@ -1,0 +1,304 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<navigationRoot>
+<!-- 
+   <navigation>
+     <level>4</level>
+     <navigationName>Htable</navigationName>
+     <navigationUrl>framework/ShowList-testsystem.dto.Htable</navigationUrl>
+   </navigation>
+   <navigation>
+     <level>4</level>
+     <navigationName>Htable1</navigationName>
+     <navigationUrl>framework/ShowList-testsystem.dto.Htable1</navigationUrl>
+   </navigation>
+   <navigation>
+     <level>4</level>
+     <navigationName>Htable2</navigationName>
+     <navigationUrl>framework/ShowList-testsystem.dto.Htable2</navigationUrl>
+   </navigation>
+   <navigation>
+     <level>4</level>
+     <navigationName>Htable3</navigationName>
+     <navigationUrl>framework/ShowList-testsystem.dto.Htable3</navigationUrl>
+   </navigation>
+   <navigation>
+     <level>4</level>
+     <navigationName>Htable4</navigationName>
+     <navigationUrl>framework/ShowList-testsystem.dto.Htable4</navigationUrl>
+   </navigation>
+   <navigation>
+     <level>4</level>
+     <navigationName>Htable5</navigationName>
+     <navigationUrl>framework/ShowList-testsystem.dto.Htable5</navigationUrl>
+   </navigation>
+    <navigation>
+     <level>4</level>
+     <navigationName>Htable6</navigationName>
+     <navigationUrl>framework/ShowList-testsystem.dto.Htable6</navigationUrl>
+   </navigation>
+   <navigation>
+     <level>4</level>
+     <navigationName>HInstInfo</navigationName>
+     <navigationUrl>framework/ShowList-testsystem.dto.HInstInfo</navigationUrl>
+   </navigation>
+   <navigation>
+     <level>4</level>
+     <navigationName>HUserInfo</navigationName>
+     <navigationUrl>framework/ShowList-testsystem.dto.HUserInfo</navigationUrl>
+   </navigation>
+   <navigation>
+     <level>4</level>
+     <navigationName>HRoleInfo</navigationName>
+     <navigationUrl>framework/ShowList-testsystem.dto.HRoleInfo</navigationUrl>
+   </navigation>
+   <navigation>
+     <level>4</level>
+     <navigationName>HUserRole</navigationName>
+     <navigationUrl>framework/ShowList-testsystem.dto.HUserRole</navigationUrl>
+   </navigation>
+   <navigation>
+     <level>4</level>
+     <navigationName>HUserRole1</navigationName>
+     <navigationUrl>framework/ShowUpdateList-testsystem.dto.HUserRole</navigationUrl>
+   </navigation>
+   <navigation>
+     <level>4</level>
+     <navigationName>HWorkGroup</navigationName>
+     <navigationUrl>framework/ShowList-testsystem.dto.HWorkGroup</navigationUrl>
+   </navigation>
+   <navigation>
+     <level>4</level>
+     <navigationName>HCustomerRole</navigationName>
+     <navigationUrl>framework/ShowList-testsystem.dto.HCustomerRole</navigationUrl>
+   </navigation>
+   <navigation>
+     <level>4</level>
+     <navigationName>HCustomerInfo</navigationName>
+     <navigationUrl>framework/ShowList-testsystem.dto.HCustomerInfo</navigationUrl>
+   </navigation>
+   <navigation>
+     <level>4</level>
+     <navigationName>HFunctionInfo</navigationName>
+     <navigationUrl>framework/ShowList-testsystem.dto.HFunctionInfo</navigationUrl>
+   </navigation>
+   <navigation>
+     <level>4</level>
+     <navigationName>HRoleFunctionInst</navigationName>
+     <navigationUrl>framework/ShowList-testsystem.dto.HRoleFunctionInst</navigationUrl>
+   </navigation>
+   <navigation>
+     <level>4</level>
+     <navigationName>HRoleClassInst</navigationName>
+     <navigationUrl>framework/ShowUpdateList-testsystem.dto.HRoleClassInst</navigationUrl>
+   </navigation>
+    <navigation>
+     <level>4</level>
+     <navigationName>HRoleClassProduct</navigationName>
+     <navigationUrl>framework/ShowUpdateList-testsystem.dto.HRoleClassProduct</navigationUrl>
+   </navigation>
+   <navigation>
+     <level>4</level>
+     <navigationName>HRoleFunctionInst1</navigationName>
+     <navigationUrl>framework/ShowUpdateList-testsystem.dto.HRoleFunctionInst</navigationUrl>
+   </navigation>
+   <navigation>
+     <level>4</level>
+     <navigationName>HRoleFunctionInstTest</navigationName>
+     <navigationUrl>framework/ShowList-testsystem.dto.HRoleFunctionInstTest</navigationUrl>
+   </navigation>
+   <navigation>
+     <level>4</level>
+     <navigationName>HRoleFunctionInstTest1</navigationName>
+     <navigationUrl>framework/ShowUpdateList-testsystem.dto.HRoleFunctionInstTest</navigationUrl>
+   </navigation>
+   <navigation>
+     <level>4</level>
+     <navigationName>HReportCheckTest1</navigationName>
+     <navigationUrl>framework/ShowList-testsystem.dto.HReportCheckTest1</navigationUrl>
+   </navigation> 
+    -->
+   
+   
+   <navigation>
+     <level>4</level>
+     <navigationName>Htable2</navigationName>
+     <navigationUrl>framework/ShowList-testsystem.dto.Htable2</navigationUrl>
+   </navigation>
+   
+   <navigation>
+     <level>4</level>
+     <navigationName>Htable5</navigationName>
+     <navigationUrl>framework/ShowList-testsystem.dto.Htable5</navigationUrl>
+   </navigation>
+   
+   <navigation>
+     <level>4</level>
+     <navigationName>数据校验</navigationName>
+     <navigationUrl>framework/ceshi-1</navigationUrl>
+   </navigation>
+    <navigation>
+     <level>4</level>
+     <navigationName>授信情况</navigationName>
+     <navigationUrl>framework/ShowList-testsystem.dto.CreditSituation</navigationUrl>
+   </navigation>
+   <navigation>
+     <level>4</level>
+     <navigationName>集团客户授信拆分情况</navigationName>
+     <navigationUrl>framework/ShowList-testsystem.dto.GroupCustomerCredit</navigationUrl>
+   </navigation>
+    <navigation>
+     <level>4</level>
+     <navigationName>贷款明细表</navigationName>
+     <navigationUrl>framework/ShowList-testsystem.dto.DetailLoan</navigationUrl>
+   </navigation>
+     <navigation>
+     <level>4</level>
+     <navigationName>持有企业债券明细</navigationName>
+     <navigationUrl>framework/ShowList-testsystem.dto.HoldEnterpriseBondDetails</navigationUrl>
+   </navigation>
+    <navigation>
+     <level>4</level>
+     <navigationName>持有企业股权明细</navigationName>
+     <navigationUrl>framework/ShowList-testsystem.dto.HoldEnterpriseOwnershipDetails</navigationUrl>
+   </navigation>
+    <navigation>
+     <level>4</level>
+     <navigationName>表外业务明细</navigationName>
+     <navigationUrl>framework/ShowList-testsystem.dto.OffBalanceBusinessDetails</navigationUrl>
+     </navigation>
+      <navigation>
+     <level>4</level>
+     <navigationName>同业客户业务明细</navigationName>
+     <navigationUrl>framework/ShowList-testsystem.dto.TradeCustomerServiceDetails</navigationUrl>
+     </navigation>
+       <navigation>
+     <level>4</level>
+     <navigationName>集团基本情况</navigationName>
+     <navigationUrl>framework/ShowList-testsystem.dto.BasicSituationGroup</navigationUrl>
+     </navigation>
+      <navigation>
+     <level>4</level>
+     <navigationName>高管及重要关联人信息</navigationName>
+     <navigationUrl>framework/ShowList-testsystem.dto.ImportantCorrelatInformat</navigationUrl>
+     </navigation>
+      <navigation>
+     <level>4</level>
+     <navigationName>成员名单</navigationName>
+     <navigationUrl>framework/ShowList-testsystem.dto.MemberList</navigationUrl>
+     </navigation>
+      <navigation>
+     <level>4</level>
+     <navigationName>实际控制人</navigationName>
+     <navigationUrl>framework/ShowList-testsystem.dto.ActualController</navigationUrl>
+     </navigation>
+     <navigation>
+     <level>4</level>
+     <navigationName>关联集团信息</navigationName>
+     <navigationUrl>framework/ShowList-testsystem.dto.AssociatGroupInformate</navigationUrl>
+     </navigation>
+     <navigation>
+     <level>4</level>
+     <navigationName>单一法人基本情况</navigationName>
+     <navigationUrl>framework/ShowList-testsystem.dto.SingleBasicSituation</navigationUrl>
+     </navigation>
+     <navigation>
+     <level>4</level>
+     <navigationName>法定代表人、高管及重要关联人信息</navigationName>
+     <navigationUrl>framework/ShowList-testsystem.dto.ImportantCorrelatInfo</navigationUrl>
+     </navigation>
+     <navigation>
+     <level>4</level>
+     <navigationName>重要股东及主要关联企业</navigationName>
+     <navigationUrl>framework/ShowList-testsystem.dto.MajorShareholders</navigationUrl>
+     </navigation>
+      <navigation>
+     <level>4</level>
+     <navigationName>对公客户担保情况统计</navigationName>
+     <navigationUrl>framework/ShowList-testsystem.dto.CustomerGuaranteeState</navigationUrl>
+     </navigation>
+      <navigation>
+     <level>4</level>
+     <navigationName>个人贷款违约情况统计</navigationName>
+     <navigationUrl>framework/ShowList-testsystem.dto.PersonalLoanStatistics</navigationUrl>
+     </navigation>
+      <navigation>
+     <level>4</level>
+     <navigationName>个人违约贷款担保情况统计</navigationName>
+     <navigationUrl>framework/ShowList-testsystem.dto.PersonalLoanGuarantee</navigationUrl>
+     </navigation>
+ 	    <navigation>
+   <level>2</level>
+     <navigationName>Htable9</navigationName>
+     <navigationUrl>framework/ShowList-testsystem.dto.Htable9</navigationUrl>
+   </navigation>
+   
+    <navigation>
+     <level>2</level>
+     <navigationName>测试单表的统计</navigationName>
+     <navigationUrl>framework/ShowList-testsystem.dto.TestOnetoTableStatisical1</navigationUrl>
+   </navigation>
+   
+   
+   <!-- 
+   <navigationComponentList>
+       <navigationComponent id="PersonalWorkspace1" name="个人工作区1" url="Framework/NavigationPage.jsp"  ico="model.png" treeIco="model.png" treeExpandIco="model.png" des="">
+             <navigationComponent id="PersonalWorkspace2" name="个人工作区2" url="Framework/NavigationPage.jsp"  ico="model.png" treeIco="model.png" treeExpandIco="model.png" des="">
+                   <navigationComponent id="PersonalWorkspace3" name="个人工作区3" url="Framework/NavigationPage.jsp"  ico="model.png" treeIco="model.png" treeExpandIco="model.png" des="">
+                       <navigationComponent id="GONGNENG3" name="功能3" url="UserManagement.jsp" ico="DeskIco.png" treeIco="DeskIco.png" treeExpandIco="DeskIco.png" des=""></navigationComponent>
+                   </navigationComponent>
+                   <navigationComponent id="GONGNENG2" name="功能2" url="UserManagement.jsp" ico="DeskIco.png" treeIco="DeskIco.png" treeExpandIco="DeskIco.png" des=""></navigationComponent>
+             </navigationComponent>
+             <navigationComponent id="GONGNENG1" name="功能1" url="UserManagement.jsp" ico="DeskIco.png" treeIco="DeskIco.png" treeExpandIco="DeskIco.png" des=""></navigationComponent>
+       </navigationComponent>
+       <navigationComponent id="PersonalWorkspace" name="个人工作区" url="Framework/NavigationPage.jsp" ico="model.png" treeIco="model.png" treeExpandIco="model.png" des=""></navigationComponent>
+       <navigationComponent id="UserManagement" name="用户管理" url="framework/ShowList-testsystem.dto.Htable9" ico="DeskIco.png" treeIco="DeskIco.png" treeExpandIco="DeskIco.png" des=""></navigationComponent>
+       <navigationComponent id="UserManagement1" name="用户管理1" url="framework/ShowList-extend.dto.AutoETL_DataSource" ico="DeskIco.png" treeIco="DeskIco.png" treeExpandIco="DeskIco.png" des=""></navigationComponent>
+       <navigationComponent id="UserManagement2" name="用户管理2" url="UserManagement.jsp" ico="DeskIco.png" treeIco="DeskIco.png" treeExpandIco="DeskIco.png" des=""></navigationComponent>
+       <navigationComponent id="UserManagement3" name="用户管理3" url="UserManagement.jsp" ico="DeskIco.png" treeIco="DeskIco.png" treeExpandIco="DeskIco.png" des=""></navigationComponent>
+       <navigationComponent id="UserManagement4" name="用户管理4" url="UserManagement.jsp" ico="DeskIco.png" treeIco="DeskIco.png" treeExpandIco="DeskIco.png" des=""></navigationComponent>
+       <navigationComponent id="UserManagement5" name="用户管理5" url="UserManagement.jsp" ico="DeskIco.png" treeIco="DeskIco.png" treeExpandIco="DeskIco.png" des=""></navigationComponent>
+       <navigationComponent id="UserManagement6" name="用户管理6" url="UserManagement.jsp" ico="DeskIco.png" treeIco="DeskIco.png" treeExpandIco="DeskIco.png" des=""></navigationComponent>
+       <navigationComponent id="UserManagement7" name="用户管理7" url="UserManagement.jsp" ico="DeskIco.png" treeIco="DeskIco.png" treeExpandIco="DeskIco.png" des=""></navigationComponent>
+       <navigationComponent id="UserManagement8" name="用户管理8" url="UserManagement.jsp" ico="DeskIco.png" treeIco="DeskIco.png" treeExpandIco="DeskIco.png" des=""></navigationComponent>
+       <navigationComponent id="UserManagement9" name="用户管理9" url="UserManagement.jsp" ico="DeskIco.png" treeIco="DeskIco.png" treeExpandIco="DeskIco.png" des=""></navigationComponent>
+       <navigationComponent id="UserManagement10" name="用户管理10" url="UserManagement.jsp" ico="DeskIco.png" treeIco="DeskIco.png" treeExpandIco="DeskIco.png" des=""></navigationComponent>
+       <navigationComponent id="UserManagement11" name="用户管理11" url="UserManagement.jsp" ico="DeskIco.png" treeIco="DeskIco.png" treeExpandIco="DeskIco.png" des=""></navigationComponent>
+       <navigationComponent id="UserManagement12" name="用户管理12" url="UserManagement.jsp" ico="DeskIco.png" treeIco="DeskIco.png" treeExpandIco="DeskIco.png" des=""></navigationComponent>
+       <navigationComponent id="UserManagement13" name="用户管理13" url="UserManagement.jsp" ico="DeskIco.png" treeIco="DeskIco.png" treeExpandIco="DeskIco.png" des=""></navigationComponent>
+       <navigationComponent id="UserManagement14" name="用户管理14" url="UserManagement.jsp" ico="DeskIco.png" treeIco="DeskIco.png" treeExpandIco="DeskIco.png" des=""></navigationComponent>
+       <navigationComponent id="UserManagement15" name="用户管理15" url="UserManagement.jsp" ico="DeskIco.png" treeIco="DeskIco.png" treeExpandIco="DeskIco.png" des=""></navigationComponent>
+       <navigationComponent id="UserManagement16" name="用户管理16" url="UserManagement.jsp" ico="DeskIco.png" treeIco="DeskIco.png" treeExpandIco="DeskIco.png" des=""></navigationComponent>
+       <navigationComponent id="UserManagement17" name="用户管理17" url="UserManagement.jsp" ico="DeskIco.png" treeIco="DeskIco.png" treeExpandIco="DeskIco.png" des=""></navigationComponent>
+       <navigationComponent id="UserManagement18" name="用户管理18" url="UserManagement.jsp" ico="DeskIco.png" treeIco="DeskIco.png" treeExpandIco="DeskIco.png" des=""></navigationComponent>
+    </navigationComponentList>
+     -->
+<!--    <navigationComponentList>
+    	 <navigationComponent id="DeskTop" name="桌面" url="Framework/NavigationPage.jsp"  ico="bg.png" treeIco="bg.png" treeExpandIco="bg.png" des="">
+           <navigationComponent id="Test1" name="Test1" url="framework/ShowList-testsystem.dto.Test1" ico="DeskIco.png" treeIco="DeskIco.png" treeExpandIco="DeskIco.png" des=""></navigationComponent>
+           <navigationComponent id="TestStatistical" name="TestStatistical" url="framework/ShowStatisticalCount-testsystem.dto.TestStatistical" ico="128_Other.png" treeIco="64_Other.png" treeExpandIco="32_Other.png" des=""></navigationComponent>
+    	 
+    	<navigationComponent id="TestOnetoTableStatisicalBBBB" name="测试单表的统计功能" url="Framework/NavigationPage.jsp"  ico="128_SystemLogManger.png" treeIco="64_SystemLogManger.png" treeExpandIco="32_SystemLogManger.png" des="">
+      	   <navigationComponent id="TestOnetoTableStatisical" name="测试单表的统计" url="framework/ShowSingleStatistical-testsystem.dto.TestOnetoTableStatisical" ico="128_Other.png" treeIco="64_Other.png" treeExpandIco="32_Other.png" des=""></navigationComponent>
+      </navigationComponent>
+      
+      <navigationComponent id="ModelPathExportData" name="测试导出模板功能" url="Framework/NavigationPage.jsp"  ico="128_SystemLogManger.png" treeIco="64_SystemLogManger.png" treeExpandIco="32_SystemLogManger.png" des="">
+      	   <navigationComponent id="Z01_Test" name="Z01-填报单位基本信息" url="framework/ShowList-wgjreportsystem.dto.AutoDTO_WGJ_Z01" ico="128_Other.png" treeIco="64_Other.png" treeExpandIco="32_Other.png" des=""></navigationComponent>
+      </navigationComponent>
+     </navigationComponent>
+    </navigationComponentList>-->
+    
+    
+     <navigationComponentList>
+    	 <navigationComponent id="DeskTop" name="桌面" url="Framework/NavigationPage.jsp"  ico="bg.png" treeIco="bg.png" treeExpandIco="bg.png" des="">
+           <navigationComponent id="TestComponentShowSaveOrUpdate" name="测试框架扩展" url="Framework/NavigationPage.jsp"  ico="128_SystemLogManger.png" treeIco="64_SystemLogManger.png" treeExpandIco="32_SystemLogManger.png" des="">
+      	      <!-- 用于测试扩展 -->
+	           <navigationComponent id="AutoDTO_DB_DBXX_JC" name="AutoDTO_DB_DBXX_JC" url="framework/ShowList-dbgssystem.dto.AutoDTO_DB_DBXX_JC" ico="64_AutoETL_Param.png" treeIco="32_AutoETL_Param.png" treeExpandIco="16_AutoETL_Param.png" des=""></navigationComponent>
+	           <navigationComponent id="View_AutoDTO_DB_DBXX_JC" name="担保信息基础" url="framework/ShowViewStatistical-testsystem.dto.View_AutoDTO_DB_DBXX_JC" ico="64_AutoETL_Param.png" treeIco="32_AutoETL_Param.png" treeExpandIco="16_AutoETL_Param.png" des=""></navigationComponent>
+          	   <navigationComponent id="VIEW_GRZX_DKXXSJCX" name="个人征信-贷款信息数据查询" url="framework/ShowViewStatistical-testsystem.dto.VIEW_GRZX_DKXXSJCX" ico="64_AutoETL_Param.png" treeIco="32_AutoETL_Param.png" treeExpandIco="16_AutoETL_Param.png" des=""></navigationComponent>
+          	   <navigationComponent id="TestProcedure" name="TestProcedure" url="framework/ShowProcedureStatistical-testsystem.dto.TestProcedure" ico="64_AutoETL_Param.png" treeIco="32_AutoETL_Param.png" treeExpandIco="16_AutoETL_Param.png" des=""></navigationComponent>
+               <navigationComponent id="TJPM" name="企业征信人行质量考评" url="framework/ShowList-testsystem.dto.TJPM" ico="64_AutoETL_Param.png" treeIco="32_AutoETL_Param.png" treeExpandIco="16_AutoETL_Param.png" des=""></navigationComponent>
+               <navigationComponent id="AutoDTO_TestImportExport" name="测试导入导出" url="framework/ShowList-testsystem.dto.AutoDTO_TestImportExport" ico="64_AutoETL_Param.png" treeIco="32_AutoETL_Param.png" treeExpandIco="16_AutoETL_Param.png" des=""></navigationComponent>
+           </navigationComponent>
+     </navigationComponent>
+    </navigationComponentList>
+</navigationRoot>

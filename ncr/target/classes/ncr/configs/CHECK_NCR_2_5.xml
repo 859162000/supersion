@@ -1,0 +1,61 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<reportCheckRoot>  
+	<checkInstance name="Check_NCR_2_5">
+	    <paramValueList>
+	      <paramValue name="DTDATE" value="2013-12-31"></paramValue>
+	       <paramValue name="strInstCode" value=""></paramValue>
+	       <!--
+		    <paramValue name="strTaskRptInstID" value="000000"></paramValue>
+			  <paramValue name="strFreq" value="000000"></paramValue> 
+			  -->
+	    </paramValueList>
+
+	    <freqCode value="4"></freqCode>
+	    
+	    <checkTable procedureName="CHECK_NCR_2_5"  procedureParam="DTDATE,strInstCode,rt" procedureDiscription="关联集团信息" 
+      	originTable="NCR_2_5" errorStateField="RPTCHECKTYPE" errorStateValue="3"  successStateValue="2" 
+      	defaultLogicDaoBeanId="oracleProcedureResultSetDao">    
+  		<paramFieldList>
+  			<paramField paramName="DTDATE" field="DTDATE" type="2"></paramField>
+  			<paramField paramName="strInstCode" field="INSTINFO" type="1"></paramField>
+  		</paramFieldList>
+	    
+       <checkUniqueFieldList>
+				<checkUniqueField name="AUTOID" discription="主键" originField="AUTOID"></checkUniqueField>
+			 </checkUniqueFieldList>
+		                    
+       <checkFieldBasicList>
+       	<!--JBL2-047	A	关联集团代码		暂为空。	长度大于等于2个字符。-->
+				<checkFieldBasic name="A" discription="关联集团代码" startLength="2"></checkFieldBasic>
+				<!--JBL2-048	B	关联集团名称		暂为空。	长度大于等于2个字符。-->
+	     <checkFieldBasic name="B"  discription="关联集团名称" startLength="2"></checkFieldBasic>
+				<!--JBL2-049	C	关联关系类型		暂为空。	1位数字字符。-->
+       <checkFieldBasic name="C"  discription="关联关系类型" digitalCheck="true" startLength="1" endLength="1"></checkFieldBasic>
+       </checkFieldBasicList>
+       <checkFieldOrList>
+     	  	<!--<checkFieldOr type="1">
+    			<checkFieldBasic name="E211210" discription="押品权属人（或保证人）类型"  startLength="3" ></checkFieldBasic>
+                <checkFieldBasic name="E211210" discription="押品权属人（或保证人）类型" chnCheck="true" startLength="2" ></checkFieldBasic>
+            </checkFieldOr>-->
+       </checkFieldOrList>
+       <checkFieldEffectiveList>
+       	<!--JBL2-049	C	关联关系类型		1-上下游关系，2-共同出资组建企业关系，3-亲属关系，4-担保关系，5-其他关联关系，6-共同受同一自然人控制。	单选。填写1/2/3/4/5/6中的1个。-->
+        	<checkFieldEffective name="C" discription="关联关系类型">
+                 <value>1</value>
+                 <value>2</value>
+                 <value>3</value>
+                 <value>4</value>
+                 <value>5</value>
+                 <value>6</value>
+          </checkFieldEffective>          
+       </checkFieldEffectiveList>
+
+       <checkFieldCaseWhenList>
+       </checkFieldCaseWhenList>
+
+       <checkFieldLineList>
+			 </checkFieldLineList>
+
+      </checkTable>   
+	</checkInstance>	
+</reportCheckRoot>

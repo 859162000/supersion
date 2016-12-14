@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<navigationRoot>
+    <navigationComponentList>
+    	<navigationComponent id="DeskTop" name="桌面" url="Framework/NavigationPage.jsp"  ico="bg.png" treeIco="bg.png" treeExpandIco="bg.png" des="">
+    		<navigationComponent id="EAS" name="银监会监管数据标准化" url="Framework/NavigationPage.jsp"  ico="128_Other.png" treeIco="64_Other.png" treeExpandIco="32_Other.png" des="">
+    		<navigationComponent id="EasTaskModelInst" name="数据填报" url="framework/EasShowTree-report.dto.TaskModelInst" ico="64_Reportmodel_tableSet.png" treeIco="32_Reportmodel_tableSet.png" treeExpandIco="16_Reportmodel_tableSet.png" des=""></navigationComponent>
+    		<navigationComponent id="EasTaskModelInstSH" name="数据审核" url="framework/EasReviewShowTree-report.dto.TaskModelInst" ico="64_TaskRptInst.png" treeIco="32_TaskRptInst.png" treeExpandIco="16_TaskRptInst.png" des=""></navigationComponent>
+			<navigationComponent id="RportPrepCheck" name="报文预检验" url="eas/ShowView-EASReportCheck" ico="64_ActionUpdateExcute.png" treeIco="32_ActionUpdateExcute.png" treeExpandIco="16_ActionUpdateExcute.png" des=""></navigationComponent>
+			<navigationComponent id="EastDownload" name="报文下载" url="eas/ShowView-InterfaceDownEastView" ico="64_DownloadMany.png" treeIco="32_DownloadMany.png" treeExpandIco="16_DownloadMany.png" des=""></navigationComponent>
+			<navigationComponent id="TOOLS_EAS_DATAQUALITY" name="数据质量分析" url="framework/ShowList-eas.dto.TOOLS_EAS_DATAQUALITY" ico="64_Other.png" treeIco="32_Other.png" treeExpandIco="16_Other.png" des=""></navigationComponent>
+<!--			<navigationComponent id="EasTaskFlow" name="银监会监管数据标准化报表任务定义器" url="framework/EasShowList-report.dto.TaskFlow" ico="64_SystemParam.png" treeIco="32_SystemParam.png" treeExpandIco="16_SystemParam.png" des=""></navigationComponent>-->
+<!--		   		<navigationComponent id="EasFrameworkTaskRptInst" name="银监会监管数据标准化统计报表填报" url="framework/EasShowTree-report.dto.TaskRptInst" ico="64_DocumentInfo.png" treeIco="32_DocumentInfo.png" treeExpandIco="16_DocumentInfo.png" des=""></navigationComponent>-->
+<!--		   		<navigationComponent id="EasFrameworkTaskRptInstSH" name="银监会监管数据标准化统计报表填报审核" url="framework/EasReviewShowTree-report.dto.TaskRptInst" ico="64_FundDataCheck.png" treeIco="32_FundDataCheck.png" treeExpandIco="16_FundDataCheck.png" des=""></navigationComponent>-->
+    	    </navigationComponent>
+    	</navigationComponent>
+    </navigationComponentList>
+</navigationRoot>

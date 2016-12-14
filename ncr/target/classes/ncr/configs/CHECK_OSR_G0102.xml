@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<reportCheckRoot>
+  <checkInstance name="CHECK_OSR_G0102" >
+	  <paramValueList>
+		 <paramValue name="dtDate" value="dtDate"></paramValue>
+	     <paramValue name="strInstCode" value="strInstCode"></paramValue>
+	  </paramValueList>
+	  <checkItemList>
+	    <paramFieldList>
+	       <paramField paramName="dtDate" field="dtDate" type="1"></paramField>
+	       <paramField paramName="strInstCode" field="strInstCode" type="1"></paramField>
+	       <paramField paramName="strFreq" field="strFreq" type="1"></paramField> <!-- reportFreq -->
+	    </paramFieldList>
+	    <checkItemRule code="G01020006E" currency="01" property="01" compareType="=" description="指标值与计算结果不符"> <!-- 均支持参数	-->
+		      <checkItemSubRule type="item" code="G01020006C" property="01" currency="01" > </checkItemSubRule>
+		      <checkItemSubRule type="operate" value="+" > </checkItemSubRule>
+		      <checkItemSubRule type="item" code="G01020006D" property="01" currency="01" > </checkItemSubRule>
+	    </checkItemRule>
+	  </checkItemList> 
+  </checkInstance>
+  
+</reportCheckRoot>

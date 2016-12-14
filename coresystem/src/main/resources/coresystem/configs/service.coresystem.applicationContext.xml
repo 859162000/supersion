@@ -1,0 +1,922 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<beans
+	xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns:p="http://www.springframework.org/schema/p"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-3.0.xsd">
+
+    <bean id="userInfoShowListForTreeService" parent="singleObjectShowListForTreeService">
+        <property name="operationMap">
+            <map>
+                <entry key="查询" value="Select-ShowListForTree"></entry>
+                <entry key="新增" value="Get-ShowSave"></entry>
+<!--                <entry key="删除" value="PostConfirm-TreeNodeDelete"></entry>  物理删除 -->
+                <entry key="删除" value="PostConfirm-DeleteApply"></entry>  <!--  逻辑删除  -->
+                <!--<entry key="删除" value="PostConfirm-DeleteListByIdList"></entry>-->
+                <entry key="重置" value="Post-UpdateField"></entry>
+                <entry key="锁定" value="Post-UserLockUpdateFieldById"></entry>
+                <entry key="显示字段导出" value="Post-ExportData"></entry>
+                <entry key="全字段导出" value="Post-ExportAllData"></entry>
+                <entry key="导入" value="Upload-ImportDataForTree"></entry>
+            </map>
+        </property>
+        <property name="linkedMap">
+          <map>
+                <entry key="修改" value="Get-ShowUpdate"></entry>
+                <!--<entry key="删除" value="PostConfirm-DeleteApplyById"></entry>
+                <entry key="用户权限" value="Post-ShowSingleTreeLevelRole-coresystem.dto.RoleInfo"></entry>-->
+          </map>
+         </property>
+        <property name="defaultValueMap">
+             <map>
+                 <entry key="strAllowState" value="1,2,3"></entry> <!-- 已经审核，删除申请中 -->
+             </map>
+        </property>
+        <property name="defaultProceseClassList">
+            <list>
+                <value>coresystem.service.procese.UserInfoShowPasswordProcese</value>
+                <value>framework.services.procese.ShowListProcese</value>
+                <value>framework.services.procese.LevelDataProcese</value>
+                <value>framework.services.procese.ShowListTreeProcese</value>
+                <value>framework.services.procese.SelectTagSortByNameProcese</value>
+                <value>framework.services.procese.ShowPowerButtonProcese</value>
+            </list>
+        </property>
+     </bean>
+     
+     <bean id="userInfoSaveService" parent="singleObjectSaveService" scope="prototype">
+        <!--<property name="defaultCheckInstance" value="userInfoField"/>-->
+        <property name="defaultValueMap">
+             <map>
+                <entry key="strAllowState" value="1"></entry>
+                <entry key="strLockState" value="1"></entry>
+                <entry key="errorCount" value="0"></entry>
+                <entry key="createTime" value="SystemDate"></entry>
+                <entry key="updatePasswordTime" value="SystemDate"></entry>
+                <entry key="lastLoginTime" value="SystemDate"></entry>
+             </map>
+        </property>
+        
+        <property name="defaultCheckClassList">
+            <list>
+                <value>framework.services.check.ReflectEmptyFieldCheck</value>
+                <value>framework.services.check.ReflectTypeFieldCheck</value>
+                <value>framework.services.check.PrimaryKeyRepeatCheck</value>
+                <value>framework.services.check.XMLSingleObjectInstanceCheck</value>
+                <value>coresystem.service.check.CheckPassword</value>
+                <value>coresystem.service.check.UserInfoCodeCheck</value>
+            </list>
+        </property>
+        <property name="defaultTranslateClassList">
+            <list>
+                <value>framework.services.translate.SingleIdListTranslate</value>
+                <value>coresystem.service.translate.UserInfoSaveOrUpdateTranslate</value>
+            </list>
+        </property>
+     </bean>
+     
+      <bean id="userInfoShowUpdateService" parent="singleObjectShowUpdateService">
+           <property name="defaultProceseClassList">
+            <list>
+                <value>coresystem.service.procese.UserInfoShowPasswordProcese</value>
+                <value>framework.services.procese.ShowUpdateProcese</value>
+                <value>framework.services.procese.LevelDataProcese</value>
+                <value>framework.services.procese.SortFieldProcese</value>
+                <value>framework.services.procese.SelectTagSortByNameProcese</value>
+                <value>framework.services.procese.ShowPowerButtonProcese</value>
+            </list>
+        </property>
+      </bean>
+      
+      <bean id="userInfoUpdateService" parent="singleObjectUpdateService">
+        <property name="defaultTranslateClassList">
+            <list>
+                <value>framework.services.translate.SingleIdListTranslate</value>
+                <value>coresystem.service.translate.UserInfoSaveOrUpdateTranslate</value>
+            </list>
+        </property>
+        <property name="defaultCheckClassList">
+            <list>
+                <value>framework.services.check.ReflectEmptyFieldCheck</value>
+                <value>framework.services.check.ReflectTypeFieldCheck</value>
+                <value>framework.services.check.XMLSingleObjectInstanceCheck</value>
+                <value>coresystem.service.check.CheckPassword</value>
+            </list>
+        </property>
+     </bean>
+     
+     <bean id="userInfoSaveLevelUserInfoService" parent="singleObjectSaveService" scope="prototype">
+        <property name="defaultValueMap">
+             <map>
+                <entry key="strAllowState" value="1"></entry> <!-- 新增，设置状态-->
+             </map>
+        </property>
+     </bean>
+     
+     <bean id="userInfoShowApplyService" parent="singleObjectShowListService">
+        <property name="operationMap">
+            <map>
+                <entry key="查询" value="Select-ShowApply"></entry>
+                <entry key="批准" value="Post-AcceptApply"></entry>
+            </map>
+        </property>
+        <property name="linkedMap">
+            <map>
+            </map>
+        </property>
+        <property name="defaultValueMap">
+             <map>
+                <entry key="strAllowState" value="1,3"></entry> <!-- 新增审批中，删除申请中 -->
+             </map>
+        </property>
+     </bean>
+     
+     <bean id="userInfoShowListLevelUserInfoService" parent="singleObjectShowListService">
+        <property name="operationMap">
+            <map>
+                <entry key="查询" value="Select-ShowList"></entry>
+                <entry key="新增" value="Get-ShowSave"></entry>
+                <entry key="删除" value="PostConfirm-DeleteListByIdList"></entry>
+                <entry key="重置" value="Post-UpdateField"></entry>
+                <entry key="显示字段导出" value="Post-ExportData"></entry>
+                <entry key="全字段导出" value="Post-ExportAllData"></entry>
+                <entry key="导入" value="Upload-ImportData"></entry>
+            </map>
+        </property>
+        <property name="defaultValueMap">
+             <map>
+                <entry key="strAllowState" value="2,3"></entry> <!-- 已经审核，删除申请中 -->
+             </map>
+        </property>
+     </bean>
+     
+     <bean id="userInfoUpdateFieldService" class="coresystem.service.imps.UserInfoUpdateFieldService" scope="prototype">
+        <property name="fieldName" value="strPassword"></property>
+        <property name="fieldValue" value="ugU1++aAA4YWJZauXwBLBw=="></property>
+        <property name="successMessage" value="重置成功"></property>
+        <property name="errorMessage" value="重置失败"></property>
+        
+        <property name="defaultDaoBeanId" value="singleObjectUpdateFieldDao"></property>
+        <property name="defaultCheckClassList">
+            <list>
+                <value>framework.services.check.IdListNullCheck</value>
+            </list>
+        </property>
+        <property name="defaultTranslateClassList">
+            <list>
+                <value>framework.services.translate.IdAndIdListTypeTranslate</value>
+            </list>
+        </property>
+     </bean>
+     
+     <bean id="userInfoDeleteApplyService" parent="singleObjectUpdateFieldService">
+        <property name="fieldName" value="strAllowState"></property>
+        <property name="fieldValue" value="4"></property>
+        <property name="successMessage" value="删除成功"></property>
+        <property name="errorMessage" value="删除失败"></property>
+     </bean>
+     
+     <bean id="userInfoDeleteApplyByIdService" parent="singleObjectUpdateFieldByIdService">
+        <property name="fieldName" value="strAllowState"></property>
+        <property name="fieldValue" value="3"></property>
+        <property name="successMessage" value="删除成功"></property>
+        <property name="errorMessage" value="删除失败"></property>
+     </bean>
+     <bean id="userInfoExportDataService" parent="ExportDataService">
+       <property name="dtoName" value="coresystem.dto.UserInfo_Export"></property>
+     </bean>
+     
+     
+
+     <bean id="userInfoAcceptApplyService" parent="singleObjectUpdateFieldService">
+        <property name="fieldName" value="strAllowState"></property>
+        <property name="fieldValue" value="1To2,3ToDelete"></property>
+        <property name="successMessage" value="审批成功"></property>
+        <property name="errorMessage" value="审批失败"></property>
+     </bean>
+     
+     <bean id="instInfoShowListForTreeService" parent="singleObjectShowListForTreeService">
+         <property name="operationMap">
+            <map>
+                <entry key="查询" value="Select-ShowListForTree"></entry>
+                <entry key="新增" value="Get-ShowSave"></entry>
+                 <!--<entry key="删除" value="PostConfirm-TreeNodeDelete"></entry>-->
+                <!--<entry key="删除" value="PostConfirm-DeleteApply"></entry>
+                <entry key="下载" value="Get-Download"></entry>-->
+             	<entry key="导出" value="Post-ExportData"></entry><!--  机构信息管理，为实施方便操作，新增按钮   -->
+                <entry key="导入" value="Upload-ImportData"></entry>
+            </map>
+        </property>
+        <property name="linkedMap">
+          <map>
+                <entry key="修改" value="Get-ShowUpdate"></entry>
+                <!--<entry key="删除" value="PostConfirm-DeleteApplyById"></entry>-->
+          </map>
+        </property>
+         <property name="defaultValueMap">
+             <map>
+                <entry key="strInstStatus" value="1"></entry> 
+              <!--   <entry key="strAllowState" value="2,3"></entry>--> <!--已经审核，删除 -->
+             </map>
+        </property>  
+    </bean>
+    
+      <bean id="instInfoStateRecoveryShowListForTreeService" parent="instInfoShowListForTreeService">
+         <property name="operationMap">
+            <map>
+                <entry key="查询" value="Select-StateRecoveryShowListForTree"></entry>
+                <entry key="恢复营业状态" value="Post-StateRecoveryForBusinessUpdateField"></entry>
+            </map>
+        </property>
+        <property name="linkedMap">
+          <map>
+          </map>
+        </property>
+         <property name="defaultValueMap">
+             <map>
+                <entry key="strInstStatus" value="1,2,3,4"></entry> 
+             </map>
+        </property>  
+    </bean>
+    
+     <bean id="stateRecoveryForBusinessUpdateFieldService" parent="singleObjectUpdateFieldService">
+        <property name="fieldName" value="strInstStatus"></property>
+        <property name="fieldValue" value="1"></property>
+        <property name="successMessage" value="恢复营业状态成功"></property>
+        <property name="errorMessage" value="恢复营业状态失败"></property>
+      </bean>
+      
+    <bean id="suitShowListForTreeService" parent="singleObjectShowListForTreeService">
+    </bean>
+    
+    <bean id="instInfoSaveService" parent="singleObjectSaveService" scope="prototype">
+        <property name="defaultValueMap">
+             <map>
+                <entry key="strAllowState" value="1"></entry> <!-- 新增，设置状态-->
+             </map>
+        </property>
+     </bean>
+     
+      <bean id="instInfoTreeNodeUpdateService" parent="singleObjectUpdateService">
+       <property name="defaultValueMap">
+             <map>
+                <entry key="UpdateTime" value="SystemDate"></entry> 
+             </map>
+        </property>
+     </bean>
+     
+    <bean id="instInfoShowApplyService" parent="singleObjectShowListService">
+        <property name="operationMap">
+            <map>
+                <entry key="查询" value="Select-ShowApply"></entry>
+                <entry key="批准" value="Post-AcceptApply"></entry>
+            </map>
+        </property>
+        <property name="linkedMap">
+            <map>
+            </map>
+        </property>
+        <property name="defaultValueMap">
+             <map>
+                <entry key="strAllowState" value="1,3"></entry> <!-- 未审核，删除申请中 -->
+             </map>
+        </property>
+    </bean>
+    
+    <bean id="instInfoAcceptApplyService" parent="singleObjectUpdateFieldService">
+        <property name="successMessage" value="审批成功"></property>
+        <property name="errorMessage" value="审批失败"></property>
+        <property name="fieldName" value="strAllowState"></property>
+        <property name="fieldValue" value="1To2,3ToDelete"></property>
+     </bean>
+     
+     <bean id="instInfoDownloadService" class="framework.services.imps.SingleObjectDownloadByPathService" scope="prototype">
+        <property name="path" value="Download\test.txt"></property>
+     </bean>
+     
+     <bean id="instInfoDeleteApplyService" parent="singleObjectUpdateFieldService">
+        <property name="fieldName" value="strAllowState"></property>
+        <property name="fieldValue" value="3"></property>
+        <property name="successMessage" value="删除成功"></property>
+        <property name="errorMessage" value="删除失败"></property>
+     </bean>
+     
+     <bean id="instInfoDeleteApplyByIdService" parent="singleObjectUpdateFieldByIdService">
+        <property name="fieldName" value="strAllowState"></property>
+        <property name="fieldValue" value="3"></property>
+        <property name="successMessage" value="删除成功"></property>
+        <property name="errorMessage" value="删除失败"></property>
+     </bean>
+     
+     <bean id="reportModel_TableShowListForTreeService" parent="singleObjectShowListForTreeService">
+     <property name="operationMap">
+            <map>
+	         <entry key="新增" value="Get-ShowSave"></entry>
+	         <entry key="删除" value="PostConfirm-TreeNodeDelete"></entry>
+	         <entry key="导出" value="Post-ExportData"></entry>
+	         <entry key="导入" value="Upload-ImportDataForTree"></entry>
+	         <entry key="查询" value="Select-ShowListForTree"></entry>
+	    </map>
+       	</property>
+        <property name="linkedMap">
+          <map>
+            <entry key="修改" value="Get-ShowUpdate"></entry>
+            <!--<entry key="删除" value="Get-DeleteById"></entry>-->
+            <entry key="字段管理" value="Get-ShowListLevelField-extend.dto.ReportModel_Field"></entry>
+            <entry key="创建明细表" value="Get-coresystem/DDLLevelTable-extend.dto.ReportModel_Table"></entry>
+            <entry key="同步表" value="Get-coresystem/ImportTableStructLevelTable-extend.dto.ReportModel_Table"></entry>
+          </map>
+         </property>
+     </bean>
+     
+     <bean id="reportModel_TableSaveService" parent="singleObjectSaveService">
+        <property name="defaultCheckClassList">
+            <list>
+                <value>framework.services.check.ReflectEmptyFieldCheck</value>
+                <value>framework.services.check.ReflectTypeFieldCheck</value>
+                <value>framework.services.check.PrimaryKeyRepeatCheck</value>
+                <value>framework.services.check.XMLSingleObjectInstanceCheck</value>
+                <value>coresystem.service.check.TableFieldCheck</value>
+            </list>
+        </property>
+        <!--<property name="defaultValueMap">
+           <map>
+             <entry key="strAddFields" value="1"></entry>
+           </map>
+        </property>
+     --></bean>
+     
+     <bean id="reportModel_TableUpdateService" parent="singleObjectUpdateService">
+        <property name="defaultCheckClassList">
+            <list>
+                <value>framework.services.check.ReflectEmptyFieldCheck</value>
+                <value>framework.services.check.ReflectTypeFieldCheck</value>
+                <value>framework.services.check.XMLSingleObjectInstanceCheck</value>
+                <value>coresystem.service.check.TableFieldCheck</value>
+            </list>
+        </property>
+        <!--<property name="defaultValueMap">
+           <map>
+             <entry key="strAddFields" value="1"></entry>
+           </map>
+        </property>
+     --></bean>
+     
+     <bean id="reportModel_FieldSaveLevelFieldService" parent="singleObjectSaveService">
+       <property name="defaultCheckInstance" value="TableFieldInfo"/>
+       <property name="defaultCheckClassList">
+            <list>
+                <value>framework.services.check.ReflectEmptyFieldCheck</value>
+                <value>framework.services.check.ReflectTypeFieldCheck</value>
+                <value>framework.services.check.PrimaryKeyRepeatCheck</value>
+                <value>framework.services.check.XMLSingleObjectInstanceCheck</value>
+                <value>coresystem.service.check.TableFieldCheck</value>
+            </list>
+        </property>
+     </bean>
+
+     <bean id="reportModel_FieldUpdateLevelFieldService" parent="singleObjectUpdateService">
+       <property name="defaultCheckInstance" value="TableFieldInfo"/>
+       <property name="defaultCheckClassList">
+            <list>
+                <value>framework.services.check.ReflectEmptyFieldCheck</value>
+                <value>framework.services.check.ReflectTypeFieldCheck</value>
+                <value>framework.services.check.XMLSingleObjectInstanceCheck</value>
+                <value>coresystem.service.check.TableFieldCheck</value>
+            </list>
+        </property>
+     </bean>
+     
+     <bean id="reportModel_FieldShowListLevelFieldService" parent="singleObjectShowListLevelService">
+        <property name="linkedMap">
+            <map>
+                <entry key="修改" value="Get-ShowUpdate"></entry>
+                <!--<entry key="删除" value="Get-DeleteById"></entry>-->
+                <entry key="条件设置" value="Get-ShowListLevelFieldCondition-extend.dto.ReportModel_FieldCondition"></entry>
+          </map>
+         </property>
+     </bean>
+     
+     <bean id="AAAAAAAAAAAService" parent="singleObjectShowUpdateListService">
+        <property name="showInstanceName" value="4"></property>
+     </bean>
+
+	<bean id="loginService" class="coresystem.service.imps.LoginService" scope="prototype">
+	    <property name="selfDataSecurity" value="true"></property>
+	    <property name="selfInstDataSecurity" value="true"></property>
+	    <property name="defaultCheckClassList">
+            <list>
+            	<value>coresystem.service.check.MultiLegalCodeCheck</value>
+            </list>
+        </property>
+	     <property name="defaultTranslateClassList">
+            <list>
+                <value>coresystem.service.translate.LegalInfoTranslate</value>
+            </list>
+        </property>
+	</bean>
+    
+    <bean id="loginService2" parent="loginService" scope="prototype">
+        <property name="selfDataSecurity" value="true"></property>
+	    <property name="selfInstDataSecurity" value="true"></property>
+    </bean>
+    
+    <bean id="logoutService" class="coresystem.service.imps.LogoutService" scope="prototype">
+    </bean>
+    <bean id="DDLLevelTableService" class="coresystem.service.imps.DDLService" scope="prototype">
+    	<property name="defaultDaoBeanId" value="sQLExecVoidResultDao"></property>
+    	<property name="strDBType" value="Oracle"></property>
+    	
+    	<property name="successMessage" value="创建成功"></property>
+        <property name="errorMessage" value="创建失败"></property>
+    </bean>
+    
+    <bean id="ImportTableStructService" class="coresystem.service.imps.ImportTableStructService" scope="prototype">
+    	<property name="defaultDaoBeanId" value="sQLExecVoidResultDao"></property>
+    	<property name="successMessage" value="同步成功"></property>
+        <property name="errorMessage" value="同步失败"></property>
+    </bean>
+    
+    <bean id="instInfoShowTreeService" parent="singleObjectShowTreeService">
+         <property name="rootName" value="机构层级 "/>
+         <property name="foreignFieldMap">
+             <map>
+                 <entry key="higherInst" value=""></entry>
+             </map>
+         </property>
+          <property name="defaultValueMap">
+             <map>
+                <entry key="strInstStatus" value="1"></entry> 
+             </map>
+        </property>
+     </bean>
+   
+   <bean id="instInfoStateRecoveryShowTreeService" parent="instInfoShowTreeService">
+         <property name="rootName" value="机构层级 "/>
+         <property name="foreignFieldMap">
+             <map>
+                 <entry key="higherInst" value=""></entry>
+             </map>
+         </property>
+          <property name="defaultValueMap">
+             <map>
+                <entry key="strInstStatus" value="1,2,3,4"></entry> 
+             </map>
+        </property>
+         <property name="operationMap">
+            <map>
+                <entry key="" value="Get-StateRecoveryShowListForTree"></entry>
+            </map>
+        </property>
+     </bean>
+     
+  <bean id="userInfoShowTreeService" parent="singleObjectShowTreeService">
+         <property name="treeServiceMap">
+             <map>
+                 <entry key="instInfoShowTreeService" value="coresystem.dto.InstInfo,coresystem.dto.UserInfo"></entry>
+             </map>
+         </property>
+     </bean>
+     
+     <bean id="suitShowTreeService" parent="singleObjectShowTreeService">
+       <property name="rootName" value="主题层级 "/>
+       <property name="foreignFieldMap">
+             <map>
+                 <entry key="higerSuit" value=""></entry>
+             </map>
+       </property>
+     </bean>
+
+     
+     <bean id="reportModel_TableShowTreeService" parent="singleObjectShowTreeService">
+       <property name="rootName" value="主题层级 "/>
+       <property name="treeServiceMap">
+             <map>
+                 <entry key="suitShowTreeService" value="extend.dto.Suit,extend.dto.ReportModel_Table"></entry>
+             </map>
+         </property>
+     </bean>
+    <bean id="suitShowSaveService" parent="singleObjectShowSaveService">
+        <property name="operationMap">
+            <map>
+                <entry key="保存" value="Post-TreeNodeSave"></entry>
+                <entry key="返回" value="Get-BackFirst"></entry>
+            </map>
+        </property>
+    </bean>
+    
+    <bean id="suitShowUpdateService" parent="singleObjectShowUpdateService">
+        <property name="operationMap">
+            <map>
+                <entry key="保存" value="Post-TreeNodeUpdate"></entry>
+                <entry key="返回" value="Get-BackFirst"></entry>
+            </map>
+        </property>
+    </bean>
+    
+    <bean id="instInfoShowSaveService" parent="singleObjectShowSaveService">
+        <property name="operationMap">
+            <map>
+                <entry key="保存" value="Post-TreeNodeSave"></entry>
+                <entry key="返回" value="Get-BackFirst"></entry>
+            </map>
+        </property>
+        <property name="defaultProceseClassList">
+            <list>
+                <value>framework.services.procese.ShowSaveProcese</value>
+                <value>framework.services.procese.LevelDataProcese</value>
+		        <value>framework.services.procese.DefaultValueProcese</value>
+		        <value>framework.services.procese.ShowListTreeProcese</value>
+		        <value>framework.services.procese.SortFieldProcese</value>
+		        <value>framework.services.procese.SelectTagSortByNameProcese</value>
+		        <value>coresystem.service.procese.ForInstInfoStatusProcese</value>
+		        <value>framework.services.procese.ShowPowerButtonProcese</value>
+            </list>
+        </property>
+    </bean>
+    
+    <bean id="instInfoShowUpdateService" parent="singleObjectShowUpdateService">
+        <property name="operationMap">
+            <map>
+                <entry key="保存" value="Post-TreeNodeUpdate"></entry>
+                <entry key="返回" value="Get-BackFirst"></entry>
+            </map>
+        </property>
+    </bean>
+     
+     <bean id="roleInfoShowSingleTreeLevelRoleService" parent="singleObjectShowTreeService">
+       <property name="rootName" value="权限层级 "/>
+       <property name="treeField" value="strAllowState"></property>
+       <property name="treeFieldValue" value="2,3"></property> <!-- 过滤未审核 -->
+       <property name="leafField" value="strAllowState"></property>
+       <property name="leafFieldValue" value="2,3"></property> <!-- 过滤未审核 -->
+       <property name="subNodeField" value="instInfo,strFunctionCode"/>
+     </bean>
+ 
+    <bean id="systemCodeSetShowListService" parent="singleObjectShowListService">
+      <property name="linkedMap">
+        <map>
+           <entry key="修改" value="Get-ShowUpdate"></entry>
+           <entry key="值管理" value="Get-ShowListLevelSysCode-extend.dto.SystemCodeValue"></entry>
+        </map>
+      </property>
+      <property name="operationMap">
+        <map>
+          <entry key="新增" value="Get-ShowSave"></entry>
+          <entry key="删除" value="PostConfirm-DeleteListByIdList"></entry>
+          <entry key="显示字段导出" value="Post-ExportData"></entry>
+          <entry key="全字段导出" value="Post-ExportAllData"></entry>
+          <entry key="导入" value="Upload-ImportData"></entry>
+          <entry key="查询" value="Select-ShowList"></entry>
+        </map>
+      </property>
+    </bean>
+    
+    <bean id="systemCodeValueShowListLevelSysCodeService" parent="singleObjectShowListLevelService">
+      <property name="linkedMap">
+        <map>
+           <entry key="修改" value="Get-ShowUpdate"></entry>
+        </map>
+      </property>
+      <property name="operationMap">
+            <map>
+                <entry key="查询" value="Select-ShowList"></entry>
+                <entry key="新增" value="Get-ShowSave"></entry>
+                <entry key="删除" value="PostConfirm-DeleteListByIdList"></entry>
+	          	<entry key="显示字段导出" value="Post-ExportData"></entry>
+	          	<entry key="全字段导出" value="Post-ExportAllData"></entry>
+	          	<entry key="导入" value="Upload-ImportData"></entry>
+                <entry key="返回" value="Get-BackPreviousFirst"></entry>
+            </map>
+        </property>
+    </bean>
+    
+    <bean id="systemCodeValueSaveLevelSysCodeService" parent="singleObjectSaveService">
+     	<property name="defaultCheckInstance" value="systemCodeValueCheck"/>
+    </bean>
+    
+     <bean id="systemCodeValueUpdateLevelSysCodeService" parent="singleObjectUpdateService">
+     	<property name="defaultCheckInstance" value="systemCodeValueCheck"/>
+    </bean>
+    
+    <bean id="actionExcuteShowListService" parent="singleObjectShowListService">
+      <property name="linkedMap">
+        <map>
+        </map>
+      </property>
+      <property name="operationMap">
+        <map>
+          <entry key="查询" value="Select-ShowList"></entry>
+        </map>
+      </property>
+    </bean>
+    
+    <bean id="actionUpdateExcuteShowListService" parent="singleObjectShowListService">
+      <property name="linkedMap">
+        <map>
+        </map>
+      </property>
+      <property name="operationMap">
+        <map>
+          <entry key="查询" value="Select-ShowList"></entry>
+        </map>
+      </property>
+    </bean>
+    
+    <bean id="initAutoDTOService" class="coresystem.service.imps.InitAutoDTOService" scope="prototype">
+    </bean>
+    
+    <bean id="showUserNeedDoThingService" class="coresystem.service.imps.ShowUserNeedDoThingService" scope="prototype">
+   		<property name="pageSize" value="10000"></property>
+        <property name="defaultDaoBeanId" value="singleObjectFindByPageCriteriaDao"></property>
+        <property name="defaultLogicDaoBeanId" value="singleObjectFindByCriteriaDao"></property>
+        <property name="showInstanceName" value="1"></property>
+        <property name="defaultProceseClassList">
+            <list>
+                <value>framework.services.procese.ShowListProcese</value>
+                <value>framework.services.procese.LevelDataProcese</value>
+                <value>framework.services.procese.ShowListTreeProcese</value>
+                <value>framework.services.procese.SelectTagSortByNameProcese</value>
+                <value>framework.services.procese.ShowPowerButtonProcese</value>
+            </list>
+        </property>
+        <property name="defaultTranslateClassList">
+            <list>
+                <value>framework.services.translate.LevelDataTranslate</value>
+                <value>framework.services.translate.ConditionCriteriaTranslate</value>
+                <value>framework.services.translate.SecurityTranslate</value>
+		        <value>framework.services.translate.DefaultValueTranslate</value>
+		        <value>framework.services.translate.ShowListTreeTranslate</value>
+            </list>
+        </property>
+        <property name="operationMap">
+            <map>
+            </map>
+        </property>
+        <property name="linkedMap">
+            <map>
+            </map>
+        </property>
+    </bean>
+    
+    <!-- 删除机构前判断机构下数据是否删除 -->
+    <bean id="instInfoDeleteListByIdListService" parent="singleObjectDeleteListByIdListService">
+        <property name="dependTableList">
+            <list>
+                <value>coresystem.dto.UserInfo</value>
+                <value>report.dto.TaskRptInst</value>
+                <value>report.dto.InstInstSet</value>
+            </list>
+        </property>
+    </bean>
+    
+     <bean id="instInfoTreeNodeDeleteService" parent="singleObjectDeleteListByIdListService">
+        <property name="dependTableList">
+            <list>
+                <value>coresystem.dto.UserInfo</value>
+                <value>report.dto.TaskRptInst</value>
+                <value>report.dto.InstInstSet</value>
+		<!--TODO优化
+                <value>fundManagementSystem.dto.TRAN210101</value>
+                <value>fundManagementSystem.dto.TRAN210102</value>
+                <value>fundManagementSystem.dto.TRAN210103</value>
+                <value>fundManagementSystem.dto.TRAN210104</value>
+                <value>fundManagementSystem.dto.TRAN210105</value>
+                <value>fundManagementSystem.dto.TRAN210106</value>
+                <value>fundManagementSystem.dto.TRAN210107</value>
+                <value>fundManagementSystem.dto.TRAN210108</value>
+                <value>fundManagementSystem.dto.TRAN210109</value>
+                <value>fundManagementSystem.dto.TRAN210110</value>
+                <value>fundManagementSystem.dto.TRAN210111</value>
+                <value>fundManagementSystem.dto.TRAN210112</value>
+                <value>fundManagementSystem.dto.TRAN210201</value>
+                <value>fundManagementSystem.dto.TRAN210202</value>
+                <value>fundManagementSystem.dto.TRAN210203</value>
+                <value>fundManagementSystem.dto.TRAN210204</value>
+                <value>fundManagementSystem.dto.TRAN210205</value>
+                <value>fundManagementSystem.dto.TRAN210206</value>
+                <value>fundManagementSystem.dto.TRAN210207</value>
+                <value>fundManagementSystem.dto.TRAN210208</value>
+                <value>fundManagementSystem.dto.TRAN210209</value>
+                <value>fundManagementSystem.dto.TRAN210211</value>
+                <value>fundManagementSystem.dto.TRAN210301</value>
+                <value>fundManagementSystem.dto.TRAN210302</value>
+                <value>fundManagementSystem.dto.TRAN210303</value>
+                <value>fundManagementSystem.dto.TRAN210304</value>
+                <value>fundManagementSystem.dto.TRAN210305</value>
+                <value>fundManagementSystem.dto.TRAN210306</value>
+                <value>fundManagementSystem.dto.TRAN210307</value>
+                <value>fundManagementSystem.dto.TRAN210308</value>
+                <value>fundManagementSystem.dto.TRAN210309</value>
+                <value>fundManagementSystem.dto.TRAN210310</value>
+                <value>fundManagementSystem.dto.TRAN210311</value>
+                <value>fundManagementSystem.dto.TRAN210401</value>
+                <value>fundManagementSystem.dto.TRAN210501</value>
+                <value>fundManagementSystem.dto.TRAN310101</value>
+		-->
+            </list>
+        </property>
+    </bean>
+    
+    <bean id="showUpdatePasswordService" class="coresystem.service.imps.ShowUpdatePasswordService" scope="prototype">
+        <property name="showInstanceName" value="1"></property>
+        <property name="defaultLogicDaoBeanId" value="singleObjectFindByCriteriaDao"></property>
+        <property name="defaultProceseClassList">
+            <list>
+                <value>framework.services.procese.ShowSaveProcese</value>
+                <value>framework.services.procese.LevelDataProcese</value>
+		        <value>framework.services.procese.DefaultValueProcese</value>
+		        <value>framework.services.procese.ShowListTreeProcese</value>
+		        <value>framework.services.procese.SortFieldProcese</value>
+		        <value>framework.services.procese.SelectTagSortByNameProcese</value>
+		        <value>framework.services.procese.ShowPowerButtonProcese</value>
+            </list>
+        </property>
+        <property name="operationMap">
+            <map>
+                <entry key="保存" value="Post-UpdatePassword"></entry>
+            </map>
+        </property>
+    </bean>
+    
+    
+    <bean id="updatePasswordService" class="coresystem.service.imps.UpdatePasswordService" scope="prototype">
+        <property name="defaultCheckClassList">
+            <list>
+                <value>framework.services.check.ReflectEmptyFieldCheck</value>
+                <value>coresystem.service.check.CheckPassword</value>
+            </list>
+        </property>
+        <property name="successMessage" value="修改成功"></property>
+        <property name="errorMessage" value="修改失败"></property>
+    </bean>
+    
+    <bean id="userOperationLogShowListService" parent="singleObjectShowListService">
+         <property name="linkedMap">
+            <map>
+           </map>
+        </property>
+         <property name="operationMap">
+            <map>
+                <entry key="查询" value="Select-ShowList"></entry>
+                <entry key="导出" value="Post-ExportData"></entry>
+           </map>
+        </property>
+    </bean>
+    
+    
+    <bean id="roleFunctionShowListService" parent="singleObjectShowListService">
+         <property name="linkedMap">
+            <map>
+           </map>
+        </property>
+         <property name="operationMap">
+            <map>
+                <entry key="查询" value="Select-ShowList"></entry>
+                <entry key="导出" value="Post-ExportData"></entry>
+           </map>
+        </property>
+    </bean>
+    
+    
+    <!--  
+    <bean id="roleFunctionExportDataService" class="coresystem.service.imps.RoleFunctionExportDataService">
+      <property name="successMessage" value="导出成功"></property>
+        <property name="errorMessage" value="导出失败"></property>
+        <property name="defaultDaoBeanId" value="singleObjectFindByCriteriaDao"></property>
+        <property name="defaultTranslateClassList">
+            <list>
+            	<value>framework.services.translate.LevelDataTranslate</value>
+                <value>framework.services.translate.ConditionCriteriaTranslate</value>
+                <value>framework.services.translate.SecurityTranslate</value>
+                <value>framework.services.translate.DefaultValueTranslate</value>
+                <value>framework.services.translate.ShowListTreeTranslate</value>  
+            </list>
+        </property>
+        <property name="fileName" value="ExcelFile.xls"></property>
+        <property name="sheetName" value="Sheet1"></property>
+        <property name="showForeignId" value="true"></property>
+        <property name="showHeader" value="true"></property>
+        <property name="startLine" value="0"></property>
+        <property name="startCol" value="0"></property>
+        <property name="cacheLine" value="10000"></property>
+        <property name="strDateFormat" value="yyyy-MM-dd"></property>
+        
+        <property name="levelFieldMap">
+          <map>
+                <entry key="instInfo" value="instInfo"></entry>
+                <entry key="taskFlow.dtTaskDate" value="dtDate"></entry>
+          </map>
+        </property>
+    </bean>
+    -->
+    
+    <bean id="showNoticeViewService" parent="singleObjectShowListService">
+ 
+             <property name="operationMap">
+             <map>
+                <entry key="查询" value="Select-ShowNoticeView"></entry>
+            </map>
+        </property>
+         <property name="linkedMap">
+            <map>
+                <entry key="查看" value="Get-ShowNoticeUpdate"></entry>
+                <entry key="下载" value="Get-Download"></entry>
+            </map>
+         </property>
+     </bean>
+     
+     <bean id="showNoticeUpdateService" parent="singleObjectShowUpdateService" >
+     <property name="showInstanceName" value="showNoticeUpdate"></property>
+        <property name="operationMap">
+            <map>
+                <entry key="返回" value="Get-ShowNoticeView"></entry>
+            </map>
+        </property>
+         <property name="defaultProceseClassList">
+            <list>
+                <value>framework.services.procese.ShowUpdateProcese</value>
+                <value>framework.services.procese.LevelDataProcese</value>
+                <value>framework.services.procese.SortFieldProcese</value>
+                <value>framework.services.procese.SelectTagSortByNameProcese</value>
+                <value>framework.services.procese.ShowViewProcese</value>
+                <value>framework.services.procese.ShowPowerButtonProcese</value>
+            </list>
+        </property>
+     </bean>
+ 
+ 
+ 	<bean id="roleClassInstShowUpdateListService" parent="singleObjectShowUpdateListService">
+        <property name="defaultProceseClassList">
+            <list>
+                <value>framework.services.procese.ShowUpdateListProcese</value>
+                <value>framework.services.procese.LevelDataProcese</value>
+                <value>framework.services.procese.SortFieldProcese</value>
+                <value>framework.services.procese.ShowPowerButtonProcese</value>
+            </list>
+        </property>
+     </bean>
+     
+     <bean id="roleClassIndexTableShowUpdateListService" parent="singleObjectShowUpdateListService">
+        <property name="defaultProceseClassList">
+            <list>
+                <value>framework.services.procese.ShowUpdateListProcese</value>
+                <value>framework.services.procese.LevelDataProcese</value>
+                <value>framework.services.procese.SortFieldProcese</value>
+                 <value>framework.services.procese.SelectTagSortByNameProcese</value>
+                <value>framework.services.procese.ShowPowerButtonProcese</value>
+            </list>
+        </property>
+     </bean>
+     
+	 <bean class="framework.bean.context.ServiceContext">
+		<property name="beanId" value="singleObjectSaveLevelAUTODTOService"></property>
+		<property name="replacePropList">
+		<list></list>
+		</property>
+		<property name="dtoMatchRule" value="zxptsystem\.dto\.AutoDTO_\w+_((?!GRXX|BLXDZCCL|JGJBXX|JZCYXX).)*_JC"></property>
+		<property name="beanProperty">
+			<map>
+				<entry key="defaultCheckClassList">
+					<list>
+              	  		<value>zxptsystem.service.check.CommonQYZXCheck</value>
+				  		<value>zxptsystem.service.check.CommonZXCheck</value>
+            		</list>
+				</entry>
+				<entry key="defaultProceseClassList">
+					<list>
+				        <value>zxptsystem.service.procese.ClearJumpConditionValueProcese</value>
+		            </list>
+				</entry>
+				<entry key="defaultAddClassList">
+					 <list>
+		                <value>zxptsystem.service.add.XXJLGZBHSaveAdd</value>
+						<value>zxptsystem.service.add.ToIntgetFieldAdd</value>
+		            </list>
+				</entry>
+			</map>
+		</property>
+	</bean>
+	<bean id="hasUserNeedDoThingService" class="coresystem.service.imps.HasUserDoThingService">
+     </bean>
+	
+	<bean id="userInfoUserLockUpdateFieldByIdService" class="coresystem.service.imps.UserInfoLockUpdateFieldService" scope="prototype">
+        <property name="fieldName" value="strLockState"></property>
+        <property name="fieldValue" value="3"></property>
+        <property name="successMessage" value="锁定成功"></property>
+        <property name="errorMessage" value="锁定失败"></property>
+        
+        <property name="defaultDaoBeanId" value="singleObjectUpdateFieldDao"></property>
+        <property name="defaultCheckClassList">
+            <list>
+                <value>framework.services.check.IdListNullCheck</value>
+            </list>
+        </property>
+        <property name="defaultTranslateClassList">
+            <list>
+                <value>framework.services.translate.IdAndIdListTypeTranslate</value>
+            </list>
+        </property>
+     </bean>
+     
+ </beans>

@@ -1,0 +1,605 @@
+.UpSave_TextBox
+{
+	float:left;
+	padding-left: 10px;
+	width:250px;
+	float:left;
+	margin-left:10px;
+	height: 30px;
+	line-height: 30px;
+	font-size: 12px;
+	font-family: 'Microsoft Yahei';
+	color: #555;
+	background-color: #fff;
+	background-image: none;
+	border: 1px solid #ccc;
+	border-radius: 4px;
+	-webkit-box-shadow: inset 0 1px 1px rgba(0,0,0,.075);
+	box-shadow: inset 0 1px 1px rgba(0,0,0,.075);
+	-webkit-transition: border-color ease-in-out .15s,-webkit-box-shadow ease-in-out .15s;
+	-o-transition: border-color ease-in-out .15s,box-shadow ease-in-out .15s;
+	transition: border-color ease-in-out .15s,box-shadow ease-in-out .15s;
+}
+.UpSave_TextBox:focus {
+	border-color: #66afe9;
+	outline: 0;
+	-webkit-box-shadow: inset 0 1px 1px rgba(0,0,0,.075),0 0 8px rgba(102,175,233,.6);
+	box-shadow: inset 0 1px 1px rgba(0,0,0,.075),0 0 8px rgba(102,175,233,.6)
+}
+
+.UpSave_TextBox::-moz-placeholder {
+	color: #777;
+	opacity: 1
+}
+
+.UpSave_TextBox:-ms-input-placeholder {
+	color: #777
+}
+
+.UpSave_TextBox::-webkit-input-placeholder {
+	color: #777
+}
+
+.UpSave_TextBox[disabled],.UpSave_TextBox[readonly],fieldset[disabled] .UpSave_TextBox{
+	cursor: not-allowed;
+	background-color: #eee;
+	opacity: 1
+}
+
+.UpSave_SelectBox
+{
+	float:left;
+	padding-left: 10px; 
+	margin-left:10px;
+	padding: 6px 12px;
+	font-family:'Microsoft Yahei';
+	width:262px;
+	height: 35px;
+	line-height: 35px;
+	font-family: 'Microsoft Yahei';
+	font-size: 12px;
+	color: #555;
+	background-color: #fff;
+	background-image: none;
+	border: 1px solid #ccc;
+	border-radius: 4px;
+	-webkit-box-shadow: inset 0 1px 1px rgba(0,0,0,.075);
+	box-shadow: inset 0 1px 1px rgba(0,0,0,.075);
+	-webkit-transition: border-color ease-in-out .15s,-webkit-box-shadow ease-in-out .15s;
+	-o-transition: border-color ease-in-out .15s,box-shadow ease-in-out .15s;
+	transition: border-color ease-in-out .15s,box-shadow ease-in-out .15s;
+	z-index: 900;
+}
+
+.UpSave_SelectBox:focus {
+	border-color: #66afe9;
+	outline: 0;
+	-webkit-box-shadow: inset 0 1px 1px rgba(0,0,0,.075),0 0 8px rgba(102,175,233,.6);
+	box-shadow: inset 0 1px 1px rgba(0,0,0,.075),0 0 8px rgba(102,175,233,.6)
+}
+
+.UpSave_SelectBox::-moz-placeholder {
+	color: #777;
+	opacity: 1
+}
+
+.UpSave_SelectBox:-ms-input-placeholder {
+	color: #777
+}
+
+.UpSave_SelectBox::-webkit-input-placeholder {
+	color: #777
+}
+
+.UpSave_SelectBox[disabled],.UpSave_SelectBox[readonly],.UpSave_SelectBox[disabled] .UpSave_SelectBox {
+	cursor: not-allowed;
+	background-color: #eee;
+	opacity: 1
+}
+
+.UpSave_Textarea
+{
+	float:left;
+	padding-left: 10px;
+	width:555px;
+	float:left;
+	margin-left:10px;
+	height: 100px;
+	line-height: 30px;
+	font-size: 12px;
+	font-family: 'Microsoft Yahei';
+	color: #555;
+	background-color: #fff;
+	background-image: none;
+	border: 1px solid #ccc;
+	border-radius: 4px;
+	overflow:auto;
+	-webkit-box-shadow: inset 0 1px 1px rgba(0,0,0,.075);
+	box-shadow: inset 0 1px 1px rgba(0,0,0,.075);
+	-webkit-transition: border-color ease-in-out .15s,-webkit-box-shadow ease-in-out .15s;
+	-o-transition: border-color ease-in-out .15s,box-shadow ease-in-out .15s;
+	transition: border-color ease-in-out .15s,box-shadow ease-in-out .15s;
+}
+
+.UpSave_Textarea:focus {
+	border-color: #66afe9;
+	outline: 0;
+	-webkit-box-shadow: inset 0 1px 1px rgba(0,0,0,.075),0 0 8px rgba(102,175,233,.6);
+	box-shadow: inset 0 1px 1px rgba(0,0,0,.075),0 0 8px rgba(102,175,233,.6)
+}
+
+.UpSave_Textarea::-moz-placeholder {
+	color: #777;
+	opacity: 1
+}
+
+.UpSave_Textarea:-ms-input-placeholder {
+	color: #777
+}
+
+.UpSave_Textarea::-webkit-input-placeholder {
+	color: #777
+}
+
+.UpSave_Textarea[disabled],.UpSave_Textarea[readonly],fieldset[disabled] .UpSave_Textarea{
+	cursor: not-allowed;
+	background-color: #eee;
+	opacity: 1
+}
+
+.UpSave_MultipleSelectField
+{
+	float:left;
+	/*padding-left: 10px;*/
+	width:260px;
+	float:left;
+	margin-left:10px;
+	height: 175px;
+	line-height: 30px;
+	font-size: 12px;
+	font-family: 'Microsoft Yahei';
+	color: #555;
+	background-color: #fff;
+	background-image: none;
+	border: 1px solid #ccc;
+	border-radius: 4px;
+	overflow:auto;
+	-webkit-box-shadow: inset 0 1px 1px rgba(0,0,0,.075);
+	box-shadow: inset 0 1px 1px rgba(0,0,0,.075);
+	-webkit-transition: border-color ease-in-out .15s,-webkit-box-shadow ease-in-out .15s;
+	-o-transition: border-color ease-in-out .15s,box-shadow ease-in-out .15s;
+	transition: border-color ease-in-out .15s,box-shadow ease-in-out .15s;
+}
+
+.UpSave_MultipleSelectField:focus {
+	border-color: #66afe9;
+	outline: 0;
+	-webkit-box-shadow: inset 0 1px 1px rgba(0,0,0,.075),0 0 8px rgba(102,175,233,.6);
+	box-shadow: inset 0 1px 1px rgba(0,0,0,.075),0 0 8px rgba(102,175,233,.6)
+}
+
+.UpSave_MultipleSelectField::-moz-placeholder {
+	color: #777;
+	opacity: 1
+}
+
+.UpSave_MultipleSelectField:-ms-input-placeholder {
+	color: #777
+}
+
+.UpSave_MultipleSelectField::-webkit-input-placeholder {
+	color: #777
+}
+
+.UpSave_MultipleSelectField[disabled],.UpSave_MultipleSelectField[readonly],fieldset[disabled] .UpSave_MultipleSelectField{
+	cursor: not-allowed;
+	background-color: #eee;
+	opacity: 1
+}
+
+.UpSave_Control_Frame_Div
+{
+	/*position:relative;*/
+	float:left;
+	font-family:'Microsoft Yahei';
+	color:Black; 
+	font-size:12px; 
+	cursor:pointer; 
+	margin-left:5px; 
+	width:300px; 
+	text-align:left;
+	height:70px;
+}
+.UpSave_Control_Frame_Div div
+{
+	height:30px;
+	width:300px;
+}
+.UpSave_Control_Frame_Div div samp
+{
+	float: left; 
+	width: 115px;
+	padding-left:15px; 
+	text-align:left;
+	line-height:30px;
+	overflow: hidden; 
+	white-space: nowrap;
+	text-overflow: ellipsis;
+	font-family:'Microsoft Yahei';
+	 font-size:11px;
+	 cursor:pointer;
+	 font-weight:bold;
+}
+.UpSave_Control_Frame_Div div div
+{
+	width:160px;
+	overflow: hidden; 
+	white-space: nowrap;
+	text-overflow: ellipsis; 
+	height:30px;
+}
+.UpSave_Control_Frame_Div div div samp
+{
+	margin-left: 7px;
+	margin-top: 5px;
+	line-height:30px;
+}
+
+.ShowErrMes_Div
+{
+	float:left; 
+	line-height:25px; 
+	color:red; 
+	text-decoration:none;
+	font-family:'Microsoft Yahei';
+	font-size:11px; 
+	cursor:default;
+	padding-left:15px;
+	padding-right:15px; 
+	background-color:#FFF; 
+	margin-left:1px;
+	border-radius:3px 3px 0px 0px;
+	/* 
+	background-color:White;	 
+	border-top: #003399 1px solid; 
+	float:left;
+	height:auto;
+	word-wrap:break-word;
+	width:100%;
+	text-align:left;
+	overflow-x: hidden;
+	overflow-y: auto;
+	font-size: 11px;
+	color: red;
+	top:27px;
+	left:0px;
+	font-family:Microsoft YaHei;
+	padding:10px 10px 0px 10px; 
+	z-index:1000; */
+}
+.UpSave_TextBox_I
+{
+	 position:absolute;
+	 left:15px;
+	 top:42px;
+}
+.UpSave_TextBox_I:before  
+{
+	content: "\f002";  
+}
+
+.Select_Menu_TextBox
+{
+	float:left;
+	padding-left: 10px;
+	width:127px;
+	margin-left:10px;
+	height: 30px;
+	line-height: 30px;
+	font-size: 12px;
+	font-family: 'Microsoft Yahei';
+	color: #555;
+	background-color: #fff;
+	background-image: none;
+	border: 1px solid #ccc;
+	border-radius: 4px;
+	-webkit-box-shadow: inset 0 1px 1px rgba(0,0,0,.075);
+	box-shadow: inset 0 1px 1px rgba(0,0,0,.075);
+	-webkit-transition: border-color ease-in-out .15s,-webkit-box-shadow ease-in-out .15s;
+	-o-transition: border-color ease-in-out .15s,box-shadow ease-in-out .15s;
+	transition: border-color ease-in-out .15s,box-shadow ease-in-out .15s;
+}
+.Select_Menu_TextBox:focus {
+	border-color: #66afe9;
+	outline: 0;
+	-webkit-box-shadow: inset 0 1px 1px rgba(0,0,0,.075),0 0 8px rgba(102,175,233,.6);
+	box-shadow: inset 0 1px 1px rgba(0,0,0,.075),0 0 8px rgba(102,175,233,.6)
+}
+
+.Select_Menu_TextBox::-moz-placeholder {
+	color: #777;
+	opacity: 1
+}
+
+.Select_Menu_TextBox:-ms-input-placeholder {
+	color: #777
+}
+
+.Select_Menu_TextBox::-webkit-input-placeholder {
+	color: #777
+}
+
+.Select_Menu_TextBox[disabled],.Select_Menu_TextBox[readonly],fieldset[disabled] .Select_Menu_TextBox{
+	cursor: not-allowed;
+	background-color: #eee;
+	opacity: 1
+}
+
+.Select_Menu_SelectBox
+{
+	float:left;
+	padding-left: 10px; 
+	margin-left:10px;
+	*margin-top:5px;
+	_margin-top:5px;
+	padding: 6px 12px;
+	width:140px;
+	height: 35px;
+	line-height: 35px;
+	font-family: 'Microsoft Yahei';
+	font-size: 12px;
+	color: #555;
+	background-color: #fff;
+	background-image: none;
+	border: 1px solid #ccc;
+	border-radius: 4px;
+	-webkit-box-shadow: inset 0 1px 1px rgba(0,0,0,.075);
+	box-shadow: inset 0 1px 1px rgba(0,0,0,.075);
+	-webkit-transition: border-color ease-in-out .15s,-webkit-box-shadow ease-in-out .15s;
+	-o-transition: border-color ease-in-out .15s,box-shadow ease-in-out .15s;
+	transition: border-color ease-in-out .15s,box-shadow ease-in-out .15s;
+	z-index: 900;
+	position:fixed;
+}
+
+.Select_Menu_SelectBox:focus {
+	border-color: #66afe9;
+	outline: 0;
+	-webkit-box-shadow: inset 0 1px 1px rgba(0,0,0,.075),0 0 8px rgba(102,175,233,.6);
+	box-shadow: inset 0 1px 1px rgba(0,0,0,.075),0 0 8px rgba(102,175,233,.6)
+}
+
+.Select_Menu_SelectBox::-moz-placeholder {
+	color: #777;
+	opacity: 1
+}
+
+.Select_Menu_SelectBox:-ms-input-placeholder {
+	color: #777
+}
+
+.Select_Menu_SelectBox::-webkit-input-placeholder {
+	color: #777
+}
+
+.Select_Menu_SelectBox[disabled],.Select_Menu_SelectBox[readonly],.Select_Menu_SelectBox[disabled] .Select_Menu_SelectBox {
+	cursor: not-allowed;
+	background-color: #eee;
+	opacity: 1
+}
+
+.Select_Menu_Control_Frame_Div
+{
+	float: left; 
+	width: 240px; 
+	margin-right: 5px; 
+	margin-top: 2px; 
+	line-height: 25px; 
+	height: 40px;
+	padding-left:10px;
+}
+.Select_Menu_Control_Frame_Div .Title
+{
+	float: left; 
+	width: 85px; 
+	text-align: right;
+	line-height: 40px;
+	overflow: hidden; 
+	white-space: nowrap;
+	text-overflow: ellipsis;
+}
+.Select_Menu_Control_Frame_Div .Control_Frame
+{
+	float: left; 
+	width: 120px; 
+	text-align: left;
+	margin-top:3px;
+}
+
+.Select_Menu_Control_Frame_DivList
+{
+	float: left; 
+	width: 240px; 
+	margin-right: 5px; 
+	margin-top: 2px; 
+	line-height: 25px; 
+	height: 110px;
+	padding-left:10px;
+}
+.Select_Menu_Control_Frame_DivList .Title
+{
+	float: left; 
+	width: 85px; 
+	text-align: right;
+	line-height: 40px;
+	overflow: hidden; 
+	white-space: nowrap;
+	text-overflow: ellipsis;
+}
+.Select_Menu_Control_Frame_DivList .Control_Frame
+{
+	float: left; 
+	width: 120px; 
+	text-align: left;
+	margin-top:3px;
+}
+
+.Select_MultipleSelectField
+{
+	float:left;
+	/*padding-left: 10px;*/
+	width:140px;
+	float:left;
+	margin-left:10px;
+	height: 100px;
+	line-height: 30px;
+	font-size: 12px;
+	font-family: 'Microsoft Yahei';
+	color: #555;
+	background-color: #fff;
+	background-image: none;
+	border: 1px solid #ccc;
+	border-radius: 4px;
+	overflow:auto;
+	-webkit-box-shadow: inset 0 1px 1px rgba(0,0,0,.075);
+	box-shadow: inset 0 1px 1px rgba(0,0,0,.075);
+	-webkit-transition: border-color ease-in-out .15s,-webkit-box-shadow ease-in-out .15s;
+	-o-transition: border-color ease-in-out .15s,box-shadow ease-in-out .15s;
+	transition: border-color ease-in-out .15s,box-shadow ease-in-out .15s;
+}
+
+.Select_MultipleSelectField:focus {
+	border-color: #66afe9;
+	outline: 0;
+	-webkit-box-shadow: inset 0 1px 1px rgba(0,0,0,.075),0 0 8px rgba(102,175,233,.6);
+	box-shadow: inset 0 1px 1px rgba(0,0,0,.075),0 0 8px rgba(102,175,233,.6)
+}
+
+.Select_MultipleSelectField::-moz-placeholder {
+	color: #777;
+	opacity: 1
+}
+
+.Select_MultipleSelectField:-ms-input-placeholder {
+	color: #777
+}
+
+.Select_MultipleSelectField::-webkit-input-placeholder {
+	color: #777
+}
+
+
+
+
+
+/* .Select_Menu_SelectBox_Div{
+	padding: 11px 10px 3px 0px; width: 130px; height: 19px; border: 1px solid #ccc; float: left; margin-top:3px; margin-left:10px;
+}
+.Select_Menu_SelectBox_Div_Hidden{
+	width: 120px; height: 26px; overflow: hidden; margin-left:10px;
+}
+.Select_Menu_SelectBox_Div_Option{
+	width:120px; height:21px; margin: -2px 0px 0px -2px; overflow: hidden; display: block; font-size: 12px;border: none;
+}
+ */
+/* 兼容IE6、7 查询框的样式调整*/
+.Select_Menu_Control_Frame_Div .Select_Menu_SelectBox_Div{
+	width: 138px; height: 35px; border: 1px solid #ccc; float: left; margin-top:3px; margin-left:10px;
+}
+.Select_Menu_Control_Frame_Div .Select_Menu_SelectBox_Div_Hidden{
+	width: 130px; height: 17px; overflow: hidden; margin-left:10px;margin-top: 7px;
+}
+.Select_Menu_Control_Frame_Div .Select_Menu_SelectBox_Div_Option{
+	width:130px; height:21px; margin: -2px 0px 0px -2px; overflow: hidden; display: block; border: none;
+	font-family:'Microsoft Yahei'; font-size:11px; color:#555;
+}
+
+.UpSave_Control_Frame_Div .UpSave_Control_Frame_Div_selectField{
+	width: 260px; border: 1px solid #CCC; float: left; margin-left:10px;
+}
+.UpSave_Control_Frame_Div .UpSave_Control_Frame_Div_selectField_Hidden{
+	width: 250px; height: 17px; overflow: hidden; margin-top:5px; margin-left:10px;
+}
+.UpSave_Control_Frame_Div .UpSave_Control_Frame_Div_selectField_Option{
+	width:250px; height:21px; margin: -2px 0px 0px -2px; overflow: hidden; display: block; border: none;
+	font-family:'Microsoft Yahei'; font-size:11px; color:#555; 
+}
+
+.UpSave_Control_Frame_Div .UpSave_Control_Frame_Div_selectField_readOnly{
+	width: 260px; border: 1px solid #CCC; float: left; margin-left:10px;
+	background-color: #EEE; cursor: not-allowed;
+}
+.UpSave_Control_Frame_Div .UpSave_Control_Frame_Div_selectField_Option_readOnly{
+	width:250px; height:21px; margin: -2px 0px 0px -2px; overflow: hidden; display: block; border: none;
+	font-family:'Microsoft Yahei'; font-size:11px; color:#CCC; background-color: #EEE;
+}
+
+.UpSave_Control_Frame_Div_TreeField
+{
+	position:relative;
+	float:left;
+	font-family:'Microsoft Yahei';
+	color:Black; 
+	font-size:12px; 
+	cursor:pointer; 
+	margin-left:5px; 
+	width:300px; 
+	text-align:left;
+	height:70px;
+}
+
+.UpSave_Control_Frame_Div_TreeField_samp
+{
+	float: left; 
+	width: 115px;
+	padding-left:15px; 
+	text-align:left;
+	line-height:30px;
+	overflow: hidden; 
+	white-space: nowrap;
+	text-overflow: ellipsis;
+	font-family:'Microsoft Yahei';
+	font-size:11px;
+	cursor:pointer;
+	font-weight:bold;
+}
+/* 兼容IE6、7的td单元格内容不换行（在td中嵌套div层） */
+.TD_Div_Nowrap{
+	white-space:nowrap;
+	overflow: hidden; 
+	text-overflow: ellipsis;
+	cursor:pointer;
+}
+
+#SelectDivFrame{
+	width: 100%; height:auto;border-bottom:1px solid #0060A6;font-size: 12px; 
+	font-family: 微软雅黑;clear: both; top:30px; background-color:White; z-index:1000;
+}
+
+#Top_Page{
+	width: 100%; height: 30px; border-left: 0px solid #dadada;float:left;
+}
+
+#Top_Page div{
+	float: left; line-height: 30px; font-family: 微软雅黑; color: Black; font-size: 12px; cursor: pointer; margin-left: 10px;
+}
+.Top_Page{
+	width: 100%; height: 30px; border-left: 0px solid #dadada;float:left;
+}
+
+.Top_Page div{
+	float: left; line-height: 30px; font-family: 微软雅黑; color: Black; font-size: 12px; cursor: pointer; margin-left: 10px;
+}
+
+.selectButtonDiv{
+	float:left; width:100%; margin-right: 5px; margin-top:10px;  height:40px;text-align:center;border-top:1px dotted #0060A6;
+}
+
+.selectButtonDiv div{
+	margin-left:auto; margin-right:auto; width:262px; height:30px;margin-top:5px;
+}
+
+.selectButtonDiv a{
+	float: left; line-height:25px; color:White; text-decoration:none;font-family:微软雅黑;font-size:12px; 
+	cursor:pointer; padding-left:15px; padding-right:15px; background-color:#0060A6; margin-left:1px;width:100px;
+}

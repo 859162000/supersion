@@ -1,0 +1,93 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<reportCheckRoot>
+     <checkInstance name="Check_WGJ_ACC_CA">	
+	     <checkTable procedureName="Proc_Check_WGJ_ACC_CA" procedureParam="dtDate,strInstCode" procedureDiscription="ACC_CA" originTable="WGJ_ACC_CA" errorMsgField="" errorStateField="RPTCheckType"  successStateValue="2" errorStateValue="3" defaultLogicDaoBeanId="sqlserverProcedureResultSetDao">
+			<paramFieldList>
+				<paramField paramName="dtDate" field="dtDate" type="1"></paramField>
+				<paramField paramName="strInstCode" field="strInstCode" type="1"></paramField>
+			</paramFieldList>
+			<checkUniqueFieldList>
+				<checkUniqueField name="autoID" discription="主键" originField="autoID"></checkUniqueField>
+			</checkUniqueFieldList>
+			<checkFieldBasicList discription="基础校验">
+			    <checkFieldBasic name="dtDate" discription="数据日期" emptyCheck="true" dateCheck="true"></checkFieldBasic>
+				<checkFieldBasic name="ACTIONTYPE" discription="操作类型" emptyCheck="true" startByteLength="1" endByteLength="1"></checkFieldBasic>
+				<checkFieldBasic name="ACTIONDESC" discription="删除原因"   endByteLength="128"></checkFieldBasic>
+                <checkFieldBasic name="instInfo" discription="行内机构" emptyCheck="true" ></checkFieldBasic>
+                <checkFieldBasic name="BRANCH_CODE" discription="金融机构标识码" emptyCheck="true" startByteLength="12" endByteLength="12" ></checkFieldBasic>
+                <checkFieldBasic name="BRANCH_NAME" discription="金融机构名称" emptyCheck="true" endByteLength="128" ></checkFieldBasic>
+                <checkFieldBasic name="accountNO" discription="账号" emptyCheck="true" endByteLength="64" ></checkFieldBasic>
+                <checkFieldBasic name="accountSTAT" discription="账户状态" emptyCheck="true" startByteLength="2" endByteLength="2" ></checkFieldBasic>
+                <checkFieldBasic name="AMTYPE" discription="开户主体类型" emptyCheck="true" startByteLength="2" endByteLength="2" ></checkFieldBasic>
+                <checkFieldBasic name="en_code" discription="开户主体代码" emptyCheck="true" endByteLength="18" ></checkFieldBasic>
+                <checkFieldBasic name="en_name" discription="开户主体名称" emptyCheck="true" endByteLength="128" ></checkFieldBasic>
+                <checkFieldBasic name="account_type" discription="账户性质代码" emptyCheck="true" startByteLength="4" endByteLength="4" ></checkFieldBasic>
+                <checkFieldBasic name="account_CATA" discription="账户类别" emptyCheck="true" startByteLength="2" endByteLength="2" ></checkFieldBasic>
+                <checkFieldBasic name="CURRENCY_code" discription="币种" emptyCheck="true" startByteLength="3" endByteLength="3" ></checkFieldBasic>
+                <checkFieldBasic name="BUSINESS_DATE" discription="业务发生日期" emptyCheck="true" startByteLength="8" endByteLength="8" ></checkFieldBasic>
+                <checkFieldBasic name="file_number" discription="外汇局批件号/备案表号/业务编号" endByteLength="28" ></checkFieldBasic>
+                <checkFieldBasic name="Limit_type" discription="限额类型 " emptyCheck="true" startByteLength="2" endByteLength="2" ></checkFieldBasic>
+                <checkFieldBasic name="Account_limit" discription="账户限额 "  mustValueDecimalLength="2"></checkFieldBasic>
+		        <checkFieldBasic name="REMARK" discription="备注" endByteLength="512"></checkFieldBasic> 
+	   </checkFieldBasicList>
+	   
+	   <checkFieldCaseWhenList discription="CaseWhen校验">
+	   		<checkFieldCaseWhen name="ACTIONDESC" discription="删除原因" caseValue="notNull" whenValue="D">
+        			<checkFieldCaseWhenField name="ACTIONTYPE" discription="操作类型" ></checkFieldCaseWhenField>
+        	</checkFieldCaseWhen>
+        	<checkFieldCaseWhen name="Account_limit" discription="账户限额" caseValue="notNull" whenValueScope="13,12">
+        			<checkFieldCaseWhenField name="Limit_type" discription="限额类型" ></checkFieldCaseWhenField>
+        	</checkFieldCaseWhen>
+	   </checkFieldCaseWhenList>
+	   
+	   <checkFieldEffectiveList discription="有效性校验">
+		       <checkFieldEffective name="ACTIONTYPE" discription="操作类型">
+                    <value>A</value>
+                    <value>C</value>
+                    <value>D</value>
+				</checkFieldEffective>
+            </checkFieldEffectiveList>
+	   </checkTable>
+	 </checkInstance>
+	 
+	 <checkInstance name="Check_WGJ_ACC_CB">	
+	     <checkTable procedureName="Proc_Check_WGJ_ACC_CB" procedureParam="dtDate,strInstCode" procedureDiscription="ACC_CB" originTable="WGJ_ACC_CB" errorMsgField="" errorStateField="RPTCheckType"  successStateValue="2" errorStateValue="3" defaultLogicDaoBeanId="sqlserverProcedureResultSetDao">
+			<paramFieldList>
+				<paramField paramName="dtDate" field="dtDate" type="1"></paramField>
+				<paramField paramName="strInstCode" field="strInstCode" type="1"></paramField>
+			</paramFieldList>
+			<checkUniqueFieldList>
+				<checkUniqueField name="autoID" discription="主键" originField="autoID"></checkUniqueField>
+			</checkUniqueFieldList>
+			<checkFieldBasicList discription="基础校验">
+			    <checkFieldBasic name="dtDate" discription="数据日期" emptyCheck="true" dateCheck="true"></checkFieldBasic>
+				<checkFieldBasic name="ACTIONTYPE" discription="操作类型" emptyCheck="true" startByteLength="1" endByteLength="1"></checkFieldBasic>
+				<checkFieldBasic name="ACTIONDESC" discription="删除原因"   endByteLength="128"></checkFieldBasic>
+                <checkFieldBasic name="instInfo" discription="行内机构" emptyCheck="true" ></checkFieldBasic>
+                <checkFieldBasic name="BRANCH_CODE" discription="金融机构标识码" emptyCheck="true" startByteLength="12" endByteLength="12"></checkFieldBasic>
+                <checkFieldBasic name="accountNO" discription="账号" emptyCheck="true" endByteLength="64"></checkFieldBasic>
+                <checkFieldBasic name="deal_date" discription="发生日期" emptyCheck="true" startByteLength="8" endByteLength="8"></checkFieldBasic>
+                <checkFieldBasic name="CURRENCY_code" discription="币种" emptyCheck="true" startByteLength="3" endByteLength="3"></checkFieldBasic>
+                <checkFieldBasic name="credit" discription="当日贷方发生额"  valueMin="0" mustValueDecimalLength="2"></checkFieldBasic>
+                <checkFieldBasic name="debit" discription="当日借方发生额"  valueMin="0" mustValueDecimalLength="2"></checkFieldBasic>
+                <checkFieldBasic name="balance" discription="账户余额" emptyCheck="true" mustValueDecimalLength="2"></checkFieldBasic>
+		        <checkFieldBasic name="REMARK" discription="备注" endByteLength="256"></checkFieldBasic> 
+	   </checkFieldBasicList>
+	   
+	   <checkFieldCaseWhenList discription="CaseWhen校验">
+	   		<checkFieldCaseWhen name="ACTIONDESC" discription="删除原因" caseValue="notNull" whenValue="D">
+        			<checkFieldCaseWhenField name="ACTIONTYPE" discription="操作类型" ></checkFieldCaseWhenField>
+        	</checkFieldCaseWhen>
+         </checkFieldCaseWhenList>
+       
+	   <checkFieldEffectiveList discription="有效性校验">
+		       <checkFieldEffective name="ACTIONTYPE" discription="操作类型">
+                    <value>A</value>
+                    <value>C</value>
+                    <value>D</value>
+				</checkFieldEffective>
+            </checkFieldEffectiveList>
+	   </checkTable>
+	 </checkInstance>
+
+</reportCheckRoot>

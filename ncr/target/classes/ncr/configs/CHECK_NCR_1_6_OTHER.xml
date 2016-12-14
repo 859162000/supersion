@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<reportCheckRoot>
+	<checkInstance name="CHECK_NCR_1_6_OTHER">
+		<paramValueList>
+			<paramValue name="DTDATE" value="2013-12-09"></paramValue>
+			<paramValue name="strInstCode" value=""></paramValue>
+			<!--
+		  <paramValue name="strTaskRptInstID" value="000000"></paramValue>
+			<paramValue name="strFreq" value="000000"></paramValue> 
+			-->
+		</paramValueList>
+
+		<freqCode value="4"></freqCode>
+
+		<checkTable procedureName="Check_NCR_1_6" procedureParam="DTDATE,strInstCode" procedureDiscription="Check_NCR_1_6表外业务明细况"
+			originTable="NCR_1_6" errorStateField="RPTCHECKTYPE" errorStateValue="3"  successStateValue="2" 
+			defaultLogicDaoBeanId="oracleProcedureResultSetDao">
+			<paramFieldList>
+				<paramField paramName="DTDATE" field="DTDATE" type="2"></paramField>
+				<paramField paramName="strInstCode" field="INSTINFO" type="1"></paramField>
+			</paramFieldList>
+
+			<checkUniqueFieldList>
+				<checkUniqueField name="AUTOID" discription="主键" originField="AUTOID"></checkUniqueField>
+			</checkUniqueFieldList>
+			
+		<checkFieldConsistentList consistenttype="2" discription="唯一性校验">
+			<paramFieldList>
+				<paramField paramName="DTDATE" field="DTDATE" type="2"></paramField>
+				<paramField paramName="strInstCode" field="INSTINFO" type="1"></paramField>
+			</paramFieldList>
+			<!--  WYX-005|表1《PART Ⅵ：表外业务明细》|同一[填报机构代码]，同一[表外业务类型]下|[业务号码]  -->			
+			<checkFieldConsistent>
+				<consistentGroup keyField="CONDITION" keyDiscription="填报机构代码-表外业务类型" nameField="G" nameDiscription="业务号码" procedureName="Check_NCR_1_6_WYX_005" procedureDiscription="表外业务明细" procedureParam="DTDATE,strInstCode,rt"></consistentGroup>
+			</checkFieldConsistent>			
+		</checkFieldConsistentList>		
+		
+		<checkFieldConsistentList consistenttype="1" discription="一致性校验">
+			<paramFieldList>
+				<paramField paramName="DTDATE" field="DTDATE" type="2"></paramField>
+				<paramField paramName="strInstCode" field="INSTINFO" type="1"></paramField>
+			</paramFieldList>
+			<!--HNYZ-FR-003 表内及表间，同一个内部客户代码，对应的名称应一致-->		
+			<checkFieldConsistent>
+				<consistentGroup keyField="B" keyDiscription="表外业务客户代码" nameField="A" nameDiscription="表外业务客户名称" procedureName="Check_NCR_1_6" procedureDiscription="表外业务明细" procedureParam="DTDATE,strInstCode,rt"></consistentGroup>
+			</checkFieldConsistent>			
+		</checkFieldConsistentList>
+    </checkTable>						
+	</checkInstance>
+</reportCheckRoot>

@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE struts PUBLIC "-//Apache Software Foundation//DTD Struts Configuration 2.1//EN" "http://struts.apache.org/dtds/struts-2.1.dtd">
+<struts>
+	 <package name="SRCBJSON" extends="json-default" namespace="/framework">
+	 	<action name="filledWithMessage*-*" class="filledWithMessageAction">
+			<result name="success" type="json" ></result>
+		</action>
+		<action name="userInfoFilledWithMessage*-*" class="userInfoFilledWithMessageAction">
+			<result name="success" type="json" ></result>
+		</action>
+     </package>
+</struts>    

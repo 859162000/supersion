@@ -1,0 +1,843 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<beans
+	xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns:p="http://www.springframework.org/schema/p"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-3.0.xsd">
+	
+	<bean id="taskModelInstZDZShowTreeService" parent="taskModelInstShowTreeService">
+     	<property name="strSuitCode" value="ZDZ"></property>
+     	<property name="defaultProceseClassList">
+           <list>
+               <value>report.service.procese.ShowTaskFlowTreeExcludeDateProcese</value><!-- 放置于ShowTreeProcese之前 -->
+               <value>framework.services.procese.ShowTreeProcese</value>
+               <value>framework.services.procese.ShowPowerButtonProcese</value>
+           </list>
+       </property>
+     </bean>
+     
+      <bean id="taskModelInstZDZReviewShowTreeService" parent="taskModelInstReviewShowTreeService">
+     	<property name="strSuitCode" value="ZDZ"></property>
+     	<property name="defaultProceseClassList">
+           <list>
+               <value>report.service.procese.ShowTaskFlowTreeExcludeDateProcese</value><!-- 放置于ShowTreeProcese之前 -->
+               <value>framework.services.procese.ShowTreeProcese</value>
+               <value>framework.services.procese.ShowPowerButtonProcese</value>
+           </list>
+       </property>
+     </bean>
+     
+       <bean id="taskModelInstZDZCKShowTreeService" parent="CKShowTreeService">
+        <property name="strSuitCode" value="ZDZ"></property>
+        <property name="defaultProceseClassList">
+           <list>
+               <value>report.service.procese.ShowTaskFlowTreeExcludeDateProcese</value><!-- 放置于ShowTreeProcese之前 -->
+               <value>framework.services.procese.ShowTreeProcese</value>
+               <value>framework.services.procese.ShowPowerButtonProcese</value>
+           </list>
+       </property>
+       </bean>
+	
+	<bean id="custInfoShowListService" parent="singleObjectShowListService">
+    	<property name="operationMap">
+            <map>
+                <entry key="查询" value="Select-ShowList"></entry>
+                <entry key="新增" value="Get-ShowSave"></entry>
+                <entry key="删除" value="PostConfirm-DeleteListByIdList"></entry>
+                <entry key="EXCLE导入" value="Upload-ImportData"></entry>
+            </map>
+        </property>
+    </bean>
+	
+	<!-- 任务填报 -->
+	<bean class="framework.bean.context.ServiceContext">
+		<property name="beanId" value="taskModelInstShowListForTreeService"></property>
+		<property name="replacePropList">
+		<list></list>
+		</property>
+		<property name="dtoMatchRule" value="(report.dto.TaskModelInst)"></property>
+		<property name="beanProperty">
+			<map>
+				<entry key="defaultTranslateClassList">
+					<list>
+				        <value>zdzsystem.service.translate.ZdzTableVisibleTranslate</value>
+		            </list>
+				</entry>
+			</map>
+		</property>
+	</bean>
+	
+	<!-- 任务审核 -->
+	<bean class="framework.bean.context.ServiceContext">
+		<property name="beanId" value="taskModelInstSHReviewShowListForTreeService"></property>
+		<property name="replacePropList">
+		<list></list>
+		</property>
+		<property name="dtoMatchRule" value="(report.dto.TaskModelInst)"></property>
+		<property name="beanProperty">
+			<map>
+				<entry key="defaultTranslateClassList">
+					<list>
+				        <value>zdzsystem.service.translate.ZdzTableVisibleTranslate</value>
+		            </list>
+				</entry>
+			</map>
+		</property>
+	</bean>
+	
+	<!-- 任务查看 -->
+	<bean class="framework.bean.context.ServiceContext">
+		<property name="beanId" value="taskModelInstCKShowListForTreeService"></property>
+		<property name="replacePropList">
+		<list></list>
+		</property>
+		<property name="dtoMatchRule" value="(report.dto.TaskModelInst)"></property>
+		<property name="beanProperty">
+			<map>
+				<entry key="defaultTranslateClassList">
+					<list>
+				        <value>zdzsystem.service.translate.ZdzTableVisibleTranslate</value>
+		            </list>
+				</entry>
+			</map>
+		</property>
+	</bean>
+	
+	<bean class="framework.bean.context.ServiceContext">
+		<property name="beanId" value="singleObjectShowListLevelAUTODTOService"></property>
+		<property name="replacePropList">
+		<list></list>
+		</property>
+		<property name="dtoMatchRule" value="zdzsystem\.dto\.AutoDTO_(ZDZ_(JTZHXX|JRZCXX|SFQZCSXX|ZJWLXX|GLZLZHXX|GYQYXQXX|JRJJFKCXHTNR|FYDFKCXCLSBNR|BZXRZHXX|KZCLJG|ZXDJXX|YXQXX|JRJGKZHTNR|FYDFKKZCLSBNR))"></property>
+		<property name="beanProperty">
+			<map>
+				<entry key="defaultProceseClassList">
+					<list>
+		                <value>zdzsystem.service.procese.FullBDHMShowListProcese</value>
+		            </list>
+				</entry>
+			</map>
+		</property>
+	</bean>
+	
+	<bean class="framework.bean.context.ServiceContext">
+		<property name="beanId" value="singleObjectSHShowListLevelAUTODTOSHService"></property>
+		<property name="replacePropList">
+		<list></list>
+		</property>
+		<property name="dtoMatchRule" value="zdzsystem\.dto\.AutoDTO_(ZDZ_(JTZHXX|JRZCXX|SFQZCSXX|ZJWLXX|GLZLZHXX|GYQYXQXX|JRJJFKCXHTNR|FYDFKCXCLSBNR|BZXRZHXX|KZCLJG|ZXDJXX|YXQXX|JRJGKZHTNR|FYDFKKZCLSBNR))"></property>
+		<property name="beanProperty">
+			<map>
+				<entry key="defaultProceseClassList">
+					<list>
+		                <value>zdzsystem.service.procese.FullBDHMShowListProcese</value>
+		            </list>
+				</entry>
+			</map>
+		</property>
+	</bean>
+	
+	<bean class="framework.bean.context.ServiceContext">
+		<property name="beanId" value="singleObjectShowSaveLevelAUTODTOService"></property>
+		<property name="replacePropList">
+		<list></list>
+		</property>
+		<property name="dtoMatchRule" value="zdzsystem\.dto\.AutoDTO_(ZDZ_(JTZHXX|JRZCXX|SFQZCSXX|ZJWLXX|GLZLZHXX|GYQYXQXX|JRJJFKCXHTNR|FYDFKCXCLSBNR|BZXRZHXX|KZCLJG|ZXDJXX|YXQXX|JRJGKZHTNR|FYDFKKZCLSBNR))"></property>
+		<property name="beanProperty">
+			<map>
+				<entry key="defaultProceseClassList">
+					<list>
+		                <value>zdzsystem.service.procese.FullBDHMShowSaveOrUpdateProcese</value>
+		            </list>
+				</entry>
+			</map>
+		</property>
+	</bean>
+	
+	
+	<bean class="framework.bean.context.ServiceContext">
+		<property name="beanId" value="singleObjectShowUpdateLevelAUTODTOService"></property>
+		<property name="replacePropList">
+		<list></list>
+		</property>
+		<property name="dtoMatchRule" value="zdzsystem\.dto\.AutoDTO_(ZDZ_(JTZHXX|JRZCXX|SFQZCSXX|ZJWLXX|GLZLZHXX|GYQYXQXX|JRJJFKCXHTNR|FYDFKCXCLSBNR|BZXRZHXX|KZCLJG|ZXDJXX|YXQXX|JRJGKZHTNR|FYDFKKZCLSBNR))"></property>
+		<property name="beanProperty">
+			<map>
+				<entry key="defaultProceseClassList">
+					<list>
+		                <value>zdzsystem.service.procese.FullBDHMShowSaveOrUpdateProcese</value>
+		                <value>zdzsystem.service.procese.ZDZHiddenCopySaveButtenProcese</value>
+		            </list>
+				</entry>
+			</map>
+		</property>
+	</bean>
+	
+	<bean class="framework.bean.context.ServiceContext">
+		<property name="beanId" value="singleObjectShowCheckUpdateLevelAUTODTOService"></property>
+		<property name="replacePropList">
+		<list></list>
+		</property>
+		<property name="dtoMatchRule" value="zdzsystem\.dto\.AutoDTO_(ZDZ_(JTZHXX|JRZCXX|SFQZCSXX|ZJWLXX|GLZLZHXX|GYQYXQXX|JRJJFKCXHTNR|FYDFKCXCLSBNR|BZXRZHXX|KZCLJG|ZXDJXX|YXQXX|JRJGKZHTNR|FYDFKKZCLSBNR))"></property>
+		<property name="beanProperty">
+			<map>
+				<entry key="defaultProceseClassList">
+					<list>
+		                <value>zdzsystem.service.procese.FullBDHMShowSaveOrUpdateProcese</value>
+		                <value>zdzsystem.service.procese.ZDZHiddenCopySaveButtenProcese</value>
+		            </list>
+				</entry>
+			</map>
+		</property>
+	</bean>
+	
+	<bean class="framework.bean.context.ServiceContext">
+		<property name="beanId" value="singleObjectShowInputSaveLevelAUTODTOService"></property>
+		<property name="replacePropList">
+		<list></list>
+		</property>
+		<property name="dtoMatchRule" value="zdzsystem\.dto\.AutoDTO_(ZDZ_(JTZHXX|JRZCXX|SFQZCSXX|ZJWLXX|GLZLZHXX|GYQYXQXX|JRJJFKCXHTNR|FYDFKCXCLSBNR|BZXRZHXX|KZCLJG|ZXDJXX|YXQXX|JRJGKZHTNR|FYDFKKZCLSBNR))"></property>
+		<property name="beanProperty">
+			<map>
+				<entry key="defaultProceseClassList">
+					<list>
+		                <value>zdzsystem.service.procese.FullBDHMShowSaveOrUpdateProcese</value>
+		            </list>
+				</entry>
+			</map>
+		</property>
+	</bean>
+	
+	<bean class="framework.bean.context.ServiceContext">
+		<property name="beanId" value="singleObjectShowInputUpdateLevelAUTODTOService"></property>
+		<property name="replacePropList">
+		<list></list>
+		</property>
+		<property name="dtoMatchRule" value="zdzsystem\.dto\.AutoDTO_(ZDZ_(JTZHXX|JRZCXX|SFQZCSXX|ZJWLXX|GLZLZHXX|GYQYXQXX|JRJJFKCXHTNR|FYDFKCXCLSBNR|BZXRZHXX|KZCLJG|ZXDJXX|YXQXX|JRJGKZHTNR|FYDFKKZCLSBNR))"></property>
+		<property name="beanProperty">
+			<map>
+				<entry key="defaultProceseClassList">
+					<list>
+		                <value>zdzsystem.service.procese.FullBDHMShowSaveOrUpdateProcese</value>
+		                <value>zdzsystem.service.procese.ZDZHiddenCopySaveButtenProcese</value>
+		            </list>
+				</entry>
+			</map>
+		</property>
+	</bean>
+	
+	<bean class="framework.bean.context.ServiceContext">
+		<property name="beanId" value="singleObjectCKShowUpdateLevelAUTODTOService"></property>
+		<property name="replacePropList">
+		<list></list>
+		</property>
+		<property name="dtoMatchRule" value="zdzsystem\.dto\.AutoDTO_(ZDZ_(JTZHXX|JRZCXX|SFQZCSXX|ZJWLXX|GLZLZHXX|GYQYXQXX|JRJJFKCXHTNR|FYDFKCXCLSBNR|BZXRZHXX|KZCLJG|ZXDJXX|YXQXX|JRJGKZHTNR|FYDFKKZCLSBNR))"></property>
+		<property name="beanProperty">
+			<map>
+				<entry key="defaultProceseClassList">
+					<list>
+		                <value>zdzsystem.service.procese.FullBDHMShowSaveOrUpdateProcese</value>
+		                <value>zdzsystem.service.procese.ZDZHiddenCopySaveButtenProcese</value>
+		            </list>
+				</entry>
+			</map>
+		</property>
+	</bean>
+	
+	<bean class="framework.bean.context.ServiceContext">
+		<property name="beanId" value="singleObjectSHShowUpdateLevelAUTODTOSHService"></property>
+		<property name="replacePropList">
+		<list></list>
+		</property>
+		<property name="dtoMatchRule" value="zdzsystem\.dto\.AutoDTO_(ZDZ_(JTZHXX|JRZCXX|SFQZCSXX|ZJWLXX|GLZLZHXX|GYQYXQXX|JRJJFKCXHTNR|FYDFKCXCLSBNR|BZXRZHXX|KZCLJG|ZXDJXX|YXQXX|JRJGKZHTNR|FYDFKKZCLSBNR))"></property>
+		<property name="beanProperty">
+			<map>
+				<entry key="defaultProceseClassList">
+					<list>
+		                <value>zdzsystem.service.procese.FullBDHMShowSaveOrUpdateProcese</value>
+		            </list>
+				</entry>
+			</map>
+		</property>
+	</bean>
+	
+	<bean class="framework.bean.context.ServiceContext">
+		<property name="beanId" value="reportSHShowViewCancelLevelAUTODTOSHService"></property>
+		<property name="replacePropList">
+		<list></list>
+		</property>
+		<property name="dtoMatchRule" value="zdzsystem\.dto\.AutoDTO_(ZDZ_(JTZHXX|JRZCXX|SFQZCSXX|ZJWLXX|GLZLZHXX|GYQYXQXX|JRJJFKCXHTNR|FYDFKCXCLSBNR|BZXRZHXX|KZCLJG|ZXDJXX|YXQXX|JRJGKZHTNR|FYDFKKZCLSBNR))"></property>
+		<property name="beanProperty">
+			<map>
+				<entry key="defaultProceseClassList">
+					<list>
+		                <value>zdzsystem.service.procese.FullBDHMShowSaveOrUpdateProcese</value>
+		            </list>
+				</entry>
+			</map>
+		</property>
+	</bean>
+	
+	<bean class="framework.bean.context.ServiceContext">
+		<property name="beanId" value="reportSHShowViewResetLevelAUTODTOSHService"></property>
+		<property name="replacePropList">
+		<list></list>
+		</property>
+		<property name="dtoMatchRule" value="zdzsystem\.dto\.AutoDTO_(ZDZ_(JTZHXX|JRZCXX|SFQZCSXX|ZJWLXX|GLZLZHXX|GYQYXQXX|JRJJFKCXHTNR|FYDFKCXCLSBNR|BZXRZHXX|KZCLJG|ZXDJXX|YXQXX|JRJGKZHTNR|FYDFKKZCLSBNR))"></property>
+		<property name="beanProperty">
+			<map>
+				<entry key="defaultProceseClassList">
+					<list>
+		                <value>zdzsystem.service.procese.FullBDHMShowSaveOrUpdateProcese</value>
+		            </list>
+				</entry>
+			</map>
+		</property>
+	</bean>
+	
+	<bean id="singleObjectShowImgService" class="zdzsystem.service.imps.SingleObjectShowImgService" scope="prototype">
+        <property name="defaultDaoBeanId" value="singleObjectFindByIdDao"></property>
+     </bean>
+
+	<bean id="autoDTO_ZDZ_CXQQNRCKShowListLevelAUTODTOService" parent="singleObjectCKShowListLevelAUTODTOService">
+        <property name="linkedMap">
+            <map>
+                <entry key="查看" value="Get-ReportCKShowViewCancelLevelAUTODTO"></entry>
+                <entry key="文书下载" value="DownLoadWS-ZDZDownLoadImg"></entry>
+				<entry key="工作证" value="GetPic-ShowSJpeg"></entry>
+				<entry key="公务证" value="GetPic-ShowSJpeg"></entry>
+            </map>
+        </property>
+        <property name="defaultProceseClassList">
+            <list>
+               <value>report.service.procese.ForReportStatusShowListProcess</value>
+                <value>framework.services.procese.ShowListProcese</value>
+                <value>framework.services.procese.LevelDataProcese</value>
+                <value>framework.services.procese.ShowListTreeProcese</value>
+                <value>framework.services.procese.SelectTagSortByNameProcese</value>
+                <value>framework.services.procese.ShowPowerButtonProcese</value>
+                <value>report.service.procese.AutoDTOShowTableName</value>
+                <value>zdzsystem.service.procese.TransThumbProcese</value> 
+            </list>
+        </property>
+     </bean>
+     
+     <bean id="autoDTO_ZDZ_KZQQJTNRCKShowListLevelAUTODTOService" parent="singleObjectCKShowListLevelAUTODTOService">
+        <property name="linkedMap">
+            <map>
+                <entry key="查看" value="Get-ReportCKShowViewCancelLevelAUTODTO"></entry>
+                <entry key="文书下载" value="DownLoadWS-ZDZDownLoadImg"></entry>
+				<entry key="工作证" value="GetPic-ShowSJpeg"></entry>
+				<entry key="公务证" value="GetPic-ShowSJpeg"></entry>
+				 <entry key="被执行人账户" value="Get-CKShowListLevelMXCK-zdzsystem.dto.AutoDTO_ZDZ_BZXRZHXX"></entry>
+            </map>
+        </property>
+        <property name="defaultProceseClassList">
+            <list>
+               <value>report.service.procese.ForReportStatusShowListProcess</value>
+                <value>framework.services.procese.ShowListProcese</value>
+                <value>framework.services.procese.LevelDataProcese</value>
+                <value>framework.services.procese.ShowListTreeProcese</value>
+                <value>framework.services.procese.SelectTagSortByNameProcese</value>
+                <value>framework.services.procese.ShowPowerButtonProcese</value>
+                <value>report.service.procese.AutoDTOShowTableName</value>
+                <value>zdzsystem.service.procese.TransThumbProcese</value> 
+            </list>
+        </property>
+     </bean>
+     
+    <!-- 具体账户信息 -->
+    <bean id="autoDTO_ZDZ_JTZHXXSaveLevelAUTODTOService" parent="singleObjectSaveLevelAUTODTOService">
+		<property name="logicPrimaryKey">
+			<list>
+				<value>BDHM</value>
+				<value>CCXH</value>
+			</list>
+		</property>
+	</bean>
+	
+	<bean id="autoDTO_ZDZ_JTZHXXUpdateLevelAUTODTOService" parent="singleObjectUpdateLevelAUTODTOService">
+		<property name="logicPrimaryKey">
+			<list>
+				<value>BDHM</value>
+				<value>CCXH</value>
+			</list>
+		</property>
+	</bean>
+	
+	<bean id="autoDTO_ZDZ_JTZHXXShowCheckUpdateLevelAUTODTOService" parent="singleObjectShowCheckUpdateLevelAUTODTOService">
+		<property name="logicPrimaryKey">
+			<list>
+				<value>BDHM</value>
+				<value>CCXH</value>
+			</list>
+		</property>
+	</bean>
+	<!-- 金融资产信息 -->
+	<bean id="autoDTO_ZDZ_JRZCXXSaveLevelAUTODTOService" parent="singleObjectSaveLevelAUTODTOService">
+		<property name="logicPrimaryKey">
+			<list>
+				<value>BDHM</value>
+				<value>CCXH</value>
+				<value>ZCXH</value>
+			</list>
+		</property>
+	</bean>
+	
+	<bean id="autoDTO_ZDZ_JRZCXXUpdateLevelAUTODTOService" parent="singleObjectUpdateLevelAUTODTOService">
+		<property name="logicPrimaryKey">
+			<list>
+				<value>BDHM</value>
+				<value>CCXH</value>
+				<value>ZCXH</value>
+			</list>
+		</property>
+	</bean>
+	
+	<bean id="autoDTO_ZDZ_JRZCXXShowCheckUpdateLevelAUTODTOService" parent="singleObjectShowCheckUpdateLevelAUTODTOService">
+		<property name="logicPrimaryKey">
+			<list>
+				<value>BDHM</value>
+				<value>CCXH</value>
+				<value>ZCXH</value>
+			</list>
+		</property>
+	</bean>
+	<!-- 司法强制措施信息 -->
+	<bean id="autoDTO_ZDZ_SFQZCSXXSaveLevelAUTODTOService" parent="singleObjectSaveLevelAUTODTOService">
+		<property name="logicPrimaryKey">
+			<list>
+				<value>BDHM</value>
+				<value>CCXH</value>
+				<value>CSXH</value>
+			</list>
+		</property>
+	</bean>
+	
+	<bean id="autoDTO_ZDZ_SFQZCSXXUpdateLevelAUTODTOService" parent="singleObjectUpdateLevelAUTODTOService">
+		<property name="logicPrimaryKey">
+			<list>
+				<value>BDHM</value>
+				<value>CCXH</value>
+				<value>CSXH</value>
+			</list>
+		</property>
+	</bean>
+	
+	<bean id="autoDTO_ZDZ_SFQZCSXXShowCheckUpdateLevelAUTODTOService" parent="singleObjectShowCheckUpdateLevelAUTODTOService">
+		<property name="logicPrimaryKey">
+			<list>
+				<value>BDHM</value>
+				<value>CCXH</value>
+				<value>CSXH</value>
+			</list>
+		</property>
+	</bean>
+	<!-- 资金往来（交易）信息 -->
+	<bean id="autoDTO_ZDZ_ZJWLXXSaveLevelAUTODTOService" parent="singleObjectSaveLevelAUTODTOService">
+		<property name="logicPrimaryKey">
+			<list>
+				<value>BDHM</value>
+				<value>CCXH</value>
+				<value>WLXH</value>
+			</list>
+		</property>
+	</bean>
+	
+	<bean id="autoDTO_ZDZ_ZJWLXXUpdateLevelAUTODTOService" parent="singleObjectUpdateLevelAUTODTOService">
+		<property name="logicPrimaryKey">
+			<list>
+				<value>BDHM</value>
+				<value>CCXH</value>
+				<value>WLXH</value>
+			</list>
+		</property>
+	</bean>
+	
+	<bean id="autoDTO_ZDZ_ZJWLXXShowCheckUpdateLevelAUTODTOService" parent="singleObjectShowCheckUpdateLevelAUTODTOService">
+		<property name="logicPrimaryKey">
+			<list>
+				<value>BDHM</value>
+				<value>CCXH</value>
+				<value>WLXH</value>
+			</list>
+		</property>
+	</bean>
+	
+	<!-- 共有权/优先权信息 -->
+	<bean id="autoDTO_ZDZ_GYQYXQXXSaveLevelAUTODTOService" parent="singleObjectSaveLevelAUTODTOService">
+		<property name="logicPrimaryKey">
+			<list>
+				<value>BDHM</value>
+				<value>CCXH</value>
+				<value>XH</value>
+			</list>
+		</property>
+	</bean>
+	
+	<bean id="autoDTO_ZDZ_ZDZ_GYQYXQXXUpdateLevelAUTODTOService" parent="singleObjectUpdateLevelAUTODTOService">
+		<property name="logicPrimaryKey">
+			<list>
+				<value>BDHM</value>
+				<value>CCXH</value>
+				<value>XH</value>
+			</list>
+		</property>
+	</bean>
+	
+	<bean id="autoDTO_ZDZ_ZDZ_GYQYXQXXShowCheckUpdateLevelAUTODTOService" parent="singleObjectShowCheckUpdateLevelAUTODTOService">
+		<property name="logicPrimaryKey">
+			<list>
+				<value>BDHM</value>
+				<value>CCXH</value>
+				<value>XH</value>
+			</list>
+		</property>
+	</bean>
+	
+	<!-- 关联子类账户信息 -->
+	<bean id="autoDTO_ZDZ_GLZLZHXXSaveLevelAUTODTOService" parent="singleObjectSaveLevelAUTODTOService">
+		<property name="logicPrimaryKey">
+			<list>
+				<value>BDHM</value>
+				<value>CCXH</value>
+				<value>GLXH</value>
+			</list>
+		</property>
+	</bean>
+	
+	<bean id="autoDTO_ZDZ_GLZLZHXXUpdateLevelAUTODTOService" parent="singleObjectUpdateLevelAUTODTOService">
+		<property name="logicPrimaryKey">
+			<list>
+				<value>BDHM</value>
+				<value>CCXH</value>
+				<value>GLXH</value>
+			</list>
+		</property>
+	</bean>
+	
+	<bean id="autoDTO_ZDZ_GLZLZHXXShowCheckUpdateLevelAUTODTOService" parent="singleObjectShowCheckUpdateLevelAUTODTOService">
+		<property name="logicPrimaryKey">
+			<list>
+				<value>BDHM</value>
+				<value>CCXH</value>
+				<value>GLXH</value>
+			</list>
+		</property>
+	</bean>
+	
+	<!-- 金融机构反馈查询回退内容  -->
+	<bean id="autoDTO_ZDZ_JRJJFKCXHTNRSaveLevelAUTODTOService" parent="singleObjectSaveLevelAUTODTOService">
+		<property name="logicPrimaryKey">
+			<list>
+				<value>BDHM</value>
+				<value>XCHTYY</value>
+			</list>
+		</property>
+	</bean>
+	
+	<bean id="autoDTO_ZDZ_JRJJFKCXHTNRUpdateLevelAUTODTOService" parent="singleObjectUpdateLevelAUTODTOService">
+		<property name="logicPrimaryKey">
+			<list>
+				<value>BDHM</value>
+				<value>XCHTYY</value>
+			</list>
+		</property>
+	</bean>
+	
+	<bean id="autoDTO_ZDZ_JRJJFKCXHTNRShowCheckUpdateLevelAUTODTOService" parent="singleObjectShowCheckUpdateLevelAUTODTOService">
+		<property name="logicPrimaryKey">
+			<list>
+				<value>BDHM</value>
+				<value>XCHTYY</value>
+			</list>
+		</property>
+	</bean>
+	
+	<!-- 法院端反馈查询处理失败内容  -->
+	<bean id="autoDTO_ZDZ_FYDFKCXCLSBNRSaveLevelAUTODTOService" parent="singleObjectSaveLevelAUTODTOService">
+		<property name="logicPrimaryKey">
+			<list>
+				<value>BDHM</value>
+				<value>XCHTYY</value>
+			</list>
+		</property>
+	</bean>
+	
+	<bean id="autoDTO_ZDZ_FYDFKCXCLSBNRUpdateLevelAUTODTOService" parent="singleObjectUpdateLevelAUTODTOService">
+		<property name="logicPrimaryKey">
+			<list>
+				<value>BDHM</value>
+				<value>XCHTYY</value>
+			</list>
+		</property>
+	</bean>
+	
+	<bean id="autoDTO_ZDZ_FYDFKCXCLSBNRShowCheckUpdateLevelAUTODTOService" parent="singleObjectShowCheckUpdateLevelAUTODTOService">
+		<property name="logicPrimaryKey">
+			<list>
+				<value>BDHM</value>
+				<value>XCHTYY</value>
+			</list>
+		</property>
+	</bean>
+	
+	<!-- 被执行人账户信息参见下表  -->
+	<bean id="autoDTO_ZDZ_BZXRZHXXSaveLevelAUTODTOService" parent="singleObjectSaveLevelAUTODTOService">
+		<property name="logicPrimaryKey">
+			<list>
+				<value>BDHM</value>
+				<value>CCXH</value>
+			</list>
+		</property>
+	</bean>
+	
+	<bean id="autoDTO_ZDZ_BZXRZHXXUpdateLevelAUTODTOService" parent="singleObjectUpdateLevelAUTODTOService">
+		<property name="logicPrimaryKey">
+			<list>
+				<value>BDHM</value>
+				<value>CCXH</value>
+			</list>
+		</property>
+	</bean>
+	
+	<bean id="autoDTO_ZDZ_BZXRZHXXShowCheckUpdateLevelAUTODTOService" parent="singleObjectShowCheckUpdateLevelAUTODTOService">
+		<property name="logicPrimaryKey">
+			<list>
+				<value>BDHM</value>
+				<value>CCXH</value>
+			</list>
+		</property>
+	</bean>
+	
+	<!-- 法院司法控制法官证件内容 -->
+	<bean id="autoDTO_ZDZ_FYSFKZFGZJNRSaveLevelAUTODTOService" parent="singleObjectSaveLevelAUTODTOService">
+		<property name="logicPrimaryKey">
+			<list>
+				<value>BDHM</value>
+				<value>XH</value>
+			</list>
+		</property>
+	</bean>
+	
+	<bean id="autoDTO_ZDZ_FYSFKZFGZJNRUpdateLevelAUTODTOService" parent="singleObjectUpdateLevelAUTODTOService">
+		<property name="logicPrimaryKey">
+			<list>
+				<value>BDHM</value>
+				<value>XH</value>
+			</list>
+		</property>
+	</bean>
+	
+	<bean id="autoDTO_ZDZ_FYSFKZFGZJNRShowCheckUpdateLevelAUTODTOService" parent="singleObjectShowCheckUpdateLevelAUTODTOService">
+		<property name="logicPrimaryKey">
+			<list>
+				<value>BDHM</value>
+				<value>XH</value>
+			</list>
+		</property>
+	</bean>
+	
+	<!-- 控制处理结果 -->
+	<bean id="autoDTO_ZDZ_KZCLJGSaveLevelAUTODTOService" parent="singleObjectSaveLevelAUTODTOService">
+		<property name="logicPrimaryKey">
+			<list>
+				<value>BDHM</value>
+				<value>CCXH</value>
+			</list>
+		</property>
+	</bean>
+	
+	<bean id="autoDTO_ZDZ_KZCLJGUpdateLevelAUTODTOService" parent="singleObjectUpdateLevelAUTODTOService">
+		<property name="logicPrimaryKey">
+			<list>
+				<value>BDHM</value>
+				<value>CCXH</value>
+			</list>
+		</property>
+	</bean>
+	
+	<bean id="autoDTO_ZDZ_KZCLJGShowCheckUpdateLevelAUTODTOService" parent="singleObjectShowCheckUpdateLevelAUTODTOService">
+		<property name="logicPrimaryKey">
+			<list>
+				<value>BDHM</value>
+				<value>CCXH</value>
+			</list>
+		</property>
+	</bean>
+	
+	<!-- 在先冻结信息-->
+	<bean id="autoDTO_ZDZ_ZXDJXXSaveLevelAUTODTOService" parent="singleObjectSaveLevelAUTODTOService">
+		<property name="logicPrimaryKey">
+			<list>
+				<value>BDHM</value>
+				<value>CCXH</value>
+				<value>CSXH</value>
+			</list>
+		</property>
+	</bean>
+	
+	<bean id="autoDTO_ZDZ_ZXDJXXUpdateLevelAUTODTOService" parent="singleObjectUpdateLevelAUTODTOService">
+		<property name="logicPrimaryKey">
+			<list>
+				<value>BDHM</value>
+				<value>CCXH</value>
+				<value>CSXH</value>
+			</list>
+		</property>
+	</bean>
+	
+	<bean id="autoDTO_ZDZ_ZXDJXXShowCheckUpdateLevelAUTODTOService" parent="singleObjectShowCheckUpdateLevelAUTODTOService">
+		<property name="logicPrimaryKey">
+			<list>
+				<value>BDHM</value>
+				<value>CCXH</value>
+				<value>CSXH</value>
+			</list>
+		</property>
+	</bean>
+	
+	<!-- 优先权信息-->
+	<bean id="autoDTO_ZDZ_YXQXXSaveLevelAUTODTOService" parent="singleObjectSaveLevelAUTODTOService">
+		<property name="logicPrimaryKey">
+			<list>
+				<value>BDHM</value>
+				<value>CCXH</value>
+				<value>XH</value>
+			</list>
+		</property>
+	</bean>
+	
+	<bean id="autoDTO_ZDZ_YXQXXUpdateLevelAUTODTOService" parent="singleObjectUpdateLevelAUTODTOService">
+		<property name="logicPrimaryKey">
+			<list>
+				<value>BDHM</value>
+				<value>CCXH</value>
+				<value>XH</value>
+			</list>
+		</property>
+	</bean>
+	
+	<bean id="autoDTO_ZDZ_YXQXXShowCheckUpdateLevelAUTODTOService" parent="singleObjectShowCheckUpdateLevelAUTODTOService">
+		<property name="logicPrimaryKey">
+			<list>
+				<value>BDHM</value>
+				<value>CCXH</value>
+				<value>XH</value>
+			</list>
+		</property>
+	</bean>
+	
+	<!-- 金融机构控制回退内容-->
+	<bean id="autoDTO_ZDZ_JRJGKZHTNRSaveLevelAUTODTOService" parent="singleObjectSaveLevelAUTODTOService">
+		<property name="logicPrimaryKey">
+			<list>
+				<value>BDHM</value>
+				<value>XCHTYY</value>
+			</list>
+		</property>
+	</bean>
+	
+	<bean id="autoDTO_ZDZ_JRJGKZHTNRUpdateLevelAUTODTOService" parent="singleObjectUpdateLevelAUTODTOService">
+		<property name="logicPrimaryKey">
+			<list>
+			    <value>BDHM</value>
+				<value>XCHTYY</value>
+			</list>
+		</property>
+	</bean>
+	
+	<bean id="autoDTO_ZDZ_JRJGKZHTNRShowCheckUpdateLevelAUTODTOService" parent="singleObjectShowCheckUpdateLevelAUTODTOService">
+		<property name="logicPrimaryKey">
+			<list>
+				<value>BDHM</value>
+				<value>XCHTYY</value>
+			</list>
+		</property>
+	</bean>
+	
+	<!-- 法院端反馈控制处理失败内容-->
+	<bean id="autoDTO_ZDZ_FYDFKKZCLSBNRSaveLevelAUTODTOService" parent="singleObjectSaveLevelAUTODTOService">
+		<property name="logicPrimaryKey">
+			<list>
+				<value>BDHM</value>
+				<value>XCHTYY</value>
+			</list>
+		</property>
+	</bean>
+	
+	<bean id="autoDTO_ZDZ_FYDFKKZCLSBNRUpdateLevelAUTODTOService" parent="singleObjectUpdateLevelAUTODTOService">
+		<property name="logicPrimaryKey">
+			<list>
+			    <value>BDHM</value>
+				<value>XCHTYY</value>
+			</list>
+		</property>
+	</bean>
+	
+	<bean id="autoDTO_ZDZ_FYDFKKZCLSBNRShowCheckUpdateLevelAUTODTOService" parent="singleObjectShowCheckUpdateLevelAUTODTOService">
+		<property name="logicPrimaryKey">
+			<list>
+				<value>BDHM</value>
+				<value>XCHTYY</value>
+			</list>
+		</property>
+	</bean>
+	
+	<!-- 法院司法控制法官工作证证件内容-->
+	<bean id="autoDTO_ZDZ_FYSFKZFGGZZZJNRSaveLevelAUTODTOService" parent="singleObjectSaveLevelAUTODTOService">
+		<property name="logicPrimaryKey">
+			<list>
+				<value>BDHM</value>
+				<value>XH</value>
+			</list>
+		</property>
+	</bean>
+	
+	<bean id="autoDTO_ZDZ_FYSFKZFGGZZZJNRUpdateLevelAUTODTOService" parent="singleObjectUpdateLevelAUTODTOService">
+		<property name="logicPrimaryKey">
+			<list>
+			    <value>BDHM</value>
+				<value>XH</value>
+			</list>
+		</property>
+	</bean>
+	
+	<bean id="autoDTO_ZDZ_FYSFKZFGGZZZJNRShowCheckUpdateLevelAUTODTOService" parent="singleObjectShowCheckUpdateLevelAUTODTOService">
+		<property name="logicPrimaryKey">
+			<list>
+				<value>BDHM</value>
+				<value>XH</value>
+			</list>
+		</property>
+	</bean>
+	
+	<!-- 法院司法控制法官公务证证件内容-->
+	<bean id="autoDTO_ZDZ_FYSFKZFGGWZZJNRSaveLevelAUTODTOService" parent="singleObjectSaveLevelAUTODTOService">
+		<property name="logicPrimaryKey">
+			<list>
+				<value>BDHM</value>
+				<value>XH</value>
+			</list>
+		</property>
+	</bean>
+	
+	<bean id="autoDTO_ZDZ_FYSFKZFGGWZZJNRUpdateLevelAUTODTOService" parent="singleObjectUpdateLevelAUTODTOService">
+		<property name="logicPrimaryKey">
+			<list>
+			    <value>BDHM</value>
+				<value>XH</value>
+			</list>
+		</property>
+	</bean>
+	
+	<bean id="autoDTO_ZDZ_FYSFKZFGGWZZJNRShowCheckUpdateLevelAUTODTOService" parent="singleObjectShowCheckUpdateLevelAUTODTOService">
+		<property name="logicPrimaryKey">
+			<list>
+				<value>BDHM</value>
+				<value>XH</value>
+			</list>
+		</property>
+	</bean>
+	
+</beans>

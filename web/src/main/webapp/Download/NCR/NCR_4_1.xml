@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!-- 新客户风险<4>：对公客户担保情况统计表 -->
+<cbrc reportnumber="04" bankcode="B0192H243010001" bankname="长沙银行股份有限公司" reportdate="" version="1.0">
+	<guaranteed>
+		<customerName column="A"></customerName>
+		<customerCode column="B"></customerCode>
+		<loanContractNumber column="C"></loanContractNumber>
+		<guaranteedContractNumber column="D"></guaranteedContractNumber>
+		<guaranteedContractType column="E"></guaranteedContractType>
+		<collateralType column="F"></collateralType>
+		<collateralName column="G"></collateralName>
+		<collateralCode column="H"></collateralCode>
+		<guarantorName column="I"></guarantorName>
+		<guarantorType column="J"></guarantorType>
+		<guarantorPaperType column="K"></guarantorPaperType>
+		<guarantorPaperCode column="L"></guarantorPaperCode>
+		<estimatedValue column="M"></estimatedValue>
+		<thirdParty column="N"></thirdParty>
+		<firstEstimatedValueDate column="O"></firstEstimatedValueDate>
+		<newestEstimatedValueDate column="P"></newestEstimatedValueDate>
+		<estimatedValueDueDate column="Q"></estimatedValueDueDate>
+		<assuranceCapabilityUpperLimit column="R"></assuranceCapabilityUpperLimit>
+		<impawnRate column="S"></impawnRate>
+	</guaranteed>
+</cbrc>

@@ -1,0 +1,134 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE struts PUBLIC "-//Apache Software Foundation//DTD Struts Configuration 2.1//EN" "http://struts.apache.org/dtds/struts-2.1.dtd">
+<struts>
+	 <package name="dbgssystem" extends="framework.default" namespace="/framework">
+       
+        <action name="DBGSShowTree*-*" class="singleObjectShowTreeAction">
+            <result name="success">/Framework/ShowTree.jsp</result>
+		</action>
+		
+		<action name="DBGSReviewShowTree*-*" class="ReviewShowTreeAction">
+				<result name="success">/Framework/ShowTree.jsp</result>
+		</action>
+		
+		<action name="DBGSCKShowTree*-*" class="ReviewShowTreeAction">
+				<result name="success">/Framework/ShowTree.jsp</result>
+		</action>
+	 
+		<action name="DownLoadDBGSRport-dbgssystem.dto.DBGSDownload" class="downLoadDBGSReportAction">
+            <result name="success" type="stream">
+			    <param name="contentType">${serviceResult.contentType}</param>
+			    <param name="inputName">inputStream</param>
+			    <param name="contentDisposition">${serviceResult.contentDisposition}</param>
+			    <param name="bufferSize">${serviceResult.bufferSize}</param>
+			</result>
+			<result name="error" type="redirectAction">
+			    <param name="actionName">ShowAlertMessage</param>
+			    <param name="message">${serviceResult.message}</param>
+			</result>
+        </action>
+         
+        <action name="ConfirmDialogForDBGSReport-dbgssystem.dto.DBGSDownload" class="confirmDialogForDBGSReportAction">
+         <result name="success" type="redirectAction">
+		    <param name="actionName">DownLoadDBGSRport-dbgssystem.dto.DBGSDownload</param>
+		    <param name="redirectActionName">DownLoadDBGSRport-dbgssystem.dto.DBGSDownload</param>
+		    <param name="redirectActionNamespace">/framework</param>
+		</result>
+            <result name="error" type="redirectAction">
+            <param name="showConfirm">true</param>
+           	<param name="message">${serviceResult.message}</param>
+		    <param name="actionName">ShowAlertMessage.action</param>
+		    <param name="redirectActionName">DownLoadDBGSRport-dbgssystem.dto.DBGSDownload</param>
+		    <param name="redirectActionNamespace">/framework</param>
+		</result>
+	</action>
+        
+        <action name="ShowList-dbgssystem.dto.DBGSDownload" class="singleObjectShowListAction">
+			<result name="success">/DBGSSystem/DBGSDownload.jsp</result>
+		</action>
+		
+		<action name="UploadDBGSBWJX-dbgssystem.dto.DBGSCJFKBW" class="dBGSCJFKBWUploadFileAction">
+			<result name="success" type="redirectAction">
+			    <param name="message">${serviceResult.message}</param>
+			    <param name="actionName">ShowAlertMessage</param>
+			    <param name="redirectActionName">ShowList-dbgssystem.dto.DBGSCJFKBW</param>
+			    <param name="redirectActionNamespace">/framework</param>
+			</result>
+			<result name="error" type="redirectAction">
+			    <param name="actionName">ShowAlertMessage</param>
+			    <param name="message">${serviceResult.message}</param>
+			    <!-- 2016-11-08 高级查询报文解析网页找不到问题 -->
+			    <param name="redirectActionName">ShowList-dbgssystem.dto.DBGSCJFKBW</param>
+			    <param name="redirectActionNamespace">/framework</param>
+			</result>
+		</action>
+		
+		 <action name="ShowListLevelDBGSCJFKBWSub-dbgssystem.dto.DBGSCJFKBWSub" class="singleObjectShowListAction">
+			<result name="success">/DBGSSystem/DBGSCJFKBWSub.jsp</result>
+		</action>
+		
+		<action name="ImportBatchExcleDataForDBYW*-*" class="importBatchExcleDataForDBYWAction">
+            <result name="success" type="redirectAction">
+			    <param name="message">${serviceResult.message}</param>
+			    <param name="actionName">ShowAlertMessage.action</param>
+			    <param name="redirectActionName">ShowList{1}-{2}</param> 
+			    <param name="redirectActionNamespace">/framework</param>
+			</result>
+			<result name="error" type="redirectAction">
+			    <param name="actionName">ShowAlertMessage</param>
+			    <param name="message">${serviceResult.message}</param>
+			    <param name="actionName">ShowAlertMessage.action</param>
+			    <param name="redirectActionName">ShowList{1}-{2}</param> 
+			    <param name="redirectActionNamespace">/framework</param>
+			</result>
+		</action>
+		<action name="RunRmiService-*" class="runRmiServiceAction">
+			<result name="success" type="redirectAction">
+			    <param name="actionName">ShowAlertMessage</param>
+			    <param name="message">ok</param>
+			</result>
+		</action>
+		
+		<action name="ConfirmDialogForUploadDBGSBWJX-dbgssystem.dto.DBGSCJFKBW" class="confirmDialogForUploadDBGSBWJXAction">
+	         <result name="success" type="redirectAction">
+			    <param name="actionName">UploadDBGSBWJX-dbgssystem.dto.DBGSCJFKBW</param>
+			    <param name="redirectActionName">UploadDBGSBWJX-dbgssystem.dto.DBGSCJFKBW</param>
+			    <param name="redirectActionNamespace">/framework</param>
+			</result>
+	            <result name="error" type="redirectAction">
+	            <param name="showConfirm">true</param>
+	           	<param name="message">${serviceResult.message}</param>
+			    <param name="actionName">ShowAlertMessage.action</param>
+			    <param name="redirectActionName">UploadDBGSBWJX-dbgssystem.dto.DBGSCJFKBW</param>
+			    <param name="redirectActionNamespace">/framework</param>
+			</result>
+		</action>
+		
+		<action name="RejectReportForDBGS-dbgssystem.dto.SendedRejectReportForDBGS" class="rejectReportForDBGSAction">
+             <result name="success" type="redirectAction">
+            	<param name="message">${serviceResult.message}</param>
+			    <param name="actionName">ShowAlertMessage.action</param>
+			    <param name="redirectActionName">ShowList-dbgssystem.dto.SendedRejectReportForDBGS</param>
+			    <param name="redirectActionNamespace">/framework</param>
+			</result>
+			<result name="error" type="redirectAction">
+            	<param name="message">${serviceResult.message}</param>
+			    <param name="actionName">ShowAlertMessage.action</param>
+			    <param name="redirectActionName">ShowList-dbgssystem.dto.SendedRejectReportForDBGS</param>
+			    <param name="redirectActionNamespace">/framework</param>
+			</result>
+		</action>
+		
+	 </package>
+	 
+	 <!--AJAX JSON Used-->
+	 <package name='ajaxForDBGSReport' extends="json-default">
+	  <action name="GetJsonForDBGSDownLoadReport-*" class="ajaxForDBGSDownLoadRequestAction">
+            <result name="success" type="json">
+            	<param name="root">result</param>  
+			</result>
+		</action>
+	 </package>
+	 
+	 <include file="report/configs/report.struts.xml"/>
+</struts>    

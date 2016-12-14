@@ -1,0 +1,236 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+	<!-- 
+		1 所有boolean类型值，如果不填则默认为false 
+		2 fieldName如有关联表校验，加表名前缀，例如Table1.field1，以主外键关联 
+		3 特殊值: 
+			notNull代表非空 、null代表空、nullDate代表空时间、 
+			dataDate代表数据日期、previousDataDate代表上期数据日期、 
+			yearEndDate代表年末日期、halfYearEndDate代表半年末日期、seasonEndDate代表季末日期、monthEndDate代表月末日期、 
+		`	max代表正无穷、-max代表负无穷 
+		4 每个同级校验类型结点作为一种校验类型，下一级结点作为一条具体的校验项 
+		5 表内校验概念指具体的一张数据库实体表，而非几张表组合的大表 
+		6 procedureName代表存储过程的名字，procedureParam 代表存储过程的参数，procedureDiscription 代表存储过程的描述。 
+		7 程序对存储过程的调用，当参数不匹配或存储过程不存在时，程序将报错，根据具体报错信息对参数或存储过程进行更正。 
+		
+		注：存储过程中的别名区分大小写
+	-->
+<reportCheckRoot>
+	
+	<!-- 校验名称：校验根据此名称做为校验实例-->
+	<checkInstance name="E214">	
+			
+		<!-- 参数值：外部向校验实例传入的参数，如ETL。
+		配置的值为默认值，也可以通过系统传递进行替换-->
+		<paramValueList>
+			<paramValue name="dtDate" value="2013-12-31"></paramValue>
+		</paramValueList>	
+		
+		<!-- 频度标志：可通过系统参数传递进行替换
+			1代表年报，2代表半年报，3代表季报，4代表月报，5代表日报-->
+		<freqCode value="4"></freqCode>
+						
+		<!-- 表名：真实数据库表的名称，一个校验实例中应具备唯一性-->
+		<checkTable procedureName="CHECK_12_E214" procedureParam="dtDate,RS" procedureDiscription="贷款明细">
+			
+			<!-- 参数字段：向checkTable中配置的存储过程传递的参数
+				type不填或则等于1代表字符，等于2代表时间-->
+			<paramFieldList>
+				<paramField paramName="dtDate" field="dtDate" type="1"></paramField>
+			</paramFieldList>
+			
+			<!-- 唯一性字段组合：可理解为联合主键，用于未作说明的主外键关联-->
+			<checkUniqueFieldList>
+				<checkUniqueField name="E202201" discription="成员单位的客户代码"></checkUniqueField>
+				<checkUniqueField name="E202202" discription="授信号码"></checkUniqueField>
+			</checkUniqueFieldList>
+			
+			<!-- 表内基础校验：被设置的字段每条数都需要校验 
+				emptyCheck代表为空校验，ignoreVal代表校验时可忽略的值
+				dateCheck代表日期校验，digitalCheck代表数字校验(只有整型数据能通过校验，浮点型不能通过)
+				upperCheck代表全大写字母校验，chnCheck代表汉字校验（可扩展其他特殊校验）
+				startLength代表起始长度，endLength代表结束长度 
+				valueDecimalMin最小值， valueDecimalMax最大值 包括等于 （一般用于统计类校验）
+				valueDecimalLength的值代表小数位数的校验(字符串不能通过校验)-->
+			<checkFieldBasicList>
+				<checkFieldBasic name="E214200" discription="关联类型" emptyCheck="true" startLength="1" endLength="1" digitalCheck="true"></checkFieldBasic>
+				<checkFieldBasic name="E214209" discription="股东结构对应日期" dateCheck="true" ignoreVal="99999999" startLength="8" endLength="8"></checkFieldBasic>			
+			</checkFieldBasicList>
+
+			<!-- caseWhen校验：每条数据被设置的字段都需要校验，有可能存在表外校验 
+				caseValue代表"为值" caseValueScope代表范围值，以逗号分隔 
+				whenValue代表"当值" whenValueScope代表范围值，以逗号分隔 
+				whenType不填或者等于1代表等号右边为一个字段，不运算；
+				whenType等于2代表等号右边为多个字段运算；(当使用whenType="2"时whenValue要改为whenCompareValue)
+				whenType等于3代表多个when并且关系；
+   				whenType等于4代表两个when时间比较关系 
+				whenType等于5代表1的反向（当***不为***）
+				whenType等于6代表3的反向（当***不为***）
+				caseCompareType运算符（当***>=***为***）&lt;小于号
+				whenCompareType运算符（当***为***>=***）&lt;小于号
+				whenValueRule不填或则等于1代表当前值，whenValueRule等于2代表绝对值 
+				joinType不填或者等于1代表正，jionType等于2代表负-->
+			<checkFieldCaseWhenList>
+							
+				<checkFieldCaseWhen name="E214204" discription="股东/关联企业证件代码" caseValue="notNull" whenValueScope="8,9,10,11">
+        	<checkFieldCaseWhenField name="E214203" discription="股东/关联企业证件类型"  ></checkFieldCaseWhenField>
+        </checkFieldCaseWhen>
+        
+        <!--LJX-077	表1 PART III中，若欠本余额大于0，则欠本天数必须大于0-->
+        <checkFieldCaseWhen name="E200217" discription="欠本天数" caseCompareType=">" caseValue="0"  whenCompareType=">" whenValue="0" >
+	         <checkFieldCaseWhenField name="E200216" discription="欠本余额"  ></checkFieldCaseWhenField>
+	      </checkFieldCaseWhen>
+	      
+        <!--LJX-057|表3 PART III中机关不能为关联企业|若[关联类型]为2/3/4/5之一，则[股东/关联企业类型]不能为“2-机关”-->
+        <checkFieldCaseWhen name="E214202" discription="股东/关联企业类型" caseValue="2" whenType="5" whenValueScope="2,3,4,5">
+        	<checkFieldCaseWhenField name="E214200" discription="关联类型"></checkFieldCaseWhenField>
+        </checkFieldCaseWhen>
+        
+        <!--JBL3-027 若P+Q+|R|+S大于0则非空。-->
+        <checkFieldCaseWhen name="E212224" discription="财务报表类型" caseValue="notNull" whenType="2" whenCompareType=">" whenCompareValue="0">
+        	<checkFieldCaseWhenField name="E212215" discription="资产总额" joinType="1" whenValueRule="1"></checkFieldCaseWhenField>
+        	<checkFieldCaseWhenField name="E212216" discription="负债总额" joinType="1" whenValueRule="1"></checkFieldCaseWhenField>
+        	<checkFieldCaseWhenField name="E212217" discription="税前利润" joinType="1" whenValueRule="2"></checkFieldCaseWhenField>
+        	<checkFieldCaseWhenField name="E212218" discription="主营业务收入" joinType="1" whenValueRule="1"></checkFieldCaseWhenField>
+        </checkFieldCaseWhen>
+        
+			</checkFieldCaseWhenList>
+			
+			<!-- 表内数据有效性校验
+				value为值域 -->
+			<checkFieldEffectiveList>
+				<checkFieldEffective name="E214200" discription="关联类型">
+                    <value>1</value>
+                    <value>2</value>
+                    <value>3</value>
+                    <value>4</value>
+                    <value>5</value>
+      	</checkFieldEffective>      
+			</checkFieldEffectiveList>	
+						
+			<!-- 非聚合校验：有可能存在表外校验和期数校验 
+				dataPeriod不填或则的等于1代表本期，dataPeriod等于2代表上期 
+				startRate代表起始变动率，endRate代表结束变动率 
+				valueRule不填或等于1代表当前值，valueRule等于2代表绝对值 
+				compareType不填代表求等，compareType=1代表求变动率，compareType=2代表求差值
+				fieldType不填或等于1代表数值比较，fieldType等于2代表时间日期比较-->
+			<checkFieldLineList>
+				
+				<checkFieldLine compareType=">=">
+        	<leftFieldList><checkFieldLineField name="E214208" discription="持股比例"></checkFieldLineField></leftFieldList>
+         	<rightFieldList><checkFieldLineField value="0"></checkFieldLineField></rightFieldList>
+        </checkFieldLine> 
+        
+        <checkFieldLine compareType=">=" fieldType="2">
+        	<leftFieldList><checkFieldLineField value="dtDate" discription="数据日期"></checkFieldLineField></leftFieldList>
+         	<rightFieldList><checkFieldLineField name="E204209" discription="发生日期"></checkFieldLineField></rightFieldList>
+        </checkFieldLine>
+               
+			</checkFieldLineList>
+						
+			<!-- 或校验：一般用于多种情况都可以满足的校验，取其一就能通过校验 
+				type="1"代表基础校验类型的或校验，type="2"代表casewhen校验类型的或校验-->
+			<checkFieldOrList>	
+
+        <checkFieldOr type="1">
+         	<checkFieldBasic name="E214203" discription="股东/关联企业证件类型" emptyCheck="true" startLength="1" endLength="1"  ></checkFieldBasic>
+          <checkFieldBasic name="E214203" discription="股东/关联企业证件类型" emptyCheck="true" startLength="2" endLength="2" ></checkFieldBasic>
+        </checkFieldOr>
+        
+        <checkFieldOr type="2">
+         	<checkFieldCaseWhen name="E201219" discription="尚可使用贷款授信额度" caseValue="0" whenValue="3">
+					<checkFieldCaseWhenField name="E201200" discription="客户类型"></checkFieldCaseWhenField>
+				</checkFieldCaseWhen>
+          <checkFieldCaseWhen name="E201219" discription="尚可使用贷款授信额度" caseValue="0" whenValue="3">
+					<checkFieldCaseWhenField name="E201200" discription="客户类型"></checkFieldCaseWhenField>
+				</checkFieldCaseWhen>
+        </checkFieldOr>
+        
+			</checkFieldOrList>	
+							
+		</checkTable>
+		
+		<!-- 聚合校验
+				jionType不填或等于1代表正，jionType等于2代表负 
+				procedureResultField代表字段求和值-->
+		<checkFieldAggregationList discription="聚合校验">
+			
+			<paramFieldList>
+				<paramField paramName="dtDate" field="dtDate" type="1"></paramField>
+			</paramFieldList>
+			
+			<checkFieldAggregation compareType="="	splitDiscription="特殊校验-客户代码" leftSplitField="E205" rightSplitField="E201">
+				<leftFieldList>
+					<checkFieldAggregationField procedureName="CHECK_12_E205_TSL_011_L" procedureParam="dtDate,RS" procedureDiscription="PART7客户代码" procedureResultField="E205ORGID"></checkFieldAggregationField>
+				</leftFieldList>
+				<rightFieldList>
+					<checkFieldAggregationField procedureName="CHECK_12_E205_TSL_011_R" procedureParam="dtDate,RS" procedureDiscription="PART1客户代码" procedureResultField="E201202"></checkFieldAggregationField>
+				</rightFieldList>
+			</checkFieldAggregation>
+			
+			<checkFieldAggregation compareType="="	splitDiscription="授信号码" leftSplitField="SPLITFIELD" rightSplitField="SPLITFIELD">
+				<leftFieldList jionType="1">
+					<checkFieldAggregationField procedureResultField="PROC_RESULT" procedureDiscription="授信额度" procedureName="CHECK_12_E201_LJX_075_R" procedureParam="dtDate,RS" ></checkFieldAggregationField>
+					<checkFieldAggregationField procedureResultField="PROC_RESULT" procedureDiscription="授信额度" procedureName="CHECK_12_E201_LJX_075_R" procedureParam="dtDate,RS" ></checkFieldAggregationField>
+				</leftFieldList>
+				<rightFieldList>
+					<checkFieldAggregationField procedureResultField="PROC_RESULT" procedureDiscription="授信额度" procedureName="CHECK_12_E201_LJX_075_L" procedureParam="dtDate,RS" ></checkFieldAggregationField>
+				</rightFieldList>
+			</checkFieldAggregation>	
+			
+		</checkFieldAggregationList>	
+			
+		<!--  一致性校验与唯一性校验  
+			consistenttype等于1或不填 表示一致性校验，consistenttype等于2表示唯一性校验   -->			
+		<checkFieldConsistentList consistenttype="2" discription="唯一性校验">
+			
+			<paramFieldList>
+				<paramField paramName="dtDate" field="DTDATE" type="1"></paramField>
+			</paramFieldList>
+			
+			<checkFieldConsistent>
+				<consistentGroup keyField="CONDITOIN" keyDiscription="客户代码" nameField="E214204" nameDiscription="证件代码" procedureName="CHECK_12_E214_WYX_021" procedureDiscription="E214重要股东及主要关联企业" procedureParam="dtDate,RS"></consistentGroup>
+			</checkFieldConsistent>	
+														
+		</checkFieldConsistentList>
+				
+		<!--  一致性校验与唯一性校验  
+			consistenttype等于1或不填 表示一致性校验，consistenttype等于2表示唯一性校验 
+			keyField中可以有多个值，用逗号隔开  -->			
+		<checkFieldConsistentList consistenttype="1" discription="一致性校验">
+			
+			<paramFieldList>
+				<paramField paramName="dtDate" field="DTDATE"></paramField>
+			</paramFieldList>
+			
+			<checkFieldConsistent>
+				<consistentGroup keyField="E214212"  keyDiscription="客户代码" nameField="E214209" nameDiscription="股东结构对应日期" procedureName="CHECK_12_E214" procedureDiscription="E214重要股东及主要关联企业" procedureParam="dtDate,RS"></consistentGroup>
+			</checkFieldConsistent>	
+			<!--同一填报机构、同一日期的数据中，本字段不可存在重复客户号记录-->
+			<checkFieldConsistent>
+				<consistentGroup keyField="F000TIME,F000ORGID"  keyDiscription="填报机构-填表日期" nameField="F000200" nameDiscription="客户代码" procedureName="CHECK_12_F000" procedureDiscription="F000客户基本信息" procedureParam="dtDate,RS"></consistentGroup>
+			</checkFieldConsistent>	
+		</checkFieldConsistentList>	
+			
+		<!-- 一个校验实例(一个checkInstance节点)中可以存在多个checkTable节点-->
+		<checkTable procedureName="CHECK_12_E214_LJX_053" procedureParam="dtDate,RS" procedureDiscription="聚合-持股比例">		
+				
+			<paramFieldList>
+				<paramField paramName="dtDate" field="dtDate" type="1"></paramField>
+			</paramFieldList>
+			
+			<checkUniqueFieldList>
+				<checkUniqueField name="SPLITFIELD"></checkUniqueField>
+			</checkUniqueFieldList>
+			
+			<checkFieldLineList>
+				<checkFieldLine compareType=">=">
+        	<leftFieldList><checkFieldLineField value="100" ></checkFieldLineField></leftFieldList>
+         	<rightFieldList><checkFieldLineField name="TOTAL" discription="持股比例"></checkFieldLineField></rightFieldList>
+        </checkFieldLine>  
+    	</checkFieldLineList>
+    	
+		</checkTable>
+														
+	</checkInstance>
+	
+</reportCheckRoot>

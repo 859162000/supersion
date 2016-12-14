@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<navigationRoot>
+<navigationComponentList>
+    	<navigationComponent id="DeskTop" name="桌面" url="Framework/NavigationPage.jsp"  ico="bg.png" treeIco="bg.png" treeExpandIco="bg.png" des="">
+	       <navigationComponent id="BXYW" name="保险业务报送" url="Framework/NavigationPage.jsp"  ico="128_InstInfo.png" treeIco="64_InstInfo.png" treeExpandIco="32_InstInfo.png" des="">
+	           <navigationComponent id="BXYWDownload" name="报文生成" url="framework/ShowList-bxywsystem.dto.BXYWDownload" ico="64_Other.png" treeIco="32_Other.png" treeExpandIco="16_Other.png" des=""></navigationComponent>
+	           <navigationComponent id="BXYWCJFKBW" name="采集类反馈报文处理" url="framework/ShowList-bxywsystem.dto.BXYWCJFKBW" ico="64_AutoETL_Param.png" treeIco="32_AutoETL_Param.png" treeExpandIco="16_AutoETL_Param.png" des=""></navigationComponent>
+	       </navigationComponent>
+     	</navigationComponent>
+   </navigationComponentList>
+</navigationRoot>

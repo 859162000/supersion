@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE struts PUBLIC "-//Apache Software Foundation//DTD Struts Configuration 2.1//EN" "http://struts.apache.org/dtds/struts-2.1.dtd">
+<struts>
+   <package name="zdzsystem" extends="framework.default" namespace="/framework">
+   
+   		<action name="ZDZShowTree*-*" class="singleObjectShowTreeAction">
+				<result name="success">/Framework/ShowTree.jsp</result>
+		</action>
+	
+		<action name="ZDZReviewShowTree*-*" class="ReviewShowTreeAction">
+				<result name="success">/Framework/ShowTree.jsp</result>
+		</action>
+		
+		<action name="ZDZCKShowTree*-*" class="ReviewShowTreeAction">
+				<result name="success">/Framework/ShowTree.jsp</result>
+		</action>
+		
+		<action name="ShowImg*-*" class="singleObjectShowImgAction">
+            <result name="success" type="stream">
+			    <param name="contentType">${serviceResult.contentType}</param>
+			     <param name="inputName">inputStream</param> 
+			    <param name="contentDisposition">${serviceResult.contentDisposition}</param>
+			    <param name="bufferSize">${serviceResult.bufferSize}</param>
+			</result>
+	</action>
+	
+	<action name="ZDZDownLoadImgLevelAUTODTO-*" class="zdzsystemDownLoadImgAction">
+            <result name="success" type="stream">
+			    <param name="contentType">${serviceResult.contentType}</param>
+			    <param name="inputName">inputStream</param>
+			    <param name="contentDisposition">${serviceResult.contentDisposition}</param>
+			    <param name="bufferSize">${serviceResult.bufferSize}</param>
+			</result>
+			<result name="error" type="redirectAction">
+			    <param name="actionName">ShowAlertMessage</param>
+			    <param name="message">${serviceResult.message}</param>
+			</result>
+        </action>
+	
+   </package>
+   
+	<include file="report/configs/report.struts.xml"/>
+</struts>    

@@ -1,0 +1,458 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:p="http://www.springframework.org/schema/p"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-3.0.xsd">
+
+	<!-- 反馈报文明细段 -->
+	<bean id="singleObjectFKBWShowListLevelFKBWAutoDTOMXAction" class="framework.actions.imps.BaseSTModelDrivenConditionAction" scope="prototype">
+		<property name="defaultServiceBeanId" value="singleObjectFKBWShowListLevelFKBWAutoDTOMXService"></property>
+	</bean>
+
+	<bean id="singleObjectFKBWShowSaveLevelFKBWAutoDTOMXAction" class="framework.actions.imps.BaseSTAction" scope="prototype">
+		<property name="defaultServiceBeanId" value="singleObjectFKBWShowSaveLevelFKBWAutoDTOMXService"></property>
+	</bean>
+
+	<bean id="singleObjectFKBWShowCheckUpdateLevelFKBWAutoDTOMXAction" class="framework.actions.imps.BaseSTModelDrivenValidateAction" scope="prototype">
+		<property name="defaultServiceBeanId" value="singleObjectFKBWShowCheckUpdateLevelFKBWAutoDTOMXService"></property>
+	</bean>
+
+	<bean id="singleObjectFKBWShowInputSaveLevelFKBWAutoDTOMXAction" class="framework.actions.imps.BaseSTModelDrivenValidateInputAction" scope="prototype">
+		<property name="defaultServiceBeanId" value="singleObjectFKBWShowInputSaveLevelFKBWAutoDTOMXService"></property>
+	</bean>
+
+	<bean id="singleObjectFKBWShowInputUpdateLevelFKBWAutoDTOMXAction" class="framework.actions.imps.BaseSTModelDrivenValidateInputAction" scope="prototype">
+		<property name="defaultServiceBeanId" value="singleObjectFKBWShowInputUpdateLevelFKBWAutoDTOMXService"></property>
+	</bean>
+
+	<bean id="singleObjectFKBWSaveLevelFKBWAutoDTOMXAction" class="framework.actions.imps.BaseSTModelDrivenValidateAction" scope="prototype">
+		<property name="defaultServiceBeanId" value="singleObjectFKBWSaveLevelFKBWAutoDTOMXService"></property>
+	</bean>
+
+	<bean id="singleObjectFKBWUpdateLevelFKBWAutoDTOMXAction" class="framework.actions.imps.BaseSTModelDrivenValidateAction" scope="prototype">
+		<property name="defaultServiceBeanId" value="singleObjectFKBWUpdateLevelFKBWAutoDTOMXService"></property>
+	</bean>
+
+	<bean id="singleObjectFKBWShowSaveOrUpdateLevelFKBWAUTODTOMXAction" class="report.actions.imps.FKBWShowSaveOrUpdateAction" scope="prototype">
+		<property name="defaultServiceBeanId" value="singleObjectFKBWShowSaveOrUpdateLevelFKBWAUTODTOMXService"></property>
+	</bean>
+
+	<!-- 反馈报文基础段 -->
+	<bean id="FKBWShowCheckUpdateLevelFKBWAutoDTOAction" class="framework.actions.imps.BaseSTModelDrivenValidateAction" scope="prototype">
+		<property name="defaultServiceBeanId" value="FKBWShowCheckUpdateLevelFKBWAutoDTOService"></property>
+	</bean>
+
+	<bean id="singleObjectFKBWValidateUpdateLevelFKBWAutoDTOAction" class="framework.actions.imps.BaseSTModelDrivenValidateAction" scope="prototype">
+		<property name="defaultServiceBeanId" value="singleObjectFKBWValidateUpdateLevelFKBWAutoDTOService"></property>
+	</bean>
+
+	<bean id="singleObjectFKBWShowInputCheckUpdateLevelFKBWAutoDTOAction" class="framework.actions.imps.BaseSTModelDrivenValidateInputAction" scope="prototype">
+		<property name="defaultServiceBeanId" value="singleObjectFKBWShowInputCheckUpdateLevelFKBWAutoDTOService"></property>
+	</bean>
+
+	<!-- 没有service -->
+	<bean id="singleObjectFKBWShowInputSaveAction" class="framework.actions.imps.BaseSTModelDrivenValidateInputAction" scope="prototype">
+		<property name="defaultServiceBeanId" value="singleObjectFKBWShowInputSaveService"></property>
+	</bean>
+
+	<!-- 明细段查看 -->
+	<bean id="singleObjectCKShowListLevelMXCKAction" class="framework.actions.imps.BaseSTModelDrivenConditionAction" scope="prototype">
+		<property name="defaultServiceBeanId" value="singleObjectCKShowListLevelMXCKService"></property>
+	</bean>
+
+	<bean id="singleObjectAutoDTOMXCKShowUpdateLevelMXCKAction" class="framework.actions.imps.BaseSTModelDrivenValidateAction" scope="prototype">
+		<property name="defaultServiceBeanId" value="singleObjectAutoDTOMXCKShowUpdateLevelMXCKService"></property>
+	</bean>
+
+	<!-- 基础段查看 -->
+	<bean id="singleObjectCKShowListLevelAUTODTOAction" class="framework.actions.imps.BaseSTModelDrivenConditionAction" scope="prototype">
+		<property name="defaultServiceBeanId" value="singleObjectCKShowListLevelAUTODTOService"></property>
+	</bean>
+
+	<bean id="reportCKShowViewCancelLevelAUTODTOAction" class="framework.actions.imps.BaseSTNameAndIdAction" scope="prototype">
+		<property name="defaultServiceBeanId" value="reportCKShowViewCancelLevelAUTODTOService"></property>
+	</bean>
+
+	<bean id="singleObjectCKShowUpdateLevelAUTODTOAction" class="framework.actions.imps.BaseSTNameAndIdAction" scope="prototype">
+		<property name="defaultServiceBeanId" value="singleObjectCKShowUpdateLevelAUTODTOService"></property>
+	</bean>
+
+	<!-- 任务层查看 -->
+	<bean id="CKShowTreeAction" class="framework.actions.imps.BaseSTModelDrivenAction" scope="prototype">
+		<property name="defaultServiceBeanId" value="CKShowTreeService"></property>
+	</bean>
+
+	<bean id="taskModelInstCKShowListForTreeAction" class="framework.actions.imps.BaseSTModelDrivenConditionAction" scope="prototype">
+		<property name="defaultServiceBeanId" value="taskModelInstCKShowListForTreeService"></property>
+	</bean>
+
+	<!-- 明细段审核 -->
+	<bean id="singleObjectSHShowListLevelAUTODTOSHMXAction" class="framework.actions.imps.BaseSTModelDrivenConditionAction" scope="prototype">
+		<property name="defaultServiceBeanId" value="singleObjectSHShowListLevelAUTODTOSHMXService"></property>
+	</bean>
+
+	<bean id="singleObjectSHShowUpdateLevelAUTODTOSHMXAction" class="framework.actions.imps.BaseSTNameAndIdAction" scope="prototype">
+		<property name="defaultServiceBeanId" value="singleObjectSHShowUpdateLevelAUTODTOSHMXService"></property>
+	</bean>
+
+	<!-- 基础段审核 -->
+	<bean id="singleObjectSHShowListLevelAUTODTOSHAction" class="framework.actions.imps.BaseSTModelDrivenConditionAction" scope="prototype">
+		<property name="defaultServiceBeanId" value="singleObjectSHShowListLevelAUTODTOSHService"></property>
+	</bean>
+
+	<bean id="singleObjectSHShowUpdateLevelAUTODTOSHAction" class="framework.actions.imps.BaseSTNameAndIdAction" scope="prototype">
+		<property name="defaultServiceBeanId" value="singleObjectSHShowUpdateLevelAUTODTOSHService"></property>
+	</bean>
+
+	<bean id="ReportUpdateFieldAction" class="framework.actions.imps.BaseSTNameAndIdListAction" scope="prototype">
+		<property name="defaultServiceBeanId" value="ReportUpdateFieldService"></property>
+	</bean>
+
+	<bean id="ReportFalseUpdateFieldAction" class="framework.actions.imps.BaseSTNameAndIdListAction" scope="prototype">
+		<property name="defaultServiceBeanId" value="ReportFalseUpdateFieldService"></property>
+	</bean>
+
+	<bean id="reportRPTVerifyTypeFalseUpdateFieldAction" class="framework.actions.imps.BaseSTModelDrivenAction" scope="prototype">
+		<property name="defaultServiceBeanId" value="reportRPTVerifyTypeFalseUpdateFieldService"></property>
+	</bean>
+
+	<bean id="reportRPTVerifyTypeUpdateFieldAction" class="framework.actions.imps.BaseSTModelDrivenAction" scope="prototype">
+		<property name="defaultServiceBeanId" value="reportRPTVerifyTypeUpdateFieldService"></property>
+	</bean>
+
+	<bean id="reportSHShowViewCancelLevelAUTODTOSHAction" class="framework.actions.imps.BaseSTNameAndIdAction" scope="prototype">
+		<property name="defaultServiceBeanId" value="reportSHShowViewCancelLevelAUTODTOSHService"></property>
+	</bean>
+
+	<bean id="reportSHShowViewResetLevelAUTODTOSHAction" class="framework.actions.imps.BaseSTNameAndIdAction" scope="prototype">
+		<property name="defaultServiceBeanId" value="reportSHShowViewResetLevelAUTODTOSHService"></property>
+	</bean>
+
+	<!-- 明细段填报 -->
+	<bean id="singleObjectShowListLevelAutoDTOMXAction" class="framework.actions.imps.BaseSTModelDrivenConditionAction" scope="prototype">
+		<property name="defaultServiceBeanId" value="singleObjectShowListLevelAutoDTOMXService"></property>
+	</bean>
+
+	<bean id="singleObjectShowViewLevelAutoDTOMXAction" class="framework.actions.imps.BaseSTModelDrivenConditionAction" scope="prototype">
+		<property name="defaultServiceBeanId" value="singleObjectShowViewLevelAutoDTOMXService"></property>
+	</bean>
+
+	<bean id="singleObjectShowSaveLevelAutoDTOMXAction" class="framework.actions.imps.BaseSTAction" scope="prototype">
+		<property name="defaultServiceBeanId" value="singleObjectShowSaveLevelAutoDTOMXService"></property>
+	</bean>
+
+	<bean id="otherShowSaveAction" class="framework.actions.imps.BaseSTAction" scope="prototype">
+		<property name="defaultServiceBeanId" value="otherShowSaveService"></property>
+	</bean>
+
+	<bean id="singleObjectShowUpdateLevelAutoDTOMXAction" class="framework.actions.imps.BaseSTNameAndIdAction" scope="prototype">
+		<property name="defaultServiceBeanId" value="singleObjectShowUpdateLevelAutoDTOMXService"></property>
+	</bean>
+
+	<bean id="singleObjectShowCheckUpdateLevelAutoDTOMXAction" class="framework.actions.imps.BaseSTModelDrivenValidateAction" scope="prototype">
+		<property name="defaultServiceBeanId" value="singleObjectShowCheckUpdateLevelAutoDTOMXService"></property>
+	</bean>
+
+	<bean id="singleObjectShowCheckViewLevelAutoDTOMXAction" class="framework.actions.imps.BaseSTModelDrivenValidateAction" scope="prototype">
+		<property name="defaultServiceBeanId" value="singleObjectShowCheckViewLevelAutoDTOMXService"></property>
+	</bean>
+
+	<bean id="singleObjectShowInputSaveLevelAutoDTOMXAction" class="framework.actions.imps.BaseSTModelDrivenValidateInputAction" scope="prototype">
+		<property name="defaultServiceBeanId" value="singleObjectShowInputSaveLevelAutoDTOMXService"></property>
+	</bean>
+
+	<bean id="singleObjectShowInputUpdateLevelAutoDTOMXAction" class="framework.actions.imps.BaseSTModelDrivenValidateInputAction" scope="prototype">
+		<property name="defaultServiceBeanId" value="singleObjectShowInputUpdateLevelAutoDTOMXService"></property>
+	</bean>
+
+	<bean id="singleObjectShowInputCheckUpdateLevelAutoDTOMXAction" class="framework.actions.imps.BaseSTModelDrivenValidateInputAction" scope="prototype">
+		<property name="defaultServiceBeanId" value="singleObjectShowInputCheckUpdateLevelAutoDTOMXService"></property>
+	</bean>
+
+	<bean id="singleObjectJCShowInputMXCopySaveLevelAutoDTOMXAction" class="framework.actions.imps.BaseSTModelDrivenValidateInputAction" scope="prototype">
+		<property name="defaultServiceBeanId" value="singleObjectJCShowInputMXCopySaveLevelAutoDTOMXService"></property>
+	</bean>
+
+	<bean id="otherShowInputSaveAction" class="framework.actions.imps.BaseSTModelDrivenValidateInputAction" scope="prototype">
+		<property name="defaultServiceBeanId" value="otherShowInputSaveService"></property>
+	</bean>
+
+	<bean id="singleObjectSaveLevelAutoDTOMXAction" class="framework.actions.imps.BaseSTModelDrivenValidateAction" scope="prototype">
+		<property name="defaultServiceBeanId" value="singleObjectSaveLevelAutoDTOMXService"></property>
+	</bean>
+
+	<bean id="singleObjectUpdateLevelAutoDTOMXAction" class="framework.actions.imps.BaseSTModelDrivenValidateAction" scope="prototype">
+		<property name="defaultServiceBeanId" value="singleObjectUpdateLevelAutoDTOMXService"></property>
+	</bean>
+
+	<bean id="singleObjectMXCopySaveLevelAutoDTOMXAction" class="framework.actions.imps.BaseSTModelDrivenValidateAction" scope="prototype">
+		<property name="defaultServiceBeanId" value="singleObjectMXCopySaveLevelAutoDTOMXService"></property>
+	</bean>
+
+	<bean id="otherSaveAction" class="framework.actions.imps.BaseSTModelDrivenValidateAction" scope="prototype">
+		<property name="defaultServiceBeanId" value="otherSaveService"></property>
+	</bean>
+
+	<bean id="singleObjectMXExportAllDataAction" class="framework.actions.imps.SingleObjectConditionDownloadAction" scope="prototype">
+		<property name="defaultServiceBeanId" value="singleObjectMXExportAllDataService"></property>
+	</bean>
+
+	<bean id="autoDTOMXDeleteListByIdListAction" class="framework.actions.imps.BaseSTNameAndIdListAction" scope="prototype">
+		<property name="defaultServiceBeanId" value="autoDTOMXDeleteListByIdListService"></property>
+	</bean>
+
+	<!-- 基础段填报 -->
+	<bean id="singleObjectShowListLevelAUTODTOAction" class="framework.actions.imps.BaseSTModelDrivenConditionAction" scope="prototype">
+		<property name="defaultServiceBeanId" value="singleObjectShowListLevelAUTODTOService"></property>
+	</bean>
+
+	<bean id="singleObjectShowSaveLevelAUTODTOAction" class="framework.actions.imps.BaseSTAction" scope="prototype">
+		<property name="defaultServiceBeanId" value="singleObjectShowSaveLevelAUTODTOService"></property>
+	</bean>
+
+	<bean id="singleObjectShowUpdateLevelAUTODTOAction" class="framework.actions.imps.BaseSTNameAndIdAction" scope="prototype">
+		<property name="defaultServiceBeanId" value="singleObjectShowUpdateLevelAUTODTOService"></property>
+	</bean>
+
+	<bean id="singleObjectShowCheckUpdateLevelAUTODTOAction" class="framework.actions.imps.BaseSTModelDrivenValidateAction" scope="prototype">
+		<property name="defaultServiceBeanId" value="singleObjectShowCheckUpdateLevelAUTODTOService"></property>
+	</bean>
+
+	<bean id="singleObjectShowInputSaveLevelAUTODTOAction" class="framework.actions.imps.BaseSTModelDrivenValidateInputAction" scope="prototype">
+		<property name="defaultServiceBeanId" value="singleObjectShowInputSaveLevelAUTODTOService"></property>
+	</bean>
+
+	<bean id="singleObjectShowInputUpdateLevelAUTODTOAction" class="framework.actions.imps.BaseSTModelDrivenValidateInputAction" scope="prototype">
+		<property name="defaultServiceBeanId" value="singleObjectShowInputUpdateLevelAUTODTOService"></property>
+	</bean>
+
+	<bean id="singleObjectJCShowInputCopySaveLevelAUTODTOAction" class="framework.actions.imps.BaseSTModelDrivenValidateInputAction" scope="prototype">
+		<property name="defaultServiceBeanId" value="singleObjectJCShowInputCopySaveLevelAUTODTOService"></property>
+	</bean>
+
+	<bean id="noMXShowInputSaveAction" class="framework.actions.imps.BaseSTModelDrivenValidateInputAction" scope="prototype">
+		<property name="defaultServiceBeanId" value="noMXShowInputSaveService"></property>
+	</bean>
+
+	<bean id="singleObjectSaveLevelAUTODTOAction" class="framework.actions.imps.BaseSTModelDrivenValidateAction" scope="prototype">
+		<property name="defaultServiceBeanId" value="singleObjectSaveLevelAUTODTOService"></property>
+	</bean>
+
+	<bean id="singleObjectUpdateLevelAUTODTOAction" class="framework.actions.imps.BaseSTModelDrivenValidateAction" scope="prototype">
+		<property name="defaultServiceBeanId" value="singleObjectUpdateLevelAUTODTOService"></property>
+	</bean>
+
+	<bean id="singleObjectCopySaveLevelAUTODTOAction" class="framework.actions.imps.BaseSTModelDrivenValidateAction" scope="prototype">
+		<property name="defaultServiceBeanId" value="singleObjectCopySaveLevelAUTODTOService"></property>
+	</bean>
+
+	<bean id="noMXSaveAction" class="framework.actions.imps.BaseSTModelDrivenValidateAction" scope="prototype">
+		<property name="defaultServiceBeanId" value="noMXSaveService"></property>
+	</bean>
+
+	<bean id="forReportImportDataAction" class="framework.actions.imps.BaseSTModelDrivenConditionFileAction" scope="prototype">
+		<property name="defaultServiceBeanId" value="forReportImportDataService"></property>
+	</bean>
+
+	<bean id="singleObjectDeleteListByIdListForReportAction" class="framework.actions.imps.BaseSTNameAndIdListAction" scope="prototype">
+		<property name="defaultServiceBeanId" value="singleObjectDeleteListByIdListForReportService"></property>
+	</bean>
+
+	<bean id="singleObjectDeleteByConditionForReportAction" class="framework.actions.imps.BaseSTModelDrivenConditionAction" scope="prototype">
+		<property name="defaultServiceBeanId" value="singleObjectDeleteByConditionForReportService"></property>
+	</bean>
+
+	<bean id="commonSCListUpdateFieldAction" class="framework.actions.imps.BaseSTNameAndIdListAction" scope="prototype">
+		<property name="defaultServiceBeanId" value="commonSCListUpdateFieldService"></property>
+	</bean>
+
+	<bean id="singleObjectDeleteByConditionAction" class="framework.actions.imps.BaseSTModelDrivenConditionAction" scope="prototype">
+		<property name="defaultServiceBeanId" value="singleObjectDeleteByConditionService"></property>
+	</bean>
+
+
+	<bean id="rptSubmitStatusUpdateFieldAction" class="framework.actions.imps.BaseSTNameAndIdListAction" scope="prototype">
+		<property name="defaultServiceBeanId" value="rptSubmitStatusUpdateFieldService"></property>
+	</bean>
+
+	<bean id="rptCancleSubmitStatusUpdateFieldAction" class="framework.actions.imps.BaseSTNameAndIdListAction" scope="prototype">
+		<property name="defaultServiceBeanId" value="rptCancleSubmitStatusUpdateFieldService"></property>
+	</bean>
+
+	<!-- 任务层 -->
+	<bean id="rptAllowStateUpdateFieldAction" class="framework.actions.imps.BaseSTNameAndIdListAction" scope="prototype">
+		<property name="defaultServiceBeanId" value="rptAllowStateUpdateFieldService"></property>
+	</bean>
+
+	<bean id="rptAllowStateCancleUpdateFieldAction" class="framework.actions.imps.BaseSTNameAndIdListAction" scope="prototype">
+		<property name="defaultServiceBeanId" value="rptAllowStateCancleUpdateFieldService"></property>
+	</bean>
+
+	<bean id="taskModelInstSHReviewShowListForTreeAction" class="framework.actions.imps.BaseSTModelDrivenConditionAction" scope="prototype">
+		<property name="defaultServiceBeanId" value="taskModelInstSHReviewShowListForTreeService"></property>
+	</bean>
+
+	<bean id="ReviewShowTreeAction" class="framework.actions.imps.BaseSTModelDrivenAction" scope="prototype">
+		<property name="defaultServiceBeanId" value="ReviewShowTreeService"></property>
+	</bean>
+
+	<!-- 之前没有Action 20160329 insert -->
+	<bean id="singleObjectForReportShowUpdateListAction" class="framework.actions.imps.BaseSTModelDrivenAction" scope="prototype">
+		<property name="defaultServiceBeanId" value="singleObjectForReportShowUpdateListService"></property>
+	</bean>
+
+	<bean id="singleObjectForReportShowListForTreeAction" class="framework.actions.imps.BaseSTModelDrivenConditionAction" scope="prototype">
+		<property name="defaultServiceBeanId" value="singleObjectForReportShowListForTreeService"></property>
+	</bean>
+
+	<bean id="rptSubmitStatusALLUpdateFieldAction" class="framework.actions.imps.BaseSTNameAndIdListAction" scope="prototype">
+		<property name="defaultServiceBeanId" value="rptSubmitStatusALLUpdateFieldService"></property>
+	</bean>
+
+	<!-- 校验数据（报表通用） -->
+	<bean id="rptCheckAction" class="framework.actions.imps.ReportCommonAction" scope="prototype">
+		<property name="defaultServiceBeanId" value="rptCheckService"></property>
+	</bean>
+
+	<!-- 基础明细一对一 (暂时没用了) start -->
+	<bean id="singleObjectFKBWOneToOneSaveAction" class="framework.actions.imps.BaseSTModelDrivenValidateAction" scope="prototype">
+		<property name="defaultServiceBeanId" value="singleObjectFKBWOneToOneSaveService"></property>
+	</bean>
+
+	<bean id="singleObjectFKBWOneToOneUpdateAction" class="framework.actions.imps.BaseSTModelDrivenValidateAction" scope="prototype">
+		<property name="defaultServiceBeanId" value="singleObjectFKBWOneToOneUpdateService"></property>
+	</bean>
+
+	<bean id="fKBWOneToOneShowInputSaveAction" class="framework.actions.imps.BaseSTModelDrivenValidateInputAction" scope="prototype">
+		<property name="defaultServiceBeanId" value="fKBWOneToOneShowInputSaveService"></property>
+	</bean>
+
+	<bean id="fKBWOneToOneShowInputUpdateAction" class="framework.actions.imps.BaseSTModelDrivenValidateInputAction" scope="prototype">
+		<property name="defaultServiceBeanId" value="fKBWOneToOneShowInputUpdateService"></property>
+	</bean>
+
+	<bean id="singleObjectFKBWOneToOneShowSaveLevelAUTODTOMXAction" class="framework.actions.imps.BaseSTAction" scope="prototype">
+		<property name="defaultServiceBeanId" value="singleObjectFKBWOneToOneShowSaveLevelAUTODTOMXService"></property>
+	</bean>
+
+	<bean id="singleObjectFKBWOneToOneShowUpdateLevelAUTODTOMXAction" class="framework.actions.imps.BaseSTNameAndIdAction" scope="prototype">
+		<property name="defaultServiceBeanId" value="singleObjectFKBWOneToOneShowUpdateLevelAUTODTOMXService"></property>
+	</bean>
+
+	<bean id="rPTShowListLevelAUTODTOAction" class="framework.actions.imps.BaseSTModelDrivenConditionAction" scope="prototype">
+		<property name="defaultServiceBeanId" value="rPTShowListLevelAUTODTOService"></property>
+	</bean>
+
+	<bean id="singleObjectSHShowSaveOrUpdateLevelAUTODTOMXAction" class="report.actions.imps.ReportSHShowSaveOrUpdateAction" scope="prototype">
+		<property name="defaultServiceBeanId" value="singleObjectSHShowSaveOrUpdateLevelAUTODTOMXService"></property>
+	</bean>
+
+	<bean id="singleObjectShowSaveOrUpdateLevelAUTODTOMXAction" class="report.actions.imps.ReportShowSaveOrUpdateAction" scope="prototype">
+		<property name="defaultServiceBeanId" value="singleObjectShowSaveOrUpdateLevelAUTODTOMXService"></property>
+	</bean>
+
+	<bean id="singleObjectReportUpdateListAction" class="framework.actions.imps.BaseSTModelDrivenAction" scope="prototype">
+		<property name="defaultServiceBeanId" value="singleObjectReportUpdateListService"></property>
+	</bean>
+
+	<bean id="ReportOneToOneImportDataAction" class="framework.actions.imps.BaseSTModelDrivenConditionFileAction" scope="prototype">
+		<property name="defaultServiceBeanId" value="ReportOneToOneImportDataService"></property>
+	</bean>
+
+	<bean id="singleObjectReportOneToOneSaveAction" class="framework.actions.imps.BaseSTModelDrivenValidateAction" scope="prototype">
+		<property name="defaultServiceBeanId" value="singleObjectReportOneToOneSaveService"></property>
+	</bean>
+
+	<bean id="reportOneToOneShowInputSaveAction" class="framework.actions.imps.BaseSTModelDrivenValidateInputAction" scope="prototype">
+		<property name="defaultServiceBeanId" value="reportOneToOneShowInputSaveService"></property>
+	</bean>
+
+	<bean id="singleObjectReportOneToOneUpdateAction" class="framework.actions.imps.BaseSTModelDrivenValidateAction" scope="prototype">
+		<property name="defaultServiceBeanId" value="singleObjectReportOneToOneUpdateService"></property>
+	</bean>
+
+	<bean id="reportOneToOneShowInputUpdateAction" class="framework.actions.imps.BaseSTModelDrivenValidateInputAction" scope="prototype">
+		<property name="defaultServiceBeanId" value="reportOneToOneShowInputUpdateService"></property>
+	</bean>
+
+	<bean id="singleObjectReportOneToOneShowSaveLevelAUTODTOMXAction" class="framework.actions.imps.BaseSTAction" scope="prototype">
+		<property name="defaultServiceBeanId" value="singleObjectReportOneToOneShowSaveLevelAUTODTOMXService"></property>
+	</bean>
+
+	<bean id="singleObjectReportSHOneToOneShowUpdateLevelAUTODTOMXAction" class="framework.actions.imps.BaseSTNameAndIdAction" scope="prototype">
+		<property name="defaultServiceBeanId" value="singleObjectReportSHOneToOneShowUpdateLevelAUTODTOMXService"></property>
+	</bean>
+
+	<bean id="singleObjectReportSHOneToOneShowSaveLevelAUTODTOMXAction" class="framework.actions.imps.BaseSTNameAndIdAction" scope="prototype">
+		<property name="defaultServiceBeanId" value="singleObjectReportSHOneToOneShowSaveLevelAUTODTOMXService"></property>
+	</bean>
+
+	<bean id="singleObjectReportOneToOneShowUpdateLevelAUTODTOMXAction" class="framework.actions.imps.BaseSTNameAndIdAction" scope="prototype">
+		<property name="defaultServiceBeanId" value="singleObjectReportOneToOneShowUpdateLevelAUTODTOMXService"></property>
+	</bean>
+	<!-- 基础明细一对一 (暂时没用了) end -->
+
+	<!-- 指标报表 -->
+	<bean id="rptSubmitStatusALLForceUpdateFieldAction" class="framework.actions.imps.CustomDtoIdListAction" scope="prototype">
+		<property name="defaultServiceBeanId" value="rptSubmitStatusALLForceUpdateFieldService"></property>
+		<property name="dtoName" value="report.dto.TaskRptInst"></property>
+	</bean>
+
+
+
+	<bean id="createTableAction" class="framework.actions.imps.BaseSTNameAndIdAction" scope="prototype">
+		<property name="defaultServiceBeanId" value="DDLService"></property>
+	</bean>
+
+
+
+	<bean id="selectInfoAction" class="report.actions.imps.SelectSetAction" scope="prototype">
+		<property name="defaultServiceBeanId" value="select-ShowTaskRptInstService"></property>
+	</bean>
+
+	<bean id="selectInstSetAction" class="report.actions.imps.SelectSetAction" scope="prototype">
+		<property name="defaultServiceBeanId" value="select-ShowInstSetService"></property>
+	</bean>
+
+	<bean id="selectFileSetAction" class="report.actions.imps.SelectSetAction" scope="prototype">
+		<property name="defaultServiceBeanId" value="select-ShowFileSetService"></property>
+	</bean>
+
+
+
+	<bean id="selectReportModel_TableSetAction" class="report.actions.imps.SelectSetAction" scope="prototype">
+		<property name="defaultServiceBeanId" value="select-ShowReportModel_TableSetService"></property>
+	</bean>
+
+
+	<bean id="showTaskControlAction" class="framework.actions.imps.BaseSTAction" scope="prototype">
+		<property name="defaultServiceBeanId" value="taskControlService"></property>
+	</bean>
+
+
+	<bean id="downloadResourceAction" class="framework.actions.imps.SingleObjectDownloadAction" scope="prototype">
+		<property name="defaultServiceBeanId" value="downloadResourceService"></property>
+	</bean>
+
+	<bean id="reportDeleteByIdAction" class="framework.actions.imps.BaseSTNameAndIdAction" scope="prototype">
+		<property name="defaultServiceBeanId" value="reportDeleteByIdService"></property>
+	</bean>
+
+	<bean id="noMXShowSaveAction" class="framework.actions.imps.BaseSTAction" scope="prototype">
+		<property name="defaultServiceBeanId" value="noMXShowSaveLevelAUTODTOService"></property>
+	</bean>
+
+	<bean id="InstInfoShowUpdateListAction" class="framework.actions.imps.BaseSTModelDrivenAction" scope="prototype">
+		<property name="defaultServiceBeanId" value="InstInfoShowUpdateListLevelTaskRptInstService"></property>
+	</bean>
+
+	<!-- 数据汇总-多报表 -->
+	<bean id="showTaskRptInstForMegerAction" class="framework.actions.imps.BaseSTModelDrivenAction" scope="prototype">
+		<property name="defaultServiceBeanId" value="showTaskRptInstForMegerService"></property>
+	</bean>
+	
+	<!-- 数据TopN汇总-多报表 -->
+	<bean id="showTaskRptInstForTopNAction" class="framework.actions.imps.BaseSTModelDrivenAction" scope="prototype">
+		<property name="defaultServiceBeanId" value="showTaskRptInstForTopNService"></property>
+	</bean>
+	
+
+</beans>

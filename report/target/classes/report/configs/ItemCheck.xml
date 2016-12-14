@@ -1,0 +1,91 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<reportCheckRoot>
+  <checkInstance name="testInst" >
+  <paramValueList>
+	 <paramValue name="dtDate" value="dtDate"></paramValue>
+     <paramValue name="strInstCode" value="strInstCode"></paramValue>
+  </paramValueList>
+  <checkItemList>
+    <paramFieldList>
+       <paramField paramName="dtDate" field="dtDate" type="1"></paramField>
+       <paramField paramName="strInstCode" field="strInstCode" type="1"></paramField>
+       <paramField paramName="strFreq" field="strFreq" type="1"></paramField> <!-- reportFreq -->
+    </paramFieldList>
+   <!-- 
+   		conditionJoinType
+   		1 AND
+		2 OR
+		11 (
+		3 )
+		
+		compareType
+		1 =
+		2 >
+		3 >=
+		4 <
+		5  <=
+		6 LIKE 
+		7 IN ("v")
+		8 EXISTS ("v")
+		11 !=
+		12 NOT LIKE
+		13 NOT IN ("v")
+		14 NOT EXISTS ("v")
+			 -->
+	<checkItemRule code="1" property="2" currency="1" compareType="=" description="指标值与计算结果不符"> <!-- 均支持参数	-->
+	  <checkItemSubRule type="operate" value="if" > </checkItemSubRule>
+	  <checkItemSubRule type="operate" value="(" > </checkItemSubRule>
+	  <checkItemSubRule type="const" value="3" > </checkItemSubRule>
+	  <checkItemSubRule type="operate" value=">" > </checkItemSubRule>
+	  <checkItemSubRule type="const" value="2" > </checkItemSubRule>
+	  <checkItemSubRule type="operate" value=")" > </checkItemSubRule>
+	  <checkItemSubRule type="operate" value="{" > </checkItemSubRule>
+
+	      <checkItemSubRule type="operate" value="(" > </checkItemSubRule>
+	      <checkItemSubRule type="detail" table="test" operate="SUM" field="TESTFIELD3">
+	        <where field="dtDate" value="@dtDate" compareType="="></where>
+	        <where conditionJoinType="AND"></where>
+	        <where field="instInfo" value="@strInstCode" compareType="="></where>
+	      </checkItemSubRule>
+	      <checkItemSubRule type="operate" value=")" > </checkItemSubRule>
+	      <checkItemSubRule type="operate" value="+" > </checkItemSubRule>
+	      <checkItemSubRule type="const" value="10" > </checkItemSubRule>
+      
+      <checkItemSubRule type="operate" value="}" > </checkItemSubRule>
+      <checkItemSubRule type="operate" value="else" > </checkItemSubRule>
+      	<checkItemSubRule type="item" code="1" property="2" currency="1" lastFreq="false"> </checkItemSubRule>
+      
+    </checkItemRule>
+    
+
+    
+    </checkItemList> 
+  </checkInstance>
+  
+    <checkInstance name="testInst1" >
+  <paramValueList>
+	 <paramValue name="dtDate" value="dtDate"></paramValue>
+     <paramValue name="strInstCode" value="strInstCode"></paramValue>
+  </paramValueList>
+  <checkItemList>
+    <paramFieldList>
+       <paramField paramName="dtDate" field="dtDate" type="1"></paramField>
+       <paramField paramName="strInstCode" field="strInstCode" type="1"></paramField>
+    </paramFieldList>
+	<checkItemRule code="01" currency="01" property="01" compareType="=" description="指标值与计算结果不符"> <!-- 均支持参数	-->
+      <checkItemSubRule type="const" value="10" > </checkItemSubRule>
+      <checkItemSubRule type="operate" value="+" > </checkItemSubRule>
+      <checkItemSubRule type="item" code="01" property="01" currency="01" > </checkItemSubRule>
+      <checkItemSubRule type="operate" value="+" > </checkItemSubRule>
+      <checkItemSubRule type="detail" table="Test5" operate="SUM" field="field2">
+	        <where field="dtDate" value="@dtDate" compareType="="></where>
+	        <where conditionJoinType="AND"></where>
+	        <where field="instInfo" value="@strInstCode" compareType="=" ></where>
+	  </checkItemSubRule>
+	  <checkItemSubRule type="const" value="-" > </checkItemSubRule>
+      <checkItemSubRule type="operate" value="24" > </checkItemSubRule>
+      </checkItemRule>
+    </checkItemList> 
+  </checkInstance>
+  
+</reportCheckRoot>

@@ -1,0 +1,344 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<fieldShowsRoot>
+
+	<fieldShowsEntity>
+		<className>report.dto.TaskRptInst</className>
+		<showInstance>
+			<showInstanceName>2</showInstanceName>
+			<listConditionShow><![CDATA[(SubmitStatus=="2"&&(strCheckState=="1"||strCheckState=="3"))?"red":"black"]]></listConditionShow>
+			<fieldName fieldName="taskFlow" listVisible="false"></fieldName>
+			<fieldName fieldName="rptInfo" fieldTargetPrimaryKeyName="strRptName"></fieldName>
+			<fieldName fieldName="instInfo" listVisible="false" fieldTargetPrimaryKeyName="strInstName"></fieldName>
+		</showInstance>
+		<showInstance>
+			<showInstanceName>3</showInstanceName>
+			<fieldName fieldName="rptInfo" singleTag="selectField" fieldTargetPrimaryKey="strRptCode" paramName="rptInfo.strRptCode"></fieldName>
+			<fieldName fieldName="instInfo" singleTag="selectField" fieldTargetPrimaryKey="strInstCode" paramName="instInfo.strInstCode"></fieldName>
+		</showInstance>
+		<showInstance>
+			<showInstanceName>4</showInstanceName>
+			<fieldName fieldName="rptInfo" singleTag="selectField" fieldTargetPrimaryKey="strRptCode" paramName="rptInfo.strRptCode"></fieldName>
+		</showInstance>
+	</fieldShowsEntity>
+
+	<fieldShowsEntity>
+		<className>report.dto.AutoTaskRptInst</className>
+		<showInstance>
+			<showInstanceName>2</showInstanceName>
+			<fieldName fieldName="autoTaskFlow" listVisible="false"></fieldName>
+			<fieldName fieldName="rptInfo" fieldTargetPrimaryKeyName="strRptName"></fieldName>
+			<fieldName fieldName="instInfo" listVisible="false" fieldTargetPrimaryKeyName="strInstName"></fieldName>
+		</showInstance>
+		<showInstance>
+			<showInstanceName>3</showInstanceName>
+			<fieldName fieldName="rptInfo" singleTag="selectField" fieldTargetPrimaryKey="strRptCode" paramName="rptInfo.strRptCode"></fieldName>
+			<fieldName fieldName="instInfo" singleTag="selectField" fieldTargetPrimaryKey="strInstCode" paramName="instInfo.strInstCode"></fieldName>
+		</showInstance>
+		<showInstance>
+			<showInstanceName>4</showInstanceName>
+			<fieldName fieldName="rptInfo" singleTag="selectField" fieldTargetPrimaryKey="strRptCode" paramName="rptInfo.strRptCode"></fieldName>
+		</showInstance>
+	</fieldShowsEntity>
+
+	<fieldShowsEntity>
+		<className>report.dto.ItemsCalculation</className>
+		<showInstance>
+			<showInstanceName>5</showInstanceName>
+			<fieldName fieldName="calculationRule" width="140" intOrder="1"></fieldName>
+			<fieldName fieldName="intOrder" width="50" intOrder="2"></fieldName>
+			<fieldName fieldName="strItemType" width="80" intOrder="3"></fieldName>
+			<fieldName fieldName="testShow" width="160" intOrder="4"></fieldName>
+
+			<fieldName fieldName="strSymbol" fieldShowName="符号" listVisible="false" intOrder="5"></fieldName>
+			<fieldName fieldName="strConstant" fieldShowName="常量" listVisible="false" intOrder="6"></fieldName><!-- paramName="reportModel_Table.autoTableID" -->
+			<fieldName fieldName="reportModel_Table" fieldShowName="表名" fieldTargetPrimaryKey="autoTableID" listVisible="false" intOrder="7"></fieldName>
+			<fieldName fieldName="itemInfo" fieldShowName="指标" fieldTargetPrimaryKey="strItemCode" paramName="itemInfo.strItemCode" intOrder="8" listVisible="false"></fieldName>
+			<fieldName fieldName="itemProperty" listVisible="false" intOrder="9"></fieldName>
+			<fieldName fieldName="currencyType" listVisible="false" intOrder="10"></fieldName>
+			<fieldName fieldName="strExtendDimension1" listVisible="false" intOrder="11"></fieldName>
+			<fieldName fieldName="strExtendDimension2" listVisible="false" intOrder="12"></fieldName>
+			<fieldName fieldName="strTimeProperty" listVisible="false" intOrder="13"></fieldName>
+			<fieldName fieldName="strDescription" intOrder="14"></fieldName>
+		</showInstance>
+	</fieldShowsEntity>
+
+
+	<fieldShowsEntity>
+		<className>report.dto.TaskRptInstStatisical</className>
+		<showInstance>
+			<showInstanceName>1</showInstanceName>
+			<fieldName fieldName="FieldListName" width="110"></fieldName>
+			<fieldName fieldName="taskFlow" width="110"></fieldName>
+			<fieldName fieldName="rptInfo" width="110"></fieldName>
+			<fieldName fieldName="instInfo" width="110"></fieldName>
+			<fieldName fieldName="dtTaskDate" width="110"></fieldName>
+			<fieldName fieldName="countSubmitStatus" width="110"></fieldName>
+			<fieldName fieldName="countUnSubmitStatus" width="110"></fieldName>
+			<fieldName fieldName="countCheckState" width="110"></fieldName>
+			<fieldName fieldName="countCheckSuccessState" width="110"></fieldName>
+			<fieldName fieldName="countCheckFaildState" width="110"></fieldName>
+			<fieldName fieldName="countUnCheckState" width="110"></fieldName>
+			<fieldName fieldName="countAllowState" width="110"></fieldName>
+			<fieldName fieldName="countAllowSuccessState" width="110"></fieldName>
+			<fieldName fieldName="countAllowFaildState" width="110"></fieldName>
+			<fieldName fieldName="countUnAllowState" width="110"></fieldName>
+			<fieldName fieldName="countTotaltaskFlow" width="110"></fieldName>
+		</showInstance>
+	</fieldShowsEntity>
+
+	<fieldShowsEntity>
+		<className>report.dto.MergeInstance</className>
+		<showInstance>
+			<showInstanceName>1</showInstanceName>
+			<fieldName fieldName="strMergeName" width="180"></fieldName>
+			<fieldName fieldName="strDescription" width="180"></fieldName>
+		</showInstance>
+	</fieldShowsEntity>
+
+	<fieldShowsEntity>
+		<className>report.dto.CalculationRule</className>
+		<showInstance>
+			<showInstanceName>1</showInstanceName>
+			<fieldName fieldName="strCalculationRuleName" width="120" intOrder="1"></fieldName>
+			<fieldName fieldName="intOrder" width="50" intOrder="2"></fieldName>
+			<fieldName fieldName="itemInfo" singleTag="modelField" width="120" intOrder="3"></fieldName>
+			<fieldName fieldName="itemProperty" intOrder="4"></fieldName>
+			<fieldName fieldName="currencyType" intOrder="5"></fieldName>
+			<fieldName fieldName="startdate" intOrder="6"></fieldName>
+			<fieldName fieldName="enddate" intOrder="7"></fieldName>
+			<fieldName fieldName="strExtendDimension1" intOrder="8"></fieldName>
+			<fieldName fieldName="strExtendDimension2" intOrder="9"></fieldName>
+			<fieldName fieldName="strDescription" intOrder="10"></fieldName>
+			<fieldName fieldName="strExpression" fieldShowName="表达式" intOrder="11" listVisible="false" singleTag="multipleTextField" width="100" updateReadOnly="true"></fieldName>
+		</showInstance>
+	</fieldShowsEntity>
+
+
+	<fieldShowsEntity>
+		<className>report.dto.InstCodeMap</className>
+		<showInstance>
+			<showInstanceName>1</showInstanceName>
+			<fieldName fieldName="reportInstInfo" width="120"></fieldName>
+			<fieldName fieldName="strContrastType" width="150"></fieldName>
+		</showInstance>
+	</fieldShowsEntity>
+	<!-- 校验添加 2015-07-27 -->
+
+	<fieldShowsEntity>
+		<className>report.dto.CheckInstanceRule</className>
+		<showInstance>
+			<showInstanceName>1</showInstanceName>
+			<fieldName fieldName="autoCheckInstanceID" fieldShowName="实例名称" width="250"></fieldName>
+			<fieldName fieldName="checkRule" fieldShowName="规则名称" width="120"></fieldName>
+		</showInstance>
+	</fieldShowsEntity>
+
+	<fieldShowsEntity>
+		<className>report.dto.CheckRule</className>
+		<showInstance>
+			<showInstanceName>1</showInstanceName>
+			<fieldName fieldName="autoCalculationRuleID" fieldShowName="规则编号" width="20"></fieldName>
+			<fieldName fieldName="strCalculationRuleName" fieldShowName="规则名称" width="50" intOrder="1"></fieldName>
+			<fieldName fieldName="strDescription" fieldShowName="描述" width="100" intOrder="2"></fieldName>
+			<!-- 使用模态对话框进行性能提升 2015-7-28 -->
+
+			<fieldName fieldName="itemInfo" fieldShowName="指标" singleTag="modelField" width="100" intOrder="3"></fieldName>
+			<fieldName fieldName="itemProperty" fieldShowName="属性" width="100" intOrder="4"></fieldName>
+			<fieldName fieldName="currencyType" fieldShowName="币种" width="100" intOrder="5"></fieldName>
+			<fieldName fieldName="compareType" fieldShowName="比较类型" width="50" intOrder="6"></fieldName>
+			<fieldName fieldName="intOrder" fieldShowName="校验组别" width="50" intOrder="7"></fieldName>
+			<fieldName fieldName="strFreq" fieldShowName="频度" width="50" intOrder="10"></fieldName>
+			<fieldName fieldName="dblTolerance" fieldShowName="容差范围" width="50" intOrder="11"></fieldName>
+			<fieldName fieldName="strExtendDimension1" fieldShowName="扩展维度1" width="100" intOrder="12"></fieldName>
+			<fieldName fieldName="strExtendDimension2" fieldShowName="扩展维度2" width="100" intOrder="13"></fieldName>
+			<fieldName fieldName="startdate" fieldShowName="开始时间" width="100" intOrder="14"></fieldName>
+			<fieldName fieldName="enddate" fieldShowName="结束时间" width="100" intOrder="15"></fieldName>
+
+			<fieldName fieldName="strExpression" fieldShowName="表达式" updateReadOnly="true" listVisible="false" singleTag="multipleTextField" width="100" intOrder="16"></fieldName>
+
+
+
+		</showInstance>
+	</fieldShowsEntity>
+
+	<!-- 汇总规则实例模态框 -->
+	<fieldShowsEntity>
+		<className>report.dto.MergeItemInfo</className>
+		<showInstance>
+			<showInstanceName>1</showInstanceName>
+			<fieldName fieldName="itemInfo" fieldShowName="指标代码" singleTag="modelField" fieldTargetPrimaryKeyName="strItemCode"></fieldName>
+		</showInstance>
+	</fieldShowsEntity>
+	<fieldShowsEntity>
+		<className>report.dto.RptInfo</className>
+		<showInstance>
+			<isLoadDefaultInstance>true</isLoadDefaultInstance>
+			<showInstanceName>1</showInstanceName>
+			<fieldName fieldName="strBCode" fieldShowName="报表编码" width="100"></fieldName>
+			<fieldName fieldName="strRptVersion" fieldShowName="版本号" width="50"></fieldName>
+			<fieldName fieldName="strRptCode" fieldShowName="主键" width="100" listVisible="false"></fieldName>
+			<fieldName fieldName="strRptName" fieldShowName="报表名称" width="50"></fieldName>
+			<fieldName fieldName="intMaxLine" fieldShowName="明细最大显示行" width="100"></fieldName>
+			<fieldName fieldName="strRptPath" fieldShowName="模块名称" width="50" listVisible="false"></fieldName>
+			<fieldName fieldName="intRptUnit" fieldShowName="报表单位" width="50"></fieldName>
+			<fieldName fieldName="intPrecise" fieldShowName="报表精度位数" width="100"></fieldName>
+			<fieldName fieldName="strFreq" fieldShowName="报表频度" width="50"></fieldName>
+			<fieldName fieldName="strIsThousands" fieldShowName="使用千分位" singleTag="selectField" width="100"></fieldName>
+			<fieldName fieldName="strNegativeRedDisplay" fieldShowName="负数红色显示" singleTag="selectField" width="100"></fieldName>
+			<fieldName fieldName="strNegativeDisplayMinus" fieldShowName="负数显示负号" singleTag="selectField" width="100"></fieldName>
+			<fieldName fieldName="suit" fieldShowName="主题" width="50"></fieldName>
+			<fieldName fieldName="startDate" fieldShowName="开始时间" singleTag="dateField" width="100"></fieldName>
+			<fieldName fieldName="endDate" fieldShowName="结束时间" singleTag="dateField" width="100"></fieldName>
+			<fieldName fieldName="strCheckInst" fieldShowName="校验实例" width="50"></fieldName>
+			<fieldName fieldName="strCalcInst" fieldShowName="计算实例" width="50"></fieldName>
+			<fieldName fieldName="strMergeInst" fieldShowName="汇总实例" width="50"></fieldName>
+			<fieldName fieldName="remark" fieldShowName="填报说明" listVisible="false" singleTag="multipleTextField"></fieldName>
+		</showInstance>
+	</fieldShowsEntity>
+	
+	<fieldShowsEntity>
+		<className>report.dto.ItemInfo</className>
+		<showInstance>
+			<showInstanceName>1</showInstanceName>
+			<fieldName fieldName="strItemCode" fieldShowName="指标代码" width="100"></fieldName>
+			<fieldName fieldName="strItemName" fieldShowName="指标名称" width="200"></fieldName>
+			<fieldName fieldName="strDataType" fieldShowName="数据类型" singleTag="selectField" width="100"></fieldName>
+			<fieldName fieldName="startdate" fieldShowName="开始日期" singleTag="dateField" width="100"></fieldName>
+			<fieldName fieldName="enddate" fieldShowName="结束日期" singleTag="dateField" width="100"></fieldName>
+			<fieldName fieldName="suit" fieldShowName="主题" width="100"></fieldName>
+			<fieldName fieldName="strBusiTypeCode" fieldShowName="业务类别" width="100"></fieldName>
+			<fieldName fieldName="remark" fieldShowName="填报说明" listVisible="false" singleTag="multipleTextField"></fieldName>
+		</showInstance>
+	</fieldShowsEntity>
+	
+	<fieldShowsEntity>
+		<className>report.dto.MergeSummary</className>
+		<showInstance>
+			<showInstanceName>1</showInstanceName>
+			<fieldName fieldName="rptInfosIdList" fieldShowName="可选汇总指标报表" singleTag="multipleSelectField" paramName="rptInfosIdList"></fieldName>
+		</showInstance>
+	</fieldShowsEntity>
+
+	<fieldShowsEntity>
+		<className>report.dto.InstRptRela</className>
+		<showInstance>
+			<showInstanceName>1</showInstanceName>
+			<fieldName fieldName="ID" fieldShowName="编号" width="50" listVisible="false"></fieldName>
+			<fieldName fieldName="instInfo" fieldShowName="机构" width="50" intOrder="1"></fieldName>
+			<fieldName fieldName="rptInfo" fieldShowName="报表" width="50" intOrder="2"></fieldName>
+			<fieldName fieldName="suit" fieldShowName="主题" width="50" intOrder="4"></fieldName>
+			<fieldName fieldName="currencyType" fieldShowName="币种" width="50" intOrder="3"></fieldName>
+		</showInstance>
+	</fieldShowsEntity>
+	
+	<!-- 數據分析模型 -->
+	<fieldShowsEntity>
+		<className>report.dto.analyse.Rep_AnalyseModel</className>
+		<showInstance>
+			<showInstanceName>default</showInstanceName>
+			<fieldName fieldName="uuid" fieldShowName="编号" width="50" listVisible="false"></fieldName>
+			<fieldName fieldName="modelName" fieldShowName="模型名称" width="50" intOrder="2"></fieldName>
+			<fieldName fieldName="modelType" fieldShowName="分析类型" width="50" intOrder="3"></fieldName>
+			<fieldName fieldName="dimensionType1" fieldShowName="分析维度1" width="50" intOrder="4"></fieldName>
+			<fieldName fieldName="dimensionType2" fieldShowName="分析维度2" width="50" intOrder="5"></fieldName>
+			<fieldName fieldName="timeFunc" fieldShowName="时间函数" width="50" intOrder="6"></fieldName>
+			<fieldName fieldName="startDate" fieldShowName="数据开始时间" width="50" intOrder="7"></fieldName>
+			<fieldName fieldName="endDate" fieldShowName="数据结束时间" width="50" intOrder="8"></fieldName>
+			<fieldName fieldName="freq" fieldShowName="频度" width="50" intOrder="9"></fieldName>
+			<fieldName fieldName="strChartType" fieldShowName="图形" width="50" intOrder="10"></fieldName>
+			<fieldName fieldName="createTime" fieldShowName="创建时间" width="50" intOrder="11"></fieldName>
+			<fieldName fieldName="createUser" fieldShowName="创建人" width="50" intOrder="12"></fieldName>
+		</showInstance>
+		<showInstance>
+			<showInstanceName>tab</showInstanceName>
+			<fieldName fieldName="uuid" fieldShowName="编号" width="50" listVisible="false"></fieldName>
+			<fieldName fieldName="modelName" fieldShowName="模型名称" width="50" intOrder="2" updateReadOnly="true" ></fieldName>
+			<fieldName fieldName="modelType" fieldShowName="分析类型" width="50" intOrder="3" updateReadOnly="true" ></fieldName>
+			<fieldName fieldName="dimensionType1" fieldShowName="分析维度1" width="50" intOrder="4" updateReadOnly="true"></fieldName>
+			<fieldName fieldName="dimensionType2" fieldShowName="分析维度2" width="50" intOrder="5" updateReadOnly="true"></fieldName>
+			<fieldName fieldName="timeFunc" fieldShowName="时间函数" width="50" intOrder="6"></fieldName>
+			<fieldName fieldName="startDate" fieldShowName="数据开始时间" width="50" intOrder="7"></fieldName>
+			<fieldName fieldName="endDate" fieldShowName="数据结束时间" width="50" intOrder="8"></fieldName>
+			<fieldName fieldName="freq" fieldShowName="频度" width="50" intOrder="9"></fieldName>
+			<fieldName fieldName="strChartType" fieldShowName="图形" width="50" intOrder="10"></fieldName>
+			<fieldName fieldName="items" fieldShowName="分析-指标" singleTag="tab" ></fieldName>
+			<fieldName fieldName="orgs" fieldShowName="分析-机构" singleTag="tab"></fieldName>
+			<fieldName fieldName="currs" fieldShowName="分析-币种" singleTag="tab"></fieldName>
+			<fieldName fieldName="itemPros" fieldShowName="分析-指标属性" singleTag="tab"></fieldName>
+		</showInstance>
+	</fieldShowsEntity>
+	
+	<fieldShowsEntity>
+		<className>report.dto.analyse.Rep_AnalyseModel_Items</className>
+		<showInstance>
+			<showInstanceName >list</showInstanceName>
+			<fieldName fieldName="suit" singleTag="selectField" ></fieldName>
+			<fieldName fieldName="itemInfo" ></fieldName>
+		</showInstance>
+	</fieldShowsEntity>
+	
+	<fieldShowsEntity>
+		<className>report.dto.analyse.Rep_AnalyseModel_Orgs</className>
+		<showInstance>
+			<showInstanceName>list</showInstanceName>
+			<fieldName fieldName="instInfo" singleTag="selectField"></fieldName>
+		</showInstance>
+	</fieldShowsEntity>
+	
+	<fieldShowsEntity>
+		<className>report.dto.analyse.Rep_AnalyseModel_Currs</className>
+		<showInstance>
+			<showInstanceName>list</showInstanceName>
+			<fieldName fieldName="currencyType" singleTag="selectField"></fieldName>
+		</showInstance>
+	</fieldShowsEntity>
+	
+	<fieldShowsEntity>
+		<className>report.dto.analyse.Rep_AnalyseModel_ItemPros</className>
+		<showInstance>
+			<showInstanceName>list</showInstanceName>
+			<fieldName fieldName="itemProperty" singleTag="selectField"></fieldName>
+		</showInstance>
+	</fieldShowsEntity>
+	
+	
+	<fieldShowsEntity>
+		<className>report.dto.analyse.Rep_ItemWarning</className>
+		<showInstance>
+			<showInstanceName>1</showInstanceName>
+			<fieldName fieldName="uuid" fieldShowName="编号" width="50" listVisible="false"></fieldName>
+			<fieldName fieldName="itemInfo" singleTag="modelField" width="120" intOrder="1"></fieldName>
+			<fieldName fieldName="itemType" width="50" intOrder="2"></fieldName>
+			<fieldName fieldName="critical" width="50" intOrder="3"></fieldName>
+			<fieldName fieldName="criticalUp" width="50" intOrder="4"></fieldName>
+			<fieldName fieldName="criticalDown" width="50" intOrder="5"></fieldName>
+			<fieldName fieldName="bestUp" width="50" intOrder="6"></fieldName>
+			<fieldName fieldName="bestDown" width="50" intOrder="7"></fieldName>
+			<fieldName fieldName="worstUp" width="50" intOrder="8"></fieldName>
+			<fieldName fieldName="worstDown" width="50" intOrder="9"></fieldName>
+		</showInstance>
+	</fieldShowsEntity>
+	
+	<fieldShowsEntity>
+		<className>report.dto.analyse.Rep_ItemWarningResult</className>
+		<showInstance>
+			<showInstanceName>1</showInstanceName>
+			<fieldName fieldName="uuid" listVisible="false"></fieldName>
+			<fieldName fieldName="warningRule" listVisible="false"></fieldName>
+			<fieldName fieldName="warningVal" width="50" intOrder="1"></fieldName>
+			<fieldName fieldName="model" width="50" intOrder="2"></fieldName>
+			<fieldName fieldName="dtDate" width="50" intOrder="3"></fieldName>
+			<fieldName fieldName="instInfo" width="50" intOrder="4"></fieldName>
+			<fieldName fieldName="itemInfo" singleTag="modelField" width="120" intOrder="5"></fieldName>
+			<fieldName fieldName="strValue" width="50" intOrder="6"></fieldName>
+			<fieldName fieldName="strWarRule" width="100" intOrder="7"></fieldName>
+			<fieldName fieldName="itemProperty" width="50" intOrder="8"></fieldName>
+			<fieldName fieldName="currencyType" width="50" intOrder="9"></fieldName>
+			<fieldName fieldName="strFreq" width="50" intOrder="10"></fieldName>
+			<fieldName fieldName="strExtendDimension1" listVisible="false"></fieldName>
+			<fieldName fieldName="strExtendDimension2" listVisible="false"></fieldName>
+		</showInstance>
+	</fieldShowsEntity>
+	
+
+</fieldShowsRoot>

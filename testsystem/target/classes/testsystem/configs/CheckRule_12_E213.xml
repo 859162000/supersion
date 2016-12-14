@@ -1,0 +1,297 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+	<!-- 
+		1 所有boolean类型值，如果不填则默认为false 
+		2 fieldName如有关联表校验，加表名前缀，例如Table1.field1，以主外键关联 
+		3 特殊值: 
+			notNull代表非空 、null代表空、nullDate代表空时间、 
+			dataDate代表数据日期、previousDataDate代表上期数据日期、 
+			yearEndDate代表年末日期、halfYearEndDate代表半年末日期、yearEndDate代表年末日期、seasonEndDate代表季末日期、monthEndDate代表月末日期、 
+		`	max代表正无穷、-max代表负无穷 
+		
+		2016-07-04 insert by xiajieli  新增特殊值：
+		systemIDCardNo身份证号码校验，systemZZJGDM组织机构代码校验，systemDKKBM贷款卡编码校验，systemJRJGDM金融机构代码校验
+		systemKHXKZHZH开户许可证核准号校验,systemNSRSBH纳税人识别号校验,systemJGXYDM机构信用代码校验 
+		
+		4 每个同级校验类型结点作为一种校验类型，下一级结点作为一条具体的校验项 
+		5 checkType每条校验项都有的校验类型: 
+			checkType不填或者等于1代表强制校验，checkType等于2代表提示校验，checkType等于3代表备注校验 
+		6 表内校验概念指具体的一张数据库实体表，而非几张表组合的大表 
+		7 procedureName代表存储过程的名字，procedureParam 代表存储过程的参数，procedureDiscription 代表存储过程的描述。 
+		8 程序对存储过程的调用，当参数不匹配或存储过程不存在时，程序将报错，根据具体报错信息对参数或存储过程进行更正。 
+	-->
+<reportCheckRoot>
+	<!-- 校验名称：校验根据此名称做为校验实例-->
+	<checkInstance name="E213">		
+		
+		<!-- 参数值：配置的值为默认值，也可以通过系统传递进行替换-->		
+		<paramValueList>
+			<paramValue name="dtDate" value="2013-12-09"></paramValue>
+		</paramValueList>		
+		
+		<!-- 频度标志：可通过系统参数传递进行替换:1代表年报，2代表半年报，3代表季报，4代表月报，5代表日报-->
+		<freqCode value="4"></freqCode>	
+			
+		
+		<!-- 表名：真实数据库表的名称，一个校验实例中应具备唯一性-->
+		<checkTable procedureName="CHECK_12_E213" procedureParam="dtDate,RS" procedureDiscription="单一法人客户统计表[第二部分]-法定代表人、高管及重要关联人信息">
+			
+			<!-- 参数字段：如果不配置此项为全表数据校验 
+				type不填或则等于1代表字符，等于2代表时间-->
+			<paramFieldList>
+				<paramField paramName="dtDate" field="dtDate" type="1"></paramField>
+			</paramFieldList>
+			
+			<!-- 唯一性字段组合：可理解为联合主键，用于未作说明的主外键关联-->
+			<checkUniqueFieldList>
+				<checkUniqueField name="E213219"></checkUniqueField>
+			</checkUniqueFieldList>
+			
+			<!-- 表内基础校验：被设置的字段每条数都需要校验 
+				emptyCheck代表为空校验
+				digitalCheck代表数字校验，dateCheck代表日期校验 
+				upperCheck代表全大写字母校验，chnCheck代表汉字校验（可扩展其他特殊校验）
+				startLength代表起始长度，endLength代表结束长度 
+				valueDecimalLength的值代表小数位数的校验-->
+			<checkFieldBasicList>
+				<checkFieldBasic name="E213200" discription="关系人类型" emptyCheck="true" startLength="1" endLength="1" digitalCheck="true"></checkFieldBasic>
+				<checkFieldBasic name="E213201" discription="姓名" emptyCheck="true" startLength="2"></checkFieldBasic>
+				<checkFieldBasic name="E213202" discription="国别代码" emptyCheck="true" upperCheck="true" startLength="3" endLength="3"></checkFieldBasic>
+				<checkFieldBasic name="E213204" discription="护照1-护照号码" startLength="2"></checkFieldBasic>
+				<checkFieldBasic name="E213207" discription="护照2-护照号码" startLength="2"></checkFieldBasic>
+				<checkFieldBasic name="E213210" discription="护照N-护照号码" startLength="2"></checkFieldBasic>
+				<checkFieldBasic name="E213205" discription="护照1-签发日期" dateCheck="true" startLength="8" endLength="8" digitalCheck="true"></checkFieldBasic>
+				<checkFieldBasic name="E213208" discription="护照2-签发日期" dateCheck="true" startLength="8" endLength="8" digitalCheck="true"></checkFieldBasic>
+				<checkFieldBasic name="E213211" discription="护照N-签发日期" dateCheck="true" startLength="8" endLength="8" digitalCheck="true"></checkFieldBasic>
+				<checkFieldBasic name="E213206" discription="护照1-到期日期" dateCheck="true" startLength="8" endLength="8" digitalCheck="true"></checkFieldBasic>
+				<checkFieldBasic name="E213209" discription="护照2-到期日期" dateCheck="true" startLength="8" endLength="8" digitalCheck="true"></checkFieldBasic>
+				<checkFieldBasic name="E213212" discription="护照N-到期日期" dateCheck="true" startLength="8" endLength="8" digitalCheck="true"></checkFieldBasic>
+				<checkFieldBasic name="E213213" discription="其他证件1-证件类型" startLength="1" endLength="1" digitalCheck="true"></checkFieldBasic>
+				<checkFieldBasic name="E213215" discription="其他证件N-证件类型" startLength="1" endLength="1" digitalCheck="true"></checkFieldBasic>
+				<checkFieldBasic name="E213214" discription="其他证件1-证件号码" startLength="2"></checkFieldBasic>
+				<checkFieldBasic name="E213216" discription="其他证件N-证件号码" startLength="2"></checkFieldBasic>
+				<checkFieldBasic name="E213217" discription="更新信息日期" dateCheck="true" startLength="8" endLength="8" digitalCheck="true"></checkFieldBasic>
+				<checkFieldBasic name="E213218" discription="实际控制人标识" emptyCheck="true" startLength="1" endLength="1" digitalCheck="true"></checkFieldBasic>
+			</checkFieldBasicList>
+
+			<!-- 当***为***校验：每条数据被设置的字段都需要校验，有可能存在表外校验 
+				caseValue代表"为值" caseValueScope代表范围值，以逗号分隔 
+				whenValue代表"当值" whenValueScope代表范围值，以逗号分隔 
+				whenType不填或则等于1代表等号右边为一个字段，不运算；
+				whenType等于2代表等号右边为多个字段运算；
+				whenType等于3代表多个when并且关系；
+				whenType等于4代表两个when时间比较关系 
+				whenType等于5代表当条件为...时，...不为...
+				whenType等于6代表当多个条件为...时，...不为...
+				whenType等于7代表当...含有串 case的内容需要为真
+				whenType等于8代表当多个条件为...时，...为一个需校验的特殊字符（例如：信息记录中当“证件类型”为“身份证”时，“证件号码”必须符合身份证的编码规则）
+				whenType等于9代表当字段A为…，且字段B为..,字段C大于字段D
+				whenCompareValue比较的具体值 
+				whenValueRule不填或则等于1代表当前值，valueRule等于2代表绝对值 
+				joinType不填或则的等于1代表正，jionType等于2代表负，jionType等于3代表and，jionType等于4代表or-->
+			<checkFieldCaseWhenList>			
+		<checkFieldCaseWhen name="" discription="组织机构登记-年检-更新日期" caseValue="notNull" whenType="5" joinType="1" whenValue="notNull">
+        	<checkFieldCaseWhenField name="" discription="组织机构代码"  ></checkFieldCaseWhenField>
+        </checkFieldCaseWhen>     
+			</checkFieldCaseWhenList>
+			
+			<!-- 表内数据有效性校验
+				value为值域 -->
+			<checkFieldEffectiveList>
+				<checkFieldEffective name="E213200" discription="财务报表类型">
+                    <value>1</value>
+                    <value>2</value>
+                    <value>3</value>
+                    <value>4</value>
+                    <value>5</value>
+                    <value>6</value>
+                    <value>7</value>
+        </checkFieldEffective>
+        <checkFieldEffective name="E213213" discription="其他证件1-证件类型">                   
+                    <value>3</value>
+                    <value>4</value>
+                    <value>5</value>
+                    <value>6</value>
+                    <value>7</value>
+                    <value>8</value>
+                    <value>9</value>
+        </checkFieldEffective>
+        <checkFieldEffective name="E213215" discription="其他证件N-证件类型">                   
+                    <value>3</value>
+                    <value>4</value>
+                    <value>5</value>
+                    <value>6</value>
+                    <value>7</value>
+                    <value>8</value>
+                    <value>9</value>
+        </checkFieldEffective>
+        <checkFieldEffective name="E213218" discription="实际控制人标识">                   
+                    <value>1</value>
+                    <value>2</value>                  
+        </checkFieldEffective>
+			</checkFieldEffectiveList>
+						
+			<!-- 非聚合校验：有可能存在表外校验和期数校验 
+				dataPeriod不填或则的等于1代表本期，dataPeriod等于2代表上期 
+				startRate代表起始变动率，endRate代表结束变动率 
+				valueRule不填或则等于1代表当前值，valueRule等于2代表绝对值 
+				compareType不填代表求等，compareType=1代表求变动率，compareType=2代表求差值-->
+			<checkFieldLineList>
+				<!--逻辑性校验-->
+				<checkFieldLine compareType=">=">
+        	<leftFieldList>
+          	<checkFieldLineField value="dataDate" fieldType="2"></checkFieldLineField>
+        	</leftFieldList>
+         	<rightFieldList>
+          	<checkFieldLineField name="E213205" discription="护照1-签发日期"></checkFieldLineField>
+         	</rightFieldList>
+        </checkFieldLine>        
+       <checkFieldLine compareType=">=" fieldType="2">
+        	<leftFieldList>
+          	<checkFieldLineField value="dataDate"></checkFieldLineField>
+        	</leftFieldList>
+         	<rightFieldList>
+          	<checkFieldLineField name="E213208" discription="护照2-签发日期"></checkFieldLineField>
+         	</rightFieldList>
+        </checkFieldLine> 
+       	<checkFieldLine compareType=">=" fieldType="2">
+        	<leftFieldList>
+          	<checkFieldLineField value="dataDate"></checkFieldLineField>
+        	</leftFieldList>
+         	<rightFieldList>
+          	<checkFieldLineField name="E213211" discription="护照N-签发日期"></checkFieldLineField>
+         	</rightFieldList>
+        </checkFieldLine> 
+        <checkFieldLine compareType=">=" fieldType="2"> 
+        	<leftFieldList>
+          	<checkFieldLineField name="E213206" discription="护照1-到期日期"></checkFieldLineField>
+        	</leftFieldList>
+         	<rightFieldList>
+          	<checkFieldLineField name="E213205" discription="护照1-签发日期"></checkFieldLineField>
+         	</rightFieldList>
+        </checkFieldLine>
+        <checkFieldLine compareType=">=" fieldType="2">
+        	<leftFieldList>
+          	<checkFieldLineField name="E213209" discription="护照2-到期日期"></checkFieldLineField>
+        	</leftFieldList>
+         	<rightFieldList>
+          	<checkFieldLineField name="E213208" discription="护照2-签发日期"></checkFieldLineField>
+         	</rightFieldList>
+        </checkFieldLine>
+        <checkFieldLine compareType=">=" fieldType="2">
+        	<leftFieldList>
+          	<checkFieldLineField name="E213212" discription="护照N-到期日期"></checkFieldLineField>
+        	</leftFieldList>
+         	<rightFieldList>
+          	<checkFieldLineField name="E213211" discription="护照N-签发日期"></checkFieldLineField>
+         	</rightFieldList>
+        </checkFieldLine> 
+        <checkFieldLine compareType=">=" fieldType="2">
+        	<leftFieldList>
+          	<checkFieldLineField value="dataDate"></checkFieldLineField>
+        	</leftFieldList>
+         	<rightFieldList>
+          	<checkFieldLineField name="E213217" discription="更新信息日期"></checkFieldLineField>
+         	</rightFieldList>
+        </checkFieldLine> 
+			</checkFieldLineList>
+						
+			<!-- 或校验：一般用于多种情况都可以满足的校验，取其一就能通过校验 
+				field或校验一般为表内校验，caseField或校验有可能存在表外校验 
+				type="1"代表基础校验或，type="2"代表casewhen校验或-->
+			<checkFieldOrList>	
+				<checkFieldOr type="1">
+         	<checkFieldBasic name="E213203" discription="身份证号码"  startLength="15" endLength="15"  ></checkFieldBasic>
+          <checkFieldBasic name="E213203" discription="身份证号码"  startLength="18" endLength="18" ></checkFieldBasic>
+        </checkFieldOr>       
+			</checkFieldOrList>
+			
+			<checkFieldOrList>	
+				<checkFieldOr type="2">
+         	<checkFieldCaseWhen name="" discription="C" caseValue="10" whenCompareType=">"  whenValue="0">
+        	<checkFieldCaseWhenField name="" discription="A"  ></checkFieldCaseWhenField>
+        </checkFieldCaseWhen>    
+        <checkFieldCaseWhen name="" discription="C" caseValue="10" whenCompareType=">"  whenValue="0">
+        	<checkFieldCaseWhenField name="" discription="B"  ></checkFieldCaseWhenField>
+        </checkFieldCaseWhen>    
+        </checkFieldOr>       
+			</checkFieldOrList>
+			
+		</checkTable>
+
+
+		
+		<!--  一致性校验与唯一性校验  
+			consistenttype等于1或不填 表示一致性校验，consistenttype等于2表示唯一性校验   -->			
+		<checkFieldConsistentList consistenttype="2" discription="唯一性校验">
+			<paramFieldList>
+				<paramField paramName="dtDate" field="DTDATE" type="1"></paramField>
+			</paramFieldList>
+			<!--  WYX-018|表3《PART II：法定代表人、高管及重要关联人信息》|对于PARTⅠ中同一[客户代码]下，PART II 同一[关系人类型]下|[身份证号码]  -->			
+			<checkFieldConsistent>
+				<consistentGroup keyField="CONDITOIN" keyDiscription="客户代码-关系人类型" nameField="E213203" nameDiscription="身份证号码" procedureName="CHECK_12_E213_WYX_018" procedureDiscription="E213法定代表人、高管及重要关联人信息" procedureParam="dtDate,RS"></consistentGroup>
+			</checkFieldConsistent>		
+			<!--  WYX-019|表3《PART II：法定代表人、高管及重要关联人信息》|对于PARTⅠ中同一[客户代码]下，PART II 同一[关系人类型]下|[护照号码]  -->		
+			<checkFieldConsistent>
+				<consistentGroup keyField="CONDITOIN" keyDiscription="客户代码-关系人类型" ignoreVal="null" nameField="E213204" nameDiscription="护照1-护照号码" procedureName="CHECK_12_E213_WYX_019" procedureDiscription="E213法定代表人、高管及重要关联人信息" procedureParam="dtDate,RS"></consistentGroup>
+			</checkFieldConsistent>					
+			<!--  WYX-019|表3《PART II：法定代表人、高管及重要关联人信息》|对于PARTⅠ中同一[客户代码]下，PART II 同一[关系人类型]下|[护照号码]  -->		
+			<checkFieldConsistent>
+				<consistentGroup keyField="CONDITOIN" keyDiscription="客户代码-关系人类型" ignoreVal="isnull" nameField="E213207" nameDiscription="护照2-护照号码" procedureName="CHECK_12_E213_WYX_019" procedureDiscription="E213法定代表人、高管及重要关联人信息" procedureParam="dtDate,RS"></consistentGroup>
+			</checkFieldConsistent>	
+			<!--  WYX-019|表3《PART II：法定代表人、高管及重要关联人信息》|对于PARTⅠ中同一[客户代码]下，PART II 同一[关系人类型]下|[护照号码]  -->		
+			<checkFieldConsistent>
+				<consistentGroup keyField="CONDITOIN" keyDiscription="客户代码-关系人类型" ignoreVal="isnull" nameField="E213210" nameDiscription="护照N-护照号码" procedureName="CHECK_12_E213_WYX_019" procedureDiscription="E213法定代表人、高管及重要关联人信息" procedureParam="dtDate,RS"></consistentGroup>
+			</checkFieldConsistent>		
+			<!--  WYX-020|表3《PART II：法定代表人、高管及重要关联人信息》|同一“[客户代码]-[关系人类型]-[其他证件类型]”下|[其他证件号码] -->		
+			<checkFieldConsistent>
+				<consistentGroup keyField="CONDITOIN_1" keyDiscription="客户代码-关系人类型-其他证件类型" nameField="E213214" nameDiscription="其他证件1-证件号码" procedureName="CHECK_12_E213_WYX_020" procedureDiscription="E213法定代表人、高管及重要关联人信息" procedureParam="dtDate,RS"></consistentGroup>
+			</checkFieldConsistent>
+			<!--  WYX-020|表3《PART II：法定代表人、高管及重要关联人信息》|同一“[客户代码]-[关系人类型]-[其他证件类型]”下|[其他证件号码]  -->		
+			<checkFieldConsistent>
+				<consistentGroup keyField="CONDITOIN_N" keyDiscription="客户代码-关系人类型-其他证件类型" nameField="E213216" nameDiscription="其他证件N-证件号码" procedureName="CHECK_12_E213_WYX_020" procedureDiscription="E213法定代表人、高管及重要关联人信息" procedureParam="dtDate,RS"></consistentGroup>
+			</checkFieldConsistent>	
+			<!-- WYX-029|表3《PART II：法定代表人、高管及重要关联人信息》|PARTⅠ中同一[客户代码]下，PART II [关系人类型]=1时|[客户代码]-->		
+			<checkFieldConsistent>
+				<consistentGroup keyField="E213219" keyDiscription="客户代码" nameField="E213200" nameDiscription="关系人类型" procedureName="CHECK_12_E213_WYX_029" procedureDiscription="E213法定代表人、高管及重要关联人信息" procedureParam="dtDate,RS"></consistentGroup>
+			</checkFieldConsistent>																					
+		</checkFieldConsistentList>											
+
+		<!--  一致性校验与唯一性校验  
+			consistenttype等于1或不填 表示一致性校验，consistenttype等于2表示唯一性校验   -->			
+		<checkFieldConsistentList consistenttype="1" discription="一致性校验">
+			<paramFieldList>
+				<paramField paramName="dtDate" field="DTDATE" type="1"></paramField>
+			</paramFieldList>
+			<!-- HNYZ-GB-002|法定代表人、高管、重要关联人、股东、实际控制人代码相同，国别需一致-->		
+			<checkFieldConsistent>
+				<consistentGroup keyField="E213203" keyDiscription="身份证号码" nameField="E213202" nameDiscription="国别代码" procedureName="CHECK_12_E213_HNYZ_GB_002_1" procedureDiscription="E213法定代表人、高管及重要关联人信息" procedureParam="dtDate,RS"></consistentGroup>
+			</checkFieldConsistent>
+			<!-- HNYZ-GB-002|法定代表人、高管、重要关联人、股东、实际控制人代码相同，国别需一致-->		
+			<checkFieldConsistent>
+				<consistentGroup keyField="E213204" keyDiscription="护照1-护照号码" nameField="E213202" nameDiscription="国别代码" procedureName="CHECK_12_E213_HNYZ_GB_002_2" procedureDiscription="E213法定代表人、高管及重要关联人信息" procedureParam="dtDate,RS"></consistentGroup>
+			</checkFieldConsistent>	
+			<!-- HNYZ-GB-002|法定代表人、高管、重要关联人、股东、实际控制人代码相同，国别需一致-->		
+			<checkFieldConsistent>
+				<consistentGroup keyField="E213207" keyDiscription="护照2-护照号码" nameField="E213202" nameDiscription="国别代码" procedureName="CHECK_12_E213_HNYZ_GB_002_3" procedureDiscription="E213法定代表人、高管及重要关联人信息" procedureParam="dtDate,RS"></consistentGroup>
+			</checkFieldConsistent>	
+			<!-- HNYZ-GB-002|法定代表人、高管、重要关联人、股东、实际控制人代码相同，国别需一致-->		
+			<checkFieldConsistent>
+				<consistentGroup keyField="E213210" keyDiscription="护照N-护照号码" nameField="E213202" nameDiscription="国别代码" procedureName="CHECK_12_E213_HNYZ_GB_002_4" procedureDiscription="E213法定代表人、高管及重要关联人信息" procedureParam="dtDate,RS"></consistentGroup>
+			</checkFieldConsistent>	
+			<!-- HNYZ-GB-002|法定代表人、高管、重要关联人、股东、实际控制人代码相同，国别需一致-->		
+			<checkFieldConsistent>
+				<consistentGroup keyField="CONDITION" keyDiscription="其他证件1-证件类型-证件号码" nameField="E213202" nameDiscription="国别代码" procedureName="CHECK_12_E213_HNYZ_GB_002_5" procedureDiscription="E213法定代表人、高管及重要关联人信息" procedureParam="dtDate,RS"></consistentGroup>
+			</checkFieldConsistent>	
+			<!-- HNYZ-GB-002|法定代表人、高管、重要关联人、股东、实际控制人代码相同，国别需一致-->		
+			<checkFieldConsistent>
+				<consistentGroup keyField="CONDITION" keyDiscription="其他证件N-证件类型-证件号码" nameField="E213202" nameDiscription="国别代码" procedureName="CHECK_12_E213_HNYZ_GB_002_6" procedureDiscription="E213法定代表人、高管及重要关联人信息" procedureParam="dtDate,RS"></consistentGroup>
+			</checkFieldConsistent>																																		
+		</checkFieldConsistentList>	
+		
+		<!-- XML类校验 -->
+		<checkFieldClassList>
+      	<checkFieldClass name="zxptsystem.service.check.GR_GRXX_JCCheck"></checkFieldClass>
+      </checkFieldClassList>
+								
+	</checkInstance>
+</reportCheckRoot>

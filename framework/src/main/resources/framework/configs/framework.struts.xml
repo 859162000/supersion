@@ -1,0 +1,125 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE struts PUBLIC "-//Apache Software Foundation//DTD Struts Configuration 2.1//EN" "http://struts.apache.org/dtds/struts-2.1.dtd">
+<struts>
+
+	<package name="framework.default" extends="struts-default"
+		abstract="true">
+		<interceptors>
+			<interceptor-stack name="defaultFilterInterceptorStack">
+				<interceptor-ref name="defaultStack"></interceptor-ref>
+				<interceptor-ref name="functionFilterInterceptor"></interceptor-ref>
+				<interceptor-ref name="actionExcuteLogInterceptor"></interceptor-ref>
+				<interceptor-ref name="actionExceptionLogInterceptor"></interceptor-ref>
+				<interceptor-ref name="userOperationLogInterceptor"></interceptor-ref>
+			</interceptor-stack>
+
+			<interceptor-stack name="tokenSessionFilterInterceptorStack">
+				<interceptor-ref name="defaultFilterInterceptorStack"></interceptor-ref>
+				<interceptor-ref name="tokenSession"></interceptor-ref>
+			</interceptor-stack>
+
+			<interceptor-stack name="execAndWaitFilterInterceptorStack">
+				<interceptor-ref name="defaultFilterInterceptorStack"></interceptor-ref>
+				<interceptor-ref name="execAndWait">
+					<param name="delay">1000</param>
+					<param name="delaySleepInterval">50</param>
+				</interceptor-ref>
+			</interceptor-stack>
+
+			<interceptor name="functionFilterInterceptor"
+				class="framework.security.FunctionFilterInterceptor">
+				<param name="excludeActions">ShowAlertMessage,Login-coresystem.dto.UserInfo,ShowNavigation,Logout-coresystem.dto.UserInfo,ShowIndexPage,ShowModelAlertMessage</param>
+				<param name="loginPage">/CoreSystem/Login.jsp</param>
+				<param name="doFilter">true</param>
+			</interceptor>
+
+			<interceptor name="actionExcuteLogInterceptor" class="framework.log.ActionExcuteLog">
+				<param name="excludeActions">ShowAlertMessage</param>
+				<param name="actionExcuteService">coresystem.service.imps.ActionExcuteService</param>
+			</interceptor>
+
+			<interceptor name="userOperationLogInterceptor" class="framework.log.UserOperationNoteLog">
+				<param name="excludeActions">ShowAlertMessage</param>
+				<param name="beforeActions">Logout</param>
+				<param name="excutebeforeupdateActions">Update,UpdateList,TreeNodeUpdate,UpdateField,UpdatePassword,WGJ_Update,WGJ_UpdateList,WGJ_TreeNodeUpdate,WGJ_UpdateField</param>
+				<param name="beforeupdateService">coresystem.service.imps.UserOperationUpdateService</param>
+				<param name="actionExcuteService">coresystem.service.imps.UserOperationNoteService</param>
+			</interceptor>
+
+			<interceptor name="actionExceptionLogInterceptor" class="framework.log.ActionExceptionLog">
+			</interceptor>
+		</interceptors>
+
+		<default-interceptor-ref name="defaultFilterInterceptorStack"></default-interceptor-ref>
+
+		<!--<default-action-ref name="default"></default-action-ref>  -->
+
+		<global-results>
+			<result name="invalid.token">/Framework/Error/RepeatSubmitError.jsp</result>
+			<!--<result name="login">/CoreSystem/Login.jsp</result>-->
+			<result name="login" type="redirectAction">
+				<param name="actionName">ShowAlertMessage</param>
+				<param name="message">Session超时,请重新登录</param>
+			</result>
+			<result name="permission">/Framework/Error/NoPermission.jsp</result>
+			<!--  <result name="wait">/Framework/Error/Wait.jsp</result>   
+			<result name="exception">/Framework/Error/ExceptionError.jsp</result>-->
+		</global-results>
+
+		<global-exception-mappings>
+			<exception-mapping result="exception" exception="java.lang.Exception"></exception-mapping>
+		</global-exception-mappings>
+
+		<action name="ShowAlertMessage" class="framework.actions.imps.ShowMessageAction">
+		</action>
+
+		<action name="ShowModelAlertMessage" class="framework.actions.imps.ShowModelAlertMessage">
+		</action>
+
+		<action name="RefleshParent" class="framework.actions.imps.RefleshParentAction">
+		</action>
+
+		<action name="default">
+			<result>/Framework/Error/ActionError.jsp</result>
+		</action>
+	</package>
+	<package name="framework.json" extends="json-default">
+		<result-types>
+			<result-type name="jsonExt" class="framework.struts.ext.JsonResultExt" />
+			
+		</result-types>
+		<interceptors>
+			<interceptor-stack name="defaultFilterInterceptorStack">
+				<interceptor-ref name="defaultStack"></interceptor-ref>
+				<interceptor-ref name="actionExcuteLogInterceptor"></interceptor-ref>
+				<interceptor-ref name="actionExceptionLogInterceptor"></interceptor-ref>
+				<interceptor-ref name="userOperationLogInterceptor"></interceptor-ref>
+			</interceptor-stack>
+			<interceptor name="actionExcuteLogInterceptor" class="framework.log.ActionExcuteLog">
+				<param name="excludeActions">ShowAlertMessage</param>
+				<param name="actionExcuteService">coresystem.service.imps.ActionExcuteService</param>
+			</interceptor>
+
+			<interceptor name="userOperationLogInterceptor" class="framework.log.UserOperationNoteLog">
+				<param name="excludeActions">ShowAlertMessage</param>
+				<param name="beforeActions">Logout</param>
+				<param name="excutebeforeupdateActions">Update,UpdateList,TreeNodeUpdate,UpdateField,UpdatePassword,WGJ_Update,WGJ_UpdateList,WGJ_TreeNodeUpdate,WGJ_UpdateField</param>
+				<param name="beforeupdateService">coresystem.service.imps.UserOperationUpdateService</param>
+				<param name="actionExcuteService">coresystem.service.imps.UserOperationNoteService</param>
+			</interceptor>
+
+			<interceptor name="actionExceptionLogInterceptor" class="framework.log.ActionExceptionLog">
+			</interceptor>
+		</interceptors>
+
+		<default-interceptor-ref name="defaultFilterInterceptorStack"></default-interceptor-ref>
+		<global-results>
+			<result name="exception" type="chain">JsonExcepionAction</result>
+		</global-results>
+
+		<global-exception-mappings>
+			<exception-mapping result="exception" exception="java.lang.Exception"></exception-mapping>
+		</global-exception-mappings>
+	</package>
+
+</struts>    

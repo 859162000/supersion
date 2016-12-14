@@ -1,0 +1,251 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<reportCheckRoot>  
+	<checkInstance name="Check_NCR_4_1">
+	    <paramValueList>
+	      <paramValue name="DTDATE" value="2013-12-09"></paramValue>
+	      <paramField paramName="strInstCode" field="INSTINFO" type="1"></paramField>
+	      <!--
+		    <paramValue name="strTaskRptInstID" value="000000"></paramValue>
+			  <paramValue name="strFreq" value="000000"></paramValue> 
+			  -->
+	    </paramValueList>
+
+	    <freqCode value="4"></freqCode>
+
+                       
+      <checkTable procedureName="CHECK_NCR_4_1"  procedureParam="DTDATE,strInstCode,rt" procedureDiscription="对公客户担保情况统计表" 
+      	originTable="NCR_4_1" errorStateField="RPTCHECKTYPE" errorStateValue="3"  successStateValue="2" 
+      	defaultLogicDaoBeanId="oracleProcedureResultSetDao">    
+	  		<paramFieldList>
+	  			<paramField paramName="DTDATE" field="DTDATE" type="2"></paramField>
+	  			<paramField paramName="strInstCode" field="INSTINFO" type="1"></paramField>
+	  		</paramFieldList>
+	       <checkUniqueFieldList>
+				<checkUniqueField name="AUTOID" discription="主键" originField="AUTOID"></checkUniqueField>
+			  </checkUniqueFieldList>
+
+	       <checkFieldBasicList>
+	       	  <!--JBL4-003	A	客户名称	非空。	长度大于等于2个字符。-->
+						<checkFieldBasic name="A" discription="客户名称" emptyCheck="true" startLength="2"></checkFieldBasic>
+						<!--JBL4-004	B	客户代码	非空。	长度大于等于2个字符。-->
+						<checkFieldBasic name="B" discription="客户代码" emptyCheck="true" startLength="2"></checkFieldBasic>
+						<!--JBL4-005	C	贷款或表外业务合同号	非空。	长度大于等于2个字符。-->
+						<checkFieldBasic name="C" discription="贷款或表外业务合同号" emptyCheck="true" startLength="2"></checkFieldBasic>
+						<!--JBL4-006	D	担保合同号		非空。	长度大于等于2个字符。-->
+						<checkFieldBasic name="D" discription="担保合同号" emptyCheck="true" startLength="2"></checkFieldBasic>
+			      <!--JBL4-007	E	担保合同类型	非空。	1位数字字符。-->
+			      <checkFieldBasic name="E" discription="担保合同类型" emptyCheck="true" digitalCheck="true" startLength="1" endLength="1"></checkFieldBasic>
+						<!--JBL4-008	F	押品类型			根据《押品分类编码表》填报。	2位字符。-->
+						<checkFieldBasic name="F" discription="押品类型" startLength="2" endLength="2"></checkFieldBasic>
+						<!--JBL4-009	G	押品名称			长度大于等于2个字符。-->
+						<checkFieldBasic name="G" discription="押品名称" startLength="2"></checkFieldBasic>
+						<!--JBL4-010	H 	押品代码		长度大于等于2个字符。-->
+						<checkFieldBasic name="H" discription="H押品代码" startLength="2"></checkFieldBasic>
+						<!--JBL4-011	I	押品权属人（或保证人）名称	非空。	长度大于等于2个字符。-->
+						<checkFieldBasic name="I" discription="押品权属人（或保证人）名称" emptyCheck="true" startLength="2"></checkFieldBasic>
+			      <!--JBL4-012	J	押品权属人（或保证人）类型		非空。	1位数字字符。-->
+			      <checkFieldBasic name="J" discription="押品权属人（或保证人）类型" emptyCheck="true" digitalCheck="true" startLength="1" endLength="1"></checkFieldBasic>
+			      <!--JBL4-013	K	押品权属人（或保证人）证件类型		非空。	1或2位数字字符。-->
+			      <checkFieldBasic name="K" discription="押品权属人（或保证人）证件类型" emptyCheck="true" digitalCheck="true" startLength="1" endLength="2"></checkFieldBasic>
+						<!--JBL4-014	L	押品权属人（或保证人）证件代码	长度大于等于2个字符。-->
+						<checkFieldBasic name="L" discription="押品权属人（或保证人）证件代码" startLength="2"></checkFieldBasic>
+						<!--JBL4-015	M	押品评估价值（或保证金额）	decimal(,2)				大于等于0，保留两位小数。-->
+						<checkFieldBasic name="M" discription="押品评估价值（或保证金额）" valueDecimalLength="2"></checkFieldBasic>
+			      <!--JBL4-016	N	押品权属人是否第三方	非空。	1位数字字符。-->
+			      <checkFieldBasic name="N" discription="押品权属人是否第三方" emptyCheck="true" digitalCheck="true" startLength="1" endLength="1"></checkFieldBasic>
+			      <!--JBL4-017	O	首次估值日期	合法的年月日组合。1-4位：年；5-6位：月，其中1-9月，表示为：01-09；7-8位：日，其中1-9日表示为01-09。	8位数字字符。-->
+			      <checkFieldBasic name="O" discription="首次估值日期"  dateCheck="true" startLength="8" endLength="8"></checkFieldBasic>
+			      <!--JBL4-018	P	最新估值日期	合法的年月日组合。1-4位：年；5-6位：月，其中1-9月，表示为：01-09；7-8位：日，其中1-9日表示为01-09。	8位数字字符。-->
+			      <checkFieldBasic name="P" discription="最新估值日期"  dateCheck="true" startLength="8" endLength="8"></checkFieldBasic>
+			      <!--JBL4-019	Q	估值到期日期		合法的年月日组合。1-4位：年；5-6位：月，其中1-9月，表示为：01-09；7-8位：日，其中1-9日表示为01-09。	8位数字字符。-->
+			      <checkFieldBasic name="Q" discription="估值到期日期"  dateCheck="true" startLength="8" endLength="8"></checkFieldBasic>
+						<!--JBL4-020	R	保证人保证能力上限	decimal(,2)		数据单位为：万元。	保留两位小数。-->
+						<checkFieldBasic name="R" discription="保证人保证能力上限" valueDecimalLength="2"></checkFieldBasic>
+						<!--JBL4-021	S	审批抵质押率	decimal(,2)		百分比。	保留两位小数。-->
+						<checkFieldBasic name="S" discription="审批抵质押率" valueDecimalLength="2"></checkFieldBasic>
+	       </checkFieldBasicList>
+
+         <checkFieldOrList>
+         </checkFieldOrList>
+         <!--基本类中值域类型的校验-->
+         <checkFieldEffectiveList>
+         	<!--JBL4-007	E	担保合同类型	1-抵押，2-质押，3-单人保证，4-多人保证，5-多人联保，6-多人分保。	单选。填写1/2/3/4/5/6中的1个。-->
+          	<checkFieldEffective name="E" discription="担保合同类型">
+                   <value>1</value>
+                   <value>2</value>
+                   <value>3</value>
+                   <value>4</value>
+                   <value>5</value>
+                   <value>6</value>
+            </checkFieldEffective>
+            <!--JBL4-012	J	押品权属人（或保证人）类型		1-法人机构，2-自然人。	单选。填写1/2中的1个。-->
+          	<checkFieldEffective name="J" discription="押品权属人（或保证人）类型">
+                   <value>1</value>
+                   <value>2</value>
+            </checkFieldEffective>  
+             <!--JBL4-013	K	押品权属人（或保证人）证件类型		1-组织机构代码，2-居民身份证，3-军官证，4-文职干部证，5-警官证，6-士兵证，7-户口本，8-临时身份证，9-其他有效通行旅行证件，10-护照，11-学生证，12-无证件。	单选。填写1/2/3/4/5/6/7/8/9/10/11/12中的1个。-->
+          	<checkFieldEffective name="K" discription="J押品权属人（或保证人）证件类型">
+                   <value>1</value>
+                   <value>2</value>
+                   <value>3</value>
+                   <value>4</value>
+                   <value>5</value>
+                   <value>6</value>
+                   <value>7</value>
+                   <value>8</value>
+                   <value>9</value>
+                   <value>10</value>
+                   <value>11</value>
+                   <value>12</value>
+            </checkFieldEffective>
+            <!--JBL4-016	N	押品权属人是否第三方		1-是，2-否。	单选。填写1/2中的1个。-->
+          	<checkFieldEffective name="N" discription="押品权属人是否第三方">
+                   <value>1</value>
+                   <value>2</value>
+            </checkFieldEffective>
+         </checkFieldEffectiveList>
+         <!--基本类中case..when类型的检验-->
+         <checkFieldCaseWhenList>
+         	<!--JBL4-008	F	押品类型		根据《押品分类编码表》填报。	[担保合同类型]为“1”或“2”的，非空；“3”至“6”中之一的，为空。-->
+
+	     			<checkFieldCaseWhen name="F" discription="押品类型" caseValue="notNull" whenValueScope="1,2">
+	                   <checkFieldCaseWhenField name="E" discription="担保合同类型" ></checkFieldCaseWhenField>
+	          </checkFieldCaseWhen>
+	     			<checkFieldCaseWhen name="F" discription="押品类型" caseValue="null" whenValueScope="3,4,5,6">
+	                   <checkFieldCaseWhenField name="E" discription="担保合同类型" ></checkFieldCaseWhenField>
+	          </checkFieldCaseWhen>	
+	          <!--JBL4-009	G	押品名称	[担保合同类型]为“1”或“2”的，非空；“3”至“6”中之一的，为空。-->
+	     			<checkFieldCaseWhen name="G" discription="押品名称" caseValue="notNull" whenValueScope="1,2" >
+	                   <checkFieldCaseWhenField name="E" discription="担保合同类型" ></checkFieldCaseWhenField>
+	          </checkFieldCaseWhen>
+	     			<checkFieldCaseWhen name="G" discription="押品名称" caseValue="null" whenValueScope="3,4,5,6">
+	                   <checkFieldCaseWhenField name="E" discription="担保合同类型" ></checkFieldCaseWhenField>
+	          </checkFieldCaseWhen>	
+	          <!--JBL4-010	H 	押品代码	[担保合同类型]为“1”或“2”的，非空；“3”至“6”中之一的，为空。-->
+	     			<checkFieldCaseWhen name="H" discription="押品代码" caseValue="notNull" whenValueScope="1,2">
+	                   <checkFieldCaseWhenField name="E" discription="担保合同类型" ></checkFieldCaseWhenField>
+	          </checkFieldCaseWhen>
+	     			<checkFieldCaseWhen name="H" discription="押品代码" caseValue="null" whenValueScope="3,4,5,6">
+	                   <checkFieldCaseWhenField name="E" discription="担保合同类型" ></checkFieldCaseWhenField>
+	          </checkFieldCaseWhen>
+	          <!--JBL4-017	O	首次估值日期			E-[担保合同类型]为“1”或“2”的，非空；“3”至“6”中的一个的，为空。-->
+	     			<checkFieldCaseWhen name="O" discription="首次估值日期" caseValue="notNull" whenValueScope="1,2">
+	                   <checkFieldCaseWhenField name="E" discription="担保合同类型" ></checkFieldCaseWhenField>
+	          </checkFieldCaseWhen>
+	     			<checkFieldCaseWhen name="O" discription="首次估值日期" caseValue="null" whenValueScope="3,4,5,6">
+	                   <checkFieldCaseWhenField name="E" discription="担保合同类型" ></checkFieldCaseWhenField>
+	          </checkFieldCaseWhen>
+	          <!--JBL4-018	P	最新估值日期		E-[担保合同类型]为“1”或“2”的，非空；“3”至“6”中的一个的，为空。-->
+	     			<checkFieldCaseWhen name="P" discription="最新估值日期" caseValue="notNull" whenValueScope="1,2">
+	                   <checkFieldCaseWhenField name="E" discription="担保合同类型" ></checkFieldCaseWhenField>
+	          </checkFieldCaseWhen>
+	     			<checkFieldCaseWhen name="P" discription="最新估值日期" caseValue="null" whenValueScope="3,4,5,6">
+	                   <checkFieldCaseWhenField name="E" discription="J担保合同类型" ></checkFieldCaseWhenField>
+	          </checkFieldCaseWhen>
+	          <!--JBL4-019	Q	估值到期日期   	E-[担保合同类型]为“1”或“2”的，非空；“3”至“6”中的一个的，为空。-->
+	     			<checkFieldCaseWhen name="Q" discription="估值到期日期" caseValue="notNull" whenValueScope="1,2">
+	          <checkFieldCaseWhenField name="E" discription="担保合同类型" ></checkFieldCaseWhenField>
+	          </checkFieldCaseWhen>
+	     			<checkFieldCaseWhen name="Q" discription="估值到期日期" caseValue="null" whenValueScope="3,4,5,6">
+	                   <checkFieldCaseWhenField name="E" discription="担保合同类型" ></checkFieldCaseWhenField>
+	          </checkFieldCaseWhen>
+	          <!--JBL4-020	R	保证人保证能力上限	[担保合同类型]为“1”或“2”的，则为空或0。-->
+	     			<checkFieldCaseWhen name="R" discription="保证人保证能力上限" caseValueScope="null,0" whenValueScope="1,2">
+	                   <checkFieldCaseWhenField name="E" discription="担保合同类型" ></checkFieldCaseWhenField>
+	          </checkFieldCaseWhen>
+	          <!--JBL4-021	S	审批抵质押率	[担保合同类型]为“1”或“2”的，非空；“3”至“6”中的一个的，为空或0。-->
+	     			<checkFieldCaseWhen name="S" discription="审批抵质押率" caseValue="notNull" whenValueScope="1,2">
+	                   <checkFieldCaseWhenField name="E" discription="担保合同类型" ></checkFieldCaseWhenField>
+	          </checkFieldCaseWhen>
+	     			<checkFieldCaseWhen name="S" discription="审批抵质押率" caseValueScope="null,0" whenValueScope="3,4,5,6">
+	                   <checkFieldCaseWhenField name="E" discription="担保合同类型" ></checkFieldCaseWhenField>
+	          </checkFieldCaseWhen>  
+	           <!--LJX-058	表4中若[押品权属人（或保证人）类型]=“1”则[押品权属人（或保证人）证件类型]为“1”或“12”；若[押品权属人（或保证人）类型]=“2”，则[押品权属人（或保证人）证件类型]为“2”至“12”中的一个。	若J=“1”,则K=“1”或“12”；若J=“2”,则K=“2”至“12”中的一个。-->
+	     			<checkFieldCaseWhen name="K" discription="押品权属人（或保证人）证件类型" caseValueScope="1,12" whenValue="1">
+	                   <checkFieldCaseWhenField name="J" discription="押品权属人（或保证人）类型" ></checkFieldCaseWhenField>
+	          </checkFieldCaseWhen>
+	     			<checkFieldCaseWhen name="K" discription="押品权属人（或保证人）证件类型" caseValueScope="2,3,4,5,6,7,8,9,10,11,12" whenValue="2">
+	                   <checkFieldCaseWhenField name="J" discription="押品权属人（或保证人）类型" ></checkFieldCaseWhenField>
+	          </checkFieldCaseWhen>
+	     			<checkFieldCaseWhen name="K" discription="押品权属人是否第三方" caseValue="1" whenValueScope="3,4,5,6">
+	                   <checkFieldCaseWhenField name="J" discription="担保合同类型" ></checkFieldCaseWhenField>
+	          </checkFieldCaseWhen>
+         </checkFieldCaseWhenList>
+         <!--基础校验里边的大于0或者其他特殊校验-->
+	       <checkFieldLineList>
+	       	<!--JBL4-015	M	押品评估价值（或保证金额）	大于等于0 -->
+						<checkFieldLine compareType=">=">								
+							<leftFieldList>	                      
+								<checkFieldLineField name="M" discription="押品评估价值（或保证金额）"></checkFieldLineField>	                  
+							</leftFieldList>   
+							<rightFieldList>           
+								<checkFieldLineField value="0"></checkFieldLineField>
+							</rightFieldList>	           
+						</checkFieldLine>
+						<!--JBL4-020	R	保证人保证能力上限		大于等于0 -->
+						<checkFieldLine compareType=">=">								
+							<leftFieldList>	                      
+								<checkFieldLineField name="R" discription="保证人保证能力上限"></checkFieldLineField>	                  
+							</leftFieldList>	                  
+							<rightFieldList>	                      
+								<checkFieldLineField value="0"></checkFieldLineField>
+							</rightFieldList>	           
+						</checkFieldLine>
+						<!--JBL4-021	S	审批抵质押率		百分比。	大于等于0，保留两位小数。若大于100，需在提示性校验中说明。-->
+						<checkFieldLine compareType=">=">								
+							<leftFieldList>	                      
+								<checkFieldLineField name="S" discription="审批抵质押率"></checkFieldLineField>	                  
+							</leftFieldList>	                  
+							<rightFieldList>	                      
+								<checkFieldLineField value="0"></checkFieldLineField>
+							</rightFieldList>	           
+						</checkFieldLine>
+						<checkFieldLine compareType=">=">								
+							<leftFieldList>	  	                      
+								<checkFieldLineField value="100"></checkFieldLineField>
+								</leftFieldList>	                  
+							<rightFieldList>	                      
+								<checkFieldLineField name="S" discription="审批抵质押率（提示性信息）"></checkFieldLineField>	 
+							</rightFieldList>	           
+						</checkFieldLine>							
+						<!-- 逻辑性校验 -->
+						<!--LJX-059	表4中[首次估值日期]小于等于[数据日期]。	[O]<=[数据日期]-->
+						<checkFieldLine compareType=">=" fieldType="2">								
+							<leftFieldList>	  	                      
+								<checkFieldLineField name="DTDATE" discription="数据日期"> </checkFieldLineField>	           
+							</leftFieldList>	                  
+							<rightFieldList>	                      
+								<checkFieldLineField name="O" discription="首次估值日期"></checkFieldLineField>	 
+							</rightFieldList>	           
+						</checkFieldLine>	
+						<!--LJX-060	表4中[最新估值日期]小于等于[数据日期]；大于等于[首次估值日期]。	[O]<=P<=[数据日期]-->	
+						<checkFieldLine compareType=">=" fieldType="2">								
+							<leftFieldList>	  	                      
+								<checkFieldLineField name="DTDATE" discription="数据日期"></checkFieldLineField>         
+							</leftFieldList>	                  
+							<rightFieldList>	                      
+								<checkFieldLineField name="P" discription="最新估值日期"></checkFieldLineField>	 
+							</rightFieldList>	           
+						</checkFieldLine>					
+						<checkFieldLine compareType=">=" fieldType="2">								
+							<leftFieldList>	  	                      
+								<checkFieldLineField name="P" discription="最新估值日期"></checkFieldLineField>     
+							</leftFieldList>	                  
+							<rightFieldList>	                      
+								<checkFieldLineField name="O" discription="首次估值日期"></checkFieldLineField>	 
+							</rightFieldList>	           
+						</checkFieldLine>					
+					<!--LJX-061	表4中[估值到期日期]大于等于[最新估值日期]。	Q>= P-->
+						<checkFieldLine compareType=">=" fieldType="2">								
+							<leftFieldList>	  	                      
+								<checkFieldLineField name="Q" discription="估值到期日期"></checkFieldLineField>     
+							</leftFieldList>	                  
+							<rightFieldList>	                      
+								<checkFieldLineField name="P" discription="最新估值日期"></checkFieldLineField>	 
+							</rightFieldList>	           
+						</checkFieldLine>						        
+	       </checkFieldLineList>
+      </checkTable>
+           
+	</checkInstance>
+</reportCheckRoot>

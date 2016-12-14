@@ -1,0 +1,153 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<reportCheckRoot>
+	<!-- 校验名称：校验根据此名称做为校验实例-->
+	<checkInstance name="CHECK_EAS_XYKXX">	
+		<!-- 参数值：配置的值为默认值，也可以通过系统传递进行替换-->		
+		<paramValueList>
+			<paramValue name="DTDATE" value="2013-12-09"></paramValue>
+			<paramValue name="strInstCode" value=""></paramValue>
+			<!--
+		  <paramValue name="strTaskRptInstID" value="000000"></paramValue>
+			<paramValue name="strFreq" value="000000"></paramValue> 
+			-->
+		</paramValueList>		
+		
+		<!-- 频度标志：可通过系统参数传递进行替换:1代表年报，2代表半年报，3代表季报，4代表月报，5代表日报-->
+		<freqCode value="4"></freqCode>	
+		<!-- 表名：真实数据库表的名称，一个校验实例中应具备唯一性-->
+		<checkTable procedureName="CHECK_EAS_XYKXX" procedureParam="DTDATE,strInstCode,rt" procedureDiscription="信用卡信息"
+			originTable="EAS_XYKXX" errorStateField="RPTCHECKTYPE" errorStateValue="3"  successStateValue="2"
+			defaultLogicDaoBeanId="oracleProcedureResultSetDao">
+			
+			<!-- 参数字段：如果不配置此项为全表数据校验 
+				type不填或则等于1代表字符，等于2代表时间-->
+			<paramFieldList>
+				<paramField paramName="DTDATE" field="DTDATE" type="2"></paramField>
+				<paramField paramName="strInstCode" field="INSTINFO" type="1"></paramField>
+			</paramFieldList>
+			
+			<!-- 唯一性字段组合：可理解为联合主键，用于未作说明的主外键关联-->
+			<checkUniqueFieldList>
+				<checkUniqueField name="AUTOID" discription="主键" originField="AUTOID"></checkUniqueField>
+			</checkUniqueFieldList>
+			
+			<!-- 表内基础校验：被设置的字段每条数都需要校验 
+				emptyCheck代表为空校验
+				digitalCheck代表数字校验，dateCheck代表日期校验 
+				upperCheck代表全大写字母校验，chnCheck代表汉字校验（可扩展其他特殊校验）
+				startLength代表起始长度，endLength代表结束长度 
+				valueDecimalLength的值代表小数位数的校验-->
+				<checkFieldBasicList>
+					<checkFieldBasic name="KH"  discription="卡号" emptyCheck="true" endLength="60"></checkFieldBasic>
+          <checkFieldBasic name="XYKZH"  discription="信用卡账户" emptyCheck="true" endLength="60"></checkFieldBasic>
+          <checkFieldBasic name="KHTYBH"  discription="客户统一编号" emptyCheck="true" endLength="60"></checkFieldBasic>
+          <checkFieldBasic name="YXJGDM"  discription="银行机构代码" emptyCheck="true" endLength="30"></checkFieldBasic>
+          <checkFieldBasic name="JRXKZH"  discription="金融许可证号" emptyCheck="true" startLength="15" endLength="15"></checkFieldBasic>
+          <checkFieldBasic name="NBJGH"  discription="内部机构号" emptyCheck="true" endLength="30"></checkFieldBasic>
+          <checkFieldBasic name="ZJLB"  discription="证件类别" emptyCheck="true" endLength="30"></checkFieldBasic>
+          <checkFieldBasic name="ZJHM"  discription="证件号码" emptyCheck="true" endLength="60"></checkFieldBasic>
+          <checkFieldBasic name="KPMC"  discription="卡片名称" emptyCheck="true" endLength="60"></checkFieldBasic>
+          <checkFieldBasic name="KPJB"  discription="卡片级别" endLength="60"></checkFieldBasic>
+          <checkFieldBasic name="KPZT"  discription="卡片状态" emptyCheck="true" endLength="30"></checkFieldBasic>
+          <checkFieldBasic name="KDQNY"  discription="卡到期年月" emptyCheck="true"  digitalCheck="true" startLength="6" endLength="6"></checkFieldBasic>
+          <checkFieldBasic name="KHZHJYRQ"  discription="客户最后交易日期" ignoreVal="999991231" dateCheck="true"  startLength="8" endLength="8"></checkFieldBasic>
+          <checkFieldBasic name="YGKBZ"  discription="员工卡标志" endLength="4"></checkFieldBasic>
+          <checkFieldBasic name="FSKBZ"  discription="附属卡标志" emptyCheck="true" endLength="4"></checkFieldBasic>
+          <checkFieldBasic name="ZKH"  discription="主卡号" endLength="60"></checkFieldBasic>
+          <checkFieldBasic name="NFBZ"  discription="年费标志" endLength="4"></checkFieldBasic>
+          <checkFieldBasic name="BBXYED"  discription="本币信用额度" emptyCheck="true" endLength="20"  valueDecimalLength="2"></checkFieldBasic>
+          <checkFieldBasic name="WBXYED"  discription="外币信用额度" endLength="20"  valueDecimalLength="2" ></checkFieldBasic>
+          <checkFieldBasic name="WBBZ"  discription="外币币种" startLength="3"  upperCheck="true" endLength="3" ></checkFieldBasic>
+          <checkFieldBasic name="BBXJZQED"  discription="本币现金支取额度" emptyCheck="true" endLength="20"  valueDecimalLength="2"></checkFieldBasic>
+          <checkFieldBasic name="WBXJZQED"  discription="外币现金支取额度" endLength="20"  valueDecimalLength="2"></checkFieldBasic>
+          <checkFieldBasic name="ZKRQ"  discription="制卡日期" ignoreVal="999991231" emptyCheck="true" dateCheck="true"  startLength="8" endLength="8"></checkFieldBasic>
+          <checkFieldBasic name="SLRQ"  discription="受理日期" ignoreVal="999991231" emptyCheck="true" dateCheck="true"  startLength="8" endLength="8"></checkFieldBasic>
+          <checkFieldBasic name="SLYGH"  discription="受理员工号" endLength="30" ></checkFieldBasic>
+          <checkFieldBasic name="KKRQ"  discription="开卡日期" ignoreVal="999991231" emptyCheck="true" dateCheck="true" digitalCheck="true" startLength="8" endLength="8"></checkFieldBasic>
+          <checkFieldBasic name="KKYGH"  discription="开卡员工号" endLength="30" ></checkFieldBasic>
+          <checkFieldBasic name="XKRQ"  discription="销卡日期" ignoreVal="999991231" emptyCheck="true" dateCheck="true" digitalCheck="true" startLength="8" endLength="8"></checkFieldBasic>
+          <checkFieldBasic name="XKYGH"  discription="销卡员工号" endLength="30"></checkFieldBasic>
+          <checkFieldBasic name="ZHZT"  discription="帐户状态" emptyCheck="true" endLength="60"></checkFieldBasic>
+          <checkFieldBasic name="BBQXJE"  discription="本币取现金额" endLength="20"  valueDecimalLength="2"></checkFieldBasic>
+          <checkFieldBasic name="BBXFJE"  discription="本币消费金额" endLength="20"  valueDecimalLength="2"></checkFieldBasic>
+          <checkFieldBasic name="BBTZJE"  discription="本币透支金额" emptyCheck="true"  valueDecimalLength="2" endLength="20"></checkFieldBasic>
+          <checkFieldBasic name="WBXFJE"  discription="外币消费金额" endLength="20"  valueDecimalLength="2"></checkFieldBasic>
+          <checkFieldBasic name="WBQXJE"  discription="外币取现金额" endLength="20"  valueDecimalLength="2"></checkFieldBasic>
+          <checkFieldBasic name="WBTZJE"  discription="外币透支金额" endLength="20"  valueDecimalLength="2"></checkFieldBasic>
+          <checkFieldBasic name="BBYE"  discription="本币余额" emptyCheck="true" endLength="20"  valueDecimalLength="2"></checkFieldBasic>
+          <checkFieldBasic name="WBYE"  discription="外币余额" endLength="20"  valueDecimalLength="2"></checkFieldBasic>
+          <checkFieldBasic name="DJYE"  discription="冻结余额" emptyCheck="true" endLength="20"  valueDecimalLength="2"></checkFieldBasic>
+          <checkFieldBasic name="BLJE"  discription="保留金额" endLength="20"  valueDecimalLength="2"></checkFieldBasic>
+          <checkFieldBasic name="BNLJXFJE"  discription="本年累计消费金额" endLength="20"  valueDecimalLength="2"></checkFieldBasic>
+          <checkFieldBasic name="LSED"  discription="临时额度" endLength="20"  valueDecimalLength="2"></checkFieldBasic>
+          <checkFieldBasic name="DQQFJE"  discription="当前欠费金额" emptyCheck="true" endLength="20"  valueDecimalLength="2"></checkFieldBasic>
+          <checkFieldBasic name="DBLX"  discription="担保类型" endLength="4" ></checkFieldBasic>
+          <checkFieldBasic name="DBSM"  discription="担保说明" endLength="400" ></checkFieldBasic>
+          <checkFieldBasic name="DKWJFL"  discription="贷款五级分类" endLength="4" ></checkFieldBasic>
+          <checkFieldBasic name="DQTZLX"  discription="当前透支利息" endLength="20" digitalCheck="true" valueDecimalLength="2"></checkFieldBasic>
+          <checkFieldBasic name="ZHDHJYRQ"  discription="最后动户交易日期" ignoreVal="999991231" emptyCheck="true" dateCheck="true"  startLength="8" endLength="8"></checkFieldBasic>
+          <checkFieldBasic name="CJRQ"  discription="采集日期" ignoreVal="999991231" emptyCheck="true" dateCheck="true"  startLength="8" endLength="8"></checkFieldBasic>				
+				</checkFieldBasicList>
+				<checkFieldEffectiveList>                                      
+         <checkFieldEffective name="ZJLB" discription="证件类别" >   
+         	<value>身份证</value>
+          <value>军官证</value>
+          <value>警官证</value>
+          <value>士兵证</value>
+          <value>户口簿</value>
+          <value>临时身份证</value>
+          <value>护照</value>
+          <value>港澳居民来往内地通行证</value>
+          <value>台湾同胞来往内地通行证</value>
+          <value>外国人居留证</value>
+          <value>其他证件</value>
+                                           
+         </checkFieldEffective> 
+         <checkFieldEffective name="KPZT" discription="卡片状态" >  
+         	<value>正常</value>
+          <value>冻结</value>
+          <value>注销</value>
+          <value>其他</value>
+          
+          
+                        
+         </checkFieldEffective>
+         <checkFieldEffective name="YGKBZ" discription="员工卡标志" >
+         	<value>是</value>
+          <value>否</value>
+
+         </checkFieldEffective>                             
+         <checkFieldEffective name="FSKBZ" discription="附属卡标志" >
+         	 <value>是</value>
+           <value>否</value>                                             
+         </checkFieldEffective>
+         <checkFieldEffective name="NFBZ" discription="年费标志" > 
+         	 <value>是</value>
+           <value>否</value>                                              
+         </checkFieldEffective>
+         <checkFieldEffective name="ZHZT" discription="账户状态" > 
+         	<value>正常</value>
+          <value>冻结</value>
+          <value>注销</value>         
+          <value>其他</value>
+                                             
+         </checkFieldEffective>
+         <checkFieldEffective name="DBLX" discription="担保类型" >
+         	<value>保证</value>
+          <value>抵押</value>
+          <value>质押</value>
+          
+                              
+         </checkFieldEffective> 
+         <checkFieldEffective name="HKWJFL" discription="贷款五级分类" >
+          <value>正常</value>
+          <value>关注</value>
+          <value>次级</value>
+          <value>可疑</value>
+          <value>损失</value>
+         </checkFieldEffective>                              
+                                                                                             
+       </checkFieldEffectiveList> 
+				</checkTable>
+				</checkInstance>
+</reportCheckRoot>

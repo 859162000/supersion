@@ -1,0 +1,108 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<securityRoot>
+	
+  	<!--
+  	
+	<function>
+		 <functionCode>ReportManagementCenter</functionCode>
+		 <functionName>报表处理中心</functionName>
+		 <actionName>Framework/NavigationPage.jsp?id=ReportManagementCenter</actionName>
+	</function>
+	    
+	<function>
+		 <functionCode>DownloadManger</functionCode>
+		 <functionName>报文下载</functionName>
+		 <actionName>Framework/NavigationPage.jsp?id=DownloadManger</actionName>
+	</function>
+	    
+  
+   --><!--<function>
+	     <functionCode>ReportSystemManager</functionCode>
+	     <functionName>ReportManager-报表系统</functionName>
+	     <actionName>Framework/NavigationPage.jsp?id=ReportSystemManager</actionName>
+     </function>
+     
+      <function>
+	     <functionCode>ReportDefinition</functionCode>
+	     <functionName>ReportManager-报表定义器</functionName>
+	     <actionName>Framework/NavigationPage.jsp?id=ReportDefinition</actionName>
+     </function>
+     
+      <function>
+	     <functionCode>RoleFunctionManager</functionCode>
+	     <functionName>ReportManager-规则功能</functionName>
+	     <actionName>Framework/NavigationPage.jsp?id=RoleFunctionManager</actionName>
+     </function>
+     
+     <function>
+	     <functionCode>ModelManager</functionCode>
+	     <functionName>ReportManager-模型管理</functionName>
+	     <actionName>Framework/NavigationPage.jsp?id=ModelManager</actionName>
+     </function>
+     
+     <function>
+	     <functionCode>DataManagerment</functionCode>
+	     <functionName>ReportManager-数据处理功能</functionName>
+	     <actionName>Framework/NavigationPage.jsp?id=DataManagerment</actionName>
+     </function>
+     
+     -->
+   
+   <function>
+   	 <functionParentId>DataManagerment</functionParentId>
+     <functionCode>ReportSystemManagerFKBW</functionCode>
+     <functionName>ReportManager-反馈报文及修改数据</functionName>
+     <actionName>framework/FKBWShowListLevelFKBWAutoDTOMX-*</actionName>
+     <actionName>framework/FKBWShowSaveLevelFKBWAutoDTOMX-*</actionName>
+     <actionName>framework/FKBWShowCheckUpdateLevelFKBWAutoDTOMX-*</actionName>
+     <actionName>framework/FKBWSave-*</actionName>
+     <actionName>framework/ShowListLevelQYZXCJFKBWSub-*</actionName>
+     <actionName>framework/FKBWValidateUpdateLevelFKBWAutoDTO*-*</actionName>
+     <actionName>framework/FKBWShowInputUpdate*-*</actionName>
+     <actionName>framework/FKBWShowInputSave*-*</actionName>
+     <actionName>framework/FKBWShowSaveLevelFKBWAutoDTOMX-*</actionName>
+     <actionName>framework/FKBWShowCheckUpdateLevelFKBWAutoDTO-*</actionName>
+     <actionName>framework/FKBWShowCheckUpdateLevelFKBWAutoDTOMX-*</actionName>
+     <actionName>framework/FKBWShowInputUpdateLevelFKBWAutoDTOMX-*</actionName>
+     <actionName>framework/FKBWShowInputSaveLevelFKBWAutoDTOMX*-*</actionName>
+     <actionName>framework/ValidateUpdate-*</actionName>
+     <actionName>framework/FKBWSaveLevelFKBWAutoDTOMX-*</actionName>
+     <actionName>framework/FKBWUpdateLevelFKBWAutoDTOMX-*</actionName>
+     <actionName>framework/BackPreviousFirstLevelFKBWAutoDTOMX-*</actionName>
+     <actionName>framework/DeleteListByIdListLevelFKBWAutoDTOMX-*</actionName>
+     <actionName>framework/ShowListLevelFKBWAutoDTOMX-*</actionName>
+     <actionName>framework/ShowUpdateLevelFKBWAutoDTOMX-*</actionName>
+     <actionName>framework/BackFirstLevelFKBWAutoDTOMX-*</actionName>
+     <actionName>framework/UpdateLevelFKBWAutoDTOMX-*</actionName>
+     <actionName>framework/ShowSaveLevelFKBWAutoDTOMX-*</actionName>
+     <actionName>framework/SaveLevelFKBWAutoDTOMX-*</actionName>
+     <actionName>framework/FKBWOneToOneSaveLevelAutoDTOMX-*</actionName>
+     <actionName>framework/FKBWOneToOneUpdateLevelAutoDTOMX-*</actionName>
+     <actionName>framework/FKBWOneToOneShowSaveLevelAutoDTOMX-*</actionName>
+     <actionName>framework/FKBWOneToOneShowUpdateLevelAutoDTOMX-*</actionName>
+     <actionName>framework/MXExportAllDataLevelFKBWAutoDTOMX-*</actionName>
+     <actionName>framework/ImportDataLevelFKBWAutoDTOMX-*</actionName>
+     <actionName>framework/FKBWOneToOneShowInputSaveLevelFKBWAutoDTOMX-*</actionName>
+     <actionName>framework/FKBWOneToOneShowInputUpdateLevelFKBWAutoDTOMX-*</actionName>
+     <actionName>framework/ReportOneToOneImportDataLevelFKBWAutoDTOMX-*</actionName>
+     <actionName>framework/FKBWShowInputUpdateQYZXCWBBRedirectByXXJLLXLevelFKBWAutoDTOMX-*</actionName>
+   </function>
+   
+    <function>
+    	<functionParentId>InstManagement</functionParentId>
+		<functionCode>ReportInstInfo</functionCode>
+		<functionName>报文汇总机构管理</functionName>
+		<actionName>framework/ShowList-report.dto.ReportInstInfo</actionName>
+		<actionName>*-report.dto.ReportInstInfo</actionName>
+		<actionName>*-report.dto.ReportInstSubInfo</actionName>
+	</function>
+	
+	<function>
+		<functionParentId>DeskTop</functionParentId>
+	   <functionCode>DownloadResourceStoreroom</functionCode>
+	   <functionName>CoreSystem-下载资源库</functionName>
+	   <actionName>framework/ShowList-report.dto.DownloadResource</actionName>
+	   <actionName>*-report.dto.DownloadResource</actionName>
+	</function>
+	
+</securityRoot>

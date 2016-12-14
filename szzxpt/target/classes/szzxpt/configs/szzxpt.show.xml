@@ -1,0 +1,135 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<fieldShowsRoot>
+ <fieldShowsEntity>
+      <className>szzxpt.dto.WHZHDownload</className>
+      <showInstance>
+        <showInstanceName>1</showInstanceName>
+        <fieldName fieldName="strReportCode" listVisible="false"></fieldName>
+        <fieldName fieldName="YWFSRQ" listVisible="false"></fieldName>
+        <fieldName fieldName="strReportCode" listVisible="false"></fieldName>
+        <fieldName fieldName="strJRJGCode" listVisible="false"></fieldName>
+        <fieldName fieldName="strReportName" width="200"></fieldName>
+        <fieldName fieldName="strSendType" listVisible="false"></fieldName>
+        <fieldName fieldName="strReportCode" listVisible="false"></fieldName>
+      </showInstance>
+	</fieldShowsEntity>
+	
+	<fieldShowsEntity>
+      <className>szzxpt.dto.AutoDTO_WGJ_ACC_CA</className>
+      <showInstance>
+        <showInstanceName>1</showInstanceName>
+        <fieldName fieldName="BUSINESS_DATE" singleTag="dateFieldNoSlash"></fieldName>
+        <fieldName fieldName="CURRENCY_code"  singleTag="selectExtendField"></fieldName>
+      </showInstance>
+      <showInstance>
+        <showInstanceName>2</showInstanceName>
+        <fieldName fieldName="BUSINESS_DATE" singleTag="dateFieldNoSlash"></fieldName>
+        <fieldName fieldName="CURRENCY_code"  singleTag="textField"></fieldName>
+        <fieldName fieldName="ACTIONTYPE"  multipleSelect="true"></fieldName>
+        <fieldName fieldName="accountSTAT"  multipleSelect="true"></fieldName>
+        <fieldName fieldName="RPTCheckType" width="100"  multipleSelect="true"></fieldName>
+        <fieldName fieldName="RPTSubmitStatus" width="100"  multipleSelect="true"></fieldName>
+        <fieldName fieldName="RPTVerifyType" width="100"  multipleSelect="true"></fieldName>
+        <fieldName fieldName="RPTSendType" width="100"  multipleSelect="true"></fieldName>
+        <fieldName fieldName="RPTFeedbackType" width="100"  multipleSelect="true"></fieldName>
+      </showInstance>
+       <showInstance>
+        <showInstanceName>7</showInstanceName>
+        <fieldName fieldName="BUSINESS_DATE" singleTag="dateFieldNoSlash"></fieldName>
+        <fieldName fieldName="CURRENCY_code"  singleTag="textField"></fieldName>
+        <fieldName fieldName="ACTIONTYPE"  multipleSelect="true"></fieldName>
+        <fieldName fieldName="accountSTAT"  multipleSelect="true"></fieldName>
+        <fieldName fieldName="RPTCheckType" width="100"  multipleSelect="true"></fieldName>
+        <fieldName fieldName="RPTSubmitStatus" width="100"  multipleSelect="true"></fieldName>
+        <fieldName fieldName="RPTVerifyType" width="100"  multipleSelect="true"></fieldName>
+        <fieldName fieldName="RPTSendType" width="100"  multipleSelect="true"></fieldName>
+        <fieldName fieldName="RPTFeedbackType" width="100"  multipleSelect="true"></fieldName>
+      </showInstance>
+      <showInstance>
+        <showInstanceName>CK</showInstanceName>
+        <fieldName fieldName="BUSINESS_DATE" singleTag="dateFieldNoSlash"></fieldName>
+        <fieldName fieldName="CURRENCY_code"  singleTag="textField"></fieldName>
+        <fieldName fieldName="ACTIONTYPE"  multipleSelect="true"></fieldName>
+        <fieldName fieldName="accountSTAT"  multipleSelect="true"></fieldName>
+        <fieldName fieldName="RPTCheckType" width="100"  multipleSelect="true"></fieldName>
+        <fieldName fieldName="RPTSubmitStatus" width="100"  multipleSelect="true"></fieldName>
+        <fieldName fieldName="RPTVerifyType" width="100"  multipleSelect="true"></fieldName>
+        <fieldName fieldName="RPTSendType" width="100"  multipleSelect="true"></fieldName>
+        <fieldName fieldName="RPTFeedbackType" width="100"  multipleSelect="true"></fieldName>
+      </showInstance>
+	</fieldShowsEntity>
+	
+	<fieldShowsEntity>
+      <className>szzxpt.dto.AutoDTO_WGJ_ACC_CB</className>
+      <showInstance>
+        <showInstanceName>1</showInstanceName>
+        <fieldName fieldName="deal_date" singleTag="dateFieldNoSlash"></fieldName>
+        <fieldName fieldName="CURRENCY_code"  singleTag="selectExtendField"></fieldName>
+      </showInstance>
+      <showInstance>
+        <showInstanceName>2</showInstanceName>
+       	<fieldName fieldName="deal_date" singleTag="dateFieldNoSlash"></fieldName>
+        <fieldName fieldName="CURRENCY_code" singleTag="textField"></fieldName>
+        <fieldName fieldName="ACTIONTYPE"  multipleSelect="true"></fieldName>
+        <fieldName fieldName="RPTCheckType" width="100"  multipleSelect="true"></fieldName>
+        <fieldName fieldName="RPTSubmitStatus" width="100"  multipleSelect="true"></fieldName>
+        <fieldName fieldName="RPTVerifyType" width="100"  multipleSelect="true"></fieldName>
+        <fieldName fieldName="RPTSendType" width="100"  multipleSelect="true"></fieldName>
+        <fieldName fieldName="RPTFeedbackType" width="100"  multipleSelect="true"></fieldName>
+      </showInstance>
+      <showInstance>
+        <showInstanceName>7</showInstanceName>
+	        <fieldName fieldName="deal_date" singleTag="dateFieldNoSlash"></fieldName>
+	        <fieldName fieldName="CURRENCY_code" singleTag="textField"></fieldName>
+	        <fieldName fieldName="ACTIONTYPE"  multipleSelect="true"></fieldName>
+	        <fieldName fieldName="RPTCheckType" width="100"  multipleSelect="true"></fieldName>
+	        <fieldName fieldName="RPTSubmitStatus" width="100"  multipleSelect="true"></fieldName>
+	        <fieldName fieldName="RPTVerifyType" width="100"  multipleSelect="true"></fieldName>
+	        <fieldName fieldName="RPTSendType" width="100"  multipleSelect="true"></fieldName>
+	        <fieldName fieldName="RPTFeedbackType" width="100"  multipleSelect="true"></fieldName>
+      </showInstance>
+       <showInstance>
+        <showInstanceName>CK</showInstanceName>
+	        <fieldName fieldName="deal_date" singleTag="dateFieldNoSlash"></fieldName>
+	        <fieldName fieldName="CURRENCY_code" singleTag="textField"></fieldName>
+	        <fieldName fieldName="ACTIONTYPE"  multipleSelect="true"></fieldName>
+	        <fieldName fieldName="RPTCheckType" width="100"  multipleSelect="true"></fieldName>
+	        <fieldName fieldName="RPTSubmitStatus" width="100"  multipleSelect="true"></fieldName>
+	        <fieldName fieldName="RPTVerifyType" width="100"  multipleSelect="true"></fieldName>
+	        <fieldName fieldName="RPTSendType" width="100"  multipleSelect="true"></fieldName>
+	        <fieldName fieldName="RPTFeedbackType" width="100"  multipleSelect="true"></fieldName>
+      </showInstance>
+	</fieldShowsEntity> 
+	
+	<fieldShowsEntity>
+      <className>szzxpt.dto.YWDATA</className>
+      <showInstance>
+        <showInstanceName>1</showInstanceName>
+        <fieldName fieldName="AUTOID" listVisible="false"></fieldName>
+        <fieldName fieldName="DATTIME" singleTag="dateFieldNoSlash"></fieldName>
+      </showInstance>
+	</fieldShowsEntity>
+	
+	<fieldShowsEntity>
+      <className>szzxpt.dto.WHZHCJFKBW</className>
+      <showInstance>
+        <showInstanceName>1</showInstanceName>
+        <fieldName fieldName="dtInportTime" width="180"></fieldName>
+        <fieldName fieldName="strBWCCWJM" width="180"></fieldName>
+        <fieldName fieldName="strDiscription" width="350"></fieldName>
+      </showInstance>
+	</fieldShowsEntity>
+	
+	<fieldShowsEntity>
+      <className>szzxpt.dto.WHZHCJFKBWSub</className>
+      <showInstance>
+        <showInstanceName>1</showInstanceName>
+        <fieldName fieldName="WHZHCJFKBW" listVisible="false"></fieldName>
+        <fieldName fieldName="BUSSNO" width="200"></fieldName>
+        <fieldName fieldName="ERRFIELD" width="200"></fieldName>
+        <fieldName fieldName="ERRFIELDCN" width="200"></fieldName>
+        <fieldName fieldName="ERRDESC" width="250"></fieldName>
+      </showInstance>
+	</fieldShowsEntity>
+	
+</fieldShowsRoot>

@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans
+	xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns:p="http://www.springframework.org/schema/p"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-3.0.xsd">
+
+    
+     
+     <!-- 新增时配置默认显示值，以AutoDTO_NCR_1_1表为例 -->
+       <bean id="autoDTO_NCR_1_1ShowSaveLevelAUTODTOService" parent="singleObjectShowSaveLevelAUTODTOService">
+        <property name="defaultValueMap">
+             <map>
+                <entry key="A" value="2"></entry><!--客户类型-->
+                <entry key="B" value="XXX有限责任公司"></entry><!--客户名称-->
+                <entry key="C" value="75346870-X"></entry><!--客户代码-->
+                <entry key="D" value="CHN"></entry><!--客户国籍代码-->
+                <entry key="E" value="F080B101430101101"></entry><!--授信银行代码-->
+                <entry key="F" value="长沙银行"></entry><!--授信银行名称-->
+                <entry key="G" value="C2014030000002621"></entry><!--授信号码-->
+                <entry key="H" value="100.00"></entry><!--授信额度(万元)-->
+                <entry key="I" value="0.00"></entry><!--贷款授信额度(万元)-->
+                <entry key="J" value="20140101"></entry><!--授信起始日期-->
+                <entry key="K" value="20141231"></entry><!--授信到期日期-->
+                <entry key="L" value="100.00"></entry><!--贷款余额(万元)-->
+                <entry key="M" value="0.00"></entry><!--持有债券余额(万元)-->
+                <entry key="N" value="0.00"></entry><!--持有股权余额(万元)-->
+                <entry key="O" value="0.00"></entry><!--其他表内信用风险资产余额(万元)-->
+                <entry key="P" value="0.00"></entry><!--表外业务余额(万元)-->
+                <entry key="Q" value="100.00"></entry><!--现有业务余额占用授信额度(万元)-->
+                <entry key="R" value="100.00"></entry><!--贷款余额占用贷款授信额度(万元)-->
+                <entry key="S" value="0.00"></entry><!--尚可使用授信额度(万元)-->
+                <entry key="T" value="0.00"></entry><!--尚可使用贷款授信额度(万元)-->
+                <entry key="U" value="2"></entry><!--关联方授信标识-->
+             </map>
+        </property>
+        </bean>
+</beans>

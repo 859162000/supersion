@@ -1,0 +1,125 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<securityRoot>
+   <!-- <function>
+     <functionCode>A01</functionCode>
+     <functionName>Htable</functionName>
+     <actionName>framework/ShowList-testsystem.dto.Htable</actionName>
+     <actionName>*-testsystem.dto.Htable</actionName>
+   </function>
+   <function>
+     <functionCode>A02</functionCode>
+     <functionName>Htable1</functionName>
+     <actionName></actionName>
+     <actionName></actionName>
+     <actionName></actionName>
+     <actionName></actionName>
+   </function>-->
+   <!--
+   
+   
+     <function>
+	     <functionCode>TestOnetoTableStatisicalBBBB</functionCode>
+	     <functionName>测试单表的统计功能</functionName>
+	     <actionName>Framework/NavigationPage.jsp?id=TestOnetoTableStatisicalBBBB</actionName>
+	   </function>
+    <function>
+    
+     <functionCode>TestOnetoTableStatisical</functionCode>
+     <functionName>测试单表的统计</functionName>
+     <actionName>framework/ShowSingleStatistical-testsystem.dto.TestOnetoTableStatisical</actionName>
+     <actionName>*-testsystem.dto.TestOnetoTableStatisical</actionName>
+   </function>
+   
+--><!--
+
+ <function>
+   	 <functionParentId>DeskTop</functionParentId>
+     <functionCode>Test1</functionCode>
+     <functionName>ZTest-Test1</functionName>
+     <actionName>framework/ShowList-testsystem.dto.Test1</actionName>
+     <actionName>*-testsystem.dto.Test1</actionName>
+   </function>
+   
+   <function>
+     <functionParentId>DeskTop</functionParentId>
+     <functionCode>TestStatistical</functionCode>
+     <functionName>ZTest-TestStatistical</functionName>
+     <actionName>framework/ShowStatisticalCount-testsystem.dto.TestStatistical</actionName>
+     <actionName>*-testsystem.dto.TestStatistical</actionName>
+   </function>
+   
+ <function>
+         <functionParentId>DeskTop</functionParentId>
+	     <functionCode>ModelPathExportData</functionCode>
+	     <functionName>ZTest-测试导出模板功能</functionName>
+	     <actionName>Framework/NavigationPage.jsp?id=ModelPathExportData</actionName>
+	   </function>
+	   
+    <function>
+    	 <functionParentId>DeskTop</functionParentId>
+	     <functionCode>Z01_Test</functionCode>
+	     <functionName>ZTest-Z01-填报单位基本信息</functionName>
+	     <actionName>framework/ShowList-wgjreportsystem.dto.AutoDTO_WGJ_Z01</actionName>
+	     <actionName>*-wgjreportsystem.dto.AutoDTO_WGJ_Z01</actionName>
+   </function>-->
+
+ <!-- 用于测试扩展 -->
+   <function>
+   		<functionParentId>DeskTop</functionParentId>
+	     <functionCode>TestComponentShowSaveOrUpdate</functionCode>
+	     <functionName>测试框架扩展</functionName>
+	     <actionName>Framework/NavigationPage.jsp?id=TestComponentShowSaveOrUpdate</actionName>
+   </function>
+ 
+    <function>
+     <functionParentId>DBGS</functionParentId>
+     <functionCode>AutoDTO_DB_DBXX_JC</functionCode>
+     <functionName>AutoDTO_DB_DBXX_JC</functionName>
+     <actionName>framework/ShowList-dbgssystem.dto.AutoDTO_DB_DBXX_JC</actionName>
+     <actionName>framework/*-dbgssystem.dto.AutoDTO_DB_DBXX_JC</actionName>
+     <actionName>framework/*-dbgssystem.dto.AutoDTO_DB_DBHTXX</actionName>
+   </function>
+   
+    <function>
+     <functionParentId>TestComponentShowSaveOrUpdate</functionParentId>
+     <functionCode>View_AutoDTO_DB_DBXX_JC</functionCode>
+     <functionName>View_AutoDTO_DB_DBXX_JC</functionName>
+     <actionName>framework/ShowViewStatistical-testsystem.dto.View_AutoDTO_DB_DBXX_JC</actionName>
+     <actionName>framework/*-testsystem.dto.View_AutoDTO_DB_DBXX_JC</actionName>
+   </function>
+   
+    <function>
+     <functionParentId>TestComponentShowSaveOrUpdate</functionParentId>
+     <functionCode>VIEW_GRZX_DKXXSJCX</functionCode>
+     <functionName>VIEW_GRZX_DKXXSJCX</functionName>
+     <actionName>framework/ShowViewStatistical-testsystem.dto.VIEW_GRZX_DKXXSJCX</actionName>
+     <actionName>framework/*-testsystem.dto.VIEW_GRZX_DKXXSJCX</actionName>
+   </function>
+   
+   <function>
+     <functionParentId>TestComponentShowSaveOrUpdate</functionParentId>
+     <functionCode>TJPM</functionCode>
+     <functionName>TJPM</functionName>
+     <actionName>framework/ShowList-testsystem.dto.TJPM</actionName>
+     <actionName>framework/*-testsystem.dto.TJPM</actionName>
+   </function>
+   
+   <function>
+     <functionParentId>TestComponentShowSaveOrUpdate</functionParentId>
+     <functionCode>TestProcedure</functionCode>
+     <functionName>TestProcedure</functionName>
+     <actionName>framework/ShowProcedureStatistical-testsystem.dto.TestProcedure</actionName>
+     <actionName>framework/*-testsystem.dto.TestProcedure</actionName>
+     
+   </function>
+   
+   <function>
+     <functionParentId>TestComponentShowSaveOrUpdate</functionParentId>
+     <functionCode>AutoDTO_TestImportExport</functionCode>
+     <functionName>AutoDTO_TestImportExport</functionName>
+     <actionName>framework/ShowList-testsystem.dto.AutoDTO_TestImportExport</actionName>
+     <actionName>framework/*-testsystem.dto.AutoDTO_TestImportExport</actionName>
+     
+   </function>
+   
+</securityRoot>

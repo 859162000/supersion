@@ -1,0 +1,4 @@
+CREATE OR REPLACE PACKAGE sys_refcursor
+AS
+END;
+

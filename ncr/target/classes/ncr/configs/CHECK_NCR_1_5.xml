@@ -1,0 +1,48 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<reportCheckRoot>
+	<checkInstance name="Check_NCR_1_5">
+		<paramValueList>
+			<paramValue name="DTDATE" value="2013-12-09"></paramValue>
+			<paramValue name="strInstCode" value=""></paramValue>
+			<!--
+		  <paramValue name="strTaskRptInstID" value="000000"></paramValue>
+			<paramValue name="strFreq" value="000000"></paramValue> 
+			-->
+		</paramValueList>
+
+		<freqCode value="4"></freqCode>
+
+		<checkTable procedureName="CHECK_NCR_1_5" procedureParam="DTDATE,strInstCode,rt" procedureDiscription="持有企业股权明细"
+			originTable="NCR_1_5" errorStateField="RPTCHECKTYPE" errorStateValue="3"  successStateValue="2" 
+			defaultLogicDaoBeanId="oracleProcedureResultSetDao">
+			<paramFieldList>
+				<paramField paramName="DTDATE" field="DTDATE" type="2"></paramField>
+					<paramField paramName="strInstCode" field="INSTINFO" type="1"></paramField>
+			</paramFieldList>
+			
+			<checkUniqueFieldList>
+				<checkUniqueField name="AUTOID" discription="主键" originField="AUTOID"></checkUniqueField>
+			</checkUniqueFieldList>
+			
+			<checkFieldBasicList discription="表内基础校验">
+				<checkFieldBasic name="A" discription="银行持股企业名称" emptyCheck="true" startLength="2" ignoreVal="*********"></checkFieldBasic>
+				<checkFieldBasic name="B" discription="银行持股企业代码" emptyCheck="true" startLength="2"></checkFieldBasic>
+				<checkFieldBasic name="C" discription="持有行机构代码"  emptyCheck="true" startLength="17"  endLength="17"></checkFieldBasic>
+				<checkFieldBasic name="D" discription="授信号码" emptyCheck="true" startLength="2" ></checkFieldBasic>
+				<checkFieldBasic name="E" discription="账面余额" valueDecimalMin="0" emptyCheck="true" valueDecimalLength="2" ></checkFieldBasic>
+			</checkFieldBasicList>
+
+			<checkFieldCaseWhenList discription="caseWhen校验">						
+			</checkFieldCaseWhenList>
+
+			<checkFieldEffectiveList discription="有效性校验">				
+			</checkFieldEffectiveList>
+
+			<checkFieldLineList discription="非聚合校验">
+				</checkFieldLineList>
+
+			<checkFieldOrList discription="条件校验">
+			</checkFieldOrList>		
+		</checkTable>
+	</checkInstance>
+</reportCheckRoot>

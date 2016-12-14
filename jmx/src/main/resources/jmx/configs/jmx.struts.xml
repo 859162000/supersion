@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE struts PUBLIC "-//Apache Software Foundation//DTD Struts Configuration 2.1//EN" "http://struts.apache.org/dtds/struts-2.1.dtd">
+<struts>
+	<!-- framework -->
+	<package name="jmxframework" extends="framework.default" namespace="/framework">
+		<action name="ShowList-jmx.dto.J_Server" class="singleObjectShowListAction">
+			<result name="success">/jmx/ShowServerList.jsp</result>
+		</action>
+		<action name="ShowList-jmx.dto.J_Db" class="singleObjectShowListAction">
+			<result name="success">/jmx/ShowDbList.jsp</result>
+		</action>
+		<action name="ShowList-jmx.dto.J_App" class="singleObjectShowListAction">
+			<result name="success">/jmx/ShowAppList.jsp</result>
+		</action>
+		<action name="ShowList-jmx.dto.J_Task" class="singleObjectShowListAction">
+			<result name="success">/jmx/ShowTaskList.jsp</result>
+		</action>
+	</package>
+	
+	<!-- jmx -->
+	<package name="jmx" extends="framework.default" namespace="/jmx">
+		<action name="showServerChart" class="jmx.action.ShowServerChartAction">
+			<result name="success">/jmx/ShowServerChart.jsp</result>
+		</action>
+	</package>
+	
+	<!--AJAX JSON Used -->
+	<package name='jmxajax' extends="json-default" namespace="/jmx">
+		<action name="jmxTask" class="jmxTaskAction">
+			<result name="success" type="json">
+				<param name="root">serviceResult</param>
+			</result>
+		</action>
+		<action name="showCpu" class="showCpuAction">
+			<result name="success" type="json">
+				<param name="root">serviceResult</param>
+			</result>
+		</action>
+		<action name="showMem" class="showMemAction">
+			<result name="success" type="json">
+				<param name="root">serviceResult</param>
+			</result>
+		</action>
+		<action name="showJC" class="showJCAction">
+			<result name="success" type="json">
+				<param name="root">serviceResult</param>
+			</result>
+		</action>
+	</package>
+</struts>    

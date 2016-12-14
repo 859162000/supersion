@@ -1,0 +1,510 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE struts PUBLIC "-//Apache Software Foundation//DTD Struts Configuration 2.1//EN" "http://struts.apache.org/dtds/struts-2.1.dtd">
+<struts>
+
+	<package name="itemreportframework" extends="framework.default" namespace="/framework">
+		<action name="TaskRptInstSubmitStatusALLUpdateField*-*" class="rptSubmitStatusALLUpdateFieldAction">
+			<result name="success" type="redirectAction">
+				<param name="message">${serviceResult.message}</param>
+				<param name="actionName">ShowAlertMessage.action</param>
+				<param name="redirectActionName">TaskRptInstShowListForTree{1}-{2}</param>
+				<param name="redirectActionNamespace">/framework</param>
+			</result>
+			<result name="error" type="redirectAction">
+				<param name="message">${serviceResult.message}</param>
+				<param name="actionName">ShowAlertMessage.action</param>
+				<param name="redirectActionName">TaskRptInstShowListForTree{1}-{2}</param>
+				<param name="redirectActionNamespace">/framework</param>
+			</result>
+		</action>
+
+		<action name="RptSubmitStatusALLForceUpdateField*-*" class="rptSubmitStatusALLForceUpdateFieldAction">
+			<result name="success" type="redirectAction">
+				<param name="message">${serviceResult.message}</param>
+				<param name="actionName">ShowAlertMessage.action</param>
+				<param name="redirectActionName">TaskRptInstShowListForTree-report.dto.TaskRptInst</param>
+				<param name="redirectActionNamespace">/framework</param>
+			</result>
+			<result name="error" type="redirectAction">
+				<param name="message">${serviceResult.message}</param>
+				<param name="actionName">ShowAlertMessage.action</param>
+				<param name="redirectActionName">TaskRptInstShowListForTree-report.dto.TaskRptInst</param>
+				<param name="redirectActionNamespace">/framework</param>
+			</result>
+		</action>
+
+
+
+		<action name="SHReviewShowListForTree-report.dto.TaskRptInst"
+			class="taskRptInstSHReviewShowListForTreeAction">
+			<result name="success">/Framework/ShowList.jsp</result>
+		</action>
+		<action name="TreeNodeSave-report.dto.ItemInfo" class="singleObjectSaveAction">
+			<result name="success" type="redirectAction">
+				<param name="message">${serviceResult.message}</param>
+				<param name="actionName">ShowAlertMessage</param>
+				<param name="redirectActionName">ShowListForTree-report.dto.ItemInfo</param>
+				<param name="redirectActionNamespace">/framework</param>
+			</result>
+			<result name="error" type="redirectAction">
+				<param name="actionName">ShowAlertMessage</param>
+				<param name="message">${serviceResult.message}</param>
+			</result>
+			<result name="input" type="chain">
+				<param name="actionName">ShowInputSave-report.dto.ItemInfo</param>
+			</result>
+		</action>
+
+		<action name="TreeNodeDelete-report.dto.ItemInfo" class="singleObjectDeleteListByIdListAction">
+			<result name="success" type="redirectAction">
+				<param name="message">${serviceResult.message}</param>
+				<param name="actionName">ShowAlertMessage.action</param>
+				<param name="redirectActionName">ShowListForTree-report.dto.ItemInfo</param>
+				<param name="redirectActionNamespace">/framework</param>
+			</result>
+			<result name="error" type="redirectAction">
+				<param name="message">${serviceResult.message}</param>
+				<param name="actionName">ShowAlertMessage.action</param>
+				<param name="redirectActionName">ShowListForTree-report.dto.ItemInfo</param>
+				<param name="redirectActionNamespace">/framework</param>
+			</result>
+		</action>
+		
+		<action name="TreeNodeDelete-report.dto.CalculationRule" class="singleObjectDeleteListByIdListAction">
+			<result name="success" type="redirectAction">
+				<param name="message">${serviceResult.message}</param>
+				<param name="actionName">ShowAlertMessage.action</param>
+				<param name="redirectActionName">ShowListForTree-report.dto.CalculationRule</param>
+				<param name="redirectActionNamespace">/framework</param>
+			</result>
+			<result name="error" type="redirectAction">
+				<param name="message">${serviceResult.message}</param>
+				<param name="actionName">ShowAlertMessage.action</param>
+				<param name="redirectActionName">ShowListForTree-report.dto.CalculationRule</param>
+				<param name="redirectActionNamespace">/framework</param>
+			</result>
+		</action>
+
+
+		<action name="TaskRptInstShowList*-*" class="singleObjectShowListAction">
+			<result name="success">/Report/TaskRptInstShowList.jsp</result>
+		</action>
+
+		<!-- 任务列表树 -->
+		<action name="TaskShowTree*-*" class="taskShowTreeAction">
+			<result name="success">/Framework/ShowTree.jsp</result>
+		</action>
+		
+		<!-- 数据汇总 -->
+		<action name="CDTaskShowTree*-*" class="taskShowTreeAction">
+			<result name="success">/Framework/ShowTree.jsp</result>
+		</action>
+	
+		<!-- 明细数据填报 -->
+		<action name="CDShowTree*-*" class="singleObjectShowTreeAction">
+				<result name="success">/Framework/ShowTree.jsp</result>
+		</action>
+	
+		<!-- 明细数据审核 -->
+		<action name="CDReviewShowTree*-*" class="ReviewShowTreeAction">
+				<result name="success">/Framework/ShowTree.jsp</result>
+		</action>
+		
+		<!-- 数据查看 -->
+		<action name="CDCKShowTree*-*" class="ReviewShowTreeAction">
+				<result name="success">/Framework/ShowTree.jsp</result>
+		</action>
+	</package>
+
+	<package name="itemreport" extends="framework.default" namespace="/report">
+		<action name="ShowCalcRuleCfg-*" class="showCalcRuleCfgAction">
+			<result name="success">/Report/ShowCalcRuleCfg.jsp</result>
+		</action>
+		<action name="ShowCalcRuleDetail-report.dto.ItemsCalculation"
+			class="showCalcRuleDetailAction">
+			<result name="success">/Report/CalcRuleDetail.jsp</result>
+		</action>
+		<action name="ExportReportData-report.dto.TaskRptInst" class="exportReportDataAction">
+			<result name="success" type="stream">
+				<param name="contentType">${serviceResult.contentType}</param>
+				<param name="inputName">inputStream</param>
+				<param name="contentDisposition">${serviceResult.contentDisposition}</param>
+				<param name="bufferSize">${serviceResult.bufferSize}</param>
+			</result>
+			<result name="error" type="redirectAction">
+				<param name="actionName">ShowAlertMessage</param>
+				<param name="message">${serviceResult.message}</param>
+			</result>
+		</action>
+
+		<action name="ImportReportData-report.dto.TaskRptInst" class="importReportDataAction">
+			<result name="success" type="redirectAction">
+				<param name="message">${serviceResult.message}</param>
+				<param name="actionName">ShowAlertMessage.action</param>
+				<param name="redirectActionName">TaskRptInstShowListForTree-report.dto.TaskRptInst</param>
+				<param name="redirectActionNamespace">/framework</param>
+			</result>
+			<result name="error" type="redirectAction">
+				<param name="actionName">ShowAlertMessage</param>
+				<param name="message">${serviceResult.message}</param>
+			</result>
+		</action>
+
+		<action name="ShowReport-*" class="ShowReportAction">
+			<result name="success">/Framework/ShowReport.jsp</result>
+			<result name="error" type="redirectAction">
+				<param name="actionName">ShowAlertMessage</param>
+				<param name="message">${serviceResult.message}</param>
+				<param name="redirectActionName">ShowTree-report.dto.TaskRptInst</param>
+				<param name="redirectActionNamespace">/framework</param>
+			</result>
+		</action>
+
+		<action name="ShowViewReport-*" class="ShowViewReportAction">
+			<result name="success">/Framework/ShowReport.jsp</result>
+			<result name="error" type="redirectAction">
+				<param name="actionName">ShowAlertMessage</param>
+				<param name="message">${serviceResult.message}</param>
+				<param name="redirectActionName">ShowTree-report.dto.TaskRptInst</param>
+				<param name="redirectActionNamespace">/framework</param>
+			</result>
+		</action>
+
+		<action name="EditTemplate-report.dto.RptInfo" class="editTemplateAction">
+			<result name="success">/Report/EditTemplate.jsp</result>
+			<result name="error" type="redirectAction">
+				<param name="actionName">ShowAlertMessage</param>
+				<param name="message">${serviceResult.message}</param>
+			</result>
+		</action>
+
+
+		<action name="Select-showRptSet" class="selectRptSetAction"></action>
+		
+		<action name="ShowAjax-ItemDataHistory" class="showItemDataHistoryAction"></action>
+
+		<action name="SubmitItems" class="SubmitItemsAction">
+			<result name="success" type="redirectAction">
+				<param name="actionName">ShowAlertMessage</param>
+				<param name="message">${serviceResult.message}</param>
+				<param name="redirectActionName">ShowReport-report.dto.TaskRptInst.action?id=${serviceResult.idValue}</param>
+				<param name="redirectActionNamespace">/report</param>
+			</result>
+			<result name="error" type="redirectAction">
+				<param name="actionName">ShowAlertMessage</param>
+				<param name="message">${serviceResult.message}</param>
+				<param name="redirectActionName">ShowReport-report.dto.TaskRptInst.action?id=${serviceResult.idValue}</param>
+				<param name="redirectActionNamespace">/report</param>
+			</result>
+		</action>
+		<action name="ItemDataTrace" class="ItemDataTraceAction" />
+		
+		<!-- 报表填报说明 -->
+		<action name="RepMark" class="repMarkAction"/>
+
+		<action name="UploadWebOfficeExcelFile" class="webOfficeUploadFileAction"></action>
+
+		<action name="ReportMerge-*" class="reportMergeAction">
+			<result name="success" type="redirectAction">
+				<param name="actionName">ShowAlertMessage</param>
+				<param name="message">${serviceResult.message}</param>
+				<param name="redirectActionName">ShowReport-report.dto.TaskRptInst.action?id=${serviceResult.idValue}</param>
+				<param name="redirectActionNamespace">/report</param>
+			</result>
+			<result name="error" type="redirectAction">
+				<param name="actionName">ShowAlertMessage</param>
+				<param name="message">${serviceResult.message}</param>
+			</result>
+		</action>
+
+		<action name="ReportSummary-*" class="reportSummaryAction">
+			<result name="success" type="redirectAction">
+				<param name="actionName">ShowAlertMessage</param>
+				<param name="message">${serviceResult.message}</param>
+			</result>
+			<result name="error" type="redirectAction">
+				<param name="actionName">ShowAlertMessage</param>
+				<param name="message">${serviceResult.message}</param>
+			</result>
+		</action>
+		
+		<!-- 数据汇总 -->
+		<action name="ReportsSummary-*" class="reportsSummaryAction">
+			<result name="success" type="redirectAction">
+				<param name="actionName">ShowAlertMessage</param>
+				<param name="message">${serviceResult.message}</param>
+			</result>
+			<result name="error" type="redirectAction">
+				<param name="actionName">ShowAlertMessage</param>
+				<param name="message">${serviceResult.message}</param>
+			</result>
+		</action>
+		
+		<action name="ReportsTopN-*" class="reportsTopNAction">
+			<result name="success" type="redirectAction">
+				<param name="actionName">ShowAlertMessage</param>
+				<param name="message">${serviceResult.message}</param>
+			</result>
+			<result name="error" type="redirectAction">
+				<param name="actionName">ShowAlertMessage</param>
+				<param name="message">${serviceResult.message}</param>
+			</result>
+		</action>
+		
+		
+		<action name="ReportCheckBack-report.dto.TaskRptInst" class="reportItemCheckAction">
+			<result name="success" type="redirectAction">
+				<param name="actionName">ShowAlertMessage</param>
+				<param name="message">${serviceResult.message}</param>
+				<param name="redirectActionName">ShowReport-report.dto.TaskRptInst.action?id=${serviceResult.idValue}</param>
+				<param name="redirectActionNamespace">/report</param>
+			</result>
+			<result name="error" type="redirectAction">
+				<param name="actionName">ShowAlertMessage</param>
+				<param name="message">${serviceResult.message}</param>
+				<param name="redirectActionName">ShowReport-report.dto.TaskRptInst.action?id=${serviceResult.idValue}</param>
+				<param name="redirectActionNamespace">/report</param>
+			</result>
+		</action>
+		<action name="ReportSumCheckBack-report.dto.TaskRptInst" class="reportSumCheckAction">
+			<result name="success" type="redirectAction">
+				<param name="actionName">ShowAlertMessage</param>
+				<param name="message">${serviceResult.message}</param>
+				<param name="redirectActionName">ShowReport-report.dto.TaskRptInst.action?id=${serviceResult.idValue}</param>
+				<param name="redirectActionNamespace">/report</param>
+			</result>
+			<result name="error" type="redirectAction">
+				<param name="actionName">ShowAlertMessage</param>
+				<param name="message">${serviceResult.message}</param>
+				<param name="redirectActionName">ShowReport-report.dto.TaskRptInst.action?id=${serviceResult.idValue}</param>
+				<param name="redirectActionNamespace">/report</param>
+			</result>
+		</action>
+
+
+		<action name="ExportReports*-report.dto.TaskRptInst" class="exportReportsAction">
+			<result name="success" type="stream">
+				<param name="contentType">${serviceResult.contentType}</param>
+				<param name="inputName">inputStream</param>
+				<param name="contentDisposition">${serviceResult.contentDisposition}</param>
+				<param name="bufferSize">${serviceResult.bufferSize}</param>
+			</result>
+			<result name="error" type="redirectAction">
+				<param name="actionName">ShowAlertMessage</param>
+				<param name="message">${serviceResult.message}</param>
+			</result>
+		</action>
+		
+		<action name="ReportsCheck*-report.dto.TaskRptInst" class="reportsCheckAction">
+			<result name="success" type="redirectAction">
+				<param name="message">${serviceResult.message}</param>
+				<param name="actionName">ShowAlertMessage.action</param>
+				<param name="redirectActionName">TaskRptInstShowListForTree-report.dto.TaskRptInst</param>
+				<param name="redirectActionNamespace">/framework</param>
+			</result>
+			<result name="error" type="redirectAction">
+				<param name="message">${serviceResult.message}</param>
+				<param name="actionName">ShowAlertMessage.action</param>
+				<param name="redirectActionName">TaskRptInstShowListForTree-report.dto.TaskRptInst</param>
+				<param name="redirectActionNamespace">/framework</param>
+			</result>
+		</action>
+		
+		<action name="RptCopySave-*" class="rptInfoCopySaveAction">
+			<result name="success" type="redirectAction">
+				<param name="message">${serviceResult.message}</param>
+				<param name="actionName">ShowAlertMessage</param>
+			</result>
+			<result name="error" type="redirectAction">
+				<param name="actionName">ShowAlertMessage</param>
+				<param name="message">${serviceResult.message}</param>
+			</result>
+		</action>
+		<action name="RptInfoShowUpdate-*" class="rptInfoShowUpdateAction">
+			<result name="success">/Framework/ShowSaveOrUpdate.jsp</result>
+			<result name="error" type="redirectAction">
+				<param name="actionName">ShowAlertMessage</param>
+				<param name="message">${serviceResult.message}</param>
+			</result>
+		</action>
+		<action name="UpdateFieldStrRemark-*" class="UpdateFieldAction"></action>
+		<action name="ShowChartSet-report.dto.RptChartCond" class="showRptChartCondAction">
+			<result name="success">/Report/ShowRptChartSet.jsp</result>
+		</action>
+		<action name="ShowChart-report.dto.RptChartCond" class="showRptChartAction">
+			<result name="success">/Report/ShowRptChart.jsp</result>
+		</action>
+		<!-- 支行所在任务数据的导出 by gechenglian -->
+		<action name="ExportReportForTask*-report.dto.TaskRptInst"
+			class="exportReportForTaskAction">
+			<result name="success" type="stream">
+				<param name="contentType">${serviceResult.contentType}</param>
+				<param name="inputName"> inputStream</param>
+				<param name="contentDisposition">${serviceResult.contentDisposition}</param>
+				<param name="bufferSize">${serviceResult.bufferSize}</param>
+			</result>
+			<result name="error" type="redirectAction">
+				<param name="actionName">ShowAlertMessage</param>
+				<param name="message">${serviceResult.message}</param>
+			</result>
+		</action>
+		<!--支行数据导出 by gechenglian -->
+		<action name="ExportReportForInst*-report.dto.TaskRptInst"
+			class="exportReportForInstAction">
+			<result name="success" type="stream">
+				<param name="contentType">${serviceResult.contentType}</param>
+				<param name="inputName">inputStream</param>
+				<param name="contentDisposition">${serviceResult.contentDisposition}</param>
+				<param name="bufferSize">${serviceResult.bufferSize}</param>
+			</result>
+			<result name="error" type="redirectAction">
+				<param name="actionName">ShowAlertMessage</param>
+				<param name="message">${serviceResult.message}</param>
+			</result>
+		</action>
+		<action name="InsertInstRptRelaPageInitAction-*" class="insertInstRptRelaPageInitAction">
+			<result name="success">/Report/insertInstRptRela.jsp</result>
+		</action>
+		<!-- 指标报表报文下载 -->
+		<action name="BuildReport-*" class="ReviewShowTreeAction">
+			<result name="success">/Framework/ShowTree.jsp</result>
+		</action>
+		<action name="BuildReportShowListForTree-*" class="taskRptInstSHReviewShowListForTreeAction">
+			<result name="success">/Framework/ShowList.jsp</result>
+		</action>
+		
+		<!-- 分析模型-添加 -->
+		<action name="ShowAnalyseModelSave*-*" class="singleObjectShowSaveAction">
+			<result name="success">/Report/ShowAnalyseModelSave.jsp</result>
+		</action>
+		
+		<!-- 分析模型-定义 -->
+		<action name="ShowTabUpdate*-*" class="singleObjectShowTabUpdateAction">
+			<result name="success">/Report/ShowTabSaveOrUpdate.jsp</result>
+		</action>
+		
+		<!-- 分析模型-分析 -->
+		<action name="ShowTabAnalyse*-*" class="singleObjectShowTabAnalyseAction">
+			<result name="success">/Report/ShowTabSaveOrUpdate.jsp</result>
+		</action>
+		
+		<!-- 模型分析-图形 -->
+		<action name="ModelAnalyse*-*" class="showModelAnalyseChartAction">
+			<result name="success">/Report/ShowRptChart.jsp</result>
+		</action>
+		
+		<!-- 报表制度包制作 -->
+		<action name="MakeRepPack*-*" class="makeRepPackAction">
+			<result name="success" type="redirectAction">
+				<param name="message">${serviceResult.message}</param>
+				<param name="actionName">ShowAlertMessage.action</param>
+				<param name="redirectActionName">ShowList{1}-{2}</param>
+				<param name="redirectActionNamespace">/framework</param>
+			</result>
+			<result name="error" type="redirectAction">
+				<param name="message">${serviceResult.message}</param>
+				<param name="actionName">ShowAlertMessage.action</param>
+				<param name="redirectActionName">ShowList{1}-{2}</param>
+				<param name="redirectActionNamespace">/framework</param>
+			</result>
+		</action>
+		
+		<!-- 制度包升级 -->
+		<action name="MakeRepUpgrade*-*" class="makeRepUpgradeAction">
+			<result name="success" type="redirectAction">
+				<param name="message">${serviceResult.message}</param>
+				<param name="actionName">ShowAlertMessage.action</param>
+				<param name="redirectActionName">ShowList{1}-{2}</param>
+				<param name="redirectActionNamespace">/framework</param>
+			</result>
+			<result name="error" type="redirectAction">
+				<param name="message">${serviceResult.message}</param>
+				<param name="actionName">ShowAlertMessage.action</param>
+				<param name="redirectActionName">ShowList{1}-{2}</param>
+				<param name="redirectActionNamespace">/framework</param>
+			</result>
+		</action>
+		
+		<!-- 法人制度包升级 -->
+		<action name="UpgradeLeRep*-*" class="upgradeLeRepAction">
+			<result name="success">/Report/ShowUpgradeLeRepConfig.jsp</result>
+		</action>
+		<action name="MakeRepLeUpgrade*-*" class="makeRepLeUpgradeAction">
+			<result name="success" type="redirectAction">
+				<param name="message">${serviceResult.message}</param>
+				<param name="actionName">ShowAlertMessage.action</param>
+				<param name="redirectActionName">ShowList{1}-{2}</param>
+				<param name="redirectActionNamespace">/framework</param>
+			</result>
+			<result name="error" type="redirectAction">
+				<param name="message">${serviceResult.message}</param>
+				<param name="actionName">ShowAlertMessage.action</param>
+				<param name="redirectActionName">ShowList{1}-{2}</param>
+				<param name="redirectActionNamespace">/framework</param>
+			</result>
+		</action>
+		
+		<!-- 明细报表sql语句查询导出下载 -->
+		<action name="RepDetailDownload" class="downloadRepDetailAction">
+			<result name="success" type="stream">
+				<param name="contentType">${serviceResult.contentType}</param>
+				<param name="inputName">inputStream</param>
+				<param name="contentDisposition">${serviceResult.contentDisposition}</param>
+				<param name="bufferSize">${serviceResult.bufferSize}</param>
+			</result>
+			<result name="error" type="redirectAction">
+				<param name="actionName">ShowAlertMessage</param>
+				<param name="message">${serviceResult.message}</param>
+			</result>
+		</action>
+		
+		
+	</package>
+	
+	<package name="reportjson" extends="json-default" namespace="/report">
+		<action name="InsertInstRptRelaDataInitAction-*" class="insertInstRptRelaDataInitAction">
+			<result name="success" type="json">
+				<param name="root">serviceResult</param>
+			</result>
+		</action>
+		<!-- 报表机构关系新增保存，不跳转界面 -->
+		<action name="InstRptRelaSave*-*" class="singleObjectSaveAction">
+			<result name="success" type="json">
+				<param name="root">serviceResult</param>
+			</result>
+			<result name="error" type="json">
+				<param name="root">serviceResult</param>
+			</result>
+		</action>
+		
+		<!-- 分析模型-定义-保存 -->
+		<action name="ModelSave*-*" class="analyseModelConfigSaveAction">
+			<result name="success" type="json">
+				<param name="root">serviceResult</param>
+			</result>
+			<result name="error" type="json">
+				<param name="root">serviceResult</param>
+			</result>
+		</action>
+	</package>
+
+	<!--AJAX JSON Used -->
+	<package name='ajax' extends="json-default">
+		<action name="GetJsonInfo-report.dto.ItemInfo" class="ajaxRequestAction">
+			<result name="success" type="json">
+				<param name="root">result</param>
+			</result>
+		</action>
+		<action name="GetInstanceIdJsonInfo-*" class="ajaxRequestInstanceAction">
+			<result name="success" type="json">
+				<param name="root">result</param>
+			</result>
+		</action>
+		<action name="ShowFromSavebyAjax-*" class="singleObjectShowFromSaveByAjaxAction">
+			<result name="success" type="json">
+				<param name="root">result</param>
+			</result>
+		</action>
+	</package>
+	<include file="report/configs/report.struts.xml" />
+</struts>    

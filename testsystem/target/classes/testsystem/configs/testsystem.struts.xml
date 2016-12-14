@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE struts PUBLIC "-//Apache Software Foundation//DTD Struts Configuration 2.1//EN" "http://struts.apache.org/dtds/struts-2.1.dtd">
+<struts>
+	 <package name="testsystem" extends="framework.default" namespace="/framework">
+        <action name="Login" class="testsystem.actions.imps.LoginAction">
+            <!--
+            <interceptor-ref name="defaultStack"></interceptor-ref>
+            <interceptor-ref name="execAndWait">
+                <param name="delay">2000</param>
+            </interceptor-ref>
+            <result name="wait">/Framework/Error/Wait.jsp</result>
+            <interceptor-ref name="tokenSession"></interceptor-ref>
+            <interceptor-ref name="defaultStack"></interceptor-ref>
+            <result name="invalid.token">/Framework/Error/RepeatSubmitError.jsp</result> 
+            -->
+            <!--
+            <interceptor-ref name="execAndWaitFilterInterceptorStack"></interceptor-ref>
+            <result name="wait">/Framework/Error/Wait.jsp</result>
+            -->
+            
+            <!--
+            <interceptor-ref name="tokenSessionFilterInterceptorStack"></interceptor-ref>
+            -->
+            
+            <!--  
+			<result name="success" type="chain">
+			    <param name="namespace">/framework</param>
+			    <param name="actionName">ShowList-testsystem.dto.TestSystem_UserInfo</param>
+			</result>
+			
+			<result name="error" type="redirectAction">
+			    <param name="actionName">ShowAlertMessage</param>
+			    <param name="message">用户名或密码错误</param>
+			</result>
+			-->
+		</action>
+		<action name="new_validate" class="testsystem.actions.imps.NewValidateAction">
+            <result name="input">/validate_form.jsp</result>
+            <result name="success">/validate_form.jsp</result>
+        </action>
+		<action name="ShowList-testsystem.dto.TJPM" class="singleObjectShowListAction">
+	     
+			<result name="success">/TestSystem/MyJsp.jsp</result>
+		</action>
+	 </package>
+	 <include file="report/configs/report.struts.xml"/>
+	 
+</struts>    

@@ -1,0 +1,321 @@
+.Windows_Frame_Div
+{
+	/*background-color: #938E8E;*/
+	position: absolute;
+	/*box-shadow: 0px 0px 10px 1px black;*/
+	border-radius: 6px;
+	background-image:url('../images/windows/active/mm3.png');
+	zoom:1;
+	overflow:hidden;
+}
+.Windows_Bottom_Div
+{
+	width: 100%;
+	height:10px;
+	position: absolute;
+	bottom: 0px;
+	left: 0px; /*background-image:url(../images/windows/bg-footer-noise.jpg);*/
+	cursor: default;
+	background-image:url('../images/windows/lines_2.png');
+	
+    
+}
+.Windows_R_Size
+{
+	position:absolute;
+	bottom:0px;
+	right:0px;
+	cursor:nw-resize;
+	width:20px;
+	height:20px;
+	z-index:1002;
+}
+.Windows_Title
+{
+	position: absolute;
+	width: 100%;
+	height: 50px;
+	left: 0px;
+	top:0px;
+	padding-top: 10px;
+	cursor: move;
+	font-family: 微软雅黑;
+	line-height: 30px;
+	/*color: #333;*/
+	color:White;
+	font-size: 14px;
+	background-image: url('../images/windows/lines_3.png' );
+
+	z-index:998px;
+	overflow:hidden;
+	
+    _background:none;
+    _background-image:url('../images/windows/active/mm5.jpg');
+    
+}
+.Div_Iframe_Frame
+{
+	border: black 1px solid;
+	position:absolute; 
+	left:8px; 
+	top:5px; 
+	background-color:White;
+	z-index:998;
+	overflow:scroll;
+}
+.Div_Iframe
+{
+	border: black 1px solid;
+	position:absolute; 
+	left:8px; 
+	top:60px; 
+	z-index:1001;
+	background-color:White;
+}
+.WindowMaxMinClosed
+{
+	float: right;
+	height: 18px;
+	cursor: pointer;
+	color: red;
+	margin-top: 6px;
+}
+.WindowClosed
+{
+	width:47px;
+	margin-right:10px;
+	background-image:url('../images/windows/btn-close.png');
+    background-position:0px 0px;
+}
+.WindowClosed:hover
+{
+	background-position:0px 19px;
+}
+.WindowMax
+{
+	width:28px;
+	margin-right:0px;
+	background-image:url('../images/windows/btn-reg.png');
+    background-position:0px 0px;  
+}
+.WindowMax:hover
+{
+	background-position:0px 19px;
+}
+.WindowMin
+{
+	width:28px;
+	margin-right:0px;
+	background-image:url('../images/windows/btn-min.png');
+    background-position:-1px 0px;
+    
+}
+.WindowMin:hover
+{
+	background-position:-1px 19px;
+	
+}
+.WindowMove_Div
+{
+	border: 1px dotted #808080;
+	position: absolute;
+	box-shadow: 0px 0px 10px black;
+	border-radius:5px;
+	
+	/*以下为IE7设置PNG透明代码*/
+	background-image:url('../images/windows/active/mm4.png');
+}
+.WindowSize_Div
+{
+	border: 1px dotted #808080;
+	position: absolute;
+	box-shadow: 0px 0px 10px black;
+	border-radius:5px;
+	
+	/*以下为IE7设置PNG透明代码*/
+	background-image:url('../images/windows/active/mm4.png');
+}
+.WindowMove_Cover
+{
+	position:relative;
+	width:100%;
+	top:50px;
+	bottom:0px;
+	cursor:default;
+	z-index:1001;
+}
+.active_tl
+{
+	position:absolute;
+	width:9px; 
+	height:9px; 
+	background-image:url(../images/windows/active/tl.png);
+	overflow:hidden;
+	z-index:1000;
+}
+.active_tr
+{
+	position:absolute;
+	width:9px; 
+	height:9px; 
+	top:0px;
+	right:0px;
+	background-image:url(../images/windows/active/tr.png);
+	overflow:hidden;
+	z-index:1000;
+}
+.active_bl
+{
+	position:absolute;
+	width:9px; 
+	height:9px; 
+	left:0px; 
+	bottom:0px; 
+	background-image:url(../images/windows/active/bl.png);
+	overflow:hidden;
+	z-index:1000;
+}
+.active_br
+{
+	position:absolute;
+	width:9px; 
+	height:9px; 
+	right:0px; 
+	bottom:0px; 
+	background-image:url(../images/windows/active/br.png);
+	overflow:hidden;
+	z-index:1000;
+}
+.active_lm
+{
+	position:absolute;
+	width:9px; 
+	left:0px; 
+	top:9px; 
+	bottom:9px;
+	height:10px;
+	background-image:url(../images/windows/active/lm.png);
+	overflow:hidden;
+	z-index:999;
+}
+.active_tm
+{
+	position:absolute; 
+	left:9px;
+	top:0px; 
+	width:10px;
+	height:4px;
+	background-image:url(../images/windows/active/tm.png);
+	overflow:hidden;
+	z-index:1000;
+}
+.active_rm
+{
+	position:absolute;
+	width:9px; 
+	right:0px; 
+	top:9px; 
+    height:10px;
+	background-image:url(../images/windows/active/rm.png);
+	overflow:hidden;
+	z-index:999;
+}
+.active_bm
+{
+	position:absolute;
+	height:9px; 
+	left:9px; 
+	bottom:0px; 
+	width:10px;
+	right:9px;background-image:url(../images/windows/active/bm.png);
+	overflow:hidden;
+	z-index:999;
+}
+
+.inactive_tl
+{
+	position:absolute;
+	width:9px; 
+	height:9px; 
+	background-image:url(../images/windows/inactive/tl.png);
+	overflow:hidden;
+	z-index:1000;
+}
+.inactive_tr
+{
+	position:absolute;
+	width:9px; 
+	height:9px; 
+	top:0px;
+	right:0px;
+	background-image:url(../images/windows/inactive/tr.png);
+	overflow:hidden;
+	z-index:1000;
+}
+.inactive_bl
+{
+	position:absolute;
+	width:9px; 
+	height:9px; 
+	left:0px; 
+	bottom:0px; 
+	background-image:url(../images/windows/inactive/bl.png);
+	overflow:hidden;
+	z-index:1000;
+}
+.inactive_br
+{
+	position:absolute;
+	width:9px; 
+	height:9px; 
+	right:0px; 
+	bottom:0px; 
+	background-image:url(../images/windows/inactive/br.png);
+	overflow:hidden;
+	z-index:1000;
+}
+.inactive_lm
+{
+	position:absolute;
+	width:9px; 
+	left:0px; 
+	top:9px; 
+	bottom:9px;
+	height:10px;
+	background-image:url(../images/windows/inactive/lm.png);
+	overflow:hidden;
+	z-index:999;
+}
+.inactive_tm
+{
+	position:absolute; 
+	left:9px;
+	top:0px; 
+	width:10px;
+	height:4px;
+	background-image:url(../images/windows/inactive/tm.png);
+	overflow:hidden;
+	z-index:1000;
+}
+.inactive_rm
+{
+	position:absolute;
+	width:9px; 
+	right:0px; 
+	top:9px; 
+    height:10px;
+	background-image:url(../images/windows/inactive/rm.png);
+	overflow:hidden;
+	z-index:999;
+}
+.inactive_bm
+{
+	position:absolute;
+	height:9px; 
+	left:9px; 
+	bottom:0px; 
+	width:10px;
+	right:9px;background-image:url(../images/windows/inactive/bm.png);
+	overflow:hidden;
+	z-index:999;
+}

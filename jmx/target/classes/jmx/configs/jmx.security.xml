@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<securityRoot>
+	<function>
+	   <functionParentId>DeskTop</functionParentId>
+	   <functionCode>jmxManager</functionCode>
+	   <functionName>jmxManager-监控管理</functionName>
+	   <actionName>Framework/NavigationPage.jsp?id=jmxManager</actionName>
+	</function>
+	
+	<function>
+	   <functionParentId>jmxManager</functionParentId>
+		<functionCode>Jserver</functionCode>
+		<functionName>Jserver-服务器管理</functionName>
+		<actionName>framework/ShowList-jmx.dto.J_Server</actionName>
+		<actionName>jmx/showServerChart</actionName>
+		<actionName>jmx/showCpu</actionName>
+		<actionName>jmx/showMem</actionName>
+		<actionName>jmx/showJC</actionName>
+		<actionName>jmx/jmxServer</actionName>
+		<actionName>*-jmx.dto.J_Server</actionName>
+	</function>
+	<function>
+	   <functionParentId>jmxManager</functionParentId>
+		<functionCode>JApp</functionCode>
+		<functionName>JApp-应用管理</functionName>
+		<actionName>framework/ShowList-jmx.dto.J_App</actionName>
+		<actionName>*-jmx.dto.J_App</actionName>
+	</function>
+	<function>
+	   <functionParentId>jmxManager</functionParentId>
+		<functionCode>JDb</functionCode>
+		<functionName>JDb-数据库管理</functionName>
+		<actionName>framework/ShowList-jmx.dto.J_Db</actionName>
+		<actionName>*-jmx.dto.J_Db</actionName>
+	</function>
+	<function>
+	   <functionParentId>jmxManager</functionParentId>
+		<functionCode>JTask</functionCode>
+		<functionName>JTask-监控任务</functionName>
+		<actionName>framework/ShowList-jmx.dto.J_Task</actionName>
+		<actionName>*-jmx.dto.J_Task</actionName>
+	</function>
+	
+</securityRoot>

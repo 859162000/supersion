@@ -1,0 +1,149 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<web-app version="2.4" xmlns="http://java.sun.com/xml/ns/j2ee"
+ xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://java.sun.com/xml/ns/j2ee   http://java.sun.com/xml/ns/j2ee/web-app_2_4.xsd">
+ <!-- Log4jConfigListener浼氬幓log4jConfigLocation鐨剉alue涓鍙栭厤缃枃浠�-->
+ <context-param>
+  <param-name>log4jConfigLocation</param-name>
+  <param-value>classpath:log4j.properties</param-value>
+ </context-param>
+ <!-- 寮�竴鏉atchdog绾跨▼姣�0绉掓壂鎻忎竴涓嬮厤缃枃浠剁殑鍙樺寲 -->
+ <context-param>
+  <param-name>log4jRefreshInterval</param-name>
+  <param-value>60000</param-value>
+ </context-param>
+ <!--
+		浣跨敤spring蹇呴』鍦╳eb.xml涓坊鍔犲惎鍔╯pring鐨勭洃鍚櫒锛欳ontextLoaderListener锛岄厤缃湪xml鏂囦欢涓殑bean鎵嶄細鐢熸晥
+	-->
+ <context-param>
+  <param-name>contextConfigLocation</param-name>
+  <param-value>classpath:framework/configs/applicationContext.xml</param-value>
+ </context-param>
+ <filter>
+  <!--
+			这是spring封装hibernate后提供的一个过滤器，这个过滤器的作用是：
+			每一次请求来的时候都打开一个session，每次请求结束后关闭session， 解析hibernate延迟加载产生的异常
+		-->
+  <filter-name>hibernateFilter</filter-name>
+  <filter-class>org.springframework.orm.hibernate3.support.OpenSessionInViewFilter</filter-class>
+  <!--
+			openSessionInView spring自带的过滤器，针对延迟加载session关闭异常 <init-param>
+			<param-name>singleSession</param-name>
+			<param-value>false</param-value> </init-param>
+		-->
+ </filter>
+ <!-- 清除缓存，文件上传时，不然第一次获取不到文件 -->
+ <filter>
+  <filter-name>struts-cleanup</filter-name>
+  <filter-class>org.apache.struts2.dispatcher.ActionContextCleanUp</filter-class>
+ </filter>
+ <filter>
+  <filter-name>struts2</filter-name>
+  <filter-class>framework.filter.StrutsFilter</filter-class>
+  <init-param>
+   <param-name>config</param-name>
+   <param-value>struts-default.xml,struts-plugin.xml,framework/configs/struts.xml</param-value>
+  </init-param>
+  <init-param>
+   <param-name>showInstanceLocation</param-name>
+    <!--
+				<param-value>ncr/configs/ncr.show.xml,eas/configs/eas.show.xml,testsystem/configs/testsystem.show.xml,coresystem/configs/coresystem.show.xml,fundManagementSystem/configs/fundManagementSystem.show.xml,autoETLsystem/configs/autoETLsystem.show.xml,report/configs/report.show.xml,smbc/configs/smbc.show.xml,wgjreportsystem/configs/wgjreportsystem.show.xml,zxptsystem/configs/zxptsystem.show.xml,dbgssystem/configs/dbgssystem.show.xml,httpUnitTest/configs/httpUnitTest.show.xml</param-value>
+			-->
+   <param-value>coresystem/configs/coresystem.show.xml,autoETLsystem/configs/autoETLsystem.show.xml,report/configs/report.show.xml,report/configs/itemreport.show.xml,zxptsystem/configs/zxptsystem.show.xml</param-value>
+   
+   <!--
+				<param-value>ncr/configs/ncr.show.xml,eas/configs/eas.show.xml,testsystem/configs/testsystem.show.xml,coresystem/configs/coresystem.show.xml,fundManagementSystem/configs/fundManagementSystem.show.xml,autoETLsystem/configs/autoETLsystem.show.xml,report/configs/report.show.xml,smbc/configs/smbc.show.xml,wgjreportsystem/configs/wgjreportsystem.show.xml,zxptsystem/configs/zxptsystem.show.xml,dbgssystem/configs/dbgssystem.show.xml,httpUnitTest/configs/httpUnitTest.show.xml</param-value>
+			-->
+  </init-param>
+  <init-param>
+   <param-name>showNavigationLocation</param-name>
+   <param-value>coresystem/configs/coresystem.navigation.xml,autoETLsystem/configs/autoETLsystem.navigation.xml,report/configs/report.navigation.xml,report/configs/itemreport.navigation.xml,zxptsystem/configs/zxptsystem.navigation.xml</param-value>
+   <!--<param-value>coresystem/configs/coresystem.navigation.xml</param-value>
+				<param-value>ncr/configs/ncr.navigation.xml,eas/configs/eas.navigation.xml,testsystem/configs/testsystem.navigation.xml,coresystem/configs/coresystem.navigation.xml,autoETLsystem/configs/autoETLsystem.navigation.xml,report/configs/report.navigation.xml,fundManagementSystem/configs/fundManagementSystem.navigation.xml,smbc/configs/smbc.navigation.xml,wgjreportsystem/configs/wgjreportsystem.navigation.xml,zxptsystem/configs/zxptsystem.navigation.xml,dbgssystem/configs/dbgssystem.navigation.xml,httpUnitTest/configs/httpUnitTest.navigation.xml</param-value>
+			-->
+  </init-param>
+  <init-param>
+   <param-name>showEntityLocation</param-name>
+   <param-value>extend/configs/extend.entity.xml,coresystem/configs/coresystem.entity.xml,autoETLsystem/configs/autoETLsystem.entity.xml,report/configs/report.entity.xml,report/configs/itemreport.entity.xml,zxptsystem/configs/zxptsystem.entity.xml</param-value>
+   <!--<param-value>coresystem/configs/coresystem.entity.xml</param-value>
+				<param-value>ncr/configs/ncr.entity.xml,eas/configs/eas.entity.xml,testsystem/configs/testsystem.entity.xml,coresystem/configs/coresystem.entity.xml,autoETLsystem/configs/autoETLsystem.entity.xml,fundManagementSystem/configs/fundManagementSystem.entity.xml,extend/configs/extend.entity.xml,report/configs/report.entity.xml,smbc/configs/smbc.entity.xml,wgjreportsystem/configs/wgjreportsystem.entity.xml,zxptsystem/configs/zxptsystem.entity.xml,dbgssystem/configs/dbgssystem.entity.xml,httpUnitTest/configs/httpUnitTest.entity.xml</param-value>
+			-->
+  </init-param>
+  <init-param>
+   <param-name>securityLocation</param-name>
+   <param-value>coresystem/configs/coresystem.security.xml,autoETLsystem/configs/autoETLsystem.security.xml,report/configs/report.security.xml,report/configs/itemreport.security.xml,zxptsystem/configs/zxptsystem.security.xml</param-value>
+   <!--<param-value>coresystem/configs/coresystem.security.xml</param-value>
+				<param-value>ncr/configs/ncr.security.xml,eas/configs/eas.security.xml,testsystem/configs/testsystem.security.xml,coresystem/configs/coresystem.security.xml,autoETLsystem/configs/autoETLsystem.security.xml,fundManagementSystem/configs/fundManagementSystem.security.xml,report/configs/report.security.xml,smbc/configs/smbc.security.xml,zxptsystem/configs/zxptsystem.security.xml,dbgssystem/configs/dbgssystem.security.xml,wgjreportsystem/configs/wgjreportsystem.security.xml,httpUnitTest/configs/httpUnitTest.security.xml</param-value>
+			
+
+				<param-value>autoETLsystem/configs/autoETLsystem.security.xml,report/configs/report.security.xml</param-value>
+			-->
+  </init-param>
+  <init-param>
+   <param-name>dataSecurityLocation</param-name>
+   <param-value>coresystem/configs/coresystem.dataSecurity.xml,report/configs/report.dataSecurity.xml,report/configs/itemreport.dataSecurity.xml,zxptsystem/configs/zxptsystem.dataSecurity.xml</param-value>
+   <!--<param-value>coresystem/configs/coresystem.dataSecurity.xml</param-value>
+				<param-value>coresystem/configs/coresystem.dataSecurity.xml,ncr/configs/ncr.dataSecurity.xml,eas/configs/eas.dataSecurity.xml,testsystem/configs/testsystem.dataSecurity.xml,fundManagementSystem/configs/fundManagementSystem.dataSecurity.xml,wgjreportsystem/configs/wgjreportsystem.dataSecurity.xml,dbgssystem/configs/dbgssystem.dataSecurity.xml,zxptsystem/configs/zxptsystem.dataSecurity.xml</param-value>
+			-->
+  </init-param>
+  <init-param>
+   <param-name>reportCheckLocation</param-name>
+   <param-value>coresystem/configs/CheckRule_ItemsCalculation.xml,autoETLsystem/configs/CheckRule_autoETL.xml,report/configs/ItemCheck.xml,report/configs/CheckRule_ItemsCalculation.xml,report/configs/CheckRule_itemreport.xml,zxptsystem/configs/Check_zxptsystem.xml,zxptsystem/configs/Check_zxptsystem1.xml</param-value>
+   <!--
+				<param-value>testsystem/configs/CheckRule_12_E214.xml,testsystem/configs/CheckRule_12_E212.xml,testsystem/configs/CheckRule_12_E200.xml,coresystem/configs/CheckRule_ItemsCalculation.xml,fundManagementSystem/configs/CheckRule_fundManagementSystem.xml,autoETLsystem/configs/CheckRule_autoETL.xml,report/configs/ItemCheck.xml,report/configs/CheckRule_ItemsCalculation.xml,wgjreportsystem/configs/CheckRule_WGJ.xml,zxptsystem/configs/Check_zxptsystem.xml,zxptsystem/configs/Check_zxptsystem1.xml,dbgssystem/configs/Check_dbgssystem.xml</param-value>
+			-->
+  </init-param>
+  <!--
+			<init-param> <param-name>charsetType</param-name>
+			<param-value>1</param-value> </init-param>
+		
+ 鍚姩鑷姩宸ヤ綔娴佺嚎绋� 
+
+			<init-param> <param-name>workflowThreadServiceBeanId</param-name>
+			<param-value>autoWorkflowService</param-value> </init-param>
+			<init-param> <param-name>initAutoDTOServiceBeanId</param-name>
+			<param-value>initAutoDTOService</param-value> </init-param>
+		-->
+ </filter>
+ <filter-mapping>
+  <filter-name>hibernateFilter</filter-name>
+  <url-pattern>/*</url-pattern>
+ </filter-mapping>
+ <filter-mapping>
+  <filter-name>struts-cleanup</filter-name>
+  <url-pattern>/*</url-pattern>
+ </filter-mapping>
+ <filter-mapping>
+  <filter-name>struts2</filter-name>
+  <url-pattern>*.action</url-pattern>
+ </filter-mapping>
+ <filter-mapping>
+  <filter-name>struts2</filter-name>
+  <url-pattern>*.jsp</url-pattern>
+ </filter-mapping>
+ <listener>
+  <listener-class>org.springframework.web.util.Log4jConfigListener</listener-class>
+ </listener>
+ <listener>
+  <listener-class>org.springframework.web.context.ContextLoaderListener</listener-class>
+ </listener>
+ <!-- 鏃ュ織璁板綍鏂囦欢  -->
+ <servlet>
+  <servlet-name>log4j config file</servlet-name>
+  <servlet-class>framework.log.Log4jInitServlet</servlet-class>
+  <init-param>
+   <param-name>configfile</param-name>
+   <param-value>log4j.properties</param-value>
+  </init-param>
+  <load-on-startup>1</load-on-startup>
+ </servlet>
+ <welcome-file-list>
+  <welcome-file>/Framework/Index.jsp</welcome-file>
+ </welcome-file-list>
+ <error-page>
+  <error-code>404</error-code>
+  <location>/Framework/Error/404Error.jsp</location>
+ </error-page>
+ <login-config>
+  <auth-method>BASIC</auth-method>
+ </login-config>
+</web-app>

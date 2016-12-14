@@ -1,0 +1,607 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE struts PUBLIC "-//Apache Software Foundation//DTD Struts Configuration 2.1//EN" "http://struts.apache.org/dtds/struts-2.1.dtd">
+<struts>
+	<package name="framework" extends="framework.default" namespace="/framework">
+
+		<action name="ShowSaveOrUpdate*-*" class="singleObjectShowSaveOrUpdateAction">
+			<result name="save" type="chain">
+				<param name="actionName">${serviceResult.actionName}</param>
+			</result>
+			<result name="update" type="redirectAction">
+				<param name="actionName">${serviceResult.actionName}</param>
+				<param name="id">${serviceResult.idValue}</param>
+				<param name="windowId">${serviceResult.windowId}</param>
+			</result>
+		</action>
+
+		<action name="OneToOneShowSave*-*" class="singleObjectOneToOneShowSaveAction">
+			<result name="success">/Framework/ShowSaveOrUpdate.jsp</result>
+		</action>
+
+		<action name="OneToOneShowUpdate*-*" class="singleObjectOneToOneShowUpdateAction">
+			<result name="success">/Framework/ShowSaveOrUpdate.jsp</result>
+		</action>
+  
+		<action name="ShowSave*-*" class="singleObjectShowSaveAction">
+			<result name="success">/Framework/ShowSaveOrUpdate.jsp</result>
+		</action>
+
+		<action name="ShowComponentInputSave*-*" class="singleObjectShowComponentInputSaveAction">
+			<result name="input">/Framework/ShowComponentSaveOrUpdate.jsp</result>
+		</action>
+
+		<action name="ShowInputSave*-*" class="singleObjectShowInputSaveAction">
+			<result name="input">/Framework/ShowSaveOrUpdate.jsp</result>
+		</action>
+
+		<action name="ShowUpdateList*-*" class="singleObjectShowUpdateListAction">
+			<result name="success">/Framework/ShowSaveOrUpdate.jsp</result>
+		</action>
+
+		<action name="ShowUpdate*-*" class="singleObjectShowUpdateAction">
+			<result name="success">/Framework/ShowSaveOrUpdate.jsp</result>
+		</action>
+
+		<action name="ShowCheckUpdate*-*" class="singleObjectShowCheckUpdateAction">
+			<result name="success">/Framework/ShowSaveOrUpdate.jsp</result>
+			<result name="input" type="chain">
+				<param name="actionName">ShowInputUpdate{1}-{2}</param>
+			</result>
+		</action>
+
+		<action name="ShowInputUpdate*-*" class="singleObjectShowInputUpdateAction">
+			<result name="input">/Framework/ShowSaveOrUpdate.jsp</result>
+		</action>
+
+		<action name="OneToOneSave*-*" class="singleObjectSaveAction">
+			<result name="success" type="redirectAction">
+				<param name="message">${serviceResult.message}</param>
+				<param name="actionName">ShowAlertMessage</param>
+				<param name="redirectActionName">BackPreviousFirst{1}-{2}</param>
+				<param name="redirectActionNamespace">/framework</param>
+			</result>
+			<result name="error" type="redirectAction">
+				<param name="actionName">ShowAlertMessage</param>
+				<param name="message">${serviceResult.message}</param>
+			</result>
+			<result name="input" type="chain">
+				<param name="actionName">ShowInputSave{1}-{2}</param>
+			</result>
+		</action>
+
+		<action name="ComponentSave*-*" class="singleObjectComponentSaveAction">
+			<result name="success" type="redirectAction">
+				<param name="message">${serviceResult.message}</param>
+				<param name="actionName">ShowAlertMessage</param>
+				<param name="redirectActionName">BackFirst-{2}</param>
+				<param name="redirectActionNamespace">/framework</param>
+			</result>
+			<result name="error" type="redirectAction">
+				<param name="actionName">ShowAlertMessage</param>
+				<param name="message">${serviceResult.message}</param>
+			</result>
+			<result name="input" type="chain">
+				<param name="actionName">ShowComponentInputSave{1}-{2}</param>
+			</result>
+		</action>
+
+		<action name="Save*-*" class="singleObjectSaveAction">
+			<result name="success" type="redirectAction">
+				<param name="message">${serviceResult.message}</param>
+				<param name="actionName">ShowAlertMessage</param>
+				<param name="redirectActionName">BackFirst-{2}</param> <!-- ShowList{1}-{2} -->
+				<param name="redirectActionNamespace">/framework</param>
+			</result>
+			<result name="error" type="redirectAction">
+				<param name="actionName">ShowAlertMessage</param>
+				<param name="message">${serviceResult.message}</param>
+			</result>
+			<result name="input" type="chain">
+				<param name="actionName">ShowInputSave{1}-{2}</param>
+			</result>
+		</action>
+
+		<action name="UpdateList*-*" class="singleObjectUpdateListAction">
+			<result name="success" type="redirectAction">
+				<param name="message">${serviceResult.message}</param>
+				<param name="actionName">ShowAlertMessage</param>
+			</result>
+			<result name="error" type="redirectAction">
+				<param name="message">${serviceResult.message}</param>
+				<param name="actionName">ShowAlertMessage</param>
+			</result>
+		</action>
+
+		<action name="UpdateField*-*" class="singleObjectUpdateFieldAction">
+			<result name="success" type="redirectAction">
+				<param name="message">${serviceResult.message}</param>
+				<param name="actionName">ShowAlertMessage.action</param>
+				<param name="redirectActionName">ShowList{1}-{2}</param>
+				<param name="redirectActionNamespace">/framework</param>
+			</result>
+			<result name="error" type="redirectAction">
+				<param name="message">${serviceResult.message}</param>
+				<param name="actionName">ShowAlertMessage.action</param>
+				<param name="redirectActionName">ShowList{1}-{2}</param>
+				<param name="redirectActionNamespace">/framework</param>
+			</result>
+		</action>
+
+		<action name="OneToOneUpdate*-*" class="singleObjectUpdateAction">
+			<result name="success" type="redirectAction">
+				<param name="message">${serviceResult.message}</param>
+				<param name="actionName">ShowAlertMessage</param>
+			</result>
+			<result name="error" type="redirectAction">
+				<param name="actionName">ShowAlertMessage</param>
+				<param name="message">${serviceResult.message}</param>
+			</result>
+			<result name="input" type="chain">
+				<param name="actionName">ShowInputUpdate{1}-{2}</param>
+			</result>
+		</action>
+
+		<!--<action name="ComponentUpdate*-*" class="singleObjectComponentUpdateAction"> <result name="success" type="redirectAction"> <param name="message">${serviceResult.message}</param> <param name="actionName">ShowAlertMessage.action</param> 
+			<param name="redirectActionName">BackFirst-{2}</param> <param name="redirectActionNamespace">/framework</param> </result> <result name="error" type="redirectAction"> <param name="actionName">ShowAlertMessage</param> 
+			<param name="message">${serviceResult.message}</param> </result> <result name="input" type="chain"> <param name="actionName">ShowInputUpdate{1}-{2}</param> </result> </action> -->
+
+		<action name="Update*-*" class="singleObjectUpdateAction">
+			<result name="success" type="redirectAction">
+				<param name="message">${serviceResult.message}</param>
+				<param name="actionName">ShowAlertMessage.action</param>
+				<param name="redirectActionName">BackFirst-{2}</param> <!-- ShowList{1}-{2} -->
+				<param name="redirectActionNamespace">/framework</param>
+			</result>
+			<result name="error" type="redirectAction">
+				<param name="actionName">ShowAlertMessage</param>
+				<param name="message">${serviceResult.message}</param>
+			</result>
+			<result name="input" type="chain">
+				<param name="actionName">ShowInputUpdate{1}-{2}</param>
+			</result>
+		</action>
+
+		<action name="DeleteById*-*" class="singleObjectDeleteByIdAction">
+			<result name="success" type="redirectAction">
+				<param name="message">${serviceResult.message}</param>
+				<param name="actionName">ShowAlertMessage.action</param>
+				<param name="redirectActionName">ShowList{1}-{2}</param>
+				<param name="redirectActionNamespace">/framework</param>
+			</result>
+			<result name="error" type="redirectAction">
+				<param name="message">${serviceResult.message}</param>
+				<param name="actionName">ShowAlertMessage.action</param>
+				<param name="redirectActionName">ShowList{1}-{2}</param>
+				<param name="redirectActionNamespace">/framework</param>
+			</result>
+		</action>
+
+		<action name="DeleteListByIdList*-*" class="singleObjectDeleteListByIdListAction">
+			<!-- <interceptor-ref name="tokenSessionFilterInterceptorStack"></interceptor-ref> -->
+			<result name="success" type="redirectAction">
+				<param name="message">${serviceResult.message}</param>
+				<param name="actionName">ShowAlertMessage.action</param>
+				<param name="redirectActionName">ShowList{1}-{2}</param>
+				<param name="redirectActionNamespace">/framework</param>
+			</result>
+			<result name="error" type="redirectAction">
+				<param name="message">${serviceResult.message}</param>
+				<param name="actionName">ShowAlertMessage.action</param>
+				<param name="redirectActionName">ShowList{1}-{2}</param>
+				<param name="redirectActionNamespace">/framework</param>
+			</result>
+		</action>
+
+		<action name="BackFirst*-*" class="singleObjectBackFirstAction">
+			<result name="success" type="redirectAction">
+				<param name="actionName">${serviceResult.actionName}</param>
+			</result>
+		</action>
+
+		<action name="BackPreviousFirst*-*" class="singleObjectBackPreviousFirstAction">
+			<result name="success" type="redirectAction">
+				<param name="actionName">${serviceResult.actionName}</param>
+				<param name="windowId">${serviceResult.windowId}</param>
+			</result>
+		</action>
+
+		<action name="BackParentPreviousFirst*-*" class="framework.actions.imps.RefleshParentAction">
+			<param name="redirectActionName">BackPreviousFirst{1}-{2}</param>
+			<param name="redirectActionNamespace">/framework</param>
+		</action>
+
+		<action name="ShowList*-*" class="singleObjectShowListAction">
+			<!-- <interceptor-ref name="actionFilterInterceptor"></interceptor-ref> <interceptor-ref name="defaultStack"></interceptor-ref> <interceptor-ref name="execAndWait"> <param name="delay">1000</param> 
+				</interceptor-ref> <result name="wait">/Framework/Error/Wait.jsp</result> -->
+			<result name="success">/Framework/ShowList.jsp</result>
+		</action>
+
+		<action name="ShowApply*-*" class="singleObjectShowListAction">
+			<result name="success">/Framework/ShowList.jsp</result>
+		</action>
+
+		<action name="AcceptApply*-*" class="singleObjectUpdateFieldAction">
+			<result name="success" type="redirectAction">
+				<param name="message">${serviceResult.message}</param>
+				<param name="actionName">ShowAlertMessage.action</param>
+				<param name="redirectActionName">ShowApply{1}-{2}</param>
+				<param name="redirectActionNamespace">/framework</param>
+			</result>
+			<result name="error" type="redirectAction">
+				<param name="message">${serviceResult.message}</param>
+				<param name="actionName">ShowAlertMessage.action</param>
+				<param name="redirectActionName">ShowApply{1}-{2}</param>
+				<param name="redirectActionNamespace">/framework</param>
+			</result>
+		</action>
+
+		<action name="DeleteApplyById*-*" class="singleObjectUpdateFieldByIdAction">
+			<result name="success" type="redirectAction">
+				<param name="message">${serviceResult.message}</param>
+				<param name="actionName">ShowAlertMessage.action</param>
+				<param name="redirectActionName">ShowList{1}-{2}</param>
+				<param name="redirectActionNamespace">/framework</param>
+			</result>
+			<result name="error" type="redirectAction">
+				<param name="actionName">ShowAlertMessage</param>
+				<param name="message">${serviceResult.message}</param>
+			</result>
+		</action>
+
+		<action name="DeleteApply*-*" class="singleObjectUpdateFieldAction">
+			<result name="success" type="redirectAction">
+				<param name="message">${serviceResult.message}</param>
+				<param name="actionName">ShowAlertMessage.action</param>
+				<param name="redirectActionName">ShowList{1}-{2}</param>
+				<param name="redirectActionNamespace">/framework</param>
+			</result>
+			<result name="error" type="redirectAction">
+				<param name="actionName">ShowAlertMessage</param>
+				<param name="message">${serviceResult.message}</param>
+			</result>
+		</action>
+
+		<action name="UploadFile*-*" class="singleObjectUploadFileAction">
+			<!-- <interceptor-ref name="fileUpload"> <param name="allowedTypes"> image/bmp,image/png,image/gif,image/jpeg,image/jpg,application/msword,text/plain </param> <param name="maximumSize">2000000000</param> 
+				</interceptor-ref> <interceptor-ref name="defaultStack" /> -->
+			<result name="success" type="redirectAction">
+				<param name="message">${serviceResult.message}</param>
+				<param name="actionName">ShowAlertMessage.action</param>
+				<param name="redirectActionName">ShowList{1}-{2}</param>
+				<param name="redirectActionNamespace">/framework</param>
+			</result>
+			<result name="error" type="redirectAction">
+				<param name="actionName">ShowAlertMessage</param>
+				<param name="message">${serviceResult.message}</param>
+			</result>
+		</action>
+
+		<action name="Download*-*" class="singleObjectDownloadAction">
+			<result name="success" type="stream">
+				<param name="contentType">${serviceResult.contentType}</param>
+				<param name="inputName">inputStream</param>
+				<param name="contentDisposition">${serviceResult.contentDisposition}</param>
+				<param name="bufferSize">${serviceResult.bufferSize}</param>
+			</result>
+			<result name="error" type="redirectAction">
+				<param name="actionName">ShowAlertMessage</param>
+				<param name="message">${serviceResult.message}</param>
+			</result>
+		</action>
+
+		<action name="ReportCheck-*" class="reportCheckAction">
+			<result name="success" type="redirectAction">
+				<param name="actionName">ShowAlertMessage</param>
+				<param name="message">${serviceResult.message}</param>
+			</result>
+			<result name="error" type="redirectAction">
+				<param name="actionName">ShowAlertMessage</param>
+				<param name="message">${serviceResult.message}</param>
+			</result>
+		</action>
+
+		<action name="InitXMLConfiguration-*" class="initXMLConfigurationAction">
+			<result name="success" type="redirectAction">
+				<param name="actionName">ShowAlertMessage</param>
+				<param name="message">${serviceResult.message}</param>
+			</result>
+		</action>
+
+		<action name="JumpByType*-*" class="singleObjectJumpByTypeAction">
+			<result name="success" type="chain">
+				<param name="actionName">${actionJumpResult.actionName}</param>
+			</result>
+			<result name="success1" type="redirectAction">
+				<param name="actionName">${actionJumpResult.actionName}</param>
+			</result>
+			<result name="error" type="redirectAction">
+				<param name="actionName">ShowAlertMessage</param>
+				<param name="message">${serviceResult.message}</param>
+			</result>
+		</action>
+
+		<action name="ShowTree*-*" class="singleObjectShowTreeAction">
+			<result name="success">/Framework/ShowTree.jsp</result>
+		</action>
+
+		<action name="ShowSingleTree*-*" class="singleObjectShowTreeAction">
+			<result name="success">/Framework/Tree.jsp</result>
+		</action>
+
+		<action name="ceshi-*" class="framework.actions.imps.TestAction">
+			<result name="success">/TestSystem/ReportCheck.jsp</result>
+		</action>
+
+		<action name="ExportData*-*" class="singleObjectExportDataAction">
+			<result name="success" type="stream">
+				<param name="contentType">${serviceResult.contentType}</param>
+				<param name="inputName">inputStream</param>
+				<param name="contentDisposition">${serviceResult.contentDisposition}</param>
+				<param name="bufferSize">${serviceResult.bufferSize}</param>
+			</result>
+			<result name="error" type="redirectAction">
+				<param name="actionName">ShowAlertMessage</param>
+				<param name="message">${serviceResult.message}</param>
+			</result>
+		</action>
+
+		<action name="ExportAllData*-*" class="singleObjectExportAllDataAction">
+			<result name="success" type="stream">
+				<param name="contentType">${serviceResult.contentType}</param>
+				<param name="inputName">inputStream</param>
+				<param name="contentDisposition">${serviceResult.contentDisposition}</param>
+				<param name="bufferSize">${serviceResult.bufferSize}</param>
+			</result>
+			<result name="error" type="redirectAction">
+				<param name="actionName">ShowAlertMessage</param>
+				<param name="message">${serviceResult.message}</param>
+			</result>
+		</action>
+
+		<action name="ImportDataForTree*-*" class="singleObjectImportDataAction">
+			<result name="success" type="redirectAction">
+				<param name="message">${serviceResult.message}</param>
+				<param name="actionName">ShowAlertMessage.action</param>
+				<param name="redirectActionName">ShowListForTree{1}-{2}</param> <!-- BackFirst-{2} -->
+				<param name="redirectActionNamespace">/framework</param>
+			</result>
+			<result name="error" type="redirectAction">
+				<param name="actionName">ShowAlertMessage</param>
+				<param name="message">${serviceResult.message}</param>
+				<!-- 2016-11-08 高级查询报文解析网页找不到问题 -->
+				<param name="redirectActionName">ShowListForTree{1}-{2}</param> <!-- BackFirst-{2} -->
+				<param name="redirectActionNamespace">/framework</param>
+			</result>
+		</action>
+
+		<action name="ImportData*-*" class="singleObjectImportDataAction">
+			<result name="success" type="redirectAction">
+				<param name="message">${serviceResult.message}</param>
+				<param name="actionName">ShowAlertMessage.action</param>
+				<param name="redirectActionName">ShowList{1}-{2}</param> <!-- BackFirst-{2} -->
+				<param name="redirectActionNamespace">/framework</param>
+			</result>
+			<result name="error" type="redirectAction">
+				<param name="actionName">ShowAlertMessage</param>
+				<param name="message">${serviceResult.message}</param>
+				<!-- 2016-11-08 高级查询报文解析网页找不到问题 -->
+				<param name="redirectActionName">ShowList{1}-{2}</param> <!-- BackFirst-{2} -->
+				<param name="redirectActionNamespace">/framework</param>
+			</result>
+		</action>
+
+		<action name="TreeNodeSave*-*" class="singleObjectSaveAction">
+			<result name="success" type="redirectAction">
+				<param name="message">${serviceResult.message}</param>
+				<param name="actionName">ShowAlertMessage</param>
+				<param name="redirectActionName">RefleshParent</param>
+				<param name="redirectActionNamespace">/framework</param>
+			</result>
+			<result name="error" type="redirectAction">
+				<param name="actionName">ShowAlertMessage</param>
+				<param name="message">${serviceResult.message}</param>
+			</result>
+			<result name="input" type="chain">
+				<param name="actionName">ShowInputSave{1}-{2}</param>
+			</result>
+		</action>
+
+		<action name="TreeNodeUpdate*-*" class="singleObjectUpdateAction">
+			<result name="success" type="redirectAction">
+				<param name="message">${serviceResult.message}</param>
+				<param name="actionName">ShowAlertMessage</param>
+				<param name="redirectActionName">RefleshParent</param>
+				<param name="redirectActionNamespace">/framework</param>
+			</result>
+			<result name="error" type="redirectAction">
+				<param name="actionName">ShowAlertMessage</param>
+				<param name="message">${serviceResult.message}</param>
+			</result>
+			<result name="input" type="chain">
+				<param name="actionName">ShowInputSave{1}-{2}</param>
+			</result>
+		</action>
+
+		<action name="TreeNodeDelete*-*" class="singleObjectDeleteListByIdListAction">
+			<result name="success" type="redirectAction">
+				<param name="message">${serviceResult.message}</param>
+				<param name="actionName">ShowAlertMessage</param>
+				<param name="redirectActionName">RefleshParent</param>
+				<param name="redirectActionNamespace">/framework</param>
+			</result>
+			<result name="error" type="redirectAction">
+				<param name="actionName">ShowAlertMessage</param>
+				<param name="message">${serviceResult.message}</param>
+			</result>
+			<result name="input" type="chain">
+				<param name="actionName">ShowInputSave{1}-{2}</param>
+			</result>
+		</action>
+
+		<action name="Login-*" class="loginAction">
+			<result name="success">/Framework/Index.jsp</result>
+			<result name="error" type="redirectAction">
+				<param name="actionName">ShowAlertMessage</param>
+				<param name="message">${serviceResult.message}</param>
+			</result>
+		</action>
+
+		<action name="ShowStatisticalCount*-*" class="showStatisticalCountAction">
+			<result name="success">/Framework/ShowList.jsp</result>
+		</action>
+
+		<action name="ShowSingleStatistical*-*" class="showSingleStatisticalAction">
+			<result name="success">/Framework/ShowList.jsp</result>
+		</action>
+
+		<action name="ShowViewStatistical*-*" class="showViewStatisticalAction">
+			<result name="success">/Framework/ShowList.jsp</result>
+			<result name="error" type="redirectAction">
+				<param name="message">${serviceResult.message}</param>
+				<param name="actionName">ShowAlertMessage</param>
+			</result>
+		</action>
+
+		<action name="ShowProcedureStatistical*-*" class="showProcedureStatisticalAction">
+			<result name="success">/Framework/ShowList.jsp</result>
+			<result name="error" type="redirectAction">
+				<param name="actionName">ShowAlertMessage</param>
+				<param name="message">${serviceResult.message}</param>
+			</result>
+		</action>
+
+		<action name="FirstShowViewStatistical*-*" class="firstShowViewStatisticalAction">
+			<result name="success">/Framework/ShowList.jsp</result>
+			<result name="error" type="redirectAction">
+				<param name="message">${serviceResult.message}</param>
+				<param name="actionName">ShowAlertMessage</param>
+			</result>
+		</action>
+
+		<action name="FirstShowProcedureStatistical*-*" class="firstShowProcedureStatisticalAction">
+			<result name="success">/Framework/ShowList.jsp</result>
+			<result name="error" type="redirectAction">
+				<param name="message">${serviceResult.message}</param>
+				<param name="actionName">ShowAlertMessage</param>
+			</result>
+		</action>
+
+		<action name="ShowComponentSave*-*" class="singleObjectShowComponentSaveAction">
+			<result name="success">/Framework/ShowComponentSaveOrUpdate.jsp</result>
+		</action>
+
+		<action name="ShowComponentUpdate*-*" class="singleObjectShowComponentUpdateAction">
+			<result name="success">/Framework/ShowComponentSaveOrUpdate.jsp</result>
+		</action>
+		
+		<action name="ExportForProcedure*-*" class="singleObjectExportForProcedureAction">
+			<result name="success" type="stream">
+				<param name="contentType">${serviceResult.contentType}</param>
+				<param name="inputName">inputStream</param>
+				<param name="contentDisposition">${serviceResult.contentDisposition}</param>
+				<param name="bufferSize">${serviceResult.bufferSize}</param>
+			</result>
+			<result name="error" type="redirectAction">
+				<param name="actionName">ShowAlertMessage</param>
+				<param name="message">${serviceResult.message}</param>
+			</result>
+		</action>
+
+		<action name="ExportForView*-*" class="singleObjectExportForViewAction">
+			<result name="success" type="stream">
+				<param name="contentType">${serviceResult.contentType}</param>
+				<param name="inputName">inputStream</param>
+				<param name="contentDisposition">${serviceResult.contentDisposition}</param>
+				<param name="bufferSize">${serviceResult.bufferSize}</param>
+			</result>
+			<result name="error" type="redirectAction">
+				<param name="actionName">ShowAlertMessage</param>
+				<param name="message">${serviceResult.message}</param>
+			</result>
+		</action>
+
+		<action name="ShowModelList-*" class="showModelListAction">
+			<result name="success">/Framework/ShowList.jsp</result>
+		</action>
+
+		<!--复合表单明细导出 -->
+		<action name="ExportForComponentDetail*-*" class="exportForComponentDetailAction">
+			<result name="success" type="stream">
+				<param name="contentType">${serviceResult.contentType}</param>
+				<param name="inputName">inputStream</param>
+				<param name="contentDisposition">${serviceResult.contentDisposition}</param>
+				<param name="bufferSize">${serviceResult.bufferSize}</param>
+			</result>
+			<result name="error" type="redirectAction">
+				<param name="actionName">ShowAlertMessage</param>
+				<param name="message">${serviceResult.message}</param>
+			</result>
+		</action>
+	</package>
+
+	<package name="frameworkJson" extends="framework.json" namespace="/framework">
+		<action name="ShowComponentDetail-*" class="showListForComponentDetailAction">
+			<result name="success" type="json">
+				<param name="root">serviceResult</param>
+			</result>
+		</action>
+
+		<action name="DeleteForComponentDetailByIdList*-*" class="deleteForComponentDetailAction">
+			<!-- <interceptor-ref name="tokenSessionFilterInterceptorStack"></interceptor-ref> -->
+			<result name="success" type="json">
+				<param name="root">serviceResult</param>
+			</result>
+			<result name="error" type="json">
+				<param name="root">serviceResult</param>
+			</result>
+		</action>
+
+		<action name="ImportForComponentDetail*-*" class="singleObjectImportDataAction">
+			<result name="success" type="json">
+				<param name="root">serviceResult</param>
+			</result>
+			<result name="error" type="json">
+				<param name="root">serviceResult</param>
+			</result>
+		</action>
+
+		<action name="DeleteForComponentDetailById*-*" class="singleObjectDeleteByIdAction">
+			<result name="success" type="json">
+				<param name="root">serviceResult</param>
+			</result>
+			<result name="error" type="json">
+				<param name="root">serviceResult</param>
+			</result>
+		</action>
+
+		<action name="ComponentUpdate*-*" class="singleObjectComponentUpdateAction">
+			<result name="success" type="jsonExt">
+				<param name="root">serviceResult</param>
+				<param name="forwardAction">ShowList{1}-{2}</param>
+			</result>
+			<result name="error" type="jsonExt">
+				<param name="root">serviceResult</param>
+			</result>
+		</action>
+
+		<action name="JsonExcepionAction" class="framework.actions.imps.JsonExceptionAction">
+			<result name="success" type="json">
+				<param name="root">serviceResult</param>
+			</result>
+		</action>
+
+		<action name="ComponentSave*-*" class="singleObjectComponentSaveAction">
+			<result name="success" type="jsonExt">
+				<param name="root">serviceResult</param>
+				<param name="forwardAction">ShowList{1}-{2}</param>
+			</result>
+			<result name="error" type="jsonExt">
+				<param name="root">serviceResult</param>
+			</result>
+			<result name="input" type="chain">
+				<param name="actionName">ShowComponentInputSave{1}-{2}</param>
+			</result>
+		</action>
+
+	</package>
+</struts>    

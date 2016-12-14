@@ -1,0 +1,28 @@
+﻿<?xml version='1.0' encoding='UTF-8'?>
+<!DOCTYPE hibernate-configuration PUBLIC
+          "-//Hibernate/Hibernate Configuration DTD 3.0//EN"
+          "http://hibernate.sourceforge.net/hibernate-configuration-3.0.dtd">
+
+<hibernate-configuration>
+ 
+ <session-factory>
+	<property name="hibernate.jdbc.batch_size">10000</property>
+    <property name="hiberante.cache.use_second_level_cache">false</property>
+<!-- 这两个属性上线时最好注释掉，对系统性能会有一点影响 -->    
+	<property name="hibernate.show_sql">false</property>
+	<property name="hibernate.format_sql">false</property>
+	
+<!-- 上线时一定要把这个属性注释掉，不然WAR包中的DTO对象发生变化时Hibernate就会对生产数据库的表结构进行修改 -->		
+	<property name="hibernate.hbm2ddl.auto">update</property> 
+
+	<property name="dialect">${dialect}</property>
+	<property name="connection.url">${connection.url}</property>
+	<property name="connection.username">${connection.username}</property>
+	<property name="connection.password">${connection.pwd}</property>
+	<property name="connection.driver_class">${connection.driver_class}</property>
+	<property name="myeclipse.connection.profile">${myeclipse.connection.profile}</property>
+    <property name="hibernate.connection.autocommit">true</property>
+	<property name="hibernate.query.factory_class">org.hibernate.hql.ast.ASTQueryTranslatorFactory</property>
+</session-factory>	
+
+</hibernate-configuration> 

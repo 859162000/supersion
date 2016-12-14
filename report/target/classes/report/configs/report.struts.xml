@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE struts PUBLIC "-//Apache Software Foundation//DTD Struts Configuration 2.1//EN" "http://struts.apache.org/dtds/struts-2.1.dtd">
+<struts>
+
+	<package name="report" extends="framework.default" namespace="/report">
+		<action name="AAAAAAAAAAA-report.dto.TaskRptInst" class="AAAAAAAAAAAAction">
+			<result name="success">/Framework/ShowSaveOrUpdate.jsp</result>
+		</action>
+
+		<action name="Select-showFields" class="selectFieldsAction"></action>
+		<action name="Select-showInfo" class="selectInfoAction"></action>
+		<action name="Select-showInstSet" class="selectInstSetAction"></action>
+		<action name="Select-showFileSet" class="selectFileSetAction"></action>
+		<action name="Select-showReportModel_TableSet" class="selectReportModel_TableSetAction"></action>
+
+		<action name="Show-TaskControl" class="showTaskControlAction">
+			<result name="success">/TestSystem/TaskControl.jsp</result>
+		</action>
+
+		<action name="ReportMergeBack-report.dto.TaskRptInst" class="reportMergeAction">
+			<result name="success" type="redirectAction">
+				<param name="actionName">ShowAlertMessage</param>
+				<param name="message">${serviceResult.message}</param>
+				<param name="redirectActionName">ShowReport-report.dto.TaskRptInst.action?id=${serviceResult.idValue}</param>
+				<param name="redirectActionNamespace">/report</param>
+			</result>
+			<result name="error" type="redirectAction">
+				<param name="actionName">ShowAlertMessage</param>
+				<param name="message">${serviceResult.message}</param>
+			</result>
+		</action>
+
+		<action name="InstInfoShowUpdateList*-*" class="InstInfoShowUpdateListAction">
+			<result name="success">/Report/ShowSaveOrUpdate.jsp</result>
+		</action>
+
+		<action name="DownloadResource-report.dto.DownloadResource"
+			class="downloadResourceAction">
+			<result name="success" type="stream">
+				<param name="contentType">${serviceResult.contentType}</param>
+				<param name="inputName">inputStream</param>
+				<param name="contentDisposition">${serviceResult.contentDisposition}</param>
+				<param name="bufferSize">${serviceResult.bufferSize}</param>
+			</result>
+			<result name="error" type="redirectAction">
+				<param name="actionName">ShowAlertMessage</param>
+				<param name="message">${serviceResult.message}</param>
+			</result>
+		</action>
+		<!-- 数据汇总界面 -->
+		<action name="ShowTaskRptInstToMeger-report.dto.TaskRptInst" class="showTaskRptInstForMegerAction">
+			<result name="success">/Report/ShowSaveOrUpdate.jsp</result>
+		</action>
+		<!-- 数据TopN汇总界面 -->
+		<action name="ShowTaskRptInstToTopN-report.dto.TaskRptInst" class="showTaskRptInstForTopNAction">
+			<result name="success">/Report/ShowSaveOrUpdate.jsp</result>
+		</action>
+		
+	</package>
+	
+	<include file="report/configs/reportForFramework.struts.xml" />
+	<include file="coresystem/configs/coresystem.struts.xml" />
+
+</struts>    

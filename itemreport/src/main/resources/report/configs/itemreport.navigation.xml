@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<navigationRoot>
+ 
+	<navigationComponentList>
+	    <navigationComponent id="DeskTop" name="桌面" url="Framework/NavigationPage.jsp"  ico="bg.png" treeIco="bg.png" treeExpandIco="bg.png" des="">
+	    	<navigationComponent id="CustomDefined" name="用户自定义主题报表" url="Framework/NavigationPage.jsp" ico="128_MergeSummary.png" treeIco="64_MergeSummary.png" treeExpandIco="32_MergeSummary.png" des="">
+ 				<navigationComponent id="CDDataManagerment" name="报表处理平台 " url="Framework/NavigationPage.jsp"  ico="128_NeedDoThing.png" treeIco="64_NeedDoThing.png" treeExpandIco="32_NeedDoThing.png" des="">
+	 			    <navigationComponent id="CDTaskRptInst" name="统计报表填报" url="framework/CDShowTree-report.dto.TaskRptInst" ico="64_DocumentInfo.png" treeIco="32_DocumentInfo.png" treeExpandIco="16_DocumentInfo.png" des=""></navigationComponent>
+					<navigationComponent id="CDTaskRptInstSH" name="统计报表审核" url="framework/CDReviewShowTree-report.dto.TaskRptInst" ico="64_FundDataCheck.png" treeIco="32_FundDataCheck.png" treeExpandIco="16_FundDataCheck.png" des=""></navigationComponent>
+					<navigationComponent id="CDTaskRptInstMEGER" name="数据汇总" url="framework/CDShowTree-report.dto.TaskFlow" ico="64_TaskRptInst.png" treeIco="32_TaskRptInst.png" treeExpandIco="16_TaskRptInst.png" des=""></navigationComponent>
+					<navigationComponent id="CDTaskModelInst" name="明细数据填报" url="framework/CDShowTree-report.dto.TaskModelInst" ico="64_Reportmodel_tableSet.png" treeIco="32_Reportmodel_tableSet.png" treeExpandIco="16_Reportmodel_tableSet.png" des=""></navigationComponent>
+					<navigationComponent id="CDTaskModelInstSH" name="明细数据审核" url="framework/CDReviewShowTree-report.dto.TaskModelInst" ico="64_TaskRptInst.png" treeIco="32_TaskRptInst.png" treeExpandIco="16_TaskRptInst.png" des=""></navigationComponent>
+					<navigationComponent id="CDTaskModelInstCK" name="数据查看" url="framework/CDCKShowTree-report.dto.TaskModelInst" ico="64_TaskRptInst.png" treeIco="32_TaskRptInst.png" treeExpandIco="16_TaskRptInst.png" des=""></navigationComponent>
+ 			    </navigationComponent>
+ 			    
+ 			    <navigationComponent id="BuildReport" name="指标报文生成" url="report/BuildReport-report.dto.TaskRptInst" ico="64_ItemInfo.png" treeIco="32_ItemInfo.png" treeExpandIco="16_ItemInfo.png" des=""></navigationComponent>
+ 		    </navigationComponent>
+	    	
+	    	<navigationComponent id="DataQueryPlatform" name="数据查询平台" url="Framework/NavigationPage.jsp" ico="128_MergeSummary.png" treeIco="64_MergeSummary.png" treeExpandIco="32_MergeSummary.png" des="">
+	    		<navigationComponent id="ItemData" name="指标数据查询" url="framework/ShowList-report.dto.ItemData" ico="64_ItemInfo.png" treeIco="32_ItemInfo.png" treeExpandIco="16_ItemInfo.png" des=""></navigationComponent>
+	    		<navigationComponent id="ItemDataChart" name="指标分析" url="report/ShowChartSet-report.dto.RptChartCond" ico="64_ItemInfo.png" treeIco="32_ItemInfo.png" treeExpandIco="16_ItemInfo.png" des=""></navigationComponent>
+	    		<navigationComponent id="HistoryReport" name="历史报表查询" url="framework/ShowList-report.dto.TaskRptInstHistory" ico="64_TaskRptInst.png" treeIco="32_TaskRptInst.png" treeExpandIco="16_TaskRptInst.png" des=""></navigationComponent>
+	    		<navigationComponent id="AnalyseModel" name="模型分析" url="framework/ShowList-report.dto.analyse.Rep_AnalyseModel" ico="64_TaskRptInst.png" treeIco="32_TaskRptInst.png" treeExpandIco="16_TaskRptInst.png" des=""></navigationComponent>
+	    		<navigationComponent id="ItemWarning" name="预警指标管理" url="framework/ShowList-report.dto.analyse.Rep_ItemWarning" ico="64_TaskRptInst.png" treeIco="32_TaskRptInst.png" treeExpandIco="16_TaskRptInst.png" des=""></navigationComponent> 		   
+	    		<navigationComponent id="ItemWarningResult" name="预警结果" url="framework/ShowList-report.dto.analyse.Rep_ItemWarningResult" ico="64_TaskRptInst.png" treeIco="32_TaskRptInst.png" treeExpandIco="16_TaskRptInst.png" des=""></navigationComponent>
+	    	</navigationComponent>
+	    	<navigationComponent id="ReportDefine" name="报表定义 " url="Framework/NavigationPage.jsp"  ico="64_RoleFunctionManager.png" treeIco="64_RoleFunctionManager.png" treeExpandIco="32_RoleFunctionManager.png" des="">
+				<navigationComponent id="ReportDefinition" name="报表定义器 " url="Framework/NavigationPage.jsp" ico="128_ReportDefinition.png" treeIco="64_ReportDefinition.png" treeExpandIco="32_ReportDefinition.png" des="">
+		           	<navigationComponent id="Reportmodel_tableSet" name="明细表集合管理" url="framework/ShowList-report.dto.Reportmodel_tableSet" ico="64_ReportModel_Table.png" treeIco="32_ReportModel_Table.png" treeExpandIco="16_ReportModel_Table.png" des=""></navigationComponent>
+		           	<navigationComponent id="ItemInfo" name="指标基本信息管理" url="framework/ShowTree-report.dto.ItemInfo" ico="64_ItemInfo.png" treeIco="32_ItemInfo.png" treeExpandIco="16_ItemInfo.png" des=""></navigationComponent>
+		           	<navigationComponent id="ItemProperty" name="指标属性管理" url="framework/ShowList-report.dto.ItemProperty" ico="64_CheckInstance.png" treeIco="32_CheckInstance.png" treeExpandIco="16_CheckInstance.png" des=""></navigationComponent>
+		           	<navigationComponent id="CurrencyType" name="指标币种管理" url="framework/ShowList-report.dto.CurrencyType" ico="64_CurrencyRate.png" treeIco="32_CurrencyRate.png" treeExpandIco="16_CurrencyRate.png" des=""></navigationComponent>
+		           	<navigationComponent id="RptInfo" name="报表信息管理" url="framework/ShowTree-report.dto.RptInfo" ico="64_RptInfoSet.png" treeIco="32_RptInfoSet.png" treeExpandIco="16_RptInfoSet.png" des=""></navigationComponent>
+		           	<navigationComponent id="RptInfoSet" name="报表集合管理" url="framework/ShowList-report.dto.RptInfoSet" ico="64_InstInfoSet.png" treeIco="32_InstInfoSet.png" treeExpandIco="16_InstInfoSet.png" des=""></navigationComponent>
+	         	</navigationComponent>
+	         	
+	         	<navigationComponent id="InfoAddCenter" name="信息补录中心" url="Framework/NavigationPage.jsp"  ico="128_ReportDefinition.png" treeIco="64_ReportDefinition.png" treeExpandIco="32_ReportDefinition.png" des="">
+	    			<navigationComponent id="CurrencyRate" name="币种汇率管理" url="framework/ShowList-report.dto.CurrencyRate" ico="64_CurrencyRate.png" treeIco="32_CurrencyRate.png" treeExpandIco="16_CurrencyRate.png" des=""></navigationComponent>
+	    		</navigationComponent>
+	    		
+	         	<navigationComponent id="RoleFunctionManager" name="计算规则定义器 " url="Framework/NavigationPage.jsp"  ico="64_RoleFunctionManager.png" treeIco="64_RoleFunctionManager.png" treeExpandIco="32_RoleFunctionManager.png" des="">
+		           <navigationComponent id="CalculationExampleInfo" name="计算实例管理" url="framework/ShowList-report.dto.CalculationExampleInfo" ico="64_CalculationRule.png" treeIco="32_CalculationRule.png" treeExpandIco="16_CalculationRule.png" des=""></navigationComponent>
+			       <navigationComponent id="CalculationRule" name="计算规则配置" url="framework/ShowTree-report.dto.ExampleInfoRule" ico="64_AutoETL_WorkflowLog.png" treeIco="32_AutoETL_WorkflowLog.png" treeExpandIco="16_AutoETL_WorkflowLog.png" des=""></navigationComponent>
+			 	</navigationComponent>
+				
+				<navigationComponent id="CheckInstanceManager" name="校验规则定义器" url = "Framework/NavigationPage.jsp" ico="64_CheckInstance.png" treeIco="32_CheckInstance.png" treeExpandIco="16_CheckInstance.png" des="">
+			        <navigationComponent id="CheckInstance" name="校验实例管理" url="framework/ShowList-report.dto.CheckInstance" ico="64_MergeSummary.png" treeIco="32_MergeSummary.png" treeExpandIco="16_MergeSummary.png" des=""></navigationComponent>
+			        <navigationComponent id="CheckRule" name="校验规则配置" url="framework/ShowTree-report.dto.CheckInstanceRule" ico="64_MergeInstance.png" treeIco="32_MergeInstance.png" treeExpandIco="16_MergeInstance.png" des=""></navigationComponent>    
+		      	</navigationComponent>
+	 			
+		      	<navigationComponent id="SummaryRoleDefinition" name="汇总规则定义器 " url="Framework/NavigationPage.jsp"  ico="64_RoleFunctionManager.png" treeIco="64_RoleFunctionManager.png" treeExpandIco="32_RoleFunctionManager.png" des="">
+			       <navigationComponent id="MergeSummary" name="汇总实例管理" url="framework/ShowList-report.dto.MergeSummary" ico="64_MergeSummary.png" treeIco="32_MergeSummary.png" treeExpandIco="16_MergeSummary.png" des=""></navigationComponent>
+			       <navigationComponent id="MergeInstance" name="汇总规则配置" url="framework/ShowList-report.dto.MergeInstance" ico="64_MergeInstance.png" treeIco="32_MergeInstance.png" treeExpandIco="16_MergeInstance.png" des=""></navigationComponent>
+			       <navigationComponent id="TopNInstance" name="TopN汇总实例管理" url="framework/ShowList-report.dto.TopNInstance" ico="64_MergeSummary.png" treeIco="32_MergeSummary.png" treeExpandIco="16_MergeSummary.png" des=""></navigationComponent>    
+			 	</navigationComponent>
+			 	
+	 			<navigationComponent id="instRptRela" name="机构报表关系" url="framework/ShowList-report.dto.InstRptRela" ico="64_RptInfoSet.png" treeIco="32_RptInfoSet.png" treeExpandIco="16_RptInfoSet.png" des=""></navigationComponent>
+	         	<navigationComponent id="InstRptBaseInfo" name="制表信息" url="framework/ShowList-report.dto.InstRptBaseInfo" ico="64_InstInfoSet.png" treeIco="32_InstInfoSet.png" treeExpandIco="16_InstInfoSet.png" des=""></navigationComponent>
+	         	
+	         	<navigationComponent id="MRepPackInfo" name="制度包管理" url="framework/ShowList-report.dto.MRepPackInfo" ico="64_DocumentInfo.png" treeIco="32_DocumentInfo.png" treeExpandIco="16_DocumentInfo.png" des=""></navigationComponent>
+				<navigationComponent id="MRepUpgradeInfo" name="制度包升级" url="framework/ShowList-report.dto.MRepUpgradeInfo" ico="64_DocumentInfo.png" treeIco="32_DocumentInfo.png" treeExpandIco="16_DocumentInfo.png" des=""></navigationComponent>
+				<navigationComponent id="MRepLeUpgradeInfo" name="多法人制度升级" url="framework/ShowList-report.dto.MRepLeUpgradeInfo" ico="64_DocumentInfo.png" treeIco="32_DocumentInfo.png" treeExpandIco="16_DocumentInfo.png" des=""></navigationComponent>
+	        </navigationComponent>
+
+	    	<navigationComponent id="BuildReport" name="指标报文生成" url="report/BuildReport-report.dto.TaskRptInst" ico="64_ItemInfo.png" treeIco="32_ItemInfo.png" treeExpandIco="16_ItemInfo.png" des=""></navigationComponent>
+	    	<navigationComponent id="DataManagerment" name="报表处理平台 " url="Framework/NavigationPage.jsp"  ico="128_NeedDoThing.png" treeIco="64_NeedDoThing.png" treeExpandIco="32_NeedDoThing.png" des="">
+			 	<navigationComponent id="FrameworkTaskRptInst" name="统计报表填报" url="framework/ShowTree-report.dto.TaskRptInst" ico="64_DocumentInfo.png" treeIco="32_DocumentInfo.png" treeExpandIco="16_DocumentInfo.png" des=""></navigationComponent>
+				<navigationComponent id="FrameworkTaskRptInstSH" name="统计报表审核" url="framework/ReviewShowTree-report.dto.TaskRptInst" ico="64_FundDataCheck.png" treeIco="32_FundDataCheck.png" treeExpandIco="16_FundDataCheck.png" des=""></navigationComponent>
+				<navigationComponent id="FrameworkTaskRptInstMEGER" name="数据汇总" url="framework/TaskShowTree-report.dto.TaskFlow" ico="64_TaskRptInst.png" treeIco="32_TaskRptInst.png" treeExpandIco="16_TaskRptInst.png" des=""></navigationComponent>
+				<navigationComponent id="FrameworkTaskRptInstTopN" name="TopN数据汇总" url="framework/TaskTopNShowTree-report.dto.TaskFlow" ico="64_TaskRptInst.png" treeIco="32_TaskRptInst.png" treeExpandIco="16_TaskRptInst.png" des=""></navigationComponent>
+	  		</navigationComponent>
+  			<navigationComponent id="DataMonitorCenter" name="数据监控中心" url="Framework/NavigationPage.jsp"  ico="128_DataManagerment.png" treeIco="64_DataManagerment.png" treeExpandIco="32_DataManagerment.png" des="">
+	    		<navigationComponent id="TaskRptInstStatisical" name="任务信息监控" url="framework/ShowSingleStatistical-report.dto.TaskRptInstStatisical" ico="64_Other.png" treeIco="32_Other.png" treeExpandIco="16_Other.png" des=""></navigationComponent>
+	     	</navigationComponent> 
+			
+	     </navigationComponent>
+	</navigationComponentList>
+</navigationRoot>

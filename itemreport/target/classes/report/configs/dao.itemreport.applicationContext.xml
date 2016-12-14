@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans
+	xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns:p="http://www.springframework.org/schema/p"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-3.0.xsd">
+
+	<bean id="taskRptInstUpdateListDao" class="report.dao.imps.TaskRptInstUpdateListDao" parent="baseDao" scope="prototype"></bean>
+	<bean id="itemDataCacheDao" class="report.dao.imps.ItemDataCacheDao" parent="baseDao" scope="prototype"></bean>
+	<bean id="analyseModelConfigDao" class="report.dao.imps.AnalyseModelConfigDao" parent="baseDao" scope="prototype"></bean>	
+	<bean id="makeRepPackDao" class="report.dao.imps.MakeRepPackDao" parent="baseDao" scope="prototype"></bean>
+	<bean id="makeRepUpgradeDao" class="report.dao.imps.MakeRepUpgradeDao" parent="baseDao" scope="prototype"></bean>
+	
+</beans>

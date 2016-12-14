@@ -1,0 +1,88 @@
+﻿<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title>添加任务信息</title>
+    <script src="../js/jquery/jquery.1.7.js" type="text/javascript"></script>
+    <link href="../css/Comm.css" rel="stylesheet" type="text/css" />
+    <link href="../css/TaskCompleteCss.css" rel="stylesheet" type="text/css" />
+    <link href="../css/buttons.css" rel="stylesheet" type="text/css" />
+    <script type="text/javascript">
+        function CloseWindows()
+        {
+            window.parent.RemoveWindows("AddTaskInfo");
+        }
+        $(document).ready(function(){
+            $(".SettingNode img").click(function(){
+                if($(this).attr("ImgState") == "on")
+                {
+                    $(this).attr("src","../images/systemsetting/switch_off.png");
+                    $(this).attr("ImgState","off");
+                }
+                else
+                {
+                    $(this).attr("src","../images/systemsetting/switch_on.png");
+                    $(this).attr("ImgState","on");
+                }
+            });
+        });
+    </script>
+</head>
+<body >
+    
+   <div id="TaskMain" class="MainDiv">
+        <div id="Top_Bar" style="width:100%; height:30px; margin-left:0px; border-left:0px solid #dadada; background-color:#F3F3F3;">
+              <div style="float:right; margin-right:20px; line-height:30px;font-family:微软雅黑;  color:Black; font-size:12px; cursor:pointer;" onclick="CloseWindows();">完成</div>
+              <div id="ChangeView" style="float:right; margin-right:10px; line-height:30px;font-family:微软雅黑;  color:Black; font-size:12px; cursor:pointer;" onclick="window.location.href='TaskSetting.htm'">上一步</div>
+        </div>
+   </div>
+    <div id="tree_meum" style="width:220px; height:100%; position:absolute; left:0px; top:0px;bottom:0px;font-family:微软雅黑; background-color:#4265A4;">
+        <div class="Meum_Tree_Row" >
+            <img src="../images/systemsetting/effect_on.png" />
+            <div>任务基本信息</div>
+        </div>
+        <div class="Meum_Tree_Row">
+            <img src="../images/systemsetting/Windows_on.png" />
+            <div>任务报表信息</div>
+        </div>
+        <div class="Meum_Tree_Row">
+            <img src="../images/systemsetting/Windows_on.png" />
+            <div>任务机构信息</div>
+        </div>
+        <div class="Meum_Tree_Row " >
+            <img src="../images/systemsetting/tab_on.png" />
+            <div>任务设置</div>
+        </div>
+        <div class="Meum_Tree_Row Meum_Tree_Row_Select">
+            <img src="../images/systemsetting/tab_on.png" />
+            <div>完成</div>
+        </div>
+    </div>
+    <div class="TaskDiv">
+        <div class="TaskDivRows" >
+            <div class="TaskDivRowsT">任务编号:</div><div class="TaskDivRowsC">12394720294394</div>
+            <div class="TaskDivRowsT">任务名称:</div><div class="TaskDivRowsC">2013年12月报</div>
+            <div class="TaskDivRowsT">任务主题:</div><div class="TaskDivRowsC">银监会1104系统</div>
+        </div>
+        <div class="TaskDivRows" >
+            <div class="TaskDivRowsT">数据时间:</div><div class="TaskDivRowsC">2013年12月31日</div>
+            <div class="TaskDivRowsT">开始时间:</div><div class="TaskDivRowsC">2013年12月31日</div>
+            <div class="TaskDivRowsT">结束时间:</div><div class="TaskDivRowsC">2014年12月31日</div>
+        </div>
+        <div class="TaskDivRows" >
+            <div class="TaskDivRowsT">任务频度:</div><div class="TaskDivRowsC">月报</div>
+            <div class="TaskDivRowsT">任务批次:</div><div class="TaskDivRowsC">第二批次</div>
+            <div class="TaskDivRowsT">任务状态:</div><div class="TaskDivRowsC">等待数据处理</div>
+        </div>
+        <div class="TaskDivRows" >
+            <div class="TaskDivRowsT">强制提交:</div><div class="TaskDivRowsC">否</div>
+            <div class="TaskDivRowsT">自动提交:</div><div class="TaskDivRowsC">是</div>
+            <div class="TaskDivRowsT">数据锁定:</div><div class="TaskDivRowsC">否</div>
+        </div>
+        <div class="TaskDivRows" >
+            <div class="TaskDivRowsT">任务机构:</div><div class="TaskDivRowsC">31家</div>
+            <div class="TaskDivRowsT">任务报表:</div><div class="TaskDivRowsC">15张</div>
+        </div>
+    </div>
+</body>
+</html>

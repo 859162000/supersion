@@ -1,0 +1,103 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>                                                                  
+<reportCheckRoot>                                                                                       
+	<!-- 校验名称：校验根据此名称做为校验实例-->                                                          
+	<checkInstance name="CHECK_EAS_XDHTB">	                                                                
+		<!-- 参数值：配置的值为默认值，也可以通过系统传递进行替换-->		                                    
+		<paramValueList>                                                                                    
+			<paramValue name="DTDATE" value="2013-12-09"></paramValue>
+			<paramValue name="strInstCode" value=""></paramValue>
+			 <!--
+		  <paramValue name="strTaskRptInstID" value="000000"></paramValue>
+			<paramValue name="strFreq" value="000000"></paramValue> 
+			-->                                         
+		</paramValueList>		                                                                                
+		                                                                                                    
+		<!-- 频度标志：可通过系统参数传递进行替换:1代表年报，2代表半年报，3代表季报，4代表月报，5代表日报-->
+		<freqCode value="4"></freqCode>	                                                                    
+		<!-- 表名：真实数据库表的名称，一个校验实例中应具备唯一性-->                                        
+		<checkTable procedureName="CHECK_EAS_XDHTB" procedureParam="DTDATE,strInstCode,rt" 
+			originTable="EAS_XDHTB" errorStateField="RPTCHECKTYPE" errorStateValue="3"  successStateValue="2"
+			procedureDiscription="信贷合同表"
+			defaultLogicDaoBeanId="oracleProcedureResultSetDao">          
+			                                                                                                  
+			<!-- 参数字段：如果不配置此项为全表数据校验                                                       
+				type不填或则等于1代表字符，等于2代表时间-->                                                     
+			<paramFieldList>                                                                                  
+				<paramField paramName="DTDATE" field="DTDATE" type="2"></paramField>
+				<paramField paramName="strInstCode" field="INSTINFO" type="1"></paramField>                            
+			</paramFieldList>                                                                                 
+			                                                                                                  
+			<!-- 唯一性字段组合：可理解为联合主键，用于未作说明的主外键关联-->                                
+			<checkUniqueFieldList>
+				<checkUniqueField name="AUTOID" discription="主键" originField="AUTOID"></checkUniqueField>
+			</checkUniqueFieldList>                                                                          
+			                                                                                                  
+			<!-- 表内基础校验：被设置的字段每条数都需要校验                                                   
+				emptyCheck代表为空校验                                                                          
+				digitalCheck代表数字校验，dateCheck代表日期校验                                                 
+				upperCheck代表全大写字母校验，chnCheck代表汉字校验（可扩展其他特殊校验）                        
+				startLength代表起始长度，endLength代表结束长度                                                  
+				valueDecimalLength的值代表小数位数的校验-->                                                     
+				<checkFieldBasicList> 
+					<checkFieldBasic name="XDHTH" discription="信贷合同号" emptyCheck="true" endLength="100"></checkFieldBasic>         
+					<checkFieldBasic name="ZHTH" discription="主合同号"  endLength="100"></checkFieldBasic>            
+					<checkFieldBasic name="KHTYBH" discription="客户统一编号" emptyCheck="true" endLength="60"></checkFieldBasic>      
+					<checkFieldBasic name="YXJGDM" discription="银行机构代码" emptyCheck="true" endLength="30"></checkFieldBasic>      
+					<checkFieldBasic name="JRXKZH" discription="金融许可证号" emptyCheck="true" startLength="15" endLength="15"></checkFieldBasic>      
+					<checkFieldBasic name="NBJGH" discription="内部机构号" emptyCheck="true" endLength="30"></checkFieldBasic>         
+					<checkFieldBasic name="KHMC" discription="客户名称" emptyCheck="true" endLength="200"></checkFieldBasic>            
+					<checkFieldBasic name="CPMC" discription="产品名称" endLength="60"></checkFieldBasic>            
+					<checkFieldBasic name="DKXGZL" discription="贷款新规种类" emptyCheck="true" endLength="30"></checkFieldBasic>      
+					<checkFieldBasic name="XDYWZL" discription="信贷业务种类" emptyCheck="true" endLength="100"></checkFieldBasic>      
+					<checkFieldBasic name="BZ" discription="币种" emptyCheck="true" startLength="3" endLength="3"  upperCheck="true"></checkFieldBasic>                  
+					<checkFieldBasic name="JE" discription="金额" emptyCheck="true" endLength="20"  valueDecimalLength="2"></checkFieldBasic>                  
+					<checkFieldBasic name="HTYDRQ" discription="合同约定日期" ignoreVal="999991231" emptyCheck="true" dateCheck="true"  endLength="8" digitalCheck="true" ></checkFieldBasic>      
+					<checkFieldBasic name="HTDQRQ" discription="合同到期日期" ignoreVal="999991231" emptyCheck="true" dateCheck="true"  endLength="8" digitalCheck="true" ></checkFieldBasic>      
+					<checkFieldBasic name="LL" discription="利率" emptyCheck="true"  ></checkFieldBasic>                  
+					<checkFieldBasic name="LLFD" discription="利率浮动" emptyCheck="true" ></checkFieldBasic>            
+					<checkFieldBasic name="ZYDBFS" discription="主要担保方式" emptyCheck="true" endLength="30"></checkFieldBasic>      
+					<checkFieldBasic name="GHJLGH" discription="管户经理工号" emptyCheck="true" endLength="30"></checkFieldBasic>      
+					<checkFieldBasic name="DKQX" discription="贷款期限" emptyCheck="true" digitalCheck="true"></checkFieldBasic>            
+					<checkFieldBasic name="FKFS" discription="放款方式" emptyCheck="true" endLength="8"></checkFieldBasic>            
+					<checkFieldBasic name="ZJLY" discription="资金来源" endLength="100"></checkFieldBasic>            
+					<checkFieldBasic name="DKYT" discription="贷款用途" emptyCheck="true" endLength="400"></checkFieldBasic>            
+					<checkFieldBasic name="DKTXXY" discription="贷款投向行业" endLength="100"></checkFieldBasic>      
+					<checkFieldBasic name="SFGJXZXY" discription="是否国家限制行业" endLength="4"></checkFieldBasic>
+					<checkFieldBasic name="CJRQ" discription="采集日期" ignoreVal="999991231" emptyCheck="true" dateCheck="true" startLength="8" endLength="8"  ></checkFieldBasic>            
+				</checkFieldBasicList>
+				<checkFieldEffectiveList discription="有效性校验">            
+					  <checkFieldEffective name="DKXGZL" discription="贷款新规种类"> 	
+				     <value>个贷</value>                                     	
+				     <value>固贷</value>                                    	
+				     <value>流贷</value>                                     	
+				    </checkFieldEffective>
+				    <checkFieldEffective name="XDYWZL" discription="信贷业务种类"> 
+				     <value>贷款</value>                                     	     
+				     <value>票据贴现</value>                                    	     
+				     <value>贸易融资</value> 
+				     <value>垫款</value>
+				     <value>法人账户透支</value>
+				     <value>其他</value> 
+				     </checkFieldEffective> 
+				     <checkFieldEffective name="ZYDBFS" discription="主要担保方式"> 
+				      <value>质押</value>                                     	    
+				      <value>抵押</value>                                    	      
+				      <value>保证</value> 
+				      <value>信用</value>
+				      <value>其他</value>
+				     </checkFieldEffective>    
+				     <checkFieldEffective name="FKFS" discription="放款方式"> 
+				      <value>自主支付</value>                                     	    
+				      <value>受托支付</value>                                    	      
+				      <value>混合支付</value>                                     	    
+				     </checkFieldEffective>
+				      <checkFieldEffective name="SFGJXZXY" discription="是否国家限制行业"> 
+				       <value>是</value>                                                                                          
+				       <value>否</value>                                                                                     	                                        	     
+				      </checkFieldEffective>                                                                                                                           
+				   
+				                                      	                                                                                              
+		    </checkFieldEffectiveList>                                                                                                      
+				</checkTable>                                                                                   
+				</checkInstance>                                                                                
+</reportCheckRoot>                                                                                      

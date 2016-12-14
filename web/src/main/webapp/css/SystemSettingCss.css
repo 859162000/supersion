@@ -1,0 +1,61 @@
+﻿.Meum_Tree_Row
+{
+	width:220px; 
+	height:40px; 
+	cursor:pointer;
+	
+}
+.Meum_Tree_Row:hover
+{
+	background-color:#324D7C;
+	font-weight:bolder;
+	padding-left:20px;
+	box-shadow:0 5px 30px black;
+	border-radius:5px;
+}
+.Meum_Tree_Row img
+{
+	float:left; 
+	margin-left:30px;
+    margin-top:3px;
+     
+}
+.Meum_Tree_Row div
+{
+	float:left; 
+	line-height:40px;
+	font-family:微软雅黑; 
+	font-size:13px; 
+	margin-left:10px;
+	color:White;
+}
+.SettingNode
+{
+	width:150px;
+	height:90px; 
+	margin-top:10px;
+	float:left;
+	text-align:center;
+	margin-left:20px;
+	cursor:pointer;
+}
+.SettingNode div
+{
+	height:42px; 
+	line-height:42px; 
+	font-family:微软雅黑; 
+	font-size:13px;
+}
+.SettingNode img
+{
+	cursor:pointer;
+	margin-top:10px;
+}
+.SettingNode:hover
+{
+	background-color:#324D7C;
+	font-weight:bolder;
+	box-shadow:0 5px 30px black;
+	border-radius:5px;
+	color:White;
+}

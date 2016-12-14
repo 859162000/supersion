@@ -1,0 +1,44 @@
+<?xml version="1.0"?>
+<project
+	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd"
+	xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+	<modelVersion>4.0.0</modelVersion>
+	<parent>
+		<artifactId>supervision</artifactId>
+		<groupId>net.transino</groupId>
+		<version>0.0.1-SNAPSHOT</version>
+	</parent>
+	<artifactId>coresystem</artifactId>
+	<name>coresystem</name>
+	<packaging>jar</packaging>
+	<url>http://maven.apache.org</url>
+	<build>
+		<finalName>${project.artifactId}-${project.version}</finalName>
+	</build>
+	<dependencies>
+		<dependency>
+			<groupId>net.transino</groupId>
+			<artifactId>framework</artifactId>
+			<version>${project.version}</version>
+		</dependency>
+		<dependency>
+			<groupId>net.transino</groupId>
+			<artifactId>extend</artifactId>
+			<version>${project.version}</version>
+		</dependency>
+		<!--
+			<dependency> <groupId>org.springframework</groupId>
+			<artifactId>spring-test</artifactId> </dependency>
+		-->
+		<dependency>
+			<groupId>net.sourceforge.jexcelapi</groupId>
+			<artifactId>jxl</artifactId>
+		</dependency>
+		<dependency>
+			<groupId>tools</groupId>
+			<artifactId>tools</artifactId>
+			<version>1.6.0.13</version>
+			<!-- <scope>provided</scope> --><!-- 此项打开后在打war包的时候不会打进去 -->
+		</dependency>
+	</dependencies>
+</project>

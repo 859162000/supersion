@@ -1,0 +1,122 @@
+<?xml version="1.0" encoding="UTF-8"?>
+ 
+<fieldShowsRoot>
+	<fieldShowsEntity>
+      <className>bxywsystem.dto.BXYWDownload</className>
+      <showInstance>
+        <showInstanceName>1</showInstanceName>
+        <fieldName fieldName="strReportCode" width="150"></fieldName> 
+        <fieldName fieldName="strReportName" width="400"></fieldName>
+        <fieldName fieldName="strSendType" listVisible="false"></fieldName>
+        <fieldName fieldName="dtDate" listVisible="false"></fieldName>
+        <fieldName fieldName="strJRJGCode" listVisible="false"></fieldName>
+        <fieldName fieldName="strReportType" listVisible="false"></fieldName>
+        <fieldName fieldName="SJBGRQ"  listVisible="false"></fieldName>
+        <fieldName fieldName="BBZRLX"  listVisible="false"></fieldName>
+      </showInstance>
+	</fieldShowsEntity>
+	
+	<fieldShowsEntity>
+      <className>bxywsystem.dto.AutoDTO_BX_BXYW_JC</className>
+      <showInstance>
+        <showInstanceName>1</showInstanceName>
+        <fieldName fieldName="SJBGRQ" singleTag="dateFieldNoSlash"></fieldName> 
+      </showInstance>
+	</fieldShowsEntity>
+	
+	<fieldShowsEntity>
+      <className>bxywsystem.dto.AutoDTO_BX_BXHTXX</className>
+      <showInstance>
+        <showInstanceName>1</showInstanceName>
+        <fieldName fieldName="BXQSRQ" singleTag="dateFieldNoSlash"></fieldName>
+        <fieldName fieldName="BXDQRQ" singleTag="dateFieldNoSlash"></fieldName> 
+      </showInstance>
+	</fieldShowsEntity>
+	
+	<fieldShowsEntity>
+      <className>bxywsystem.dto.AutoDTO_BX_SJDCZRXX</className>
+      <showInstance>
+        <showInstanceName>1</showInstanceName>
+        <fieldName fieldName="DCZRJCRQ" singleTag="dateFieldNoSlash"></fieldName>
+        <fieldName fieldName="YEBHRQ" singleTag="dateFieldNoSlash"></fieldName> 
+      </showInstance>
+	</fieldShowsEntity>
+	
+	<fieldShowsEntity>
+      <className>bxywsystem.dto.AutoDTO_BX_DCMXXX</className>
+      <showInstance>
+        <showInstanceName>1</showInstanceName>
+        <fieldName fieldName="DCRQ" singleTag="dateFieldNoSlash"></fieldName>
+      </showInstance>
+	</fieldShowsEntity>
+	
+	<fieldShowsEntity>
+      <className>bxywsystem.dto.AutoDTO_BX_DCMXXX</className>
+      <showInstance>
+        <showInstanceName>1</showInstanceName>
+        <fieldName fieldName="DCRQ" singleTag="dateFieldNoSlash"></fieldName>
+      </showInstance>
+	</fieldShowsEntity>
+	
+	<fieldShowsEntity>
+      <className>bxywsystem.dto.AutoDTO_BX_DCGKXX</className>
+      <showInstance>
+        <showInstanceName>1</showInstanceName>
+        <fieldName fieldName="JZRQ" singleTag="dateFieldNoSlash"></fieldName>
+        <fieldName fieldName="ZJYCDCRQ" singleTag="dateFieldNoSlash"></fieldName>
+        <fieldName fieldName="ZJYCZCRQ" singleTag="dateFieldNoSlash"></fieldName> 
+      </showInstance>
+	</fieldShowsEntity>
+
+	<fieldShowsEntity>
+      <className>bxywsystem.dto.AutoDTO_BX_ZCMXXX</className>
+      <showInstance>
+        <showInstanceName>1</showInstanceName>
+        <fieldName fieldName="ZCRQ" singleTag="dateFieldNoSlash"></fieldName>
+      </showInstance>
+	</fieldShowsEntity>
+	
+	<fieldShowsEntity>
+      <className>bxywsystem.dto.AutoDTO_BX_BFJNGKXX</className>
+      <showInstance>
+        <showInstanceName>1</showInstanceName>
+        <fieldName fieldName="JZRQ" singleTag="dateFieldNoSlash"></fieldName>
+        <fieldName fieldName="JFQSRQ" singleTag="dateFieldNoSlash"></fieldName>
+        <fieldName fieldName="JNJSRQ" singleTag="dateFieldNoSlash"></fieldName>
+      </showInstance>
+	</fieldShowsEntity>
+	
+	<fieldShowsEntity>
+      <className>bxywsystem.dto.AutoDTO_BX_BFJNMXXX</className>
+      <showInstance>
+        <showInstanceName>1</showInstanceName>
+        <fieldName fieldName="YJRQ" singleTag="dateFieldNoSlash"></fieldName>
+        <fieldName fieldName="SJRQ" singleTag="dateFieldNoSlash"></fieldName>
+        <fieldName fieldName="JNJSRQ" singleTag="dateFieldNoSlash"></fieldName>
+      </showInstance>
+	</fieldShowsEntity>
+
+	<fieldShowsEntity>
+      <className>bxywsystem.dto.AutoDTO_BX_BSBGJL</className>
+      <showInstance>
+        <showInstanceName>1</showInstanceName>
+        <fieldName fieldName="SJBGRQ" singleTag="dateFieldNoSlash"></fieldName> 
+      </showInstance>
+	</fieldShowsEntity>
+	
+	<fieldShowsEntity>
+      <className>bxywsystem.dto.AutoDTO_BX_SCQQJL</className>
+      <showInstance>
+        <showInstanceName>1</showInstanceName>
+        <fieldName fieldName="SJBGRQ" singleTag="dateFieldNoSlash"></fieldName> 
+      </showInstance>
+	</fieldShowsEntity>
+	
+	<fieldShowsEntity>
+      <className>bxywsystem.dto.AutoDTO_BX_ZQRJZHTXX</className>
+      <showInstance>
+        <showInstanceName>1</showInstanceName>
+        <fieldName fieldName="TX" singleTag="selectExtendField"></fieldName> 
+      </showInstance>
+	</fieldShowsEntity>
+</fieldShowsRoot>

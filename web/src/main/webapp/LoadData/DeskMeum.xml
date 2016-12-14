@@ -1,0 +1,92 @@
+<?xml version="1.0"?>
+<desktop id="DeskTop" value="桌面" ico="desktop.ico" type="path" scr="" des="描述信息">
+	<desk_ico id ="UserManagement" value="用户管理" ico="32.ico" type="funct" scr="UserManagement.htm" des="描述信息"></desk_ico>
+	<desk_ico id ="ReportManagement" value="报表任务" ico="33.ico" type="funct" scr="ReportManagement.htm" des="描述信息"></desk_ico>
+	<desk_ico id ="ModelManagement" value="模型管理" ico="34.ico" type="funct" scr="ModelManagement.htm" des="描述信息"></desk_ico>
+	<desk_ico id ="RiskShow" value="风险预警" ico="36.ico" type="funct" scr="RiskShow.htm" des="描述信息"></desk_ico>
+	<desk_ico id ="TaskFlow" value="流程配置" ico="35.ico" type="funct" scr="Task/TaskFlow.htm" des="描述信息"></desk_ico>
+	<desk_ico id ="SystemSetting" value="系统设置" ico="38.ico" type="funct" scr="SystemSetting.htm" des="描述信息"></desk_ico>
+	<desk_ico id ="PersonalWorkspace" value="个人工作区" ico="1.ico" type="path" scr="LoadMeum.htm" des="描述信息">
+		<PersonalWorkspace id ="ToDoList" value="代办任务" ico="2.ico" type="path"  scr="LoadMeum.htm" des="描述信息">
+			<ToDoList id ="d010101" value="银监会非现场" ico="3.ico" type="funct" scr="LoadMeum.htm" des="描述信息"></ToDoList>
+			<ToDoList id ="d010102" value="金融统计大集中" ico="4.ico" type="funct" scr="LoadMeum.htm" des="描述信息"></ToDoList>
+			<ToDoList id ="d010103" value="EAST" ico="5.ico" type="funct" scr="LoadMeum.htm" des="描述信息"></ToDoList>
+			<ToDoList id ="d010104" value="老客户风险" ico="6.ico" type="funct" scr="LoadMeum.htm" des="描述信息"></ToDoList>
+			<ToDoList id ="d010105" value="新客户风险" ico="7.ico" type="funct" scr="LoadMeum.htm" des="描述信息"></ToDoList>
+			<ToDoList id ="d010106" value="反洗钱" ico="8.ico" type="funct" scr="LoadMeum.htm" des="描述信息"></ToDoList>
+			<ToDoList id ="d010107" value="利率报备" ico="9.ico" type="funct" scr="LoadMeum.htm" des="描述信息"></ToDoList>
+			<ToDoList id ="d010108" value="存贷款标准化" ico="10.ico" type="funct" scr="LoadMeum.htm" des="描述信息"></ToDoList>
+			<ToDoList id ="d010109" value="人民币跨境" ico="11.ico" type="funct" scr="LoadMeum.htm" des="描述信息"></ToDoList>
+			<ToDoList id ="d010110" value="人民币支付" ico="12.ico" type="funct" scr="LoadMeum.htm" des="描述信息"></ToDoList>
+			<ToDoList id ="d010111" value="个人征信" ico="13.ico" type="funct" scr="LoadMeum.htm" des="描述信息"></ToDoList>
+			<ToDoList id ="d010112" value="企业征信" ico="14.ico" type="funct" scr="LoadMeum.htm" des="描述信息"></ToDoList>
+		</PersonalWorkspace>
+		<PersonalWorkspace id ="d0102" value="个人信息修改" ico="15.ico" type="path" scr="LoadMeum.htm" des="描述信息"></PersonalWorkspace>
+		<PersonalWorkspace id ="d0103" value="系统公告" ico="22.ico" type="funct" scr="LoadMeum.htm" des="描述信息"></PersonalWorkspace>
+	
+	</desk_ico>
+	<desk_ico id ="SystemParameters" value="系统参数管理" ico="16.ico" type="path" scr="LoadMeum.htm" des="描述信息">
+		<SystemParameters id ="d0201" value="币种管理" ico="21.ico" type="funct" scr="LoadMeum.htm" des="描述信息"></SystemParameters>
+		<SystemParameters id ="d0202" value="系统参数管理" ico="12.ico" type="funct" scr="LoadMeum.htm" des="描述信息"></SystemParameters>
+		<SystemParameters id ="d0203" value="维度管理" ico="17.ico" type="funct" scr="LoadMeum.htm" des="描述信息"></SystemParameters>
+		<SystemParameters id ="d0204" value="系统常量管理" ico="20.ico" type="funct" scr="LoadMeum.htm" des="描述信息"></SystemParameters>
+	</desk_ico>
+	<desk_ico id ="SystemManagement " value="系统功能管理" ico="18.ico" type="path" scr="LoadMeum.htm" des="描述信息">
+		<SystemManagement id ="d0301" value="用户管理" ico="19.ico" type="funct" scr="LoadMeum.htm" des="描述信息"></SystemManagement>
+		<SystemManagement id ="d0302" value="机构管理" ico="20.ico" type="funct" scr="LoadMeum.htm" des="描述信息"></SystemManagement>
+		<SystemManagement id ="d0303" value="角色管理" ico="21.ico" type="funct" scr="LoadMeum.htm" des="描述信息"></SystemManagement>
+		<SystemManagement id ="d0304" value="权限管理" ico="20.ico" type="funct" scr="LoadMeum.htm" des="描述信息"></SystemManagement>
+	</desk_ico>
+	<desk_ico id ="RuleManagement" value="规则管理" ico="22.ico" type="path" scr="LoadMeum.htm" des="描述信息">
+		<RuleManagement id ="d0401" value="计算规则管理" ico="23.ico" type="funct" scr="LoadMeum.htm" des="描述信息"></RuleManagement>
+		<RuleManagement id ="d0402" value="校验规则管理" ico="24.ico" type="funct" scr="LoadMeum.htm" des="描述信息"></RuleManagement>
+		<RuleManagement id ="d0403" value="转换规则管理" ico="25.ico" type="funct" scr="LoadMeum.htm" des="描述信息"></RuleManagement>
+		<RuleManagement id ="d0404" value="预警规则管理" ico="26.ico" type="funct" scr="LoadMeum.htm" des="描述信息"></RuleManagement>
+		<RuleManagement id ="d0405" value="规则规则管理" ico="27.ico" type="funct" scr="LoadMeum.htm" des="描述信息"></RuleManagement>
+	</desk_ico>
+	<desk_ico id ="DataProcessing" value="数据处理功能" ico="28.ico" type="path" scr="LoadMeum.htm" des="描述信息">
+		<DataProcessing id ="d0501" value="数据填补" ico="29.ico" type="funct" scr="LoadMeum.htm" des="描述信息"></DataProcessing>
+		<DataProcessing id ="d0502" value="批量计算" ico="30.ico" type="funct" scr="LoadMeum.htm" des="描述信息"></DataProcessing>
+		<DataProcessing id ="d0503" value="批量校验" ico="1.ico" type="funct" scr="LoadMeum.htm" des="描述信息"></DataProcessing>
+		<DataProcessing id ="d0504" value="数据汇总" ico="21.ico" type="funct" scr="LoadMeum.htm" des="描述信息"></DataProcessing>
+		<DataProcessing id ="d0505" value="数据复制" ico="22.ico" type="funct" scr="LoadMeum.htm" des="描述信息"></DataProcessing>
+		<DataProcessing id ="d0506" value="数据追查" ico="23.ico" type="funct" scr="LoadMeum.htm" des="描述信息"></DataProcessing>
+	</desk_ico>
+	<desk_ico id ="SystemMonitoring" value="监控功能" ico="6.ico" type="path" scr="LoadMeum.htm" des="描述信息">
+		<SystemMonitoring id ="d0601" value="ETL监控" ico="21.ico" type="funct" scr="LoadMeum.htm" des="描述信息"></SystemMonitoring>
+		<SystemMonitoring id ="d0602" value="数据质量监控" ico="12.ico" type="funct" scr="LoadMeum.htm" des="描述信息"></SystemMonitoring>
+		<SystemMonitoring id ="d0603" value="填报任务监控" ico="2.ico" type="funct" scr="LoadMeum.htm" des="描述信息"></SystemMonitoring>
+	</desk_ico>
+	<desk_ico id ="ProcessConfiguration" value="流程配置" ico="7.ico" type="path" scr="LoadMeum.htm" des="描述信息">
+		<ProcessConfiguration id ="d0701" value="ETL流程配置" ico="14.ico" type="funct" scr="LoadMeum.htm" des="描述信息"></ProcessConfiguration>
+		<ProcessConfiguration id ="d0702" value="审核流程配置" ico="18.ico" type="funct" scr="LoadMeum.htm" des="描述信息"></ProcessConfiguration>
+	</desk_ico>
+	<desk_ico id ="DataQuery" value="数据查询功能" ico="8.ico" type="path" scr="LoadMeum.htm" des="描述信息">
+		<DataQuery id ="d0801" value="指标数据查询" ico="19.ico" type="funct" scr="LoadMeum.htm" des="描述信息"></DataQuery>
+		<DataQuery id ="d0802" value="报表数据查询" ico="12.ico" type="funct" scr="LoadMeum.htm" des="描述信息"></DataQuery>
+		<DataQuery id ="d0803" value="历史变更数据查询" ico="20.ico" type="funct" scr="LoadMeum.htm" des="描述信息"></DataQuery>
+	</desk_ico>
+	<desk_ico id ="LogQuery" value="日志查询" ico="9.ico" type="path" scr="LoadMeum.htm" des="描述信息">
+		<LogQuery id ="d0901" value="系统操作日志" ico="18.ico" type="funct" scr="LoadMeum.htm" des="描述信息"></LogQuery>
+		<LogQuery id ="d0902" value="ETL日志" ico="19.ico" type="funct" scr="LoadMeum.htm" des="描述信息"></LogQuery>
+		<LogQuery id ="d0903" value="系统运行日志" ico="2.ico" type="funct" scr="LoadMeum.htm" des="描述信息"></LogQuery>
+	</desk_ico>
+	<desk_ico id ="Accessibility" value="辅助功能" ico="10.ico" type="path" scr="LoadMeum.htm" des="描述信息">
+		<Accessibility id ="SystemWizard" value="向导" ico="12.ico" type="path" scr="LoadMeum.htm" des="描述信息">
+			<SystemWizard id ="d100101" value="机构向导" ico="17.ico" type="funct" scr="LoadMeum.htm" des="描述信息"></SystemWizard>
+			<SystemWizard id ="d100102" value="用户向导" ico="21.ico" type="funct" scr="LoadMeum.htm" des="描述信息"></SystemWizard>
+			<SystemWizard id ="d100103" value="权限向导" ico="7.ico" type="funct" scr="LoadMeum.htm" des="描述信息"></SystemWizard>
+		</Accessibility>
+		<Accessibility id ="d1002" value="系统帮助" ico="4.ico" type="funct" scr="LoadMeum.htm" des="描述信息"></Accessibility>
+	</desk_ico>
+	<desk_ico id ="DownloadPackets" value="报文下载" ico="11.ico" type="path" scr="LoadMeum.htm" des="描述信息">
+		<DownloadPackets id ="d1101" value="单个报文下载" ico="2.ico" type="funct" scr="LoadMeum.htm" des="描述信息"></DownloadPackets>
+		<DownloadPackets id ="d1102" value="打包报文下载" ico="19.ico" type="funct" scr="LoadMeum.htm" des="描述信息"></DownloadPackets>
+	</desk_ico>
+	<desk_ico id ="ModelManagement" value="模型管理" ico="22.ico" type="funct" scr="LoadMeum.htm" des="描述信息"></desk_ico>
+	<desk_ico id ="ReportDefinition" value="报表定义" ico="23.ico" type="path" scr="LoadMeum.htm" des="描述信息">
+		<ReportDefinition id ="d1301" value="指标管理" ico="24.ico" type="funct" scr="LoadMeum.htm" des="描述信息"></ReportDefinition>
+		<ReportDefinition id ="d1302" value="报表模板管理" ico="12.ico" type="funct" scr="LoadMeum.htm" des="描述信息"></ReportDefinition>
+		<ReportDefinition id ="d1303" value="文件集管理" ico="20.ico" type="funct" scr="LoadMeum.htm" des="描述信息"></ReportDefinition>
+	</desk_ico>
+</desktop>

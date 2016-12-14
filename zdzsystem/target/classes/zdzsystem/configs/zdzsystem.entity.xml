@@ -1,0 +1,197 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<entityRoot>
+	<entityMap><!-- framework.services.procese.ShowSaveProcese -->
+		<entityName>ExceptTableMap</entityName>
+		<entity>
+			<code>zdzsystem.dto.AutoDTO_ZDZ_KZQQJTNR</code>
+			<name></name>
+		</entity>
+		<entity>
+			<code>zdzsystem.dto.AutoDTO_ZDZ_CXQQNR</code>
+			<name></name>
+		</entity>
+	</entityMap>
+	
+	<entityMap><!-- zdzsystem.service.translate.ZdzTableVisibleTranslate -->
+		<entityName>ShowAndhiddenTableMap</entityName>
+		<entity>
+			<code>ZDZ_KZQQJTNR</code>
+			<name></name>
+		</entity>
+		<entity>
+			<code>ZDZ_CXQQNR</code>
+			<name></name>
+		</entity>
+		<entity>
+			<code>ZDZ_FYDFKCXCLSBNR</code>
+			<name></name>
+		</entity>
+		<entity>
+			<code>ZDZ_FYDFKKZCLSBNR</code>
+			<name></name>
+		</entity>
+	</entityMap>
+	
+	<!--  通过实体表名获取到命名空间的名称 xiajieli  -->
+    <entityMap>
+		<entityName>GetNamespaceByEntityName</entityName>
+		<entity>
+			<code>ZDZ_</code>
+			<name>zdzsystem.dto.AutoDTO_</name>
+		</entity>
+	</entityMap>
+	
+	<!--任务界面根据表名排序（report.service.translate.ShowTaskModelInstOrderByTableNameTranslate） xiajieli-->
+	<entityMap>
+		<entityName>ShowTaskModelInstOrderByTableNameMap</entityName>
+		<entity>
+			<code>ZDZ_CXQQNR</code>
+			<name>1</name>
+		</entity>
+		<entity>
+			<code>ZDZ_CXQQWSNR</code>
+			<name>2</name>
+		</entity>
+		<entity>
+			<code>ZDZ_CXQQFGGWZZJRN</code>
+			<name>3</name>
+		</entity>
+		<entity>
+			<code>ZDZ_CXQQFGGZZZJNR</code>
+			<name>4</name>
+		</entity>
+		<entity>
+			<code>ZDZ_JTZHXX</code>
+			<name>5</name>
+		</entity>
+		<entity>
+			<code>ZDZ_JRZCXX</code>
+			<name>6</name>
+		</entity>
+		<entity>
+			<code>ZDZ_SFQZCSXX</code>
+			<name>7</name>
+		</entity>
+		<entity>
+			<code>ZDZ_ZJWLXX</code>
+			<name>8</name>
+		</entity>
+		<entity>
+			<code>ZDZ_GYQYXQXX</code>
+			<name>9</name>
+		</entity>
+		<entity>
+			<code>ZDZ_GLZLZHXX</code>
+			<name>10</name>
+		</entity>
+		<entity>
+			<code>ZDZ_JRJJFKCXHTNR</code>
+			<name>11</name>
+		</entity>
+		<entity>
+			<code>ZDZ_FYDFKCXCLSBNR</code>
+			<name>12</name>
+		</entity>
+		<entity>
+			<code>ZDZ_KZQQJTNR</code>
+			<name>13</name>
+		</entity>
+		<entity>
+			<code>ZDZ_BZXRZHXX</code>
+			<name>14</name>
+		</entity>
+		<entity>
+			<code>ZDZ_FYSFKZWSNR</code>
+			<name>15</name>
+		</entity>
+		<entity>
+			<code>ZDZ_FYSFKZFGGWZZJNR</code>
+			<name>16</name>
+		</entity>
+		<entity>
+			<code>ZDZ_FYSFKZFGGZZZJNR</code>
+			<name>17</name>
+		</entity>
+		<entity>
+			<code>ZDZ_KZCLJG</code>
+			<name>18</name>
+		</entity>
+		<entity>
+			<code>ZDZ_ZXDJXX</code>
+			<name>19</name>
+		</entity>
+		<entity>
+			<code>ZDZ_YXQXX</code>
+			<name>20</name>
+		</entity>
+		<entity>
+			<code>ZDZ_JRJGKZHTNR</code>
+			<name>21</name>
+		</entity>
+		<entity>
+			<code>ZDZ_FYDFKKZCLSBNR</code>
+			<name>22</name>
+		</entity>
+	</entityMap>
+	
+	 <!--  注意 windows 和 linux 路径区别.  e.g. linux: /home/xindai... windows: E:\log\zdz-->
+	 <!--   1. downloadPath:下载文件原始目录 
+	  		2.storagePath:下载文件存储目录 
+	  		3.errorPath:下载文件处理失败目录 
+	  		4.uploadPath:上传文件目录 
+	  		5.uploadPathTmp:上传文件临时目录 
+	  		6.dzyzPath:电子印章路径 -->
+    <!--<entityMap>
+		<entityName>User_Defined_Path</entityName>
+		<entity>
+			<code>downloadPath</code>
+			<name>E:\log\zdz\download</name>
+		</entity>
+		<entity>
+			<code>storagePath</code>
+			<name>E:\log\zdz\download\storage</name>
+		</entity>
+		<entity>
+			<code>errorPath</code>
+			<name>E:\log\zdz\download\error</name>
+		</entity>
+		<entity>
+			<code>uploadPath</code>
+			<name>E:\log\zdz\upload</name>
+		</entity>
+		<entity>
+			<code>uploadPathTmp</code>
+			<name>E:\log\zdz\tmp</name>
+		</entity>
+		<entity>
+			<code>dzyzPath</code>
+			<name>E:\log\zdz\dzyz\dzyz.gif</name>
+		</entity>
+	</entityMap>-->
+	
+	<!-- 必须常量  -->
+	<!-- 1.DT_DATE：任务的数据时间 
+		 2.INST_CODE：任务的所属行内机构Code 
+		 3.BANK_CODE：银行代码 
+		 4.BANK_NAME：银行名称 -->
+    <!--<entityMap>
+		<entityName>User_Defined_Const</entityName>
+		<entity>
+			<code>DT_DATE</code>
+			<name>2016-10-27</name>
+		</entity>
+		<entity>
+			<code>INST_CODE</code>
+			<name>0000</name>
+		</entity>
+		<entity>
+			<code>BANK_CODE</code>
+			<name>00000000000000000</name>
+		</entity>
+		<entity>
+			<code>BANK_NAME</code>
+			<name>渣打银行</name>
+		</entity>
+	</entityMap>-->
+	
+</entityRoot>

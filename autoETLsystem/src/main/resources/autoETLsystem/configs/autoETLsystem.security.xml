@@ -1,0 +1,142 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<securityRoot>
+     <function>
+         <functionParentId>DeskTop</functionParentId>
+	     <functionCode>AUTOETL</functionCode>
+	     <functionName>AUTOETL</functionName>
+	     <actionName>Framework/NavigationPage.jsp?id=AUTOETL</actionName>
+     </function>
+     
+     <!-- 数据源 -->
+   <function>
+     <functionParentId>AUTOETL</functionParentId>
+     <functionCode>AUTOETL01</functionCode>
+     <functionName>AUTOETL-数据连接配置</functionName>
+     <actionName>framework/ShowList-extend.dto.AutoETL_DataSource</actionName>
+     <actionName>*-extend.dto.AutoETL_DataSource</actionName>
+     <actionName>*-extend.dto.ReportModel_Table</actionName>
+     <actionName>*-extend.dto.AutoETL_Procedure</actionName>
+     <actionName>*-extend.dto.AutoETL_View</actionName>
+     <actionName>*-extend.dto.ReportModel_Field</actionName>
+     <actionName>*-extend.dto.AutoETL_ViewField</actionName>
+   </function>
+   
+  <!-- FTP -->
+  <function>
+     <functionParentId>AUTOETL</functionParentId>
+     <functionCode>AUTOETL02</functionCode>
+     <functionName>AUTOETL-FTP信息配置</functionName>
+     <actionName>framework/ShowList-autoETLsystem.dto.AutoETL_FTP</actionName>
+     <actionName>*-autoETLsystem.dto.AutoETL_FTP</actionName>
+     <actionName>*-autoETLsystem.dto.AutoETL_FTPTrans</actionName>
+  </function>
+  
+   <!-- 工作流 -->
+  <function>
+     <functionParentId>AUTOETL</functionParentId>
+     <functionCode>AUTOETL3</functionCode>
+     <functionName>AUTOETL-工作流</functionName>
+     <actionName>framework/ShowList-autoETLsystem.dto.AutoETL_Workflow</actionName>
+     <actionName>*-autoETLsystem.dto.AutoETL_Workflow</actionName>
+     <actionName>*-autoETLsystem.dto.AutoETL_WorkflowParamMV</actionName>
+     <actionName>*-autoETLsystem.dto.AutoETL_ActivityNode</actionName>
+     <actionName>*-autoETLsystem.dto.AutoETL_WorkflowAE</actionName>
+     <actionName>*-autoETLsystem.dto.AutoETL_ActivityNodeParam</actionName>
+     <actionName>*-autoETLsystem.dto.AutoETL_ActivityNodeProcP</actionName>
+     <actionName>*-autoETLsystem.dto.AutoETL_ActivityNodeForCT</actionName>
+     <actionName>*-autoETLsystem.dto.AutoETL_ActivityNodeForSql</actionName>
+     <actionName>*-autoETLsystem.dto.AutoETL_ActivityNodeForSqlC</actionName>
+     <actionName>*-EmptyEntity</actionName>
+     <actionName>*-autoETLsystem.dto.AutoETL_ActivityNodeRelationF</actionName>
+     <actionName>*-autoETLsystem.dto.AutoETL_ActivityNodeForSqlCR</actionName>
+     <actionName>framework/BackPreviousFirst</actionName>
+     <actionName>*-autoETLsystem.dto.AutoETL_ActivityNodeForSqlEx</actionName>
+     <actionName>*-autoETLsystem.dto.AutoETL_ActivityNodeForP</actionName>
+     <actionName>*-autoETLsystem.dto.AutoETL_ActivityNodeForPro</actionName>
+     <actionName>*-autoETLsystem.dto.AutoETL_ActivityNodeForFTPTra</actionName>
+     <actionName>*-autoETLsystem.dto.AutoETL_ActivityNodeForFile</actionName>
+     <actionName>*-autoETLsystem.dto.AutoETL_ActivityNodeForFileC</actionName>
+     <actionName>*-autoETLsystem.dto.AutoETL_ActivityNodeForFileF</actionName>
+     <actionName>*-autoETLsystem.dto.AutoETL_ActivityNodeForNET</actionName>
+     <actionName>*-autoETLsystem.dto.AutoETL_ActivityNodeForJava</actionName>
+     <actionName>*-autoETLsystem.dto.AutoETL_WorkflowPP</actionName>
+     <actionName>*-autoETLsystem.dto.AutoETL_WorkflowPSDV</actionName>
+     <actionName>*-autoETLsystem.dto.AutoETL_ActivityNodeRelationV</actionName>
+     <actionName>*-autoETLsystem.dto.AutoETL_ActivityNodeForCV</actionName>
+     <actionName>*-autoETLsystem.dto.AutoETL_ActivityNodeFieldViewV</actionName>
+     <actionName>*-autoETLsystem.dto.AutoETL_ActivityNodeRelationF</actionName>
+     <actionName>*-autoETLsystem.dto.AutoETL_ActivityNodeForCT</actionName>
+     <actionName>*-autoETLsystem.dto.AutoETL_ActivityNodeFieldV</actionName>
+     <actionName>*-autoETLsystem.dto.AutoETL_ActivityNodeFieldVCo</actionName>
+     <actionName>*-autoETLsystem.dto.AutoETL_ActivityNodeFieldVCa</actionName>
+     <actionName>*-autoETLsystem.dto.AutoETL_ActivityNodeForExcel</actionName>
+ 	 <actionName>*-autoETLsystem.dto.AutoETL_ActivityNodeForExcelC</actionName>
+ 	 <actionName>*-autoETLsystem.dto.AutoETL_WorkflowPFPV</actionName>
+ 	 <actionName>*-autoETLsystem.dto.AutoETL_WorkflowPFOPV</actionName>
+     <actionName>*-autoETLsystem.dto.AutoETL_WorkflowPFPVDetail</actionName>
+     <actionName>*-autoETLsystem.dto.AutoETL_WorkflowSQLParam</actionName>
+     <actionName>*-autoETLsystem.dto.AutoETL_ActivityNodeForCheck</actionName>
+     <actionName>*-autoETLsystem.dto.AutoETL_ActivityNodeFieldVVCa</actionName>
+     <actionName>*-autoETLsystem.dto.AutoETL_ActivityNodeFieldVVCon</actionName>
+     <actionName>*-autoETLsystem.dto.AutoETL_ActivityNodeForCalculate</actionName>
+     <actionName>*-autoETLsystem.dto.AutoETL_ActivityNodeForRptCheck</actionName>
+     <actionName>*-autoETLsystem.dto.AutoETL_ActivityNodeForSummary</actionName>
+     <actionName>*-autoETLsystem.dto.AutoETL_ActivityNodeForKettle</actionName>
+     <actionName>*-autoETLsystem.dto.AutoETL_ActivityNodeForDeleteFile</actionName>
+     <actionName>*-autoETLsystem.dto.AutoETL_ActivityNodeForDeleteFileDetail</actionName>
+     <actionName>*-autoETLsystem.dto.AutoETL_ActivityNodeForProceTranslateWithCheck</actionName>
+     <actionName>*-autoETLsystem.dto.AutoETL_ActivityNodeForMail</actionName>
+     <actionName>*-autoETLsystem.dto.AutoETL_ActivityNodeForTotalTableState</actionName>
+     <actionName>*-autoETLsystem.dto.AutoETL_ActivityNodeForLogicPCheck</actionName>
+     <actionName>*-autoETLsystem.dto.AutoETL_ActivityNodeForMsg</actionName>
+     <actionName>*-autoETLsystem.dto.AutoETL_ActivityNodeForWarning</actionName>
+  </function>
+  
+  <!-- 执行工作流 -->
+ 	<function>
+ 	 <functionParentId>AUTOETL</functionParentId>
+     <functionCode>AUTOETL4</functionCode>
+     <functionName>AUTOETL-执行工作流</functionName>
+     <actionName>framework/ShowWorkFlow-autoETLsystem.dto.AutoETL_Workflow</actionName>
+     <actionName>*-autoETLsystem.dto.AutoETL_Workflow</actionName>
+     <actionName>*-autoETLsystem.dto.AutoETL_WorkflowParamMV</actionName>
+     <actionName>*-autoETLsystem.dto.AutoETL_ActivityNode</actionName>
+     <actionName>*-autoETLsystem.dto.AutoETL_WorkflowAE</actionName>
+    </function>
+   
+   <!-- 工作流日志 -->
+  <function>
+     <functionParentId>AUTOETL</functionParentId>
+     <functionCode>AUTOETL5</functionCode>
+     <functionName>AUTOETL-工作流日志</functionName>
+     <actionName>framework/ShowList-autoETLsystem.dto.AutoETL_WorkflowLog</actionName>
+     <actionName>*-autoETLsystem.dto.AutoETL_WorkflowLog</actionName>
+     <actionName>*-autoETLsystem.dto.AutoETL_ActivityNodeLog</actionName>
+ </function>
+   
+   <!-- 参数 -->
+  <function>
+     <functionParentId>AUTOETL</functionParentId>
+     <functionCode>AUTOETL6</functionCode>
+     <functionName>AUTOETL-AUTOETL参数配置</functionName>
+     <actionName>framework/ShowList-extend.dto.AutoETL_Param</actionName>
+     <actionName>*-extend.dto.AutoETL_Param</actionName>
+  </function>
+  
+  <function>
+     <functionParentId>AUTOETL</functionParentId>
+     <functionCode>AUTOETL07</functionCode>
+     <functionName>AUTOETL-短息服务器配置</functionName>
+     <actionName>framework/ShowList-autoETLsystem.dto.AutoETL_MSG</actionName>
+     <actionName>*-autoETLsystem.dto.AutoETL_MSG</actionName>
+  </function>
+  
+   <function>
+     <functionParentId>AUTOETL</functionParentId>
+     <functionCode>AUTOETL08</functionCode>
+     <functionName>AUTOETL-MAIL信息配置</functionName>
+     <actionName>framework/ShowList-autoETLsystem.dto.AutoETL_MAIL</actionName>
+     <actionName>*-autoETLsystem.dto.AutoETL_MAIL</actionName>
+  </function>
+
+</securityRoot>

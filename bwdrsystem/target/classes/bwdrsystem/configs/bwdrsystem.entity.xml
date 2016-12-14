@@ -1,0 +1,124 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<entityRoot>
+	<entityMap>
+		<entityName>zxVersion</entityName>
+		<entity>
+			<code>GRZX</code>
+			<name>1.3</name>
+		</entity>
+		<entity>
+			<code>QYZX</code>
+			<name>2.1,2.2</name>
+		</entity>
+	</entityMap>
+
+	<entityMap>
+		<entityName>reportImportResult</entityName>
+		<entity>
+			<code>1</code>
+			<name>1-导入成功</name>
+		</entity>
+		<entity>
+			<code>2</code>
+			<name>2-导入失败</name>
+		</entity>
+	</entityMap>
+
+	<entityMap>
+		<entityName>taskInfo</entityName>
+		<entity>
+			<code>strTaskName</code>
+			<name>数据导入</name>
+		</entity>
+		<entity>
+			<code>dtTaskDate</code>
+			<name>yyyy-MM-dd</name>
+		</entity>
+		<entity>
+			<code>strFreq</code>
+			<name>1</name>
+		</entity>
+		<entity>
+			<code>taskStartData</code>
+			<name>yyyy-MM-dd</name>
+		</entity>
+		<entity>
+			<code>taskEndData</code>
+			<name>yyyy-MM-dd</name>
+		</entity>
+	</entityMap>
+
+
+	<!-- 不同征信类型对应的报文文件名称类型 -->
+	<!--<entityMap>
+		<entityName>reportFileTypeMap</entityName>
+		<entity>
+			<code>GR</code>
+			<name>1,4,8,9,A</name>
+		</entity>
+		<entity>
+			<code>QY</code>
+			<name>11,12,14,31</name>
+		</entity>
+		<entity>
+			<code>JG</code>
+			<name>51,32</name>
+		</entity>
+	</entityMap>
+
+
+	--><!-- 每一类报文文件中的报文头中的报文类型能填写的数据 -->
+	<!--<entityMap>
+		<entityName>reportTypeInHeaderMap</entityName>
+		<entity>
+			<code>1</code>
+			<name>1</name>
+		</entity>
+		<entity>
+			<code>4</code>
+			<name>4</name>
+		</entity>
+		<entity>
+			<code>8</code>
+			<name>8</name>
+		</entity>
+		<entity>
+			<code>9</code>
+			<name>9</name>
+		</entity>
+		<entity>
+			<code>A</code>
+			<name>A</name>
+		</entity>
+		<entity>
+			<code>11</code>
+			<name>01,02,03,04</name>
+		</entity>
+		<entity>
+			<code>12</code>
+			<name>11,12,13,14,15,16,17,18,19,20,21</name>
+		</entity>
+		<entity>
+			<code>14</code>
+			<name>61</name>
+		</entity>
+		<entity>
+			<code>31</code>
+			<name>51</name>
+		</entity>
+		<entity>
+			<code>51</code>
+			<name>0,1</name>
+		</entity>
+		<entity>
+			<code>32</code>
+			<name>0,1</name>
+		</entity>
+	</entityMap>
+
+	
+
+	
+
+
+--></entityRoot>

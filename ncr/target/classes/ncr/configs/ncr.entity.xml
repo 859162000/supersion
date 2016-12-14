@@ -1,0 +1,502 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<entityRoot>
+
+<entityMap><entityName>NCR_ACCT_TYPE</entityName>
+<entity><code>1</code><name>银行账户</name></entity>
+<entity><code>2</code><name>交易账户</name></entity>
+</entityMap>
+<entityMap><entityName>NCR_ACTL_CTRL_PER_CER_TYPE</entityName>
+<entity><code>1</code><name>组织机构代码</name></entity>
+<entity><code>2</code><name>居民身份证</name></entity>
+<entity><code>3</code><name>军官证</name></entity>
+<entity><code>4</code><name>文职干部证</name></entity>
+<entity><code>5</code><name>警官证</name></entity>
+<entity><code>6</code><name>士兵证</name></entity>
+<entity><code>7</code><name>户口本</name></entity>
+<entity><code>8</code><name>临时身份证</name></entity>
+<entity><code>9</code><name>其他有效通行旅行证件</name></entity>
+<entity><code>10</code><name>护照</name></entity>
+<entity><code>11</code><name>学生证</name></entity>
+<entity><code>12</code><name>无证件</name></entity>
+</entityMap>
+<entityMap><entityName>NCR_ACTL_CTRL_PERSON_IDTFY</entityName>
+<entity><code>1</code><name>是</name></entity>
+<entity><code>2</code><name>否</name></entity>
+</entityMap>
+<entityMap><entityName>NCR_ACTL_CTRL_PERSON_TYPE</entityName>
+<entity><code>1</code><name>企业</name></entity>
+<entity><code>2</code><name>机关</name></entity>
+<entity><code>3</code><name>事业单位</name></entity>
+<entity><code>4</code><name>社会团体</name></entity>
+<entity><code>5</code><name>其他组织机构</name></entity>
+<entity><code>6</code><name>自然人</name></entity>
+</entityMap>
+<entityMap><entityName>NCR_ASSET_LIAB_TBL_TYPE</entityName>
+<entity><code>1</code><name>年报</name></entity>
+<entity><code>2</code><name>半年报</name></entity>
+<entity><code>3</code><name>季报</name></entity>
+<entity><code>4</code><name>月报</name></entity>
+</entityMap>
+<entityMap><entityName>NCR_BOND_TYPE</entityName>
+<entity><code>1</code><name>企业债</name></entity>
+<entity><code>2</code><name>公司债</name></entity>
+<entity><code>3</code><name>短期融资券</name></entity>
+<entity><code>4</code><name>中期票据</name></entity>
+<entity><code>5</code><name>可分离债</name></entity>
+<entity><code>6</code><name>境内其他非金融企业债券</name></entity>
+<entity><code>7</code><name>境外非金融企业债券</name></entity>
+</entityMap>
+<entityMap><entityName>NCR_CO_DEBT_PER_CERT_TYPE</entityName>
+<entity><code>2</code><name>居民身份证</name></entity>
+<entity><code>3</code><name>军官证</name></entity>
+<entity><code>4</code><name>文职干部证</name></entity>
+<entity><code>5</code><name>警官证</name></entity>
+<entity><code>6</code><name>士兵证</name></entity>
+<entity><code>7</code><name>户口本</name></entity>
+<entity><code>8</code><name>临时身份证</name></entity>
+<entity><code>9</code><name>其他有效通行旅行证件</name></entity>
+<entity><code>10</code><name>护照</name></entity>
+<entity><code>11</code><name>学生证</name></entity>
+<entity><code>12</code><name>无证件</name></entity>
+</entityMap>
+<entityMap><entityName>NCR_CORP_IDTFY</entityName>
+<entity><code>1</code><name>是</name></entity>
+<entity><code>2</code><name>否</name></entity>
+</entityMap>
+<entityMap><entityName>NCR_CRDT_TYPE</entityName>
+<entity><code>1</code><name>集团客户授信</name></entity>
+<entity><code>2</code><name>供应链融资</name></entity>
+</entityMap>
+<entityMap><entityName>NCR_CUST_CATE</entityName>
+<entity><code>1</code><name>政策性银行</name></entity>
+<entity><code>2</code><name>国家开发银行</name></entity>
+<entity><code>3</code><name>国有商业银行</name></entity>
+<entity><code>4</code><name>股份制商业银行</name></entity>
+<entity><code>5</code><name>城市商业银行</name></entity>
+<entity><code>6</code><name>农村商业银行</name></entity>
+<entity><code>7</code><name>农村合作银行</name></entity>
+<entity><code>8</code><name>城市信用合作社</name></entity>
+<entity><code>9</code><name>农村信用合作社</name></entity>
+<entity><code>10</code><name>村镇银行</name></entity>
+<entity><code>11</code><name>农村资金互助社</name></entity>
+<entity><code>12</code><name>贷款公司</name></entity>
+<entity><code>13</code><name>外资法人银行</name></entity>
+<entity><code>14</code><name>外国银行分行</name></entity>
+<entity><code>15</code><name>企业集团财务公司</name></entity>
+<entity><code>16</code><name>信托投资公司</name></entity>
+<entity><code>17</code><name>金融租赁公司</name></entity>
+<entity><code>18</code><name>汽车金融公司</name></entity>
+<entity><code>19</code><name>货币经纪公司</name></entity>
+<entity><code>20</code><name>消费金融公司</name></entity>
+<entity><code>21</code><name>邮政储蓄银行</name></entity>
+<entity><code>22</code><name>证券公司</name></entity>
+<entity><code>23</code><name>基金公司</name></entity>
+<entity><code>24</code><name>保险公司</name></entity>
+<entity><code>25</code><name>期货公司</name></entity>
+<entity><code>26</code><name>金融资产管理公司</name></entity>
+<entity><code>27</code><name>其他</name></entity>
+</entityMap>
+<entityMap><entityName>NCR_CUST_OTHER_CERT_TYPE</entityName>
+<entity><code>2</code><name>居民身份证</name></entity>
+<entity><code>3</code><name>军官证</name></entity>
+<entity><code>4</code><name>文职干部证</name></entity>
+<entity><code>5</code><name>警官证</name></entity>
+<entity><code>6</code><name>士兵证</name></entity>
+<entity><code>7</code><name>户口本</name></entity>
+<entity><code>8</code><name>临时身份证</name></entity>
+<entity><code>9</code><name>其他有效通行旅行证件</name></entity>
+<entity><code>10</code><name>护照</name></entity>
+<entity><code>11</code><name>学生证</name></entity>
+<entity><code>12</code><name>无证件</name></entity>
+</entityMap>
+<entityMap><entityName>NCR_CUST_TYPE_1_1</entityName>
+<entity><code>1</code><name>集团客户</name></entity>
+<entity><code>2</code><name>单一法人客户</name></entity>
+<entity><code>3</code><name>同业客户</name></entity>
+</entityMap>
+<entityMap><entityName>NCR_CUST_TYPE_3_1</entityName>
+<entity><code>A1</code><name>大型企业</name></entity>
+<entity><code>A2</code><name>中型企业</name></entity>
+<entity><code>A3</code><name>小型企业</name></entity>
+<entity><code>A4</code><name>微型企业</name></entity>
+<entity><code>B</code><name>机关</name></entity>
+<entity><code>C</code><name>事业单位</name></entity>
+<entity><code>D</code><name>社会团体</name></entity>
+<entity><code>E</code><name>其他组织机构</name></entity>
+<entity><code>F</code><name>外境机构</name></entity>
+</entityMap>
+<entityMap><entityName>NCR_EDU_LOAN_TYPE</entityName>
+<entity><code>1</code><name>高校政策性助学贷款</name></entity>
+<entity><code>2</code><name>高校商业助学贷款</name></entity>
+<entity><code>3</code><name>生源地政策性助学贷款</name></entity>
+<entity><code>4</code><name>生源地商业助学贷款</name></entity>
+<entity><code>5</code><name>其他政策性助学贷款</name></entity>
+<entity><code>6</code><name>其他商业助学贷款</name></entity>
+</entityMap>
+<entityMap><entityName>NCR_FIN_REPT_TYPE</entityName>
+<entity><code>1</code><name>年报</name></entity>
+<entity><code>2</code><name>半年报</name></entity>
+<entity><code>3</code><name>季报</name></entity>
+<entity><code>4</code><name>月报</name></entity>
+</entityMap>
+<entityMap><entityName>NCR_FIVE_CLASS</entityName>
+<entity><code>1</code><name>正常</name></entity>
+<entity><code>2</code><name>关注</name></entity>
+<entity><code>3</code><name>次级</name></entity>
+<entity><code>4</code><name>可疑</name></entity>
+<entity><code>5</code><name>损失</name></entity>
+</entityMap>
+<entityMap><entityName>NCR_GUAR_CONTR_TYPE</entityName>
+<entity><code>1</code><name>抵押</name></entity>
+<entity><code>2</code><name>质押</name></entity>
+<entity><code>3</code><name>单人保证</name></entity>
+<entity><code>4</code><name>多人保证</name></entity>
+<entity><code>5</code><name>多人联保</name></entity>
+<entity><code>6</code><name>多人分保</name></entity>
+</entityMap>
+<entityMap><entityName>NCR_GUAR_MODE</entityName>
+<entity><code>1</code><name>保证</name></entity>
+<entity><code>2</code><name>抵押</name></entity>
+<entity><code>3</code><name>质押</name></entity>
+<entity><code>4</code><name>信用</name></entity>
+</entityMap>
+<entityMap><entityName>NCR_INDUSTRY_STRU_ADJ_TYPE</entityName>
+<entity><code>1</code><name>鼓励</name></entity>
+<entity><code>2</code><name>限制</name></entity>
+<entity><code>3</code><name>淘汰</name></entity>
+</entityMap>
+<entityMap><entityName>NCR_INDUSTRY_UPGD_IDTFY</entityName>
+<entity><code>1</code><name>是</name></entity>
+<entity><code>2</code><name>否</name></entity>
+</entityMap>
+<entityMap><entityName>NCR_LIST_CORP_IND</entityName>
+<entity><code>A</code><name>A股市场上市</name></entity>
+<entity><code>B</code><name>B股市场上市</name></entity>
+<entity><code>C</code><name>H股香港上市</name></entity>
+<entity><code>D</code><name>F股海外上市</name></entity>
+</entityMap>
+<entityMap><entityName>NCR_LOAN_BIZ_TYPE</entityName>
+<entity><code>1</code><name>流动资金贷款</name></entity>
+<entity><code>2</code><name>项目贷款</name></entity>
+<entity><code>3</code><name>一般固定资产贷款（除项目贷款外的固定资产贷款）</name></entity>
+<entity><code>4</code><name>其他贷款</name></entity>
+</entityMap>
+<entityMap><entityName>NCR_LOAN_BREED</entityName>
+<entity><code>1</code><name>住房贷款</name></entity>
+<entity><code>2</code><name>商用房贷款</name></entity>
+<entity><code>3</code><name>公积金贷款</name></entity>
+<entity><code>4</code><name>汽车贷款</name></entity>
+<entity><code>5</code><name>助学贷款</name></entity>
+<entity><code>6</code><name>消费贷款</name></entity>
+<entity><code>7</code><name>个人经营性贷款</name></entity>
+<entity><code>8</code><name>农户贷款</name></entity>
+<entity><code>9</code><name>其他</name></entity>
+</entityMap>
+<entityMap><entityName>NCR_LOAN_DISTR_TYPE</entityName>
+<entity><code>1</code><name>新增</name></entity>
+<entity><code>2</code><name>展期</name></entity>
+<entity><code>3</code><name>借新还旧</name></entity>
+<entity><code>4</code><name>重组</name></entity>
+</entityMap>
+<entityMap><entityName>NCR_LOAN_TYPE</entityName>
+<entity><code>1</code><name>贷款</name></entity>
+<entity><code>2</code><name>贴现</name></entity>
+<entity><code>3</code><name>贸易融资</name></entity>
+<entity><code>4</code><name>垫款</name></entity>
+<entity><code>5</code><name>法人账户透支</name></entity>
+<entity><code>6</code><name>其他</name></entity>
+</entityMap>
+<entityMap><entityName>NCR_MEM_TYPE</entityName>
+<entity><code>1</code><name>核心成员</name></entity>
+<entity><code>2</code><name>一般成员</name></entity>
+</entityMap>
+<entityMap><entityName>NCR_NEGOT_ATTR_CERT_TYPE</entityName>
+<entity><code>1</code><name>组织机构代码</name></entity>
+<entity><code>10</code><name>护照</name></entity>
+<entity><code>11</code><name>学生证</name></entity>
+<entity><code>12</code><name>无证件</name></entity>
+<entity><code>2</code><name>居民身份证</name></entity>
+<entity><code>3</code><name>军官证</name></entity>
+<entity><code>4</code><name>文职干部证</name></entity>
+<entity><code>5</code><name>警官证</name></entity>
+<entity><code>6</code><name>士兵证</name></entity>
+<entity><code>7</code><name>户口本</name></entity>
+<entity><code>8</code><name>临时身份证</name></entity>
+<entity><code>9</code><name>其他有效通行旅行证件</name></entity>
+</entityMap>
+<entityMap><entityName>NCR_NEGOT_ATTR_TRDPTY</entityName>
+<entity><code>1</code><name>是</name></entity>
+<entity><code>2</code><name>否</name></entity>
+</entityMap>
+<entityMap><entityName>NCR_NEGOT_ATTRIBUTER_TYPE</entityName>
+<entity><code>1</code><name>法人机构</name></entity>
+<entity><code>2</code><name>自然人</name></entity>
+</entityMap>
+<entityMap><entityName>NCR_NEW_INDUSTRY_TYPE</entityName>
+<entity><code>1</code><name>节能环保</name></entity>
+<entity><code>2</code><name>新一代信息技术</name></entity>
+<entity><code>3</code><name>生物医药</name></entity>
+<entity><code>4</code><name>高端装备制造</name></entity>
+<entity><code>5</code><name>新能源</name></entity>
+<entity><code>6</code><name>新材料</name></entity>
+<entity><code>7</code><name>新能源汽车</name></entity>
+</entityMap>
+<entityMap><entityName>NCR_OFF_BIZ_TYPE</entityName>
+<entity><code>1</code><name>银行承兑汇票</name></entity>
+<entity><code>2</code><name>信用证</name></entity>
+<entity><code>3</code><name>保函</name></entity>
+<entity><code>4</code><name>承诺</name></entity>
+<entity><code>5</code><name>委托贷款</name></entity>
+<entity><code>6</code><name>委托投资</name></entity>
+<entity><code>7</code><name>信用风险仍在银行的销售与购买协议</name></entity>
+<entity><code>8</code><name>金融衍生品</name></entity>
+</entityMap>
+<entityMap><entityName>NCR_OTHER_CERT_TYPE</entityName>
+<entity><code>3</code><name>军官证</name></entity>
+<entity><code>4</code><name>文职干部证</name></entity>
+<entity><code>5</code><name>警官证</name></entity>
+<entity><code>6</code><name>士兵证</name></entity>
+<entity><code>7</code><name>户口本</name></entity>
+<entity><code>8</code><name>临时身份证</name></entity>
+<entity><code>9</code><name>其他有效通行旅行证件</name></entity>
+</entityMap>
+<entityMap><entityName>NCR_PAY_MODE</entityName>
+<entity><code>1</code><name>受托支付</name></entity>
+<entity><code>2</code><name>自主支付</name></entity>
+</entityMap>
+<entityMap><entityName>NCR_RELA_CRDT_IDTFY</entityName>
+<entity><code>1</code><name>是</name></entity>
+<entity><code>2</code><name>否</name></entity>
+</entityMap>
+<entityMap><entityName>NCR_RELA_PERSON_TYPE_3_2</entityName>
+<entity><code>1</code><name>法定代表人</name></entity>
+<entity><code>2</code><name>董事长</name></entity>
+<entity><code>3</code><name>监事长</name></entity>
+<entity><code>4</code><name>总经理</name></entity>
+<entity><code>5</code><name>财务主管</name></entity>
+<entity><code>6</code><name>个人股东</name></entity>
+<entity><code>7</code><name>其他</name></entity>
+</entityMap>
+<entityMap><entityName>NCR_RELA_RELA_TYPE</entityName>
+<entity><code>1</code><name>上下游关系</name></entity>
+<entity><code>2</code><name>共同出资组建企业关系</name></entity>
+<entity><code>3</code><name>亲属关系</name></entity>
+<entity><code>4</code><name>担保关系</name></entity>
+<entity><code>5</code><name>其他关联关系</name></entity>
+<entity><code>6</code><name>共同受同一自然人控制</name></entity>
+</entityMap>
+<entityMap><entityName>NCR_RELA_TYPE</entityName>
+<entity><code>1</code><name>持股5%以上及银行认为重要的股东</name></entity>
+<entity><code>2</code><name>除本企业的股东外，直接或间接控制本企业的关联企业</name></entity>
+<entity><code>3</code><name>本企业直接或间接控制的关联企业</name></entity>
+<entity><code>4</code><name>直接或间接被同一控制方控制的关联企业</name></entity>
+<entity><code>5</code><name>符合《企业会计制度》第147条规定的其他关联企业</name></entity>
+</entityMap>
+<entityMap><entityName>NCR_REPAY_CMBC_TYPE</entityName>
+<entity><code>1</code><name>按月</name></entity>
+<entity><code>2</code><name>按季</name></entity>
+<entity><code>3</code><name>按半年</name></entity>
+<entity><code>4</code><name>按年</name></entity>
+<entity><code>5</code><name>到期一次还本</name></entity>
+<entity><code>6</code><name>按进度还款</name></entity>
+<entity><code>7</code><name>其他</name></entity>
+</entityMap>
+<entityMap><entityName>NCR_REPAY_INTRES_TYPE</entityName>
+<entity><code>1</code><name>按月</name></entity>
+<entity><code>2</code><name>按季</name></entity>
+<entity><code>3</code><name>按半年</name></entity>
+<entity><code>4</code><name>按年</name></entity>
+<entity><code>5</code><name>利随本清</name></entity>
+<entity><code>6</code><name>其他</name></entity>
+</entityMap>
+<entityMap><entityName>NCR_REPAY_MODE</entityName>
+<entity><code>1</code><name>按月</name></entity>
+<entity><code>2</code><name>按季</name></entity>
+<entity><code>3</code><name>按半年</name></entity>
+<entity><code>4</code><name>按年</name></entity>
+<entity><code>5</code><name>利随本清</name></entity>
+<entity><code>6</code><name>分期付息一次还本</name></entity>
+<entity><code>7</code><name>其他</name></entity>
+</entityMap>
+<entityMap><entityName>NCR_SH_REL_CORP_CERT_TYPE</entityName>
+<entity><code>1</code><name>组织机构代码</name></entity>
+<entity><code>10</code><name>护照</name></entity>
+<entity><code>11</code><name>学生证</name></entity>
+<entity><code>12</code><name>无证件</name></entity>
+<entity><code>2</code><name>居民身份证</name></entity>
+<entity><code>3</code><name>军官证</name></entity>
+<entity><code>4</code><name>文职干部证</name></entity>
+<entity><code>5</code><name>警官证</name></entity>
+<entity><code>6</code><name>士兵证</name></entity>
+<entity><code>7</code><name>户口本</name></entity>
+<entity><code>8</code><name>临时身份证</name></entity>
+<entity><code>9</code><name>其他有效通行旅行证件</name></entity>
+</entityMap>
+<entityMap><entityName>NCR_SHAREHD_RELA_CORP_TYPE</entityName>
+<entity><code>1</code><name>企业</name></entity>
+<entity><code>2</code><name>机关</name></entity>
+<entity><code>3</code><name>事业单位</name></entity>
+<entity><code>4</code><name>社会团体</name></entity>
+<entity><code>5</code><name>其他组织机构</name></entity>
+<entity><code>6</code><name>自然人</name></entity>
+</entityMap>
+<entityMap><entityName>NCR_SYN_LOAN_TAG_ROLE</entityName>
+<entity><code>1</code><name>牵头行</name></entity>
+<entity><code>2</code><name>参与行</name></entity>
+</entityMap>
+<entityMap><entityName>NCR_VALID_IDTFY_CERT_TYPE</entityName>
+<entity><code>10</code><name>护照</name></entity>
+<entity><code>11</code><name>学生证</name></entity>
+<entity><code>12</code><name>无证件</name></entity>
+<entity><code>2</code><name>居民身份证</name></entity>
+<entity><code>3</code><name>军官证</name></entity>
+<entity><code>4</code><name>文职干部证</name></entity>
+<entity><code>5</code><name>警官证</name></entity>
+<entity><code>6</code><name>士兵证</name></entity>
+<entity><code>7</code><name>户口本</name></entity>
+<entity><code>8</code><name>临时身份证</name></entity>
+<entity><code>9</code><name>其他有效通行旅行证件</name></entity>
+</entityMap>
+<entityMap>
+<entityName>NCR_RELA_PERSON_TYPE_2_2</entityName>
+<entity><code>1</code><name>董事长（理事长）</name></entity>
+<entity><code>2</code><name>监事长</name></entity>
+<entity><code>3</code><name>总经理</name></entity>
+<entity><code>4</code><name>财务主管</name></entity>
+<entity><code>5</code><name>其他</name></entity>
+</entityMap>
+
+<entityMap>
+<entityName>NCR_ReportCheck</entityName>
+<entity><code>CHECK_NCR_1_1_OTHER</code><name>对公及同业客户统计表_授信情况</name></entity>
+<entity><code>CHECK_NCR_1_2_OTHER</code><name>对公及同业客户统计表_集团客户授信拆分情况</name></entity>
+<entity><code>CHECK_NCR_1_3_OTHER</code><name>对公及同业客户统计表_贷款明细</name></entity>
+<entity><code>CHECK_NCR_1_4_OTHER</code><name>对公及同业客户统计表_持有企业债券明细</name></entity>
+<entity><code>CHECK_NCR_1_5_OTHER</code><name>对公及同业客户统计表_持有企业股权明细</name></entity>
+<entity><code>CHECK_NCR_1_6_OTHER</code><name>对公及同业客户统计表_表外业务明细</name></entity>
+<entity><code>CHECK_NCR_1_7_OTHER</code><name>对公及同业客户统计表_同业客户业务明细</name></entity>
+<entity><code>CHECK_NCR_2_1_OTHER</code><name>集团客户、供应链融资统计表_集团基本情况</name></entity>
+<entity><code>CHECK_NCR_2_2_OTHER</code><name>集团客户、供应链融资统计表_高管及重要关联人信息</name></entity>
+<entity><code>CHECK_NCR_2_3_OTHER</code><name>集团客户、供应链融资统计表_成员名单</name></entity>
+<entity><code>CHECK_NCR_2_4_OTHER</code><name>集团客户、供应链融资统计表_实际控制人</name></entity>
+<entity><code>CHECK_NCR_2_5_OTHER</code><name>集团客户、供应链融资统计表_关联集团信息</name></entity>
+<entity><code>CHECK_NCR_3_1_OTHER</code><name>单一法人客户统计表_单一法人基本情况</name></entity>
+<entity><code>CHECK_NCR_3_2_OTHER</code><name>法定代表人、高管及重要关联人信息</name></entity>
+<entity><code>CHECK_NCR_3_3_OTHER</code><name>单一法人客户统计表_重要股东及主要关联企业</name></entity>
+<entity><code>CHECK_NCR_4_1_OTHER</code><name>对公担保_对公客户担保情况统计表</name></entity>
+<entity><code>CHECK_NCR_5_1_OTHER</code><name>个人违约_个人贷款违约情况统计表</name></entity>
+<entity><code>CHECK_NCR_6_1_OTHER</code><name>个人担保_个人违约贷款担保情况统计表</name></entity>
+</entityMap>
+
+    
+    <entityMap>
+      <entityName>ncrFilePath</entityName>
+      <entity>
+	     <code>1</code>
+	     <name>/Download/NCR</name>
+      </entity>
+<!--  <entity>
+	     <code>2</code>
+	     <name>/Download/DownloadResource</name>
+      </entity>-->
+    </entityMap>
+    
+    <entityMap>
+		<entityName>feedbackReportTable</entityName>
+		<entity>
+		  	<code>ncr.dto.consistencyFeedback</code>
+			<name>一致性反馈表</name>
+		</entity>
+		<entity>
+		  	<code>ncr.dto.warnFeedback</code>
+		  	<name>警告反馈表</name>
+    	</entity>
+    </entityMap>
+    
+    <!--  通过实体表名获取到命名空间的名称 xiajieli  -->
+    <entityMap>
+		<entityName>GetNamespaceByEntityName</entityName>
+		<entity>
+			<code>NCR_</code>
+			<name>ncr.dto.AutoDTO_</name>
+        </entity>
+	</entityMap>
+	
+	<!--任务界面根据表名排序（report.service.translate.ShowTaskModelInstOrderByTableNameTranslate） xiajieli-->
+	<entityMap>
+		<entityName>ShowTaskModelInstOrderByTableNameMap</entityName>
+		<entity>
+			<code>NCR_1_1</code>
+			<name>1</name>
+		</entity>
+		<entity>
+			<code>NCR_1_2</code>
+			<name>2</name>
+		</entity>
+		<entity>
+			<code>NCR_1_3</code>
+			<name>3</name>
+		</entity>
+		<entity>
+			<code>NCR_1_4</code>
+			<name>4</name>
+		</entity>
+		<entity>
+			<code>NCR_1_5</code>
+			<name>5</name>
+		</entity>
+		<entity>
+			<code>NCR_1_6</code>
+			<name>6</name>
+		</entity>
+		<entity>
+			<code>NCR_1_7</code>
+			<name>7</name>
+		</entity>
+		<entity>
+			<code>NCR_2_1</code>
+			<name>8</name>
+		</entity>
+		<entity>
+			<code>NCR_2_2</code>
+			<name>9</name>
+		</entity>
+		<entity>
+			<code>NCR_2_3</code>
+			<name>10</name>
+		</entity>
+		<entity>
+			<code>NCR_2_4</code>
+			<name>11</name>
+		</entity>
+		<entity>
+			<code>NCR_2_5</code>
+			<name>12</name>
+		</entity>
+		<entity>
+			<code>NCR_3_1</code>
+			<name>13</name>
+		</entity>
+		<entity>
+			<code>NCR_3_2</code>
+			<name>14</name>
+		</entity>
+		<entity>
+			<code>NCR_3_3</code>
+			<name>15</name>
+		</entity>
+		<entity>
+			<code>NCR_4_1</code>
+			<name>16</name>
+		</entity>
+		<entity>
+			<code>NCR_5_1</code>
+			<name>17</name>
+		</entity>
+		<entity>
+			<code>NCR_6_1</code>
+			<name>18</name>
+		</entity>
+	</entityMap>
+
+</entityRoot>

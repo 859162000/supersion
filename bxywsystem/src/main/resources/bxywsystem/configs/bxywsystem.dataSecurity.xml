@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<dataSecurityRoot>
+<dataSecurityMap>
+    <dataSecurityName>coresystem.dto.RoleClassInst</dataSecurityName>
+      <dataSecurity>
+      	 <className>bxywsystem.dto.AutoDTO_BX_BXYW_JC</className>
+	     <fieldName>instInfo</fieldName>
+      </dataSecurity>
+        <dataSecurity>
+      	 <className>coresystem.dto.UserInfo</className>
+	     <fieldName>instInfo</fieldName>
+      </dataSecurity>
+      <dataSecurity>
+      	 <className>report.dto.TaskModelInst</className>
+	     <fieldName>instInfo</fieldName>
+      </dataSecurity>
+    </dataSecurityMap>
+</dataSecurityRoot>

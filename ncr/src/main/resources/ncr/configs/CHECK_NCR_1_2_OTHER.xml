@@ -1,0 +1,133 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<reportCheckRoot>
+	<checkInstance name="CHECK_NCR_1_2_OTHER">
+		<paramValueList>
+			<paramValue name="DTDATE" value="2013-12-09"></paramValue>
+			<paramValue name="strInstCode" value=""></paramValue>
+			<!--
+		  <paramValue name="strTaskRptInstID" value="000000"></paramValue>
+			<paramValue name="strFreq" value="000000"></paramValue> 
+			-->
+		</paramValueList>
+		
+		<freqCode value="4"></freqCode>
+
+		<checkTable procedureName="Check_NCR_1_2" procedureParam="DTDATE,strInstCode" procedureDiscription="集团客户授信拆分情况"
+			originTable="NCR_1_2" errorStateField="RPTCHECKTYPE" errorStateValue="3"  successStateValue="2" 
+			defaultLogicDaoBeanId="oracleProcedureResultSetDao">
+			<paramFieldList>
+				<paramField paramName="DTDATE" field="DTDATE" type="2"></paramField>
+				<paramField paramName="strInstCode" field="INSTINFO" type="1"></paramField>
+			</paramFieldList>
+
+			<checkUniqueFieldList>
+				<checkUniqueField name="AUTOID" discription="主键" originField="AUTOID"></checkUniqueField>
+			</checkUniqueFieldList>
+		</checkTable>	
+		<checkFieldAggregationList discription="聚合校验">
+			<paramFieldList>
+				<paramField paramName="DTDATE" field="DTDATE" type="2"></paramField>
+				<paramField paramName="strInstCode" field="INSTINFO" type="1"></paramField>
+			</paramFieldList>
+			       <!--LJX-007	若[客户类型]为“1-集团客户”，则该集团PARTⅠ中，同一[客户代码]、同一[授信号码]下[持有债券余额]等于PARTⅡ中该[授信号码]对应的[持有债券余额]之和-->
+			<checkFieldAggregation compareType="="	splitDiscription="客户代码_授信号码" leftSplitField="SPLITFIELD" rightSplitField="SPLITFIELD">
+				<leftFieldList>
+					<checkFieldAggregationField procedureName="Check_NCR_1_1_LJX_007_L" procedureParam="DTDATE,strInstCode,rt" procedureDiscription="持有债券余额" procedureResultField="M"></checkFieldAggregationField>
+				</leftFieldList>
+				<rightFieldList>
+					<checkFieldAggregationField procedureName="Check_NCR_1_2_LJX_007_R" procedureParam="DTDATE,strInstCode,rt" procedureDiscription="SUM(持有债券余额)" procedureResultField="SUM_G"></checkFieldAggregationField>
+				</rightFieldList>
+			</checkFieldAggregation>		
+			<!--LJX-009	若[客户类型]为“1-集团客户”，则该集团PARTⅠ中，同一[客户代码]、同一[授信号码]下[持有股权余额]等于PARTⅡ中该[授信号码]对应的[持有股权余额]之和-->
+			<checkFieldAggregation compareType="="	splitDiscription="客户代码_授信号码" leftSplitField="SPLITFIELD" rightSplitField="SPLITFIELD">
+				<leftFieldList>
+					<checkFieldAggregationField procedureName="Check_NCR_1_1_LJX_009_L" procedureParam="DTDATE,strInstCode,rt" procedureDiscription="持有股权余额" procedureResultField="N"></checkFieldAggregationField>
+				</leftFieldList>
+				<rightFieldList>
+					<checkFieldAggregationField procedureName="Check_NCR_1_2_LJX_009_R" procedureParam="DTDATE,strInstCode,rt" procedureDiscription="SUM(持有股权余额)" procedureResultField="SUM_H"></checkFieldAggregationField>
+				</rightFieldList>
+			</checkFieldAggregation>	
+			<!--LJX-010	若[客户类型]为“1-集团客户”，则该集团PARTⅠ中，同一[客户代码]、同一[授信号码]下[其他表内信用风险资产余额]等于PARTⅡ中该[授信号码]对应的[其他表内信用风险资产余额]之和-->
+			<checkFieldAggregation compareType="="	splitDiscription="客户代码_授信号码" leftSplitField="SPLITFIELD" rightSplitField="SPLITFIELD">
+				<leftFieldList>
+					<checkFieldAggregationField procedureName="Check_NCR_1_1_LJX_010_L" procedureParam="DTDATE,strInstCode,rt" procedureDiscription="其他表内信用风险资产余额" procedureResultField="O"></checkFieldAggregationField>
+				</leftFieldList>
+				<rightFieldList>
+					<checkFieldAggregationField procedureName="Check_NCR_1_2_LJX_010_R" procedureParam="DTDATE,strInstCode,rt" procedureDiscription="SUM(其他表内信用风险资产余额)" procedureResultField="SUM_I"></checkFieldAggregationField>
+				</rightFieldList>
+			</checkFieldAggregation>
+			<!--LJX-012	若[客户类型]为“1-集团客户”，则该集团PARTⅠ中，同一[客户代码]、同一[授信号码]下[表外业务余额]等于PARTⅡ中该[授信号码]对应的[表外业务余额]之和-->	
+			<checkFieldAggregation compareType="="	splitDiscription="客户代码_授信号码" leftSplitField="SPLITFIELD" rightSplitField="SPLITFIELD">
+				<leftFieldList>
+					<checkFieldAggregationField procedureName="Check_NCR_1_1_LJX_012_L" procedureParam="DTDATE,strInstCode,rt" procedureDiscription="表外业务余额" procedureResultField="P"></checkFieldAggregationField>
+				</leftFieldList>
+				<rightFieldList>
+					<checkFieldAggregationField procedureName="Check_NCR_1_2_LJX_012_R" procedureParam="DTDATE,strInstCode,rt" procedureDiscription="SUM(表外业务余额)" procedureResultField="SUM_J"></checkFieldAggregationField>
+				</rightFieldList>
+			</checkFieldAggregation>	
+			<!--LJX-005	若[客户类型]为“1-集团客户”，则该集团PARTⅠ中，同一[客户代码]、同一[授信号码]下[贷款余额]等于PARTⅡ中该[授信号码]对应的[贷款余额]之和-->
+			<checkFieldAggregation compareType="="	splitDiscription="客户代码_授信号码" leftSplitField="SPLITFIELD" rightSplitField="SPLITFIELD">
+				<leftFieldList>
+					<checkFieldAggregationField procedureName="Check_NCR_1_1_LJX_005_L" procedureParam="DTDATE,strInstCode,rt" procedureDiscription="贷款余额" procedureResultField="L"></checkFieldAggregationField>
+				</leftFieldList>
+				<rightFieldList>
+					<checkFieldAggregationField procedureName="Check_NCR_1_2_LJX_005_R" procedureParam="DTDATE,strInstCode,rt" procedureDiscription="SUM(贷款余额)" procedureResultField="SUM_F"></checkFieldAggregationField>
+				</rightFieldList>
+			</checkFieldAggregation>
+						
+			<!--LJX-013	若[客户类型]为“1-集团客户”，则该集团PARTⅠ中，同一[客户代码]、同一[授信号码]下[现有业务余额占用授信额度]等于PARTⅡ中该[授信号码]对应的[现有业务余额占用授信额度]之和-->		
+			<checkFieldAggregation compareType="="	splitDiscription="客户代码_授信号码" leftSplitField="SPLITFIELD" rightSplitField="SPLITFIELD">
+				<leftFieldList>
+					<checkFieldAggregationField procedureName="Check_NCR_1_1_LJX_013_L" procedureParam="DTDATE,strInstCode,rt" procedureDiscription="现有业务余额占用授信额度" procedureResultField="Q"></checkFieldAggregationField>
+				</leftFieldList>
+				<rightFieldList>
+					<checkFieldAggregationField procedureName="Check_NCR_1_2_LJX_013_R" procedureParam="DTDATE,strInstCode,rt" procedureDiscription="SUM(现有业务余额占用授信额度)" procedureResultField="SUM_K"></checkFieldAggregationField>
+				</rightFieldList>
+			</checkFieldAggregation>	
+			<!--LJX-015	若[客户类型]为“1-集团客户”，则该集团PARTⅠ中，同一[客户代码]、同一[授信号码]下[其中：贷款余额占用贷款授信额度]等于PARTⅡ中该[授信号码]对应的[其中：贷款余额占用贷款授信额度]之和-->				
+			<checkFieldAggregation compareType="="	splitDiscription="客户代码_授信号码" leftSplitField="SPLITFIELD" rightSplitField="SPLITFIELD">
+				<leftFieldList>
+					<checkFieldAggregationField procedureName="Check_NCR_1_1_LJX_015_L" procedureParam="DTDATE,strInstCode,rt" procedureDiscription="其中：贷款余额占用贷款授信额度" procedureResultField="R"></checkFieldAggregationField>
+				</leftFieldList>
+				<rightFieldList>
+					<checkFieldAggregationField procedureName="Check_NCR_1_2_LJX_015_R" procedureParam="DTDATE,strInstCode,rt" procedureDiscription="SUM(其中：贷款余额占用贷款授信额度)" procedureResultField="SUM_L"></checkFieldAggregationField>
+				</rightFieldList>
+			</checkFieldAggregation>	
+			<!--LJX-075|表1PARTⅠ中，若[客户类型]为“1-集团客户”，则该集团PARTⅠ中，同一[客户代码]、同一[授信号码]下[授信额度]大于等于PARTⅡ中该[授信号码]对应所有成员单位中的最大[授信额度]。-->
+			<checkFieldAggregation compareType="="	splitDiscription="授信号码" leftSplitField="SPLITFIELD" rightSplitField="SPLITFIELD">
+				<leftFieldList>
+					<checkFieldAggregationField procedureResultField="PROC_RESULT" procedureDiscription="授信额度" procedureName="Check_NCR_1_1_LJX_075_L" procedureParam="DTDATE,strInstCode,rt" ></checkFieldAggregationField>
+				</leftFieldList>
+				<rightFieldList>
+					<checkFieldAggregationField procedureResultField="PROC_RESULT" procedureDiscription="最大授信额度" procedureName="Check_NCR_1_1_LJX_075_R" procedureParam="DTDATE,strInstCode,rt" ></checkFieldAggregationField>
+				</rightFieldList>
+			</checkFieldAggregation>	
+			
+					
+		</checkFieldAggregationList>
+		
+		<checkFieldConsistentList consistenttype="2" discription="唯一性校验">
+			<paramFieldList>
+				<paramField paramName="DTDATE" field="DTDATE" type="2"></paramField>
+				<paramField paramName="strInstCode" field="INSTINFO" type="1"></paramField>
+			</paramFieldList>			
+			<!--WYX-003|表1《PART II：集团客户授信拆分情况》|对于PARTⅠ中[客户类型]为“1-集团客户”，同一[客户代码]，同一[授信号码]下|[成员单位的客户代码]-->			
+			<checkFieldConsistent>
+				<consistentGroup keyField="SPLITFIED" keyDiscription="客户代码-授信号码"  nameField="B" nameDiscription="成员单位的客户代码" procedureName="Check_NCR_1_2_WYX_003" procedureDiscription="集团客户授信拆分情况" procedureParam="DTDATE,strInstCode,rt"></consistentGroup>
+			</checkFieldConsistent>			
+		</checkFieldConsistentList>	
+			
+		<checkFieldConsistentList consistenttype="1" discription="一致性校验">
+			<paramFieldList>
+				<paramField paramName="DTDATE" field="DTDATE" type="2"></paramField>
+				<paramField paramName="strInstCode" field="INSTINFO" type="1"></paramField>
+			</paramFieldList>
+			<!--HNYZ-FR-003 表内及表间，同一个内部客户代码，对应的名称应一致-->		
+			<checkFieldConsistent>
+				<consistentGroup keyField="B" keyDiscription="成员单位的客户代码"  nameField="A" nameDiscription="成员单位的客户代码" procedureName="Check_NCR_1_2" procedureDiscription="集团客户授信拆分情况" procedureParam="DTDATE,strInstCode,rt"></consistentGroup>
+			</checkFieldConsistent>			
+		</checkFieldConsistentList>
+			
+								
+	</checkInstance>
+</reportCheckRoot>

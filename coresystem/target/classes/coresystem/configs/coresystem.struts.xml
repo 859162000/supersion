@@ -1,0 +1,92 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE struts PUBLIC "-//Apache Software Foundation//DTD Struts Configuration 2.1//EN" "http://struts.apache.org/dtds/struts-2.1.dtd">
+<struts>
+   
+	
+	 <package name="coresystem" extends="framework.default" namespace="/coresystem">
+        <action name="Login-coresystem.dto.UserInfo" class="loginAction">
+            <result name="success">/Framework/Index.jsp</result>
+            <result name="successAlert" type="redirectAction">
+                <param name="actionName">ShowAlertMessage</param>
+			    <param name="message">${serviceResult.message}</param>
+			    <param name="redirectActionName">ShowIndexPage</param>
+			    <param name="redirectActionNamespace">/coresystem</param>
+            </result>
+			<result name="error" type="redirectAction">
+			    <param name="actionName">ShowAlertMessage</param>
+			    <param name="message">${serviceResult.message}</param>
+			</result>
+		</action>
+		
+		<action name="ShowIndexPage" class="framework.actions.imps.BaseAction">
+            <result name="success">/Framework/Index.jsp</result>
+		</action>
+		
+		<action name="Logout-coresystem.dto.UserInfo" class="logoutAction">
+            <result name="success" type="redirect">            
+             	${serviceResult.message}
+            </result>
+			<result name="error" type="redirectAction">
+			    <param name="actionName">ShowAlertMessage</param>
+			    <param name="message">${serviceResult.message}</param>
+			</result>
+		</action>
+		
+		<action name="DDLLevelTable-extend.dto.ReportModel_Table" class="createTableAction">
+            <result name="success" type="redirectAction">
+	            <param name="message">${serviceResult.message}</param>
+	            <param name="actionName">ShowAlertMessage</param>
+			</result>
+			<result name="error" type="redirectAction">
+			    <param name="actionName">ShowAlertMessage</param>
+			    <param name="message">${serviceResult.message}</param>
+			</result>
+		</action>
+		
+		<action name="ImportTableStruct*-*" class="ImportTableStruct">
+          <result name="success" type="redirectAction">
+	        <param name="message">${serviceResult.message}</param>
+	        <param name="actionName">ShowAlertMessage</param>
+		  </result>
+		  <result name="error" type="redirectAction">
+			<param name="actionName">ShowAlertMessage</param>
+			<param name="message">${serviceResult.message}</param>
+		  </result>
+		</action>
+		
+		<action name="ShowUserNeedDoThing-coresystem.dto.ShowUserNeedDoThing" class="showUserNeedDoThingAction">
+            <result name="success">/Framework/ShowList.jsp</result>
+		</action>
+		
+		<action name="ShowUpdatePassword-coresystem.dto.ShowUpdatePassword" class="showUpdatePasswordAction">
+            <result name="success">/Framework/ShowSaveOrUpdate.jsp</result>
+		</action>
+		
+		<action name="UpdatePassword-coresystem.dto.ShowUpdatePassword" class="updatePasswordAction">
+           <result name="success" type="redirectAction">
+	        <param name="message">${serviceResult.message}</param>
+	        <param name="actionName">ShowAlertMessage</param>
+	        <param name="redirectActionName">ShowUpdatePassword-coresystem.dto.ShowUpdatePassword</param>
+			<param name="redirectActionNamespace">/coresystem</param>
+		  </result>
+		  <result name="error" type="redirectAction">
+			<param name="actionName">ShowAlertMessage</param>
+			<param name="message">${serviceResult.message}</param>
+		  </result>
+		</action>
+		<action name="PreLogin-*" class="preLoginAction">
+            <result>/CoreSystem/Login.jsp</result>
+		</action>
+	 </package>
+	 
+	 <package  name="coresystemjson" extends="json-default" namespace="/coresystem">
+		<action name="HasUserNeedDoThing" class="hasUserNeedDoThingAction">
+            <result name="success" type="json">
+            	<param name="root">serviceResult</param>
+            </result>
+		</action>
+		
+	</package>
+	<include file="coresystem/configs/coresystemForFramework.struts.xml" />
+	<include file="extend/configs/extend.struts.xml" />
+</struts>    

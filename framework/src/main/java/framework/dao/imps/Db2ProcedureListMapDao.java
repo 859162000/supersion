@@ -1,0 +1,62 @@
+package framework.dao.imps;
+
+import java.sql.CallableStatement;
+import java.sql.ResultSet;
+import java.sql.ResultSetMetaData;
+import java.sql.SQLException;
+import java.util.ArrayList;
+import java.util.LinkedHashMap;
+import java.util.List;
+import java.util.Map;
+import org.hibernate.HibernateException;
+import org.springframework.dao.DataAccessResourceFailureException;
+import framework.dao.imps.BaseObjectResultDao;
+import framework.services.interfaces.LogicParamManager;
+
+public class Db2ProcedureListMapDao extends BaseObjectResultDao{
+
+	@SuppressWarnings("unchecked")
+	@Override
+	public Object objectResultExecute(Object[] objects) throws Exception{ 
+		return objectResultExecute(objects[0].toString(),(Map<String,Object>)objects[1]);
+	}
+	
+	@SuppressWarnings("deprecation")
+	public Object objectResultExecute(String sql,Map<String,Object> procedureParam) throws DataAccessResourceFailureException, HibernateException, IllegalStateException, SQLException{
+		List<Map<String,Object>> list = new ArrayList<Map<String,Object>>();
+		CallableStatement callableStatement = this.getSession().connection().prepareCall(sql);
+		int paramIndex=1;
+		for(Map.Entry<String,Object> entry : procedureParam.entrySet()){
+			if(entry.getValue() != null){
+				callableStatement.setString(paramIndex,entry.getValue().toString());
+			}
+			else{
+				callableStatement.setString(paramIndex,"");
+			}
+			paramIndex++;
+		}
+
+		ResultSet resultSet = callableStatement.executeQuery();
+		ResultSetMetaData resultSetMetaData = resultSet.getMetaData();
+		int fieldCount = resultSetMetaData.getColumnCount();  
+		while(resultSet.next()){
+			Map<String,Object> valueMap = new LinkedHashMap<String, Object>();  
+            for (int i = 1; i <= fieldCount; i++) {  
+                String fieldName = resultSetMetaData.getColumnName(i);   
+                Object object = resultSet.getObject(fieldName);
+                valueMap.put(fieldName, object);
+            }  
+            list.add(valueMap);
+		}
+		resultSet.close();
+		callableStatement.close();
+		this.getSession().close();
+		return list;
+	}
+	
+	@Override
+	public Object objectResultExecute() throws Exception {
+		return objectResultExecute(LogicParamManager.getSqlQuery(),LogicParamManager.getProcedureParam());
+	}
+}
+

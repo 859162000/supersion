@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- 新客户风险<6>：个人违约贷款担保情况统计表 -->
+<cbrc reportnumber="06" bankcode="B0192H243010001" bankname="长沙银行股份有限公司" reportdate="" version="1.0">
+	<personalGuaranteed>
+		<borrowerName column="A"></borrowerName>
+		<paperType column="B"></paperType>
+		<paperCode column="C"></paperCode>
+		<loanContractNumber column="D"></loanContractNumber>
+		<guaranteedContractNumber column="E"></guaranteedContractNumber>
+		<guaranteedContractType column="F"></guaranteedContractType>
+		<collateralType column="G"></collateralType>
+		<collateralName column="H"></collateralName>
+		<collateralCode column="I"></collateralCode>
+		<guarantorName column="J"></guarantorName>
+		<guarantorType column="K"></guarantorType>
+		<guarantorPaperType column="L"></guarantorPaperType>
+		<guarantorPaperCode column="M"></guarantorPaperCode>
+		<estimatedValue column="N"></estimatedValue>
+		<thirdParty column="O"></thirdParty>
+		<firstEstimatedValueDate column="P"></firstEstimatedValueDate>
+		<newestEstimatedValueDate column="Q"></newestEstimatedValueDate>
+		<estimatedValueDueDate column="R"></estimatedValueDueDate>
+		<assuranceCapabilityUpperLimit column="S"></assuranceCapabilityUpperLimit>
+		<impawnRate column="T"></impawnRate>
+		<reallyImpawnRate column="U"></reallyImpawnRate>
+	</personalGuaranteed>
+</cbrc>

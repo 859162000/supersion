@@ -1,0 +1,171 @@
+create or replace procedure Proc_Check_QY_07XJLLB(rt out DevelopmentFramework.packageCheck,dtDate varchar2,strInstCode  varchar2)
+is
+ tempDate  varchar2(50);
+ V_CURSQL VARCHAR2(4000);  
+begin
+tempDate := dtDate;
+IF dtDate='*****'  and strInstCode='*****'
+	THEN
+	V_CURSQL :='select
+     a.dtdate,
+     a.instinfo,
+     b.autoID
+      ,b.CHZWSZFDXJ
+      ,b.CQDTFYTX
+      ,b.CWFY_1
+      ,b.CZGDZCWXZCHQTCQZCDSS
+      ,b.CZGDZCWXZCHQTCQZCSSHDXJJE
+      ,b.CZHDCSDXJLLJE
+      ,b.CZHDXJLRXJ
+      ,b.CZHDXJLRXJ_1
+      ,b.CZZGSJQTYYDWSDDXJJE
+      ,b.DTFYJS
+      ,b.DYSDSFZZJ
+      ,b.DYSDSZCJS
+      ,b.FPGLLRHCFLXSZFDXJ
+      ,b.GDZCBFSS
+      ,b.GDZCZJYQZCZHSCXSWZCZJ
+      ,b.GMGDZCWXZCHQTCQZCSZFDXJ
+      ,b.GMSPJSLWZFDXJ
+      ,b.GYJZBDSS
+      ,b.JLR_1
+      ,b.JYHDCSDXJLLJE
+      ,b.JYHDCSDXJLLJE_1
+      ,b.JYHDXJLCXJ
+      ,b.JYHDXJLRXJ
+      ,b.JYXYFXMDZJ
+      ,b.JYXYSXMDJS
+      ,b.QCXJJXJDJWYE
+      ,b.QDJKSDDXJ
+      ,b.QDTZSYSSDDXJ
+      ,b.QDZGSJQTSYDWZFDXJJE
+      ,b.QMXJJXJDJWYEL
+      ,b.QT
+      ,b.QT_1
+      ,b.RPTCheckType
+      ,b.RPTFeedbackType
+      ,b.RPTSendType
+      ,b.RZZRGDZC
+      ,b.SDDSFFH
+      ,b.SDQTYCZHDYGDXJ
+      ,b.SDQTYJYHDYGDXJ
+      ,b.SDQTYTZHDYGDXJ
+      ,b.SHTZSSDDXJ
+      ,b.SLBDDXJJXJDJWDYX
+      ,b.TZHDCSDXJLLJE
+      ,b.TZHDXJLRXJ
+      ,b.TZHDXJLRXJ_1
+      ,b.TZSS
+      ,b.TZSZFDXJ
+      ,b.WXZCTX
+      ,b.XJDJWDQCYE
+      ,b.XJDJWDQMYE
+      ,b.XJDQCYE
+      ,b.XJDQMYE
+      ,b.XJJXJDJWJZEW
+      ,b.XJJXJDJWJZZJE
+      ,b.XSCPHTGLWSDDXJ
+      ,b.XSTZSDDXJ
+      ,b.YNNDQDKZHGSZQ
+      ,b.YTFYZJ
+      ,b.ZCJZZB
+      ,b.ZFDGXSF
+      ,b.ZFGZGYJWZGZFDXJ
+      ,b.ZFQTYCZHDYGDXJ
+      ,b.ZFQTYJYHDYGDXJ
+      ,b.ZFQTYTZHDYGDXJ
+      ,b.ZHDJS
+      ,b.ZWZWZB
+      ,b.extend1
+      ,b.extend2
+      ,b.extend3
+      ,b.extend4
+      ,b.extend5
+      ,b.FOREIGNID
+  from QY_JKRCWBB_JC a,QY_07XJLLB b
+  where a.autoid=b.foreignid';
+
+ELSE
+   V_CURSQL :='select
+     a.dtdate,
+     a.instinfo,
+     b.autoID
+      ,b.CHZWSZFDXJ
+      ,b.CQDTFYTX
+      ,b.CWFY_1
+      ,b.CZGDZCWXZCHQTCQZCDSS
+      ,b.CZGDZCWXZCHQTCQZCSSHDXJJE
+      ,b.CZHDCSDXJLLJE
+      ,b.CZHDXJLRXJ
+      ,b.CZHDXJLRXJ_1
+      ,b.CZZGSJQTYYDWSDDXJJE
+      ,b.DTFYJS
+      ,b.DYSDSFZZJ
+      ,b.DYSDSZCJS
+      ,b.FPGLLRHCFLXSZFDXJ
+      ,b.GDZCBFSS
+      ,b.GDZCZJYQZCZHSCXSWZCZJ
+      ,b.GMGDZCWXZCHQTCQZCSZFDXJ
+      ,b.GMSPJSLWZFDXJ
+      ,b.GYJZBDSS
+      ,b.JLR_1
+      ,b.JYHDCSDXJLLJE
+      ,b.JYHDCSDXJLLJE_1
+      ,b.JYHDXJLCXJ
+      ,b.JYHDXJLRXJ
+      ,b.JYXYFXMDZJ
+      ,b.JYXYSXMDJS
+      ,b.QCXJJXJDJWYE
+      ,b.QDJKSDDXJ
+      ,b.QDTZSYSSDDXJ
+      ,b.QDZGSJQTSYDWZFDXJJE
+      ,b.QMXJJXJDJWYEL
+      ,b.QT
+      ,b.QT_1
+      ,b.RPTCheckType
+      ,b.RPTFeedbackType
+      ,b.RPTSendType
+      ,b.RZZRGDZC
+      ,b.SDDSFFH
+      ,b.SDQTYCZHDYGDXJ
+      ,b.SDQTYJYHDYGDXJ
+      ,b.SDQTYTZHDYGDXJ
+      ,b.SHTZSSDDXJ
+      ,b.SLBDDXJJXJDJWDYX
+      ,b.TZHDCSDXJLLJE
+      ,b.TZHDXJLRXJ
+      ,b.TZHDXJLRXJ_1
+      ,b.TZSS
+      ,b.TZSZFDXJ
+      ,b.WXZCTX
+      ,b.XJDJWDQCYE
+      ,b.XJDJWDQMYE
+      ,b.XJDQCYE
+      ,b.XJDQMYE
+      ,b.XJJXJDJWJZEW
+      ,b.XJJXJDJWJZZJE
+      ,b.XSCPHTGLWSDDXJ
+      ,b.XSTZSDDXJ
+      ,b.YNNDQDKZHGSZQ
+      ,b.YTFYZJ
+      ,b.ZCJZZB
+      ,b.ZFDGXSF
+      ,b.ZFGZGYJWZGZFDXJ
+      ,b.ZFQTYCZHDYGDXJ
+      ,b.ZFQTYJYHDYGDXJ
+      ,b.ZFQTYTZHDYGDXJ
+      ,b.ZHDJS
+      ,b.ZWZWZB
+      ,b.extend1
+      ,b.extend2
+      ,b.extend3
+      ,b.extend4
+      ,b.extend5
+      ,b.FOREIGNID
+  from QY_JKRCWBB_JC a,QY_07XJLLB b
+    where to_Date('''||tempDate||''', ''yyyy-MM-dd'')=dtDate and  Instinfo= '''||strInstCode||''' and a.autoid=b.foreignid';
+END IF;
+OPEN rt FOR V_CURSQL;
+END;  
+
+

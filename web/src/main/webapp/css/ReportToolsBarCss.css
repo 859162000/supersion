@@ -1,0 +1,34 @@
+﻿html
+{
+	height:100%;
+	width:100%;
+	margin:0px;
+}
+body
+{
+	margin:0px;
+	height:100%;
+	width:100%;
+}
+.ReportToolsBar_Div
+{
+	width:auto;
+	height:auto;
+	top:400px;
+	left:100px;
+	position:fixed;
+	/*bottom:0px;*/
+	border-radius:5px;
+	box-shadow:0 0px 10px red;
+	z-index:10000;
+	
+}
+.ReportToolsBar_Div:hover
+{
+	/*background-color:#0066FF;
+	box-shadow:0 5px 30px Black;*/
+	color:red;
+	border-radius:5px;
+	/*Black White*/
+	box-shadow:-2px 0px 8px #f00,0px -2px 8px #000,0px 2px 8px #9e038a,2px 0px 8px #0f0;
+}

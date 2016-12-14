@@ -1,0 +1,869 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE struts PUBLIC "-//Apache Software Foundation//DTD Struts Configuration 2.1//EN" "http://struts.apache.org/dtds/struts-2.1.dtd">
+<struts>
+	 <package name="reportForFramework" extends="framework.default" namespace="/framework">
+		
+		<!-- 反馈报文明细段 -->
+		<action name="FKBWShowListLevelFKBWAutoDTOMX-*" class="singleObjectFKBWShowListLevelFKBWAutoDTOMXAction">
+			<result name="success">/Framework/ShowList.jsp</result>
+		</action>
+		
+		<action name="FKBWShowSaveLevelFKBWAutoDTOMX-*" class="singleObjectFKBWShowSaveLevelFKBWAutoDTOMXAction">
+            <result name="success">/Framework/ShowSaveOrUpdate.jsp</result>
+		</action>
+		
+		<action name="FKBWShowCheckUpdateLevelFKBWAutoDTOMX-*" class="singleObjectFKBWShowCheckUpdateLevelFKBWAutoDTOMXAction">
+            <result name="success">/Framework/ShowSaveOrUpdate.jsp</result>
+            <result name="input" type="chain">
+			    <param name="actionName">FKBWShowInputUpdateLevelFKBWAutoDTOMX-{1}</param>
+			</result>
+		</action>
+		
+		 <action name="FKBWShowInputSaveLevelFKBWAutoDTOMX-*" class="singleObjectFKBWShowInputSaveLevelFKBWAutoDTOMXAction">
+            <result name="input">/Framework/ShowSaveOrUpdate.jsp</result>
+		</action>
+																		
+		<action name="FKBWShowInputUpdateLevelFKBWAutoDTOMX-*" class="singleObjectFKBWShowInputUpdateLevelFKBWAutoDTOMXAction">
+            <result name="input">/Framework/ShowSaveOrUpdate.jsp</result>
+		</action>
+		
+		<action name="FKBWSaveLevelFKBWAutoDTOMX-*" class="singleObjectFKBWSaveLevelFKBWAutoDTOMXAction">
+            <result name="success" type="redirectAction">
+            	<param name="message">${serviceResult.message}</param>
+			    <param name="actionName">ShowAlertMessage</param>
+			    <param name="redirectActionName">FKBWShowListLevelFKBWAutoDTOMX-{1}</param> 
+			    <param name="redirectActionNamespace">/framework</param>
+			</result>
+			<result name="error" type="redirectAction">
+			    <param name="actionName">ShowAlertMessage</param>
+			    <param name="message">${serviceResult.message}</param>
+			</result>
+			<result name="input" type="chain">
+			    <param name="actionName">FKBWShowInputSaveLevelFKBWAutoDTOMX-{1}</param>
+			</result>
+		</action>
+		
+		<action name="FKBWUpdateLevelFKBWAutoDTOMX-*" class="singleObjectFKBWUpdateLevelFKBWAutoDTOMXAction">
+            <result name="success" type="redirectAction">
+            	<param name="message">${serviceResult.message}</param>
+			    <param name="actionName">ShowAlertMessage</param>
+			    <param name="redirectActionName">FKBWShowListLevelFKBWAutoDTOMX-{1}</param> 
+			    <param name="redirectActionNamespace">/framework</param>
+			</result>
+			<result name="error" type="redirectAction">
+			    <param name="actionName">ShowAlertMessage</param>
+			    <param name="message">${serviceResult.message}</param>
+			</result>
+			<result name="input" type="chain">
+			    <param name="actionName">FKBWShowInputUpdateLevelFKBWAutoDTOMX-{1}</param>
+			</result>
+		</action>
+		
+		<action name="FKBWShowSaveOrUpdate*-*" class="singleObjectFKBWShowSaveOrUpdateLevelFKBWAUTODTOMXAction">
+            <result name="save" type="chain">
+                <param name="actionName">${serviceResult.actionName}</param>
+            </result>
+            <result name="update" type="redirectAction">
+                <param name="actionName">${serviceResult.actionName}</param>
+                <param name="id">${serviceResult.idValue}</param>
+                <param name="windowId">${serviceResult.windowId}</param>
+            </result>
+		</action> 
+		
+		<!-- 反馈报文基础段 -->
+		<action name="FKBWShowCheckUpdateLevelFKBWAutoDTO-*" class="FKBWShowCheckUpdateLevelFKBWAutoDTOAction">
+            <result name="success">/Framework/ShowSaveOrUpdate.jsp</result>
+             <result name="input" type="chain">
+			    <param name="actionName">FKBWShowInputCheckUpdateLevelFKBWAutoDTO-{1}</param>
+			</result>
+		</action>
+		
+		<action name="FKBWValidateUpdateLevelFKBWAutoDTO-*" class="singleObjectFKBWValidateUpdateLevelFKBWAutoDTOAction">
+            <result name="success" type="redirectAction">
+            <param name="actionName">ShowAlertMessage</param>
+            <param name="message">保存成功</param>
+             <param name="redirectActionName">${serviceResult.actionName}</param>
+			 <param name="redirectActionNamespace">/framework</param>
+			</result>
+			<result name="error" type="redirectAction">
+				<param name="actionName">ShowAlertMessage</param>
+				<param name="message">${serviceResult.message}</param>
+			</result>
+			<result name="input" type="chain">
+				<param name="actionName">FKBWShowInputUpdate-{1}</param>
+			</result>
+		</action>
+		
+		<action name="FKBWShowInputCheckUpdateLevelFKBWAutoDTO*-*" class="singleObjectFKBWShowInputCheckUpdateLevelFKBWAutoDTOAction">
+            <result name="input">/Framework/ShowSaveOrUpdate.jsp</result>
+		</action>
+		
+		  <action name="FKBWShowInputUpdate*-*" class="singleObjectShowInputUpdateAction">
+            <result name="input">/Framework/ShowSaveOrUpdate.jsp</result>
+		</action>
+		
+		<action name="FKBWShowInputSave*-*" class="singleObjectFKBWShowInputSaveAction">
+			<result name="input">/Framework/ShowSaveOrUpdate.jsp</result>
+		</action>
+		
+     	<action name="FKBWSave*-*" class="singleObjectSaveAction">
+            <result name="success" type="redirectAction">
+            	<param name="message">${serviceResult.message}</param>
+			    <param name="redirectActionName">BackFirst-{2}</param> 
+			    <param name="redirectActionNamespace">/framework</param>
+			</result>
+			<result name="error" type="redirectAction">
+			    <param name="actionName">ShowAlertMessage</param>
+			    <param name="message">${serviceResult.message}</param>
+			</result>
+			<result name="input" type="chain">
+			    <param name="actionName">ShowInputSave{1}-{2}</param>
+			</result>
+		</action>
+		
+		<!-- 明细段查看 -->
+		<action name="CKShowListLevelMXCK-*" class="singleObjectCKShowListLevelMXCKAction">
+			<result name="success">/Framework/ShowList.jsp</result>
+		</action>
+
+		<action name="AutoDTOMXCKShowUpdateLevelMXCK-*" class="singleObjectAutoDTOMXCKShowUpdateLevelMXCKAction">
+			<result name="success">/Framework/ShowSaveOrUpdate.jsp</result>
+		</action>
+		
+		<!-- 基础段查看 -->
+		<action name="CKShowListLevelAUTODTO-*" class="singleObjectCKShowListLevelAUTODTOAction">
+			<result name="success">/Framework/ShowList.jsp</result>
+		</action>
+
+		<action name="ReportCKShowViewCancelLevelAUTODTO*-*" class="reportCKShowViewCancelLevelAUTODTOAction">
+			<result name="success">/Framework/ShowSaveOrUpdate.jsp</result>
+		</action>
+		
+		<action name="CKShowUpdateLevelAUTODTO-*" class="singleObjectCKShowUpdateLevelAUTODTOAction">
+            <result name="success">/Framework/ShowSaveOrUpdate.jsp</result>
+		</action>
+		
+		<!-- 任务层查看 -->
+		<action name="CKShowTree*-*" class="CKShowTreeAction">
+			<result name="success">/Framework/ShowTree.jsp</result>
+		</action>
+ 
+	    <action name="CKShowListForTree-report.dto.TaskModelInst" class="taskModelInstCKShowListForTreeAction">
+			<result name="success">/Framework/ShowList.jsp</result>
+		</action>
+		
+		<!-- 明细段审核 -->
+		<action name="SHShowListLevelAUTODTOSHMX-*" class="singleObjectSHShowListLevelAUTODTOSHMXAction">
+			<result name="success">/Framework/ShowList.jsp</result>
+		</action>
+		
+			<action name="SHShowUpdateLevelAUTODTOSHMX-*" class="singleObjectSHShowUpdateLevelAUTODTOSHMXAction">
+            <result name="success">/Framework/ShowSaveOrUpdate.jsp</result>
+		</action>
+		
+		<!-- 基础段审核-->
+		<action name="SHShowListLevelAUTODTOSH-*" class="singleObjectSHShowListLevelAUTODTOSHAction">
+			<result name="success">/Framework/ShowList.jsp</result>
+		</action>
+		
+		 <action name="SHShowUpdateLevelAUTODTOSH-*" class="singleObjectSHShowUpdateLevelAUTODTOSHAction">
+            <result name="success">/Framework/ShowSaveOrUpdate.jsp</result>
+		</action>
+     
+		<action name="SHJumpByType*-*" class="singleObjectJumpByTypeAction">
+			<result name="success" type="chain">
+                <param name="actionName">${actionJumpResult.actionName}</param>
+            </result>
+            <result name="success1" type="redirectAction">
+                <param name="actionName">${actionJumpResult.actionName}</param>
+            </result>
+            <result name="error" type="redirectAction">
+			    <param name="actionName">ShowAlertMessage</param>
+			    <param name="message">${serviceResult.message}</param>
+			</result>
+		</action>
+		
+		<action name="ReportUpdateField*-*" class="ReportUpdateFieldAction">
+			<result name="success" type="redirectAction">
+				<param name="message">${serviceResult.message}</param>
+				<param name="actionName">ShowAlertMessage.action</param>
+				<param name="redirectActionName">SHShowListLevelAUTODTOSH-{2}</param>
+				<param name="redirectActionNamespace">/framework</param>
+			</result>
+			<result name="error" type="redirectAction">
+				<param name="message">${serviceResult.message}</param>
+				<param name="actionName">ShowAlertMessage.action</param>
+				<param name="redirectActionName">SHShowListLevelAUTODTOSH-{2}</param>
+				<param name="redirectActionNamespace">/framework</param>
+			</result>
+		</action>
+
+		<action name="ReportFalseUpdateField*-*" class="ReportFalseUpdateFieldAction">
+			<result name="success" type="redirectAction">
+				<param name="message">${serviceResult.message}</param>
+				<param name="actionName">ShowAlertMessage.action</param>
+				<param name="redirectActionName">SHShowListLevelAUTODTOSH-{2}</param>
+				<param name="redirectActionNamespace">/framework</param>
+			</result>
+			<result name="error" type="redirectAction">
+				<param name="message">${serviceResult.message}</param>
+				<param name="actionName">ShowAlertMessage.action</param>
+				<param name="redirectActionName">SHShowListLevelAUTODTOSH-{2}</param>
+				<param name="redirectActionNamespace">/framework</param>
+			</result>
+		</action>
+
+		<action name="ReportRPTVerifyTypeFalseUpdateField*-*" class="reportRPTVerifyTypeFalseUpdateFieldAction">
+			<result name="success" type="redirectAction">
+				<param name="message">${serviceResult.message}</param>
+				<param name="actionName">ShowAlertMessage.action</param>
+				<param name="redirectActionName">SHShowListLevelAUTODTOSH-{2}</param>
+				<param name="redirectActionNamespace">/framework</param>
+			</result>
+			<result name="error" type="redirectAction">
+				<param name="message">${serviceResult.message}</param>
+				<param name="actionName">ShowAlertMessage.action</param>
+				<param name="redirectActionName">SHShowListLevelAUTODTOSH-{2}</param>
+				<param name="redirectActionNamespace">/framework</param>
+			</result>
+		</action>
+
+		<action name="ReportRPTVerifyTypeUpdateField*-*" class="reportRPTVerifyTypeUpdateFieldAction">
+			<result name="success" type="redirectAction">
+				<param name="message">${serviceResult.message}</param>
+				<param name="actionName">ShowAlertMessage.action</param>
+				<param name="redirectActionName">SHShowListLevelAUTODTOSH-{2}</param>
+				<param name="redirectActionNamespace">/framework</param>
+			</result>
+			<result name="error" type="redirectAction">
+				<param name="message">${serviceResult.message}</param>
+				<param name="actionName">ShowAlertMessage.action</param>
+				<param name="redirectActionName">SHShowListLevelAUTODTOSH-{2}</param>
+				<param name="redirectActionNamespace">/framework</param>
+			</result>
+		</action>
+		
+		<action name="ReportSHShowViewCancelLevelAUTODTOSH*-*" class="reportSHShowViewCancelLevelAUTODTOSHAction">
+			<result name="success">/Framework/ShowSaveOrUpdate.jsp</result>
+		</action>
+
+		<action name="ReportSHShowViewResetLevelAUTODTOSH*-*" class="reportSHShowViewResetLevelAUTODTOSHAction">
+			<result name="success">/Framework/ShowSaveOrUpdate.jsp</result>
+		</action>
+		
+		<!-- 明细段填报 -->
+		<action name="ShowListLevelAutoDTOMX-*" class="singleObjectShowListLevelAutoDTOMXAction">
+			<result name="success">/Framework/ShowList.jsp</result>
+		</action>
+		
+		<action name="ShowViewLevelAutoDTOMX-*" class="singleObjectShowViewLevelAutoDTOMXAction">
+			<result name="success">/Framework/ShowList.jsp</result>
+		</action>
+		
+		<action name="ShowSaveLevelAutoDTOMX-*" class="singleObjectShowSaveLevelAutoDTOMXAction">
+            <result name="success">/Framework/ShowSaveOrUpdate.jsp</result>
+            <result name="error" type="redirectAction">
+			    <param name="actionName">ShowAlertMessage</param>
+			    <param name="message">${serviceResult.message}</param>
+			</result>
+		</action>
+		
+		<action name="OtherShowSave*-*" class="otherShowSaveAction">
+			<result name="success">/Framework/ShowSaveOrUpdate.jsp</result>
+		</action>
+	
+		<action name="ShowUpdateLevelAutoDTOMX-*" class="singleObjectShowUpdateLevelAutoDTOMXAction">
+            <result name="success">/Framework/ShowSaveOrUpdate.jsp</result>
+		</action>
+		
+		<action name="ShowCheckUpdateLevelAutoDTOMX-*" class="singleObjectShowCheckUpdateLevelAutoDTOMXAction">
+            <result name="success">/Framework/ShowSaveOrUpdate.jsp</result>
+            <result name="input" type="chain">
+			    <param name="actionName">ShowInputCheckUpdateLevelAutoDTOMX-{1}</param>
+			</result>
+		</action>
+     
+    	<action name="ShowCheckViewLevelAutoDTOMX-*" class="singleObjectShowCheckViewLevelAutoDTOMXAction">
+            <result name="success">/Framework/ShowSaveOrUpdate.jsp</result>
+            <result name="input" type="chain">
+			    <param name="actionName">ShowInputUpdateLevelAutoDTOMX-{1}</param>
+			</result>
+		</action>
+		
+		<action name="MXShowInputSaveLevelAutoDTOMX-*" class="singleObjectShowInputSaveLevelAutoDTOMXAction">
+            <result name="input">/Framework/ShowSaveOrUpdate.jsp</result>
+		</action>
+		
+		<action name="MXShowInputUpdateLevelAutoDTOMX-*" class="singleObjectShowInputUpdateLevelAutoDTOMXAction">
+            <result name="input">/Framework/ShowSaveOrUpdate.jsp</result>
+		</action>
+		
+		<action name="ShowInputCheckUpdateLevelAutoDTOMX-*" class="singleObjectShowInputCheckUpdateLevelAutoDTOMXAction">
+            <result name="input">/Framework/ShowSaveOrUpdate.jsp</result>
+		</action>
+		
+		<action name="JCShowInputMXCopySave*-*" class="singleObjectJCShowInputMXCopySaveLevelAutoDTOMXAction">
+            <result name="input">/Framework/ShowSaveOrUpdate.jsp</result>
+		</action>
+		
+		<action name="OtherShowInputSave*-*" class="otherShowInputSaveAction">
+			<result name="input">/Framework/ShowSaveOrUpdate.jsp</result>
+		</action>
+		
+		<action name="SaveLevelAutoDTOMX-*" class="singleObjectSaveLevelAutoDTOMXAction">
+            <result name="success" type="redirectAction">
+            	<param name="message">${serviceResult.message}</param>
+			    <param name="actionName">ShowAlertMessage</param>
+			    <param name="redirectActionName">BackFirst-{1}</param> 
+			    <param name="redirectActionNamespace">/framework</param>
+			</result>
+			<result name="error" type="redirectAction">
+			    <param name="actionName">ShowAlertMessage</param>
+			    <param name="message">${serviceResult.message}</param>
+			</result>
+			<result name="input" type="chain">
+			    <param name="actionName">MXShowInputSaveLevelAutoDTOMX-{1}</param>
+			</result>
+		</action>
+		
+		<action name="UpdateLevelAutoDTOMX-*" class="singleObjectUpdateLevelAutoDTOMXAction">
+            <result name="success" type="redirectAction">
+            	<param name="message">${serviceResult.message}</param>
+			    <param name="actionName">ShowAlertMessage</param>
+			    <param name="redirectActionName">BackFirst-{1}</param> 
+			    <param name="redirectActionNamespace">/framework</param>
+			</result>
+			<result name="error" type="redirectAction">
+			    <param name="actionName">ShowAlertMessage</param>
+			    <param name="message">${serviceResult.message}</param>
+			</result>
+			<result name="input" type="chain">
+			    <param name="actionName">MXShowInputUpdateLevelAutoDTOMX-{1}</param>
+			</result>
+		</action>
+		
+		<action name="MXCopySaveLevelAutoDTOMX-*" class="singleObjectMXCopySaveLevelAutoDTOMXAction">
+			<result name="success" type="redirectAction">
+				<param name="message">${serviceResult.message}</param>
+				<param name="actionName">ShowAlertMessage</param>
+				<param name="redirectActionName">BackFirst-{1}</param>
+				<param name="redirectActionNamespace">/framework</param>
+			</result>
+			<result name="error" type="redirectAction">
+				<param name="actionName">ShowAlertMessage</param>
+				<param name="message">${serviceResult.message}</param>
+			</result>
+			<result name="input" type="chain">
+				<param name="actionName">JCShowInputMXCopySaveLevelAutoDTOMX-{1}</param>
+			</result>
+		</action>
+		
+		<action name="OtherSave*-*" class="otherSaveAction">
+			<result name="success" type="redirectAction">
+				<param name="message">${serviceResult.message}</param>
+				<param name="actionName">ShowAlertMessage</param>
+				<param name="redirectActionName">BackFirst-{2}</param>
+				<param name="redirectActionNamespace">/framework</param>
+			</result>
+			<result name="error" type="redirectAction">
+				<param name="actionName">ShowAlertMessage</param>
+				<param name="message">${serviceResult.message}</param>
+			</result>
+			<result name="input" type="chain">
+				<param name="actionName">OtherShowInputSaveLevelAutoDTOMX-{2}</param>
+			</result>
+		</action>
+		
+		<action name="MXExportAllData*-*" class="singleObjectMXExportAllDataAction">
+			<result name="success" type="stream">
+				<param name="contentType">${serviceResult.contentType}</param>
+				<param name="inputName">inputStream</param>
+				<param name="contentDisposition">${serviceResult.contentDisposition}</param>
+				<param name="bufferSize">${serviceResult.bufferSize}</param>
+			</result>
+			<result name="error" type="redirectAction">
+				<param name="actionName">ShowAlertMessage</param>
+				<param name="message">${serviceResult.message}</param>
+			</result>
+		</action>
+		
+		<action name="AutoDTOMXDeleteListByIdList*-*" class="autoDTOMXDeleteListByIdListAction">
+			<result name="success" type="redirectAction">
+				<param name="message">${serviceResult.message}</param>
+				<param name="actionName">ShowAlertMessage.action</param>
+				<param name="redirectActionName">ShowList{1}-{2}</param>
+				<param name="redirectActionNamespace">/framework</param>
+			</result>
+			<result name="error" type="redirectAction">
+				<param name="message">${serviceResult.message}</param>
+				<param name="actionName">ShowAlertMessage.action</param>
+				<param name="redirectActionName">ShowList{1}-{2}</param>
+				<param name="redirectActionNamespace">/framework</param>
+			</result>
+		</action>
+		
+		<!-- 基础段填报 -->
+		<action name="ShowListLevelAUTODTO-*" class="singleObjectShowListLevelAUTODTOAction">
+			<result name="success">/Framework/ShowList.jsp</result>
+		</action>
+		
+		<action name="ShowSaveLevelAUTODTO-*" class="singleObjectShowSaveLevelAUTODTOAction">
+            <result name="success">/Framework/ShowSaveOrUpdate.jsp</result>
+		</action>
+		
+		<action name="ShowUpdateLevelAUTODTO-*" class="singleObjectShowUpdateLevelAUTODTOAction">
+            <result name="success">/Framework/ShowSaveOrUpdate.jsp</result>
+		</action>
+		
+		<action name="ShowCheckUpdateLevelAUTODTO-*" class="singleObjectShowCheckUpdateLevelAUTODTOAction">
+            <result name="success">/Framework/ShowSaveOrUpdate.jsp</result>
+            <result name="input" type="chain">
+			    <param name="actionName">JCShowInputUpdateLevelAUTODTO-{1}</param>
+			</result>
+		</action>
+		
+		<action name="JCShowInputSaveLevelAUTODTO-*" class="singleObjectShowInputSaveLevelAUTODTOAction">
+            <result name="input">/Framework/ShowSaveOrUpdate.jsp</result>
+		</action>
+		
+		<action name="JCShowInputUpdateLevelAUTODTO-*" class="singleObjectShowInputUpdateLevelAUTODTOAction">
+            <result name="input">/Framework/ShowSaveOrUpdate.jsp</result>
+		</action>
+		
+		<action name="JCShowInputCopySave*-*" class="singleObjectJCShowInputCopySaveLevelAUTODTOAction">
+            <result name="input">/Framework/ShowSaveOrUpdate.jsp</result>
+		</action>
+		
+		<action name="NoMXShowInputSaveLevelAUTODTO-*" class="noMXShowInputSaveAction">
+			<result name="input">/Framework/ShowSaveOrUpdate.jsp</result>
+		</action>
+		
+		<action name="SaveLevelAUTODTO-*" class="singleObjectSaveLevelAUTODTOAction">
+            <result name="success" type="redirectAction">
+            	<param name="message">${serviceResult.message}</param>
+			    <param name="actionName">ShowAlertMessage</param>
+			    <param name="redirectActionName">BackFirst-{1}</param> 
+			    <param name="redirectActionNamespace">/framework</param>
+			</result>
+			<result name="error" type="redirectAction">
+			    <param name="actionName">ShowAlertMessage</param>
+			    <param name="message">${serviceResult.message}</param>
+			</result>
+			<result name="input" type="chain">
+			    <param name="actionName">JCShowInputSaveLevelAUTODTO-{1}</param>
+			</result>
+		</action>
+		
+		<action name="UpdateLevelAUTODTO-*" class="singleObjectUpdateLevelAUTODTOAction">
+            <result name="success" type="redirectAction">
+            	<param name="message">${serviceResult.message}</param>
+			    <param name="actionName">ShowAlertMessage</param>
+			    <param name="redirectActionName">BackFirst-{1}</param> 
+			    <param name="redirectActionNamespace">/framework</param>
+			</result>
+			<result name="error" type="redirectAction">
+			    <param name="actionName">ShowAlertMessage</param>
+			    <param name="message">${serviceResult.message}</param>
+			</result>
+			<result name="input" type="chain">
+			    <param name="actionName">JCShowInputUpdateLevelAUTODTO-{1}</param>
+			</result>
+		</action>
+		
+		<action name="CopySaveLevelAUTODTO-*" class="singleObjectCopySaveLevelAUTODTOAction">
+			<result name="success" type="redirectAction">
+				<param name="message">${serviceResult.message}</param>
+				<param name="actionName">ShowAlertMessage</param>
+				<param name="redirectActionName">BackFirst-{1}</param>
+				<param name="redirectActionNamespace">/framework</param>
+			</result>
+			<result name="error" type="redirectAction">
+				<param name="actionName">ShowAlertMessage</param>
+				<param name="message">${serviceResult.message}</param>
+			</result>
+			<result name="input" type="chain">
+				<param name="actionName">JCShowInputCopySaveLevelAUTODTO-{1}</param>
+			</result>
+		</action>
+		
+		<action name="NoMXSave*-*" class="noMXSaveAction">
+			<result name="success" type="redirectAction">
+				<param name="message">${serviceResult.message}</param>
+				<param name="actionName">ShowAlertMessage</param>
+				<param name="redirectActionName">BackFirst-{2}</param>
+				<param name="redirectActionNamespace">/framework</param>
+			</result>
+			<result name="error" type="redirectAction">
+				<param name="actionName">ShowAlertMessage</param>
+				<param name="message">${serviceResult.message}</param>
+			</result>
+			<result name="input" type="chain">
+				<param name="actionName">NoMXShowInputSaveLevelAUTODTO-{2}</param>
+			</result>
+		</action>
+		
+		<action name="ForReportImportData*-*" class="forReportImportDataAction">
+			<result name="success" type="redirectAction">
+				<param name="message">${serviceResult.message}</param>
+				<param name="actionName">ShowAlertMessage.action</param>
+				<param name="redirectActionName">ShowList{1}-{2}</param>
+				<param name="redirectActionNamespace">/framework</param>
+			</result>
+			<result name="error" type="redirectAction">
+				<param name="actionName">ShowAlertMessage</param>
+				<param name="message">${serviceResult.message}</param>
+			</result>
+		</action>
+		
+		<action name="ForReportDeleteListByIdList*-*" class="singleObjectDeleteListByIdListForReportAction">
+			<!-- <interceptor-ref name="tokenSessionFilterInterceptorStack"></interceptor-ref> -->
+			<result name="success" type="redirectAction">
+				<param name="message">${serviceResult.message}</param>
+				<param name="actionName">ShowAlertMessage.action</param>
+				<param name="redirectActionName">ShowList{1}-{2}</param>
+				<param name="redirectActionNamespace">/framework</param>
+			</result>
+			<result name="error" type="redirectAction">
+				<param name="message">${serviceResult.message}</param>
+				<param name="actionName">ShowAlertMessage.action</param>
+				<param name="redirectActionName">ShowList{1}-{2}</param>
+				<param name="redirectActionNamespace">/framework</param>
+			</result>
+		</action>
+		
+		<action name="ForReportDeleteByCondition*-*" class="singleObjectDeleteByConditionForReportAction">
+			<!-- <interceptor-ref name="tokenSessionFilterInterceptorStack"></interceptor-ref> -->
+			<result name="success" type="redirectAction">
+				<param name="message">${serviceResult.message}</param>
+				<param name="actionName">ShowAlertMessage.action</param>
+				<param name="redirectActionName">ShowList{1}-{2}</param>
+				<param name="redirectActionNamespace">/framework</param>
+			</result>
+			<result name="error" type="redirectAction">
+				<param name="message">${serviceResult.message}</param>
+				<param name="actionName">ShowAlertMessage.action</param>
+				<param name="redirectActionName">ShowList{1}-{2}</param>
+				<param name="redirectActionNamespace">/framework</param>
+			</result>
+		</action>
+		
+		<action name="CommonSCListUpdateField*-*" class="commonSCListUpdateFieldAction">
+			<result name="success" type="redirectAction">
+				<param name="message">${serviceResult.message}</param>
+				<param name="actionName">ShowAlertMessage.action</param>
+				<param name="redirectActionName">ShowList{1}-{2}</param>
+				<param name="redirectActionNamespace">/framework</param>
+			</result>
+			<result name="error" type="redirectAction">
+				<param name="message">${serviceResult.message}</param>
+				<param name="actionName">ShowAlertMessage.action</param>
+				<param name="redirectActionName">ShowList{1}-{2}</param>
+				<param name="redirectActionNamespace">/framework</param>
+			</result>
+		</action>
+		
+		<action name="DeleteByCondition*-*" class="singleObjectDeleteByConditionAction">
+			<result name="success" type="redirectAction">
+				<param name="message">${serviceResult.message}</param>
+				<param name="actionName">ShowAlertMessage.action</param>
+				<param name="redirectActionName">ShowList{1}-{2}</param>
+				<param name="redirectActionNamespace">/framework</param>
+			</result>
+			<result name="error" type="redirectAction">
+				<param name="message">${serviceResult.message}</param>
+				<param name="actionName">ShowAlertMessage.action</param>
+				<param name="redirectActionName">ShowList{1}-{2}</param>
+				<param name="redirectActionNamespace">/framework</param>
+			</result>
+		</action>
+		
+		<action name="RptSubmitStatusALLUpdateField*-*" class="rptSubmitStatusALLUpdateFieldAction">
+              <result name="success" type="redirectAction">
+            	<param name="message">${serviceResult.message}</param>
+			    <param name="actionName">ShowAlertMessage.action</param>
+			    <param name="redirectActionName">ShowListForTree{1}-{2}</param>
+			    <param name="redirectActionNamespace">/framework</param>
+			</result>
+			<result name="error" type="redirectAction">
+            	<param name="message">${serviceResult.message}</param>
+			    <param name="actionName">ShowAlertMessage.action</param>
+			    <param name="redirectActionName">ShowListForTree{1}-{2}</param>
+			    <param name="redirectActionNamespace">/framework</param>
+			</result>
+		</action>
+		
+		<action name="RptSubmitStatusUpdateField*-*" class="rptSubmitStatusUpdateFieldAction">
+			<result name="success" type="redirectAction">
+				<param name="message">${serviceResult.message}</param>
+				<param name="actionName">ShowAlertMessage.action</param>
+				<param name="redirectActionName">ShowList{1}-{2}</param>
+				<param name="redirectActionNamespace">/framework</param>
+			</result>
+			<result name="error" type="redirectAction">
+				<param name="message">${serviceResult.message}</param>
+				<param name="actionName">ShowAlertMessage.action</param>
+				<param name="redirectActionName">ShowList{1}-{2}</param>
+				<param name="redirectActionNamespace">/framework</param>
+			</result>
+		</action>
+		
+		<action name="RptCancleSubmitStatusUpdateField*-*" class="rptCancleSubmitStatusUpdateFieldAction">
+			<result name="success" type="redirectAction">
+				<param name="message">${serviceResult.message}</param>
+				<param name="actionName">ShowAlertMessage.action</param>
+				<param name="redirectActionName">ShowListForTree{1}-{2}</param>
+				<param name="redirectActionNamespace">/framework</param>
+			</result>
+			<result name="error" type="redirectAction">
+				<param name="message">${serviceResult.message}</param>
+				<param name="actionName">ShowAlertMessage</param>
+				<param name="redirectActionName">ShowListForTree{1}-{2}</param>
+				<param name="redirectActionNamespace">/framework</param>
+			</result>
+		</action>
+		
+		<!-- 任务层 -->
+		<action name="RptAllowStateUpdateField*-*" class="rptAllowStateUpdateFieldAction">
+			<result name="success" type="redirectAction">
+				<param name="message">${serviceResult.message}</param>
+				<param name="actionName">ShowAlertMessage.action</param>
+				<param name="redirectActionName">SHReviewShowListForTree{1}-{2}</param>
+				<param name="redirectActionNamespace">/framework</param>
+			</result>
+			<result name="error" type="redirectAction">
+				<param name="message">${serviceResult.message}</param>
+				<param name="actionName">ShowAlertMessage.action</param>
+				<param name="redirectActionName">SHReviewShowListForTree{1}-{2}</param>
+				<param name="redirectActionNamespace">/framework</param>
+			</result>
+		</action>
+		
+		<action name="RptAllowStateCancleUpdateField*-*" class="rptAllowStateCancleUpdateFieldAction">
+			<result name="success" type="redirectAction">
+				<param name="message">${serviceResult.message}</param>
+				<param name="actionName">ShowAlertMessage.action</param>
+				<param name="redirectActionName">SHReviewShowListForTree{1}-{2}</param>
+				<param name="redirectActionNamespace">/framework</param>
+			</result>
+			<result name="error" type="redirectAction">
+				<param name="message">${serviceResult.message}</param>
+				<param name="actionName">ShowAlertMessage</param>
+				<param name="redirectActionName">SHReviewShowListForTree{1}-{2}</param>
+				<param name="redirectActionNamespace">/framework</param>
+			</result>
+		</action>
+		
+		<action name="SHReviewShowListForTree-report.dto.TaskModelInst" class="taskModelInstSHReviewShowListForTreeAction">
+			<result name="success">/Framework/ShowList.jsp</result>
+		</action>
+		
+		<action name="ReviewShowTree*-*" class="ReviewShowTreeAction">
+			<result name="success">/Framework/ShowTree.jsp</result>
+		</action>
+		
+		<action name="ForReportShowUpdateList*-*" class="singleObjectForReportShowUpdateListAction">
+			<result name="success">/Framework/ShowSaveOrUpdate.jsp</result>
+		</action> 
+
+		<action name="ForReportShowListForTree*-*" class="singleObjectForReportShowListForTreeAction">
+			<result name="success">/Framework/ShowList.jsp</result>
+		</action>
+		
+		<!-- 校验数据（报表通用） -->
+		<action name="RPTCheckType*-*" class="rptCheckAction">
+			<result name="success" type="redirectAction">
+				<param name="message">${serviceResult.message}</param>
+				<param name="actionName">ShowAlertMessage.action</param>
+				<param name="redirectActionName">ShowList{1}-{2}</param>
+				<param name="redirectActionNamespace">/framework</param>
+			</result>
+			<result name="error" type="redirectAction">
+				<param name="message">${serviceResult.message}</param>
+				<param name="actionName">ShowAlertMessage.action</param>
+				<param name="redirectActionName">ShowList{1}-{2}</param>
+				<param name="redirectActionNamespace">/framework</param>
+			</result>
+		</action>
+		
+		<!-- 基础明细一对一 (暂时没用了) start -->
+		<action name="FKBWOneToOneSave*-*" class="singleObjectFKBWOneToOneSaveAction">
+			<result name="success" type="redirectAction">
+				<param name="message">${serviceResult.message}</param>
+				<param name="actionName">ShowAlertMessage</param>
+				<param name="redirectActionName">BackPreviousFirst{1}-{2}</param>
+				<param name="redirectActionNamespace">/framework</param>
+			</result>
+			<result name="error" type="redirectAction">
+				<param name="actionName">ShowAlertMessage</param>
+				<param name="message">${serviceResult.message}</param>
+			</result>
+			<result name="input" type="chain">
+				<param name="actionName">FKBWOneToOneShowInputSave{1}-{2}</param>
+			</result>
+		</action>
+		
+		<action name="FKBWOneToOneUpdate*-*" class="singleObjectFKBWOneToOneUpdateAction">
+			<result name="success" type="redirectAction">
+				<param name="message">${serviceResult.message}</param>
+				<param name="actionName">ShowAlertMessage</param>
+			</result>
+			<result name="error" type="redirectAction">
+				<param name="actionName">ShowAlertMessage</param>
+				<param name="message">${serviceResult.message}</param>
+			</result>
+			<result name="input" type="chain">
+				<param name="actionName">FKBWOneToOneShowInputUpdate{1}-{2}</param>
+			</result>
+		</action>
+
+		<action name="FKBWOneToOneShowInputSave*-*" class="fKBWOneToOneShowInputSaveAction">
+			<result name="input">/Framework/ShowSaveOrUpdate.jsp</result>
+		</action>
+
+		<action name="FKBWOneToOneShowInputUpdate*-*" class="fKBWOneToOneShowInputUpdateAction">
+			<result name="input">/Framework/ShowSaveOrUpdate.jsp</result>
+		</action>
+     
+     	<action name="FKBWOneToOneShowSave*-*" class="singleObjectFKBWOneToOneShowSaveLevelAUTODTOMXAction">
+            <result name="success">/Framework/ShowSaveOrUpdate.jsp</result>
+		</action>
+		
+		<action name="FKBWOneToOneShowUpdate*-*" class="singleObjectFKBWOneToOneShowUpdateLevelAUTODTOMXAction">
+            <result name="success">/Framework/ShowSaveOrUpdate.jsp</result>
+		</action>
+		
+		  <action name="RPTShowListLevelAUTODTO-*" class="rPTShowListLevelAUTODTOAction">
+			<result name="success">/Framework/ShowList.jsp</result>
+		</action>
+		
+		<action name="ReportSHShowSaveOrUpdate*-*" class="singleObjectSHShowSaveOrUpdateLevelAUTODTOMXAction">
+            <result name="save" type="chain">
+                <param name="actionName">${serviceResult.actionName}</param>
+            </result>
+            <result name="update" type="redirectAction">
+                <param name="actionName">${serviceResult.actionName}</param>
+                <param name="id">${serviceResult.idValue}</param>
+                <param name="windowId">${serviceResult.windowId}</param>
+            </result>
+             <result name="jumpMessage" type="redirectAction">
+              <param name="actionName">${serviceResult.actionName}</param>
+              <param name="redirectActionName">SHShowListLevelAUTODTOSH-{2}</param> 
+              <param name="actionName">ShowAlertMessage</param>
+              <param name="message">数据为空，无法查看</param>
+              <param name="redirectActionNamespace">/framework</param>
+            </result>
+		</action>
+		
+		<action name="ReportShowSaveOrUpdate*-*" class="singleObjectShowSaveOrUpdateLevelAUTODTOMXAction">
+			<result name="save" type="chain">
+				<param name="actionName">${serviceResult.actionName}</param>
+			</result>
+			<result name="update" type="redirectAction">
+				<param name="actionName">${serviceResult.actionName}</param>
+				<param name="id">${serviceResult.idValue}</param>
+				<param name="windowId">${serviceResult.windowId}</param>
+			</result>
+		</action>
+		
+		<action name="ReportUpdateList*-*" class="singleObjectReportUpdateListAction">
+			<result name="success" type="redirectAction">
+				<param name="message">${serviceResult.message}</param>
+				<param name="actionName">ShowAlertMessage</param>
+			</result>
+			<result name="error" type="redirectAction">
+				<param name="message">${serviceResult.message}</param>
+				<param name="actionName">ShowAlertMessage</param>
+			</result>
+		</action>
+		
+		<action name="ReportOneToOneImportData*-*" class="ReportOneToOneImportDataAction">
+			<result name="success" type="redirectAction">
+				<param name="message">${serviceResult.message}</param>
+				<param name="actionName">ShowAlertMessage.action</param>
+				<param name="redirectActionName">BackPreviousFirst{1}-{2}</param>
+				<param name="redirectActionNamespace">/framework</param>
+			</result>
+			<result name="error" type="redirectAction">
+				<param name="actionName">ShowAlertMessage</param>
+				<param name="message">${serviceResult.message}</param>
+			</result>
+		</action>
+		
+		<action name="ReportOneToOneSave*-*" class="singleObjectReportOneToOneSaveAction">
+			<result name="success" type="redirectAction">
+				<param name="message">${serviceResult.message}</param>
+				<param name="actionName">ShowAlertMessage</param>
+				<param name="redirectActionName">BackPreviousFirst{1}-{2}</param>
+				<param name="redirectActionNamespace">/framework</param>
+			</result>
+			<result name="error" type="redirectAction">
+				<param name="actionName">ShowAlertMessage</param>
+				<param name="message">${serviceResult.message}</param>
+			</result>
+			<result name="input" type="chain">
+				<param name="actionName">ReportOneToOneShowInputSave{1}-{2}</param>
+			</result>
+		</action>
+		
+		<action name="ReportOneToOneShowInputSave*-*" class="reportOneToOneShowInputSaveAction">
+			<result name="input">/Framework/ShowSaveOrUpdate.jsp</result>
+		</action>
+		
+		<action name="ReportOneToOneUpdate*-*" class="singleObjectReportOneToOneUpdateAction">
+			<result name="success" type="redirectAction">
+				<param name="message">${serviceResult.message}</param>
+				<param name="actionName">ShowAlertMessage</param>
+				<param name="redirectActionName">BackPreviousFirst{1}-{2}</param>
+				<param name="redirectActionNamespace">/framework</param>
+			</result>
+			<result name="error" type="redirectAction">
+				<param name="actionName">ShowAlertMessage</param>
+				<param name="message">${serviceResult.message}</param>
+			</result>
+			<result name="input" type="chain">
+				<param name="actionName">ReportOneToOneShowInputUpdate{1}-{2}</param>
+			</result>
+		</action>
+		
+		<action name="ReportOneToOneShowInputUpdate*-*" class="reportOneToOneShowInputUpdateAction">
+			<result name="input">/Framework/ShowSaveOrUpdate.jsp</result>
+		</action>
+		
+		<action name="ReportDeleteById*-*" class="reportDeleteByIdAction">
+			<result name="success" type="redirectAction">
+				<param name="message">${serviceResult.message}</param>
+				<param name="actionName">ShowAlertMessage.action</param>
+				<param name="redirectActionName">ShowListLevelAUTODTO-{2}</param>
+				<param name="redirectActionNamespace">/framework</param>
+			</result>
+			<result name="error" type="redirectAction">
+				<param name="message">${serviceResult.message}</param>
+				<param name="actionName">ShowAlertMessage.action</param>
+				<param name="redirectActionName">ShowListLevelAUTODTO-{2}</param>
+				<param name="redirectActionNamespace">/framework</param>
+			</result>
+		</action>
+		
+		<action name="ReportOneToOneShowSave*-*" class="singleObjectReportOneToOneShowSaveLevelAUTODTOMXAction">
+            <result name="success">/Framework/ShowSaveOrUpdate.jsp</result>
+		</action>
+		
+			<action name="ReportSHOneToOneShowUpdate*-*" class="singleObjectReportSHOneToOneShowUpdateLevelAUTODTOMXAction">
+           <result name="success">/Framework/ShowSaveOrUpdate.jsp</result>
+		</action>
+		
+		<action name="ReportSHOneToOneShowSave*-*" class="singleObjectReportSHOneToOneShowSaveLevelAUTODTOMXAction">
+           <result name="success">/Framework/ShowSaveOrUpdate.jsp</result>
+		</action>
+		
+		<action name="ReportOneToOneShowUpdate*-*" class="singleObjectReportOneToOneShowUpdateLevelAUTODTOMXAction">
+            <result name="success">/Framework/ShowSaveOrUpdate.jsp</result>
+		</action>
+		<!-- 基础明细一对一 (暂时没用了) end -->
+		
+		
+		
+ </package>
+
+</struts>    
+

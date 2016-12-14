@@ -1,0 +1,537 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<entityRoot>
+
+	<entityMap>
+		<entityName>checkNodeType</entityName>
+		<entity>
+			<code>1</code>
+			<name>表校验</name>
+		</entity>
+		<entity>
+			<code>2</code>
+			<name>聚合校验</name>
+		</entity>
+		<entity>
+			<code>3</code>
+			<name>一致性校验</name>
+		</entity>
+		<entity>
+			<code>4</code>
+			<name>完整性校验</name>
+		</entity>
+		<!-- 新加  -->
+		<!--
+			<entity> <code>5</code> <name>指标校验</name> </entity>
+		-->
+	</entityMap>
+
+	<entityMap>
+		<entityName>Type</entityName>
+		<entity>
+			<code>1</code>
+			<name>1</name>
+		</entity>
+		<entity>
+			<code>2</code>
+			<name>2</name>
+		</entity>
+	</entityMap>
+
+	<entityMap>
+		<entityName>orType</entityName>
+		<entity>
+			<code>1</code>
+			<name>基础校验</name>
+		</entity>
+		<entity>
+			<code>2</code>
+			<name>CaseWhen校验</name>
+		</entity>
+	</entityMap>
+
+	<entityMap>
+		<entityName>checkTableNodeType</entityName>
+		<entity>
+			<code>1</code>
+			<name>唯一键</name>
+		</entity>
+		<entity>
+			<code>2</code>
+			<name>基础校验</name>
+		</entity>
+		<entity>
+			<code>3</code>
+			<name>CaseWhen校验</name>
+		</entity>
+		<entity>
+			<code>4</code>
+			<name>有效性校验</name>
+		</entity>
+		<entity>
+			<code>5</code>
+			<name>非聚合校验</name>
+		</entity>
+		<entity>
+			<code>6</code>
+			<name>或校验</name>
+		</entity>
+	</entityMap>
+
+	<entityMap>
+		<entityName>emptyCheckTag</entityName>
+		<entity>
+			<code>1</code>
+			<name>是</name>
+		</entity>
+		<entity>
+			<code>2</code>
+			<name>否</name>
+		</entity>
+	</entityMap>
+
+	<entityMap>
+		<entityName>chnCheckTag</entityName>
+		<entity>
+			<code>1</code>
+			<name>是</name>
+		</entity>
+		<entity>
+			<code>2</code>
+			<name>否</name>
+		</entity>
+	</entityMap>
+
+	<entityMap>
+		<entityName>numCheckTag</entityName>
+		<entity>
+			<code>1</code>
+			<name>是</name>
+		</entity>
+		<entity>
+			<code>2</code>
+			<name>否</name>
+		</entity>
+	</entityMap>
+
+	<entityMap>
+		<entityName>repeatLetterTag</entityName>
+		<entity>
+			<code>1</code>
+			<name>是</name>
+		</entity>
+		<entity>
+			<code>2</code>
+			<name>否</name>
+		</entity>
+	</entityMap>
+
+	<entityMap>
+		<entityName>errorcharCheckTag</entityName>
+		<entity>
+			<code>1</code>
+			<name>是</name>
+		</entity>
+		<entity>
+			<code>2</code>
+			<name>否</name>
+		</entity>
+	</entityMap>
+
+	<entityMap>
+		<entityName>upperCheckTag</entityName>
+		<entity>
+			<code>1</code>
+			<name>是</name>
+		</entity>
+		<entity>
+			<code>2</code>
+			<name>否</name>
+		</entity>
+	</entityMap>
+
+	<entityMap>
+		<entityName>digitalCheckTag</entityName>
+		<entity>
+			<code>1</code>
+			<name>是</name>
+		</entity>
+		<entity>
+			<code>2</code>
+			<name>否</name>
+		</entity>
+	</entityMap>
+
+	<entityMap>
+		<entityName>numAndBeginNumTag</entityName>
+		<entity>
+			<code>1</code>
+			<name>是</name>
+		</entity>
+		<entity>
+			<code>2</code>
+			<name>否</name>
+		</entity>
+	</entityMap>
+
+	<entityMap>
+		<entityName>dateCheckTag</entityName>
+		<entity>
+			<code>1</code>
+			<name>是</name>
+		</entity>
+		<entity>
+			<code>2</code>
+			<name>否</name>
+		</entity>
+	</entityMap>
+
+	<entityMap>
+		<entityName>dateCheckForSixBit</entityName>
+		<entity>
+			<code>1</code>
+			<name>是</name>
+		</entity>
+		<entity>
+			<code>2</code>
+			<name>否</name>
+		</entity>
+	</entityMap>
+
+
+	<entityMap>
+		<entityName>consistenttypeTag</entityName>
+		<entity>
+			<code>1</code>
+			<name>一致性校验</name>
+		</entity>
+		<entity>
+			<code>2</code>
+			<name>唯一性校验</name>
+		</entity>
+	</entityMap>
+
+
+
+
+	<entityMap>
+		<entityName>strTaskState</entityName>
+		<entity>
+			<code>1</code>
+			<name>任务开始</name>
+		</entity>
+		<entity>
+			<code>2</code>
+			<name>任务结束</name>
+		</entity>
+		<entity>
+			<code>3</code>
+			<name>任务等待</name>
+		</entity>
+	</entityMap>
+
+	<entityMap>
+		<entityName>RPTSubmitStatus</entityName>
+		<entity>
+			<code>1</code>
+			<name>1 | 未提交</name>
+		</entity>
+		<entity>
+			<code>2</code>
+			<name>2 | 已提交</name>
+		</entity>
+		<!--
+			版本合并，保持与征信版本一致 <entity> <code>3</code> <name>3 | 撤销提交</name>
+			</entity>
+		-->
+		<entity>
+			<code>4</code>
+			<name>4 | 未全部提交</name>
+		</entity>
+	</entityMap>
+
+	<entityMap>
+		<entityName>RPTCheckType</entityName>
+		<entity>
+			<code>1</code>
+			<name>1 | 未校验 </name>
+		</entity>
+		<entity>
+			<code>2</code>
+			<name>2 | 校验成功 </name>
+		</entity>
+		<entity>
+			<code>3</code>
+			<name>3 | 校验失败</name>
+		</entity>
+		<entity>
+			<code>4</code>
+			<name>4 | 校验未全部成功</name>
+		</entity>
+		<entity>
+			<code>5</code>
+			<name>5 | 校验失败或未校验</name>
+		</entity>
+	</entityMap>
+	<entityMap>
+		<entityName>RPTSendType</entityName>
+		<entity>
+			<code>1</code>
+			<name>1 | 未报送 </name>
+		</entity>
+		<entity>
+			<code>2</code>
+			<name>2 | 已报送</name>
+		</entity>
+		<entity>
+			<code>3</code>
+			<name>3 | 回执成功</name>
+		</entity>
+		<entity>
+			<code>4</code>
+			<name>4 | 回执失败</name>
+		</entity>
+		<entity>
+			<code>5</code>
+			<name>5 | 未全部报送</name>
+		</entity>
+		<entity>
+			<code>6</code>
+			<name>6 | 已报送(回执状态，请查看明细)</name>
+		</entity>
+		<entity>
+			<code>7</code>
+			<name>7 | 已重报</name>
+		</entity>
+	</entityMap>
+	<entityMap>
+		<entityName>RPTFeedbackType</entityName>
+		<entity>
+			<code>1</code>
+			<name>1 | 未回执</name>
+		</entity>
+		<entity>
+			<code>2</code>
+			<name>2 | 回执成功</name>
+		</entity>
+		<entity>
+			<code>3</code>
+			<name>3 | 回执失败</name>
+		</entity>
+		<entity>
+			<code>4</code>
+			<name>4 | 回执未全部成功</name>
+		</entity>
+		<entity>
+			<code>5</code>
+			<name>5 | 已删除</name>
+		</entity>
+	</entityMap>
+	<entityMap>
+		<entityName>RPTVerifyType</entityName>
+		<entity>
+			<code>1</code>
+			<name>1 | 未审核</name>
+		</entity>
+		<entity>
+			<code>2</code>
+			<name>2 | 审核通过</name>
+		</entity>
+		<entity>
+			<code>3</code>
+			<name>3 | 审核未通过</name>
+		</entity>
+		<entity>
+			<code>4</code>
+			<name>4 | 审核未全部通过</name>
+		</entity>
+		<entity>
+			<code>5</code>
+			<name>5 | 审核失败或未通过</name>
+		</entity>
+	</entityMap>
+
+	<entityMap>
+		<entityName>StrComminDataState</entityName>
+		<entity>
+			<code>1</code>
+			<name>1 | 正常</name>
+		</entity>
+		<entity>
+			<code>2</code>
+			<name>2 | 已删除</name>
+		</entity>
+	</entityMap>
+
+	<entityMap>
+		<entityName>defaultLogicDaoBeanId</entityName>
+		<entity>
+			<code>sqlserverProcedureListMapDao</code>
+			<name>sqlServer存储过程</name>
+		</entity>
+		<entity>
+			<code>oracleProcedureListMapDao</code>
+			<name>Oracle存储过程</name>
+		</entity>
+	</entityMap>
+
+	<entityMap>
+		<entityName>ContrastType</entityName>
+		<entity>
+			<code>1</code>
+			<name>金融许可证号</name>
+		</entity>
+		<entity>
+			<code>2</code>
+			<name>银监会非现场机构代码</name>
+		</entity>
+		<entity>
+			<code>3</code>
+			<name>大集中</name>
+		</entity>
+	</entityMap>
+
+	<entityMap>
+		<entityName>downLoadFileType</entityName>
+		<entity>
+			<code>1</code>
+			<name>报文</name>
+		</entity>
+	</entityMap>
+
+	<entityMap>
+		<entityName>downloadResourcePath</entityName>
+		<entity>
+			<code>1</code>
+			<name>/Download/DownloadResource</name>
+		</entity>
+		<!--
+			<entity> <code>2</code> <name>D:/lan</name> </entity>
+		-->
+	</entityMap>
+
+	<entityMap>
+		<entityName>tmpFilePath</entityName>
+		<entity>
+			<code>1</code>
+			<name>/Download/tmp</name>
+		</entity>
+		<!--
+			<entity> <code>2</code> <name>D:/lan</name> </entity>
+		-->
+	</entityMap>
+
+	<entityMap>
+		<entityName>downloadResourcePathTime</entityName>
+		<entity>
+			<code>2</code>
+			<name>tmpFilePath</name>
+		</entity>
+		<entity>
+			<code>2</code>
+			<name>downloadResourcePath</name>
+		</entity>
+		<!--
+			<entity> <code>0</code> <name>D:/lan</name> </entity>
+		-->
+	</entityMap>
+<entityMap>
+		<entityName>reportFreq</entityName>
+		<entity>
+			<code>1</code>
+			<name>日</name>
+		</entity>
+		<entity>
+			<code>2</code>
+			<name>周</name>
+		</entity>
+		<entity>
+			<code>3</code>
+			<name>月</name>
+		</entity>
+		<entity>
+			<code>4</code>
+			<name>季</name>
+		</entity>
+		<entity>
+			<code>5</code>
+			<name>半年</name>
+		</entity>
+		<entity>
+			<code>6</code>
+			<name>年</name>
+		</entity>
+		<entity>
+			<code>7</code>
+			<name>旬</name>
+		</entity>
+	</entityMap>
+<entityMap>
+		<entityName>lot</entityName>
+		<entity>
+			<code>00</code>
+			<name>第零批</name>
+		</entity>
+		<entity>
+			<code>01</code>
+			<name>第一批</name>
+		</entity>
+		<entity>
+			<code>02</code>
+			<name>第二批</name>
+		</entity>
+		<entity>
+			<code>03</code>
+			<name>第三批</name>
+		</entity>
+		<entity>
+			<code>04</code>
+			<name>第四批</name>
+		</entity>
+		<entity>
+			<code>05</code>
+			<name>第五批</name>
+		</entity>
+		<entity>
+			<code>06</code>
+			<name>第六批</name>
+		</entity>
+		<entity>
+			<code>07</code>
+			<name>第七批</name>
+		</entity>
+		<entity>
+			<code>08</code>
+			<name>第八批</name>
+		</entity>
+		<entity>
+			<code>09</code>
+			<name>第九批</name>
+		</entity>
+	</entityMap>
+
+	<!-- 1104报表主题列表 -->
+	<entityMap>
+		<entityName>Str_1104_SuitCode</entityName>
+		<entity>
+			<code>07</code>
+			<name>1104（分支机构）</name>
+		</entity>
+		<entity>
+			<code>14</code>
+			<name>1104（基于新准则）</name>
+		</entity>
+		<entity>
+			<code>03</code>
+			<name>新资本充足率（BIII）</name>
+		</entity>
+	</entityMap>
+	
+	<!-- 系统主题的配置，为得到自定义主题 -->
+	<entityMap>
+		<entityName>AllSystemSuit</entityName>
+		<entity>
+			<code>21,2111,211101,211102,211103,211104,2112,211211,211212,211213,211214,211215,211216,211217,211218,211219,211220,211221,2114,211461,2131,22,2201,2204,2208,2209,220A,24,2432,243201,243202,2451,245101,245102,01,03,07,14</code>
+			<name></name>
+		</entity>
+	</entityMap>
+</entityRoot>

@@ -1,0 +1,86 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<fieldShowsRoot>
+	<fieldShowsEntity>
+      <className>testsystem.dto.HUserInfo</className>
+      <showInstance>
+        <showInstanceName>1</showInstanceName>
+        <fieldName fieldName="strUserCode" fieldShowName = "登录代码 测试"></fieldName> 
+      </showInstance>
+	</fieldShowsEntity>
+	
+	<fieldShowsEntity>
+      <className>testsystem.dto.HRoleFunctionInstTest</className>
+      <showInstance>
+        <showInstanceName>1</showInstanceName>
+        <fieldName fieldName="instInfo" singleTag="selectField" fieldTargetPrimaryKey="strInstCode" paramName="instInfo.strInstCode"></fieldName> 
+        <fieldName fieldName="strFunctionCode" singleTag="multipleSelectField"></fieldName> 
+      </showInstance>
+	</fieldShowsEntity>
+	
+	<fieldShowsEntity>
+      <className>testsystem.dto.TestStatistical</className>
+      <showInstance>
+        <showInstanceName>1</showInstanceName>
+        <fieldName fieldName="dtoName" width="180"></fieldName> 
+        <fieldName fieldName="unCheckCount" width="100"></fieldName> 
+        <fieldName fieldName="unReViewCount" width="100"></fieldName> 
+      </showInstance>
+	</fieldShowsEntity>
+
+	<fieldShowsEntity>
+      <className>testsystem.dto.TestOnetoTableStatisical</className>
+      <showInstance>
+        <showInstanceName>1</showInstanceName>
+        <fieldName fieldName="FieldListName" width="180"></fieldName> 
+        <fieldName fieldName="summoneysum" width="100"></fieldName> 
+        <fieldName fieldName="summoneyend" width="100"></fieldName> 
+      </showInstance>
+	</fieldShowsEntity>
+	<fieldShowsEntity>
+ <className>dbgssystem.dto.AutoDTO_DB_DBXX_JC</className>
+	       <showInstance>
+        <showInstanceName>10</showInstanceName>
+        <fieldName fieldName="DBYWBH" listVisible="true"  intOrder="1"></fieldName>
+        <fieldName fieldName="BDBRLX" width="90" intOrder="4"></fieldName>
+        <fieldName fieldName="BDBRZJLX" width="140" intOrder="5"></fieldName>
+        <fieldName fieldName="BDBRZJHM" width="120" intOrder="6"></fieldName>
+        <fieldName fieldName="YLZD" listVisible="true" intOrder="7"></fieldName>
+        <fieldName fieldName="XZXH" listVisible="false" intOrder="8"></fieldName>
+        
+        <fieldName fieldName="YLZD" listVisible="false" intOrder="9" ></fieldName>
+       
+        
+        <fieldName fieldName="RPTCheckType"  updateReadOnly="true" intOrder="10" width="120"></fieldName>
+        <fieldName fieldName="RPTSubmitStatus"  updateReadOnly="true" intOrder="11" width="100"></fieldName>
+        <fieldName fieldName="RPTVerifyType"   updateReadOnly="true" intOrder="12" width="100"></fieldName>
+        <fieldName fieldName="RPTSendType"   updateReadOnly="true"  intOrder="13" width="120"></fieldName>
+        <fieldName fieldName="RPTFeedbackType"  updateReadOnly="true"  intOrder="14" width="100"></fieldName>
+        <fieldName fieldName="lastUpdateDate" updateReadOnly="true" singleTag="dateFieldNoSlash" width="120" intOrder="15" ></fieldName>
+        <fieldName fieldName="dtDate" listVisible="false" updateReadOnly="true" singleTag="dateFieldNoSlash" intOrder="16" ></fieldName>
+        <fieldName fieldName="operationUser" updateReadOnly="true" width="120" intOrder="17"></fieldName>
+        <fieldName fieldName="instInfo" updateReadOnly="true" width="120" intOrder="18"></fieldName>
+        <fieldName fieldName="SJBGRQ" updateReadOnly="true" listVisible="false"  intOrder="19" ></fieldName>
+        <fieldName fieldName="autoID"  listVisible="false" intOrder="20"></fieldName>
+        <fieldName fieldName="extend1"  listVisible="false" intOrder="21"></fieldName>
+        <fieldName fieldName="extend2"  listVisible="false" intOrder="22"></fieldName>
+        <fieldName fieldName="extend3"  listVisible="false" intOrder="23"></fieldName>
+        <fieldName fieldName="extend4"  listVisible="false" intOrder="24"></fieldName>
+        <fieldName fieldName="extend5"  listVisible="false" intOrder="25"></fieldName>
+         <fieldName fieldName="OneToMany_DB_BDBRXX" singleTag="card"  intOrder="9" ></fieldName>
+         <fieldName fieldName="instInfo" singleTag="card" ></fieldName>
+         <fieldName fieldName="OneToMany_DB_HTXX" singleTag="list" ></fieldName>
+      </showInstance>
+</fieldShowsEntity>
+   <!-- 
+	<fieldShowsEntity>
+      <className>testsystem.dto.Htable5</className>
+      <showInstance>
+        <showInstanceName>1</showInstanceName>
+        <fieldName fieldName="strFileName" paramName=""></fieldName> 
+      </showInstance>
+	</fieldShowsEntity>
+ -->
+ 
+ 
+</fieldShowsRoot>

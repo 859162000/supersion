@@ -1,0 +1,97 @@
+<?xml version="1.0" encoding="UTF-8"?>    
+<!DOCTYPE beans PUBLIC "-//SPRING//DTD BEAN//EN" 
+"http://www.springframework.org/dtd/spring-beans.dtd">
+<beans>
+
+	<!--	新客户风险接口文件下载配置信息	-->
+	<bean id="NewInterfaceDown" class="ncr.helper.InterfaceDownBean">
+			
+		<property name="DGJTYKH"><!--表1、对公及同业客户授信和表内外业务统计表-->
+			<map>
+				<!--key:后边配置用到的表顺序号 value：对应的表名-->
+				<entry key="1" value="NCR_1_1"></entry>	<!-- 授信情况 -->
+				<entry key="2" value="NCR_1_2"></entry>	<!--集团客户授信拆分情况   -->
+				<entry key="3" value="NCR_1_3"></entry>	<!--贷款明细   -->
+				<entry key="4" value="NCR_1_4"></entry>	<!--持有企业债券明细-->
+				<entry key="5" value="NCR_1_5"></entry>	<!--持有企业股权明细-->
+				<entry key="6" value="NCR_1_6"></entry>	<!--表外业务明细   -->
+				<entry key="7" value="NCR_1_7"></entry>	<!--同业客户业务明细-->
+			</map>
+		</property>
+		
+		<property name="JTKH"><!--表2、集团客户、供应链融资基本信息统计表-->
+			<map>
+				<entry key="1" value="NCR_2_1"></entry>	<!--集团基本情况-->
+				<entry key="2" value="NCR_2_2*3*2"></entry>	<!--高管及重要关联人信息-->
+				<entry key="3" value="NCR_2_3"></entry>	<!--成员名单-->
+				<entry key="4" value="NCR_2_4"></entry>	<!--实际控制人-->
+				<entry key="5" value="NCR_2_5"></entry>	<!--关联集团信息-->
+			</map>
+		</property>
+		
+		<property name="DYFRKH"><!--表3、单一法人客户基本信息统计表-->
+			<map>
+				<entry key="1" value="NCR_3_1"></entry>	<!--单一法人客户基本信息统计表-->
+				<entry key="2" value="NCR_3_2*3*2"></entry>	<!--法定代表人、高管及重要关联人信息-->
+				<entry key="3" value="NCR_3_3"></entry>	<!--重要股东及主要关联企业-->
+			</map>
+		</property>
+		
+		<property name="DGKHDB"><!--表4、对公客户担保情况统计表-->
+			<map>
+				<entry key="1" value="NCR_4_1"></entry>	<!--对公客户担保情况统计表-->
+			</map>
+		</property>
+		
+		<property name="GRDKWY"><!--表5、个人贷款违约情况统计表-->
+			<map>
+				<entry key="1" value="NCR_5_1*2"></entry>	<!--个人贷款违约情况统计表-->
+			</map>
+		</property>
+		
+		<property name="GRWYDKDB"><!--表6、个人违约贷款担保情况统计表-->
+			<map>
+				<entry key="1" value="NCR_6_1"></entry>	 	<!--个人违约贷款担保情况统计表-->
+			</map>
+		</property>
+				
+		
+		<property name="NewAssociativeField">
+			<map>
+				<!--key:第一位指主表的顺序号，第二位指本表的顺序号，第三位指第几个关联字段（新客户风险支持2个字段）
+						value：*之前指主表关联字段的顺序号，*之后指本表关联字段的顺序号-->
+				<entry key="110" value="7"></entry>
+				<entry key="111" value="3"></entry>
+				<entry key="121" value="7*3"></entry>	
+				<entry key="122" value="3*2"></entry>	
+				<entry key="131" value="7*4"></entry>	<!--	*号之前是取大表与之关联的第7个字段 ；	根据授信号码关联	-->
+				<entry key="132" value="3*2"></entry>	<!--	*号之前是取大表与之关联的第7个字段 ；	根据授信号码关联	-->
+				<entry key="141" value="7*4"></entry>	<!--	*号之前是取大表与之关联的第7个字段 ；	根据授信号码关联	-->
+				<entry key="142" value=""></entry>	<!--	*号之前是取大表与之关联的第7个字段 ；	根据授信号码关联	-->
+				<entry key="151" value="7*4"></entry>	<!--	*号之前是取大表与之关联的第7个字段；	根据授信号码关联	-->
+				<entry key="152" value=""></entry>	<!--	*号之前是取大表与之关联的第7个字段；	根据授信号码关联	-->
+				<entry key="161" value="7*5"></entry>	<!--	*号之前是取大表与之关联的第7个字段 ；	根据授信号码关联	-->
+				<entry key="162" value="3*2"></entry>	<!--	*号之前是取大表与之关联的第7个字段 ；	根据授信号码关联	-->
+				<entry key="171" value="3*2"></entry>	<!--	*号之前是取大表与之关联的第3位是第二个关联字段 ；	根据客户代码关联-->
+				<entry key="172" value="2*1"></entry>	<!--	*号之前是取大表与之关联的第3位是第二个关联字段 ；	根据客户代码关联-->
+				
+				<entry key="21" value="2"></entry>		<!--	默认和小表的关联字段，value是表明此为第几个字段 ；	根据客户代码/供应链编码关联	-->
+				<entry key="22" value="2*19"></entry>	<!--	*号之前是取大表与之关联的第2个字段-->
+				<entry key="23" value="2*8"></entry>	<!--	*号之前是取大表与之关联的第2个字段-->
+				<entry key="24" value="2*8"></entry>	<!--	*号之前是取大表与之关联的第2个字段-->
+				<entry key="25" value="2*4"></entry>	<!--	*号之前是取大表与之关联的第2个字段-->
+				
+				<entry key="31" value="2"></entry>		<!--	默认和小表的关联字段，value是表明此为第几个字段	根据客户代码关联     -->
+				<entry key="32" value="2*20"></entry>	<!--	前面3张表都是第2个字段	-->
+				<entry key="33" value="2*13"></entry>	<!--	前面3张表都是第2个字段-->
+				
+				<entry key="41" value="2"></entry>		<!--	无关联字段	-->
+				
+				<entry key="51" value="2"></entry>		<!--	无关联字段	-->
+				
+				<entry key="61" value="2"></entry>		<!--	无关联字段	-->
+			</map>
+		</property>
+	</bean>
+		
+</beans>

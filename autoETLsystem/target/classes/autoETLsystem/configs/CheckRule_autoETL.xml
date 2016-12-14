@@ -1,0 +1,282 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<reportCheckRoot>
+	<checkInstance name="autoETLCheck">
+	   <checkTable>
+	   <checkFieldBasicList discription="表内基础性校验">
+	         <checkFieldBasic name="strTableName" discription="实体表名"  numAndBeginNum="true"></checkFieldBasic> 
+	         <checkFieldBasic name="strFieldName" discription="字段名"  numAndBeginNum="true"></checkFieldBasic> 
+	         <checkFieldBasic name="strProcedureName" discription="存储过程名"  numAndBeginNum="true"></checkFieldBasic> 
+	   </checkFieldBasicList>
+	   
+		  <checkFieldCaseWhenList>
+		     <checkFieldCaseWhen name="strEmptyType" discription="是否为空" caseValue="2" whenValue="1">
+			  <checkFieldCaseWhenField name="IsKey" discription="主键"></checkFieldCaseWhenField>					
+		    </checkFieldCaseWhen>
+		    <checkFieldCaseWhen name="nPrecise" discription="精度" caseValue="null" whenValue="1">
+			  <checkFieldCaseWhenField name="strFieldType" discription="字段类型"></checkFieldCaseWhenField>					
+		    </checkFieldCaseWhen>
+		   <!--  <checkFieldCaseWhen name="nPrecise" discription="精度" caseValue="null" whenValue="2">
+			  <checkFieldCaseWhenField name="strFieldType" discription="字段类型"></checkFieldCaseWhenField>					
+		    </checkFieldCaseWhen>
+		    <checkFieldCaseWhen name="nPrecise" discription="精度" caseValue="null" whenValue="3">
+			  <checkFieldCaseWhenField name="strFieldType" discription="字段类型"></checkFieldCaseWhenField>					
+		    </checkFieldCaseWhen>
+		    <checkFieldCaseWhen name="nLength" discription="长度" caseValue="null" whenValue="3">
+			  <checkFieldCaseWhenField name="strFieldType" discription="字段类型"></checkFieldCaseWhenField>					
+		    </checkFieldCaseWhen>
+		    <checkFieldCaseWhen name="nPrecise" discription="精度" caseValue="null" whenValue="4">
+			  <checkFieldCaseWhenField name="strFieldType" discription="字段类型"></checkFieldCaseWhenField>					
+		    </checkFieldCaseWhen>  -->
+		  <checkFieldCaseWhen name="nLength" discription="长度" caseValue="null" whenValue="4">
+			  <checkFieldCaseWhenField name="strFieldType" discription="字段类型"></checkFieldCaseWhenField>					
+		    </checkFieldCaseWhen>
+		  </checkFieldCaseWhenList>
+		  
+		  <checkFieldLineList discription="非聚合校验">
+		   <checkFieldLine compareType=">=">
+					<leftFieldList><checkFieldLineField name="nLength" discription="长度"></checkFieldLineField></leftFieldList>
+					<rightFieldList><checkFieldLineField value="0"></checkFieldLineField></rightFieldList>
+				</checkFieldLine>
+				
+				 <checkFieldLine compareType=">=">
+					<leftFieldList><checkFieldLineField name="nPrecise" discription="精度"></checkFieldLineField></leftFieldList>
+					<rightFieldList><checkFieldLineField value="0"></checkFieldLineField></rightFieldList>
+				</checkFieldLine>
+		</checkFieldLineList>
+	   </checkTable>
+	</checkInstance>
+	
+	<checkInstance name="autoETLCheckForView">
+	   <checkTable>
+	   <checkFieldBasicList discription="表内基础性校验">
+	         <checkFieldBasic name="strTableName" discription="视图名称"  numAndBeginNum="true"></checkFieldBasic> 
+	         <checkFieldBasic name="strFieldName" discription="视图字段名"  numAndBeginNum="true"></checkFieldBasic> 
+	       
+	   </checkFieldBasicList>
+	 </checkTable>
+	 </checkInstance>
+	 
+	 
+	 <checkInstance name="autoETLCheckForActivityNodeFieldV">
+	   <checkTable>
+	    <checkFieldCaseWhenList>
+		     <checkFieldCaseWhen name="strValue" discription="固定目标值" caseValue="notNull" whenValue="null">
+			  <checkFieldCaseWhenField name="autoETL_SourceField"  discription="源表字段"></checkFieldCaseWhenField>					
+		    </checkFieldCaseWhen>
+		    
+		     <checkFieldCaseWhen name="strValue" discription="固定目标值" caseValue="null" whenValue="notNull">
+			  <checkFieldCaseWhenField name="autoETL_SourceField"  discription="源表字段"></checkFieldCaseWhenField>					
+		    </checkFieldCaseWhen>
+		   
+	  </checkFieldCaseWhenList>
+	  </checkTable>
+	 </checkInstance>
+	 
+	  <checkInstance name="autoETLCheckForActivityNodeFieldViewV">
+	   <checkTable>
+	    <checkFieldCaseWhenList>
+		     <checkFieldCaseWhen name="strValue" discription="固定目标值" caseValue="notNull" whenValue="null">
+			  <checkFieldCaseWhenField name="autoETL_SourceViewField" discription="源视图字段"></checkFieldCaseWhenField>					
+		    </checkFieldCaseWhen>
+		   
+		     <checkFieldCaseWhen name="strValue" discription="固定目标值" caseValue="null" whenValue="notNull">
+			  <checkFieldCaseWhenField name="autoETL_SourceViewField" discription="源视图字段"></checkFieldCaseWhenField>					
+		    </checkFieldCaseWhen>
+	  </checkFieldCaseWhenList>
+	  </checkTable>
+	 </checkInstance>
+	 
+	  <checkInstance name="autoETLCheckForActivityNodeFieldVCo">
+	   <checkTable>
+	    <checkFieldCaseWhenList>
+		  
+		   <checkFieldCaseWhen name="autoRelationFieldID" discription="源表字段" caseValue="notNull" whenValue="null">
+			  <checkFieldCaseWhenField name="strConditionJoinType" discription="连接类型" ></checkFieldCaseWhenField>					
+		    </checkFieldCaseWhen>
+		    
+		    <checkFieldCaseWhen name="strConditionType" discription="条件类型" caseValue="notNull" whenValue="null">
+			  <checkFieldCaseWhenField name="strConditionJoinType" discription="连接类型"  ></checkFieldCaseWhenField>					
+		    </checkFieldCaseWhen>
+		    
+		     <checkFieldCaseWhen name="strValue" discription="字段值"  caseValue="notNull" whenValue="null">
+			  <checkFieldCaseWhenField name="strConditionJoinType" discription="连接类型" ></checkFieldCaseWhenField>					
+		    </checkFieldCaseWhen>
+		    
+		    <checkFieldCaseWhen name="autoRelationFieldID" discription="源表字段" caseValue="null" whenValue="notNull">
+			  <checkFieldCaseWhenField name="strConditionJoinType" discription="连接类型" ></checkFieldCaseWhenField>					
+		    </checkFieldCaseWhen>
+		    
+		    <checkFieldCaseWhen name="strConditionType" discription="条件类型" caseValue="null" whenValue="notNull">
+			  <checkFieldCaseWhenField name="strConditionJoinType" discription="连接类型"  ></checkFieldCaseWhenField>					
+		    </checkFieldCaseWhen>
+		    
+		     <checkFieldCaseWhen name="strValue" discription="字段值"  caseValue="null" whenValue="notNull">
+			  <checkFieldCaseWhenField name="strConditionJoinType" discription="连接类型" ></checkFieldCaseWhenField>					
+		    </checkFieldCaseWhen>
+	  </checkFieldCaseWhenList>
+	  </checkTable>
+	 </checkInstance>
+	 
+	 
+	  <checkInstance name="autoETLCheckForActivityNodeFieldVVCon">
+	   <checkTable>
+	    <checkFieldCaseWhenList>
+		     <checkFieldCaseWhen name="autoRelationFieldViewID" discription="源视图字段" caseValue="notNull" whenValue="null">
+			  <checkFieldCaseWhenField name="strConditionJoinType" discription="连接类型" ></checkFieldCaseWhenField>					
+		    </checkFieldCaseWhen>
+		    
+		    <checkFieldCaseWhen name="strConditionType" discription="条件类型" caseValue="notNull" whenValue="null">
+			  <checkFieldCaseWhenField name="strConditionJoinType" discription="连接类型"  ></checkFieldCaseWhenField>					
+		    </checkFieldCaseWhen>
+		    
+		     <checkFieldCaseWhen name="strValue" discription="字段值"  caseValue="notNull" whenValue="null">
+			  <checkFieldCaseWhenField name="strConditionJoinType" discription="连接类型" ></checkFieldCaseWhenField>					
+		    </checkFieldCaseWhen>
+		    
+		    <checkFieldCaseWhen name="autoRelationFieldViewID" discription="源视图字段" caseValue="null" whenValue="notNull">
+			  <checkFieldCaseWhenField name="strConditionJoinType" discription="连接类型" ></checkFieldCaseWhenField>					
+		    </checkFieldCaseWhen>
+		    
+		    <checkFieldCaseWhen name="strConditionType" discription="条件类型" caseValue="null" whenValue="notNull">
+			  <checkFieldCaseWhenField name="strConditionJoinType" discription="连接类型"  ></checkFieldCaseWhenField>					
+		    </checkFieldCaseWhen>
+		    
+		     <checkFieldCaseWhen name="strValue" discription="字段值"  caseValue="null" whenValue="notNull">
+			  <checkFieldCaseWhenField name="strConditionJoinType" discription="连接类型" ></checkFieldCaseWhenField>					
+		    </checkFieldCaseWhen>
+	  </checkFieldCaseWhenList>
+	  </checkTable>
+	 </checkInstance>
+	 
+	 
+	  <checkInstance name="autoETLCheckForActivityNodeRelationF">
+	   <checkTable>
+	    <checkFieldCaseWhenList>
+		      <checkFieldCaseWhen name="autoRelationFieldID" discription="源表字段" caseValue="notNull" whenValue="null">
+			  <checkFieldCaseWhenField name="strConditionJoinType" discription="连接类型" ></checkFieldCaseWhenField>					
+		    </checkFieldCaseWhen>
+		    
+		    <checkFieldCaseWhen name="strConditionType" discription="条件类型" caseValue="notNull" whenValue="null">
+			  <checkFieldCaseWhenField name="strConditionJoinType" discription="连接类型"  ></checkFieldCaseWhenField>					
+		    </checkFieldCaseWhen>
+		    
+		     <checkFieldCaseWhen name="strValue" discription="字段值"  caseValue="notNull" whenValue="null">
+			  <checkFieldCaseWhenField name="strConditionJoinType" discription="连接类型" ></checkFieldCaseWhenField>					
+		    </checkFieldCaseWhen>
+		    
+		    <checkFieldCaseWhen name="autoRelationFieldID" discription="源表字段" caseValue="null" whenValue="notNull">
+			  <checkFieldCaseWhenField name="strConditionJoinType" discription="连接类型" ></checkFieldCaseWhenField>					
+		    </checkFieldCaseWhen>
+		    
+		    <checkFieldCaseWhen name="strConditionType" discription="条件类型" caseValue="null" whenValue="notNull">
+			  <checkFieldCaseWhenField name="strConditionJoinType" discription="连接类型"  ></checkFieldCaseWhenField>					
+		    </checkFieldCaseWhen>
+		    
+		     <checkFieldCaseWhen name="strValue" discription="字段值"  caseValue="null" whenValue="notNull">
+			  <checkFieldCaseWhenField name="strConditionJoinType" discription="连接类型" ></checkFieldCaseWhenField>					
+		    </checkFieldCaseWhen>
+	  </checkFieldCaseWhenList>
+	  </checkTable>
+	 </checkInstance>
+	 
+	 <checkInstance name="autoETLCheckForActivityNodeRelationV">
+	   <checkTable>
+	    <checkFieldCaseWhenList>
+		     <checkFieldCaseWhen name="autoSourceViewFieldID" discription="源视图字段" caseValue="notNull" whenValue="null">
+			  <checkFieldCaseWhenField name="strConditionJoinType" discription="连接类型" ></checkFieldCaseWhenField>					
+		    </checkFieldCaseWhen>
+		    
+		    <checkFieldCaseWhen name="strConditionType" discription="条件类型" caseValue="notNull" whenValue="null">
+			  <checkFieldCaseWhenField name="strConditionJoinType" discription="连接类型"  ></checkFieldCaseWhenField>					
+		    </checkFieldCaseWhen>
+		    
+		     <checkFieldCaseWhen name="strValue" discription="字段值"  caseValue="notNull" whenValue="null">
+			  <checkFieldCaseWhenField name="strConditionJoinType" discription="连接类型" ></checkFieldCaseWhenField>					
+		    </checkFieldCaseWhen>
+		    
+		    <checkFieldCaseWhen name="autoSourceViewFieldID" discription="源视图字段" caseValue="null" whenValue="notNull">
+			  <checkFieldCaseWhenField name="strConditionJoinType" discription="连接类型" ></checkFieldCaseWhenField>					
+		    </checkFieldCaseWhen>
+		    
+		    <checkFieldCaseWhen name="strConditionType" discription="条件类型" caseValue="null" whenValue="notNull">
+			  <checkFieldCaseWhenField name="strConditionJoinType" discription="连接类型"  ></checkFieldCaseWhenField>					
+		    </checkFieldCaseWhen>
+		    
+		     <checkFieldCaseWhen name="strValue" discription="字段值"  caseValue="null" whenValue="notNull">
+			  <checkFieldCaseWhenField name="strConditionJoinType" discription="连接类型" ></checkFieldCaseWhenField>					
+		    </checkFieldCaseWhen>
+	  </checkFieldCaseWhenList>
+	  </checkTable>
+	 </checkInstance>
+	
+	 <checkInstance name="autoETLCheckForActivityNodeForFileC">
+	   <checkTable>
+	    <checkFieldCaseWhenList>
+		      <checkFieldCaseWhen name="autoRelationFieldID" discription="源表字段" caseValue="notNull" whenValue="null">
+			  <checkFieldCaseWhenField name="strConditionJoinType" discription="连接类型" ></checkFieldCaseWhenField>					
+		    </checkFieldCaseWhen>
+		    
+		    <checkFieldCaseWhen name="strConditionType" discription="条件类型" caseValue="notNull" whenValue="null">
+			  <checkFieldCaseWhenField name="strConditionJoinType" discription="连接类型"  ></checkFieldCaseWhenField>					
+		    </checkFieldCaseWhen>
+		    
+		     <checkFieldCaseWhen name="strValue" discription="字段值"  caseValue="notNull" whenValue="null">
+			  <checkFieldCaseWhenField name="strConditionJoinType" discription="连接类型" ></checkFieldCaseWhenField>					
+		    </checkFieldCaseWhen>
+		    
+		    <checkFieldCaseWhen name="autoRelationFieldID" discription="源表字段" caseValue="null" whenValue="notNull">
+			  <checkFieldCaseWhenField name="strConditionJoinType" discription="连接类型" ></checkFieldCaseWhenField>					
+		    </checkFieldCaseWhen>
+		    
+		    <checkFieldCaseWhen name="strConditionType" discription="条件类型" caseValue="null" whenValue="notNull">
+			  <checkFieldCaseWhenField name="strConditionJoinType" discription="连接类型"  ></checkFieldCaseWhenField>					
+		    </checkFieldCaseWhen>
+		    
+		     <checkFieldCaseWhen name="strValue" discription="字段值"  caseValue="null" whenValue="notNull">
+			  <checkFieldCaseWhenField name="strConditionJoinType" discription="连接类型" ></checkFieldCaseWhenField>					
+		    </checkFieldCaseWhen>
+	  </checkFieldCaseWhenList>
+	  </checkTable>
+	 </checkInstance>
+	 
+	  <checkInstance name="autoETLCheckForActivityNodeForExcelC">
+	   <checkTable>
+	    <checkFieldCaseWhenList>
+		      <checkFieldCaseWhen name="autoRelationFieldID" discription="源表字段" caseValue="notNull" whenValue="null">
+			  <checkFieldCaseWhenField name="strConditionJoinType" discription="连接类型" ></checkFieldCaseWhenField>					
+		    </checkFieldCaseWhen>
+		    
+		    <checkFieldCaseWhen name="strConditionType" discription="条件类型" caseValue="notNull" whenValue="null">
+			  <checkFieldCaseWhenField name="strConditionJoinType" discription="连接类型"  ></checkFieldCaseWhenField>					
+		    </checkFieldCaseWhen>
+		    
+		     <checkFieldCaseWhen name="strValue" discription="字段值"  caseValue="notNull" whenValue="null">
+			  <checkFieldCaseWhenField name="strConditionJoinType" discription="连接类型" ></checkFieldCaseWhenField>					
+		    </checkFieldCaseWhen>
+		    
+		    <checkFieldCaseWhen name="autoRelationFieldID" discription="源表字段" caseValue="null" whenValue="notNull">
+			  <checkFieldCaseWhenField name="strConditionJoinType" discription="连接类型" ></checkFieldCaseWhenField>					
+		    </checkFieldCaseWhen>
+		    
+		    <checkFieldCaseWhen name="strConditionType" discription="条件类型" caseValue="null" whenValue="notNull">
+			  <checkFieldCaseWhenField name="strConditionJoinType" discription="连接类型"  ></checkFieldCaseWhenField>					
+		    </checkFieldCaseWhen>
+		    
+		     <checkFieldCaseWhen name="strValue" discription="字段值"  caseValue="null" whenValue="notNull">
+			  <checkFieldCaseWhenField name="strConditionJoinType" discription="连接类型" ></checkFieldCaseWhenField>					
+		    </checkFieldCaseWhen>
+	  </checkFieldCaseWhenList>
+	  </checkTable>
+	 </checkInstance>
+	 
+	 <checkInstance name="AutoETL_ActivityNode">
+	   <checkTable>
+		  <checkFieldCaseWhenList>
+		     <checkFieldCaseWhen name="autoETL_DataSource" discription="SQL条件源会话工厂"  caseValue="notNull" whenValue="22">
+			  <checkFieldCaseWhenField name="strStartConditionType" discription="启动条件" ></checkFieldCaseWhenField>					
+		    </checkFieldCaseWhen>
+		  </checkFieldCaseWhenList>
+	   </checkTable>
+	</checkInstance>
+	
+</reportCheckRoot>

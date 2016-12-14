@@ -1,0 +1,1008 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE struts PUBLIC "-//Apache Software Foundation//DTD Struts Configuration 2.1//EN" "http://struts.apache.org/dtds/struts-2.1.dtd">
+<struts>
+     
+	 <package name="zxptsystem" extends="framework.default" namespace="/framework">
+		<action name="PositionJump*" class="singleObjectPositionJumpAction">
+			<result name="success" type="redirectAction">
+			    <param name="actionName">${serviceResult.actionName}</param>
+            </result>
+            <result name="error" type="redirectAction">
+			    <param name="actionName">ShowAlertMessage</param>
+			    <param name="message">${serviceResult.message}</param>
+			</result>
+		</action>
+		
+		<action name="ZXPTShowListLevelAUTODTO-*" class="singleObjectZXPTShowListLevelAUTODTOAction">
+			<result name="success">/ZXPTSystem/ZXPTShowList.jsp</result>
+		</action>
+		
+		<action name="ZXTBShowViewStatistical-*" class="zXTBAccordingInstInfoShowViewAction">
+			<result name="success">/ZXPTSystem/ZXPTRightShowList.jsp</result>
+			<result name="error" type="redirectAction">
+            	<param name="message">${serviceResult.message}</param>
+			    <param name="actionName">ShowAlertMessage</param>
+			</result>
+		</action>
+		
+ 		<!-- <action name="ZXTBShowViewStatistical-zxptsystem.dto.View_QY_JKRGKXX" class="view_QY_JKRGKXXZXTBShowViewStatisticalAction">
+			<result name="success">/ZXPTSystem/ZXPTRightShowList.jsp</result>
+			<result name="error" type="redirectAction">
+            	<param name="message">${serviceResult.message}</param>
+			    <param name="actionName">ShowAlertMessage</param>
+			</result>
+		</action>
+		
+ 		<action name="ZXTBShowViewStatistical-zxptsystem.dto.View_JG_JGJBXX" class="view_JG_JGJBXXZXTBShowViewStatisticalAction">
+			<result name="success">/ZXPTSystem/ZXPTRightShowList.jsp</result>
+			<result name="error" type="redirectAction">
+            	<param name="message">${serviceResult.message}</param>
+			    <param name="actionName">ShowAlertMessage</param>
+			</result>
+		</action> -->
+		
+		<action name="JKRGKPosition-*" class="baseSTModelDrivenAction">
+            <result name="success" type="redirectAction">
+			    <param name="actionName">RefleshParent</param>
+			</result>
+			<result name="error" type="redirectAction">
+            	<param name="message">${serviceResult.message}</param>
+			    <param name="actionName">ShowAlertMessage</param>
+			</result>
+		</action>
+		
+		<action name="ClearJKRGKPosition-*" class="baseSTModelDrivenAction">
+            <result name="success" type="redirectAction">
+			    <param name="actionName">RefleshParent</param>
+			</result>
+			<result name="error" type="redirectAction">
+            	<param name="message">${serviceResult.message}</param>
+			    <param name="actionName">ShowAlertMessage</param>
+			</result>
+		</action>
+		
+        <action name="DownLoadRport-zxptsystem.dto.QYZXDownload" class="downLoadReportAction">
+            <result name="success" type="stream">
+			    <param name="contentType">${serviceResult.contentType}</param>
+			    <param name="inputName">inputStream</param>
+			    <param name="contentDisposition">${serviceResult.contentDisposition}</param>
+			    <param name="bufferSize">${serviceResult.bufferSize}</param>
+			</result>
+			<result name="error" type="redirectAction">
+			    <param name="actionName">ShowAlertMessage</param>
+			    <param name="message">${serviceResult.message}</param>
+			</result>
+        </action>
+        
+        <action name="ShowList-zxptsystem.dto.QYZXDownload" class="singleObjectShowListAction">
+			<result name="success">/ZXPTSystem/QYZXDownload.jsp</result>
+		</action>
+		
+		 <action name="ShowListLevelQYZXCJFKBWSub-zxptsystem.dto.QYZXCJFKBWSub" class="singleObjectShowListAction">
+			<result name="success">/ZXPTSystem/QYZXCJFKBWSub.jsp</result>
+		</action>
+		<!-- 企业征信采集反馈 -->
+		<action name="ConfirmDialogForUploadQYZXBWJX-zxptsystem.dto.QYZXCJFKBW" class="confirmDialogForUploadQYZXBWJXAction">
+	         <result name="success" type="redirectAction">
+			    <param name="actionName">UploadQYZXBWJX-zxptsystem.dto.QYZXCJFKBW</param>
+			    <param name="redirectActionName">UploadQYZXBWJX-zxptsystem.dto.QYZXCJFKBW</param>
+			    <param name="redirectActionNamespace">/framework</param>
+			</result>
+	            <result name="error" type="redirectAction">
+	            <param name="showConfirm">true</param>
+	           	<param name="message">${serviceResult.message}</param>
+			    <param name="actionName">ShowAlertMessage.action</param>
+			    <param name="redirectActionName">UploadQYZXBWJX-zxptsystem.dto.QYZXCJFKBW</param>
+			    <param name="redirectActionNamespace">/framework</param>
+			</result>
+		</action> 
+		<!-- 企业征信批量信贷业务数据删除反馈报文 -->
+		<action name="ConfirmDialogForUploadQYZXBWJX-zxptsystem.dto.QYZXPLXDYWSJSCJGFKBW" class="confirmDialogForUploadQYZXBWJXAction">
+	         <result name="success" type="redirectAction">
+			    <param name="actionName">UploadQYZXPLXDYWSJSCJGFKBW-zxptsystem.dto.QYZXPLXDYWSJSCJGFKBW</param>
+			    <param name="redirectActionName">UploadQYZXPLXDYWSJSCJGFKBW-zxptsystem.dto.QYZXPLXDYWSJSCJGFKBW</param>
+			    <param name="redirectActionNamespace">/framework</param>
+			</result>
+	            <result name="error" type="redirectAction">
+	            <param name="showConfirm">true</param>
+	           	<param name="message">${serviceResult.message}</param>
+			    <param name="actionName">ShowAlertMessage.action</param>
+			    <param name="redirectActionName">UploadQYZXPLXDYWSJSCJGFKBW-zxptsystem.dto.QYZXPLXDYWSJSCJGFKBW</param>
+			    <param name="redirectActionNamespace">/framework</param>
+			</result>
+		</action> 
+		<!-- 个人征信正常反馈报文 -->
+		<action name="ConfirmDialogForUploadQYZXBWJX-zxptsystem.dto.GRZXCJFKBW" class="confirmDialogForUploadQYZXBWJXAction">
+	         <result name="success" type="redirectAction">
+			    <param name="actionName">UploadGRZXBWJX-zxptsystem.dto.GRZXCJFKBW</param>
+			    <param name="redirectActionName">UploadGRZXBWJX-zxptsystem.dto.GRZXCJFKBW</param>
+			    <param name="redirectActionNamespace">/framework</param>
+			</result>
+	            <result name="error" type="redirectAction">
+	            <param name="showConfirm">true</param>
+	           	<param name="message">${serviceResult.message}</param>
+			    <param name="actionName">ShowAlertMessage.action</param>
+			    <param name="redirectActionName">UploadGRZXBWJX-zxptsystem.dto.GRZXCJFKBW</param>
+			    <param name="redirectActionNamespace">/framework</param>
+			</result>
+		</action> 
+
+		<!-- 个人征信账户标识变更反馈报文 -->
+		<action name="ConfirmDialogForUploadQYZXBWJX-zxptsystem.dto.GRZXZHBSBGCJFKBW" class="confirmDialogForUploadQYZXBWJXAction">
+	         <result name="success" type="redirectAction">
+			    <param name="actionName">UploadGRZXZHBSBGBWJX-zxptsystem.dto.GRZXZHBSBGCJFKBW</param>
+			    <param name="redirectActionName">UploadGRZXZHBSBGBWJX-zxptsystem.dto.GRZXZHBSBGCJFKBW</param>
+			    <param name="redirectActionNamespace">/framework</param>
+			</result>
+	            <result name="error" type="redirectAction">
+	            <param name="showConfirm">true</param>
+	           	<param name="message">${serviceResult.message}</param>
+			    <param name="actionName">ShowAlertMessage.action</param>
+			    <param name="redirectActionName">UploadGRZXZHBSBGBWJX-zxptsystem.dto.GRZXZHBSBGCJFKBW</param>
+			    <param name="redirectActionNamespace">/framework</param>
+			</result>
+		</action> 
+		
+		<!-- 个人征信数据删除反馈报文 -->
+		<action name="ConfirmDialogForUploadQYZXBWJX-zxptsystem.dto.GRZXSJSCCJFKBW" class="confirmDialogForUploadQYZXBWJXAction">
+	         <result name="success" type="redirectAction">
+			    <param name="actionName">UploadGRZXSJSCBWJX-zxptsystem.dto.GRZXSJSCCJFKBW</param>
+			    <param name="redirectActionName">UploadGRZXSJSCBWJX-zxptsystem.dto.GRZXSJSCCJFKBW</param>
+			    <param name="redirectActionNamespace">/framework</param>
+			</result>
+	            <result name="error" type="redirectAction">
+	            <param name="showConfirm">true</param>
+	           	<param name="message">${serviceResult.message}</param>
+			    <param name="actionName">ShowAlertMessage.action</param>
+			    <param name="redirectActionName">UploadGRZXSJSCBWJX-zxptsystem.dto.GRZXSJSCCJFKBW</param>
+			    <param name="redirectActionNamespace">/framework</param>
+			</result>
+		</action> 
+		
+		
+		<!-- 机构信息反馈报文 -->
+		<action name="ConfirmDialogForUploadQYZXBWJX-zxptsystem.dto.JGXXCJFKBW" class="confirmDialogForUploadQYZXBWJXAction">
+	         <result name="success" type="redirectAction">
+			    <param name="actionName">UploadJGXXBWJX-zxptsystem.dto.JGXXCJFKBW</param>
+			    <param name="redirectActionName">UploadJGXXBWJX-zxptsystem.dto.JGXXCJFKBW</param>
+			    <param name="redirectActionNamespace">/framework</param>
+			</result>
+	         <result name="error" type="redirectAction">
+	            <param name="showConfirm">true</param>
+	           	<param name="message">${serviceResult.message}</param>
+			    <param name="actionName">ShowAlertMessage.action</param>
+			    <param name="redirectActionName">UploadJGXXBWJX-zxptsystem.dto.JGXXCJFKBW</param>
+			    <param name="redirectActionNamespace">/framework</param>
+			</result>
+		</action> 
+
+		<action name="UploadQYZXBWJX-zxptsystem.dto.QYZXCJFKBW" class="qYZXCJFKBWUploadFileAction">
+			<result name="success" type="redirectAction">
+			    <param name="message">${serviceResult.message}</param>
+			    <param name="actionName">ShowAlertMessage</param>
+			    <param name="redirectActionName">ShowList-zxptsystem.dto.QYZXCJFKBW</param>
+			    <param name="redirectActionNamespace">/framework</param>
+			</result>
+			<result name="error" type="redirectAction">
+			    <param name="actionName">ShowAlertMessage</param>
+			    <param name="message">${serviceResult.message}</param>
+			    <!-- 2016-11-08 高级查询报文解析网页找不到问题 -->
+			    <param name="redirectActionName">ShowList-zxptsystem.dto.QYZXCJFKBW</param>
+			    <param name="redirectActionNamespace">/framework</param>
+			</result>
+		</action>
+		
+		<!-- 新增批量信贷业务数据删除结果反馈 -->
+		 <action name="ShowListLevelQYZXPLXDYWSJSCJGFKBWSub-zxptsystem.dto.QYZXPLXDYWSJSCJGFKBWSub" class="singleObjectShowListAction">
+			<result name="success">/ZXPTSystem/QYZXCJFKBWSub.jsp</result>
+		</action>
+		
+		<action name="UploadQYZXPLXDYWSJSCJGFKBW-zxptsystem.dto.QYZXPLXDYWSJSCJGFKBW" class="qYZXPLXDYWSJSCJGFKBWUploadFileAction">
+			<result name="success" type="redirectAction">
+			    <param name="message">${serviceResult.message}</param>
+			    <param name="actionName">ShowAlertMessage</param>
+			    <param name="redirectActionName">ShowList-zxptsystem.dto.QYZXPLXDYWSJSCJGFKBW</param>
+			    <param name="redirectActionNamespace">/framework</param>
+			</result>
+			<result name="error" type="redirectAction">
+			    <param name="actionName">ShowAlertMessage</param>
+			    <param name="message">${serviceResult.message}</param>
+			    <!-- 2016-11-08 高级查询报文解析网页找不到问题 -->
+			    <param name="redirectActionName">ShowList-zxptsystem.dto.QYZXPLXDYWSJSCJGFKBW</param>
+			    <param name="redirectActionNamespace">/framework</param>
+			</result>
+		</action>
+		
+		<action name="ShowListLevelGRZXCJFKBWSub-zxptsystem.dto.GRZXCJFKBWSub" class="singleObjectShowListAction">
+			<result name="success">/ZXPTSystem/GRZXCJFKBWSub.jsp</result>
+		</action>
+		
+		<action name="ShowListLevelGRZXZHBSBGCJFKBWSub-zxptsystem.dto.GRZXZHBSBGCJFKBWSub" class="singleObjectShowListAction">
+			<result name="success">/ZXPTSystem/GRZXCJFKBWSub.jsp</result>
+		</action>
+		
+		<action name="ShowListLevelGRZXSJSCCJFKBWSub-zxptsystem.dto.GRZXSJSCCJFKBWSub" class="singleObjectShowListAction">
+			<result name="success">/ZXPTSystem/GRZXCJFKBWSub.jsp</result>
+		</action>
+
+		<action name="UploadGRZXBWJX-zxptsystem.dto.GRZXCJFKBW" class="gRZXCJFKBWUploadFileAction">
+			<result name="success" type="redirectAction">
+			    <param name="message">${serviceResult.message}</param>
+			    <param name="actionName">ShowAlertMessage</param>
+			    <param name="redirectActionName">ShowList-zxptsystem.dto.GRZXCJFKBW</param>
+			    <param name="redirectActionNamespace">/framework</param>
+			</result>
+			<result name="error" type="redirectAction">
+			    <param name="actionName">ShowAlertMessage</param>
+			    <param name="message">${serviceResult.message}</param>
+			    <!-- 2016-11-08 高级查询报文解析网页找不到问题 -->
+			    <param name="redirectActionName">ShowList-zxptsystem.dto.GRZXCJFKBW</param>
+			    <param name="redirectActionNamespace">/framework</param>
+			</result>
+		</action>
+		
+		<action name="UploadGRZXZHBSBGBWJX-zxptsystem.dto.GRZXZHBSBGCJFKBW" class="gRZXZHBSBGCJFKBWUploadFileAction">
+			<result name="success" type="redirectAction">
+			    <param name="message">${serviceResult.message}</param>
+			    <param name="actionName">ShowAlertMessage</param>
+			    <param name="redirectActionName">ShowList-zxptsystem.dto.GRZXZHBSBGCJFKBW</param>
+			    <param name="redirectActionNamespace">/framework</param>
+			</result>
+			<result name="error" type="redirectAction">
+			    <param name="actionName">ShowAlertMessage</param>
+			    <param name="message">${serviceResult.message}</param>
+			    <!-- 2016-11-08 高级查询报文解析网页找不到问题 -->
+			    <param name="redirectActionName">ShowList-zxptsystem.dto.GRZXZHBSBGCJFKBW</param>
+			    <param name="redirectActionNamespace">/framework</param>
+			</result>
+		</action>
+		
+		<action name="UploadGRZXSJSCBWJX-zxptsystem.dto.GRZXSJSCCJFKBW" class="gRZXSJSCCJFKBWUploadFileAction">
+			<result name="success" type="redirectAction">
+			    <param name="message">${serviceResult.message}</param>
+			    <param name="actionName">ShowAlertMessage</param>
+			    <param name="redirectActionName">ShowList-zxptsystem.dto.GRZXSJSCCJFKBW</param>
+			    <param name="redirectActionNamespace">/framework</param>
+			</result>
+			<result name="error" type="redirectAction">
+			    <param name="actionName">ShowAlertMessage</param>
+			    <param name="message">${serviceResult.message}</param>
+			    <!-- 2016-11-08 高级查询报文解析网页找不到问题 --> 
+			    <param name="redirectActionName">ShowList-zxptsystem.dto.GRZXSJSCCJFKBW</param>
+			    <param name="redirectActionNamespace">/framework</param>
+			</result>
+		</action>
+		
+		<action name="TestQuery*-*" class="testQueryAction">
+			<result name="success" type="stream">
+				<param name="contentType">text/html</param>
+				<param name="inputName">inputStream</param>
+			</result>
+            <result name="error" type="redirectAction">
+            	<param name="message">${serviceResult.message}</param>
+			    <param name="actionName">ShowAlertMessage.action</param>
+			</result>		
+		</action>
+		<action name="GRZXSHShowList*-*" class="gRZXSHShowListAction">
+			<result name="success">/Framework/ShowList.jsp</result>
+		</action>
+		
+		<action name="QYZXSHShowList*-*" class="qYZXSHShowListAction">
+			<result name="success">/Framework/ShowList.jsp</result>
+		</action>
+		
+		<action name="ShowUpdateQYZX*-*" class="singleObjectShowUpdateAction">
+            <result name="success">/Framework/ShowSaveOrUpdate.jsp</result>
+	  </action>
+	
+	  <action name="ShowUpdateGRZX*-*" class="singleObjectShowUpdateAction">
+          <result name="success">/Framework/ShowSaveOrUpdate.jsp</result>
+	  </action>
+	  
+	  <action name="DownLoadGRZXRport-zxptsystem.dto.GRZXDownload" class="downLoadGRZXReportAction">
+            <result name="success" type="stream">
+			    <param name="contentType">${serviceResult.contentType}</param>
+			    <param name="inputName">inputStream</param>
+			    <param name="contentDisposition">${serviceResult.contentDisposition}</param>
+			    <param name="bufferSize">${serviceResult.bufferSize}</param>
+			</result>
+			<result name="error" type="redirectAction">
+			    <param name="actionName">ShowAlertMessage</param>
+			    <param name="message">${serviceResult.message}</param>
+			</result>
+         </action>
+
+         <action name="OverRideDownLoadGRZXRport-zxptsystem.dto.OverRideGRZXDownload" class="overridedownLoadGRZXReportAction">
+            <result name="success" type="stream">
+			    <param name="contentType">${serviceResult.contentType}</param>
+			    <param name="inputName">inputStream</param>
+			    <param name="contentDisposition">${serviceResult.contentDisposition}</param>
+			    <param name="bufferSize">${serviceResult.bufferSize}</param>
+			</result>
+			<result name="error" type="redirectAction">
+			    <param name="actionName">ShowAlertMessage</param>
+			    <param name="message">${serviceResult.message}</param>
+			</result>
+         </action>
+         
+	  <action name="ShowList-zxptsystem.dto.GRZXDownload" class="singleObjectShowListAction">
+			<result name="success">/ZXPTSystem/GRZXDownload.jsp</result>
+         </action>
+			
+	  <action name="ShowApply-zxptsystem.dto.OverRideGRZXDownload" class="singleObjectShowListAction">
+			<result name="success">/ZXPTSystem/OverRideGRZXDownload.jsp</result>
+      </action>	
+		
+	  <action name="QYZXShowUpdate*-*" class="qYZXShowUpdateAction">
+            <result name="success">/Framework/ShowSaveOrUpdate.jsp</result>
+	  </action>
+	  
+	  <action name="GRZXShowUpdate*-*" class="gRZXShowUpdateAction">
+            <result name="success">/Framework/ShowSaveOrUpdate.jsp</result>
+	  </action>
+	  
+	  <action name="GRZXSHPassUpdate*-*" class="gRZXSHPassUpdateAction">
+            <result name="success" type="redirectAction">
+            	<param name="message">${serviceResult.message}</param>
+			    <param name="actionName">ShowAlertMessage</param>
+			    <param name="redirectActionName">GRZXSHShowList{1}-{2}</param>
+			    <param name="redirectActionNamespace">/framework</param>
+			</result>
+			<result name="error" type="redirectAction">
+			    <param name="actionName">ShowAlertMessage</param>
+			    <param name="message">${serviceResult.message}</param>
+			</result>
+	</action>
+	
+	  <action name="GRZXSHNoPassUpdate*-*" class="gRZXSHNoPassUpdateAction">
+            <result name="success" type="redirectAction">
+            	<param name="message">${serviceResult.message}</param>
+			    <param name="actionName">ShowAlertMessage</param>
+			    <param name="redirectActionName">GRZXSHShowList{1}-{2}</param>
+			    <param name="redirectActionNamespace">/framework</param>
+			</result>
+			<result name="error" type="redirectAction">
+			    <param name="actionName">ShowAlertMessage</param>
+			    <param name="message">${serviceResult.message}</param>
+			</result>
+	 </action>
+	  
+	  <action name="QYZXSHPassUpdate*-*" class="qYZXSHPassUpdateAction">
+            <result name="success" type="redirectAction">
+            	<param name="message">${serviceResult.message}</param>
+			    <param name="actionName">ShowAlertMessage</param>
+			    <param name="redirectActionName">QYZXSHShowList{1}-{2}</param>
+			    <param name="redirectActionNamespace">/framework</param>
+			</result>
+			<result name="error" type="redirectAction">
+			    <param name="actionName">ShowAlertMessage</param>
+			    <param name="message">${serviceResult.message}</param>
+			</result>
+	</action>
+	
+	 <action name="QYZXSHNoPassUpdate*-*" class="qYZXSHNoPassUpdateAction">
+            <result name="success" type="redirectAction">
+            	<param name="message">${serviceResult.message}</param>
+			    <param name="actionName">ShowAlertMessage</param>
+			    <param name="redirectActionName">QYZXSHShowList{1}-{2}</param>
+			    <param name="redirectActionNamespace">/framework</param>
+			</result>
+			<result name="error" type="redirectAction">
+			    <param name="actionName">ShowAlertMessage</param>
+			    <param name="message">${serviceResult.message}</param>
+			</result>
+	</action>
+	  
+	   <action name="GRZXGrantDataCXShowList*-*" class="gRZXGrantDataCXShowListAction">
+			<result name="success">/Framework/ShowList.jsp</result>
+		</action>
+		
+	  <action name="GRZXGrantDataShowUpdate*-*" class="gRZXGrantDataShowUpdateAction">
+            <result name="success">/Framework/ShowSaveOrUpdate.jsp</result>
+	  </action>
+	  
+	  <action name="QYZXUpdateField*-*" class="qYZXUpdateFieldAction">
+            <result name="success" type="redirectAction">
+            	<param name="message">${serviceResult.message}</param>
+			    <param name="actionName">ShowAlertMessage</param>
+			    <param name="redirectActionName">QYZXSHShowList{1}-{2}</param>
+			    <param name="redirectActionNamespace">/framework</param>
+			</result>
+			<result name="error" type="redirectAction">
+			    <param name="actionName">ShowAlertMessage</param>
+			    <param name="message">${serviceResult.message}</param>
+			</result>
+	</action>
+	
+	<action name="QYZXFalseUpdateField*-*" class="qYZXFalseUpdateFieldAction">
+            <result name="success" type="redirectAction">
+            	<param name="message">${serviceResult.message}</param>
+			    <param name="actionName">ShowAlertMessage</param>
+			    <param name="redirectActionName">QYZXSHShowList{1}-{2}</param>
+			    <param name="redirectActionNamespace">/framework</param>
+			</result>
+			<result name="error" type="redirectAction">
+			    <param name="actionName">ShowAlertMessage</param>
+			    <param name="message">${serviceResult.message}</param>
+			</result>
+	</action>
+	
+	<action name="GRZXFalseUpdateField*-*" class="gRZXFalseUpdateFieldAction">
+            <result name="success" type="redirectAction">
+            	<param name="message">${serviceResult.message}</param>
+			    <param name="actionName">ShowAlertMessage</param>
+			    <param name="redirectActionName">GRZXSHShowList{1}-{2}</param>
+			    <param name="redirectActionNamespace">/framework</param>
+			</result>
+			<result name="error" type="redirectAction">
+			    <param name="actionName">ShowAlertMessage</param>
+			    <param name="message">${serviceResult.message}</param>
+			</result>
+	</action>
+	
+	<action name="GRZXUpdateField*-*" class="gRZXUpdateFieldAction">
+            <result name="success" type="redirectAction">
+            	<param name="message">${serviceResult.message}</param>
+			    <param name="actionName">ShowAlertMessage</param>
+			    <param name="redirectActionName">GRZXSHShowList{1}-{2}</param>
+			    <param name="redirectActionNamespace">/framework</param>
+			</result>
+			<result name="error" type="redirectAction">
+			    <param name="actionName">ShowAlertMessage</param>
+			    <param name="message">${serviceResult.message}</param>
+			</result>
+	</action>
+	
+	<action name="PLJSUpdateField-zxptsystem.dto.QYZXCreditReportInfo" class="pLJSUpdateFieldAction">
+            <result name="success" type="redirectAction">
+            	<param name="message">${serviceResult.message}</param>
+			    <param name="actionName">ShowAlertMessage</param>
+			    <param name="redirectActionName">QYZXSHShowList-zxptsystem.dto.QYZXCreditReportInfo</param>
+			    <param name="redirectActionNamespace">/framework</param>
+			</result>
+			<result name="error" type="redirectAction">
+			    <param name="actionName">ShowAlertMessage</param>
+			    <param name="message">${serviceResult.message}</param>
+			</result>
+	</action>
+	
+	<action name="PLSDUpdateField-zxptsystem.dto.QYZXCreditReportInfo" class="pLSDUpdateFieldAction">
+            <result name="success" type="redirectAction">
+            	<param name="message">${serviceResult.message}</param>
+			    <param name="actionName">ShowAlertMessage</param>
+			    <param name="redirectActionName">QYZXSHShowList-zxptsystem.dto.QYZXCreditReportInfo</param>
+			    <param name="redirectActionNamespace">/framework</param>
+			</result>
+			<result name="error" type="redirectAction">
+			    <param name="actionName">ShowAlertMessage</param>
+			    <param name="message">${serviceResult.message}</param>
+			</result>
+	</action>
+	
+	<action name="PLJSUpdateField-zxptsystem.dto.GRZXCreditReportInfo" class="pLJSUpdateFieldAction">
+            <result name="success" type="redirectAction">
+            	<param name="message">${serviceResult.message}</param>
+			    <param name="actionName">ShowAlertMessage</param>
+			    <param name="redirectActionName">QYZXSHShowList-zxptsystem.dto.GRZXCreditReportInfo</param>
+			    <param name="redirectActionNamespace">/framework</param>
+			</result>
+			<result name="error" type="redirectAction">
+			    <param name="actionName">ShowAlertMessage</param>
+			    <param name="message">${serviceResult.message}</param>
+			</result>
+	</action>
+	
+	<action name="PLSDUpdateField-zxptsystem.dto.GRZXCreditReportInfo" class="pLSDUpdateFieldAction">
+            <result name="success" type="redirectAction">
+            	<param name="message">${serviceResult.message}</param>
+			    <param name="actionName">ShowAlertMessage</param>
+			    <param name="redirectActionName">QYZXSHShowList-zxptsystem.dto.GRZXCreditReportInfo</param>
+			    <param name="redirectActionNamespace">/framework</param>
+			</result>
+			<result name="error" type="redirectAction">
+			    <param name="actionName">ShowAlertMessage</param>
+			    <param name="message">${serviceResult.message}</param>
+			</result>
+	</action>
+		
+		<action name="DownLoadJGXXRport-zxptsystem.dto.JGXXDownload" class="downLoadJGXXReportAction">
+            <result name="success" type="stream">
+			    <param name="contentType">${serviceResult.contentType}</param>
+			    <param name="inputName">inputStream</param>
+			    <param name="contentDisposition">${serviceResult.contentDisposition}</param>
+			    <param name="bufferSize">${serviceResult.bufferSize}</param>
+			</result>
+			<result name="error" type="redirectAction">
+			    <param name="actionName">ShowAlertMessage</param>
+			    <param name="message">${serviceResult.message}</param>
+			</result>
+        </action>
+        <action name="ShowList-zxptsystem.dto.JGXXDownload" class="singleObjectShowListAction">
+			<result name="success">/ZXPTSystem/JGXXDownload.jsp</result>
+		</action>
+		
+		<action name="QueryGrxybg-zxptsystem.dto.GRZXCreditReportInfo" class="queryGrxybgAction">
+			<result name="success" type="stream">
+				<param name="contentType">text/html</param>
+				<param name="inputName">inputStream</param>
+			</result>
+			<result name="error" type="redirectAction">
+			    <param name="actionName">ShowAlertMessage</param>
+			    <param name="message">${serviceResult.message}</param>
+			</result>
+		</action>
+		
+		<action name="QueryQyxybg-zxptsystem.dto.QYZXCreditReportInfo" class="queryQyxybgAction">
+			<result name="success" type="stream">
+				<param name="contentType">text/html</param>
+				<param name="inputName">inputStream</param>
+			</result>
+			<result name="error" type="redirectAction">
+			    <param name="actionName">ShowAlertMessage</param>
+			    <param name="message">${serviceResult.message}</param>
+			</result>
+		</action>
+		
+		<action name="GRZXCreditSubmitUpdateField*-*" class="gRZXCreditSubmitUpdateFieldAction">
+              <result name="success" type="redirectAction">
+            	<param name="message">${serviceResult.message}</param>
+			    <param name="actionName">ShowAlertMessage.action</param>
+			    <param name="redirectActionName">ShowList{1}-{2}</param>
+			    <param name="redirectActionNamespace">/framework</param>
+			</result>
+			<result name="error" type="redirectAction">
+            	<param name="message">${serviceResult.message}</param>
+			    <param name="actionName">ShowAlertMessage.action</param>
+			    <param name="redirectActionName">ShowList{1}-{2}</param>
+			    <param name="redirectActionNamespace">/framework</param>
+			</result>
+		</action>
+		
+		<action name="GRZXCreditShowView*-*" class="gRZXCreditReportInfoShowViewAction">
+			<result name="success">/Framework/ShowList.jsp</result>
+		</action>
+		<action name="GRZXCreditShowErrorView*-*" class="gRZXCreditReportInfoShowViewAction">
+			<result name="success">/Framework/ShowList.jsp</result>
+		</action>
+		<action name="GRZXGrantDataShowView*-*" class="gRZXGrantDataShowViewAction">
+			<result name="success">/Framework/ShowList.jsp</result>
+		</action>
+		
+		<action name="GRZXGrantDataUpdateView*-*" class="gRZXGrantDataUpdateViewAction">
+            <result name="success">/Framework/ShowSaveOrUpdate.jsp</result>
+		</action>
+		
+		<action name="GRZXGrantDataCXShowUpdate*-*" class="gRZXGrantDataCXShowUpdateAction">
+            <result name="success">/Framework/ShowSaveOrUpdate.jsp</result>
+		</action>
+		
+		<action name="GRZXCreditReportInfoShowViewUpdate*-*" class="gRZXCreditReportInfoShowViewUpdateAction">
+            <result name="success">/Framework/ShowSaveOrUpdate.jsp</result>
+		</action>
+		
+		<action name="QYZXCreditSubmitUpdateField*-*" class="qYZXCreditSubmitUpdateFieldAction">
+              <result name="success" type="redirectAction">
+            	<param name="message">${serviceResult.message}</param>
+			    <param name="actionName">ShowAlertMessage.action</param>
+			    <param name="redirectActionName">ShowList{1}-{2}</param>
+			    <param name="redirectActionNamespace">/framework</param>
+			</result>
+			<result name="error" type="redirectAction">
+            	<param name="message">${serviceResult.message}</param>
+			    <param name="actionName">ShowAlertMessage.action</param>
+			    <param name="redirectActionName">ShowList{1}-{2}</param>
+			    <param name="redirectActionNamespace">/framework</param>
+			</result>
+		</action>
+		
+		<action name="QYZXCreditShowView*-*" class="qYZXCreditReportInfoShowViewAction">
+			<result name="success">/Framework/ShowList.jsp</result>
+		</action>
+		
+		<action name="QYZXCreditShowErrorView*-*" class="qYZXCreditReportInfoShowViewAction">
+			<result name="success">/Framework/ShowList.jsp</result>
+		</action>
+				
+		<action name="QYZXCreditReportInfoShowViewUpdate*-*" class="qYZXCreditReportInfoShowViewUpdateAction">
+            <result name="success">/Framework/ShowSaveOrUpdate.jsp</result>
+		</action>
+		
+		<action name="ShowListLevelJGXXCJFKBWSub-zxptsystem.dto.JGXXCJFKBWSub" class="singleObjectShowListAction">
+			<result name="success">/ZXPTSystem/JGXXCJFKBWSub.jsp</result>
+		</action>
+
+		<action name="UploadJGXXBWJX-zxptsystem.dto.JGXXCJFKBW" class="jGXXCJFKBWUploadFileAction">
+			<result name="success" type="redirectAction">
+			    <param name="message">${serviceResult.message}</param>
+			    <param name="actionName">ShowAlertMessage</param>
+			    <param name="redirectActionName">ShowList-zxptsystem.dto.JGXXCJFKBW</param>
+			    <param name="redirectActionNamespace">/framework</param>
+			</result>
+			<result name="error" type="redirectAction">
+			    <param name="actionName">ShowAlertMessage</param>
+			    <param name="message">${serviceResult.message}</param>
+			    <!-- 2016-11-08 高级查询报文解析网页找不到问题 -->
+			    <param name="redirectActionName">ShowList-zxptsystem.dto.JGXXCJFKBW</param>
+			    <param name="redirectActionNamespace">/framework</param>
+			</result>
+		</action>
+
+		<action name="GRZXWFKBWCL-zxptsystem.dto.GRZXWFKBWCL" class="gRZXWFKBWCLAction">
+             <result name="success" type="redirectAction">
+            	<param name="message">${serviceResult.message}</param>
+			    <param name="actionName">ShowAlertMessage.action</param>
+			    <param name="redirectActionName">ShowList-zxptsystem.dto.GRZXWFKBWCL</param>
+			    <param name="redirectActionNamespace">/framework</param>
+			</result>
+			<result name="error" type="redirectAction">
+            	<param name="message">${serviceResult.message}</param>
+			    <param name="actionName">ShowAlertMessage.action</param>
+			    <param name="redirectActionName">ShowList-zxptsystem.dto.GRZXWFKBWCL</param>
+			    <param name="redirectActionNamespace">/framework</param>
+			</result>
+		</action>
+
+		<action name="QYZXCWBBRedirectByXXJLLXLevelAutoDTOMX-*" class="qYZXCWBBRedirectByXXJLLXAction">
+			<result name="success" type="chain">
+                <param name="actionName">${actionJumpResult.actionName}</param>
+            </result>
+            <result name="error" type="redirectAction">
+			    <param name="actionName">ShowAlertMessage</param>
+			    <param name="message">${serviceResult.message}</param>
+			</result>
+		</action>
+		
+		<action name="SHQYZXCWBBRedirectByXXJLLXLevelAUTODTOSHMX-*" class="sHQYZXCWBBRedirectByXXJLLXAction">
+			<result name="success" type="chain">
+                <param name="actionName">${actionJumpResult.actionName}</param>
+            </result>
+            <result name="error" type="redirectAction">
+			    <param name="actionName">ShowAlertMessage</param>
+			    <param name="message">${serviceResult.message}</param>
+			</result>
+		</action>
+		
+		<action name="FKBWQYZXCWBBRedirectByXXJLLXLevelFKBWAutoDTOMX-*" class="fKBWQYZXCWBBRedirectByXXJLLXAction">
+			<result name="success" type="chain">
+                <param name="actionName">${actionJumpResult.actionName}</param>
+            </result>
+            <result name="error" type="redirectAction">
+			    <param name="actionName">ShowAlertMessage</param>
+			    <param name="message">${serviceResult.message}</param>
+			</result>
+		</action>
+		
+		<action name="FKBWShowInputUpdateQYZXCWBBRedirectByXXJLLXLevelFKBWAutoDTOMX-*" class="fKBWShowInputUpdateQYZXCWBBRedirectByXXJLLXAction">
+			<result name="success" type="chain">
+                <param name="actionName">${actionJumpResult.actionName}</param>
+            </result>
+            <result name="error" type="redirectAction">
+			    <param name="actionName">ShowAlertMessage</param>
+			    <param name="message">${serviceResult.message}</param>
+			</result>
+		</action>
+		
+		<action name="CKShowListQYZXCWBBRedirectByXXJLLXLevelMXCK-*" class="cKShowListQYZXCWBBRedirectByXXJLLXAction">
+			<result name="success" type="chain">
+                <param name="actionName">${actionJumpResult.actionName}</param>
+            </result>
+            <result name="error" type="redirectAction">
+			    <param name="actionName">ShowAlertMessage</param>
+			    <param name="message">${serviceResult.message}</param>
+			</result>
+		</action>
+		
+		<action name="Jiajiemi" class="jiajiemiAction">
+			<result name="success" type="stream">
+			    <param name="contentType">${serviceResult.contentType}</param>
+			    <param name="inputName">inputStream</param>
+			    <param name="contentDisposition">${serviceResult.contentDisposition}</param>
+			    <param name="bufferSize">${serviceResult.bufferSize}</param>
+			</result>
+			<result name="error" type="redirectAction">
+			    <param name="actionName">ShowAlertMessage</param>
+			    <param name="message">${serviceResult.message}</param>
+			</result>
+		</action>
+
+	<action name="RejectReport-zxptsystem.dto.SendedRejectReport" class="rejectReportAction">
+             <result name="success" type="redirectAction">
+            	<param name="message">${serviceResult.message}</param>
+			    <param name="actionName">ShowAlertMessage.action</param>
+			    <param name="redirectActionName">ShowList-zxptsystem.dto.SendedRejectReport</param>
+			    <param name="redirectActionNamespace">/framework</param>
+			</result>
+			<result name="error" type="redirectAction">
+            	<param name="message">${serviceResult.message}</param>
+			    <param name="actionName">ShowAlertMessage.action</param>
+			    <param name="redirectActionName">ShowList-zxptsystem.dto.SendedRejectReport</param>
+			    <param name="redirectActionNamespace">/framework</param>
+			</result>
+		</action>
+	
+	<action name="ConfirmDialogForReport-zxptsystem.dto.QYZXDownload" class="confirmDialogForReportAction">
+         <result name="success" type="redirectAction">
+		    <param name="actionName">DownLoadRport-zxptsystem.dto.QYZXDownload</param>
+		    <param name="redirectActionName">DownLoadRport-zxptsystem.dto.QYZXDownload</param>
+		    <param name="redirectActionNamespace">/framework</param>
+		</result>
+            <result name="error" type="redirectAction">
+            <param name="showConfirm">true</param>
+           	<param name="message">${serviceResult.message}</param>
+		    <param name="actionName">ShowAlertMessage.action</param>
+		    <param name="redirectActionName">DownLoadRport-zxptsystem.dto.QYZXDownload</param>
+		    <param name="redirectActionNamespace">/framework</param>
+		</result>
+	</action>
+	
+	<action name="ConfirmDialogForReport-zxptsystem.dto.GRZXDownload" class="confirmDialogForReportAction">
+            <result name="success" type="redirectAction">
+		    <param name="actionName">DownLoadGRZXRport-zxptsystem.dto.GRZXDownload</param>
+		    <param name="redirectActionName">DownLoadGRZXRport-zxptsystem.dto.GRZXDownload</param>
+		    <param name="redirectActionNamespace">/framework</param>
+		</result>
+            <result name="error" type="redirectAction">
+             <param name="showConfirm">true</param>
+           	<param name="message">${serviceResult.message}</param>
+		    <param name="actionName">ShowAlertMessage.action</param>
+		    <param name="redirectActionName">DownLoadGRZXRport-zxptsystem.dto.GRZXDownload</param>
+		    <param name="redirectActionNamespace">/framework</param> 
+		    
+		   <!-- <param name="contentType">${serviceResult.contentType}</param>
+		    <param name="inputName">inputStream</param>
+		    <param name="contentDisposition">${serviceResult.contentDisposition}</param>
+		    <param name="bufferSize">${serviceResult.bufferSize}</param>-->
+	   </result>
+	</action>
+        <action name="OverRideGRZZXRport-zxptsystem.dto.OverRideGRZXDownload" class="confirmDialogForReportAction">		    
+           <result name="success" type="redirectAction">
+                    <param name="actionName">OverRideDownLoadGRZXRport-zxptsystem.dto.OverRideGRZXDownload</param>
+		    <param name="redirectActionName">OverRideDownLoadGRZXRport-zxptsystem.dto.OverRideGRZXDownload</param>
+		    <param name="redirectActionNamespace">/framework</param>
+		</result>
+            <result name="error" type="redirectAction">
+                    <param name="showConfirm">true</param>
+                    <param name="message">${serviceResult.message}</param>
+		    <param name="actionName">ShowAlertMessage.action</param>
+		    <param name="redirectActionName">OverRideDownLoadGRZXRport-zxptsystem.dto.OverRideGRZXDownload</param>
+		    <param name="redirectActionNamespace">/framework</param> 
+	    </result>
+	</action>
+	
+	<action name="ConfirmDialogForReport-zxptsystem.dto.JGXXDownload" class="confirmDialogForReportAction">
+         <result name="success" type="redirectAction">
+		    <param name="actionName">DownLoadJGXXRport-zxptsystem.dto.JGXXDownload</param>
+		    <param name="redirectActionName">DownLoadJGXXRport-zxptsystem.dto.JGXXDownload</param>
+		    <param name="redirectActionNamespace">/framework</param>
+		</result>
+            <result name="error" type="redirectAction">
+            <param name="showConfirm">true</param>
+           	<param name="message">${serviceResult.message}</param>
+		    <param name="actionName">ShowAlertMessage.action</param>
+		    <param name="redirectActionName">DownLoadJGXXRport-zxptsystem.dto.JGXXDownload</param>
+		    <param name="redirectActionNamespace">/framework</param>
+		</result>
+	</action>
+		<action name="ShowImg*-*" class="singleObjectShowImgAction">
+            <result name="success" type="stream">
+			    <param name="contentType">${serviceResult.contentType}</param>
+			    <param name="inputName">inputStream</param>
+			    <param name="contentDisposition">${serviceResult.contentDisposition}</param>
+			    <param name="bufferSize">${serviceResult.bufferSize}</param>
+			</result>
+	</action>
+ 
+	 <action name="ExportTemplateWithData*-*" class="singleObjectExportTemplateWithDataAction">
+            <result name="success" type="stream">
+			    <param name="contentType">${serviceResult.contentType}</param>
+			    <param name="inputName">inputStream</param>
+			    <param name="contentDisposition">${serviceResult.contentDisposition}</param>
+			    <param name="bufferSize">${serviceResult.bufferSize}</param>
+			</result>
+			<result name="error" type="redirectAction">
+			    <param name="actionName">ShowAlertMessage</param>
+			    <param name="message">${serviceResult.message}</param>
+			</result>
+		</action> 
+	 
+	 <action name="ExportTemplate*-*" class="singleObjectExportAllDataAction">
+            <result name="success" type="stream">
+			    <param name="contentType">${serviceResult.contentType}</param>
+			    <param name="inputName">inputStream</param>
+			    <param name="contentDisposition">${serviceResult.contentDisposition}</param>
+			    <param name="bufferSize">${serviceResult.bufferSize}</param>
+			</result>
+			<result name="error" type="redirectAction">
+			    <param name="actionName">ShowAlertMessage</param>
+			    <param name="message">${serviceResult.message}</param>
+			</result>
+		</action> 
+	 
+		<!-- 20151224 insert by xiajieli -->
+		<action name="GRZXShowTree*-*" class="singleObjectShowTreeAction">
+				<result name="success">/Framework/ShowTree.jsp</result>
+		</action>
+	
+		<action name="GRZXReviewShowTree*-*" class="ReviewShowTreeAction">
+				<result name="success">/Framework/ShowTree.jsp</result>
+		</action>
+		
+		<action name="GRZXCKShowTree*-*" class="ReviewShowTreeAction">
+				<result name="success">/Framework/ShowTree.jsp</result>
+		</action>
+	
+		<action name="QYZXShowTree*-*" class="singleObjectShowTreeAction">
+				<result name="success">/Framework/ShowTree.jsp</result>
+		</action>
+	
+		<action name="QYZXReviewShowTree*-*" class="ReviewShowTreeAction">
+				<result name="success">/Framework/ShowTree.jsp</result>
+		</action>
+	
+	   <action name="QYZXCKShowTree*-*" class="ReviewShowTreeAction">
+				<result name="success">/Framework/ShowTree.jsp</result>
+		</action>
+	
+		<action name="ShowProcedureForQYZXStatistical*-*" class="showProcedureForQYZXStatisticalAction">
+			<result name="success">/Framework/ShowList.jsp</result>
+			<result name="error" type="redirectAction">
+			    <param name="actionName">ShowAlertMessage</param>
+			    <param name="message">${serviceResult.message}</param>
+			</result>
+		</action>
+	
+		<action name="ShowProcedureForQYZXEndsData_Check*-*" class="showProcedureForQYZXEndsData_CheckAction">
+			<result name="success">/Framework/ShowList.jsp</result>
+			<result name="error" type="redirectAction">
+			    <param name="actionName">ShowAlertMessage</param>
+			    <param name="message">${serviceResult.message}</param>
+			</result>
+		</action>
+	
+		<action name="FirstShowProcedureStatistical-zxptsystem.dto.PROC_EndsData_Check" class="pROC_EndsData_CheckFirstShowProcedureStatisticalAction">
+			<result name="success">/ZXPTSystem/ZXYWTJAndZXZLKP.jsp</result>
+			<result name="error" type="redirectAction">
+			    <param name="actionName">ShowAlertMessage</param>
+			    <param name="message">${serviceResult.message}</param>
+			</result>
+		</action>
+		
+		<action name="FirstShowProcedureStatistical-zxptsystem.dto.PROC_QYZXZLKP" class="pROC_QYZXZLKPFirstShowProcedureStatisticalAction">
+			<result name="success">/ZXPTSystem/ZXYWTJAndZXZLKP.jsp</result>
+			<result name="error" type="redirectAction">
+			    <param name="actionName">ShowAlertMessage</param>
+			    <param name="message">${serviceResult.message}</param>
+			</result>
+		</action>
+		
+		<action name="FirstShowProcedureStatistical-zxptsystem.dto.PROC_PEndsData_Check" class="pROC_PEndsData_CheckFirstShowProcedureStatisticalAction">
+			<result name="success">/ZXPTSystem/ZXYWTJAndZXZLKP.jsp</result>
+			<result name="error" type="redirectAction">
+			    <param name="actionName">ShowAlertMessage</param>
+			    <param name="message">${serviceResult.message}</param>
+			</result>
+		</action>
+		
+		<action name="FirstShowProcedureStatistical-zxptsystem.dto.PROC_GRZXZLKP" class="pROC_GRZXZLKPFirstShowProcedureStatisticalAction">
+			<result name="success">/ZXPTSystem/ZXYWTJAndZXZLKP.jsp</result>
+			<result name="error" type="redirectAction">
+			    <param name="actionName">ShowAlertMessage</param>
+			    <param name="message">${serviceResult.message}</param>
+			</result>
+		</action>
+	
+		<action name="NoMXShowSave*-zxptsystem.dto.AutoDTO_JZ_JZCYXX_JC" class="noMXShowSaveAction">
+            <result name="success">/Framework/ShowSaveOrUpdate.jsp</result>
+		</action>
+		<!-- 财务报表批量数据导入 -->
+		<action name="ImportFixedLineExcleData*-*" class="importFixedLineExcleDataAction">
+			<result name="success" type="redirectAction">
+				<param name="message">${serviceResult.message}</param>
+				<param name="actionName">ShowAlertMessage.action</param>
+				<param name="redirectActionName">ShowList{1}-{2}</param>
+				<param name="redirectActionNamespace">/framework</param>
+			</result>
+			<result name="error" type="redirectAction">
+				<param name="actionName">ShowAlertMessage</param>
+				<param name="message">${serviceResult.message}</param>
+			</result>
+		</action>
+		
+		<action name="ZxptsystemRptSubmitStatusUpdateField*-*" class="zxptsystemRptSubmitStatusUpdateFieldAction">
+			<result name="success" type="redirectAction">
+				<param name="message">${serviceResult.message}</param>
+				<param name="actionName">ShowAlertMessage.action</param>
+				<param name="redirectActionName">ShowList{1}-{2}</param>
+				<param name="redirectActionNamespace">/framework</param>
+			</result>
+			<result name="error" type="redirectAction">
+				<param name="message">${serviceResult.message}</param>
+				<param name="actionName">ShowAlertMessage.action</param>
+				<param name="redirectActionName">ShowList{1}-{2}</param>
+				<param name="redirectActionNamespace">/framework</param>
+			</result>
+		</action>
+		
+		<action name="CopySaveLevelAutoDTOMXByIdList-*" class="CopySaveLevelAutoDTOMXByIdListAction">
+		<result name="success" type="redirectAction">
+			<param name="message">${serviceResult.message}</param>
+			<param name="actionName">ShowAlertMessage.action</param>
+			<param name="redirectActionName">ShowListLevelAutoDTOMX-{1}</param>
+			<param name="redirectActionNamespace">/framework</param> 
+		</result>
+		<result name="error" type="redirectAction">
+			<param name="message">${serviceResult.message}</param>
+			<param name="actionName">ShowAlertMessage.action</param>
+			<param name="redirectActionName">ShowListLevelAutoDTOMX-{1}</param>
+			<param name="redirectActionNamespace">/framework</param> 
+		</result>
+	</action>
+	<action name="GRZXRHLinkQuery-*" class="zXRHLinkQueryAction">
+			<result name="success" type="redirectAction">
+				<param name="message">${serviceResult.message}</param>
+				<param name="actionName">ShowAlertMessage.action</param>
+				<param name="redirectActionName">GRZXCreditShowErrorView-zxptsystem.dto.GRZXCreditReportInfo</param>
+				<param name="redirectActionNamespace">/framework</param>
+			</result>
+			<result name="error" type="redirectAction">
+				<param name="message">${serviceResult.message}</param>
+				<param name="actionName">ShowAlertMessage.action</param>
+				<param name="redirectActionName">GRZXCreditShowErrorView-zxptsystem.dto.GRZXCreditReportInfo</param>
+				<param name="redirectActionNamespace">/framework</param>
+			</result>
+		</action>	
+		
+		<action name="QYZXRHLinkQuery-*" class="zXRHLinkQueryAction">
+			<result name="success" type="redirectAction">
+				<param name="message">${serviceResult.message}</param>
+				<param name="actionName">ShowAlertMessage.action</param>
+				<param name="redirectActionName">QYZXCreditShowErrorView-zxptsystem.dto.QYZXCreditReportInfo</param>
+				<param name="redirectActionNamespace">/framework</param>
+			</result>
+			<result name="error" type="redirectAction">
+				<param name="message">${serviceResult.message}</param>
+				<param name="actionName">ShowAlertMessage.action</param>
+				<param name="redirectActionName">QYZXCreditShowErrorView-zxptsystem.dto.QYZXCreditReportInfo</param>
+				<param name="redirectActionNamespace">/framework</param>
+			</result>
+		</action>
+		
+		<!-- 个人征信报告解析数据推送，添加人：刘涛，添加时间：2016/09/19 : 14:26 -->
+		<action name="SendGrzxReportDatas-*" class="SendGrzxReportDatasAction">
+			<result name="success" type="redirectAction">
+				<param name="message">${serviceResult.message}</param>
+				<param name="actionName">ShowAlertMessage.action</param>
+				<param name="redirectActionName">ShowListSendAbledDatas-zxptsystem.dto.GrzxReportParseLog</param>
+				<param name="redirectActionNamespace">/framework</param>
+			</result>
+			<result name="error" type="redirectAction">
+				<param name="message">${serviceResult.message}</param>
+				<param name="actionName">ShowAlertMessage.action</param>
+				<param name="redirectActionName">ShowListSendAbledDatas-zxptsystem.dto.GrzxReportParseLog</param>
+				<param name="redirectActionNamespace">/framework</param>
+			</result>
+		</action>
+		
+	 </package>
+	  <!--AJAX JSON Used-->
+	 <package name='ajaxForReport' extends="json-default">
+	  <action name="GetJsonForDownLoadReport-*" class="ajaxForQYZXDownLoadRequestAction">
+            <result name="success" type="json">
+            	<param name="root">result</param>  
+			</result>
+		</action>
+	  <action name="GetJsonForOverrideDownLoadReport-*" class="ajaxForOverrideQYZXDownLoadRequestAction">
+            <result name="success" type="json">
+            	<param name="root">result</param>  
+			</result>
+		</action>
+	 </package>
+	 <package name="asynajax" extends="json-default">
+	 	<action name="GetAsynData-*" class="getAsynDataAction">
+            		<result name="success" type="json">
+            			<param name="root">result</param>  
+			</result>
+		</action>
+	 </package>
+	<include file="report/configs/report.struts.xml"/>
+</struts>    

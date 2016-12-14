@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<navigationRoot>
+    
+     <navigationComponentList>
+    	  <navigationComponent id="DeskTop" name="桌面" url="Framework/NavigationPage.jsp"  ico="bg.png" treeIco="bg.png" treeExpandIco="bg.png" des="">
+    	   
+    	    <navigationComponent id="GRZX" name="个人征信报送" url="Framework/NavigationPage.jsp"  ico="128_Other.png" treeIco="64_Other.png" treeExpandIco="32_Other.png" des="">
+ 	        	<navigationComponent id="GRZXTaskModelInst" name="数据填报" url="framework/GRZXShowTree-report.dto.TaskModelInst" ico="64_Reportmodel_tableSet.png" treeIco="32_Reportmodel_tableSet.png" treeExpandIco="16_Reportmodel_tableSet.png" des=""></navigationComponent>
+				<navigationComponent id="GRZXTaskModelInstSH" name="数据审核" url="framework/GRZXReviewShowTree-report.dto.TaskModelInst" ico="64_TaskRptInst.png" treeIco="32_TaskRptInst.png" treeExpandIco="16_TaskRptInst.png" des=""></navigationComponent>
+				<navigationComponent id="GRZXTaskModelInstCK" name="数据查看" url="framework/GRZXCKShowTree-report.dto.TaskModelInst" ico="64_TaskRptInst.png" treeIco="32_TaskRptInst.png" treeExpandIco="16_TaskRptInst.png" des=""></navigationComponent>
+ 	        	<navigationComponent id="GRZXDownload" name="报文生成" url="framework/ShowList-zxptsystem.dto.GRZXDownload" ico="64_Other.png" treeIco="32_Other.png" treeExpandIco="16_Other.png" des=""></navigationComponent>
+ 	        	<navigationComponent id="OverRideGRZXDownload" name="测试报文生成" url="framework/ShowApply-zxptsystem.dto.OverRideGRZXDownload" ico="64_Other.png" treeIco="32_Other.png" treeExpandIco="16_Other.png" des=""></navigationComponent>
+ 	        	<navigationComponent id="GRZXFKCL" name="反馈处理" url="Framework/NavigationPage.jsp"  ico="128_Other.png" treeIco="64_Other.png" treeExpandIco="32_Other.png" des="">
+ 	        		<navigationComponent id="GRZXCJFKBW" name="正常报文" url="framework/ShowList-zxptsystem.dto.GRZXCJFKBW" ico="64_Other.png" treeIco="32_Other.png" treeExpandIco="16_Other.png" des=""></navigationComponent>
+ 	        		<navigationComponent id="GRZXZHBSBGCJFKBW" name="变更报文" url="framework/ShowList-zxptsystem.dto.GRZXZHBSBGCJFKBW" ico="64_Other.png" treeIco="32_Other.png" treeExpandIco="16_Other.png" des=""></navigationComponent>
+			    	<navigationComponent id="GRZXSJSCCJFKBW" name="删除报文" url="framework/ShowList-zxptsystem.dto.GRZXSJSCCJFKBW" ico="64_Other.png" treeIco="32_Other.png" treeExpandIco="16_Other.png" des=""></navigationComponent>
+	        		<navigationComponent id="GRZXWFKBWCL" name="手动反馈" url="framework/ShowList-zxptsystem.dto.GRZXWFKBWCL" ico="64_Other.png" treeIco="32_Other.png" treeExpandIco="16_Other.png" des=""></navigationComponent>
+ 	        	</navigationComponent>
+ 	        	<navigationComponent id="PROC_GRZXZLKP" name="质量考评" url="framework/FirstShowProcedureStatistical-zxptsystem.dto.PROC_GRZXZLKP" ico="64_AutoETL_Param.png" treeIco="32_AutoETL_Param.png" treeExpandIco="16_AutoETL_Param.png" des=""></navigationComponent>
+ 	        	<navigationComponent id="PROC_PEndsData_Check" name="业务统计" url="framework/FirstShowProcedureStatistical-zxptsystem.dto.PROC_PEndsData_Check" ico="64_AutoETL_Param.png" treeIco="32_AutoETL_Param.png" treeExpandIco="16_AutoETL_Param.png" des=""></navigationComponent>
+			</navigationComponent>
+    	   
+    	   <navigationComponent id="QYZX" name="企业征信报送" url="Framework/NavigationPage.jsp"  ico="128_Other.png" treeIco="64_Other.png" treeExpandIco="32_Other.png" des="">
+    	        <navigationComponent id="QYZXTaskModelInst" name="数据填报" url="framework/QYZXShowTree-report.dto.TaskModelInst" ico="64_Reportmodel_tableSet.png" treeIco="32_Reportmodel_tableSet.png" treeExpandIco="16_Reportmodel_tableSet.png" des=""></navigationComponent>
+				<navigationComponent id="QYZXTaskModelInstSH" name="数据审核" url="framework/QYZXReviewShowTree-report.dto.TaskModelInst" ico="64_TaskRptInst.png" treeIco="32_TaskRptInst.png" treeExpandIco="16_TaskRptInst.png" des=""></navigationComponent>
+				<navigationComponent id="QYZXTaskModelInstCK" name="数据查看" url="framework/QYZXCKShowTree-report.dto.TaskModelInst" ico="64_TaskRptInst.png" treeIco="32_TaskRptInst.png" treeExpandIco="16_TaskRptInst.png" des=""></navigationComponent>
+				
+    	         <navigationComponent id="QYZXDownload" name="企业报文生成" url="framework/ShowList-zxptsystem.dto.QYZXDownload" ico="64_Other.png" treeIco="32_Other.png" treeExpandIco="16_Other.png" des=""></navigationComponent>
+    	         <navigationComponent id="JGXXDownload" name="机构报文生成" url="framework/ShowList-zxptsystem.dto.JGXXDownload" ico="64_Other.png" treeIco="32_Other.png" treeExpandIco="16_Other.png" des=""></navigationComponent>
+    	         <navigationComponent id="QYZXFKCL" name="反馈处理" url="Framework/NavigationPage.jsp"  ico="128_Other.png" treeIco="64_Other.png" treeExpandIco="32_Other.png" des="">
+    	        	<navigationComponent id="QYZXCJFKBW" name="企业报文" url="framework/ShowList-zxptsystem.dto.QYZXCJFKBW" ico="64_Other.png" treeIco="32_Other.png" treeExpandIco="16_Other.png" des=""></navigationComponent>
+    	         	<navigationComponent id="QYZXPLXDYWSJSCJGFKBW" name="批量删除" url="framework/ShowList-zxptsystem.dto.QYZXPLXDYWSJSCJGFKBW" ico="64_Other.png" treeIco="32_Other.png" treeExpandIco="16_Other.png" des=""></navigationComponent>
+    	         	<navigationComponent id="JGXXCJFKBW" name="机构报文" url="framework/ShowList-zxptsystem.dto.JGXXCJFKBW" ico="64_Other.png" treeIco="32_Other.png" treeExpandIco="16_Other.png" des=""></navigationComponent>
+    	         </navigationComponent>
+    	         <navigationComponent id="PROC_QYZXZLKP" name="质量考评" url="framework/FirstShowProcedureStatistical-zxptsystem.dto.PROC_QYZXZLKP" ico="64_AutoETL_Param.png" treeIco="32_AutoETL_Param.png" treeExpandIco="16_AutoETL_Param.png" des=""></navigationComponent>
+    	         <navigationComponent id="PROC_EndsData_Check" name="业务统计" url="framework/FirstShowProcedureStatistical-zxptsystem.dto.PROC_EndsData_Check" ico="64_AutoETL_Param.png" treeIco="32_AutoETL_Param.png" treeExpandIco="16_AutoETL_Param.png" des=""></navigationComponent>
+    	   </navigationComponent>
+    	  
+    	   <navigationComponent id="JIAJIEMI" name="报文加密解密" url="ZXPTSystem/JiaMiJieMi.jsp" ico="64_Other.png" treeIco="32_Other.png" treeExpandIco="16_Other.png" des="">
+    	   </navigationComponent>
+    	  
+    	   <navigationComponent id="SendedRejectReport" name="已报送报文驳回" url="framework/ShowList-zxptsystem.dto.SendedRejectReport" ico="64_Other.png" treeIco="32_Other.png" treeExpandIco="16_Other.png" des="">
+    	   </navigationComponent>
+    	   
+     	 <navigationComponent id="QYZXCX" name="企业征信查询" url="Framework/NavigationPage.jsp"  ico="128_Other.png" treeIco="64_Other.png" treeExpandIco="32_Other.png" des="">
+     			<navigationComponent id="QYZXCreditReportInfo" name="查询申请" url="framework/ShowList-zxptsystem.dto.QYZXCreditReportInfo" ico="64_Other.png" treeIco="32_Other.png" treeExpandIco="16_Other.png" des=""></navigationComponent>
+     			<navigationComponent id="QYZXCreditReportInfoSH" name="查询审核" url="framework/QYZXSHShowList-zxptsystem.dto.QYZXCreditReportInfo" ico="64_Other.png" treeIco="32_Other.png" treeExpandIco="16_Other.png" des=""></navigationComponent>
+      		<navigationComponent id="QYZXCreditReportInfoCX" name="查询结果查看" url="framework/QYZXCreditShowView-zxptsystem.dto.QYZXCreditReportInfo" ico="64_Other.png" treeIco="32_Other.png" treeExpandIco="16_Other.png" des=""></navigationComponent>
+      		<navigationComponent id="QYKHJBXX" name="客户信息管理" url="framework/ShowList-zxptsystem.dto.EIS_ENTCustomernBasicInfo" ico="64_Other.png" treeIco="32_Other.png" treeExpandIco="16_Other.png" des="企业客户信息管理"></navigationComponent>
+      		<navigationComponent id="QYZXGrantUserInfo" name="人行账户管理" url="framework/ShowList-zxptsystem.dto.QYZXGrantUserInfo" ico="64_Other.png" treeIco="32_Other.png" treeExpandIco="16_Other.png" des=""></navigationComponent>
+      		<navigationComponent id="QYZXCreditReportInfoCXForError" name="失败查询管理" url="framework/QYZXCreditShowErrorView-zxptsystem.dto.QYZXCreditReportInfo" ico="64_Other.png" treeIco="32_Other.png" treeExpandIco="16_Other.png" des=""></navigationComponent>
+      		<navigationComponent id="QYZXQueryLog" name="查询日志管理" url="framework/ShowList-zxptsystem.dto.QYZXQueryLog" ico="64_Other.png" treeIco="32_Other.png" treeExpandIco="16_Other.png" des=""></navigationComponent>	        		
+      	</navigationComponent>
+      	<navigationComponent id="GRZXCX" name="个人征信查询" url="Framework/NavigationPage.jsp"  ico="128_Other.png" treeIco="64_Other.png" treeExpandIco="32_Other.png" des="">
+      		<navigationComponent id="GRZXCreditReportInfo" name="查询申请" url="framework/ShowList-zxptsystem.dto.GRZXCreditReportInfo" ico="64_Other.png" treeIco="32_Other.png" treeExpandIco="16_Other.png" des=""></navigationComponent>
+       		<navigationComponent id="GRZXCreditReportInfoSH" name="查询审核" url="framework/GRZXSHShowList-zxptsystem.dto.GRZXCreditReportInfo" ico="64_Other.png" treeIco="32_Other.png" treeExpandIco="16_Other.png" des=""></navigationComponent>
+       		<navigationComponent id="GRZXCreditReportInfoCX" name="查询结果查看" url="framework/GRZXCreditShowView-zxptsystem.dto.GRZXCreditReportInfo" ico="64_Other.png" treeIco="32_Other.png" treeExpandIco="16_Other.png" des=""></navigationComponent>
+       		<navigationComponent id="GRKHJBXX" name="客户信息管理" url="framework/ShowList-zxptsystem.dto.EIS_PERCustomernBasicInfo" ico="64_Other.png" treeIco="32_Other.png" treeExpandIco="16_Other.png" des="个人客户信息管理"></navigationComponent>
+       		<navigationComponent id="GrantUserInfo" name="人行账户管理" url="framework/ShowList-zxptsystem.dto.GRZXGrantUserInfo" ico="64_Other.png" treeIco="32_Other.png" treeExpandIco="16_Other.png" des=""></navigationComponent>
+       		<navigationComponent id="SpareRHAccountInfo" name="备用人行账户" url="framework/ShowList-zxptsystem.dto.SpareRHAccountInfo" ico="64_Other.png" treeIco="32_Other.png" treeExpandIco="16_Other.png" des=""></navigationComponent>
+       		<navigationComponent id="GRZXCreditReportInfoCXForError" name="失败查询管理" url="framework/GRZXCreditShowErrorView-zxptsystem.dto.GRZXCreditReportInfo" ico="64_Other.png" treeIco="32_Other.png" treeExpandIco="16_Other.png" des=""></navigationComponent>
+       		<navigationComponent id="GRZXQueryLog" name="查询日志管理" url="framework/ShowList-zxptsystem.dto.GRZXQueryLog" ico="64_Other.png" treeIco="32_Other.png" treeExpandIco="16_Other.png" des=""></navigationComponent>
+      		<navigationComponent id="GRZXParseLog" name="解析日志管理" url="framework/ShowList-zxptsystem.dto.GrzxReportParseLog" ico="64_Other.png" treeIco="32_Other.png" treeExpandIco="16_Other.png" des=""></navigationComponent>
+    	    <navigationComponent id="GRZXDataSend" name="解析数据推送" url="framework/ShowListSendAbledDatas-zxptsystem.dto.GrzxReportParseLog" ico="64_Other.png" treeIco="32_Other.png" treeExpandIco="16_Other.png" des=""></navigationComponent>
+      	</navigationComponent>
+    	        	
+    	</navigationComponent>
+    </navigationComponentList>
+</navigationRoot>

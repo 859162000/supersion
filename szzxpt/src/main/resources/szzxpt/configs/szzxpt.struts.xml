@@ -1,0 +1,98 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE struts PUBLIC "-//Apache Software Foundation//DTD Struts Configuration 2.1//EN" "http://struts.apache.org/dtds/struts-2.1.dtd">
+<struts>
+	
+	 <package name="szzxpt" extends="framework.default" namespace="/framework">
+		
+	  <action name="DownloadXML-szzxpt.dto.WHZHDownload" class="interfaceFileDownWgjACCXmlAction">
+			 <result name="success" type="redirectAction">
+                <param name="actionName">ShowAlertMessage.action</param>
+			    <param name="message">${serviceResult.message}</param>
+			</result>
+			<result name="error" type="redirectAction">
+			    <param name="actionName">ShowAlertMessage.action</param>
+			    <param name="message">${serviceResult.message}</param>
+			</result>
+	 </action>
+
+	  <action name="ShowList-szzxpt.dto.WHZHDownload" class="singleObjectShowListAction">
+			<result name="success">/szzxpt/WHZHDownload.jsp</result>
+		</action>
+		
+		<action name="ShowListLevelWHZHCJFKBWSub-szzxpt.dto.WHZHCJFKBWSub" class="singleObjectShowListAction">
+			<result name="success">/szzxpt/WHZHCJFKBWSub.jsp</result>
+		</action>
+		
+		<!-- 外汇账户采集反馈 -->
+		<action name="ConfirmDialogForUploadQYZXBWJX-szzxpt.dto.WHZHCJFKBW" class="confirmDialogForUploadWHZHBWJXAction">
+	         <result name="success" type="redirectAction">
+			    <param name="actionName">UploadWHZHCJFKBW-szzxpt.dto.WHZHCJFKBW</param>
+			    <param name="redirectActionName">UploadWHZHCJFKBW-szzxpt.dto.WHZHCJFKBW</param>
+			    <param name="redirectActionNamespace">/framework</param>
+			</result>
+	            <result name="error" type="redirectAction">
+	            <param name="showConfirm">true</param>
+	           	<param name="message">${serviceResult.message}</param>
+			    <param name="actionName">ShowAlertMessage.action</param>
+			    <param name="redirectActionName">UploadWHZHCJFKBW-szzxpt.dto.WHZHCJFKBW</param>
+			    <param name="redirectActionNamespace">/framework</param>
+			</result>
+		</action>
+		
+		<action name="UploadWHZHCJFKBW-szzxpt.dto.WHZHCJFKBW" class="wHZHCJFKBWUploadFileAction">
+			<result name="success" type="redirectAction">
+			    <param name="message">${serviceResult.message}</param>
+			    <param name="actionName">ShowAlertMessage</param>
+			    <param name="redirectActionName">ShowList-szzxpt.dto.WHZHCJFKBW</param>
+			    <param name="redirectActionNamespace">/framework</param>
+			</result>
+			<result name="error" type="redirectAction">
+			    <param name="actionName">ShowAlertMessage</param>
+			    <param name="message">${serviceResult.message}</param> 
+			    <!-- 2016-11-08 高级查询报文解析网页找不到问题 -->
+			    <param name="redirectActionName">ShowList-szzxpt.dto.WHZHCJFKBW</param>
+			    <param name="redirectActionNamespace">/framework</param>
+			</result>
+		</action>
+		
+		<action name="ConfirmDialogForReport-szzxpt.dto.WHZHDownload" class="confirmDialogForReportAction">
+         <result name="success" type="redirectAction">
+		    <param name="actionName">DownloadXML-szzxpt.dto.WHZHDownload</param>
+		    <param name="redirectActionName">DownloadXML-szzxpt.dto.WHZHDownload</param>
+		    <param name="redirectActionNamespace">/framework</param>
+		</result>
+            <result name="error" type="redirectAction">
+            <param name="showConfirm">true</param>
+           	<param name="message">${serviceResult.message}</param>
+		    <param name="actionName">ShowAlertMessage.action</param>
+		    <param name="redirectActionName">DownloadXML-szzxpt.dto.WHZHDownload</param>
+		    <param name="redirectActionNamespace">/framework</param>
+		</result>
+	</action>
+		
+		<action name="WHZHShowTree*-*" class="singleObjectShowTreeAction">
+				<result name="success">/Framework/ShowTree.jsp</result>
+		</action>
+	
+		<action name="WHZHReviewShowTree*-*" class="ReviewShowTreeAction">
+				<result name="success">/Framework/ShowTree.jsp</result>
+		</action>
+		
+		<action name="WHZHCKShowTree*-*" class="ReviewShowTreeAction">
+				<result name="success">/Framework/ShowTree.jsp</result>
+		</action>
+	 </package>
+ 	 
+	 <!--AJAX JSON Used-->
+	 <package name='ajaxForWHZHReport' extends="json-default">
+	  <action name="GetJsonForWHZHDownLoadReport-*" class="ajaxForWHZHDownLoadRequestAction">
+            <result name="success" type="json">
+            	<param name="root">result</param>  
+			</result>
+		</action>
+	 </package>
+	 <include file="szzxpt/configs/szzxptJSON.struts.xml"/>
+	 <include file="zxptsystem/configs/zxptsystem.struts.xml"/>
+	 
+	 
+</struts>    

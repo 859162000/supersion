@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<securityRoot>
+	<function>
+		<functionParentId>DeskTop</functionParentId>
+		<functionCode>BWDR</functionCode>
+		<functionName>BWDR-报文导入</functionName>
+		<actionName>framework/ReportImport-bwdrsystem.dto.ReportFileImportLog</actionName>
+		<actionName>framework/ConfirmReportImport-bwdrsystem.dto.ReportFileImportLog</actionName>
+		<actionName>framework/ShowZXReportImportView-bwdrsystem.dto.ReportFileImportLog</actionName>
+		<actionName>framework/ClearZXBusinessHistoryData-bwdrsystem.dto.ReportFileImportLog</actionName>
+	</function>
+</securityRoot>

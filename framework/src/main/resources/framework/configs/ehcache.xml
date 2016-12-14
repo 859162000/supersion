@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ehcache>   
+	    <diskStore path="java.io.tmpdir"/> 
+	    <defaultCache   
+	        maxElementsInMemory="10000"   
+	        eternal="false"   
+	        timeToIdleSeconds="120"   
+	        timeToLiveSeconds="120"   
+	        overflowToDisk="true"     
+	        />   
+	     	<Cache name="ItemData"   
+	        maxElementsInMemory="10000"   
+	        eternal="false"   
+	        timeToIdleSeconds="12000"   
+	        timeToLiveSeconds="12000"   
+	        overflowToDisk="true"   
+	         memoryStoreEvictionPolicy="LRU" 
+	        />   
+	        <Cache name="Item"   
+	        maxElementsInMemory="10000"   
+	        eternal="false"   
+	        timeToIdleSeconds="12000"   
+	        timeToLiveSeconds="12000"   
+	        overflowToDisk="true"   
+	         memoryStoreEvictionPolicy="LRU" 
+	        />  
+	        <Cache name="Const"   
+	        maxElementsInMemory="10000"   
+	        eternal="false"   
+	        timeToIdleSeconds="12000"   
+	        timeToLiveSeconds="12000"   
+	        overflowToDisk="true"   
+	         memoryStoreEvictionPolicy="LRU" 
+	        />  
+	        <Cache name="DataLoadTime"   
+	        maxElementsInMemory="1000"   
+	        eternal="false"   
+	        timeToIdleSeconds="12000"   
+	        timeToLiveSeconds="12000"   
+	        overflowToDisk="true"   
+	         memoryStoreEvictionPolicy="LRU" 
+	        /> 
+</ehcache>

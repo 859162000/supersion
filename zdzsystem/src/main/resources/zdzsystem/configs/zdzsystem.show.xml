@@ -1,0 +1,728 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+
+<fieldShowsRoot>
+	<fieldShowsEntity><!-- 被执行人账户信息 -->
+		<className>zdzsystem.dto.AutoDTO_ZDZ_BZXRZHXX</className>
+		<showInstance>
+			<showInstanceName>1</showInstanceName><!-- 填报 -->
+			<fieldName fieldName="BatchNumber" intOrder="0" width="200"></fieldName>
+			<fieldName fieldName="BDHM" intOrder="1" width="200"></fieldName>
+			<fieldName fieldName="CCXH" intOrder="2"></fieldName>
+			<fieldName fieldName="KZLX" intOrder="3"></fieldName>
+			<fieldName fieldName="KZCS" intOrder="4"></fieldName>
+			<fieldName fieldName="KHZH" intOrder="5"></fieldName>
+			<fieldName fieldName="GLZHHM" intOrder="6"></fieldName>
+			<fieldName fieldName="CCLB" intOrder="7"></fieldName>
+			<fieldName fieldName="KHWD" intOrder="8"></fieldName>
+			<fieldName fieldName="KHWDDM" intOrder="9"></fieldName>
+			<fieldName fieldName="ZCMC" intOrder="10"></fieldName>
+			<fieldName fieldName="ZCLX" intOrder="11"></fieldName>
+			<fieldName fieldName="JLDW" intOrder="12"></fieldName>
+			<fieldName fieldName="KZNR" intOrder="13"></fieldName>
+			<fieldName fieldName="KSRQ" intOrder="14" singleTag="dateFieldSlashHMS"></fieldName>
+			<fieldName fieldName="JSRQ" intOrder="15" singleTag="dateFieldSlashHMS"></fieldName>
+			<fieldName fieldName="BZ" intOrder="16"></fieldName>
+			<fieldName fieldName="JE" intOrder="17"></fieldName>
+			<fieldName fieldName="SFJH" intOrder="18"></fieldName>
+			<fieldName fieldName="CKWH" intOrder="19"></fieldName>
+			<fieldName fieldName="ZXKZHHM" intOrder="20"></fieldName>
+			<fieldName fieldName="ZXKZHKHH" intOrder="21"></fieldName>
+			<fieldName fieldName="ZXKZHKHHHH" intOrder="22"></fieldName>
+			<fieldName fieldName="ZXKZHZH" intOrder="23"></fieldName>
+			<fieldName fieldName="ZXKZHLX" intOrder="24"></fieldName>
+			<fieldName fieldName="YDJAH" intOrder="25"></fieldName>
+			<fieldName fieldName="YDJDH" intOrder="26"></fieldName>
+			<fieldName fieldName="RPTSubmitStatus" width="100" intOrder="27"  multipleSelect="true" listVisible="false"></fieldName>
+			<fieldName fieldName="RPTFeedbackType" listVisible="false" width="100"  multipleSelect="true"></fieldName>
+			<fieldName fieldName="lastUpdateDate" listVisible="false" ></fieldName>
+			<fieldName fieldName="operationUser" listVisible="false"></fieldName>
+			<fieldName fieldName="instInfo" listVisible="false" ></fieldName>
+			<fieldName fieldName="RPTVerifyType" listVisible="false" width="100" multipleSelect="true"></fieldName>
+			<fieldName fieldName="RPTSendType" listVisible="false" width="100"  multipleSelect="true"></fieldName>
+			<fieldName fieldName="RPTCheckType" listVisible="false" width="100"  multipleSelect="true"></fieldName>
+			<fieldName fieldName="dtDate" listVisible="false" ></fieldName>
+		</showInstance>
+	</fieldShowsEntity>
+	
+	<fieldShowsEntity><!-- 查询请求内容 -->
+		<className>zdzsystem.dto.AutoDTO_ZDZ_CXQQNR</className>
+		<showInstance>
+			<showInstanceName>1</showInstanceName><!-- 填报 -->
+			<fieldName fieldName="BatchNumber" intOrder="0" width="200"></fieldName>
+			<fieldName fieldName="BDHM" intOrder="1" width="200"></fieldName>
+			<fieldName fieldName="LB" intOrder="2"></fieldName>
+			<fieldName fieldName="XZ" intOrder="3"></fieldName>
+			<fieldName fieldName="XM" intOrder="4"></fieldName>
+			<fieldName fieldName="ZJLX" intOrder="5" listVisible="false"></fieldName>
+			<fieldName fieldName="DSRZJHM" intOrder="6" listVisible="false"></fieldName>
+			<fieldName fieldName="FYMC" intOrder="7"></fieldName>
+			<fieldName fieldName="FYDM" intOrder="8"></fieldName>
+			<fieldName fieldName="CBR" intOrder="9"></fieldName>
+			<fieldName fieldName="YHDH" intOrder="10"></fieldName>
+			<fieldName fieldName="AH" intOrder="11"></fieldName>
+			<fieldName fieldName="GZZBH" intOrder="12"></fieldName>
+			<fieldName fieldName="GWZBH" intOrder="13"></fieldName>
+			<fieldName fieldName="CKH" intOrder="14"></fieldName>
+			<fieldName fieldName="CKKSSJ" intOrder="15" singleTag="dateFieldSlashHMS"></fieldName>
+			<fieldName fieldName="CKJSSJ" intOrder="16" singleTag="dateFieldSlashHMS"></fieldName>
+			<fieldName fieldName="WSBH" intOrder="17"></fieldName>
+			<fieldName fieldName="RPTSubmitStatus" width="100" intOrder="18"   multipleSelect="true"></fieldName>
+			<fieldName fieldName="RPTFeedbackType" listVisible="false" width="100"  multipleSelect="true"></fieldName>
+			<fieldName fieldName="lastUpdateDate" listVisible="false" ></fieldName>
+			<fieldName fieldName="operationUser" listVisible="false"></fieldName>
+			<fieldName fieldName="instInfo" listVisible="false" ></fieldName>
+			<fieldName fieldName="RPTVerifyType" listVisible="false" width="100" multipleSelect="true"></fieldName>
+			<fieldName fieldName="RPTSendType" listVisible="false" width="100"  multipleSelect="true"></fieldName>
+			<fieldName fieldName="RPTCheckType" listVisible="false" width="100"  multipleSelect="true"></fieldName>
+			<fieldName fieldName="dtDate" listVisible="false" ></fieldName>
+		</showInstance>
+	</fieldShowsEntity>
+	
+	<fieldShowsEntity> <!-- 法院端反馈查询处理失败内容  -->
+		<className>zdzsystem.dto.AutoDTO_ZDZ_FYDFKCXCLSBNR</className>
+		<showInstance>
+			<showInstanceName>1</showInstanceName>
+			<fieldName fieldName="BatchNumber" intOrder="0" width="200"></fieldName>
+			<fieldName fieldName="BDHM" intOrder="1" width="200"></fieldName>
+			<fieldName fieldName="XCHTYY" intOrder="2"></fieldName>
+			<fieldName fieldName="XCHTBZ" intOrder="3"></fieldName>
+			<fieldName fieldName="XCHTR" intOrder="4"></fieldName>
+			<fieldName fieldName="XCHTDH" intOrder="5"></fieldName>
+			<fieldName fieldName="RPTSubmitStatus" width="100"  intOrder="6"  multipleSelect="true"></fieldName>
+			<fieldName fieldName="RPTFeedbackType" listVisible="false" width="100"  multipleSelect="true"></fieldName>
+			<fieldName fieldName="lastUpdateDate" listVisible="false" ></fieldName>
+			<fieldName fieldName="operationUser" listVisible="false"></fieldName>
+			<fieldName fieldName="instInfo" listVisible="false" ></fieldName>
+			<fieldName fieldName="RPTVerifyType" listVisible="false" width="100" multipleSelect="true"></fieldName>
+			<fieldName fieldName="RPTSendType" listVisible="false" width="100"  multipleSelect="true"></fieldName>
+			<fieldName fieldName="RPTCheckType" listVisible="false" width="100"  multipleSelect="true"></fieldName>
+			<fieldName fieldName="dtDate" listVisible="false" ></fieldName>
+		</showInstance>
+	</fieldShowsEntity>
+	
+	<fieldShowsEntity><!-- 法院端反馈控制处理失败内容 -->
+		<className>zdzsystem.dto.AutoDTO_ZDZ_FYDFKKZCLSBNR</className>
+		<showInstance>
+			<showInstanceName>1</showInstanceName><!-- 填报 -->
+			<fieldName fieldName="BatchNumber" intOrder="0" width="200"></fieldName>
+			<fieldName fieldName="BDHM" intOrder="1" width="200"></fieldName>
+			<fieldName fieldName="XCHTYY" intOrder="2"></fieldName>
+			<fieldName fieldName="XCHTBZ" intOrder="3"></fieldName>
+			<fieldName fieldName="XCHTR" intOrder="4"></fieldName>
+			<fieldName fieldName="XCHTDH" intOrder="5"></fieldName>
+			<fieldName fieldName="RPTSubmitStatus" width="100" intOrder="6"  multipleSelect="true"></fieldName>
+			<fieldName fieldName="RPTFeedbackType" listVisible="false" width="100"  multipleSelect="true"></fieldName>
+			<fieldName fieldName="lastUpdateDate" listVisible="false" ></fieldName>
+			<fieldName fieldName="operationUser" listVisible="false"></fieldName>
+			<fieldName fieldName="instInfo" listVisible="false" ></fieldName>
+			<fieldName fieldName="RPTVerifyType" listVisible="false" width="100" multipleSelect="true"></fieldName>
+			<fieldName fieldName="RPTSendType" listVisible="false" width="100"  multipleSelect="true"></fieldName>
+			<fieldName fieldName="RPTCheckType" listVisible="false" width="100"  multipleSelect="true"></fieldName>
+			<fieldName fieldName="dtDate" listVisible="false" ></fieldName>
+		</showInstance>
+	</fieldShowsEntity>
+	
+	<fieldShowsEntity><!-- 关联子类账户信息 -->
+		<className>zdzsystem.dto.AutoDTO_ZDZ_GLZLZHXX</className>
+		<showInstance>
+			<showInstanceName>1</showInstanceName><!-- 填报 -->
+			<fieldName fieldName="BatchNumber" intOrder="0" width="200"></fieldName>
+			<fieldName fieldName="BDHM" intOrder="1" width="200"></fieldName>
+			<fieldName fieldName="CCXH" intOrder="2"></fieldName>
+			<fieldName fieldName="GLXH" intOrder="3"></fieldName>
+			<fieldName fieldName="ZKHZH" intOrder="4"></fieldName>
+			<fieldName fieldName="GLZHLB" intOrder="5"></fieldName>
+			<fieldName fieldName="GLZHHM" intOrder="6"></fieldName>
+			<fieldName fieldName="BZ" intOrder="7"></fieldName>
+			<fieldName fieldName="YE" intOrder="8" autoFill="2"></fieldName>
+			<fieldName fieldName="KYYE" intOrder="9" autoFill="2"></fieldName>
+			<fieldName fieldName="BEIZ" intOrder="10"></fieldName>
+			<fieldName fieldName="RPTSubmitStatus" width="100" intOrder="11"  multipleSelect="true"></fieldName>
+			<fieldName fieldName="RPTFeedbackType" listVisible="false" width="100"  multipleSelect="true"></fieldName>
+			<fieldName fieldName="lastUpdateDate" listVisible="false" ></fieldName>
+			<fieldName fieldName="operationUser" listVisible="false"></fieldName>
+			<fieldName fieldName="instInfo" listVisible="false" ></fieldName>
+			<fieldName fieldName="RPTVerifyType" listVisible="false" width="100" multipleSelect="true"></fieldName>
+			<fieldName fieldName="RPTSendType" listVisible="false" width="100"  multipleSelect="true"></fieldName>
+			<fieldName fieldName="RPTCheckType" listVisible="false" width="100"  multipleSelect="true"></fieldName>
+			<fieldName fieldName="dtDate" listVisible="false" ></fieldName>
+		</showInstance>
+		<showInstance>
+			<showInstanceName>7</showInstanceName><!-- 审核 -->
+			<fieldName fieldName="BatchNumber" intOrder="0" width="200"></fieldName>
+			<fieldName fieldName="BDHM" intOrder="1" width="200"></fieldName>
+			<fieldName fieldName="CCXH" intOrder="2"></fieldName>
+			<fieldName fieldName="GLXH" intOrder="3"></fieldName>
+			<fieldName fieldName="ZKHZH" intOrder="4"></fieldName>
+			<fieldName fieldName="GLZHLB" intOrder="5"></fieldName>
+			<fieldName fieldName="GLZHHM" intOrder="6"></fieldName>
+			<fieldName fieldName="BZ" intOrder="7"></fieldName>
+			<fieldName fieldName="YE" intOrder="8" autoFill="2"></fieldName>
+			<fieldName fieldName="KYYE" intOrder="9" autoFill="2"></fieldName>
+			<fieldName fieldName="BEIZ" intOrder="10"></fieldName>
+			<fieldName fieldName="RPTVerifyType" width="100" multipleSelect="true" intOrder="11"></fieldName>
+			<fieldName fieldName="RPTFeedbackType" listVisible="false" width="100" multipleSelect="true"></fieldName>
+			<fieldName fieldName="lastUpdateDate" listVisible="false" ></fieldName>
+			<fieldName fieldName="operationUser" listVisible="false" ></fieldName>
+			<fieldName fieldName="instInfo" listVisible="false" ></fieldName>
+			<fieldName fieldName="RPTSendType" listVisible="false" width="100" multipleSelect="true"></fieldName>
+			<fieldName fieldName="RPTCheckType" listVisible="false" width="100" multipleSelect="true"></fieldName>
+			<fieldName fieldName="dtDate" listVisible="false"></fieldName>
+			<fieldName fieldName="RPTSubmitStatus" listVisible="false" width="100" multipleSelect="true"></fieldName>
+		</showInstance>
+	</fieldShowsEntity>
+
+	<fieldShowsEntity><!-- 共有权/优先权信息 -->
+		<className>zdzsystem.dto.AutoDTO_ZDZ_GYQYXQXX</className>
+		<showInstance>
+			<showInstanceName>1</showInstanceName><!-- 填报 -->
+			<fieldName fieldName="BatchNumber" intOrder="0" width="200"></fieldName>
+			<fieldName fieldName="BDHM" intOrder="1" width="200"></fieldName>
+			<fieldName fieldName="CCXH" intOrder="2"></fieldName>
+			<fieldName fieldName="XH" intOrder="3"></fieldName>
+			<fieldName fieldName="QLLX" intOrder="4"></fieldName>
+			<fieldName fieldName="QLR" intOrder="5"></fieldName>
+			<fieldName fieldName="QLJE" intOrder="6" autoFill="2"></fieldName>
+			<fieldName fieldName="QLRDZ" intOrder="7"></fieldName>
+			<fieldName fieldName="QLRLXFS" intOrder="8"></fieldName>
+			<fieldName fieldName="BEIZ" intOrder="9"></fieldName>
+			<fieldName fieldName="RPTSubmitStatus" width="100" intOrder="10"  multipleSelect="true"></fieldName>
+			<fieldName fieldName="RPTFeedbackType" listVisible="false" width="100"  multipleSelect="true"></fieldName>
+			<fieldName fieldName="lastUpdateDate" listVisible="false" ></fieldName>
+			<fieldName fieldName="operationUser" listVisible="false"></fieldName>
+			<fieldName fieldName="instInfo" listVisible="false" ></fieldName>
+			<fieldName fieldName="RPTVerifyType" listVisible="false" width="100" multipleSelect="true"></fieldName>
+			<fieldName fieldName="RPTSendType" listVisible="false" width="100"  multipleSelect="true"></fieldName>
+			<fieldName fieldName="RPTCheckType" listVisible="false" width="100"  multipleSelect="true"></fieldName>
+			<fieldName fieldName="dtDate" listVisible="false" ></fieldName>
+		</showInstance>
+		<showInstance>
+			<showInstanceName>7</showInstanceName><!-- 审核 -->
+			<fieldName fieldName="BatchNumber" intOrder="0" width="200"></fieldName>
+			<fieldName fieldName="BDHM" intOrder="1" width="200"></fieldName>
+			<fieldName fieldName="CCXH" intOrder="2"></fieldName>
+			<fieldName fieldName="XH" intOrder="3"></fieldName>
+			<fieldName fieldName="QLLX" intOrder="4"></fieldName>
+			<fieldName fieldName="QLR" intOrder="5"></fieldName>
+			<fieldName fieldName="QLJE" intOrder="6" autoFill="2"></fieldName>
+			<fieldName fieldName="QLRDZ" intOrder="7"></fieldName>
+			<fieldName fieldName="QLRLXFS" intOrder="8"></fieldName>
+			<fieldName fieldName="BEIZ" intOrder="9"></fieldName>
+			<fieldName fieldName="RPTVerifyType" width="100" multipleSelect="true" intOrder="10"></fieldName>
+			<fieldName fieldName="RPTFeedbackType" listVisible="false" width="100" multipleSelect="true"></fieldName>
+			<fieldName fieldName="lastUpdateDate" listVisible="false" ></fieldName>
+			<fieldName fieldName="operationUser" listVisible="false" ></fieldName>
+			<fieldName fieldName="instInfo" listVisible="false" ></fieldName>
+			<fieldName fieldName="RPTSendType" listVisible="false" width="100" multipleSelect="true"></fieldName>
+			<fieldName fieldName="RPTCheckType" listVisible="false" width="100" multipleSelect="true"></fieldName>
+			<fieldName fieldName="dtDate" listVisible="false"></fieldName>
+			<fieldName fieldName="RPTSubmitStatus" listVisible="false" width="100" multipleSelect="true"></fieldName>
+		</showInstance>
+	</fieldShowsEntity>
+
+	<fieldShowsEntity><!-- 金融机构控制回退内容 -->
+		<className>zdzsystem.dto.AutoDTO_ZDZ_JRJGKZHTNR</className>
+		<showInstance>
+			<showInstanceName>1</showInstanceName><!-- 填报 -->
+			<fieldName fieldName="BatchNumber" intOrder="0" width="200"></fieldName>
+			<fieldName fieldName="BDHM" intOrder="1" width="200"></fieldName>
+			<fieldName fieldName="XCHTYY" intOrder="2"></fieldName>
+			<fieldName fieldName="XCHTBZ" intOrder="3"></fieldName>
+			<fieldName fieldName="XCHTR" intOrder="4"></fieldName>
+			<fieldName fieldName="XCHTDH" intOrder="5"></fieldName>
+			<fieldName fieldName="RPTSubmitStatus" width="100" intOrder="6"  multipleSelect="true"></fieldName>
+			<fieldName fieldName="RPTFeedbackType" listVisible="false" width="100"  multipleSelect="true"></fieldName>
+			<fieldName fieldName="lastUpdateDate" listVisible="false" ></fieldName>
+			<fieldName fieldName="operationUser" listVisible="false"></fieldName>
+			<fieldName fieldName="instInfo" listVisible="false" ></fieldName>
+			<fieldName fieldName="RPTVerifyType" listVisible="false" width="100" multipleSelect="true"></fieldName>
+			<fieldName fieldName="RPTSendType" listVisible="false" width="100"  multipleSelect="true"></fieldName>
+			<fieldName fieldName="RPTCheckType" listVisible="false" width="100"  multipleSelect="true"></fieldName>
+			<fieldName fieldName="dtDate" listVisible="false" ></fieldName>
+		</showInstance>
+		<showInstance>
+			<showInstanceName>7</showInstanceName><!-- 审核 -->
+			<fieldName fieldName="BatchNumber" intOrder="0" width="200"></fieldName>
+			<fieldName fieldName="BDHM" intOrder="1" width="200"></fieldName>
+			<fieldName fieldName="XCHTYY" intOrder="2"></fieldName>
+			<fieldName fieldName="XCHTBZ" intOrder="3"></fieldName>
+			<fieldName fieldName="XCHTR" intOrder="4"></fieldName>
+			<fieldName fieldName="XCHTDH" intOrder="5"></fieldName>
+			<fieldName fieldName="RPTVerifyType" width="100" multipleSelect="true" intOrder="6"></fieldName>
+			<fieldName fieldName="RPTFeedbackType" listVisible="false" width="100" multipleSelect="true"></fieldName>
+			<fieldName fieldName="lastUpdateDate" listVisible="false" ></fieldName>
+			<fieldName fieldName="operationUser" listVisible="false" ></fieldName>
+			<fieldName fieldName="instInfo" listVisible="false" ></fieldName>
+			<fieldName fieldName="RPTSendType" listVisible="false" width="100" multipleSelect="true"></fieldName>
+			<fieldName fieldName="RPTCheckType" listVisible="false" width="100" multipleSelect="true"></fieldName>
+			<fieldName fieldName="dtDate" listVisible="false"></fieldName>
+			<fieldName fieldName="RPTSubmitStatus" listVisible="false" width="100" multipleSelect="true"></fieldName>
+		</showInstance>
+	</fieldShowsEntity>
+	
+	<fieldShowsEntity><!-- 金融机构反馈查询回退内容 -->
+		<className>zdzsystem.dto.AutoDTO_ZDZ_JRJJFKCXHTNR</className>
+		<showInstance>
+			<showInstanceName>1</showInstanceName><!-- 填报 -->
+			<fieldName fieldName="BatchNumber" intOrder="0" width="200"></fieldName>
+			<fieldName fieldName="BDHM" intOrder="1" width="200"></fieldName>
+			<fieldName fieldName="XCHTYY" intOrder="2"></fieldName>
+			<fieldName fieldName="XCHTBZ" intOrder="3"></fieldName>
+			<fieldName fieldName="XCHTR" intOrder="4"></fieldName>
+			<fieldName fieldName="XCHTDH" intOrder="5"></fieldName>
+			<fieldName fieldName="RPTSubmitStatus" width="100" intOrder="6"  multipleSelect="true"></fieldName>
+			<fieldName fieldName="RPTFeedbackType" listVisible="false" width="100"  multipleSelect="true"></fieldName>
+			<fieldName fieldName="lastUpdateDate" listVisible="false" ></fieldName>
+			<fieldName fieldName="operationUser" listVisible="false"></fieldName>
+			<fieldName fieldName="instInfo" listVisible="false" ></fieldName>
+			<fieldName fieldName="RPTVerifyType" listVisible="false" width="100" multipleSelect="true"></fieldName>
+			<fieldName fieldName="RPTSendType" listVisible="false" width="100"  multipleSelect="true"></fieldName>
+			<fieldName fieldName="RPTCheckType" listVisible="false" width="100"  multipleSelect="true"></fieldName>
+			<fieldName fieldName="dtDate" listVisible="false" ></fieldName>
+		</showInstance>
+		<showInstance>
+			<showInstanceName>7</showInstanceName><!-- 审核 -->
+			<fieldName fieldName="BatchNumber" intOrder="0" width="200"></fieldName>
+			<fieldName fieldName="BDHM" intOrder="1" width="200"></fieldName>
+			<fieldName fieldName="XCHTYY" intOrder="2"></fieldName>
+			<fieldName fieldName="XCHTBZ" intOrder="3"></fieldName>
+			<fieldName fieldName="XCHTR" intOrder="4"></fieldName>
+			<fieldName fieldName="XCHTDH" intOrder="5"></fieldName>
+			<fieldName fieldName="RPTVerifyType" width="100" multipleSelect="true" intOrder="6"></fieldName>
+			<fieldName fieldName="RPTFeedbackType" listVisible="false" width="100" multipleSelect="true"></fieldName>
+			<fieldName fieldName="lastUpdateDate" listVisible="false" ></fieldName>
+			<fieldName fieldName="operationUser" listVisible="false" ></fieldName>
+			<fieldName fieldName="instInfo" listVisible="false" ></fieldName>
+			<fieldName fieldName="RPTSendType" listVisible="false" width="100" multipleSelect="true"></fieldName>
+			<fieldName fieldName="RPTCheckType" listVisible="false" width="100" multipleSelect="true"></fieldName>
+			<fieldName fieldName="dtDate" listVisible="false"></fieldName>
+			<fieldName fieldName="RPTSubmitStatus" listVisible="false" width="100" multipleSelect="true"></fieldName>
+		</showInstance>
+	</fieldShowsEntity>
+	
+	<fieldShowsEntity><!-- 金融资产信息 -->
+		<className>zdzsystem.dto.AutoDTO_ZDZ_JRZCXX</className>
+		<showInstance>
+			<showInstanceName>1</showInstanceName><!-- 填报 -->
+			<fieldName fieldName="BatchNumber" intOrder="0" width="200"></fieldName>
+			<fieldName fieldName="BDHM" intOrder="1" width="200"></fieldName>
+			<fieldName fieldName="CCXH" intOrder="2"></fieldName>
+			<fieldName fieldName="ZCXH" intOrder="3"></fieldName>
+			<fieldName fieldName="ZCMC" intOrder="4"></fieldName>
+			<fieldName fieldName="ZCLX" intOrder="5"></fieldName>
+			<fieldName fieldName="ZCGLR" intOrder="6"></fieldName>
+			<fieldName fieldName="ZCKFJY" intOrder="7"></fieldName>
+			<fieldName fieldName="ZCJYXZ" intOrder="8"></fieldName>
+			<fieldName fieldName="XZXCRQ" intOrder="9" singleTag="dateFieldSlashHMS"></fieldName>
+			<fieldName fieldName="JLDW" intOrder="10"></fieldName>
+			<fieldName fieldName="BZ" intOrder="11"></fieldName>
+			<fieldName fieldName="ZCDWJG" intOrder="12"></fieldName>
+			<fieldName fieldName="SE" intOrder="13" autoFill="2"></fieldName>
+			<fieldName fieldName="KYSE" intOrder="14" autoFill="2"></fieldName>
+			<fieldName fieldName="BEIZ" intOrder="15"></fieldName>
+			<fieldName fieldName="RPTSubmitStatus" width="100" intOrder="16"  multipleSelect="true"></fieldName>
+			<fieldName fieldName="RPTFeedbackType" listVisible="false" width="100"  multipleSelect="true"></fieldName>
+			<fieldName fieldName="lastUpdateDate" listVisible="false" ></fieldName>
+			<fieldName fieldName="operationUser" listVisible="false"></fieldName>
+			<fieldName fieldName="instInfo" listVisible="false" ></fieldName>
+			<fieldName fieldName="RPTVerifyType" listVisible="false" width="100" multipleSelect="true"></fieldName>
+			<fieldName fieldName="RPTSendType" listVisible="false" width="100"  multipleSelect="true"></fieldName>
+			<fieldName fieldName="RPTCheckType" listVisible="false" width="100"  multipleSelect="true"></fieldName>
+			<fieldName fieldName="dtDate" listVisible="false" ></fieldName>
+		</showInstance>
+		<showInstance>
+			<showInstanceName>7</showInstanceName><!-- 审核 -->
+			<fieldName fieldName="BatchNumber" intOrder="0" width="200"></fieldName>
+			<fieldName fieldName="BDHM" intOrder="1" width="200"></fieldName>
+			<fieldName fieldName="CCXH" intOrder="2"></fieldName>
+			<fieldName fieldName="ZCXH" intOrder="3"></fieldName>
+			<fieldName fieldName="ZCMC" intOrder="4"></fieldName>
+			<fieldName fieldName="ZCLX" intOrder="5"></fieldName>
+			<fieldName fieldName="ZCGLR" intOrder="6"></fieldName>
+			<fieldName fieldName="ZCKFJY" intOrder="7"></fieldName>
+			<fieldName fieldName="ZCJYXZ" intOrder="8"></fieldName>
+			<fieldName fieldName="XZXCRQ" intOrder="9" singleTag="dateFieldSlashHMS"></fieldName>
+			<fieldName fieldName="JLDW" intOrder="10"></fieldName>
+			<fieldName fieldName="BZ" intOrder="11"></fieldName>
+			<fieldName fieldName="ZCDWJG" intOrder="12"></fieldName>
+			<fieldName fieldName="SE" intOrder="13" autoFill="2"></fieldName>
+			<fieldName fieldName="KYSE" intOrder="14" autoFill="2"></fieldName>
+			<fieldName fieldName="BEIZ" intOrder="15"></fieldName>
+			<fieldName fieldName="RPTVerifyType" width="100" multipleSelect="true" intOrder="16"></fieldName>
+			<fieldName fieldName="RPTFeedbackType" listVisible="false" width="100" multipleSelect="true"></fieldName>
+			<fieldName fieldName="lastUpdateDate" listVisible="false" ></fieldName>
+			<fieldName fieldName="operationUser" listVisible="false" ></fieldName>
+			<fieldName fieldName="instInfo" listVisible="false" ></fieldName>
+			<fieldName fieldName="RPTSendType" listVisible="false" width="100" multipleSelect="true"></fieldName>
+			<fieldName fieldName="RPTCheckType" listVisible="false" width="100" multipleSelect="true"></fieldName>
+			<fieldName fieldName="dtDate" listVisible="false"></fieldName>
+			<fieldName fieldName="RPTSubmitStatus" listVisible="false" width="100" multipleSelect="true"></fieldName>
+		</showInstance>
+	</fieldShowsEntity>
+	
+	<fieldShowsEntity><!-- 具体账户信息 -->
+		<className>zdzsystem.dto.AutoDTO_ZDZ_JTZHXX</className>
+		<showInstance>
+			<showInstanceName>1</showInstanceName><!-- 填报 -->
+			<fieldName fieldName="BatchNumber" intOrder="0" width="200"></fieldName>
+			<fieldName fieldName="BDHM" intOrder="1" width="200"></fieldName>
+			<fieldName fieldName="CCXH" intOrder="2"></fieldName>
+			<fieldName fieldName="KHZH" intOrder="3"></fieldName>
+			<fieldName fieldName="CCLB" intOrder="4"></fieldName>
+			<fieldName fieldName="ZHZT" intOrder="5"></fieldName>
+			<fieldName fieldName="KHWD" intOrder="6"></fieldName>
+			<fieldName fieldName="KHWDDM" intOrder="7"></fieldName>
+			<fieldName fieldName="KHRQ" intOrder="8" singleTag="dateFieldSlashHMS"></fieldName>
+			<fieldName fieldName="XHRQ" intOrder="9" singleTag="dateFieldSlashHMS"></fieldName>
+			<fieldName fieldName="BZ" intOrder="10"></fieldName>
+			<fieldName fieldName="YE" intOrder="11" autoFill="2"></fieldName>
+			<fieldName fieldName="KYYE" intOrder="12"  autoFill="2"></fieldName>
+			<fieldName fieldName="GLZJZH" intOrder="13"></fieldName>
+			<fieldName fieldName="FKSJ" intOrder="14" singleTag="dateFieldSlashHMS"></fieldName>
+			<fieldName fieldName="TXDZ" intOrder="15"></fieldName>
+			<fieldName fieldName="YZBM" intOrder="16"></fieldName>
+			<fieldName fieldName="LXDH" intOrder="17"></fieldName>
+			<fieldName fieldName="BEIZ" intOrder="18"></fieldName>
+			<fieldName fieldName="RPTSubmitStatus" width="100" intOrder="19"  multipleSelect="true"></fieldName>
+			<fieldName fieldName="RPTFeedbackType" listVisible="false" width="100"  multipleSelect="true"></fieldName>
+			<fieldName fieldName="lastUpdateDate" listVisible="false" ></fieldName>
+			<fieldName fieldName="operationUser" listVisible="false"></fieldName>
+			<fieldName fieldName="instInfo" listVisible="false" ></fieldName>
+			<fieldName fieldName="RPTVerifyType" listVisible="false" width="100" multipleSelect="true"></fieldName>
+			<fieldName fieldName="RPTSendType" listVisible="false" width="100"  multipleSelect="true"></fieldName>
+			<fieldName fieldName="RPTCheckType" listVisible="false" width="100"  multipleSelect="true"></fieldName>
+			<fieldName fieldName="dtDate" listVisible="false" ></fieldName>
+		</showInstance>
+		<showInstance>
+			<showInstanceName>7</showInstanceName><!-- 审核 -->
+			<fieldName fieldName="BatchNumber" intOrder="0" width="200"></fieldName>
+			<fieldName fieldName="BDHM" intOrder="1" width="200"></fieldName>
+			<fieldName fieldName="CCXH" intOrder="2"></fieldName>
+			<fieldName fieldName="KHZH" intOrder="3"></fieldName>
+			<fieldName fieldName="CCLB" intOrder="4"></fieldName>
+			<fieldName fieldName="ZHZT" intOrder="5"></fieldName>
+			<fieldName fieldName="KHWD" intOrder="6"></fieldName>
+			<fieldName fieldName="KHWDDM" intOrder="7"></fieldName>
+			<fieldName fieldName="KHRQ" intOrder="8" singleTag="dateFieldSlashHMS"></fieldName>
+			<fieldName fieldName="XHRQ" intOrder="9" singleTag="dateFieldSlashHMS"></fieldName>
+			<fieldName fieldName="BZ" intOrder="10"></fieldName>
+			<fieldName fieldName="YE" intOrder="11"  autoFill="2"></fieldName>
+			<fieldName fieldName="KYYE" intOrder="12"  autoFill="2"></fieldName>
+			<fieldName fieldName="GLZJZH" intOrder="13"></fieldName>
+			<fieldName fieldName="FKSJ" intOrder="14"></fieldName>
+			<fieldName fieldName="TXDZ" intOrder="15"></fieldName>
+			<fieldName fieldName="YZBM" intOrder="16"></fieldName>
+			<fieldName fieldName="LXDH" intOrder="17"></fieldName>
+			<fieldName fieldName="BEIZ" intOrder="18"></fieldName>
+			<fieldName fieldName="RPTVerifyType" width="100" multipleSelect="true" intOrder="19"></fieldName>
+			<fieldName fieldName="RPTFeedbackType" listVisible="false" width="100" multipleSelect="true"></fieldName>
+			<fieldName fieldName="lastUpdateDate" listVisible="false" ></fieldName>
+			<fieldName fieldName="operationUser" listVisible="false" ></fieldName>
+			<fieldName fieldName="instInfo" listVisible="false" ></fieldName>
+			<fieldName fieldName="RPTSendType" listVisible="false" width="100" multipleSelect="true"></fieldName>
+			<fieldName fieldName="RPTCheckType" listVisible="false" width="100" multipleSelect="true"></fieldName>
+			<fieldName fieldName="dtDate" listVisible="false"></fieldName>
+			<fieldName fieldName="RPTSubmitStatus" listVisible="false" width="100" multipleSelect="true"></fieldName>
+		</showInstance>
+	</fieldShowsEntity>
+	
+	<fieldShowsEntity><!-- 控制处理结果 -->
+		<className>zdzsystem.dto.AutoDTO_ZDZ_KZCLJG</className>
+		<showInstance>
+			<showInstanceName>1</showInstanceName><!-- 填报 -->
+			<fieldName fieldName="BatchNumber" intOrder="0" width="200"></fieldName>
+			<fieldName fieldName="BDHM" intOrder="1" width="200"></fieldName>
+			<fieldName fieldName="CCXH" intOrder="2"></fieldName>
+			<fieldName fieldName="KHZH" intOrder="3"></fieldName>
+			<fieldName fieldName="KZNR" intOrder="4"></fieldName>
+			<fieldName fieldName="KZZT" intOrder="5"></fieldName>
+			<fieldName fieldName="YE" intOrder="6"></fieldName>
+			<fieldName fieldName="KYYE" intOrder="7"></fieldName>
+			<fieldName fieldName="CSKSRQ" intOrder="8" singleTag="dateFieldSlashHMS"></fieldName>
+			<fieldName fieldName="CSJSRQ" intOrder="9" singleTag="dateFieldSlashHMS"></fieldName>
+			<fieldName fieldName="DJXE" intOrder="10"></fieldName>
+			<fieldName fieldName="SKJE" intOrder="11" autoFill="2"></fieldName>
+			<fieldName fieldName="CESKJE" intOrder="12" autoFill="2"></fieldName>
+			<fieldName fieldName="WNKZYY" intOrder="13"></fieldName>
+			<fieldName fieldName="BEIZ" intOrder="14"></fieldName>
+			<fieldName fieldName="RPTSubmitStatus" width="100" intOrder="15"  multipleSelect="true"></fieldName>
+			<fieldName fieldName="RPTFeedbackType" listVisible="false" width="100"  multipleSelect="true"></fieldName>
+			<fieldName fieldName="lastUpdateDate" listVisible="false" ></fieldName>
+			<fieldName fieldName="operationUser" listVisible="false"></fieldName>
+			<fieldName fieldName="instInfo" listVisible="false" ></fieldName>
+			<fieldName fieldName="RPTVerifyType" listVisible="false" width="100" multipleSelect="true"></fieldName>
+			<fieldName fieldName="RPTSendType" listVisible="false" width="100"  multipleSelect="true"></fieldName>
+			<fieldName fieldName="RPTCheckType" listVisible="false" width="100"  multipleSelect="true"></fieldName>
+			<fieldName fieldName="dtDate" listVisible="false" ></fieldName>
+		</showInstance>
+		<showInstance>
+			<showInstanceName>7</showInstanceName><!-- 审核 -->
+			<fieldName fieldName="BatchNumber" intOrder="0" width="200"></fieldName>
+			<fieldName fieldName="BDHM" intOrder="1" width="200"></fieldName>
+			<fieldName fieldName="CCXH" intOrder="2"></fieldName>
+			<fieldName fieldName="KHZH" intOrder="3"></fieldName>
+			<fieldName fieldName="KZNR" intOrder="4"></fieldName>
+			<fieldName fieldName="KZZT" intOrder="5"></fieldName>
+			<fieldName fieldName="YE" intOrder="6"></fieldName>
+			<fieldName fieldName="KYYE" intOrder="7"></fieldName>
+			<fieldName fieldName="CSKSRQ" intOrder="8" singleTag="dateFieldSlashHMS"></fieldName>
+			<fieldName fieldName="CSJSRQ" intOrder="9" singleTag="dateFieldSlashHMS"></fieldName>
+			<fieldName fieldName="DJXE" intOrder="10"></fieldName>
+			<fieldName fieldName="SKJE" intOrder="11" autoFill="2"></fieldName>
+			<fieldName fieldName="CESKJE" intOrder="12" autoFill="2"></fieldName>
+			<fieldName fieldName="WNKZYY" intOrder="13"></fieldName>
+			<fieldName fieldName="BEIZ" intOrder="14"></fieldName>
+			<fieldName fieldName="RPTVerifyType" width="100" multipleSelect="true" intOrder="15"></fieldName>
+			<fieldName fieldName="RPTFeedbackType" listVisible="false" width="100" multipleSelect="true"></fieldName>
+			<fieldName fieldName="lastUpdateDate" listVisible="false" ></fieldName>
+			<fieldName fieldName="operationUser" listVisible="false" ></fieldName>
+			<fieldName fieldName="instInfo" listVisible="false" ></fieldName>
+			<fieldName fieldName="RPTSendType" listVisible="false" width="100" multipleSelect="true"></fieldName>
+			<fieldName fieldName="RPTCheckType" listVisible="false" width="100" multipleSelect="true"></fieldName>
+			<fieldName fieldName="dtDate" listVisible="false"></fieldName>
+			<fieldName fieldName="RPTSubmitStatus" listVisible="false" width="100" multipleSelect="true"></fieldName>
+		</showInstance>
+	</fieldShowsEntity>
+	
+	<fieldShowsEntity><!-- 控制请求具体内容 -->
+		<className>zdzsystem.dto.AutoDTO_ZDZ_KZQQJTNR</className>
+		<showInstance>
+			<showInstanceName>1</showInstanceName><!-- 填报 -->
+			<fieldName fieldName="BatchNumber" intOrder="0" width="200"></fieldName>
+			<fieldName fieldName="BDHM" intOrder="1"   width="200"></fieldName>
+			<fieldName fieldName="LB" intOrder="2"></fieldName>
+			<fieldName fieldName="XZ" intOrder="3"></fieldName>
+			<fieldName fieldName="XM" intOrder="4"></fieldName>
+			<fieldName fieldName="ZJLX" intOrder="5" listVisible="false"></fieldName>
+			<fieldName fieldName="DSRZJHM" intOrder="6"  listVisible="false"></fieldName>
+			<fieldName fieldName="FYMC" intOrder="7"></fieldName>
+			<fieldName fieldName="FYDM" intOrder="8"></fieldName>
+			<fieldName fieldName="CBR" intOrder="9"></fieldName>
+			<fieldName fieldName="YHDH" intOrder="10"></fieldName>
+			<fieldName fieldName="AH" intOrder="11"></fieldName>
+			<fieldName fieldName="GZZBH" intOrder="12"></fieldName>
+			<fieldName fieldName="GWZBH" intOrder="13"></fieldName>
+			<fieldName fieldName="CKH" intOrder="14"></fieldName>
+			<fieldName fieldName="LXFS" intOrder="15"></fieldName>
+			<fieldName fieldName="BEIZ" intOrder="16"></fieldName>
+			<fieldName fieldName="RPTSubmitStatus" width="100" intOrder="17"  multipleSelect="true"></fieldName>
+			<fieldName fieldName="RPTFeedbackType" listVisible="false" width="100"  multipleSelect="true"></fieldName>
+			<fieldName fieldName="lastUpdateDate" listVisible="false" ></fieldName>
+			<fieldName fieldName="operationUser" listVisible="false"></fieldName>
+			<fieldName fieldName="instInfo" listVisible="false" ></fieldName>
+			<fieldName fieldName="RPTVerifyType" listVisible="false" width="100" multipleSelect="true"></fieldName>
+			<fieldName fieldName="RPTSendType" listVisible="false" width="100"  multipleSelect="true"></fieldName>
+			<fieldName fieldName="RPTCheckType" listVisible="false" width="100"  multipleSelect="true"></fieldName>
+			<fieldName fieldName="dtDate" listVisible="false" ></fieldName>
+		</showInstance>
+	</fieldShowsEntity>
+	
+	<fieldShowsEntity><!-- 司法强制措施信息-->
+		<className>zdzsystem.dto.AutoDTO_ZDZ_SFQZCSXX</className>
+		<showInstance>
+			<showInstanceName>1</showInstanceName><!-- 填报 -->
+			<fieldName fieldName="BatchNumber" intOrder="0" width="200"></fieldName>
+			<fieldName fieldName="BDHM" intOrder="1" width="200"></fieldName>
+			<fieldName fieldName="CCXH" intOrder="2"></fieldName>
+			<fieldName fieldName="CSXH" intOrder="3"></fieldName>
+			<fieldName fieldName="DJJZRQ" intOrder="4" singleTag="dateFieldSlashHMS"></fieldName>
+			<fieldName fieldName="DJJG" intOrder="5"></fieldName>
+			<fieldName fieldName="DJWH" intOrder="6"></fieldName>
+			<fieldName fieldName="DJJE" intOrder="7"></fieldName>
+			<fieldName fieldName="BEIZ" intOrder="8"></fieldName>
+			<fieldName fieldName="RPTSubmitStatus" width="100" intOrder="9"  multipleSelect="true"></fieldName>
+			<fieldName fieldName="RPTFeedbackType" listVisible="false" width="100"  multipleSelect="true"></fieldName>
+			<fieldName fieldName="lastUpdateDate" listVisible="false" ></fieldName>
+			<fieldName fieldName="operationUser" listVisible="false"></fieldName>
+			<fieldName fieldName="instInfo" listVisible="false" ></fieldName>
+			<fieldName fieldName="RPTVerifyType" listVisible="false" width="100" multipleSelect="true"></fieldName>
+			<fieldName fieldName="RPTSendType" listVisible="false" width="100"  multipleSelect="true"></fieldName>
+			<fieldName fieldName="RPTCheckType" listVisible="false" width="100"  multipleSelect="true"></fieldName>
+			<fieldName fieldName="dtDate" listVisible="false" ></fieldName>
+		</showInstance>
+		<showInstance>
+			<showInstanceName>7</showInstanceName><!-- 审核 -->
+			<fieldName fieldName="BatchNumber" intOrder="0" width="200"></fieldName>
+			<fieldName fieldName="BDHM" intOrder="1" width="200"></fieldName>
+			<fieldName fieldName="CCXH" intOrder="2"></fieldName>
+			<fieldName fieldName="CSXH" intOrder="3"></fieldName>
+			<fieldName fieldName="DJJZRQ" intOrder="4" singleTag="dateFieldSlashHMS"></fieldName>
+			<fieldName fieldName="DJJG" intOrder="5"></fieldName>
+			<fieldName fieldName="DJWH" intOrder="6"></fieldName>
+			<fieldName fieldName="DJJE" intOrder="7"></fieldName>
+			<fieldName fieldName="BEIZ" intOrder="8"></fieldName>
+			<fieldName fieldName="RPTVerifyType" width="100" multipleSelect="true" intOrder="9"></fieldName>
+			<fieldName fieldName="RPTFeedbackType" listVisible="false" width="100" multipleSelect="true"></fieldName>
+			<fieldName fieldName="lastUpdateDate" listVisible="false" ></fieldName>
+			<fieldName fieldName="operationUser" listVisible="false" ></fieldName>
+			<fieldName fieldName="instInfo" listVisible="false" ></fieldName>
+			<fieldName fieldName="RPTSendType" listVisible="false" width="100" multipleSelect="true"></fieldName>
+			<fieldName fieldName="RPTCheckType" listVisible="false" width="100" multipleSelect="true"></fieldName>
+			<fieldName fieldName="dtDate" listVisible="false"></fieldName>
+			<fieldName fieldName="RPTSubmitStatus" listVisible="false" width="100" multipleSelect="true"></fieldName>
+		</showInstance>
+	</fieldShowsEntity>
+	
+	<fieldShowsEntity><!-- 优先权信息-->
+		<className>zdzsystem.dto.AutoDTO_ZDZ_YXQXX</className>
+		<showInstance>
+			<showInstanceName>1</showInstanceName><!-- 填报 -->
+			<fieldName fieldName="BatchNumber" intOrder="0" width="200"></fieldName>
+			<fieldName fieldName="BDHM" intOrder="1" width="200"></fieldName>
+			<fieldName fieldName="CCXH" intOrder="2"></fieldName>
+			<fieldName fieldName="XH" intOrder="3"></fieldName>
+			<fieldName fieldName="QLLX" intOrder="4"></fieldName>
+			<fieldName fieldName="QLR" intOrder="5"></fieldName>
+			<fieldName fieldName="QLJE" intOrder="6" autoFill="2"></fieldName>
+			<fieldName fieldName="QLRDZ" intOrder="7"></fieldName>
+			<fieldName fieldName="QLRLXFS" intOrder="8"></fieldName>
+			<fieldName fieldName="BEIZ" intOrder="9"></fieldName>
+			<fieldName fieldName="RPTSubmitStatus" width="100" intOrder="10"  multipleSelect="true"></fieldName>
+			<fieldName fieldName="RPTFeedbackType" listVisible="false" width="100"  multipleSelect="true"></fieldName>
+			<fieldName fieldName="lastUpdateDate" listVisible="false" ></fieldName>
+			<fieldName fieldName="operationUser" listVisible="false"></fieldName>
+			<fieldName fieldName="instInfo" listVisible="false" ></fieldName>
+			<fieldName fieldName="RPTVerifyType" listVisible="false" width="100" multipleSelect="true"></fieldName>
+			<fieldName fieldName="RPTSendType" listVisible="false" width="100"  multipleSelect="true"></fieldName>
+			<fieldName fieldName="RPTCheckType" listVisible="false" width="100"  multipleSelect="true"></fieldName>
+			<fieldName fieldName="dtDate" listVisible="false" ></fieldName>
+		</showInstance>
+		<showInstance>
+			<showInstanceName>7</showInstanceName><!-- 审核 -->
+			<fieldName fieldName="BatchNumber" intOrder="0" width="200"></fieldName>
+			<fieldName fieldName="BDHM" intOrder="1" width="200"></fieldName>
+			<fieldName fieldName="CCXH" intOrder="2"></fieldName>
+			<fieldName fieldName="XH" intOrder="3"></fieldName>
+			<fieldName fieldName="QLLX" intOrder="4"></fieldName>
+			<fieldName fieldName="QLR" intOrder="5"></fieldName>
+			<fieldName fieldName="QLJE" intOrder="6" autoFill="2"></fieldName>
+			<fieldName fieldName="QLRDZ" intOrder="7"></fieldName>
+			<fieldName fieldName="QLRLXFS" intOrder="8"></fieldName>
+			<fieldName fieldName="BEIZ" intOrder="9"></fieldName>
+			<fieldName fieldName="RPTVerifyType" width="100" multipleSelect="true" intOrder="10"></fieldName>
+			<fieldName fieldName="RPTFeedbackType" listVisible="false" width="100" multipleSelect="true"></fieldName>
+			<fieldName fieldName="lastUpdateDate" listVisible="false" ></fieldName>
+			<fieldName fieldName="operationUser" listVisible="false" ></fieldName>
+			<fieldName fieldName="instInfo" listVisible="false" ></fieldName>
+			<fieldName fieldName="RPTSendType" listVisible="false" width="100" multipleSelect="true"></fieldName>
+			<fieldName fieldName="RPTCheckType" listVisible="false" width="100" multipleSelect="true"></fieldName>
+			<fieldName fieldName="dtDate" listVisible="false"></fieldName>
+			<fieldName fieldName="RPTSubmitStatus" listVisible="false" width="100" multipleSelect="true"></fieldName>
+		</showInstance>
+	</fieldShowsEntity>
+	
+	<fieldShowsEntity><!-- 资金往来(交易)信息-->
+		<className>zdzsystem.dto.AutoDTO_ZDZ_ZJWLXX</className>
+		<showInstance>
+			<showInstanceName>1</showInstanceName><!-- 填报 -->
+			<fieldName fieldName="BatchNumber" intOrder="0" width="200"></fieldName>
+			<fieldName fieldName="BDHM" intOrder="1" width="200"></fieldName>
+			<fieldName fieldName="CCXH" intOrder="2"></fieldName>
+			<fieldName fieldName="WLXH" intOrder="3"></fieldName>
+			<fieldName fieldName="JYZL" intOrder="4"></fieldName>
+			<fieldName fieldName="ZJLX" intOrder="5"></fieldName>
+			<fieldName fieldName="BZ" intOrder="6"></fieldName>
+			<fieldName fieldName="JE" intOrder="7" autoFill="2"></fieldName>
+			<fieldName fieldName="JYSJ" intOrder="8" singleTag="dateFieldSlashHMS"></fieldName>
+			<fieldName fieldName="JYLSH" intOrder="9"></fieldName>
+			<fieldName fieldName="ZCKZXM" intOrder="10"></fieldName>
+			<fieldName fieldName="ZCKZH" intOrder="11"></fieldName>
+			<fieldName fieldName="ZCKZHKHH" intOrder="12"></fieldName>
+			<fieldName fieldName="JYDSYHHH" intOrder="13"></fieldName>
+			<fieldName fieldName="JYDSZJLX" intOrder="14"></fieldName>
+			<fieldName fieldName="JYDSZJHM" intOrder="15"></fieldName>
+			<fieldName fieldName="JYDSTXDZ" intOrder="16"></fieldName>
+			<fieldName fieldName="JYDSYZBM" intOrder="17"></fieldName>
+			<fieldName fieldName="JYDSLXDH" intOrder="18"></fieldName>
+			<fieldName fieldName="BEIZ" intOrder="19"></fieldName>
+			<fieldName fieldName="RPTSubmitStatus" width="100" intOrder="20"  multipleSelect="true"></fieldName>
+			<fieldName fieldName="RPTFeedbackType" listVisible="false" width="100"  multipleSelect="true"></fieldName>
+			<fieldName fieldName="lastUpdateDate" listVisible="false" ></fieldName>
+			<fieldName fieldName="operationUser" listVisible="false"></fieldName>
+			<fieldName fieldName="instInfo" listVisible="false" ></fieldName>
+			<fieldName fieldName="RPTVerifyType" listVisible="false" width="100" multipleSelect="true"></fieldName>
+			<fieldName fieldName="RPTSendType" listVisible="false" width="100"  multipleSelect="true"></fieldName>
+			<fieldName fieldName="RPTCheckType" listVisible="false" width="100"  multipleSelect="true"></fieldName>
+			<fieldName fieldName="dtDate" listVisible="false" ></fieldName>
+		</showInstance>
+		<showInstance>
+			<showInstanceName>7</showInstanceName><!-- 审核 -->
+			<fieldName fieldName="BatchNumber" intOrder="0" width="200"></fieldName>
+			<fieldName fieldName="BDHM" intOrder="1" width="200"></fieldName>
+			<fieldName fieldName="CCXH" intOrder="2"></fieldName>
+			<fieldName fieldName="WLXH" intOrder="3"></fieldName>
+			<fieldName fieldName="JYZL" intOrder="4"></fieldName>
+			<fieldName fieldName="ZJLX" intOrder="5"></fieldName>
+			<fieldName fieldName="BZ" intOrder="6"></fieldName>
+			<fieldName fieldName="JE" intOrder="7" autoFill="2"></fieldName>
+			<fieldName fieldName="JYSJ" intOrder="8" singleTag="dateFieldSlashHMS"></fieldName>
+			<fieldName fieldName="JYLSH" intOrder="9"></fieldName>
+			<fieldName fieldName="ZCKZXM" intOrder="10"></fieldName>
+			<fieldName fieldName="ZCKZH" intOrder="11"></fieldName>
+			<fieldName fieldName="ZCKZHKHH" intOrder="12"></fieldName>
+			<fieldName fieldName="JYDSYHHH" intOrder="13"></fieldName>
+			<fieldName fieldName="JYDSZJLX" intOrder="14"></fieldName>
+			<fieldName fieldName="JYDSZJHM" intOrder="15"></fieldName>
+			<fieldName fieldName="JYDSTXDZ" intOrder="16"></fieldName>
+			<fieldName fieldName="JYDSYZBM" intOrder="17"></fieldName>
+			<fieldName fieldName="JYDSLXDH" intOrder="18"></fieldName>
+			<fieldName fieldName="BEIZ" intOrder="19"></fieldName>
+			<fieldName fieldName="RPTVerifyType" width="100" multipleSelect="true" intOrder="20"></fieldName>
+			<fieldName fieldName="RPTFeedbackType" listVisible="false" width="100" multipleSelect="true"></fieldName>
+			<fieldName fieldName="lastUpdateDate" listVisible="false" ></fieldName>
+			<fieldName fieldName="operationUser" listVisible="false" ></fieldName>
+			<fieldName fieldName="instInfo" listVisible="false" ></fieldName>
+			<fieldName fieldName="RPTSendType" listVisible="false" width="100" multipleSelect="true"></fieldName>
+			<fieldName fieldName="RPTCheckType" listVisible="false" width="100" multipleSelect="true"></fieldName>
+			<fieldName fieldName="dtDate" listVisible="false"></fieldName>
+			<fieldName fieldName="RPTSubmitStatus" listVisible="false" width="100" multipleSelect="true"></fieldName>
+		</showInstance>
+	</fieldShowsEntity>
+	
+	<fieldShowsEntity><!-- 在先冻结信息-->
+		<className>zdzsystem.dto.AutoDTO_ZDZ_ZXDJXX</className>
+		<showInstance>
+			<showInstanceName>1</showInstanceName><!-- 填报 -->
+			<fieldName fieldName="BatchNumber" intOrder="0" width="200"></fieldName>
+			<fieldName fieldName="BDHM" intOrder="1" width="200"></fieldName>
+			<fieldName fieldName="CCXH" intOrder="2"></fieldName>
+			<fieldName fieldName="CSXH" intOrder="3"></fieldName>
+			<fieldName fieldName="DJJG" intOrder="4"></fieldName>
+			<fieldName fieldName="DJWH" intOrder="5"></fieldName>
+			<fieldName fieldName="DJJE" intOrder="6"></fieldName>
+			<fieldName fieldName="DJJZRQ" intOrder="7" singleTag="dateFieldSlashHMS"></fieldName>
+			<fieldName fieldName="BEIZ" intOrder="8"></fieldName>
+			<fieldName fieldName="RPTSubmitStatus" width="100" intOrder="9"  multipleSelect="true"></fieldName>
+			<fieldName fieldName="RPTFeedbackType" listVisible="false" width="100"  multipleSelect="true"></fieldName>
+			<fieldName fieldName="lastUpdateDate" listVisible="false" ></fieldName>
+			<fieldName fieldName="operationUser" listVisible="false"></fieldName>
+			<fieldName fieldName="instInfo" listVisible="false" ></fieldName>
+			<fieldName fieldName="RPTVerifyType" listVisible="false" width="100" multipleSelect="true"></fieldName>
+			<fieldName fieldName="RPTSendType" listVisible="false" width="100"  multipleSelect="true"></fieldName>
+			<fieldName fieldName="RPTCheckType" listVisible="false" width="100"  multipleSelect="true"></fieldName>
+			<fieldName fieldName="dtDate" listVisible="false" ></fieldName>
+		</showInstance>
+		<showInstance>
+			<showInstanceName>7</showInstanceName><!-- 审核 -->
+			<fieldName fieldName="BatchNumber" intOrder="0" width="200"></fieldName>
+			<fieldName fieldName="BDHM" intOrder="1" width="200"></fieldName>
+			<fieldName fieldName="CCXH" intOrder="2"></fieldName>
+			<fieldName fieldName="CSXH" intOrder="3"></fieldName>
+			<fieldName fieldName="DJJG" intOrder="4"></fieldName>
+			<fieldName fieldName="DJWH" intOrder="5"></fieldName>
+			<fieldName fieldName="DJJE" intOrder="6"></fieldName>
+			<fieldName fieldName="DJJZRQ" intOrder="7" singleTag="dateFieldSlashHMS"></fieldName>
+			<fieldName fieldName="BEIZ" intOrder="8"></fieldName>
+			<fieldName fieldName="RPTVerifyType" width="100" multipleSelect="true" intOrder="9"></fieldName>
+			<fieldName fieldName="RPTFeedbackType" listVisible="false" width="100" multipleSelect="true"></fieldName>
+			<fieldName fieldName="lastUpdateDate" listVisible="false" ></fieldName>
+			<fieldName fieldName="operationUser" listVisible="false" ></fieldName>
+			<fieldName fieldName="instInfo" listVisible="false" ></fieldName>
+			<fieldName fieldName="RPTSendType" listVisible="false" width="100" multipleSelect="true"></fieldName>
+			<fieldName fieldName="RPTCheckType" listVisible="false" width="100" multipleSelect="true"></fieldName>
+			<fieldName fieldName="dtDate" listVisible="false"></fieldName>
+			<fieldName fieldName="RPTSubmitStatus" listVisible="false" width="100" multipleSelect="true"></fieldName>
+		</showInstance>
+	</fieldShowsEntity>
+	
+</fieldShowsRoot>

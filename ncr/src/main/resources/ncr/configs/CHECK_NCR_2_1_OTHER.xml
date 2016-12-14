@@ -1,0 +1,182 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<reportCheckRoot>   
+	<checkInstance name="CHECK_NCR_2_1_OTHER">
+	   <paramValueList>
+	      <paramValue name="DTDATE" value="2013-12-31"></paramValue>
+	      <paramValue name="strInstCode" value=""></paramValue>
+			<!--
+		  <paramValue name="strTaskRptInstID" value="000000"></paramValue>
+			<paramValue name="strFreq" value="000000"></paramValue> 
+			-->
+	   </paramValueList>
+
+	   <freqCode value="4"></freqCode>
+
+		 <checkFieldConsistentList consistenttype="1" discription="一致性校验">
+        <paramFieldList>
+ 						<paramField paramName="DTDATE" field="DTDATE" type="2"></paramField>
+ 						<paramField paramName="strInstCode" field="INSTINFO" type="1"></paramField>
+ 				</paramFieldList>
+ 				
+     		<!--  2.1_行内一致性校验(国别代码）  -->
+    	 	<checkFieldConsistent>
+      			<consistentGroup keyField="N" keyDiscription="国别代码(集团基本情况表)" nameField="A" nameDiscription="国别代码(成员名单表)" procedureName="CHECK_NCR_2_1_HNYZ_GB_001" procedureDiscription="集团基本情况表一致性校验存储过程" procedureParam="rt,DTDATE,strInstCode"></consistentGroup>
+      	</checkFieldConsistent>     	
+      	<!--   法人一性校验  -->
+    	 	<checkFieldConsistent>
+      			<consistentGroup keyField="B" keyDiscription="客户代码/供应链编码" nameField="A" nameDiscription="客户名称" procedureName="CHECK_NCR_2_1" procedureDiscription="集团基本情况表一致性校验存储过程" procedureParam="rt,DTDATE,strInstCode"></consistentGroup>
+      	</checkFieldConsistent>
+     </checkFieldConsistentList>	
+     
+		 <checkFieldConsistentList consistenttype="2" discription="唯一性校验">
+        <paramFieldList>
+ 						<paramField paramName="DTDATE" field="DTDATE" type="2"></paramField>
+ 						<paramField paramName="strInstCode" field="INSTINFO" type="1"></paramField>
+ 				</paramFieldList>
+    	 	<checkFieldConsistent>
+      			<consistentGroup keyField="E" keyDiscription="授信类型" nameField="B" nameDiscription="客户代码/供应链编码" procedureName="CHECK_NCR_2_1_WYX_ALL"  procedureDiscription="集团基本情况表唯一性校验存储过程" procedureParam="rt,DTDATE,strInstCode"></consistentGroup>
+      	</checkFieldConsistent>
+    	 	<checkFieldConsistent>
+      			<consistentGroup keyField="E" keyDiscription="授信类型" nameField="C" nameDiscription="工商注册编号" procedureName="CHECK_NCR_2_1_WYX_ALL"  procedureDiscription="集团基本情况表唯一性校验存储过程" procedureParam="rt,DTDATE,strInstCode"></consistentGroup>
+      	</checkFieldConsistent>
+     </checkFieldConsistentList>	  
+     
+		 <!-- 聚合校验无效  -->
+     <checkFieldAggregationList discription="聚合校验">
+	      <paramFieldList>
+	  			 <paramField paramName="DTDATE" field="DTDATE" type="2"></paramField>
+	  			 <paramField paramName="strInstCode" field="INSTINFO" type="1"></paramField>
+	  		</paramFieldList>	
+	   		<!--  3.3.1_财务指标异常提示（1<textarea></textarea>）     -->
+	    	<checkFieldAggregation compareType="=" splitDiscription="客户代码/供应链编码,集团并表财务指标-资产负债表类型,集团并表财务指标-资产负债表日期（提示性信息）" leftSplitField="B,H,I" rightSplitField="B,H,I">
+	         <leftFieldList>
+	            <checkFieldAggregationField name="F" discription="集团并表财务指标-资产总额（提示性信息）"  procedureName="CHECK_NCR_2_1_DUO_CW_01_ALL_L" procedureParam="rt,DTDATE,strInstCode" procedureDiscription="财务指标异常提示（1）" ></checkFieldAggregationField>
+	         </leftFieldList>
+	         <rightFieldList>
+							<checkFieldAggregationField name="F" discription="集团并表财务指标-资产总额（提示性信息）"  procedureName="CHECK_NCR_2_1_DUO_CW_01_ALL_R" procedureParam="rt,DTDATE,strInstCode" procedureDiscription="财务指标异常提示（1）" ></checkFieldAggregationField>
+	         </rightFieldList>
+	      </checkFieldAggregation> 
+	    	<checkFieldAggregation compareType="=" splitDiscription="客户代码/供应链编码,集团并表财务指标-资产负债表类型,集团并表财务指标-资产负债表日期（提示性信息）" leftSplitField="B,H,I" rightSplitField="B,H,I">
+	         <leftFieldList>
+	            <checkFieldAggregationField name="G" discription="集团并表财务指标-负债总额（提示性信息）"  procedureName="CHECK_NCR_2_1_DUO_CW_01_ALL_L" procedureParam="rt,DTDATE,strInstCode" procedureDiscription="财务指标异常提示（1）" ></checkFieldAggregationField>
+	         </leftFieldList>
+	         <rightFieldList>
+							<checkFieldAggregationField name="G" discription="集团并表财务指标-负债总额（提示性信息）"  procedureName="CHECK_NCR_2_1_DUO_CW_01_ALL_R" procedureParam="rt,DTDATE,strInstCode" procedureDiscription="财务指标异常提示（1）"></checkFieldAggregationField>
+	         </rightFieldList>
+	      </checkFieldAggregation> 	      	      
+	   		<!--  3.3.1_财务指标异常提示（2）     -->
+	    	<checkFieldAggregation compareType="=" splitDiscription="客户代码/供应链编码,集团并表财务指标-资产总额（提示性信息）" leftSplitField="B,F" rightSplitField="B,F">
+	         <leftFieldList>
+	            <checkFieldAggregationField name="H,I" discription="集团并表财务指标-资产负债表类型,集团并表财务指标-资产负债表日期（提示性信息）"  procedureName="CHECK_NCR_2_1_DUO_CW_02_ALL_L" procedureParam="rt,DTDATE,strInstCode" procedureDiscription="财务指标异常提示（2）" ></checkFieldAggregationField>
+	         </leftFieldList>
+	         <rightFieldList>
+							<checkFieldAggregationField name="H,I" discription="集团并表财务指标-资产负债表类型,集团并表财务指标-资产负债表日期（提示性信息）"  procedureName="CHECK_NCR_2_1_DUO_CW_02_ALL_R" procedureParam="rt,DTDATE,strInstCode" procedureDiscription="财务指标异常提示（2）"></checkFieldAggregationField>
+	         </rightFieldList>
+	      </checkFieldAggregation> 
+	    	<checkFieldAggregation compareType="=" splitDiscription="客户代码/供应链编码,集团并表财务指标-负债总额（提示性信息）" leftSplitField="B,G" rightSplitField="B,G">
+	         <leftFieldList>
+	            <checkFieldAggregationField name="H,I" discription="集团并表财务指标-资产负债表类型,集团并表财务指标-资产负债表日期（提示性信息）"  procedureName="CHECK_NCR_2_1_DUO_CW_02_ALL_L" procedureParam="rt,DTDATE,strInstCode" procedureDiscription="财务指标异常提示（2）" ></checkFieldAggregationField>
+	         </leftFieldList>
+	         <rightFieldList>
+							<checkFieldAggregationField name="H,I" discription="集团并表财务指标-资产负债表类型,集团并表财务指标-资产负债表日期（提示性信息）"  procedureName="CHECK_NCR_2_1_DUO_CW_02_ALL_R" procedureParam="rt,DTDATE,strInstCode" procedureDiscription="财务指标异常提示（2）"></checkFieldAggregationField>
+	         </rightFieldList>
+	      </checkFieldAggregation> 	       
+  			<!--跨期数值异常变化   --> 
+   	 </checkFieldAggregationList> 
+
+		                      
+     <checkTable procedureName="CHECK_NCR_2_1"  procedureParam="DTDATE,strInstCode" procedureDiscription="集团基本情况表" 
+     	originTable="NCR_2_1" errorStateField="RPTCHECKTYPE" errorStateValue="3"  successStateValue="2" 
+			defaultLogicDaoBeanId="oracleProcedureResultSetDao">    
+	  		<paramFieldList>
+	  			<paramField paramName="DTDATE" field="DTDATE" type="2"></paramField>
+	  			<paramField paramName="strInstCode" field="INSTINFO" type="1"></paramField>
+	  		</paramFieldList>
+        <checkUniqueFieldList>
+         	<checkUniqueField name="AUTOID" discription="主键" originField="AUTOID"></checkUniqueField>
+        </checkUniqueFieldList>
+ 
+     </checkTable>
+
+     <checkTable procedureName="CHECK_NCR_2_1_TJL_KQ01_001"  procedureParam="DTDATE,strInstCode,NUM" procedureDiscription="统计类指标跨期异常值变动提示（贷款余额大于1万亿）"  defaultLogicDaoBeanId="oracleProcedureResultSetDao">    
+	  		<paramFieldList>
+	  			<paramField paramName="DTDATE" field="DTDATE" type="2"></paramField>
+	  			<paramField paramName="strInstCode" field="INSTINFO" type="1"></paramField>
+	  			<paramField paramName="NUM" field="NUM" type="1" value="1"></paramField>
+	  		</paramFieldList>
+        <checkUniqueFieldList>
+        </checkUniqueFieldList>
+       	<checkFieldOrList>
+            <checkFieldOr type="1">
+                <checkFieldBasic name="SUBSUM" discription="集团变动个数" valueDecimalMin='-100' valueDecimalMax='100'></checkFieldBasic>
+                <checkFieldBasic name="RATE" discription="集团个数变动率" valueDecimalMin='-0.02' valueDecimalMax='0.02'></checkFieldBasic>
+            </checkFieldOr>
+        </checkFieldOrList>
+     </checkTable>
+   
+     <checkTable procedureName="CHECK_NCR_2_1_TJL_KQ01_001"  procedureParam="DTDATE,strInstCode,NUM" procedureDiscription="统计类指标跨期异常值变动提示（1千亿-1万亿）"  defaultLogicDaoBeanId="oracleProcedureResultSetDao">    
+	  		<paramFieldList>
+	  			<paramField paramName="DTDATE" field="DTDATE" type="2"></paramField>
+	  			<paramField paramName="strInstCode" field="INSTINFO" type="1"></paramField>
+	  			<paramField paramName="NUM" field="NUM" type="1" value="2"></paramField>
+	  		</paramFieldList>
+        <checkUniqueFieldList>
+        </checkUniqueFieldList>
+       	<checkFieldOrList>
+            <checkFieldOr type="1">
+                <checkFieldBasic name="SUBSUM" discription="集团变动个数" valueDecimalMin='-50' valueDecimalMax='50'></checkFieldBasic>
+                <checkFieldBasic name="RATE" discription="集团个数变动率" valueDecimalMin='-0.05' valueDecimalMax='0.05'></checkFieldBasic>
+            </checkFieldOr>
+        </checkFieldOrList>
+     </checkTable>
+   
+     <checkTable procedureName="CHECK_NCR_2_1_TJL_KQ01_001"  procedureParam="DTDATE,strInstCode,NUM" procedureDiscription="统计类指标跨期异常值变动提示（100亿-1千亿）"  defaultLogicDaoBeanId="oracleProcedureResultSetDao">    
+	  		<paramFieldList>
+	  			<paramField paramName="DTDATE" field="DTDATE" type="2"></paramField>
+	  			<paramField paramName="strInstCode" field="INSTINFO" type="1"></paramField>
+	  			<paramField paramName="NUM" field="NUM" type="1" value="3"></paramField>
+	  		</paramFieldList>
+        <checkUniqueFieldList>
+        </checkUniqueFieldList>
+       	<checkFieldOrList>
+            <checkFieldOr type="1">
+                <checkFieldBasic name="SUBSUM" discription="集团变动个数" valueDecimalMin='-30' valueDecimalMax='30'></checkFieldBasic>
+                <checkFieldBasic name="RATE" discription="集团个数变动率" valueDecimalMin='-0.10' valueDecimalMax='0.10'></checkFieldBasic>
+            </checkFieldOr>
+        </checkFieldOrList>
+     </checkTable>
+   
+     <checkTable procedureName="CHECK_NCR_2_1_TJL_KQ01_001"  procedureParam="DTDATE,strInstCode,NUM" procedureDiscription="统计类指标跨期异常值变动提示（10亿-100亿）" defaultLogicDaoBeanId="oracleProcedureResultSetDao">    
+	  		<paramFieldList>
+	  			<paramField paramName="DTDATE" field="DTDATE" type="2"></paramField>
+	  			<paramField paramName="strInstCode" field="INSTINFO" type="1"></paramField>
+	  			<paramField paramName="NUM" field="NUM" type="1" value="4"></paramField>
+	  		</paramFieldList>
+        <checkUniqueFieldList>
+        </checkUniqueFieldList>
+       	<checkFieldOrList>
+            <checkFieldOr type="1">
+                <checkFieldBasic name="SUBSUM" discription="集团变动个数" valueDecimalMin='-30' valueDecimalMax='30'></checkFieldBasic>
+                <checkFieldBasic name="RATE" discription="集团个数变动率" valueDecimalMin='-0.20' valueDecimalMax='0.20'></checkFieldBasic>
+            </checkFieldOr>
+        </checkFieldOrList>
+     </checkTable>
+   
+     <checkTable procedureName="CHECK_NCR_2_1_TJL_KQ01_001"  procedureParam="DTDATE,strInstCode,NUM" procedureDiscription="统计类指标跨期异常值变动提示（10亿以下）" defaultLogicDaoBeanId="oracleProcedureResultSetDao">    
+	  		<paramFieldList>
+	  			<paramField paramName="DTDATE" field="DTDATE" type="2"></paramField>
+	  			<paramField paramName="strInstCode" field="INSTINFO" type="1"></paramField>
+	  			<paramField paramName="NUM" field="NUM" type="1" value="5"></paramField>
+	  		</paramFieldList>
+        <checkUniqueFieldList>
+        </checkUniqueFieldList>
+       	<checkFieldOrList>
+            <checkFieldOr type="1">
+                <checkFieldBasic name="SUBSUM" discription="集团变动个数" valueDecimalMin='-30' valueDecimalMax='30'></checkFieldBasic>
+                <checkFieldBasic name="RATE" discription="集团个数变动率" valueDecimalMin='-0.30' valueDecimalMax='0.30'></checkFieldBasic>
+            </checkFieldOr>
+        </checkFieldOrList>
+     </checkTable>
+   
+	</checkInstance>	
+</reportCheckRoot>

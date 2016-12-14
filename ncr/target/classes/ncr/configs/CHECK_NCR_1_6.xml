@@ -1,0 +1,108 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<reportCheckRoot>
+	<checkInstance name="Check_NCR_1_6">
+		<paramValueList>
+			<paramValue name="DTDATE" value="2013-12-09"></paramValue>
+			<paramValue name="strInstCode" value=""></paramValue>
+			<!--
+		  <paramValue name="strTaskRptInstID" value="000000"></paramValue>
+			<paramValue name="strFreq" value="000000"></paramValue> 
+			-->
+		</paramValueList>
+
+		<freqCode value="4"></freqCode>
+
+		<checkTable procedureName="CHECK_NCR_1_6" procedureParam="DTDATE,strInstCode,rt" procedureDiscription="CHECK_NCR_1_6表外业务明细况"
+			originTable="NCR_1_6" errorStateField="RPTCHECKTYPE" errorStateValue="3"  successStateValue="2" 
+			defaultLogicDaoBeanId="oracleProcedureResultSetDao">
+			<paramFieldList>
+				<paramField paramName="DTDATE" field="DTDATE" type="2"></paramField>
+				<paramField paramName="strInstCode" field="INSTINFO" type="1"></paramField>
+			</paramFieldList>
+
+			<checkUniqueFieldList>
+				<checkUniqueField name="AUTOID" discription="主键" originField="AUTOID"></checkUniqueField>
+			</checkUniqueFieldList>
+
+			<checkFieldBasicList discription="表内基础校验">
+				<checkFieldBasic name="A" discription="表外业务客户名称" emptyCheck="true" startLength="2" ignoreVal="*********"></checkFieldBasic>
+				<checkFieldBasic name="B" discription="表外业务客户代码" emptyCheck="true" startLength="2"></checkFieldBasic>
+				<checkFieldBasic name="C" discription="承办银行机构代码"  emptyCheck="true" startLength="17"  endLength="17"></checkFieldBasic>
+				<checkFieldBasic name="D" discription="表外业务类型" emptyCheck="true" digitalCheck="true" startLength="1" endLength="1"></checkFieldBasic>
+				<checkFieldBasic name="E" discription="授信号码" emptyCheck="true" startLength="2" ></checkFieldBasic>
+				<checkFieldBasic name="F" discription="合同号" startLength="2"></checkFieldBasic>
+				<checkFieldBasic name="G" discription="业务号码" startLength="2"></checkFieldBasic>
+				<checkFieldBasic name="H" discription="业务余额" valueDecimalMin="0" emptyCheck="true" valueDecimalLength="2" ></checkFieldBasic>
+				<checkFieldBasic name="I" discription="币种代码" emptyCheck="true" startLength="3"  endLength="3"></checkFieldBasic>
+				<checkFieldBasic name="J" discription="发生日期" emptyCheck="true" dateCheck="true" startLength="8" endLength="8"></checkFieldBasic>
+				<checkFieldBasic name="K" discription="到期日期" emptyCheck="true" dateCheck="true" startLength="8" endLength="8"></checkFieldBasic>
+				<checkFieldBasic name="L" discription="保证金金额" valueDecimalMin="0" valueDecimalLength="2" ></checkFieldBasic>
+				<checkFieldBasic name="M" discription="产业结构调整类型"  digitalCheck="true" startLength="1" endLength="1"> ></checkFieldBasic>
+				<checkFieldBasic name="N" discription="工业转型升级标识"  digitalCheck="true" startLength="1" endLength="1"> ></checkFieldBasic>
+				<checkFieldBasic name="O" discription="战略新兴产业类型"  digitalCheck="true" startLength="1" endLength="1"> ></checkFieldBasic>
+			</checkFieldBasicList>
+
+			<checkFieldCaseWhenList discription="caseWhen校验">			
+				<checkFieldCaseWhen name="F" discription="合同号" caseValue="notNull" whenValueScope="1,2,3,4,5,6">
+        	<checkFieldCaseWhenField name="D" discription="表外业务类型"  ></checkFieldCaseWhenField>
+        </checkFieldCaseWhen>
+        <checkFieldCaseWhen name="F" discription="合同号" caseValue="null" whenValue="8">
+        	<checkFieldCaseWhenField name="D" discription="表外业务类型"  ></checkFieldCaseWhenField>
+        </checkFieldCaseWhen>
+        <checkFieldCaseWhen name="G" discription="业务号码" caseValue="notNull" whenValueScope="1,2,3,4,5,6">
+        	<checkFieldCaseWhenField name="D" discription="表外业务类型"  ></checkFieldCaseWhenField>
+        </checkFieldCaseWhen>
+        <checkFieldCaseWhen name="G" discription="业务号码" caseValue="null" whenValue="8">
+        	<checkFieldCaseWhenField name="D" discription="表外业务类型"  ></checkFieldCaseWhenField>
+        </checkFieldCaseWhen>
+			</checkFieldCaseWhenList>
+
+			<checkFieldEffectiveList discription="有效性校验">
+				<checkFieldEffective name="D" discription="表外业务类型">
+                    <value>1</value>
+                    <value>2</value>
+                    <value>3</value>
+                    <value>4</value>
+                    <value>5</value>
+                    <value>6</value>
+                    <value>7</value>
+                    <value>8</value>
+        </checkFieldEffective>
+        <checkFieldEffective name="M" discription="产业结构调整类型">
+                    <value>1</value>
+                    <value>2</value>
+                    <value>3</value>
+        </checkFieldEffective>
+        <checkFieldEffective name="N" discription="工业转型升级标识">
+                    <value>1</value>
+                    <value>2</value>
+        </checkFieldEffective>
+        <checkFieldEffective name="O" discription="战略新兴产业类型">
+                    <value>1</value>
+                    <value>2</value>
+                    <value>3</value>
+                    <value>4</value>
+                    <value>5</value>
+                    <value>6</value>
+                    <value>7</value>
+        </checkFieldEffective>
+			</checkFieldEffectiveList>
+
+			<checkFieldLineList discription="非聚合校验">
+				<!--LJX-036	表1 PART Ⅵ中[发生日期]小于等于[数据日期]-->
+       	<checkFieldLine compareType=">=" fieldType="2">
+        	<leftFieldList><checkFieldLineField name="DTDATE" discription="数据日期"></checkFieldLineField></leftFieldList>
+         	<rightFieldList><checkFieldLineField name="J" discription="发生日期"></checkFieldLineField></rightFieldList>
+        </checkFieldLine> 
+        <!--LJX-037	表1 PART Ⅵ中[到期日期]大于[发生日期]-->
+        <checkFieldLine compareType=">" fieldType="2">
+        	<leftFieldList><checkFieldLineField name="K" discription="到期日期"></checkFieldLineField></leftFieldList>
+         	<rightFieldList><checkFieldLineField name="J" discription="发生日期"></checkFieldLineField></rightFieldList>
+        </checkFieldLine> 
+			</checkFieldLineList>
+
+			<checkFieldOrList discription="条件校验">
+			</checkFieldOrList>
+		</checkTable>				
+	</checkInstance>
+</reportCheckRoot>

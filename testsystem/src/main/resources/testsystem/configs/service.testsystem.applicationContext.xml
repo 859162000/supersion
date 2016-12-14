@@ -1,0 +1,470 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans
+	xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns:p="http://www.springframework.org/schema/p"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-3.0.xsd">
+
+     <bean id="hRoleInfoShowListService" parent="singleObjectShowListService">
+         <property name="linkedMap">
+            <map>
+                <entry key="修改" value="Get-ShowUpdate"></entry>
+                <entry key="删除" value="Get-DeleteById"></entry>
+                <entry key="权限管理" value="Get-ShowUpdateListLevel1-testsystem.dto.HRoleFunctionInst"></entry>
+            </map>
+         </property>
+     </bean>
+     
+     <bean id="htable1ShowListService" parent="singleObjectShowListService">
+         <property name="operationMap">
+             <map>
+                <entry key="查询" value="Select-ShowList"></entry>
+                <entry key="新增" value="Get-ShowSave"></entry>
+                <entry key="删除" value="PostConfirm-DeleteListByIdList"></entry>
+                <entry key="修改" value="Post-UpdateField"></entry>
+                <entry key="客户化风险校验" value="Post-ReportCheck-CustomRisk"></entry>
+                <entry key="校验结果下载" value="Get-Download"></entry>
+                <entry key="初始化XML配置" value="Get-InitXMLConfiguration"></entry>
+             </map>
+          </property>
+     </bean>
+     
+     <bean id="htable1DownloadService" class="framework.services.imps.SingleObjectDownloadByPathService" scope="prototype">
+        <property name="path" value="Download/checkResult.txt"></property>
+     </bean>
+     
+     <bean id="htable5ShowListService" parent="singleObjectShowListService">
+         <property name="linkedMap">
+            <map>
+                <entry key="修改" value="Get-ShowUpdate"></entry>
+                <entry key="删除" value="Get-DeleteById"></entry>
+                <entry key="下载" value="Get-Download"></entry>
+            </map>
+         </property>
+     </bean>
+     
+     <bean id="hReportCheckTest1ShowListService" parent="singleObjectShowListService">
+         <property name="operationMap">
+             <map>
+                <entry key="查询" value="Select-ShowList"></entry>
+                <entry key="新增" value="Get-ShowSave"></entry>
+                <entry key="删除" value="PostConfirm-DeleteListByIdList"></entry>
+                <entry key="客户化风险校验" value="Post-ReportCheck-CustomRisk"></entry>
+                <entry key="校验结果下载" value="Get-Download"></entry>
+                <entry key="初始化XML配置" value="Get-InitXMLConfiguration"></entry>
+             </map>
+          </property>
+     </bean>
+     
+      <bean id="hReportCheckTest1DownloadService" class="framework.services.imps.SingleObjectDownloadByPathService" scope="prototype">
+        <property name="path" value="Download/checkResult.txt"></property>
+     </bean>
+     
+     <bean id="htable9ShowListService" parent="singleObjectShowListService">
+         <property name="operationMap">
+             <map>
+                <entry key="查询" value="Select-ShowList"></entry>
+                <entry key="新增" value="Get-ShowSave"></entry>
+                <entry key="删除" value="PostConfirm-DeleteListByIdList"></entry>
+                <entry key="改变" value="Post-UpdateField"></entry>
+             </map>
+          </property>
+          <property name="linkedMap">
+            <map>
+                <entry key="修改" value="Get-ShowCheckUpdate"></entry>
+            </map>
+        </property>
+     </bean>
+     
+     <bean id="htable9UpdateFieldService" parent="singleObjectUpdateFieldService"><!--
+        <property name="defaultCheckClassList">
+            <list>
+            </list>
+        </property>
+        <property name="updateFieldTranslateClassList">
+            <list>
+                <value>framework.services.translate.LevelDataTranslate</value>
+                <value>framework.services.translate.ConditionCriteriaTranslate</value>
+                <value>framework.services.translate.SecurityTranslate</value>
+		        <value>framework.services.translate.DefaultValueTranslate</value>
+		        <value>framework.services.translate.ShowListTreeTranslate</value>
+            </list>
+        </property>
+     -->
+       <property name="updateFieldCheckClassList">
+            <list>
+                <value>framework.services.check.ReflectEmptyFieldCheck</value>
+                <value>framework.services.check.ReflectTypeFieldCheck</value>
+                <value>framework.services.check.XMLSingleObjectInstanceCheck</value>
+            </list>
+        </property>
+        
+        <property name="judgeFieldName" value="strActivityNodeType"></property>
+        <property name="fieldName" value="strStartConditionType"></property>
+        <property name="fieldValue" value="TrueTo2,FalseTo3,3To4,4To5,5ToDelete"></property>
+        <property name="successMessage" value="改变成功"></property>
+        <property name="errorMessage" value="改变失败"></property>
+     </bean>
+     
+     <bean id="htable9ShowCheckUpdateService" parent="singleObjectShowCheckUpdateService">
+         <property name="defaultCheckClassList">
+            <list>
+                <value>framework.services.check.XMLSingleObjectInstanceCheck</value>
+            </list>
+        </property>
+         <property name="defaultCheckInstance" value="getHtable9Instance"></property>
+     </bean>
+     
+     <bean id="htable9SaveService" parent="singleObjectSaveService">
+         <property name="defaultCheckClassList">
+            <list>
+                <value>framework.services.check.XMLSingleObjectInstanceCheck</value>
+            </list>
+        </property>
+         <property name="defaultCheckInstance" value="getHtable9Instance"></property>
+     </bean>
+     
+     <bean id="htable9UpdateService" parent="singleObjectUpdateService">
+         <property name="defaultCheckClassList">
+            <list>
+                <value>framework.services.check.XMLSingleObjectInstanceCheck</value>
+            </list>
+        </property>
+         <property name="defaultCheckInstance" value="getHtable9Instance"></property>
+     </bean>
+     
+     <bean id="testStatisticalShowStatisticalCountService" parent="showStatisticalCountService">
+        <property name="showNullCondtion" value="true"></property>
+        <property name="freq" value="1,dtDate"></property>
+        <property name="startDate" value="2010-01-31"></property>
+        <property name="tNameList">
+            <list>
+                   <value>testsystem.dto.Test3</value> 
+                   <value>testsystem.dto.Test3</value> 
+                   <value>testsystem.dto.Test3</value> 
+                   <!--
+                   <value>fundManagementSystem.dto.TRAN210101</value>
+                   <value>fundManagementSystem.dto.TRAN210102</value>
+                   <value>fundManagementSystem.dto.TRAN210103</value>
+                   <value>fundManagementSystem.dto.TRAN210104</value>
+                   <value>fundManagementSystem.dto.TRAN210105</value>
+                   <value>fundManagementSystem.dto.TRAN210106</value>
+                   <value>fundManagementSystem.dto.TRAN210107</value>
+                   <value>fundManagementSystem.dto.TRAN210108</value>
+                   <value>fundManagementSystem.dto.TRAN210109</value>
+                   <value>fundManagementSystem.dto.TRAN210110</value>
+                   <value>fundManagementSystem.dto.TRAN210111</value>
+                   <value>fundManagementSystem.dto.TRAN210112</value>
+                   <value>fundManagementSystem.dto.TRAN210201</value>
+                   <value>fundManagementSystem.dto.TRAN210202</value>
+                   <value>fundManagementSystem.dto.TRAN210203</value>
+                   <value>fundManagementSystem.dto.TRAN210204</value>
+                   <value>fundManagementSystem.dto.TRAN210205</value>
+                   <value>fundManagementSystem.dto.TRAN210206</value>
+                   <value>fundManagementSystem.dto.TRAN210207</value>
+                   <value>fundManagementSystem.dto.TRAN210208</value>
+                   <value>fundManagementSystem.dto.TRAN210209</value>
+                   <value>fundManagementSystem.dto.TRAN210211</value>
+                   <value>fundManagementSystem.dto.TRAN210301</value>
+                   <value>fundManagementSystem.dto.TRAN210302</value>
+                   <value>fundManagementSystem.dto.TRAN210303</value>
+                   <value>fundManagementSystem.dto.TRAN210304</value>
+                   <value>fundManagementSystem.dto.TRAN210305</value>
+                   <value>fundManagementSystem.dto.TRAN210306</value>
+                   <value>fundManagementSystem.dto.TRAN210307</value>
+                   <value>fundManagementSystem.dto.TRAN210308</value>
+                   <value>fundManagementSystem.dto.TRAN210309</value>
+                   <value>fundManagementSystem.dto.TRAN210310</value>
+                   <value>fundManagementSystem.dto.TRAN210311</value>
+                   <value>fundManagementSystem.dto.TRAN210401</value>
+                   <value>fundManagementSystem.dto.TRAN210501</value>
+                   <value>fundManagementSystem.dto.TRAN310101</value>
+           --></list>
+	        </property>
+	        <property name="showFieldList">
+	            <list>
+	                <value>1,dtoName</value>
+	                <!--<value>2,dtDate,dtDate</value>
+	                --><value>3,unCheckCount,CheckType=1</value>
+	                <value>3,unReViewCount,VerifyType=1</value>
+	                <value>4,dtDate</value>
+	           </list>
+        </property>
+     </bean>
+     
+     <bean id="testOnetoTableStatisicalShowSingleStatisticalService" parent="showSingleStatisticalService">
+       <property name="showNullCondtion" value="true"></property>
+       <property name="dealWithClassName" value="oasystem.dto.Expense"></property>
+       <property name="conditionAboutCountFieldName" value="FieldListName"></property>
+        <property name="countFieldList">
+            <list>
+                   <value>department</value> 
+                   <value>areaInfo</value> 
+                   <value>costType</value> 
+                   <value>oaProjectInfo</value> 
+                   <value>department,oaProjectInfo</value> 
+                   <value>department,costType</value>
+                   <value>costType,oaProjectInfo</value>  
+                 </list>
+	        </property>
+	        <property name="showFieldList">
+	            <list>
+	                <value>1,dtoName</value>
+	                <value>2,FieldListName,FieldListName</value>
+	                <!-- 备注3,unCheckCount,1,CheckType=1 中,1,中1表示sum; 2表示Avg; 3表示count; 4表示countDistinct; 5表示max; 6表示min -->
+	                <value>3,summoneysum,1,moneysum</value>
+	                <value>3,summoneyend,1,moneyend</value>
+	           </list>
+        </property>
+     </bean>   
+     
+     <bean id="ExportReportDataService" class="report.service.imps.SingleObjectExportReportDataService" scope="prototype">
+    	<property name="successMessage" value="导出成功"></property>
+        <property name="errorMessage" value="导出失败"></property>
+        <property name="defaultDaoBeanId" value="singleObjectFindByCriteriaDao"></property>
+        <property name="defaultTranslateClassList">
+            <list>
+            	<value>framework.services.translate.LevelDataTranslate</value>
+                <value>framework.services.translate.ConditionCriteriaTranslate</value>
+                <value>framework.services.translate.SecurityTranslate</value>
+                <value>framework.services.translate.ShowListTreeTranslate</value>
+            </list>
+        </property>
+    </bean>
+    
+     <bean id="autoDTO_WGJ_Z01ShowListService" parent="singleObjectShowListService">
+     <property name="showInstanceName" value="AutoDTO_WGJ_Z01"></property>
+     	 <property name="operationMap">
+           <map>
+	         <entry key="新增" value="Get-ShowSave"></entry>
+	         <entry key="删除" value="PostConfirm-WGJ_UpdateField"></entry>
+	         <entry key="导出" value="Post-ExportAllData"></entry>
+	         <entry key="导入" value="Upload-ImportData"></entry>
+	         <entry key="查询" value="Select-ShowList"></entry>
+	        </map>
+	     </property>
+     </bean>
+     
+      <bean id="autoDTO_WGJ_Z01ShowSaveService" parent="singleObjectShowSaveService">
+     <property name="showInstanceName" value="AutoDTO_WGJ_Z01"></property>
+     </bean>
+     
+     <bean id="autoDTO_WGJ_Z01ShowUpdateService" parent="singleObjectShowUpdateService">
+     <property name="showInstanceName" value="AutoDTO_WGJ_Z01"></property>
+     </bean>
+     
+      <bean id="autoDTO_WGJ_Z01SaveService" parent="singleObjectSaveService">
+     	<property name="showInstanceName" value="AutoDTO_WGJ_Z01"></property>
+     	<property name="defaultCheckInstance" value="AutoDTO_WGJ_Z01CheckInstance"/>
+     </bean>
+     
+      <bean id="autoDTO_WGJ_Z01UpdateService" parent="singleObjectUpdateService">
+    	 <property name="showInstanceName" value="AutoDTO_WGJ_Z01"></property>
+    	<property name="defaultCheckInstance" value="AutoDTO_WGJ_Z01CheckInstance"/>
+     </bean>
+     
+       <bean id="autoDTO_WGJ_Z01ExportAllDataService" parent="ExportAllDataService">
+       <property name="showInstanceName" value="AutoDTO_WGJ_Z01"></property>
+       <property name="fileName" value="FAL_EXCEL_Model.xls"></property>
+        <property name="sheetName" value="Z01"></property>
+        <property name="showForeignId" value="false"></property>
+        <property name="showHeader" value="false"></property>
+        <property name="startLine" value="2"></property>
+        <property name="startCol" value="0"></property>
+        <property name="cacheLine" value="10000"></property>
+        <property name="strDateFormat" value="yyyy-MM-dd"></property>
+        <property name="modelPath" value="Download\ModelPath\FAL_EXCEL_Model.xls"></property>
+     </bean>
+     
+     <bean id="autoDTO_WGJ_Z03ExportAllDataService" parent="ExportAllDataService">
+       <property name="fileName" value="FAL_EXCEL_Model.xls"></property>
+        <property name="sheetName" value="Z03"></property>
+        <property name="showForeignId" value="false"></property>
+        <property name="showHeader" value="false"></property>
+        <property name="startLine" value="2"></property>
+        <property name="startCol" value="0"></property>
+        <property name="cacheLine" value="10000"></property>
+        <property name="strDateFormat" value="yyyy-MM-dd"></property>
+        <property name="modelPath" value="Download\ModelPath\FAL_EXCEL_Model.xls"></property>
+        <property name="dtoName" value="wgjreportsystem.dto.AutoDTO_WGJ_Z03Export"></property>
+     </bean>
+    
+     <!-- 逻辑主键配置实例 -->
+     <!--<bean id="autoDTO_DB_DBXX_JCSaveLevelAUTODTOService" parent="singleObjectSaveLevelAUTODTOService">
+      <property name="logicPrimaryKey">
+             <list>
+                <value>DBJGDM</value>
+                <value>DBYWBH</value>
+            </list>
+        </property>
+    </bean>
+    
+    <bean id="autoDTO_DB_DBXX_JCUpdateLevelAUTODTOService" parent="singleObjectUpdateLevelAUTODTOService">
+      <property name="logicPrimaryKey">
+             <list>
+                <value>DBJGDM</value>
+                <value>DBYWBH</value>
+            </list>
+        </property>
+    </bean>
+    -->
+    
+     <!-- 用于测试扩展 -->
+     <bean id="autoDTO_DB_DBXX_JCShowListService" parent="singleObjectShowListService">
+        <property name="operationMap">
+           <map>
+	         <entry key="新增" value="Get-ShowComponentSave"></entry>
+	         <entry key="删除" value="PostConfirm-DeleteListByIdList"></entry>
+	         <entry key="查询" value="Select-ShowList"></entry>
+	        </map>
+	     </property>
+	      <property name="linkedMap">
+            <map>
+                <entry key="修改" value="Get-ShowComponentUpdate"></entry>
+            </map>
+        </property>
+    </bean>
+    
+    <bean id="autoDTO_DB_DBXX_JCSaveService" parent="singleObjectSaveService">
+       <property name="defaultValueMap">
+             <map>
+                <entry key="RPTVerifyType" value="1"></entry>
+                <entry key="RPTCheckType" value="2"></entry>
+                <entry key="RPTSendType" value="1"></entry>
+                <entry key="RPTSubmitStatus" value="1"></entry>
+                <entry key="RPTFeedbackType" value="1"></entry>
+                <entry key="operationUser" value="LoginUserInfo"></entry>
+                <entry key="lastUpdateDate" value="SystemDate"></entry>
+             </map>
+        </property>
+        <property name="levelFieldMap">
+          <map>
+                <entry key="instInfo" value="instInfo"></entry>
+                <entry key="taskFlow.dtTaskDate" value="dtDate"></entry>
+         </map>
+         </property>
+    </bean>
+    
+    <bean id="autoDTO_DB_DBXX_JCComponentSaveService" parent="singleObjectComponentSaveService">
+        <property name="levelFieldMap">
+          <map>
+                <entry key="instInfo" value="instInfo"></entry>
+                <entry key="taskFlow.dtTaskDate" value="dtDate"></entry>
+         </map>
+         </property>
+    </bean>
+    
+     <bean id="vIEW_GRZX_DKXXSJCXShowViewStatisticalService" parent="showViewStatisticalService">
+     <property name="strProcedureName" value="Proc_GRZX_DKXXSJCX"></property>
+     <property name="strProcedureParamNames" value="JRJGDM,YWH"></property>
+         <property name="operationMap">
+             <map>
+                <entry key="查询" value="Select-ShowViewStatistical"></entry>
+                <entry key="导出Excel" value="Post-ExportForView"></entry>
+             </map>
+          </property>
+          <property name="defaultProceseClassList">
+            <list>
+                <value>framework.services.procese.ShowListProcese</value>
+                <value>framework.services.procese.LevelDataProcese</value>
+                <value>framework.services.procese.ShowListTreeProcese</value>
+                <value>framework.services.procese.SelectTagSortByNameProcese</value>
+                <value>framework.services.procese.ShowPowerButtonProcese</value>
+                <value>framework.services.procese.ProcedureExcurteProcese</value>
+            </list>
+        </property>
+     </bean>
+    <bean id="tJPMShowListService" parent="singleObjectShowListService">
+         <property name="operationMap">
+             <map>
+                <entry key="生成质量考评数据" value="Select-ShowViewStatistical"></entry>
+             </map>
+          </property>
+          <property name="linkedMap">
+            <map>
+            </map>
+        </property>
+     </bean>
+    
+    <bean id="testProcedureShowProcedureStatisticalService" parent="showProcedureStatisticalService">
+     <property name="strProcedureName" value="systemcodesetPro"></property>
+     <property name="strProcedureParamNames" value="RT,STRCODEID"></property>
+      <property name="operationMap">
+            <map>
+                <entry key="导入Excle" value="Select-ExportForProcedure"></entry>
+            </map>
+        </property>
+     </bean>
+     
+    <bean id="testProcedureExportForProcedureService" parent="singleObjectExportForProcedureService">
+     <property name="strProcedureName" value="systemcodesetPro"></property>
+     <property name="strProcedureParamNames" value="RT,STRCODEID"></property>
+    </bean>
+     
+     <bean id="vIEW_GRZX_DKXXSJCXExportForViewService" parent="singleObjectExportForViewService">
+   	   <property name="strViewName" value="VIEW_GRZX_DKXXSJCX"></property>
+     </bean>
+     
+     <bean id="autoDTO_TestImportExportShowListService" parent="singleObjectShowListService">
+         <property name="operationMap">
+             <map>
+                <entry key="查询" value="Select-ShowList"></entry>
+                <entry key="新增" value="Get-ShowSave"></entry>
+                <entry key="删除" value="PostConfirm-DeleteListByIdList"></entry>
+		        <entry key="导出全部" value="Post-ExportAllData"></entry>
+		        <entry key="导出" value="Post-ExportData"></entry>
+		        <entry key="导入" value="Upload-ImportData"></entry>
+             </map>
+          </property>
+     </bean>
+     
+     <bean id="autoDTO_TestImportExportSaveService" parent="singleObjectSaveService">
+         <property name="defaultCheckInstance" value="Check_TestImportExport"></property>
+     </bean>
+     <bean id="autoDTO_TestImportExportUpdateService" parent="singleObjectUpdateService">
+         <property name="defaultCheckInstance" value="Check_TestImportExport"></property>
+     </bean>
+     
+     
+     <!-- JumpByType扩展实例 (不要删除)--><!--
+      <bean id="autoETL_WorkflowShowListService" parent="singleObjectShowListService">
+         <property name="linkedMap">
+            <map>
+                <entry key="修改" value="Get-ShowUpdate"></entry>
+                 <entry key="删除" value="Get-DeleteById"></entry>
+                  <entry key="自动参数" value="Get-JumpByType"></entry>
+               <entry key="自动参数1" value="Get-JumpByTypeForstrParamValueType"></entry>
+                <entry key="手动参数" value="Get-ShowListLevelWorkflowParamMV-autoETLsystem.dto.AutoETL_WorkflowParamMV"></entry>
+                <entry key="执行结点" value="Get-ShowUpdateListLevelWorkflowAE-autoETLsystem.dto.AutoETL_WorkflowAE"></entry>
+                <entry key="执行工作流" value="Get-ExcuteWorkflow"></entry>
+                <entry key="结点管理" value="Get-ShowListLevelActivityNode-autoETLsystem.dto.AutoETL_ActivityNode"></entry>
+            </map>
+        </property>
+        <property name="operationMap">
+            <map>
+                <entry key="查询" value="Select-ShowList"></entry>
+                <entry key="新增" value="Get-ShowSave"></entry>
+                <entry key="删除" value="PostConfirm-DeleteListByIdList"></entry>
+           </map>
+        </property>
+        <property name="typeFieldName" value="strParamValueType"/>
+        <property name="typeFieldValueMap">
+            <map>
+             <entry key="1" value="ShowUpdateListLevelWorkflowPP-autoETLsystem.dto.AutoETL_WorkflowPP"></entry>
+             <entry key="2" value="ShowListLevelWorkflowPSDV-autoETLsystem.dto.AutoETL_WorkflowPSDV"></entry>
+             <entry key="3" value="ShowSaveOrUpdateLevelWorkflowPFPV-autoETLsystem.dto.AutoETL_Workflow?type=autoETLsystem.dto.AutoETL_WorkflowPFPV"></entry>
+             <entry key="4" value="ShowSaveOrUpdateLevelWorkflowSQLParam-autoETLsystem.dto.AutoETL_Workflow?type=autoETLsystem.dto.AutoETL_WorkflowSQLParam"></entry>
+            </map>
+        </property> 
+        <property name="typeFieldNameAndValueMap">
+            <map>
+            	 <entry key="strParamValueType" value="1@ShowUpdateListLevelWorkflowPP-autoETLsystem.dto.AutoETL_WorkflowPP,2@ShowListLevelWorkflowPSDV-autoETLsystem.dto.AutoETL_WorkflowPSDV,3@ShowSaveOrUpdateLevelWorkflowPFPV-autoETLsystem.dto.AutoETL_Workflow?type=autoETLsystem.dto.AutoETL_WorkflowPFPV,4@ShowSaveOrUpdateLevelWorkflowSQLParam-autoETLsystem.dto.AutoETL_Workflow?type=autoETLsystem.dto.AutoETL_WorkflowSQLParam"></entry>
+            	 <entry key="strEffectiveType" value="1@ShowUpdateListLevelWorkflowPP-autoETLsystem.dto.AutoETL_WorkflowPP,2@ShowListLevelWorkflowPSDV-autoETLsystem.dto.AutoETL_WorkflowPSDV"></entry>
+            </map>
+        </property>
+   </bean>
+     
+-->
+<!-- 测试添加 <entry key="回填数据" value="FillData-ShowList"></entry> -->
+
+</beans>

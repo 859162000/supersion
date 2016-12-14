@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans
+	xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns:p="http://www.springframework.org/schema/p"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-3.0.xsd">
+      
+    <bean id="InterfaceDownNcrView" class="framework.actions.imps.BaseSAction" scope="prototype">
+       	<property name="defaultServiceBeanId" value="interfaceDownNcrViewService"></property>
+    </bean>
+    
+    <bean id="interfaceFileDownNewAction" class="ncr.actions.imps.InterfaceFileDownAction" scope="prototype">
+       <property name="defaultServiceBeanId" value="interfaceDownNewCustomService"></property>
+    </bean><!--
+    
+    <bean id="InterfaceDownNewCustomView" class="ncr.actions.imps.InterfaceDownNewCustomViewAction" scope="prototype">
+    </bean>
+    
+    --><bean id="NCRReportCheckViewAction" class="framework.actions.imps.BaseSAction" scope="prototype">
+    	<property name="defaultServiceBeanId" value="NCRReportCheckViewService"></property>
+    </bean>
+    
+    <bean id="NcrInstInfoShowUpdateListAction" class="framework.actions.imps.BaseSTModelDrivenAction" scope="prototype">
+      <property name="defaultServiceBeanId" value="NcrInstInfoShowUpdateListLevelNcrTaskRptInstService"></property>
+    </bean>
+        <!--  以下为xiajieli新增 -->
+     <bean id="taskFlowNcrShowListAction" class="framework.actions.imps.BaseSTModelDrivenConditionAction" scope="prototype">
+        <property name="defaultServiceBeanId" value="taskFlowNcrShowListService"></property>
+    </bean>
+    
+     <bean id="ncrShowSaveAction" class="framework.actions.imps.BaseSTAction" scope="prototype">
+        <property name="defaultServiceBeanId" value="ncrShowSaveService"></property>
+    </bean>
+    
+     <bean id="ncrShowUpdateAction" class="framework.actions.imps.BaseSTNameAndIdAction" scope="prototype">
+        <property name="defaultServiceBeanId" value="ncrShowUpdateService"></property>
+    </bean>
+    
+     <bean id="ncrSaveAction" class="framework.actions.imps.BaseSTModelDrivenAction" scope="prototype">
+        <property name="defaultServiceBeanId" value="ncrSaveService"></property>
+    </bean>
+    
+      <bean id="ncrUpdateAction" class="framework.actions.imps.BaseSTModelDrivenAction" scope="prototype">
+       <property name="defaultServiceBeanId" value="ncrUpdateService"></property>
+    </bean>
+    
+     <bean id="ncrShowInputSaveAction" class="framework.actions.imps.BaseSTModelDrivenValidateInputAction" scope="prototype">
+        <property name="defaultServiceBeanId" value="ncrShowInputSaveService"></property>
+    </bean>
+    
+     <bean id="ncrShowInputUpdateAction" class="framework.actions.imps.BaseSTModelDrivenValidateInputAction" scope="prototype">
+        <property name="defaultServiceBeanId" value="ncrShowInputUpdateService"></property>
+    </bean>
+    
+     <bean id="ncrDeleteListByIdListAction" class="framework.actions.imps.BaseSTNameAndIdListAction" scope="prototype">
+        <property name="defaultServiceBeanId" value="ncrDeleteListByIdListService"></property>
+    </bean>
+    
+     <bean id="feedbackReportAction" class="ncr.actions.imps.FeedbackReportAction" scope="prototype">
+        <property name="defaultServiceBeanId" value="feedbackReportService"></property>
+    </bean>
+    
+    
+    <bean id="FeedbackReportViewAction" class="framework.actions.imps.BaseSAction" scope="prototype">
+    	<property name="defaultServiceBeanId" value="feedbackReportViewService"></property>
+    </bean>
+    
+    <bean id="singleObjectNCRCopySaveLevelAUTODTOAction" class="framework.actions.imps.BaseSTModelDrivenValidateAction" scope="prototype">
+		<property name="defaultServiceBeanId" value="singleObjectNCRCopySaveLevelAUTODTOService"></property>
+	</bean>
+ </beans>

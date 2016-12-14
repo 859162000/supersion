@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<navigationRoot>
+	<navigationComponentList>
+		<navigationComponent id="DeskTop" name="桌面" url="Framework/NavigationPage.jsp" ico="bg.png" treeIco="bg.png" treeExpandIco="bg.png" des="">
+			<navigationComponent id="jmxManager" name="监控管理" url="Framework/NavigationPage.jsp" ico="128_RoleInfo.png" treeIco="64_RoleInfo.png" treeExpandIco="16_RoleInfo.png" des="">
+	    		<navigationComponent id="Jserver" name="服务器管理" url="framework/ShowList-jmx.dto.J_Server" ico="64_ItemInfo.png" treeIco="32_ItemInfo.png" treeExpandIco="16_ItemInfo.png" des=""></navigationComponent>
+	    		<navigationComponent id="JApp" name="应用管理" url="framework/ShowList-jmx.dto.J_App" ico="64_ItemInfo.png" treeIco="32_ItemInfo.png" treeExpandIco="16_ItemInfo.png" des=""></navigationComponent>
+	    		<navigationComponent id="JDb" name="数据库管理" url="framework/ShowList-jmx.dto.J_Db" ico="64_TaskRptInst.png" treeIco="32_TaskRptInst.png" treeExpandIco="16_TaskRptInst.png" des=""></navigationComponent>
+	    		<navigationComponent id="JTask" name="监控任务" url="framework/ShowList-jmx.dto.J_Task" ico="64_TaskRptInst.png" treeIco="32_TaskRptInst.png" treeExpandIco="16_TaskRptInst.png" des=""></navigationComponent>
+	    	</navigationComponent>
+		</navigationComponent>
+	</navigationComponentList>
+</navigationRoot>

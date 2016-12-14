@@ -1,0 +1,513 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!--dateFieldNoSlash	dateField;     reportUnitCode  1元   2  十元  。。。。。。         -->
+<fieldShowsRoot>
+  <fieldShowsEntity>
+		<className>eas.dto.AutoDTO_EAS_BHYWXXB</className>
+		<showInstance>
+			<showInstanceName>1</showInstanceName>
+			<fieldName fieldName="CJRQ" singleTag="dateFieldNoSlash"></fieldName>
+		</showInstance>
+	</fieldShowsEntity>
+	<fieldShowsEntity>                                                    
+		<className>eas.dto.AutoDTO_EAS_BWYWMX</className>                      
+		<showInstance>                                                      
+			<showInstanceName>1</showInstanceName>                            
+			<fieldName fieldName="FSRQ" singleTag="dateFieldNoSlash"></fieldName>
+			<fieldName fieldName="BWYWDQRQ" singleTag="dateFieldNoSlash"></fieldName>
+			<fieldName fieldName="TJRQ" singleTag="dateFieldNoSlash"></fieldName>
+			<fieldName fieldName="CJRQ" singleTag="dateFieldNoSlash"></fieldName>
+		</showInstance>                                               
+	</fieldShowsEntity>  
+	<fieldShowsEntity>                                                    
+		<className>eas.dto.AutoDTO_EAS_CZXX</className>                      
+		<showInstance>                                                      
+			<showInstanceName>1</showInstanceName>                            
+			<fieldName fieldName="QYRQ" singleTag="dateFieldNoSlash"></fieldName>
+			<fieldName fieldName="CJRQ" singleTag="dateFieldNoSlash"></fieldName>
+		</showInstance>                                               
+	</fieldShowsEntity> 
+	<fieldShowsEntity>                                                    
+		<className>eas.dto.AutoDTO_EAS_DBGX</className>                      
+		<showInstance>                                                      
+			<showInstanceName>1</showInstanceName>                            
+			<fieldName fieldName="DBQSRQ" singleTag="dateFieldNoSlash"></fieldName>
+			<fieldName fieldName="DBDQRQ" singleTag="dateFieldNoSlash"></fieldName>
+			<fieldName fieldName="CJRQ" singleTag="dateFieldNoSlash"></fieldName>
+		</showInstance>                                               
+	</fieldShowsEntity> 
+	<fieldShowsEntity>                                                    
+		<className>eas.dto.AutoDTO_EAS_DGBWSXYW</className>                      
+		<showInstance>                                                      
+			<showInstanceName>1</showInstanceName>                            
+			<fieldName fieldName="DKSJFFRQ" singleTag="dateFieldNoSlash"></fieldName>
+			<fieldName fieldName="DKYSDQRQ" singleTag="dateFieldNoSlash"></fieldName>
+			<fieldName fieldName="DKSJDQRQ" singleTag="dateFieldNoSlash"></fieldName>
+			<fieldName fieldName="ZJRQ" singleTag="dateFieldNoSlash"></fieldName>
+			<fieldName fieldName="CJRQ" singleTag="dateFieldNoSlash"></fieldName>
+		</showInstance>                                               
+	</fieldShowsEntity>      
+	<fieldShowsEntity>                                                    
+		<className>eas.dto.AutoDTO_EAS_DGDQCKFHZ</className>                      
+		<showInstance>                                                      
+			<showInstanceName>1</showInstanceName>                            
+			<fieldName fieldName="KHRQ" singleTag="dateFieldNoSlash"></fieldName>
+			<fieldName fieldName="XHRQ" singleTag="dateFieldNoSlash"></fieldName>
+			<fieldName fieldName="SCDHRQ" singleTag="dateFieldNoSlash"></fieldName>
+			<fieldName fieldName="CJRQ" singleTag="dateFieldNoSlash"></fieldName>
+		</showInstance>                                               
+	</fieldShowsEntity>   
+	<fieldShowsEntity>                                                    
+		<className>eas.dto.AutoDTO_EAS_DGDQCKFHZMXJL</className>                      
+		<showInstance>                                                      
+			<showInstanceName>1</showInstanceName>                            
+			<fieldName fieldName="HXJYRQ" singleTag="dateFieldNoSlash"></fieldName>
+			<fieldName fieldName="CJRQ" singleTag="dateFieldNoSlash"></fieldName>
+		</showInstance>                                               
+	</fieldShowsEntity>   
+	<fieldShowsEntity>                                                    
+		<className>eas.dto.AutoDTO_EAS_DGHQCKFHZ</className>                      
+		<showInstance>                                                      
+			<showInstanceName>1</showInstanceName>                            
+			<fieldName fieldName="KHRQ" singleTag="dateFieldNoSlash"></fieldName>
+			<fieldName fieldName="XHRQ" singleTag="dateFieldNoSlash"></fieldName>
+			<fieldName fieldName="SCDHRQ" singleTag="dateFieldNoSlash"></fieldName>
+			<fieldName fieldName="CJRQ" singleTag="dateFieldNoSlash"></fieldName>
+		</showInstance>                                               
+	</fieldShowsEntity> 
+	<fieldShowsEntity>                                                    
+		<className>eas.dto.AutoDTO_EAS_DGHQCKFHZMXJL</className>                      
+		<showInstance>                                                      
+			<showInstanceName>1</showInstanceName>                            
+			<fieldName fieldName="HXJYRQ" singleTag="dateFieldNoSlash"></fieldName>
+			<fieldName fieldName="CJRQ" singleTag="dateFieldNoSlash"></fieldName>
+		</showInstance>                                               
+	</fieldShowsEntity>   
+	<fieldShowsEntity>                                                    
+		<className>eas.dto.AutoDTO_EAS_DGKH</className>                      
+		<showInstance>                                                      
+			<showInstanceName>1</showInstanceName>                            
+			<fieldName fieldName="YYZZYXJZRQ" singleTag="dateFieldNoSlash"></fieldName>
+			<fieldName fieldName="CLRQ" singleTag="dateFieldNoSlash"></fieldName>
+			<fieldName fieldName="CJRQ" singleTag="dateFieldNoSlash"></fieldName>
+		</showInstance>                                               
+	</fieldShowsEntity> 
+	<fieldShowsEntity>                                                    
+		<className>eas.dto.AutoDTO_EAS_DGXDFHZ</className>                      
+		<showInstance>                                                      
+			<showInstanceName>1</showInstanceName>                            
+			<fieldName fieldName="ZJHKRQ" singleTag="dateFieldNoSlash"></fieldName>
+			<fieldName fieldName="QXRQ" singleTag="dateFieldNoSlash"></fieldName>
+			<fieldName fieldName="KHRQ" singleTag="dateFieldNoSlash"></fieldName>
+			<fieldName fieldName="XHRQ" singleTag="dateFieldNoSlash"></fieldName>
+			<fieldName fieldName="CJRQ" singleTag="dateFieldNoSlash"></fieldName>
+		</showInstance>                                               
+	</fieldShowsEntity>   
+	<fieldShowsEntity>                                                    
+		<className>eas.dto.AutoDTO_EAS_DGXDFHZMXJL</className>                      
+		<showInstance>                                                      
+			<showInstanceName>1</showInstanceName>                            
+			<fieldName fieldName="HXJYRQ" singleTag="dateFieldNoSlash"></fieldName>
+			<fieldName fieldName="CJRQ" singleTag="dateFieldNoSlash"></fieldName>
+		</showInstance>                                               
+	</fieldShowsEntity>
+	<fieldShowsEntity>                                                    
+		<className>eas.dto.AutoDTO_EAS_DGXDYWJJ</className>                      
+		<showInstance>                                                      
+			<showInstanceName>1</showInstanceName>                            
+			<fieldName fieldName="DKSJFFRQ" singleTag="dateFieldNoSlash"></fieldName>
+			<fieldName fieldName="DKYSDQRQ" singleTag="dateFieldNoSlash"></fieldName>
+			<fieldName fieldName="DKSJDQRQ" singleTag="dateFieldNoSlash"></fieldName>
+			<fieldName fieldName="ZJRQ" singleTag="dateFieldNoSlash"></fieldName>
+			<fieldName fieldName="CJRQ" singleTag="dateFieldNoSlash"></fieldName>
+		</showInstance>                                               
+	</fieldShowsEntity>  
+	<fieldShowsEntity>                                                    
+		<className>eas.dto.AutoDTO_EAS_DHJCB</className>                      
+		<showInstance>                                                      
+			<showInstanceName>1</showInstanceName>                            
+			<fieldName fieldName="JCFSRQ" singleTag="dateFieldNoSlash"></fieldName>
+			<fieldName fieldName="BQCWBBRQ" singleTag="dateFieldNoSlash"></fieldName>
+			<fieldName fieldName="SQCWBBRQ" singleTag="dateFieldNoSlash"></fieldName>
+			<fieldName fieldName="DKHTYDFFRQ" singleTag="dateFieldNoSlash"></fieldName>
+			<fieldName fieldName="HTDQRQ" singleTag="dateFieldNoSlash"></fieldName>
+			<fieldName fieldName="YYZZNJRQ" singleTag="dateFieldNoSlash"></fieldName>
+			<fieldName fieldName="SWDJZNJRQ" singleTag="dateFieldNoSlash"></fieldName>
+			<fieldName fieldName="DKKNJRQ" singleTag="dateFieldNoSlash"></fieldName>
+			<fieldName fieldName="HBAQSCNJRQ" singleTag="dateFieldNoSlash"></fieldName>
+			<fieldName fieldName="XKZNJRQ" singleTag="dateFieldNoSlash"></fieldName>
+			<fieldName fieldName="CJRQ" singleTag="dateFieldNoSlash"></fieldName>
+		</showInstance>                                               
+	</fieldShowsEntity>  
+	<fieldShowsEntity>                                                    
+		<className>eas.dto.AutoDTO_EAS_DKHX</className>                      
+		<showInstance>                                                      
+			<showInstanceName>1</showInstanceName>                            
+			<fieldName fieldName="HXRQ" singleTag="dateFieldNoSlash"></fieldName>
+			<fieldName fieldName="HXSHRQ" singleTag="dateFieldNoSlash"></fieldName>
+			<fieldName fieldName="CJRQ" singleTag="dateFieldNoSlash"></fieldName>
+			</showInstance>                                               
+	</fieldShowsEntity>   
+	<fieldShowsEntity>                                                    
+		<className>eas.dto.AutoDTO_EAS_DKMX</className>                      
+		<showInstance>                                                      
+			<showInstanceName>1</showInstanceName>                            
+			<fieldName fieldName="FFRQ" singleTag="dateFieldNoSlash"></fieldName>
+			<fieldName fieldName="DQRQ" singleTag="dateFieldNoSlash"></fieldName>
+			<fieldName fieldName="TJRQ" singleTag="dateFieldNoSlash"></fieldName>
+			<fieldName fieldName="CJRQ" singleTag="dateFieldNoSlash"></fieldName>
+			</showInstance>                                               
+	</fieldShowsEntity>   
+	<fieldShowsEntity>                                                    
+		<className>eas.dto.AutoDTO_EAS_DKWJXTBD</className>                      
+		<showInstance>                                                      
+			<showInstanceName>1</showInstanceName>                            
+			<fieldName fieldName="TZRQ" singleTag="dateFieldNoSlash"></fieldName>
+			<fieldName fieldName="CJRQ" singleTag="dateFieldNoSlash"></fieldName>
+			</showInstance>                                               
+	</fieldShowsEntity>     
+	<fieldShowsEntity>                                                    
+		<className>eas.dto.AutoDTO_EAS_DKZQ</className>                      
+		<showInstance>                                                      
+			<showInstanceName>1</showInstanceName>                            
+			<fieldName fieldName="ZQRQ" singleTag="dateFieldNoSlash"></fieldName>
+			<fieldName fieldName="ZQDQRQ" singleTag="dateFieldNoSlash"></fieldName>
+			<fieldName fieldName="CJRQ" singleTag="dateFieldNoSlash"></fieldName>
+			</showInstance>                                               
+	</fieldShowsEntity> 
+	<fieldShowsEntity>                                                    
+		<className>eas.dto.AutoDTO_EAS_GDXX</className>                      
+		<showInstance>                                                      
+			<showInstanceName>1</showInstanceName>                            
+			<fieldName fieldName="CJRQ" singleTag="dateFieldNoSlash"></fieldName>
+			</showInstance>                                               
+	</fieldShowsEntity> 
+	<fieldShowsEntity>                                                    
+		<className>eas.dto.AutoDTO_EAS_GLGX</className>                      
+		<showInstance>                                                      
+			<showInstanceName>1</showInstanceName>                            
+			
+			<fieldName fieldName="CJRQ" singleTag="dateFieldNoSlash"></fieldName>
+		</showInstance>                                               
+	</fieldShowsEntity> 
+	<fieldShowsEntity>                                                    
+		<className>eas.dto.AutoDTO_EAS_GRDQCKFHZ</className>                      
+		<showInstance>                                                      
+			<showInstanceName>1</showInstanceName>                            
+			<fieldName fieldName="KHRQ" singleTag="dateFieldNoSlash"></fieldName>
+			<fieldName fieldName="XHRQ" singleTag="dateFieldNoSlash"></fieldName>
+			<fieldName fieldName="SCDHRQ" singleTag="dateFieldNoSlash"></fieldName>
+			<fieldName fieldName="DQR" singleTag="dateFieldNoSlash"></fieldName>
+			<fieldName fieldName="CJRQ" singleTag="dateFieldNoSlash"></fieldName>
+		</showInstance>                                               
+	</fieldShowsEntity> 
+	<fieldShowsEntity>                                                    
+		<className>eas.dto.AutoDTO_EAS_GRDQCKFHZMXJL</className>                      
+		<showInstance>                                                      
+			<showInstanceName>1</showInstanceName>                            
+			<fieldName fieldName="HXJYRQ" singleTag="dateFieldNoSlash"></fieldName>
+			<fieldName fieldName="CJRQ" singleTag="dateFieldNoSlash"></fieldName>
+		</showInstance>                                               
+	</fieldShowsEntity>
+	<fieldShowsEntity>                                                    
+		<className>eas.dto.AutoDTO_EAS_GRHQCKFHZ</className>                      
+		<showInstance>                                                      
+			<showInstanceName>1</showInstanceName>                            
+			<fieldName fieldName="KHRQ" singleTag="dateFieldNoSlash"></fieldName>
+			<fieldName fieldName="XHRQ" singleTag="dateFieldNoSlash"></fieldName>
+			<fieldName fieldName="SCDHRQ" singleTag="dateFieldNoSlash"></fieldName>
+			<fieldName fieldName="CJRQ" singleTag="dateFieldNoSlash"></fieldName>
+		</showInstance>                                               
+	</fieldShowsEntity>
+	<fieldShowsEntity>                                                    
+		<className>eas.dto.AutoDTO_EAS_GRHQCKFHZMXJL</className>                      
+		<showInstance>                                                      
+			<showInstanceName>1</showInstanceName>                            
+			<fieldName fieldName="HXJYRQ" singleTag="dateFieldNoSlash"></fieldName>
+			<fieldName fieldName="CJRQ" singleTag="dateFieldNoSlash"></fieldName>
+		</showInstance>                                               
+	</fieldShowsEntity>
+	<fieldShowsEntity>                                                    
+		<className>eas.dto.AutoDTO_EAS_GRJCXX</className>                      
+		<showInstance>                                                      
+			<showInstanceName>1</showInstanceName>                            
+			<fieldName fieldName="CSRQ" singleTag="dateFieldNoSlash"></fieldName>
+			<fieldName fieldName="SHMDRQ" singleTag="dateFieldNoSlash"></fieldName>
+			<fieldName fieldName="CJRQ" singleTag="dateFieldNoSlash"></fieldName>
+		</showInstance>                                               
+	</fieldShowsEntity>
+	<fieldShowsEntity>                                                    
+		<className>eas.dto.AutoDTO_EAS_GRKHGXXX</className>                      
+		<showInstance>                                                      
+			<showInstanceName>1</showInstanceName>                            
+				<fieldName fieldName="CJRQ" singleTag="dateFieldNoSlash"></fieldName>
+		</showInstance>                                               
+	</fieldShowsEntity>
+	<fieldShowsEntity>                                                    
+		<className>eas.dto.AutoDTO_EAS_GRXDFHZ</className>                      
+		<showInstance>                                                      
+			<showInstanceName>1</showInstanceName>                            
+			<fieldName fieldName="ZJHKRQ" singleTag="dateFieldNoSlash"></fieldName>
+			<fieldName fieldName="QXRQ" singleTag="dateFieldNoSlash"></fieldName>
+			<fieldName fieldName="KHRQ" singleTag="dateFieldNoSlash"></fieldName>
+			<fieldName fieldName="XHRQ" singleTag="dateFieldNoSlash"></fieldName>
+			<fieldName fieldName="CJRQ" singleTag="dateFieldNoSlash"></fieldName>
+		</showInstance>                                               
+	</fieldShowsEntity>
+	<fieldShowsEntity>                                                    
+		<className>eas.dto.AutoDTO_EAS_GRXDFHZMXJL</className>                      
+		<showInstance>                                                      
+			<showInstanceName>1</showInstanceName>                            
+			<fieldName fieldName="HXJYRQ" singleTag="dateFieldNoSlash"></fieldName>
+			<fieldName fieldName="CJRQ" singleTag="dateFieldNoSlash"></fieldName>
+		</showInstance>                                               
+	</fieldShowsEntity>
+	<fieldShowsEntity>                                                    
+		<className>eas.dto.AutoDTO_EAS_GRXDYWJJ</className>                      
+		<showInstance>                                                      
+			<showInstanceName>1</showInstanceName>                            
+			<fieldName fieldName="DKSJFFRQ" singleTag="dateFieldNoSlash"></fieldName>
+			<fieldName fieldName="DKYSDQRQ" singleTag="dateFieldNoSlash"></fieldName>
+			<fieldName fieldName="DKSJDQRQ" singleTag="dateFieldNoSlash"></fieldName>
+			<fieldName fieldName="ZJRQ" singleTag="dateFieldNoSlash"></fieldName>
+			<fieldName fieldName="CJRQ" singleTag="dateFieldNoSlash"></fieldName>
+			</showInstance>                                               
+	</fieldShowsEntity>
+	<fieldShowsEntity>                                                    
+		<className>eas.dto.AutoDTO_EAS_GWXXB</className>                      
+		<showInstance>                                                      
+			<showInstanceName>1</showInstanceName>                            
+				<fieldName fieldName="CJRQ" singleTag="dateFieldNoSlash"></fieldName>
+			</showInstance>                                               
+	</fieldShowsEntity>
+	<fieldShowsEntity>                                                    
+		<className>eas.dto.AutoDTO_EAS_GYB</className>                      
+		<showInstance>                                                      
+			<showInstanceName>1</showInstanceName>                            
+			<fieldName fieldName="SGRQ" singleTag="dateFieldNoSlash"></fieldName>
+			<fieldName fieldName="CJRQ" singleTag="dateFieldNoSlash"></fieldName>
+			</showInstance>                                               
+	</fieldShowsEntity>
+	<fieldShowsEntity>                                                    
+		<className>eas.dto.AutoDTO_EAS_JGXXB</className>                      
+		<showInstance>                                                      
+			<showInstanceName>1</showInstanceName>                            
+			<fieldName fieldName="CLSJ" singleTag="dateFieldNoSlash"></fieldName>
+			<fieldName fieldName="CJRQ" singleTag="dateFieldNoSlash"></fieldName>
+			</showInstance>                                               
+	</fieldShowsEntity>
+	<fieldShowsEntity>                                                    
+		<className>eas.dto.AutoDTO_EAS_JJKXX</className>                      
+		<showInstance>                                                      
+			<showInstanceName>1</showInstanceName>                            
+			<fieldName fieldName="KKRQ" singleTag="dateFieldNoSlash"></fieldName>
+			<fieldName fieldName="CJRQ" singleTag="dateFieldNoSlash"></fieldName>
+			</showInstance>                                               
+	</fieldShowsEntity>
+	<fieldShowsEntity>                                                    
+		<className>eas.dto.AutoDTO_EAS_JYLS</className>                      
+		<showInstance>                                                      
+			<showInstanceName>1</showInstanceName>                            
+			<fieldName fieldName="JZRQ" singleTag="dateFieldNoSlash"></fieldName>
+			<fieldName fieldName="JYRQ" singleTag="dateFieldNoSlash"></fieldName>
+			<fieldName fieldName="CJRQ" singleTag="dateFieldNoSlash"></fieldName>
+			</showInstance>                                               
+	</fieldShowsEntity>
+	<fieldShowsEntity>                                                    
+		<className>eas.dto.AutoDTO_EAS_MYRZYWXXB</className>                      
+		<showInstance>                                                      
+			<showInstanceName>1</showInstanceName>                            
+			<fieldName fieldName="XYZKZRQ" singleTag="dateFieldNoSlash"></fieldName>
+			<fieldName fieldName="XYZXQ" singleTag="dateFieldNoSlash"></fieldName>
+			<fieldName fieldName="CJRQ" singleTag="dateFieldNoSlash"></fieldName>
+			</showInstance>                                               
+	</fieldShowsEntity>
+	<fieldShowsEntity>                                                    
+		<className>eas.dto.AutoDTO_EAS_NBFHZ</className>                      
+		<showInstance>                                                      
+			<showInstanceName>1</showInstanceName>                            
+			<fieldName fieldName="KHRQ" singleTag="dateFieldNoSlash"></fieldName>
+			<fieldName fieldName="XHRQ" singleTag="dateFieldNoSlash"></fieldName>
+			<fieldName fieldName="CJRQ" singleTag="dateFieldNoSlash"></fieldName>
+			</showInstance>                                               
+	</fieldShowsEntity>
+	<fieldShowsEntity>                                                    
+		<className>eas.dto.AutoDTO_EAS_NBFHZMXJL</className>                      
+		<showInstance>                                                      
+			<showInstanceName>1</showInstanceName>                            
+			<fieldName fieldName="HXJYRQ" singleTag="dateFieldNoSlash"></fieldName>
+			<fieldName fieldName="JZRQ" singleTag="dateFieldNoSlash"></fieldName>
+			<fieldName fieldName="XZRQ" singleTag="dateFieldNoSlash"></fieldName>
+			<fieldName fieldName="CJRQ" singleTag="dateFieldNoSlash"></fieldName>
+			</showInstance>                                               
+	</fieldShowsEntity>
+	<fieldShowsEntity>                                                    
+		<className>eas.dto.AutoDTO_EAS_NBKMDZB</className>                      
+		<showInstance>                                                      
+			<showInstanceName>1</showInstanceName>                            
+				<fieldName fieldName="CJRQ" singleTag="dateFieldNoSlash"></fieldName>
+			</showInstance>                                               
+	</fieldShowsEntity>
+	<fieldShowsEntity>                                                    
+		<className>eas.dto.AutoDTO_EAS_PJPMXXB</className>                      
+		<showInstance>                                                      
+			<showInstanceName>1</showInstanceName>                            
+			<fieldName fieldName="QFRQ" singleTag="dateFieldNoSlash"></fieldName>
+			<fieldName fieldName="PJDQRQ" singleTag="dateFieldNoSlash"></fieldName>
+			<fieldName fieldName="CJRQ" singleTag="dateFieldNoSlash"></fieldName>
+			</showInstance>                                               
+	</fieldShowsEntity>
+	<fieldShowsEntity>                                                    
+		<className>eas.dto.AutoDTO_EAS_SNTJB</className>                      
+		<showInstance>                                                      
+			<showInstanceName>1</showInstanceName>                            
+			<fieldName fieldName="TJRQ" singleTag="dateFieldNoSlash"></fieldName>
+			<fieldName fieldName="CJRQ" singleTag="dateFieldNoSlash"></fieldName>
+			</showInstance>                                               
+	</fieldShowsEntity>
+	<fieldShowsEntity>                                                    
+		<className>eas.dto.AutoDTO_EAS_SXXX</className>                      
+		<showInstance>                                                      
+			<showInstanceName>1</showInstanceName>                            
+			<fieldName fieldName="FSRQ" singleTag="dateFieldNoSlash"></fieldName>
+			<fieldName fieldName="SXRQ" singleTag="dateFieldNoSlash"></fieldName>
+			<fieldName fieldName="SXKSRQ" singleTag="dateFieldNoSlash"></fieldName>
+			<fieldName fieldName="SXDQRQ" singleTag="dateFieldNoSlash"></fieldName>
+			<fieldName fieldName="CJRQ" singleTag="dateFieldNoSlash"></fieldName>
+			</showInstance>                                               
+	</fieldShowsEntity>
+	<fieldShowsEntity>                                                    
+		<className>eas.dto.AutoDTO_EAS_WTDK</className>                      
+		<showInstance>                                                      
+			<showInstanceName>1</showInstanceName>                            
+				<fieldName fieldName="XYQSRQ" singleTag="dateFieldNoSlash"></fieldName>
+				<fieldName fieldName="XYDQRQ" singleTag="dateFieldNoSlash"></fieldName>
+				<fieldName fieldName="CJRQ" singleTag="dateFieldNoSlash"></fieldName>
+			</showInstance>                                               
+	</fieldShowsEntity>
+	<fieldShowsEntity>                                                    
+		<className>eas.dto.AutoDTO_EAS_XDHTB</className>                      
+		<showInstance>                                                      
+			<showInstanceName>1</showInstanceName>                            
+				<fieldName fieldName="HTYDRQ" singleTag="dateFieldNoSlash"></fieldName>
+				<fieldName fieldName="HTDQRQ" singleTag="dateFieldNoSlash"></fieldName>
+				<fieldName fieldName="CJRQ" singleTag="dateFieldNoSlash"></fieldName>
+			</showInstance>                                               
+	</fieldShowsEntity>
+	<fieldShowsEntity>                                                    
+		<className>eas.dto.AutoDTO_EAS_XDYWDBHT</className>                      
+		<showInstance>                                                      
+			<showInstanceName>1</showInstanceName>                            
+				<fieldName fieldName="DBQSRQ" singleTag="dateFieldNoSlash"></fieldName>
+				<fieldName fieldName="DBDQRQ" singleTag="dateFieldNoSlash"></fieldName>
+				<fieldName fieldName="DBHTQDRQ" singleTag="dateFieldNoSlash"></fieldName>
+				<fieldName fieldName="DBHTSXRQ" singleTag="dateFieldNoSlash"></fieldName>
+				<fieldName fieldName="DBHTDQRQ" singleTag="dateFieldNoSlash"></fieldName>
+				<fieldName fieldName="CJRQ" singleTag="dateFieldNoSlash"></fieldName>
+			</showInstance>                                               
+	</fieldShowsEntity>
+	<fieldShowsEntity>                                                    
+		<className>eas.dto.AutoDTO_EAS_XDYWZHDYW</className>                      
+		<showInstance>                                                      
+			<showInstanceName>1</showInstanceName>                            
+				<fieldName fieldName="PGRQ" singleTag="dateFieldNoSlash"></fieldName>
+				<fieldName fieldName="DJRQ" singleTag="dateFieldNoSlash"></fieldName>
+				<fieldName fieldName="DBQSRQ" singleTag="dateFieldNoSlash"></fieldName>
+				<fieldName fieldName="DBDQRQ" singleTag="dateFieldNoSlash"></fieldName>
+		    <fieldName fieldName="HBRQ" singleTag="dateFieldNoSlash"></fieldName> 
+				<fieldName fieldName="QZYXDQRQ" singleTag="dateFieldNoSlash"></fieldName>
+				<fieldName fieldName="DJYXZZRQ" singleTag="dateFieldNoSlash"></fieldName>
+				<fieldName fieldName="BWHSKSRQ" singleTag="dateFieldNoSlash"></fieldName>
+				<fieldName fieldName="CJRQ" singleTag="dateFieldNoSlash"></fieldName>
+			</showInstance>                                               
+	</fieldShowsEntity>
+	<fieldShowsEntity>                                                    
+		<className>eas.dto.AutoDTO_EAS_XDZCZR</className>                      
+		<showInstance>                                                      
+			<showInstanceName>1</showInstanceName>                            
+				<fieldName fieldName="ZRJGRQ" singleTag="dateFieldNoSlash"></fieldName>
+				<fieldName fieldName="HGJZRQ" singleTag="dateFieldNoSlash"></fieldName>
+				<fieldName fieldName="ZRHTQSRQ" singleTag="dateFieldNoSlash"></fieldName>
+				<fieldName fieldName="ZRHTDQRQ" singleTag="dateFieldNoSlash"></fieldName>
+		    <fieldName fieldName="CJRQ" singleTag="dateFieldNoSlash"></fieldName>
+			</showInstance>                                               
+	</fieldShowsEntity>
+	<fieldShowsEntity>                                                    
+		<className>eas.dto.AutoDTO_EAS_XMDKXXB</className>                      
+		<showInstance>                                                      
+			<showInstanceName>1</showInstanceName>                            
+				<fieldName fieldName="KGRQ" singleTag="dateFieldNoSlash"></fieldName>
+				<fieldName fieldName="CJRQ" singleTag="dateFieldNoSlash"></fieldName>
+		</showInstance>                                               
+	</fieldShowsEntity>
+	<fieldShowsEntity>                                                    
+		<className>eas.dto.AutoDTO_EAS_XYKXX</className>                      
+		<showInstance>                                                      
+			<showInstanceName>1</showInstanceName>                            
+				<fieldName fieldName="KHZHJYRQ" singleTag="dateFieldNoSlash"></fieldName>
+				<fieldName fieldName="ZKRQ" singleTag="dateFieldNoSlash"></fieldName>
+				<fieldName fieldName="SLRQ" singleTag="dateFieldNoSlash"></fieldName>
+				<fieldName fieldName="KKRQ" singleTag="dateFieldNoSlash"></fieldName>
+				<fieldName fieldName="XKRQ" singleTag="dateFieldNoSlash"></fieldName>
+				<fieldName fieldName="ZHDHJYRQ" singleTag="dateFieldNoSlash"></fieldName>
+				<fieldName fieldName="CJRQ" singleTag="dateFieldNoSlash"></fieldName>
+		</showInstance>                                               
+	</fieldShowsEntity>
+	<fieldShowsEntity>                                                    
+		<className>eas.dto.AutoDTO_EAS_XYKZHJYMXB</className>                      
+		<showInstance>                                                      
+			<showInstanceName>1</showInstanceName>                            
+				<fieldName fieldName="JYJZRQ" singleTag="dateFieldNoSlash"></fieldName>
+				<fieldName fieldName="JYQXRQ" singleTag="dateFieldNoSlash"></fieldName>
+				<fieldName fieldName="JYFSRQ" singleTag="dateFieldNoSlash"></fieldName>
+				<fieldName fieldName="JYZDRQ" singleTag="dateFieldNoSlash"></fieldName>
+				<fieldName fieldName="CJRQ" singleTag="dateFieldNoSlash"></fieldName>
+		</showInstance>                                               
+	</fieldShowsEntity>
+	<fieldShowsEntity>                                                    
+		<className>eas.dto.AutoDTO_EAS_YGB</className>                      
+		<showInstance>                                                      
+			<showInstanceName>1</showInstanceName>                            
+				<fieldName fieldName="CJRQ" singleTag="dateFieldNoSlash"></fieldName>
+		</showInstance>                                               
+	</fieldShowsEntity>
+	<fieldShowsEntity>                                                    
+		<className>eas.dto.AutoDTO_EAS_YTDK</className>                      
+		<showInstance>                                                      
+			<showInstanceName>1</showInstanceName>                            
+				<fieldName fieldName="XYQSRQ" singleTag="dateFieldNoSlash"></fieldName>
+				<fieldName fieldName="XYZZRQ" singleTag="dateFieldNoSlash"></fieldName>
+				<fieldName fieldName="CJRQ" singleTag="dateFieldNoSlash"></fieldName>
+		</showInstance>                                               
+	</fieldShowsEntity>
+	<fieldShowsEntity>                                                    
+		<className>eas.dto.AutoDTO_EAS_ZCFZKMTJB</className>                      
+		<showInstance>                                                      
+			<showInstanceName>1</showInstanceName>                            
+				<fieldName fieldName="TJRQ" singleTag="dateFieldNoSlash"></fieldName>
+				<fieldName fieldName="CJRQ" singleTag="dateFieldNoSlash"></fieldName>
+		</showInstance>                                               
+	</fieldShowsEntity>
+	<fieldShowsEntity>                                                    
+		<className>eas.dto.AutoDTO_EAS_ZZHJQKMB</className>                      
+		<showInstance>                                                      
+			<showInstanceName>1</showInstanceName>                            
+				<fieldName fieldName="CJRQ" singleTag="dateFieldNoSlash"></fieldName>
+		</showInstance>                                               
+	</fieldShowsEntity>
+	<fieldShowsEntity>                                                    
+		<className>eas.dto.AutoDTO_EAS_ZCZRGXB</className>                      
+		<showInstance>                                                      
+			<showInstanceName>1</showInstanceName>                            
+				<fieldName fieldName="CJRQ" singleTag="dateFieldNoSlash"></fieldName>
+		</showInstance>                                               
+	</fieldShowsEntity>
+	<fieldShowsEntity>                                                    
+		<className>eas.dto.TOOLS_EAS_DATAQUALITY</className>                      
+		<showInstance>                                                      
+			<showInstanceName>1</showInstanceName>                            
+<!--				<fieldName fieldName="REPORT_DATE" singleTag="dateFieldMonth"></fieldName>-->
+		</showInstance>                                               
+	</fieldShowsEntity>
+</fieldShowsRoot>
+          

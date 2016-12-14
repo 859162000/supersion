@@ -1,0 +1,906 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<reportCheckRoot>
+	
+	<!-- 个人征信校验 -->
+
+	<!--个人信息基础段基础-->
+	<checkInstance name="Check_GR_GRXX_JC">
+		<checkTable procedureName="Proc_Check_GR_GRXX_JC" procedureParam="dtDate,strInstCode" procedureDiscription="Proc_Check_GR_GRXX_JC" originTable="GR_GRXX_JC" errorMsgField="" errorStateField="RPTCheckType" successStateValue="2" errorStateValue="3" defaultLogicDaoBeanId="sqlserverProcedureResultSetDao">
+			<paramFieldList>
+				<paramField paramName="dtDate" field="dtDate" type="1"></paramField>
+				<paramField paramName="strInstCode" field="strInstCode" type="1"></paramField>
+			</paramFieldList>
+			<checkUniqueFieldList>
+				<checkUniqueField name="autoID" discription="主键" originField="autoID"></checkUniqueField>
+			</checkUniqueFieldList>
+			<checkFieldBasicList discription="基础校验">
+				<checkFieldBasic name="JRJGDM" discription="金融机构代码（业务发生机构代码）" noChnCheck="true" startByteLength="14" endByteLength="14" emptyCheck="true" ></checkFieldBasic><!-- systemJRJGDM="true" -->
+				<checkFieldBasic name="YWZL" discription="业务种类" noChnCheck="true" startByteLength="1" endByteLength="1" emptyCheck="true"></checkFieldBasic>
+				<checkFieldBasic name="YWZLXF" discription="业务种类细分" noChnCheck="true" endByteLength="2" emptyCheck="true"></checkFieldBasic>
+				<checkFieldBasic name="YWH" discription="业务号" endByteLength="40" emptyCheck="true"></checkFieldBasic>
+				<checkFieldBasic name="FSDD" discription="发生地点" digitalCheck="true" endByteLength="6" emptyCheck="true"></checkFieldBasic>
+				<checkFieldBasic name="KHRQ" discription="开户日期" valueMin="19010101"  dateCheck="true" startByteLength="8" endByteLength="8" emptyCheck="true"></checkFieldBasic>
+				<checkFieldBasic name="DQRQ" discription="到期日期" valueMin="19010101"  dateCheck="true" startByteLength="8" endByteLength="8" emptyCheck="true"></checkFieldBasic>
+				<checkFieldBasic name="BZ" discription="币种"  noChnCheck="true" endByteLength="3" emptyCheck="true"></checkFieldBasic>
+				<checkFieldBasic name="SXED" discription="授信额度"  noChnCheck="true" digitalCheck="true" endByteLength="10" emptyCheck="true"></checkFieldBasic>
+				<checkFieldBasic name="GXSXED" discription="共享授信额度"  noChnCheck="true" digitalCheck="true" endByteLength="10" emptyCheck="true"></checkFieldBasic>
+				<checkFieldBasic name="ZDFZE" discription="最大负债额" noChnCheck="true" digitalCheck="true" endByteLength="10" emptyCheck="true"></checkFieldBasic>
+				<checkFieldBasic name="DBFS" discription="担保方式" noChnCheck="true" digitalCheck="true" startByteLength="1" endByteLength="1" emptyCheck="true"></checkFieldBasic>
+				<checkFieldBasic name="HKPL" discription="还款频率" noChnCheck="true" endByteLength="2" emptyCheck="true"></checkFieldBasic>
+				<checkFieldBasic name="HKYS" discription="还款月数"  noChnCheck="true" endByteLength="3" emptyCheck="true"></checkFieldBasic>
+				<checkFieldBasic name="SYHKYS" discription="剩余还款月数" noChnCheck="true" endByteLength="3" emptyCheck="true"></checkFieldBasic>
+				<checkFieldBasic name="JSYHKRQ" discription="结算/应还款日期" valueMin="19010101"  dateCheck="true" startByteLength="8" endByteLength="8" emptyCheck="true"></checkFieldBasic>
+				<checkFieldBasic name="ZHYCSJHKRQ" discription="最近一次实际还款日期" valueMin="19010101"  dateCheck="true" startByteLength="8" endByteLength="8" emptyCheck="true"></checkFieldBasic>
+				<checkFieldBasic name="BYYHKJE" discription="本月应还款金额" endByteLength="10" emptyCheck="true" digitalCheck="true"></checkFieldBasic>
+				<checkFieldBasic name="BYSJHKJE" discription="本月实际还款金额" endByteLength="10" emptyCheck="true"></checkFieldBasic>
+				<checkFieldBasic name="YE" discription="余额" endByteLength="10" emptyCheck="true" digitalCheck="true"></checkFieldBasic>
+				<checkFieldBasic name="DQYQQS" discription="当前逾期期数" noChnCheck="true" endByteLength="2" emptyCheck="true" digitalCheck="true"></checkFieldBasic>
+				<checkFieldBasic name="DQYQZE" discription="当前逾期总额" noChnCheck="true" endByteLength="10" emptyCheck="true" digitalCheck="true"></checkFieldBasic>
+				<checkFieldBasic name="YQ31_60HDKBJ" discription="逾期31-60天未归还贷款本金" noChnCheck="true" endByteLength="10" emptyCheck="true" digitalCheck="true"></checkFieldBasic>
+				<checkFieldBasic name="YQ61_90HDKBJ" discription="逾期61-90天未归还贷款本金"  noChnCheck="true" endByteLength="10" emptyCheck="true" digitalCheck="true"></checkFieldBasic>
+				<checkFieldBasic name="YQ91_180HDKBJ" discription="逾期91-180天未归还贷款本金" noChnCheck="true" endByteLength="10" emptyCheck="true" digitalCheck="true"></checkFieldBasic>
+				<checkFieldBasic name="YQ180YSHDKBJ" discription="逾期180天以上未归还贷款本金" noChnCheck="true" endByteLength="10" emptyCheck="true" digitalCheck="true"></checkFieldBasic>
+				<checkFieldBasic name="LJYQQS" discription="累计逾期期数" noChnCheck="true" endByteLength="3" emptyCheck="true" digitalCheck="true"></checkFieldBasic>
+				<checkFieldBasic name="ZGYQQS" discription="最高逾期期数" noChnCheck="true" endByteLength="2" emptyCheck="true" digitalCheck="true"></checkFieldBasic>
+				<checkFieldBasic name="WJFLZT" discription="五级分类状态" noChnCheck="true" startByteLength="1" endByteLength="1" emptyCheck="true" digitalCheck="true"></checkFieldBasic>
+				<checkFieldBasic name="ZHZT" discription="账户状态" noChnCheck="true" startByteLength="1" endByteLength="1" emptyCheck="true" digitalCheck="true"></checkFieldBasic>
+				<checkFieldBasic name="HKZT" discription="24个月（账户）还款状态" noChnCheck="true" startByteLength="24" endByteLength="24" emptyCheck="true"></checkFieldBasic>
+				<checkFieldBasic name="HKZT_24" discription="24个月（账户）还款状态" noChnCheck="true" startByteLength="1" endByteLength="1" emptyCheck="true"></checkFieldBasic>
+				<checkFieldBasic name="WZFYE" discription="透支180天以上未付余额" endByteLength="10" emptyCheck="true" digitalCheck="true"></checkFieldBasic>
+				<checkFieldBasic name="ZHYYZXXTS" discription="账户拥有者信息提示" noChnCheck="true" startByteLength="1" endByteLength="1" emptyCheck="true" digitalCheck="true"></checkFieldBasic>
+				<checkFieldBasic name="XM" discription="姓名" endByteLength="30" emptyCheck="true"></checkFieldBasic>
+				<checkFieldBasic name="ZJLX" discription="证件类型" noChnCheck="true" startByteLength="1" endByteLength="1" emptyCheck="true"></checkFieldBasic>
+				<checkFieldBasic name="ZJHM" discription="证件号码" noChnCheck="true" endByteLength="18" emptyCheck="true"></checkFieldBasic>
+				<checkFieldBasic name="YLZD" discription="预留字段" noChnCheck="true" endByteLength="30"></checkFieldBasic>
+			</checkFieldBasicList>
+			<checkFieldEffectiveList>
+				<checkFieldEffective name="HKZT_24" discription="24个月（账户）还款状态">
+					<value>/</value>
+					<value>*</value>
+					<value>N</value>
+					<value>1</value>
+					<value>2</value>
+					<value>3</value>
+					<value>4</value>
+					<value>5</value>
+					<value>6</value>
+					<value>7</value>
+					<value>D</value>
+					<value>Z</value>
+					<value>C</value>
+					<value>G</value>
+				</checkFieldEffective>
+				<checkFieldEffective name="YWZL" discription="业务种类">
+					<value>1</value>
+					<value>2</value>
+					<value>4</value>
+				</checkFieldEffective>
+				<checkFieldEffective name="YWZLXF" discription="业务种类细分">
+					<value>11</value>
+					<value>12</value>
+					<value>13</value>
+					<value>21</value>
+					<value>31</value>
+					<value>41</value>
+					<value>51</value>
+					<value>71</value>
+					<value>81</value>
+					<value>91</value>
+					<value>92</value>
+					<value>99</value>
+				</checkFieldEffective>
+				<checkFieldEffective name="DBFS" discription="担保方式">
+					<value>1</value>
+					<value>2</value>
+					<value>3</value>
+					<value>4</value>
+					<value>5</value>
+					<value>6</value>
+					<value>7</value>
+					<value>9</value>
+				</checkFieldEffective>
+				<checkFieldEffective name="HKPL" discription="还款频率">
+					<value>01</value>
+					<value>02</value>
+					<value>03</value>
+					<value>04</value>
+					<value>05</value>
+					<value>06</value>
+					<value>07</value>
+					<value>08</value>
+					<value>99</value>
+					<value>C</value>
+				</checkFieldEffective>
+				<checkFieldEffective name="WJFLZT" discription="五级分类状态">
+					<value>1</value>
+					<value>2</value>
+					<value>3</value>
+					<value>4</value>
+					<value>5</value>
+					<value>9</value>
+				</checkFieldEffective>
+				<checkFieldEffective name="ZHYYZXXTS" discription="账户拥有者信息提示">
+					<value>1</value>
+					<value>2</value>
+				</checkFieldEffective>
+				<checkFieldEffective name="ZJLX" discription="证件类型">
+					<value>0</value>
+					<value>1</value>
+					<value>2</value>
+					<value>3</value>
+					<value>4</value>
+					<value>5</value>
+					<value>6</value>
+					<value>7</value>
+					<value>8</value>
+					<value>9</value>
+					<value>A</value>
+					<value>B</value>
+					<value>C</value>
+					<value>X</value>
+					<value>a</value>
+					<value>b</value>
+					<value>c</value>
+				</checkFieldEffective>
+				<checkFieldEffective name="BZ" discription="币种">
+					<value>CFC</value>
+					<value>CSF</value>
+					<value>CUS</value>
+					<value>CUR</value>
+					<value>CPS</value>
+					<value>UDM</value>
+					<value>AED</value>
+					<value>ALL</value>
+					<value>DZD</value>
+					<value>AUD</value>
+					<value>ATS</value>
+					<value>BDT</value>
+					<value>BEF</value>
+					<value>BHD</value>
+					<value>BIF</value>
+					<value>BGL</value>
+					<value>BUK</value>
+					<value>BWP</value>
+					<value>CAD</value>
+					<value>CNY</value>
+					<value>CYP</value>
+					<value>CSK</value>
+					<value>KPW</value>
+					<value>DKK</value>
+					<value>DEM</value>
+					<value>NLG</value>
+					<value>EGP</value>
+					<value>ETB</value>
+					<value>EUR</value>
+					<value>XEU</value>
+					<value>FIM</value>
+					<value>FRF</value>
+					<value>GHC</value>
+					<value>XAU</value>
+					<value>GRD</value>
+					<value>GNS</value>
+					<value>HKD</value>
+					<value>HUF</value>
+					<value>IDR</value>
+					<value>INR</value>
+					<value>IRR</value>
+					<value>IQD</value>
+					<value>ITL</value>
+					<value>JPY</value>
+					<value>JOD</value>
+					<value>KES</value>
+					<value>KWD</value>
+					<value>LYD</value>
+					<value>MOP</value>
+					<value>MYR</value>
+					<value>MLF</value>
+					<value>MGF</value>
+					<value>MNT</value>
+					<value>MAD</value>
+					<value>MUR</value>
+					<value>NPR</value>
+					<value>NZD</value>
+					<value>NGN</value>
+					<value>NOK</value>
+					<value>PKR</value>
+					<value>PGK</value>
+					<value>PHP</value>
+					<value>PLZ</value>
+					<value>GBP</value>
+					<value>ROL</value>
+					<value>RWF</value>
+					<value>SCR</value>
+					<value>SDP</value>
+					<value>SLL</value>
+					<value>XAG</value>
+					<value>SGD</value>
+					<value>ESP</value>
+					<value>XDR</value>
+					<value>LKR</value>
+					<value>SEK</value>
+					<value>CHF</value>
+					<value>SYP</value>
+					<value>THB</value>
+					<value>TZS</value>
+					<value>TND</value>
+					<value>TRL</value>
+					<value>USD</value>
+					<value>SUR</value>
+					<value>VND</value>
+					<value>KRW</value>
+					<value>XOF</value>
+					<value>YER</value>
+					<value>ZMK</value>
+					<value>MXP</value>
+					<value>RUB</value>
+					<value>BRL</value>
+					<value>TWD</value>
+				</checkFieldEffective>
+			</checkFieldEffectiveList>
+			<checkFieldLineList>
+				<checkFieldLine compareType=">=">
+					<leftFieldList>						
+						<checkFieldLineField name="DQRQ" discription="到期日期”"></checkFieldLineField>
+					</leftFieldList>
+					<rightFieldList>
+						<checkFieldLineField name="KHRQ" discription="开户日期"></checkFieldLineField>
+					</rightFieldList>
+				</checkFieldLine>
+				<checkFieldLine compareType=">=">
+					<leftFieldList>
+						<checkFieldLineField name="JSYHKRQ" discription="结算/应还款日期"></checkFieldLineField>						
+					</leftFieldList>
+					<rightFieldList>
+						<checkFieldLineField name="KHRQ" discription="开户日期"></checkFieldLineField>
+					</rightFieldList>
+				</checkFieldLine>
+				<checkFieldLine compareType=">=">
+					<leftFieldList>
+						<checkFieldLineField name="HKYS" discription="还款月数"></checkFieldLineField>
+					</leftFieldList>
+					<rightFieldList>
+						<checkFieldLineField name="SYHKYS" discription="剩余还款月数"></checkFieldLineField> 
+					</rightFieldList>
+				</checkFieldLine>
+				<checkFieldLine compareType=">=">
+					<leftFieldList>
+						<checkFieldLineField name="ZHYCSJHKRQ" discription="最近一次实际还款日期"></checkFieldLineField>
+					</leftFieldList>
+					<rightFieldList>
+						<checkFieldLineField name="KHRQ" discription="开户日期"></checkFieldLineField>
+					</rightFieldList>
+				</checkFieldLine>
+				<checkFieldLine compareType=">=">
+					<leftFieldList>
+						<checkFieldLineField name="ZDFZE" discription="最大负债额"></checkFieldLineField>
+					</leftFieldList>
+					<rightFieldList>
+						<checkFieldLineField name="YE" discription="余额"></checkFieldLineField>
+					</rightFieldList>
+				</checkFieldLine>
+				<checkFieldLine compareType="&lt;=">
+					<leftFieldList>
+						<checkFieldLineField name="YQ31_60HDKBJ" discription="逾期31-60天未归还贷款本金"></checkFieldLineField>
+						<checkFieldLineField name="YQ61_90HDKBJ" discription="逾期61-90天未归还贷款本金" joinType="1"></checkFieldLineField>
+						<checkFieldLineField name="YQ91_180HDKBJ" discription="逾期91-180天未归还贷款本金" joinType="1"></checkFieldLineField>
+						<checkFieldLineField name="YQ180YSHDKBJ" discription="逾期180天以上未归还贷款本金" joinType="1"></checkFieldLineField>
+					</leftFieldList>
+					<rightFieldList>
+						<checkFieldLineField name="YE" discription="余额"></checkFieldLineField>
+						<checkFieldLineField value="2" joinType="1"></checkFieldLineField>
+					</rightFieldList>
+				</checkFieldLine>
+				<checkFieldLine compareType="&lt;=">
+					<leftFieldList>
+						<checkFieldLineField name="YQ31_60HDKBJ" discription="逾期31-60天未归还贷款本金"></checkFieldLineField>
+						<checkFieldLineField name="YQ61_90HDKBJ" discription="逾期61-90天未归还贷款本金" joinType="1"></checkFieldLineField>
+						<checkFieldLineField name="YQ91_180HDKBJ" discription="逾期91-180天未归还贷款本金" joinType="1"></checkFieldLineField>
+						<checkFieldLineField name="YQ180YSHDKBJ" discription="逾期180天以上未归还贷款本金" joinType="1"></checkFieldLineField>
+					</leftFieldList>
+					<rightFieldList>
+						<checkFieldLineField name="DQYQZE" discription="当前逾期总额"></checkFieldLineField>
+						<checkFieldLineField value="2" joinType="1"></checkFieldLineField>
+					</rightFieldList>
+				</checkFieldLine>
+			</checkFieldLineList>
+			<checkFieldCaseWhenList discription="caseWhen校验">
+					<checkFieldCaseWhen name="BZ" discription="币种" caseValue="notNull" whenValue="notNull" >
+					<checkFieldCaseWhenField name="SXED" discription="授信额度"></checkFieldCaseWhenField>					
+				</checkFieldCaseWhen>
+				<checkFieldCaseWhen name="SXED" discription="授信额度" caseValue="notNull" whenValue="notNull" >
+					<checkFieldCaseWhenField name="BZ" discription="币种"></checkFieldCaseWhenField>					
+				</checkFieldCaseWhen>
+				 <checkFieldCaseWhen name="YE" discription="余额"   caseValue="DQYQZE" caseValueDiscription="当前逾期总额" whenType="9" caseCompareType=">=">
+       				<checkFieldCaseWhenField name="YWZLXF" discription="业务种类细分"  whenValue="81"></checkFieldCaseWhenField>
+      				<checkFieldCaseWhenField name="YWZL" discription="业务种类"  whenValue="2"></checkFieldCaseWhenField>
+ 				</checkFieldCaseWhen>	
+ 				<checkFieldCaseWhen name="ZGYQQS" discription="最高逾期期数"   caseValue="DQYQQS" caseValueDiscription="当前逾期期数" whenType="9" caseCompareType=">=">
+      				<checkFieldCaseWhenField name="YWZL" discription="业务种类"  whenValue="1"></checkFieldCaseWhenField>
+ 				</checkFieldCaseWhen>	
+ 				<checkFieldCaseWhen name="LJYQQS" discription="累计逾期期数"   caseValue="ZGYQQS" caseValueDiscription="最高逾期期数" whenType="9" caseCompareType=">=">
+      				<checkFieldCaseWhenField name="YWZL" discription="业务种类"  whenValue="1"></checkFieldCaseWhenField>
+ 				</checkFieldCaseWhen>	
+ 				<checkFieldCaseWhen name="SXED" discription="授信额度"   caseValue="ZDFZE" caseValueDiscription="最大负债额" whenType="9" caseCompareType=">=">
+      				<checkFieldCaseWhenField name="YWZL" discription="业务种类"  whenValue="1"></checkFieldCaseWhenField>
+ 				</checkFieldCaseWhen>	
+				<checkFieldCaseWhen name="HKYS" discription="还款月数" caseValue="U" whenValue="08">
+					<checkFieldCaseWhenField name="HKPL" discription="还款频率"></checkFieldCaseWhenField>
+				</checkFieldCaseWhen>
+				<checkFieldCaseWhen name="HKYS" discription="还款月数" caseValue="C" whenValue="2">
+					<checkFieldCaseWhenField name="YWZL" discription="业务种类"></checkFieldCaseWhenField>
+				</checkFieldCaseWhen>
+				<checkFieldCaseWhen name="SYHKYS" discription="剩余还款月数" caseValue="C" whenValue="2">
+					<checkFieldCaseWhenField name="YWZL" discription="业务种类"></checkFieldCaseWhenField>
+				</checkFieldCaseWhen>
+				<checkFieldCaseWhen name="HKYS" discription="还款月数" caseValue="O" whenValue="07">
+					<checkFieldCaseWhenField name="HKPL" discription="还款频率"></checkFieldCaseWhenField>
+				</checkFieldCaseWhen>
+				<checkFieldCaseWhen name="HKYS" discription="还款月数" caseValue="X" whenValue="99">
+					<checkFieldCaseWhenField name="HKPL" discription="还款频率"></checkFieldCaseWhenField>
+				</checkFieldCaseWhen>
+				<checkFieldCaseWhen name="SYHKYS" discription="剩余还款月数" caseValue="U" whenValue="08">
+					<checkFieldCaseWhenField name="HKPL" discription="还款频率"></checkFieldCaseWhenField>
+				</checkFieldCaseWhen>
+				<checkFieldCaseWhen name="SYHKYS" discription="剩余还款月数" caseValue="O" whenValue="07">
+					<checkFieldCaseWhenField name="HKPL" discription="还款频率"></checkFieldCaseWhenField>
+				</checkFieldCaseWhen>
+				<checkFieldCaseWhen name="SYHKYS" discription="剩余还款月数" caseValue="X" whenValue="99">
+					<checkFieldCaseWhenField name="HKPL" discription="还款频率"></checkFieldCaseWhenField>
+				</checkFieldCaseWhen>
+				<checkFieldCaseWhen name="DQRQ" discription="到期日期" caseValue="20991231" whenValue="2">
+					<checkFieldCaseWhenField name="YWZL" discription="业务种类"></checkFieldCaseWhenField>
+				</checkFieldCaseWhen>
+				<checkFieldCaseWhen name="YWZLXF" discription="业务种类细分" caseValueScope="11,12,13,21,31,41,51,91,99" whenValue="1">
+					<checkFieldCaseWhenField name="YWZL" discription="业务种类"></checkFieldCaseWhenField>
+				</checkFieldCaseWhen>
+				<checkFieldCaseWhen name="ZHZT" discription="账户状态" caseValueScope="1,2,3,4,5" whenValue="1">
+					<checkFieldCaseWhenField name="YWZL" discription="业务种类"></checkFieldCaseWhenField>
+				</checkFieldCaseWhen>
+				<checkFieldCaseWhen name="HKZT_24" discription="24个月（账户）还款状态" caseValueScope="/,*,N,1,2,3,4,5,6,7,D,Z,G,C" whenValue="1">
+					<checkFieldCaseWhenField name="YWZL" discription="业务种类"></checkFieldCaseWhenField>
+				</checkFieldCaseWhen>
+				<checkFieldCaseWhen name="YWZLXF" discription="业务种类细分" caseValueScope="71,81" whenValue="2">
+					<checkFieldCaseWhenField name="YWZL" discription="业务种类"></checkFieldCaseWhenField>
+				</checkFieldCaseWhen>
+				<checkFieldCaseWhen name="ZHZT" discription="账户状态" caseValueScope="1,2,3,4,5,6" whenValue="2">
+					<checkFieldCaseWhenField name="YWZL" discription="业务种类"></checkFieldCaseWhenField>
+				</checkFieldCaseWhen>
+				<checkFieldCaseWhen name="HKZT_24" discription="24个月（账户）还款状态" caseValueScope="/,*,N,1,2,3,4,5,6,7,D,Z,G,C,#" whenValue="2">
+					<checkFieldCaseWhenField name="YWZL" discription="业务种类"></checkFieldCaseWhenField>
+				</checkFieldCaseWhen>
+				<checkFieldCaseWhen name="HKPL" discription="还款频率" caseValueScope="01,02,03,04,05,06,07,08,99" whenValue="1">
+					<checkFieldCaseWhenField name="YWZL" discription="业务种类"></checkFieldCaseWhenField>
+				</checkFieldCaseWhen>
+				<checkFieldCaseWhen name="HKPL" discription="还款频率" caseValue="C" whenValue="2">
+					<checkFieldCaseWhenField name="YWZL" discription="业务种类"></checkFieldCaseWhenField>
+				</checkFieldCaseWhen>
+				<checkFieldCaseWhen name="HKYS" discription="还款月数" caseValue="C" whenValue="2">
+					<checkFieldCaseWhenField name="YWZL" discription="业务种类"></checkFieldCaseWhenField>
+				</checkFieldCaseWhen>
+				<checkFieldCaseWhen name="SYHKYS" discription="剩余还款月数" caseValue="C" whenValue="2">
+					<checkFieldCaseWhenField name="YWZL" discription="业务种类"></checkFieldCaseWhenField>
+				</checkFieldCaseWhen>
+				<checkFieldCaseWhen name="BYYHKJE" discription="本月应还款金额" caseValue="0" whenValue="*">
+					<checkFieldCaseWhenField name="HKZT_24" discription="24个月（账户）还款状态"></checkFieldCaseWhenField>
+				</checkFieldCaseWhen>
+				<checkFieldCaseWhen name="DQYQZE" discription="当前逾期总额" caseValue="0" whenValue="0">
+					<checkFieldCaseWhenField name="DQYQQS" discription="当前逾期期数"></checkFieldCaseWhenField>
+				</checkFieldCaseWhen>
+				<checkFieldCaseWhen name="DQYQQS" discription="当前逾期期数" caseValue="0" whenValue="0">
+					<checkFieldCaseWhenField name="DQYQZE" discription="当前逾期总额"></checkFieldCaseWhenField>
+				</checkFieldCaseWhen>
+				<checkFieldCaseWhen name="DQYQZE" discription="当前逾期总额" caseValue="0"  caseCompareType="!=" whenCompareType="!=" whenValue="0">
+					<checkFieldCaseWhenField name="DQYQQS" discription="当前逾期期数"></checkFieldCaseWhenField>
+				</checkFieldCaseWhen>
+				<checkFieldCaseWhen name="DQYQQS" discription="当前逾期期数" caseValue="0" caseCompareType="!=" whenCompareType="!=" whenValue="0">
+					<checkFieldCaseWhenField name="DQYQZE" discription="当前逾期总额"></checkFieldCaseWhenField>
+				</checkFieldCaseWhen>
+				<checkFieldCaseWhen name="HKYS" discription="还款月数" caseValue="O" whenType="3">
+					<checkFieldCaseWhenField name="YWZL" discription="业务种类" whenValue="1"></checkFieldCaseWhenField>
+					<checkFieldCaseWhenField name="HKPL" discription="还款频率" whenValue="07"></checkFieldCaseWhenField>
+				</checkFieldCaseWhen>
+				<checkFieldCaseWhen name="HKYS" discription="还款月数" caseValue="U" whenType="3">
+					<checkFieldCaseWhenField name="YWZL" discription="业务种类" whenValue="1"></checkFieldCaseWhenField>
+					<checkFieldCaseWhenField name="HKPL" discription="还款频率" whenValue="08"></checkFieldCaseWhenField>
+				</checkFieldCaseWhen>
+				 <checkFieldCaseWhen name="HKYS" discription="还款月数" caseValueScope="O,U,X,C"  whenType="6" >
+					<checkFieldCaseWhenField name="YWZL" discription="业务种类" whenValue="1" ></checkFieldCaseWhenField>
+					<checkFieldCaseWhenField name="HKPL" discription="还款频率" whenValueScope="01,02,03,04,05,06" ></checkFieldCaseWhenField>
+				</checkFieldCaseWhen> 
+				<checkFieldCaseWhen name="SYHKYS" discription="剩余还款月数" caseValue="O" whenType="3">
+					<checkFieldCaseWhenField name="YWZL" discription="业务种类" whenValue="1"></checkFieldCaseWhenField>
+					<checkFieldCaseWhenField name="HKPL" discription="还款频率" whenValue="07"></checkFieldCaseWhenField>
+				</checkFieldCaseWhen>
+				<checkFieldCaseWhen name="SYHKYS" discription="剩余还款月数" caseValue="U" whenType="3">
+					<checkFieldCaseWhenField name="YWZL" discription="业务种类" whenValue="1"></checkFieldCaseWhenField>
+					<checkFieldCaseWhenField name="HKPL" discription="还款频率" whenValue="08"></checkFieldCaseWhenField>
+				</checkFieldCaseWhen>
+				 <checkFieldCaseWhen name="SYHKYS" discription="剩余还款月数" caseValueScope="O,U,X,C"  whenType="6">
+					<checkFieldCaseWhenField name="YWZL" discription="业务种类" whenValue="1" ></checkFieldCaseWhenField>
+					<checkFieldCaseWhenField name="HKPL" discription="还款频率" whenValueScope="01,02,03,04,05,06" ></checkFieldCaseWhenField>
+				</checkFieldCaseWhen> 
+				<checkFieldCaseWhen name="DQYQQS" discription="当前逾期期数" caseCompareType="!="  caseValue="0" whenType="3">
+					<checkFieldCaseWhenField name="YWZL" discription="业务种类" whenValue="1"></checkFieldCaseWhenField>
+					<checkFieldCaseWhenField name="ZHZT" discription="账户状态" whenValueScope="2,4"></checkFieldCaseWhenField>
+				</checkFieldCaseWhen>
+				<checkFieldCaseWhen name="DQYQZE" discription="当前逾期总额" caseCompareType="!=" caseValue="0" whenType="3">
+					<checkFieldCaseWhenField name="YWZL" discription="业务种类" whenValue="1"></checkFieldCaseWhenField>
+					<checkFieldCaseWhenField name="ZHZT" discription="账户状态" whenValueScope="2,4"></checkFieldCaseWhenField>
+				</checkFieldCaseWhen>
+				<checkFieldCaseWhen name="LJYQQS" discription="累计逾期期数" caseCompareType="!=" caseValue="0" whenType="3">
+					<checkFieldCaseWhenField name="YWZL" discription="业务种类" whenValue="1"></checkFieldCaseWhenField>
+					<checkFieldCaseWhenField name="ZHZT" discription="账户状态" whenValueScope="2,4"></checkFieldCaseWhenField>
+				</checkFieldCaseWhen>
+				<checkFieldCaseWhen name="ZGYQQS" discription="最高逾期期数" caseCompareType="!=" caseValue="0" whenType="3">
+					<checkFieldCaseWhenField name="YWZL" discription="业务种类" whenValue="1"></checkFieldCaseWhenField>
+					<checkFieldCaseWhenField name="ZHZT" discription="账户状态" whenValueScope="2,4"></checkFieldCaseWhenField>
+				</checkFieldCaseWhen>
+				<checkFieldCaseWhen name="HKZT_24" discription="24个月（账户）还款状态" caseValueScope="1,2,3,4,5,6,7" whenType="3">
+					<checkFieldCaseWhenField name="YWZL" discription="业务种类" whenValue="1"></checkFieldCaseWhenField>
+					<checkFieldCaseWhenField name="ZHZT" discription="账户状态" whenValue="2"></checkFieldCaseWhenField>
+				</checkFieldCaseWhen>
+				<checkFieldCaseWhen name="HKZT_24" discription="24个月（账户）还款状态" caseValueScope="1,2,3,4,5,6,7,G" whenType="3">
+					<checkFieldCaseWhenField name="YWZL" discription="业务种类" whenValue="1"></checkFieldCaseWhenField>
+					<checkFieldCaseWhenField name="ZHZT" discription="账户状态" whenValue="4"></checkFieldCaseWhenField>
+				</checkFieldCaseWhen>
+				<checkFieldCaseWhen name="YE" discription="余额" caseValue="0" whenType="3">
+					<checkFieldCaseWhenField name="YWZL" discription="业务种类" whenValue="1"></checkFieldCaseWhenField>
+					<checkFieldCaseWhenField name="ZHZT" discription="账户状态" whenValue="3"></checkFieldCaseWhenField>
+				</checkFieldCaseWhen>
+				<checkFieldCaseWhen name="DQYQQS" discription="当前逾期期数" caseValue="0" whenType="3">
+					<checkFieldCaseWhenField name="YWZL" discription="业务种类" whenValue="1"></checkFieldCaseWhenField>
+					<checkFieldCaseWhenField name="ZHZT" discription="账户状态" whenValue="3"></checkFieldCaseWhenField>
+				</checkFieldCaseWhen>
+				<checkFieldCaseWhen name="DQYQZE" discription="当前逾期总额" caseValue="0" whenType="3">
+					<checkFieldCaseWhenField name="YWZL" discription="业务种类" whenValue="1"></checkFieldCaseWhenField>
+					<checkFieldCaseWhenField name="ZHZT" discription="账户状态" whenValue="3"></checkFieldCaseWhenField>
+				</checkFieldCaseWhen>
+				<checkFieldCaseWhen name="HKZT_24" discription="24个月（账户）还款状态" caseValueScope="C,G" whenType="3">
+					<checkFieldCaseWhenField name="YWZL" discription="业务种类" whenValue="2"></checkFieldCaseWhenField>
+					<checkFieldCaseWhenField name="ZHZT" discription="账户状态" whenValue="4"></checkFieldCaseWhenField>
+				</checkFieldCaseWhen>
+				<checkFieldCaseWhen name="HKZT_24" discription="24个月（账户）还款状态" caseValue="C" whenType="3">
+					<checkFieldCaseWhenField name="YWZL" discription="业务种类" whenValue="1"></checkFieldCaseWhenField>
+					<checkFieldCaseWhenField name="ZHZT" discription="账户状态" whenValue="3"></checkFieldCaseWhenField>
+				</checkFieldCaseWhen>
+				<checkFieldCaseWhen name="ZJLX" discription="证件类型" caseValue="notNull" whenValue="notNull" >
+					<checkFieldCaseWhenField name="ZJHM" discription="证件号码"></checkFieldCaseWhenField>					
+				</checkFieldCaseWhen>
+				<checkFieldCaseWhen name="ZJHM" discription="证件号码" caseValue="notNull" whenValue="notNull" >
+					<checkFieldCaseWhenField name="ZJLX" discription="证件类型"></checkFieldCaseWhenField>					
+				</checkFieldCaseWhen>
+				<checkFieldCaseWhen name="ZJHM" discription="证件号码" caseValue="systemIDCardNo" whenValue="0" whenType="8">
+					<checkFieldCaseWhenField name="ZJLX" discription="证件类型"></checkFieldCaseWhenField>
+				</checkFieldCaseWhen>
+			</checkFieldCaseWhenList>
+			<checkFieldClassList>
+				<checkFieldClass name="zxptsystem.service.check.GR_GRXX_JCCheck"></checkFieldClass>
+			</checkFieldClassList>
+		</checkTable>
+	</checkInstance>
+
+	<!-- 居住地址段 -->
+	<checkInstance name="Check_GR_JZDZ">
+		<checkTable procedureName="Proc_Check_GR_JZDZ" procedureParam="dtDate,strInstCode" procedureDiscription="Proc_Check_GR_JZDZ" originTable="GR_JZDZ" errorMsgField="" errorStateField="RPTCheckType" successStateValue="2" errorStateValue="3" defaultLogicDaoBeanId="sqlserverProcedureResultSetDao">
+			<paramFieldList>
+				<paramField paramName="dtDate" field="dtDate" type="1"></paramField>
+				<paramField paramName="strInstCode" field="strInstCode" type="1"></paramField>
+			</paramFieldList>
+			<checkUniqueFieldList>
+				<checkUniqueField name="autoID" discription="主键" originField="autoID"></checkUniqueField>
+			</checkUniqueFieldList>
+			<checkFieldBasicList discription="基础校验">
+				<checkFieldBasic name="JZDZ" discription="居住地址" endByteLength="60" emptyCheck="true"></checkFieldBasic>
+				<checkFieldBasic name="ZJDZYZBM" discription="居住地址邮政编码" digitalCheck="true" startByteLength="6" endByteLength="6" emptyCheck="true"></checkFieldBasic>
+				<checkFieldBasic name="ZJZK" discription="居住状况" noChnCheck="true" endByteLength="1" emptyCheck="true"></checkFieldBasic>
+				<checkFieldBasic name="extend2" discription="业务发生日期" valueMin="19010101"   endLength="8" dateCheck="true"></checkFieldBasic>
+			</checkFieldBasicList>
+			<checkFieldCaseWhenList discription="caseWhen校验">
+				<checkFieldCaseWhen name="ZJDZYZBM" discription="居住地址邮政编码" caseValue="999999" whenValue="null">
+					<checkFieldCaseWhenField name="ZJDZYZBM" discription="居住地址邮政编码"></checkFieldCaseWhenField>
+				</checkFieldCaseWhen>
+			</checkFieldCaseWhenList>
+		</checkTable>
+	</checkInstance>
+
+	<!-- 担保信息段  -->
+	<checkInstance name="Check_GR_DBXX">
+		<checkTable procedureName="Proc_Check_GR_DBXX" procedureParam="dtDate,strInstCode" procedureDiscription="Proc_Check_GR_DBXX" originTable="GR_DBXX" errorMsgField="" errorStateField="RPTCheckType" successStateValue="2" errorStateValue="3" defaultLogicDaoBeanId="sqlserverProcedureResultSetDao">
+			<paramFieldList>
+				<paramField paramName="dtDate" field="dtDate" type="1"></paramField>
+				<paramField paramName="strInstCode" field="strInstCode" type="1"></paramField>
+			</paramFieldList>
+			<checkUniqueFieldList>
+				<checkUniqueField name="autoID" discription="主键" originField="autoID"></checkUniqueField>
+			</checkUniqueFieldList>
+			<checkFieldBasicList discription="基础校验">
+				<checkFieldBasic name="XM" discription="名称" endByteLength="30" emptyCheck="true"></checkFieldBasic>
+				<checkFieldBasic name="ZJLX" discription="证件类型" noChnCheck="true" endByteLength="1" emptyCheck="true"></checkFieldBasic>
+				<checkFieldBasic name="ZJHM" discription="证件号码" endByteLength="18" emptyCheck="true"></checkFieldBasic>
+				<checkFieldBasic name="DBJE" discription="担保金额" digitalCheck="true" endByteLength="10" emptyCheck="true"></checkFieldBasic>
+				<checkFieldBasic name="DBZT" discription="担保状态" digitalCheck="true" endByteLength="1" emptyCheck="true"></checkFieldBasic>
+				<checkFieldBasic name="extend2" discription="业务发生日期"  valueMin="19010101" endLength="8" dateCheck="true"></checkFieldBasic>
+			</checkFieldBasicList>
+			<checkFieldEffectiveList>
+				<checkFieldEffective name="ZJLX" discription="证件类型">
+					<value>0</value>
+					<value>1</value>
+					<value>2</value>
+					<value>3</value>
+					<value>4</value>
+					<value>5</value>
+					<value>6</value>
+					<value>7</value>
+					<value>8</value>
+					<value>9</value>
+					<value>A</value>
+					<value>B</value>
+					<value>C</value>
+					<value>X</value>
+					<value>a</value>
+					<value>b</value>
+					<value>c</value>
+				</checkFieldEffective>
+			</checkFieldEffectiveList>
+			<checkFieldCaseWhenList discription="caseWhen校验">
+			<checkFieldCaseWhen name="ZJLX" discription="证件类型" caseValue="notNull" whenValue="notNull" >
+					<checkFieldCaseWhenField name="ZJHM" discription="证件号码"></checkFieldCaseWhenField>					
+				</checkFieldCaseWhen>
+				<checkFieldCaseWhen name="ZJHM" discription="证件号码" caseValue="notNull" whenValue="notNull" >
+					<checkFieldCaseWhenField name="ZJLX" discription="证件类型"></checkFieldCaseWhenField>					
+				</checkFieldCaseWhen>
+				<checkFieldCaseWhen name="ZJHM" discription="证件号码" caseValue="systemIDCardNo" whenValue="0" whenType="8">
+					<checkFieldCaseWhenField name="ZJLX" discription="证件类型"></checkFieldCaseWhenField>
+				</checkFieldCaseWhen>
+			</checkFieldCaseWhenList>
+		</checkTable>
+	</checkInstance>
+
+	<!-- 交易标识变更段  -->
+	<checkInstance name="Check_GR_JYBSBG">
+		<checkTable procedureName="Proc_Check_GR_JYBSBG" procedureParam="dtDate,strInstCode" procedureDiscription="Proc_Check_GR_JYBSBG" originTable="GR_JYBSBG" errorMsgField="" errorStateField="RPTCheckType" successStateValue="2" errorStateValue="3" defaultLogicDaoBeanId="sqlserverProcedureResultSetDao">
+			<paramFieldList>
+				<paramField paramName="dtDate" field="dtDate" type="1"></paramField>
+				<paramField paramName="strInstCode" field="strInstCode" type="1"></paramField>
+			</paramFieldList>
+			<checkUniqueFieldList>
+				<checkUniqueField name="autoID" discription="主键" originField="autoID"></checkUniqueField>
+			</checkUniqueFieldList>
+			<checkFieldBasicList discription="基础校验">
+				<checkFieldBasic name="YWH" discription="业务号" endByteLength="40" emptyCheck="true"></checkFieldBasic>
+				<checkFieldBasic name="JRJGDM" discription="金融机构代码(业务发生机构代码)" noChnCheck="true" startByteLength="14" endByteLength="14" emptyCheck="true" ></checkFieldBasic>
+				<checkFieldBasic name="JSYHKRQ" discription="结算/应还款日期" valueMin="19010101"  dateCheck="true" startByteLength="8" endByteLength="8" emptyCheck="true"></checkFieldBasic>
+				<checkFieldBasic name="extend2" discription="业务发生日期" valueMin="19010101"  endLength="8" dateCheck="true"></checkFieldBasic>
+			</checkFieldBasicList>
+		</checkTable>
+	</checkInstance>
+
+	<!-- 特殊交易段  -->
+	<checkInstance name="Check_GR_TSJY">
+		<checkTable procedureName="Proc_Check_GR_TSJY" procedureParam="dtDate,strInstCode" procedureDiscription="Proc_Check_GR_TSJY" originTable="GR_TSJY" errorMsgField="" errorStateField="RPTCheckType" successStateValue="2" errorStateValue="3" defaultLogicDaoBeanId="sqlserverProcedureResultSetDao">
+			<paramFieldList>
+				<paramField paramName="dtDate" field="dtDate" type="1"></paramField>
+				<paramField paramName="strInstCode" field="strInstCode" type="1"></paramField>
+			</paramFieldList>
+			<checkUniqueFieldList>
+				<checkUniqueField name="autoID" discription="主键" originField="autoID"></checkUniqueField>
+			</checkUniqueFieldList>
+			<checkFieldBasicList discription="基础校验">
+				<checkFieldBasic name="TSJYLX" discription="特殊交易类型" digitalCheck="true" endByteLength="1" emptyCheck="true"></checkFieldBasic>
+				<checkFieldBasic name="FSRQ" discription="发生日期"  dateCheck="true" startByteLength="8" endByteLength="8" emptyCheck="true" valueMin="19010101"></checkFieldBasic>
+				<checkFieldBasic name="BGYS" discription="变更月数" noChnCheck="true" endByteLength="4" emptyCheck="true" digitalCheck="true"></checkFieldBasic>
+				<checkFieldBasic name="FSJE" discription="发生金额" digitalCheck="true" endByteLength="10" emptyCheck="true"></checkFieldBasic>
+				<checkFieldBasic name="MXXX" discription="明细信息" endByteLength="200"></checkFieldBasic>
+				<checkFieldBasic name="extend2" discription="业务发生日期" valueMin="19010101"   endLength="8" dateCheck="true"></checkFieldBasic>
+			</checkFieldBasicList>
+			<checkFieldEffectiveList>
+				<checkFieldEffective name="TSJYLX" discription="特殊交易类型">
+					<value>1</value>
+					<value>2</value>
+					<value>3</value>
+					<value>4</value>
+					<value>5</value>
+					<value>9</value>
+				</checkFieldEffective>
+			</checkFieldEffectiveList>
+			<checkFieldClassList>
+				<checkFieldClass name="zxptsystem.service.check.GR_TSJY_Check"></checkFieldClass>
+			</checkFieldClassList>
+		</checkTable>
+	</checkInstance>
+
+	<!--身份信息段-->
+	<checkInstance name="Check_GR_GRSFXX">
+		<checkTable procedureName="Proc_Check_GR_GRSFXX" procedureParam="dtDate,strInstCode" procedureDiscription="Proc_Check_GR_GRSFXX" originTable="GR_GRSFXX" errorMsgField="" errorStateField="RPTCheckType" successStateValue="2" errorStateValue="3" defaultLogicDaoBeanId="sqlserverProcedureResultSetDao">
+			<paramFieldList>
+				<paramField paramName="dtDate" field="dtDate" type="1"></paramField>
+				<paramField paramName="strInstCode" field="strInstCode" type="1"></paramField>
+			</paramFieldList>
+			<checkUniqueFieldList>
+				<checkUniqueField name="autoID" discription="主键" originField="autoID"></checkUniqueField>
+			</checkUniqueFieldList>
+			<checkFieldBasicList discription="基础校验">
+				<checkFieldBasic name="XB" discription="性别" digitalCheck="true" endByteLength="1" emptyCheck="true"></checkFieldBasic>
+				<checkFieldBasic name="CSRQ" discription="出生日期" valueMin="19010101"  dateCheck="true" startByteLength="8" endByteLength="8" emptyCheck="true"></checkFieldBasic>
+				<checkFieldBasic name="HYZK" discription="婚姻状况" digitalCheck="true" endByteLength="2" emptyCheck="true"></checkFieldBasic>
+				<checkFieldBasic name="ZGXL" discription="最高学历" digitalCheck="true" endByteLength="2" emptyCheck="true"></checkFieldBasic>
+				<checkFieldBasic name="ZGXW" discription="最高学位" digitalCheck="true" endByteLength="1" emptyCheck="true"></checkFieldBasic>
+				<checkFieldBasic name="ZZDH" discription="住宅电话" endByteLength="25"></checkFieldBasic>
+				<checkFieldBasic name="SJHM" discription="手机号码" noChnCheck="true" endByteLength="16"></checkFieldBasic>
+				<checkFieldBasic name="DWDH" discription="单位电话" endByteLength="25"></checkFieldBasic>
+				<checkFieldBasic name="DZYX" discription="电子邮箱" endByteLength="30"></checkFieldBasic>
+				<checkFieldBasic name="TXDZ" discription="通讯地址" endByteLength="60" emptyCheck="true"></checkFieldBasic>
+				<checkFieldBasic name="TXDZYZBM" discription="通讯地址邮政编码" digitalCheck="true" startByteLength="6" endByteLength="6" emptyCheck="true"></checkFieldBasic>
+				<checkFieldBasic name="HJDZ" discription="户籍地址" endByteLength="60"></checkFieldBasic>
+				<checkFieldBasic name="POXM" discription="配偶姓名" endByteLength="30"></checkFieldBasic>
+				<checkFieldBasic name="POZJLX" discription="配偶证件类型" noChnCheck="true" endByteLength="1"></checkFieldBasic>
+				<checkFieldBasic name="POZJHM" discription="配偶证件号码" endByteLength="18"></checkFieldBasic>
+				<checkFieldBasic name="POGZDW" discription="配偶工作单位" endByteLength="60"></checkFieldBasic>
+				<checkFieldBasic name="POLXDH" discription="配偶联系电话" endByteLength="25"></checkFieldBasic>
+				<checkFieldBasic name="extend2" discription="业务发生日期" valueMin="19010101"  endLength="8" dateCheck="true"></checkFieldBasic>
+			</checkFieldBasicList>
+			<checkFieldEffectiveList>
+				<checkFieldEffective name="XB" discription="性别">
+					<value>0</value>
+					<value>1</value>
+					<value>2</value>
+					<value>9</value>
+				</checkFieldEffective>
+				<checkFieldEffective name="HYZK" discription="婚姻状况">
+					<value>10</value>
+					<value>20</value>
+					<value>21</value>
+					<value>22</value>
+					<value>23</value>
+					<value>30</value>
+					<value>40</value>
+					<value>90</value>
+				</checkFieldEffective>
+				<checkFieldEffective name="ZGXL" discription="最高学历">
+					<value>10</value>
+					<value>20</value>
+					<value>30</value>
+					<value>40</value>
+					<value>50</value>
+					<value>60</value>
+					<value>70</value>
+					<value>80</value>
+					<value>90</value>
+					<value>99</value>
+				</checkFieldEffective>
+				<checkFieldEffective name="ZGXW" discription="最高学位">
+					<value>0</value>
+					<value>1</value>
+					<value>2</value>
+					<value>3</value>
+					<value>4</value>
+					<value>9</value>
+				</checkFieldEffective>
+				<checkFieldEffective name="POZJLX" discription="配偶证件类型">
+					<value>0</value>
+					<value>1</value>
+					<value>2</value>
+					<value>3</value>
+					<value>4</value>
+					<value>5</value>
+					<value>6</value>
+					<value>7</value>
+					<value>8</value>
+					<value>9</value>
+					<value>A</value>
+					<value>B</value>
+					<value>C</value>
+					<value>X</value>
+					<value>a</value>
+					<value>b</value>
+					<value>c</value>
+				</checkFieldEffective>
+			</checkFieldEffectiveList>
+			<checkFieldCaseWhenList discription="caseWhen校验">
+				<checkFieldCaseWhen name="POXM" discription="配偶姓名" caseValue="null" whenValue="10">
+					<checkFieldCaseWhenField name="HYZK" discription="婚姻状况"></checkFieldCaseWhenField>
+				</checkFieldCaseWhen>
+				<checkFieldCaseWhen name="POZJLX" discription="配偶证件类型" caseValue="null" whenValue="10">
+					<checkFieldCaseWhenField name="HYZK" discription="婚姻状况"></checkFieldCaseWhenField>
+				</checkFieldCaseWhen>
+				<checkFieldCaseWhen name="POZJHM" discription="配偶证件号码" caseValue="null" whenValue="10">
+					<checkFieldCaseWhenField name="HYZK" discription="婚姻状况"></checkFieldCaseWhenField>
+				</checkFieldCaseWhen>
+				<checkFieldCaseWhen name="POGZDW" discription="配偶工作单位" caseValue="null" whenValue="10">
+					<checkFieldCaseWhenField name="HYZK" discription="婚姻状况"></checkFieldCaseWhenField>
+				</checkFieldCaseWhen>
+				<checkFieldCaseWhen name="POLXDH" discription="配偶联系电话" caseValue="null" whenValue="10">
+					<checkFieldCaseWhenField name="HYZK" discription="婚姻状况"></checkFieldCaseWhenField>
+				</checkFieldCaseWhen>
+				<checkFieldCaseWhen name="TXDZYZBM" discription="通讯地址邮政编码" caseValue="999999" whenValue="null">
+					<checkFieldCaseWhenField name="TXDZYZBM" discription="通讯地址邮政编码"></checkFieldCaseWhenField>
+				</checkFieldCaseWhen>
+				<checkFieldCaseWhen name="POZJLX" discription="配偶证件类型" caseValue="notNull" whenValue="notNull" >
+					<checkFieldCaseWhenField name="POZJHM" discription="配偶证件号码"></checkFieldCaseWhenField>					
+				</checkFieldCaseWhen>
+				<checkFieldCaseWhen name="POZJHM" discription="配偶证件号码" caseValue="notNull" whenValue="notNull" >
+					<checkFieldCaseWhenField name="POZJLX" discription="配偶证件类型"></checkFieldCaseWhenField>					
+				</checkFieldCaseWhen>
+				<checkFieldCaseWhen name="POZJHM" discription="配偶证件号码" caseValue="systemIDCardNo" whenValue="0" whenType="8">
+					<checkFieldCaseWhenField name="POZJLX" discription="配偶证件类型"></checkFieldCaseWhenField>					
+				</checkFieldCaseWhen>
+			</checkFieldCaseWhenList>
+			<checkFieldClassList>
+				<checkFieldClass name="zxptsystem.service.check.GJGLRQK_Check"></checkFieldClass>
+			</checkFieldClassList>
+		</checkTable>
+	</checkInstance>
+
+	<!--职业信息段-->
+	<checkInstance name="Check_GR_ZYXX">
+		<checkTable procedureName="Proc_Check_GR_ZYXX" procedureParam="dtDate,strInstCode" procedureDiscription="Proc_Check_GR_ZYXX" originTable="GR_ZYXX" errorMsgField="" errorStateField="RPTCheckType" successStateValue="2" errorStateValue="3" defaultLogicDaoBeanId="sqlserverProcedureResultSetDao">
+			<paramFieldList>
+				<paramField paramName="dtDate" field="dtDate" type="1"></paramField>
+				<paramField paramName="strInstCode" field="strInstCode" type="1"></paramField>
+			</paramFieldList>
+			<checkUniqueFieldList>
+				<checkUniqueField name="autoID" discription="主键" originField="autoID"></checkUniqueField>
+			</checkUniqueFieldList>
+			<checkFieldBasicList discription="基础校验">
+				<checkFieldBasic name="ZY" discription="职业" noChnCheck="true" endByteLength="1" emptyCheck="true"></checkFieldBasic>
+				<checkFieldBasic name="DWMC" discription="单位名称"  endByteLength="60" emptyCheck="true"></checkFieldBasic>
+				<checkFieldBasic name="DWSSHY" discription="单位所属行业" noChnCheck="true" endByteLength="1" emptyCheck="true"></checkFieldBasic>
+				<checkFieldBasic name="DWDZ" discription="单位地址" endByteLength="60"></checkFieldBasic>
+				<checkFieldBasic name="DWDZYZBM" discription="单位地址邮政编码" startByteLength="6" endByteLength="6"></checkFieldBasic>
+				<checkFieldBasic name="BDWGZQSNF" discription="本单位工作起始年份" valueMin="1901" digitalCheck="true" startByteLength="4" endByteLength="4"></checkFieldBasic>
+				<checkFieldBasic name="ZW" discription="职务" digitalCheck="true" endByteLength="1" emptyCheck="true"></checkFieldBasic>
+				<checkFieldBasic name="ZC" discription="职称" digitalCheck="true" endByteLength="1" emptyCheck="true"></checkFieldBasic>
+				<checkFieldBasic name="NSR" discription="年收入" digitalCheck="true" endByteLength="10"></checkFieldBasic>
+				<checkFieldBasic name="GZZH" discription="工资账号" endByteLength="40"></checkFieldBasic>
+				<checkFieldBasic name="GZZHKHYH" discription="工资账户开户银行" noChnCheck="true" endByteLength="14"></checkFieldBasic>
+				<checkFieldBasic name="extend2" discription="业务发生日期"  valueMin="19010101" endLength="8" dateCheck="true"></checkFieldBasic>
+			</checkFieldBasicList>
+			<checkFieldCaseWhenList discription="caseWhen校验">
+				<checkFieldCaseWhen name="DWDZYZBM" discription="单位地址邮政编码" caseValue="999999" whenValue="null">
+					<checkFieldCaseWhenField name="DWDZYZBM" discription="单位地址邮政编码"></checkFieldCaseWhenField>
+				</checkFieldCaseWhen>
+			</checkFieldCaseWhenList>
+			<checkFieldEffectiveList>
+				<checkFieldEffective name="ZY" discription="职业">
+					<value>0</value>
+					<value>1</value>
+					<value>3</value>
+					<value>4</value>
+					<value>5</value>
+					<value>6</value>
+					<value>X</value>
+					<value>Y</value>
+					<value>Z</value>
+				</checkFieldEffective>
+				<checkFieldEffective name="DWSSHY" discription="单位所属行业">
+					<value>A</value>
+					<value>B</value>
+					<value>C</value>
+					<value>D</value>
+					<value>E</value>
+					<value>F</value>
+					<value>G</value>
+					<value>H</value>
+					<value>I</value>
+					<value>J</value>
+					<value>K</value>
+					<value>L</value>
+					<value>M</value>
+					<value>N</value>
+					<value>O</value>
+					<value>P</value>
+					<value>Q</value>
+					<value>R</value>
+					<value>S</value>
+					<value>T</value>
+					<value>Z</value>
+				</checkFieldEffective>
+				<checkFieldEffective name="ZW" discription="职务">
+					<value>1</value>
+					<value>2</value>
+					<value>3</value>
+					<value>4</value>
+					<value>9</value>
+				</checkFieldEffective>
+				<checkFieldEffective name="ZC" discription="职称">
+					<value>0</value>
+					<value>1</value>
+					<value>2</value>
+					<value>3</value>
+					<value>9</value>
+				</checkFieldEffective>
+			</checkFieldEffectiveList>
+			<checkFieldClassList>
+				<checkFieldClass name="zxptsystem.service.check.GR_ZYXX_Check"></checkFieldClass>
+			</checkFieldClassList>
+		</checkTable>
+	</checkInstance>
+
+	<!-- 个人征信数据删除  -->
+	<checkInstance name="Check_GRZXSJSC">
+		<checkTable >
+			<checkFieldBasicList discription="基础校验">
+			<checkFieldBasic name="strJRJGCode" discription="金融机构代码"  noChnCheck="true" startByteLength="14" endByteLength="14" emptyCheck="true"></checkFieldBasic>
+			<checkFieldBasic name="strYWCode" discription="业务号" endByteLength="40" emptyCheck="true"></checkFieldBasic>
+			<checkFieldBasic name="QSJSYHKRQ" discription="起始结算/应还款日期" valueMin="19010101"  dateCheck="true" startByteLength="8" endByteLength="8" emptyCheck="true"></checkFieldBasic>
+			<checkFieldBasic name="JSJSYHKRQ" discription="结束结算/应还款日期" valueMin="19010101"  dateCheck="true" startByteLength="8" endByteLength="8"></checkFieldBasic>
+	     </checkFieldBasicList>
+	    </checkTable>				
+	</checkInstance>
+	
+	<!-- 个人征信账户标识变更  -->
+	<checkInstance name="Check_GRZXZHBSBG">
+		<checkTable >
+			<checkFieldBasicList discription="基础校验">
+			<checkFieldBasic name="strOldJRJGCode" discription="原金融机构代码"  noChnCheck="true" startByteLength="14" endByteLength="14" emptyCheck="true"></checkFieldBasic>
+			<checkFieldBasic name="strOldYWCode" discription="原业务号" endByteLength="40" emptyCheck="true"></checkFieldBasic>
+			<checkFieldBasic name="strNewJRJGCode" discription="新金融机构代码"  noChnCheck="true" startByteLength="14" endByteLength="14" emptyCheck="true"></checkFieldBasic>
+			<checkFieldBasic name="strNewYWCode" discription="新业务号" endByteLength="40" emptyCheck="true"></checkFieldBasic>
+	     </checkFieldBasicList>
+	    </checkTable>				
+	</checkInstance>
+	
+	<!-- 个人征信历史逾期记录更新 -->
+	<checkInstance name="Check_GRZXLSYQJLGX">
+		<checkTable procedureName="Proc_Check_GRZXLSYQJLGX" procedureParam="dtDate,strInstCode" procedureDiscription="Proc_Check_GRZXLSYQJLGX" originTable="GRZXLSYQJLGX" errorMsgField="" errorStateField="RPTCheckType" successStateValue="2" errorStateValue="3" defaultLogicDaoBeanId="sqlserverProcedureResultSetDao">
+		 <checkFieldBasicList discription="基础校验">
+			<checkFieldBasic name="XM" discription="姓名" endByteLength="30" emptyCheck="true"></checkFieldBasic>
+			<checkFieldBasic name="ZJLX" discription="证件类型" startByteLength="1" endByteLength="1" noChnCheck="true" emptyCheck="true"></checkFieldBasic>
+			<checkFieldBasic name="ZJHM" discription="证件号码" endByteLength="18" emptyCheck="true"></checkFieldBasic>
+			<checkFieldBasic name="JRJGDM" discription="金融机构代码"  endByteLength="14" emptyCheck="true"></checkFieldBasic>
+			<checkFieldBasic name="YWH" discription="业务号" endByteLength="40" emptyCheck="true"></checkFieldBasic>
+			<checkFieldBasic name="YQYF" discription="逾期月份" digitalCheck="true" startByteLength="6" endByteLength="6" emptyCheck="true"></checkFieldBasic>
+			<checkFieldBasic name="CZLX" discription="操作类型" digitalCheck="true" startByteLength="1" endByteLength="1" emptyCheck="true"></checkFieldBasic>
+			<checkFieldBasic name="YQCXYS" discription="逾期持续月数" digitalCheck="true" startByteLength="1" endByteLength="1" emptyCheck="true"></checkFieldBasic>
+			<checkFieldBasic name="YQJE" discription="逾期金额（透支余额）" digitalCheck="true" endByteLength="10" emptyCheck="true"></checkFieldBasic>
+	     </checkFieldBasicList>
+	     <checkFieldCaseWhenList discription="caseWhen校验">
+	     		<checkFieldCaseWhen name="ZJLX" discription="证件类型" caseValue="notNull" whenValue="notNull" >
+					<checkFieldCaseWhenField name="ZJHM" discription="证件号码"></checkFieldCaseWhenField>					
+				</checkFieldCaseWhen>
+				<checkFieldCaseWhen name="ZJHM" discription="证件号码" caseValue="notNull" whenValue="notNull" >
+					<checkFieldCaseWhenField name="ZJLX" discription="证件类型"></checkFieldCaseWhenField>					
+				</checkFieldCaseWhen>
+				<checkFieldCaseWhen name="ZJHM" discription="证件号码" caseValue="systemIDCardNo" whenValue="0" whenType="8">
+					<checkFieldCaseWhenField name="ZJLX" discription="证件类型"></checkFieldCaseWhenField>
+				</checkFieldCaseWhen>
+			</checkFieldCaseWhenList>
+	    </checkTable>				
+	</checkInstance>
+	
+	<!-- 个人征信历史逾期记录删除 -->
+	<checkInstance name="Check_GRZXLSYQJLSC">
+		<checkTable procedureName="Proc_Check_GRZXLSYQJLSC" procedureParam="dtDate,strInstCode" procedureDiscription="Proc_Check_GRZXLSYQJLSC" originTable="GRZXLSYQJLSC" errorMsgField="" errorStateField="RPTCheckType" successStateValue="2" errorStateValue="3" defaultLogicDaoBeanId="sqlserverProcedureResultSetDao">
+			<checkFieldBasicList discription="基础校验">
+			<checkFieldBasic name="XM" discription="姓名" endByteLength="30" emptyCheck="true"></checkFieldBasic>
+			<checkFieldBasic name="ZJLX" discription="证件类型" startByteLength="1" endByteLength="1" noChnCheck="true" emptyCheck="true"></checkFieldBasic>
+			<checkFieldBasic name="ZJHM" discription="证件号码" endByteLength="18" emptyCheck="true"></checkFieldBasic>
+			<checkFieldBasic name="JRJGDM" discription="金融机构代码"  endByteLength="14" emptyCheck="true"></checkFieldBasic>
+			<checkFieldBasic name="YWH" discription="业务号" endByteLength="40" emptyCheck="true"></checkFieldBasic>
+			<checkFieldBasic name="QSYQYF" discription="起始逾期月份" digitalCheck="true" startByteLength="6" endByteLength="6"></checkFieldBasic>
+			<checkFieldBasic name="JSYQYF" discription="结束逾期月份" digitalCheck="true" startByteLength="6" endByteLength="6"></checkFieldBasic>
+	     </checkFieldBasicList>
+	     <checkFieldLineList>
+				<checkFieldLine compareType=">=">
+					<leftFieldList>
+						<checkFieldLineField name="JSYQYF" discription="结束逾期月份"></checkFieldLineField>
+					</leftFieldList>
+					<rightFieldList>
+						<checkFieldLineField name="QSYQYF" discription="起始逾期月份"></checkFieldLineField>
+					</rightFieldList>
+				</checkFieldLine>
+			</checkFieldLineList>
+			<checkFieldCaseWhenList discription="caseWhen校验">
+			<checkFieldCaseWhen name="ZJLX" discription="证件类型" caseValue="notNull" whenValue="notNull" >
+					<checkFieldCaseWhenField name="ZJHM" discription="证件号码"></checkFieldCaseWhenField>					
+				</checkFieldCaseWhen>
+				<checkFieldCaseWhen name="ZJHM" discription="证件号码" caseValue="notNull" whenValue="notNull" >
+					<checkFieldCaseWhenField name="ZJLX" discription="证件类型"></checkFieldCaseWhenField>					
+				</checkFieldCaseWhen>
+				<checkFieldCaseWhen name="GGZJHM" discription="证件号码" caseValue="systemIDCardNo" whenValue="0" whenType="8">
+					<checkFieldCaseWhenField name="GGZJLX" discription="证件类型"></checkFieldCaseWhenField>
+				</checkFieldCaseWhen>
+			</checkFieldCaseWhenList>
+	    </checkTable>				
+	</checkInstance>
+</reportCheckRoot>

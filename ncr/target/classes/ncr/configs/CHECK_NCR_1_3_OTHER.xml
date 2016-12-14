@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<reportCheckRoot>
+	<!-- 校验名称：校验根据此名称做为校验实例-->
+	<checkInstance name="CHECK_NCR_1_3_OTHER">
+		<!-- 参数值：配置的值为默认值，也可以通过系统传递进行替换-->
+		<paramValueList>
+			<paramValue name="DTDATE" value="REPORT_DATE"></paramValue>
+			<paramValue name="strInstCode" value=""></paramValue>
+			<!--
+		    <paramValue name="strTaskRptInstID" value="000000"></paramValue>
+			  <paramValue name="strFreq" value="000000"></paramValue> 
+			  -->
+		</paramValueList>
+    <!-- 频度标志：可通过系统参数传递进行替换:1代表年报，2代表半年报，3代表季报，4代表月报，5代表日报-->
+		<freqCode value="4"></freqCode>
+    <!-- 表名：真实数据库表的名称，一个校验实例中应具备唯一性--> 
+		<checkTable procedureName="Check_NCR_1_3" procedureParam="DTDATE,strInstCode" procedureDiscription="对公及同业客户统计表-贷款明细"
+			originTable="NCR_1_3" errorStateField="RPTCHECKTYPE" errorStateValue="3"  successStateValue="2" 
+			defaultLogicDaoBeanId="oracleProcedureResultSetDao">
+			<paramFieldList>
+				<paramField paramName="DTDATE" field="DTDATE" type="2"></paramField>
+				<paramField paramName="strInstCode" field="INSTINFO" type="1"></paramField>
+			</paramFieldList>
+
+			<checkUniqueFieldList>
+				<checkUniqueField name="AUTOID" discription="主键" originField="AUTOID"></checkUniqueField>
+			</checkUniqueFieldList>		
+
+			</checkTable>
+	</checkInstance>
+</reportCheckRoot>

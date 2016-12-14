@@ -1,0 +1,195 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans
+	xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns:p="http://www.springframework.org/schema/p"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-3.0.xsd">
+
+	    
+     <bean id="taskRptInstSHReviewShowListForTreeAction" class="framework.actions.imps.BaseSTModelDrivenConditionAction" scope="prototype">
+        <property name="defaultServiceBeanId" value="taskRptInstSHReviewShowListForTreeService"></property>
+    </bean>
+    <bean id="exportReportDataAction" class="framework.actions.imps.SingleObjectDownloadAction" scope="prototype">
+        <property name="defaultServiceBeanId" value="ExportReportDataService"></property>
+    </bean>
+    
+    <bean id="importReportDataAction" class="framework.actions.imps.BaseSTModelDrivenConditionFileAction" scope="prototype">
+        <property name="defaultServiceBeanId" value="ImportReportDataService"></property>
+    </bean>
+    
+    <bean id="ShowReportAction" class="framework.actions.imps.BaseSTModelDrivenAction" scope="prototype">
+        <property name="defaultServiceBeanId" value="ShowReportService"></property>
+    </bean>
+    
+    <bean id="ShowViewReportAction" class="framework.actions.imps.BaseSTModelDrivenAction" scope="prototype">
+        <property name="defaultServiceBeanId" value="ShowViewReportService"></property>
+    </bean>
+    
+    <bean id="SubmitItemsAction" class="framework.actions.imps.BaseSAction" scope="prototype">
+        <property name="defaultServiceBeanId" value="SubmitItemsService"></property>
+    </bean>
+    
+    <bean id="editTemplateAction" class="framework.actions.imps.BaseSTModelDrivenAction" scope="prototype">
+        <property name="defaultServiceBeanId" value="editTemplateService"></property>
+    </bean>
+    
+    <bean id="selectFieldsAction" class="report.actions.imps.SelectSetAction" scope="prototype">
+        <property name="defaultServiceBeanId" value="selectFieldsService"></property>
+    </bean>
+    
+   
+    <bean id="selectRptSetAction" class="report.actions.imps.SelectSetAction" scope="prototype">
+        <property name="defaultServiceBeanId" value="select-ShowRptSetService"></property>
+    </bean>
+    
+    <bean id="showItemDataHistoryAction" class="report.actions.imps.AjaxResponseAction" scope="prototype">
+        <property name="defaultServiceBeanId" value="showItemDataHistoryService"></property>
+    </bean>
+    
+    
+    <bean id="webOfficeUploadFileAction" class="report.actions.imps.WebOfficeUploadFileAction" scope="prototype">
+        <property name="defaultServiceBeanId" value="webOfficeUploadFileService"></property>
+    </bean>
+    
+    <bean id="reportMergeAction" class="framework.actions.imps.BaseSTNameAndIdAction" scope="prototype">
+       <property name="defaultServiceBeanId" value="reportMergeService"></property>
+    </bean>
+    
+    <bean id="reportSummaryAction" class="framework.actions.imps.BaseSTNameAndIdAction" scope="prototype">
+       <property name="defaultServiceBeanId" value="reportSummaryService"></property>
+    </bean>
+    
+    <bean id="reportsSummaryAction" class="framework.actions.imps.BaseSTModelDrivenAction" scope="prototype">
+       <property name="defaultServiceBeanId" value="reportsSummaryService"></property>
+    </bean>
+    
+    <bean id="reportsTopNAction" class="framework.actions.imps.BaseSTModelDrivenAction" scope="prototype">
+       <property name="defaultServiceBeanId" value="reportsTopNService"></property>
+    </bean>
+    
+    
+    
+    <bean id="rptSubmitStatusALLForceUpdateFieldAction" class="framework.actions.imps.CustomDtoIdListAction" scope="prototype">
+       <property name="defaultServiceBeanId" value="rptSubmitStatusALLForceUpdateFieldService"></property>
+       <property name="dtoName" value="report.dto.TaskRptInst"></property>
+    </bean>
+    
+    <bean id="reportsCheckAction" class="framework.actions.imps.BaseSTNameAndIdListAction" scope="prototype">
+       <property name="defaultServiceBeanId" value="reportsItemCheckService"></property>
+    </bean>
+    
+    <bean id="exportReportsAction" class="report.actions.imps.ExportReportsAction" scope="prototype">
+        <property name="defaultServiceBeanId" value="exportReportsService"></property>
+    </bean>
+    <bean id="showCalcRuleCfgAction" class="framework.actions.imps.BaseSTModelDrivenConditionAction" scope="prototype">
+        <property name="defaultServiceBeanId" value="showCalcRuleCfgService"></property>
+    </bean>
+    
+    <bean id="showCalcRuleDetailAction" class="framework.actions.imps.BaseSTModelDrivenConditionAction" scope="prototype">
+        <property name="defaultServiceBeanId" value="showCalcRuleDetailService"></property>
+    </bean>
+    
+    <bean id="ajaxRequestAction" class="report.actions.imps.AjaxRequestAction" scope="prototype">
+        <property name="defaultServiceBeanId" value="ajaxRequestService"></property>
+    </bean>
+    <bean id="ajaxRequestInstanceAction" class="report.actions.imps.AjaxRequestInstanceAction" scope="prototype">
+        <property name="defaultServiceBeanId" value="ajaxRequestInstanceService"></property>
+    </bean>
+    
+    <bean id="reportItemCheckAction" class="framework.actions.imps.ReportCommonAction" scope="prototype">
+       <property name="defaultServiceBeanId" value="reportItemCheckService"></property>
+    </bean>
+    <bean id="reportSumCheckAction" class="framework.actions.imps.ReportCommonAction" scope="prototype">
+       <property name="defaultServiceBeanId" value="reportSumCheckService"></property>
+    </bean>
+    
+    <bean id="ItemDataTraceAction" class="framework.actions.imps.BaseSAction" scope="prototype">
+        <property name="defaultServiceBeanId" value="ItemDataTraceService"></property>
+    </bean>
+    <!-- 填报说明 -->
+    <bean id="repMarkAction" class="framework.actions.imps.BaseSAction" scope="prototype">
+        <property name="defaultServiceBeanId" value="repMarkService"></property>
+    </bean>
+    
+    <bean id="rptInfoCopySaveAction" class="framework.actions.imps.BaseSTModelDrivenAction" scope="prototype">
+        <property name="defaultServiceBeanId" value="rptInfoCopySaveService"></property>
+    </bean>
+    
+     <bean id="rptInfoShowUpdateAction" class="framework.actions.imps.BaseSTNameAndIdAction" scope="prototype">
+       <property name="defaultServiceBeanId" value="rptInfoShowUpdateService"></property>       
+    </bean>
+     <bean id="UpdateFieldAction" class="report.actions.imps.UpdateFieldAction" scope="prototype">
+    </bean> 
+    
+    <bean id="showRptChartAction" class="framework.actions.imps.BaseSTModelDrivenAction" scope="prototype">
+      <property name="defaultServiceBeanId" value="showRptChartService"></property>
+    </bean> 
+     <bean id="showRptChartCondAction" class="framework.actions.imps.BaseSTModelDrivenAction" scope="prototype">
+      <property name="defaultServiceBeanId" value="showRptChartCondService"></property>
+    </bean> 
+   
+    <!--本机构，本任务数据导出 by gechenglian -->
+    <bean id="exportReportForTaskAction" class="framework.actions.imps.SingleObjectConditionDownloadAction" scope="prototype">
+        <property name="defaultServiceBeanId" value="exportReportForTaskService"></property>
+    </bean>
+    <bean id="exportReportForInstAction" class="framework.actions.imps.SingleObjectConditionDownloadAction" scope="prototype">
+        <property name="defaultServiceBeanId" value="exportReportForInstService"></property>
+    </bean>
+    
+    <bean id="insertInstRptRelaPageInitAction" class="framework.actions.imps.BaseSTAction" scope="prototype">
+    	<property name="defaultServiceBeanId" value="instRptRelaShowSaveService"></property>
+    </bean>
+    <bean id="insertInstRptRelaDataInitAction" class="framework.actions.imps.BaseSTModelDrivenAction" scope="prototype">
+        <property name="defaultServiceBeanId" value="insertInstRptRelaDataInitService"></property>
+    </bean>
+     <bean id="singleObjectShowFromSaveByAjaxAction" class="report.actions.imps.ShowFromSaveByAjaxAction" scope="prototype">
+        <property name="defaultServiceBeanId" value="singleObjectShowFromSaveByAjaxService"></property>
+    </bean>
+    
+    <!-- 任务列表树action -->
+    <bean id="taskShowTreeAction" class="framework.actions.imps.BaseSTModelDrivenAction" scope="prototype">
+        <property name="defaultServiceBeanId" value="taskFlowShowTreeService"></property>
+    </bean>
+    
+    <bean id="singleObjectShowTabUpdateAction" class="framework.actions.imps.BaseSTNameAndIdAction" scope="prototype">
+		<property name="defaultServiceBeanId" value="showRep_AnalyseModelTabService"></property>
+	</bean>
+	
+	<bean id="singleObjectShowTabAnalyseAction" class="framework.actions.imps.BaseSTNameAndIdAction" scope="prototype">
+		<property name="defaultServiceBeanId" value="showRep_AnalyseModelTabAnalyseService"></property>
+	</bean>
+	
+	<!-- 分析模型配置保存-action -->
+	<bean id="analyseModelConfigSaveAction" class="framework.actions.imps.BaseSTModelDrivenAction" scope="prototype">
+		<property name="defaultServiceBeanId" value="analyseModelConfigSaveService"></property>
+	</bean>
+	
+	<!-- 模型分析图形jiemian -->
+	<bean id="showModelAnalyseChartAction" class="framework.actions.imps.BaseSTModelDrivenAction" scope="prototype">
+      <property name="defaultServiceBeanId" value="showModelAnalyseChartService"></property>
+    </bean> 
+    
+    <!-- 制度包生成 -->
+    <bean id="makeRepPackAction" class="framework.actions.imps.BaseSAction" scope="prototype">
+      <property name="defaultServiceBeanId" value="makeRepPackService"></property>
+    </bean> 
+    
+    <!-- 制度包升级 -->
+	<bean id="makeRepUpgradeAction" class="framework.actions.imps.BaseSTModelDrivenConditionFileAction" scope="prototype">
+		<property name="defaultServiceBeanId" value="makeRepUpgradeService"></property>
+	</bean>
+    
+    <!-- 法人制度包升级 -->
+	<bean id="upgradeLeRepAction" class="framework.actions.imps.BaseSTModelDrivenAction" scope="prototype">
+		<property name="defaultServiceBeanId" value="upgradeLeRepService"></property>
+	</bean>
+	<bean id="makeRepLeUpgradeAction" class="framework.actions.imps.BaseSTModelDrivenAction" scope="prototype">
+      <property name="defaultServiceBeanId" value="makeRepLeUpgradeService"></property>
+    </bean> 
+    
+    <!-- 明细报表sql查询下载  action-->
+    <bean id="downloadRepDetailAction" class="report.actions.imps.DownloadRepDetailAction" scope="prototype">
+      <property name="defaultServiceBeanId" value="downloadRepDetailService"></property>
+    </bean> 
+    
+</beans>

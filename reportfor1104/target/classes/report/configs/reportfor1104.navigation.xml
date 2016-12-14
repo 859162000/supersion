@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<navigationRoot>
+ 
+  
+   
+	<navigationComponentList>
+	    <navigationComponent id="DeskTop" name="桌面" url="Framework/NavigationPage.jsp"  ico="bg.png" treeIco="bg.png" treeExpandIco="bg.png" des="">
+	    	<navigationComponent id="DataQueryPlatform" name="数据查询平台" url="Framework/NavigationPage.jsp" ico="128_MergeSummary.png" treeIco="64_MergeSummary.png" treeExpandIco="32_MergeSummary.png" des="">
+	    		<!--<navigationComponent id="ItemData1104" name="指标数据查询1104" url="framework/ShowList-report.dto.ItemData" ico="64_ItemInfo.png" treeIco="32_ItemInfo.png" treeExpandIco="16_ItemInfo.png" des=""></navigationComponent>-->
+	    	</navigationComponent>
+			
+			<navigationComponent id="ReportFor1104" name="1104相关主题报表产品" url="Framework/NavigationPage.jsp" ico="128_MergeSummary.png" treeIco="64_MergeSummary.png" treeExpandIco="32_MergeSummary.png" des="">
+ 				<navigationComponent id="R1104DataManagerment" name="报表处理平台 " url="Framework/NavigationPage.jsp"  ico="128_NeedDoThing.png" treeIco="64_NeedDoThing.png" treeExpandIco="32_NeedDoThing.png" des="">
+ 					<navigationComponent id="R1104TaskRptInst" name="统计报表填报" url="framework/R1104ShowTree-report.dto.TaskRptInst" ico="64_DocumentInfo.png" treeIco="32_DocumentInfo.png" treeExpandIco="16_DocumentInfo.png" des=""></navigationComponent>
+					<navigationComponent id="R1104TaskRptInstSH" name="统计报表审核" url="framework/R1104ReviewShowTree-report.dto.TaskRptInst" ico="64_FundDataCheck.png" treeIco="32_FundDataCheck.png" treeExpandIco="16_FundDataCheck.png" des=""></navigationComponent>
+					<navigationComponent id="R1104TaskRptInstMEGER" name="数据汇总" url="framework/R1104ShowTree-report.dto.TaskFlow" ico="64_TaskRptInst.png" treeIco="32_TaskRptInst.png" treeExpandIco="16_TaskRptInst.png" des=""></navigationComponent>
+					<navigationComponent id="R1104TaskRptInstTopN" name="TopN数据汇总" url="framework/TaskTopNShowTree-report.dto.TaskFlow" ico="64_TaskRptInst.png" treeIco="32_TaskRptInst.png" treeExpandIco="16_TaskRptInst.png" des=""></navigationComponent>
+					<navigationComponent id="R1104TaskModelInst" name="明细数据填报" url="framework/R1104ShowTree-report.dto.TaskModelInst" ico="64_Reportmodel_tableSet.png" treeIco="32_Reportmodel_tableSet.png" treeExpandIco="16_Reportmodel_tableSet.png" des=""></navigationComponent>
+					<navigationComponent id="R1104TaskModelInstSH" name="明细数据审核" url="framework/R1104ReviewShowTree-report.dto.TaskModelInst" ico="64_TaskRptInst.png" treeIco="32_TaskRptInst.png" treeExpandIco="16_TaskRptInst.png" des=""></navigationComponent>
+					<navigationComponent id="R1104TaskModelInstCK" name="数据查看" url="framework/R1104CKShowTree-report.dto.TaskModelInst" ico="64_TaskRptInst.png" treeIco="32_TaskRptInst.png" treeExpandIco="16_TaskRptInst.png" des=""></navigationComponent>
+ 				</navigationComponent>
+ 				<navigationComponent id="R1104BuildReport" name="指标报文生成" url="report/R1104BuildReport-report.dto.TaskRptInst" ico="64_ItemInfo.png" treeIco="32_ItemInfo.png" treeExpandIco="16_ItemInfo.png" des=""></navigationComponent>
+ 		    </navigationComponent>
+	     </navigationComponent>
+	</navigationComponentList>
+</navigationRoot>

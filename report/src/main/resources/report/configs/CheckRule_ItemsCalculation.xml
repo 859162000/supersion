@@ -1,0 +1,164 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<reportCheckRoot>
+	<checkInstance name="ItemsCalculation">
+	   <checkTable>
+		   <checkFieldCaseWhenList>
+				<checkFieldCaseWhen name="strConstant" discription="常量" caseValue="notNull" whenValue="常量">
+					<checkFieldCaseWhenField name="strItemType" discription="项类型"></checkFieldCaseWhenField>					
+				</checkFieldCaseWhen>
+				<checkFieldCaseWhen name="strSymbol" discription="符号" caseValue="notNull" whenValue="符号">
+					<checkFieldCaseWhenField name="strItemType" discription="项类型"></checkFieldCaseWhenField>					
+				</checkFieldCaseWhen>
+				<checkFieldCaseWhen name="itemInfo" discription="指标" caseValue="notNull" whenValue="指标">
+					<checkFieldCaseWhenField name="strItemType" discription="项类型"></checkFieldCaseWhenField>					
+				</checkFieldCaseWhen>
+					<checkFieldCaseWhen name="reportModel_Table" discription="表名" caseValue="notNull" whenValue="明细">
+					<checkFieldCaseWhenField name="strItemType" discription="项类型"></checkFieldCaseWhenField>					
+				</checkFieldCaseWhen>
+		  </checkFieldCaseWhenList>  
+	   </checkTable>
+	</checkInstance>
+	
+	<checkInstance name="DetailedFieldInfo">
+	   <checkTable>
+		 <checkFieldCaseWhenList>
+		   <checkFieldCaseWhen name="autoRelationFieldID" discription="字段" caseValue="notNull" whenValue="null">
+			  <checkFieldCaseWhenField name="strConditionJoinType" discription="连接类型" ></checkFieldCaseWhenField>					
+		    </checkFieldCaseWhen>
+		    
+		    <checkFieldCaseWhen name="strConditionType" discription="条件类型" caseValue="notNull" whenValue="null">
+			  <checkFieldCaseWhenField name="strConditionJoinType" discription="连接类型"  ></checkFieldCaseWhenField>					
+		    </checkFieldCaseWhen>
+		    
+		     <checkFieldCaseWhen name="strValue" discription="字段值"  caseValue="notNull" whenValue="null">
+			  <checkFieldCaseWhenField name="strConditionJoinType" discription="连接类型" ></checkFieldCaseWhenField>					
+		    </checkFieldCaseWhen>
+		    
+		    <checkFieldCaseWhen name="autoRelationFieldID" discription="字段" caseValue="null" whenValue="notNull">
+			  <checkFieldCaseWhenField name="strConditionJoinType" discription="连接类型" ></checkFieldCaseWhenField>					
+		    </checkFieldCaseWhen>
+		    
+		    <checkFieldCaseWhen name="strConditionType" discription="条件类型" caseValue="null" whenValue="notNull">
+			  <checkFieldCaseWhenField name="strConditionJoinType" discription="连接类型"  ></checkFieldCaseWhenField>					
+		    </checkFieldCaseWhen>
+		    
+		     <checkFieldCaseWhen name="strValue" discription="字段值"  caseValue="null" whenValue="notNull">
+			  <checkFieldCaseWhenField name="strConditionJoinType" discription="连接类型" ></checkFieldCaseWhenField>					
+		    </checkFieldCaseWhen>
+	  </checkFieldCaseWhenList>
+	   </checkTable>
+	</checkInstance>
+	
+		
+	<checkInstance name="TableFieldInfo">
+	   <checkTable>
+		  <checkFieldCaseWhenList>
+		  
+		    <!-- 字段的常量和数据库常量只能设置一个 
+			<checkFieldCaseWhen name="strConstList" discription="常量" caseValue="null" whenValue="notNull">
+			  <checkFieldCaseWhenField name="strDBConstList" discription="数据库常量"></checkFieldCaseWhenField>					
+		    </checkFieldCaseWhen>
+		    <checkFieldCaseWhen name="strDBConstList" discription="数据库常量" caseValue="null" whenValue="notNull">
+			  <checkFieldCaseWhenField name="strConstList" discription="常量"></checkFieldCaseWhenField>					
+		    </checkFieldCaseWhen>-->
+		    
+		    <!-- char 长度大于0 精度为空 -->
+		    <checkFieldCaseWhen name="nLength" discription="长度" caseValue="notNull" whenValue="char">
+			  <checkFieldCaseWhenField name="strFieldType" discription="字段类型"></checkFieldCaseWhenField>	
+			</checkFieldCaseWhen>
+			<checkFieldCaseWhen name="nLength" discription="长度" caseCompareType=">" caseValue="0" whenValue="char">
+			  <checkFieldCaseWhenField name="strFieldType" discription="字段类型"></checkFieldCaseWhenField>	
+			</checkFieldCaseWhen>
+			<checkFieldCaseWhen name="nPrecise" discription="精度" caseValue="null" whenValue="char">
+			  <checkFieldCaseWhenField name="strFieldType" discription="字段类型"></checkFieldCaseWhenField>	
+			</checkFieldCaseWhen>
+			
+			<!-- varchar 长度大于0 精度为空 -->
+		    <checkFieldCaseWhen name="nLength" discription="长度" caseValue="notNull" whenValue="varchar">
+			  <checkFieldCaseWhenField name="strFieldType" discription="字段类型"></checkFieldCaseWhenField>	
+			</checkFieldCaseWhen>
+			<checkFieldCaseWhen name="nLength" discription="长度" caseCompareType=">" caseValue="0" whenValue="varchar">
+			  <checkFieldCaseWhenField name="strFieldType" discription="字段类型"></checkFieldCaseWhenField>	
+			</checkFieldCaseWhen>
+			<checkFieldCaseWhen name="nPrecise" discription="精度" caseValue="null" whenValue="varchar">
+			  <checkFieldCaseWhenField name="strFieldType" discription="字段类型"></checkFieldCaseWhenField>	
+			</checkFieldCaseWhen>
+			
+			<!-- DateTime 长度精度为空 -->
+			<checkFieldCaseWhen name="nLength" discription="长度" caseValue="null" whenValue="DateTime">
+			  <checkFieldCaseWhenField name="strFieldType" discription="字段类型"></checkFieldCaseWhenField>	
+			</checkFieldCaseWhen>
+			<checkFieldCaseWhen name="nPrecise" discription="精度" caseValue="null" whenValue="DateTime">
+			  <checkFieldCaseWhenField name="strFieldType" discription="字段类型"></checkFieldCaseWhenField>	
+			</checkFieldCaseWhen>
+			
+			<!-- INT32 长度精度为空 -->
+			<checkFieldCaseWhen name="nLength" discription="长度" caseValue="null" whenValue="INT32">
+			  <checkFieldCaseWhenField name="strFieldType" discription="字段类型"></checkFieldCaseWhenField>	
+			</checkFieldCaseWhen>
+			<checkFieldCaseWhen name="nPrecise" discription="精度" caseValue="null" whenValue="INT32">
+			  <checkFieldCaseWhenField name="strFieldType" discription="字段类型"></checkFieldCaseWhenField>	
+			</checkFieldCaseWhen>
+			
+			<!-- Decimal 长度大于0 精度不为空 -->
+			<checkFieldCaseWhen name="nLength" discription="长度" caseValue="notNull" whenValue="Decimal">
+			  <checkFieldCaseWhenField name="strFieldType" discription="字段类型"></checkFieldCaseWhenField>	
+			</checkFieldCaseWhen>
+			<checkFieldCaseWhen name="nLength" discription="长度" caseCompareType=">" caseValue="0" whenValue="Decimal">
+			  <checkFieldCaseWhenField name="strFieldType" discription="字段类型"></checkFieldCaseWhenField>	
+			</checkFieldCaseWhen>
+			<checkFieldCaseWhen name="nPrecise" discription="精度" caseValue="notNull" whenValue="Decimal">
+			  <checkFieldCaseWhenField name="strFieldType" discription="字段类型"></checkFieldCaseWhenField>	
+			</checkFieldCaseWhen>
+			
+			<!-- 主键只能是varchar类型
+			<checkFieldCaseWhen name="strFieldType" discription="字段类型" caseValue="varchar" whenValue="Yes">
+			  <checkFieldCaseWhenField name="IsKey" discription="主键"></checkFieldCaseWhenField>	
+			</checkFieldCaseWhen> -->
+
+			<!-- 主键不能为外键类型 -->
+			<checkFieldCaseWhen name="strConstList" discription="常量" caseValue="null" whenValue="Yes">
+			  <checkFieldCaseWhenField name="IsKey" discription="主键"></checkFieldCaseWhenField>	
+			</checkFieldCaseWhen>
+			<checkFieldCaseWhen name="strDBConstList" discription="数据库常量" caseValue="null" whenValue="Yes">
+			  <checkFieldCaseWhenField name="IsKey" discription="主键"></checkFieldCaseWhenField>	
+			</checkFieldCaseWhen>
+			
+		  </checkFieldCaseWhenList>
+	   </checkTable>
+	</checkInstance>
+	
+	<checkInstance name="TaskFlowCheck">
+	   <checkTable>
+	   <checkFieldLineList>
+		   <checkFieldLine compareType=">=" fieldType="2">
+       			<leftFieldList>
+       			    <checkFieldLineField  name="taskEndData" discription="任务结束时间"></checkFieldLineField></leftFieldList>
+        		<rightFieldList>
+        		    <checkFieldLineField name="taskStartData" discription="任务开始时间"></checkFieldLineField></rightFieldList>        	
+       	 </checkFieldLine> 
+       </checkFieldLineList>
+	   </checkTable>
+	</checkInstance>
+	
+	<checkInstance name="AutoTaskFlowCheck">
+		<checkTable>
+			<checkFieldBasicList>
+				<checkFieldBasic name="taskStartDate"  discription="任务开始时间（天）" digitalCheck="true"></checkFieldBasic>
+          		<checkFieldBasic name="taskEndDate"  discription="任务结束时间（天）" digitalCheck="true"></checkFieldBasic>          
+			</checkFieldBasicList>
+		    <checkFieldLineList>
+			   <checkFieldLine compareType=">=" fieldType="1">
+	      	   <leftFieldList>
+	      			<checkFieldLineField  name="taskEndDate" discription="任务结束时间"></checkFieldLineField>
+	      		</leftFieldList>
+	       		<rightFieldList>
+	       		    <checkFieldLineField name="taskStartDate" discription="任务开始时间"></checkFieldLineField>
+	       		</rightFieldList>        	
+			</checkFieldLine> 
+       </checkFieldLineList>
+	   </checkTable>
+	</checkInstance>
+
+	
+</reportCheckRoot>

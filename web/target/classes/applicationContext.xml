@@ -1,0 +1,87 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans
+	xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns:p="http://www.springframework.org/schema/p"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-3.0.xsd">
+    
+    <!-- 此段代码不能删除 start -->
+     <import resource="classpath:framework/configs/framework.applicationContext.xml"></import>
+      <import resource="classpath:szzxpt/configs/szzxpt.applicationContext.xml"></import>
+					<import resource="classpath:SRCB/configs/SRCB.applicationContext.xml"></import>
+    				<import resource="classpath:report/configs/reportfor1104.applicationContext.xml"></import>
+    				<import resource="classpath:report/configs/dataconcentration.applicationContext.xml"></import>
+    				<import resource="classpath:dbgssystem/configs/dbgssystem.applicationContext.xml"></import>
+    				<import resource="classpath:bxywsystem/configs/bxywsystem.applicationContext.xml"></import>
+    				<import resource="classpath:testsystem/configs/testsystem.applicationContext.xml"></import>
+    				<import resource="classpath:bwdrsystem/configs/bwdrsystem.applicationContext.xml"></import>
+    				<import resource="classpath:ncr/configs/ncr.applicationContext.xml"></import>
+    				<import resource="classpath:eas/configs/eas.applicationContext.xml"></import>
+    				<import resource="classpath:zdzsystem/configs/zdzsystem.applicationContext.xml"></import>
+    				<import resource="classpath:jmx/configs/jmx.applicationContext.xml"></import>
+      
+      <!-- 工作流线程间隔多少分钟扫描一次 -->
+      <bean id="autoWorkflowService" class="autoETLsystem.service.imps.AutoWorkflowService" scope="prototype">
+        <property name="sleepTime" value="1"></property>
+        <property name="defaultOracleProcedureParamName" value="rt"></property>
+    </bean>
+    <!-- 此段代码不能删除 end -->
+	
+    <bean id="sessionFactory" class="org.springframework.orm.hibernate3.annotation.AnnotationSessionFactoryBean">
+		<property name="configLocation" value="classpath:hibernate.cfg.xml"></property>
+		<property name="packagesToScan">
+			<list>
+				<value>zxptsystem.dto</value>
+			    <value>report.dto</value>
+			    <value>extend.dto</value>
+			    <value>coresystem.dto</value>
+			    <value>autoETLsystem.dto</value>
+			    <value>szzxpt.dto</value>
+			    <value>dbgssystem.dto</value>
+			    <value>bxywsystem.dto</value>
+			    <value>bwdrsystem.dto</value>
+			    <value>zdzsystem.dto</value>
+			    <value>eas.dto</value>
+			    <value>ncr.dto</value>
+			    <value>jmx.dto</value>
+			</list>
+		</property>
+	 </bean>
+    
+    <!-- <bean id="Oracle" class="org.springframework.orm.hibernate3.annotation.AnnotationSessionFactoryBean">
+		<property name="configLocation" value="classpath:extendOracle.hibernate.cfg.xml"></property>
+		<property name="packagesToScan">
+			<list>
+			    <value>oracle.dto</value>
+			</list>
+		</property>
+	 </bean>
+	 
+	 <bean id="Sqlserver" class="org.springframework.orm.hibernate3.annotation.AnnotationSessionFactoryBean">
+		<property name="configLocation" value="classpath:extendSqlserver.hibernate.cfg.xml"></property>
+		<property name="packagesToScan">
+			<list>
+			    <value>Sqlserver.dto</value>
+			</list>
+		</property>
+	 </bean>
+	 
+	 <bean id="DB2" class="org.springframework.orm.hibernate3.annotation.AnnotationSessionFactoryBean">
+		<property name="configLocation" value="classpath:extendDB2.hibernate.cfg.xml"></property>
+		<property name="packagesToScan">
+			<list>
+			    <value>db2.dto</value>
+			</list>
+		</property>
+	 </bean>
+	 
+	  <bean id="Mysql" class="org.springframework.orm.hibernate3.annotation.AnnotationSessionFactoryBean">
+		<property name="configLocation" value="classpath:extendMysql.hibernate.cfg.xml"></property>
+		<property name="packagesToScan">
+			<list>
+			    <value>db2.dto</value>
+			</list>
+		</property>
+	 </bean>
+	  -->
+</beans>

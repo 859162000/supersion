@@ -1,0 +1,245 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+
+<fieldShowsRoot>
+
+	<fieldShowsEntity>
+		<className>ncr.dto.AutoDTO_NCR_1_1</className>
+		<showInstance>
+			<showInstanceName>1</showInstanceName>
+			<fieldName fieldName="J" singleTag="dateFieldNoSlash"></fieldName>
+			<fieldName fieldName="K" singleTag="dateFieldNoSlash"></fieldName>
+			<fieldName fieldName="H" reportUnitCode="5"></fieldName>
+            <fieldName fieldName="I" reportUnitCode="5"></fieldName>
+            <fieldName fieldName="L" reportUnitCode="5"></fieldName>
+            <fieldName fieldName="M" reportUnitCode="5"></fieldName>
+            <fieldName fieldName="N" reportUnitCode="5"></fieldName>
+            <fieldName fieldName="O" reportUnitCode="5"></fieldName>
+            <fieldName fieldName="P" reportUnitCode="5"></fieldName>
+            <fieldName fieldName="Q" reportUnitCode="5"></fieldName>
+            <fieldName fieldName="R" reportUnitCode="5"></fieldName>
+            <fieldName fieldName="S" reportUnitCode="5"></fieldName>
+            <fieldName fieldName="T" reportUnitCode="5"></fieldName>
+		</showInstance>
+	</fieldShowsEntity>
+	<fieldShowsEntity>
+		<className>ncr.dto.AutoDTO_NCR_1_2</className>
+		<showInstance>
+			<showInstanceName>1</showInstanceName>
+			<fieldName fieldName="A" intOrder="3"></fieldName>
+			<fieldName fieldName="B" intOrder="4"></fieldName>
+			<fieldName fieldName="C" intOrder="5"></fieldName>
+			<fieldName fieldName="D" intOrder="6"></fieldName>
+			<fieldName fieldName="E" intOrder="7"></fieldName>
+			<fieldName fieldName="F" intOrder="8"></fieldName>
+			<fieldName fieldName="G" intOrder="9"></fieldName>
+			<fieldName fieldName="H" intOrder="10"></fieldName>
+			<fieldName fieldName="I" intOrder="11"></fieldName>
+			<fieldName fieldName="J" intOrder="12"></fieldName>
+			<fieldName fieldName="K" intOrder="13"></fieldName>
+			<fieldName fieldName="L" intOrder="14"></fieldName>
+			<fieldName fieldName="M" intOrder="15"></fieldName>
+			<fieldName fieldName="N" intOrder="16"></fieldName>
+			<fieldName fieldName="REL_CUST_NAME" intOrder="1"></fieldName>
+			<fieldName fieldName="REL_1_1_A" intOrder="2"></fieldName>
+      <fieldName fieldName="D" reportUnitCode="5"></fieldName>
+      <fieldName fieldName="E" reportUnitCode="5"></fieldName>
+      <fieldName fieldName="F" reportUnitCode="5"></fieldName>
+      <fieldName fieldName="G" reportUnitCode="5"></fieldName>    
+      <fieldName fieldName="H" reportUnitCode="5"></fieldName>
+      <fieldName fieldName="I" reportUnitCode="5"></fieldName>
+      <fieldName fieldName="J" reportUnitCode="5"></fieldName>
+      <fieldName fieldName="K" reportUnitCode="5"></fieldName>
+      <fieldName fieldName="L" reportUnitCode="5"></fieldName> 
+      <fieldName fieldName="M" reportUnitCode="5"></fieldName> 
+      <fieldName fieldName="N" reportUnitCode="5"></fieldName>
+      		</showInstance>
+	</fieldShowsEntity>
+	<fieldShowsEntity>                                                    
+		<className>ncr.dto.AutoDTO_NCR_1_3</className>                      
+		<showInstance>                                                      
+			<showInstanceName>1</showInstanceName>                            
+			<fieldName fieldName="G" singleTag="dateFieldNoSlash"></fieldName>
+			<fieldName fieldName="H" singleTag="dateFieldNoSlash"></fieldName>
+			<fieldName fieldName="X" singleTag="dateFieldNoSlash"></fieldName>
+			<fieldName fieldName="Z" singleTag="dateFieldNoSlash"></fieldName>
+			<fieldName fieldName="I" reportUnitCode="5"></fieldName>
+			<fieldName fieldName="J" reportUnitCode="5"></fieldName>
+			<fieldName fieldName="Q" reportUnitCode="5"></fieldName>
+			<fieldName fieldName="S" reportUnitCode="5"></fieldName>
+			<fieldName fieldName="U" reportUnitCode="5"></fieldName>
+			<fieldName fieldName="Y" reportUnitCode="5"></fieldName>
+			<fieldName fieldName="AA" reportUnitCode="5"></fieldName>
+			<fieldName fieldName="AC" reportUnitCode="5"></fieldName>			
+		</showInstance>                                                 
+	</fieldShowsEntity> 
+	<fieldShowsEntity>                                                    
+		<className>ncr.dto.AutoDTO_NCR_1_4</className>                      
+		<showInstance>                                                      
+			<showInstanceName>1</showInstanceName>                            
+			<fieldName fieldName="J" singleTag="dateFieldNoSlash"></fieldName>
+			<fieldName fieldName="I" singleTag="dateFieldNoSlash"></fieldName>
+			<fieldName fieldName="G" reportUnitCode="5"></fieldName>  
+      <fieldName fieldName="H" reportUnitCode="5"></fieldName>
+		</showInstance>                                                 
+	</fieldShowsEntity>
+	<fieldShowsEntity>                                                    
+		<className>ncr.dto.AutoDTO_NCR_1_5</className>                      
+		<showInstance>                                                      
+			<showInstanceName>1</showInstanceName>                            
+			<fieldName fieldName="E" reportUnitCode="5"></fieldName>
+		</showInstance>                                                 
+	</fieldShowsEntity>   
+	<fieldShowsEntity>                                                    
+		<className>ncr.dto.AutoDTO_NCR_1_6</className>                      
+		<showInstance>                                                      
+			<showInstanceName>1</showInstanceName>                            
+			<fieldName fieldName="J" singleTag="dateFieldNoSlash"></fieldName>
+			<fieldName fieldName="K" singleTag="dateFieldNoSlash"></fieldName>
+			<fieldName fieldName="H" reportUnitCode="5"></fieldName>
+      <fieldName fieldName="L" reportUnitCode="5"></fieldName>
+		</showInstance>                                                 
+	</fieldShowsEntity>
+	<fieldShowsEntity>                                                    
+		<className>ncr.dto.AutoDTO_NCR_1_7</className>                      
+		<showInstance>                                                      
+		 <showInstanceName>1</showInstanceName>                            
+		 <fieldName fieldName="I" reportUnitCode="5"></fieldName>
+     <fieldName fieldName="J" reportUnitCode="5"></fieldName> 
+     <fieldName fieldName="K" reportUnitCode="5"></fieldName>
+     <fieldName fieldName="L" reportUnitCode="5"></fieldName>
+     <fieldName fieldName="M" reportUnitCode="5"></fieldName>
+     <fieldName fieldName="N" reportUnitCode="5"></fieldName>
+     <fieldName fieldName="O" reportUnitCode="5"></fieldName>
+     <fieldName fieldName="P" reportUnitCode="5"></fieldName>
+     <fieldName fieldName="Q" reportUnitCode="5"></fieldName>
+     <fieldName fieldName="R" reportUnitCode="5"></fieldName>
+     <fieldName fieldName="S" reportUnitCode="5"></fieldName>  
+     <fieldName fieldName="T" reportUnitCode="5"></fieldName>
+     <fieldName fieldName="U" reportUnitCode="5"></fieldName>
+		</showInstance>                                                 
+	</fieldShowsEntity> 
+	<fieldShowsEntity>                                                    
+		<className>ncr.dto.AutoDTO_NCR_2_1</className>                      
+		<showInstance>                                                      
+			<showInstanceName>1</showInstanceName>                            
+			<fieldName fieldName="I" singleTag="dateFieldNoSlash"></fieldName>
+			<fieldName fieldName="Q" singleTag="dateFieldNoSlash"></fieldName>
+			<fieldName fieldName="T" singleTag="dateFieldNoSlash"></fieldName>
+			<fieldName fieldName="F" reportUnitCode="5"></fieldName> 
+      <fieldName fieldName="G" reportUnitCode="5"></fieldName>
+		</showInstance>                                                 
+	</fieldShowsEntity>  
+	<fieldShowsEntity>                                                    
+		<className>ncr.dto.AutoDTO_NCR_2_2</className>                      
+		<showInstance>                                                      
+			<showInstanceName>1</showInstanceName>                            
+			<fieldName fieldName="F_1" singleTag="dateFieldNoSlash"></fieldName>
+			<fieldName fieldName="G_1" singleTag="dateFieldNoSlash"></fieldName>
+			<fieldName fieldName="F_2" singleTag="dateFieldNoSlash"></fieldName>
+			<fieldName fieldName="G_2" singleTag="dateFieldNoSlash"></fieldName>
+			<fieldName fieldName="F_N" singleTag="dateFieldNoSlash"></fieldName>
+			<fieldName fieldName="G_N" singleTag="dateFieldNoSlash"></fieldName>
+			<fieldName fieldName="J" singleTag="dateFieldNoSlash"></fieldName>
+		</showInstance>                                                 
+	</fieldShowsEntity>  
+	<fieldShowsEntity>                                                    
+		<className>ncr.dto.AutoDTO_NCR_3_1</className>                      
+		<showInstance>                                                      
+			<showInstanceName>1</showInstanceName>                            
+			<fieldName fieldName="D" singleTag="dateFieldNoSlash"></fieldName>
+			<fieldName fieldName="F" singleTag="dateFieldNoSlash"></fieldName>
+			<fieldName fieldName="Z" singleTag="dateFieldNoSlash"></fieldName>
+		</showInstance>                                                 
+	</fieldShowsEntity>   
+	<fieldShowsEntity>                                                    
+		<className>ncr.dto.AutoDTO_NCR_3_2</className>                      
+		<showInstance>                                                      
+			<showInstanceName>1</showInstanceName>                            
+			<fieldName fieldName="F_1" singleTag="dateFieldNoSlash"></fieldName>
+			<fieldName fieldName="G_1" singleTag="dateFieldNoSlash"></fieldName>
+			<fieldName fieldName="F_2" singleTag="dateFieldNoSlash"></fieldName>
+			<fieldName fieldName="G_2" singleTag="dateFieldNoSlash"></fieldName>
+			<fieldName fieldName="F_N" singleTag="dateFieldNoSlash"></fieldName>
+			<fieldName fieldName="G_N" singleTag="dateFieldNoSlash"></fieldName>
+			<fieldName fieldName="J"   singleTag="dateFieldNoSlash"></fieldName>
+		</showInstance>                                                 
+	</fieldShowsEntity>  
+	<fieldShowsEntity>                                                    
+		<className>ncr.dto.AutoDTO_NCR_3_3</className>                      
+		<showInstance>                                                      
+			<showInstanceName>1</showInstanceName>                            
+			<fieldName fieldName="J" singleTag="dateFieldNoSlash"></fieldName>
+			<fieldName fieldName="K" singleTag="dateFieldNoSlash"></fieldName>
+			<fieldName fieldName="P" reportUnitCode="5"></fieldName>
+			<fieldName fieldName="Q" reportUnitCode="5"></fieldName>
+			<fieldName fieldName="R" reportUnitCode="5"></fieldName>
+			<fieldName fieldName="S" reportUnitCode="5"></fieldName>
+			<fieldName fieldName="T" reportUnitCode="5"></fieldName>
+			<fieldName fieldName="U" reportUnitCode="5"></fieldName>
+			<fieldName fieldName="V" reportUnitCode="5"></fieldName>
+			<fieldName fieldName="W" reportUnitCode="5"></fieldName>
+			<fieldName fieldName="X" reportUnitCode="5"></fieldName>
+		</showInstance>                                                 
+	</fieldShowsEntity>   
+	<fieldShowsEntity>                                                    
+		<className>ncr.dto.AutoDTO_NCR_4_1</className>                      
+		<showInstance>                                                      
+			<showInstanceName>1</showInstanceName>                            
+			<fieldName fieldName="O" singleTag="dateFieldNoSlash"></fieldName>
+			<fieldName fieldName="P" singleTag="dateFieldNoSlash"></fieldName>
+			<fieldName fieldName="Q" singleTag="dateFieldNoSlash"></fieldName>
+			<fieldName fieldName="M" reportUnitCode="5"></fieldName>
+			<fieldName fieldName="R" reportUnitCode="5"></fieldName>
+		</showInstance>                                                 
+	</fieldShowsEntity>
+	<fieldShowsEntity>                                                    
+		<className>ncr.dto.AutoDTO_NCR_5_1</className>                      
+		<showInstance>                                                      
+			<showInstanceName>1</showInstanceName>                            
+			<fieldName fieldName="K" singleTag="dateFieldNoSlash"></fieldName>
+			<fieldName fieldName="L" singleTag="dateFieldNoSlash"></fieldName>
+			<fieldName fieldName="R" singleTag="dateFieldNoSlash"></fieldName>
+			<fieldName fieldName="I" reportUnitCode="1"></fieldName>
+			<fieldName fieldName="J" reportUnitCode="1"></fieldName>
+			<fieldName fieldName="M" reportUnitCode="1"></fieldName>
+			<fieldName fieldName="Q" reportUnitCode="1"></fieldName>
+		</showInstance>                                                 
+	</fieldShowsEntity> 
+	<fieldShowsEntity>                                                    
+		<className>ncr.dto.AutoDTO_NCR_6_1</className>                      
+		<showInstance>                                                      
+			<showInstanceName>1</showInstanceName>                            
+			<fieldName fieldName="P" singleTag="dateFieldNoSlash"></fieldName>
+			<fieldName fieldName="Q" singleTag="dateFieldNoSlash"></fieldName>
+			<fieldName fieldName="R" singleTag="dateFieldNoSlash"></fieldName>
+			<fieldName fieldName="N" reportUnitCode="5"></fieldName>
+			<fieldName fieldName="S" reportUnitCode="5"></fieldName>
+		</showInstance>                                                 
+	</fieldShowsEntity>
+	
+	<!--<fieldShowsEntity>
+		<className>ncr.dto.consistencyFeedback</className>                      
+		<showInstance>                                                      
+			<showInstanceName>1</showInstanceName>                            
+			<fieldName fieldName="P"></fieldName>
+			<fieldName fieldName="Q"></fieldName>
+			<fieldName fieldName="R"></fieldName>
+			<fieldName fieldName="N"></fieldName>
+			<fieldName fieldName="S"></fieldName>
+		</showInstance>                                                 
+	</fieldShowsEntity>  
+	
+	<fieldShowsEntity>
+		<className>ncr.dto.warnFeedback</className>                      
+		<showInstance>                                                      
+			<showInstanceName>1</showInstanceName>                            
+			<fieldName fieldName="P"></fieldName>
+			<fieldName fieldName="Q"></fieldName>
+			<fieldName fieldName="R"></fieldName>
+			<fieldName fieldName="N"></fieldName>
+			<fieldName fieldName="S"></fieldName>
+		</showInstance>                                                 
+	</fieldShowsEntity>-->
+	
+	</fieldShowsRoot>
+          

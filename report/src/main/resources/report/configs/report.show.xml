@@ -1,0 +1,255 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<fieldShowsRoot>
+
+
+	<fieldShowsEntity>
+      <className>report.dto.CheckBasic</className>
+      <showInstance>
+        <showInstanceName>1</showInstanceName>
+        <fieldName fieldName="checkTableNode" fieldShowName="checkTableNodeID" listVisible="false" ></fieldName> 
+      </showInstance>
+	</fieldShowsEntity>
+	
+	<fieldShowsEntity>
+      <className>report.dto.CheckUniqueField</className>
+      <showInstance>
+        <showInstanceName>1</showInstanceName>
+        <fieldName fieldName="checkTableNode" fieldShowName="checkTableNodeID" listVisible="false" ></fieldName> 
+      </showInstance>
+	</fieldShowsEntity>
+	
+	<fieldShowsEntity>
+      <className>report.dto.CheckFieldOrList</className>
+      <showInstance>
+        <showInstanceName>1</showInstanceName>
+        <fieldName fieldName="checkTableNode" fieldShowName="checkTableNodeID" listVisible="false" ></fieldName> 
+      </showInstance>
+	</fieldShowsEntity><!--
+	
+	<fieldShowsEntity>
+      <className>report.dto.CheckCaseWhen</className>
+      <showInstance>
+        <showInstanceName>1</showInstanceName>
+        <fieldName fieldName="checkTableNode" fieldShowName="checkTableNodeID" listVisible="false" ></fieldName> 
+      </showInstance>
+	</fieldShowsEntity>
+	
+	--><fieldShowsEntity>
+      <className>report.dto.CheckFieldEffective</className>
+      <showInstance>
+        <showInstanceName>1</showInstanceName>
+        <fieldName fieldName="checkTableNode" fieldShowName="checkTableNodeID" listVisible="false" ></fieldName> 
+      </showInstance>
+	</fieldShowsEntity>
+	
+	<fieldShowsEntity>
+      <className>report.dto.CheckFieldLine</className>
+      <showInstance>
+        <showInstanceName>1</showInstanceName>
+        <fieldName fieldName="checkTableNode" fieldShowName="checkTableNodeID" listVisible="false" ></fieldName>
+        <fieldName fieldName="procedureName" width="110"></fieldName>
+         <fieldName fieldName="procedureParam" width="110"></fieldName>
+          <fieldName fieldName="procedureDiscription" width="110"></fieldName> 
+      </showInstance>
+	</fieldShowsEntity>
+	
+	<fieldShowsEntity>
+      <className>report.dto.CheckCaseWhenField</className>
+      <showInstance>
+        <showInstanceName>1</showInstanceName>
+        <fieldName fieldName="whenValueRule" width="110"></fieldName>
+         <fieldName fieldName="whenValueScope" width="110"></fieldName>
+          <fieldName fieldName="checkCaseWhen" width="110"></fieldName>
+      </showInstance>
+	</fieldShowsEntity>
+	
+	<fieldShowsEntity>
+      <className>report.dto.CheckCaseWhen</className>
+      <showInstance>
+        <showInstanceName>1</showInstanceName>
+        <fieldName fieldName="checkTableNode" fieldShowName="checkTableNodeID" listVisible="false" ></fieldName> 
+        <fieldName fieldName="caseCompareType" width="110"></fieldName>
+         <fieldName fieldName="whenValueScope" width="110"></fieldName>
+          <fieldName fieldName="caseValueScope" width="110"></fieldName>
+          <fieldName fieldName="whenCompareType" width="110"></fieldName>
+          <fieldName fieldName="whenCompareValue" width="110"></fieldName>
+      </showInstance>
+	</fieldShowsEntity>
+	
+	<fieldShowsEntity>
+      <className>report.dto.CheckOrCaseWhen</className>
+      <showInstance>
+        <showInstanceName>1</showInstanceName>
+       <fieldName fieldName="caseCompareType" width="110"></fieldName>
+         <fieldName fieldName="whenValueScope" width="110"></fieldName>
+          <fieldName fieldName="caseValueScope" width="110"></fieldName>
+          <fieldName fieldName="whenCompareType" width="110"></fieldName>
+          <fieldName fieldName="whenCompareValue" width="110"></fieldName>
+      </showInstance>
+	</fieldShowsEntity>
+	
+	<fieldShowsEntity>
+      <className>report.dto.CheckOrCaseWhenField</className>
+      <showInstance>
+        <showInstanceName>1</showInstanceName>
+        <fieldName fieldName="whenValueRule" width="110"></fieldName>
+         <fieldName fieldName="whenValueScope" width="110"></fieldName>
+          <fieldName fieldName="checkCaseWhen" width="110"></fieldName>
+      </showInstance>
+	</fieldShowsEntity>
+	
+	<fieldShowsEntity>
+      <className>report.dto.TaskFlow</className> 
+      <showInstance>
+        <showInstanceName>1</showInstanceName>
+        <fieldName fieldName="strTaskName" width="200"></fieldName>
+        <fieldName fieldName="taskStartData" singleTag="dateField"></fieldName>
+        <fieldName fieldName="taskEndData" singleTag="dateField"></fieldName>
+      </showInstance>
+	</fieldShowsEntity>
+	
+    <fieldShowsEntity>
+      <className>report.dto.AutoTaskFlow</className>
+      <showInstance>
+        <showInstanceName>1</showInstanceName>
+        <fieldName fieldName="strTaskName" width="200"></fieldName>
+        <fieldName fieldName="suit" listVisible="false"></fieldName>
+      </showInstance>
+    </fieldShowsEntity>
+	
+	<fieldShowsEntity>
+      <className>report.dto.CheckInstance</className>
+      <showInstance>
+        <showInstanceName>1</showInstanceName>
+        <fieldName fieldName="instanceName" width="150"></fieldName>
+      </showInstance>
+	</fieldShowsEntity>
+	
+	<fieldShowsEntity>
+      <className>report.dto.CheckNode</className>
+      <showInstance>
+        <showInstanceName>1</showInstanceName>
+        <fieldName fieldName="checkInstance" width="150"></fieldName>
+      </showInstance>
+	</fieldShowsEntity>
+	
+	 
+
+	
+	<fieldShowsEntity>
+      <className>report.dto.TaskModelInst</className>
+      <showInstance>
+        <showInstanceName>1</showInstanceName>
+         <fieldName fieldName="taskFlow"  listVisible="false" width="180"></fieldName>
+         <fieldName fieldName="reportModel_Table"  width="180"></fieldName>
+         <fieldName fieldName="RPTSendType"  width="190"></fieldName>
+         <fieldName fieldName="SubmitStatus"  width="120"></fieldName>
+         <fieldName fieldName="strCheckState"  width="120"></fieldName>
+         <fieldName fieldName="strAllowState"  width="120"></fieldName>
+         <fieldName fieldName="instInfo" listVisible="false" width="150"></fieldName>
+      </showInstance>
+      <showInstance>
+        <showInstanceName>2</showInstanceName>
+         <fieldName fieldName="reportModel_Table" singleTag="textField" width="180"  listVisible="true" intOrder="1"></fieldName>
+         <fieldName fieldName="RPTFeedbackType" width="120"  listVisible="false"  intOrder="2"  multipleSelect="true"></fieldName>
+          <fieldName fieldName="taskFlow"  listVisible="false" width="180" intOrder="3"></fieldName>
+         <fieldName fieldName="RPTSendType"  width="190"  listVisible="false" intOrder="4"  multipleSelect="true"></fieldName>
+         <fieldName fieldName="SubmitStatus"  width="120"  listVisible="true" intOrder="5"></fieldName>
+         <fieldName fieldName="strCheckState"  width="120"  listVisible="false" intOrder="6"></fieldName>
+         <fieldName fieldName="strAllowState"  width="120"  listVisible="false" intOrder="7"></fieldName>
+         <fieldName fieldName="instInfo" listVisible="false" width="150" intOrder="8"></fieldName>
+      </showInstance>
+      <showInstance>
+        <showInstanceName>3</showInstanceName>
+         <fieldName fieldName="reportModel_Table" singleTag="textField" width="180"></fieldName>
+          <fieldName fieldName="taskFlow"  listVisible="false" width="180"></fieldName>
+         <fieldName fieldName="RPTSendType" listVisible="false" width="190"></fieldName>
+         <fieldName fieldName="SubmitStatus"  width="120"></fieldName>
+         <fieldName fieldName="strCheckState"  width="120"></fieldName>
+         <fieldName fieldName="strAllowState"  width="120"></fieldName>
+         <fieldName fieldName="instInfo" listVisible="false" width="150"></fieldName>
+      </showInstance>
+      <showInstance>
+        <showInstanceName>4</showInstanceName>
+         <fieldName fieldName="reportModel_Table" singleTag="textField" width="180"></fieldName>
+          <fieldName fieldName="taskFlow"  listVisible="false" width="180"></fieldName>
+         <fieldName fieldName="RPTSendType" listVisible="false" width="190"></fieldName>
+         <fieldName fieldName="SubmitStatus"  width="120"></fieldName>
+         <fieldName fieldName="strCheckState" listVisible="false"  width="120"></fieldName>
+         <fieldName fieldName="strAllowState"  width="120"></fieldName>
+         <fieldName fieldName="instInfo" listVisible="false" width="150"></fieldName>
+      </showInstance>
+      <showInstance>
+        <showInstanceName>7</showInstanceName>
+         <fieldName fieldName="reportModel_Table" singleTag="textField" width="180"  listVisible="true" intOrder="1"></fieldName>
+         <fieldName fieldName="RPTFeedbackType" width="120"  listVisible="false"  intOrder="2"  multipleSelect="true">></fieldName>
+          <fieldName fieldName="taskFlow"  listVisible="false" width="180" intOrder="3"></fieldName>
+         <fieldName fieldName="RPTSendType"  width="190"  listVisible="false" intOrder="4"  multipleSelect="true">></fieldName>
+         <fieldName fieldName="SubmitStatus"  width="120"  listVisible="false" intOrder="5"></fieldName>
+         <fieldName fieldName="strCheckState"  width="120"  listVisible="false" intOrder="6"></fieldName>
+         <fieldName fieldName="strAllowState"  width="120"  listVisible="true" intOrder="7"></fieldName>
+         <fieldName fieldName="instInfo" listVisible="false" width="150" intOrder="8"></fieldName>
+      </showInstance>
+	</fieldShowsEntity>
+	
+	<fieldShowsEntity>
+      <className>report.dto.AutoTaskModelInst</className>
+      <showInstance>
+        <showInstanceName>1</showInstanceName>
+         <fieldName fieldName="autoTaskFlow"  listVisible="false" width="180"></fieldName>
+         <fieldName fieldName="reportModel_Table"  width="180"></fieldName>
+         <fieldName fieldName="strAllowState"  width="120"></fieldName>
+         <fieldName fieldName="RPTSendType"  width="190"></fieldName>
+         <fieldName fieldName="SubmitStatus"  width="120"></fieldName>
+         <fieldName fieldName="strCheckState"  width="120"></fieldName>
+         <fieldName fieldName="strAllowState"  width="120"></fieldName>
+         <fieldName fieldName="instInfo" listVisible="false" width="150"></fieldName>
+      </showInstance>
+      <showInstance>
+        <showInstanceName>2</showInstanceName>
+         <fieldName fieldName="reportModel_Table" singleTag="textField" width="180"></fieldName>
+          <fieldName fieldName="autoTaskFlow"  listVisible="false" width="180"></fieldName>
+         <fieldName fieldName="strAllowState"  width="120"></fieldName>
+         <fieldName fieldName="RPTSendType"  width="190"></fieldName>
+         <fieldName fieldName="SubmitStatus"  width="120"></fieldName>
+         <fieldName fieldName="strCheckState"  width="120"></fieldName>
+         <fieldName fieldName="strAllowState"  width="120"></fieldName>
+         <fieldName fieldName="instInfo" listVisible="false" width="150"></fieldName>
+      </showInstance>
+	</fieldShowsEntity>
+	
+
+	
+	<fieldShowsEntity>
+      <className>report.dto.DownloadResource</className>
+      <showInstance>
+        <showInstanceName>1</showInstanceName>
+        <fieldName fieldName="suit" intOrder="1"></fieldName>
+         <fieldName fieldName="startTime" width="120" intOrder="2" singleTag="dateField"></fieldName>
+         <fieldName fieldName="endTime" width="120" intOrder="3" singleTag="dateField"></fieldName>
+         <fieldName fieldName="proposer" intOrder="4"></fieldName>
+         <fieldName fieldName="fileName" width="100" intOrder="5"></fieldName>
+         <fieldName fieldName="fileType" intOrder="6"></fieldName>
+         <fieldName fieldName="fileDiscription" intOrder="7"></fieldName>
+         <fieldName fieldName="downloadOperator" listVisible="false" intOrder="8"></fieldName>
+      </showInstance>
+	</fieldShowsEntity>
+	
+
+		
+	<fieldShowsEntity>
+      <className>report.dto.Notice</className>
+      <showInstance>
+        <showInstanceName>1</showInstanceName>
+          <fieldName fieldName="strNoticeBoardTitle" width="100"></fieldName>
+          <fieldName fieldName="strNoticeBoardContent" width="250"></fieldName>
+          <fieldName fieldName="strFileName" width="120" updateReadOnly="true"></fieldName>
+        </showInstance>
+        
+        <showInstance>
+        <showInstanceName>showNoticeUpdate</showInstanceName>
+          <fieldName fieldName="byteData" singleTag="hiddenField"></fieldName>
+        </showInstance>
+	</fieldShowsEntity>
+	
+</fieldShowsRoot>

@@ -1,0 +1,120 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<reportCheckRoot>
+	<checkInstance name="Check_RptInfo">
+	<checkTable >		
+			<checkFieldLineList>
+				<checkFieldLine compareType=">=" fieldType="2">
+					<leftFieldList>
+						<checkFieldLineField name="endDate"
+							discription="结束时间"></checkFieldLineField>
+					</leftFieldList>
+					<rightFieldList>
+						<checkFieldLineField name="startDate"
+							discription="开始时间"></checkFieldLineField>
+					</rightFieldList>
+				</checkFieldLine>
+			</checkFieldLineList>
+		</checkTable>
+	</checkInstance>
+	<!--author by guochenglian-->
+     <checkInstance name="Check_CalculationRule">
+		<checkTable>
+			<checkFieldBasicList discription="基础校验">
+				<checkFieldBasic name="intOrder" discription="排序"
+					emptyCheck="true"></checkFieldBasic>
+			</checkFieldBasicList>
+			<checkFieldLineList>
+				<checkFieldLine compareType=">=" fieldType="2">
+					<leftFieldList>
+						<checkFieldLineField name="enddate"
+							discription="结束时间"></checkFieldLineField>
+					</leftFieldList>
+					<rightFieldList>
+						<checkFieldLineField name="startdate"
+							discription="开始时间"></checkFieldLineField>
+					</rightFieldList>
+				</checkFieldLine>
+				<checkFieldLine compareType=">=">
+					<leftFieldList>
+						<checkFieldLineField name="intOrder"
+							discription="顺序"></checkFieldLineField>
+					</leftFieldList>
+					<rightFieldList>
+						<checkFieldLineField value="0"></checkFieldLineField>
+					</rightFieldList>
+				</checkFieldLine>
+			</checkFieldLineList>
+		</checkTable>
+	</checkInstance>
+	<checkInstance name="Check_CheckRule">
+		<checkTable>
+			<checkFieldBasicList discription="基础校验">
+				<checkFieldBasic name="intOrder" discription="排序"  emptyCheck="true"></checkFieldBasic>
+				<checkFieldBasic name="compareType" discription="比较类型"  emptyCheck="true"></checkFieldBasic>
+			</checkFieldBasicList>
+			<checkFieldLineList>
+				<checkFieldLine compareType=">=" fieldType="2">
+					<leftFieldList>
+						<checkFieldLineField name="enddate"
+							discription="结束时间"></checkFieldLineField>
+					</leftFieldList>
+					<rightFieldList>
+						<checkFieldLineField name="startdate"
+							discription="开始时间"></checkFieldLineField>
+					</rightFieldList>
+				</checkFieldLine>
+				<checkFieldLine compareType=">=">
+					<leftFieldList>
+						<checkFieldLineField name="intOrder"
+							discription="顺序"></checkFieldLineField>
+					</leftFieldList>
+					<rightFieldList>
+						<checkFieldLineField value="0"></checkFieldLineField>
+					</rightFieldList>
+				</checkFieldLine>
+			</checkFieldLineList>
+		</checkTable>
+	</checkInstance>
+	<checkInstance name="Check_ItemProperty">
+		<checkTable>
+		<checkFieldBasicList>
+		<checkFieldBasic name="strPropertyName" discription="属性名称" emptyCheck="true">
+		</checkFieldBasic>
+		</checkFieldBasicList>	
+		</checkTable>
+	</checkInstance>
+	<!-- by liutao -->
+	<checkInstance name="CurrencyRateCheck">
+		<checkTable originTable="CurrencyRate">
+			<checkFieldBasicList>
+				<checkFieldBasic discription="原币种" name="originCurrencyType" emptyCheck="true"></checkFieldBasic>
+				<checkFieldBasic discription="币种" name="currencyType" emptyCheck="true"></checkFieldBasic>
+				<checkFieldBasic discription="汇率" name="strRate" emptyCheck="true"></checkFieldBasic>
+				<checkFieldBasic discription="汇率日期" name="dtDate" emptyCheck="true"></checkFieldBasic>
+			</checkFieldBasicList>
+			
+			<checkFieldCaseWhenList>
+				<checkFieldCaseWhen name="strRate" discription="汇率" caseCompareType="&lt;" caseValue="100" whenValue="notNull">
+					<checkFieldCaseWhenField name="strRate" discription="汇率"></checkFieldCaseWhenField>
+				</checkFieldCaseWhen>
+				<checkFieldCaseWhen name="strRate" discription="汇率" caseCompareType=">" caseValue="0" whenValue="notNull">
+					<checkFieldCaseWhenField name="strRate" discription="汇率"></checkFieldCaseWhenField>
+				</checkFieldCaseWhen>
+			</checkFieldCaseWhenList>
+		</checkTable>
+	</checkInstance>
+	<checkInstance name="Check_TaskRptInst_UpdateFieldStrRemark">
+		<checkTable>
+			<checkFieldBasicList>
+				<checkFieldBasic name="strRemark" discription="备注" emptyCheck="true" startLength='1' endLength='500' errorcharCheck='true'></checkFieldBasic>
+			</checkFieldBasicList>	
+			<checkFieldCaseWhenList>
+				<checkFieldCaseWhen name="SubmitStatus" discription="已提交的数据不能添加备注信息" caseCompareType="=" caseValueScope="1,3" whenValue="notNull">
+					<checkFieldCaseWhenField name="SubmitStatus" discription="提交状态"></checkFieldCaseWhenField>
+				</checkFieldCaseWhen>
+			</checkFieldCaseWhenList>
+		</checkTable>
+	</checkInstance>
+	
+	
+</reportCheckRoot>

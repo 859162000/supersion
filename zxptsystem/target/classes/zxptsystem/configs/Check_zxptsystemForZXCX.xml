@@ -1,0 +1,38 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<reportCheckRoot>
+	
+	<!-- 征信查询校验 -->
+	
+	<!-- 用户参数配置 -->
+	<checkInstance name="GrantUserInfo">
+		<checkTable >
+			<checkFieldBasicList discription="基础校验">
+			<checkFieldBasic name="UserId" discription="用户名ID"  emptyCheck="true"></checkFieldBasic>
+			<checkFieldBasic name="UserPwd" discription="用户名密码" emptyCheck="true"></checkFieldBasic>
+			<checkFieldBasic name="strUserCode" discription="系统用户名" emptyCheck="true"></checkFieldBasic>
+	     </checkFieldBasicList>
+	    </checkTable>				
+	</checkInstance>
+	
+	<!--信用报告查询原因   -->
+		<checkInstance name="GRZXCreditReportInfo">
+		<checkTable >
+			<checkFieldBasicList discription="基础校验">
+			<checkFieldBasic name="strCreditReportType" discription="信用报告板式" emptyCheck="true"></checkFieldBasic>
+			<checkFieldBasic name="strQueryCause" discription="信用报告查询原因" emptyCheck="true"></checkFieldBasic>
+			<checkFieldBasic name="strCreditType" discription="信用报告类型"  emptyCheck="true"></checkFieldBasic>
+			<checkFieldBasic name="strVerifyType" discription="审核状态" emptyCheck="true"></checkFieldBasic>
+	     </checkFieldBasicList>
+	    </checkTable>				
+	</checkInstance>
+	
+	<!-- 企业征信用户名 -->
+	<checkInstance name="QYZXGrantUserInfoCheck">
+		<checkTable >
+			<checkFieldBasicList discription="基础校验">
+			<checkFieldBasic name="strInstCode" discription="机构代码" startByteLength="11"  endByteLength="11" emptyCheck="true"></checkFieldBasic>
+	     </checkFieldBasicList>
+	    </checkTable>				
+	</checkInstance>
+	
+</reportCheckRoot>

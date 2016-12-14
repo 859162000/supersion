@@ -1,0 +1,485 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<reportCheckRoot>
+	
+	<!-- 4、具体账户信息-->
+	<checkInstance name="Check_ZDZ_JTZHXX">
+		<checkTable procedureName="Proc_Check_ZDZ_JTZHXX" procedureParam="dtDate,strInstCode" procedureDiscription="Proc_Check_ZDZ_JTZHXX" originTable="ZDZ_JTZHXX" errorMsgField="" errorStateField="RPTCheckType" successStateValue="2" errorStateValue="3" defaultLogicDaoBeanId="sqlserverProcedureResultSetDao">
+			<paramFieldList>
+				<paramField paramName="dtDate" field="dtDate" type="1"></paramField>
+				<paramField paramName="strInstCode" field="strInstCode" type="1"></paramField>
+			</paramFieldList>
+			<checkUniqueFieldList>
+				<checkUniqueField name="autoID" discription="主键" originField="autoID"></checkUniqueField>
+			</checkUniqueFieldList>
+			<checkFieldBasicList discription="基础校验">
+				<checkFieldBasic name="BDHM" discription="查询请求单号" endByteLength="30"  emptyCheck="true"></checkFieldBasic>
+				<checkFieldBasic name="CCXH" discription="账户序号" digitalCheck="true" emptyCheck="true"></checkFieldBasic>
+				<checkFieldBasic name="KHZH" discription="开户账号" endByteLength="30" ></checkFieldBasic>
+				<checkFieldBasic name="CCLB" discription="账户类别" endByteLength="20" ></checkFieldBasic>
+				<checkFieldBasic name="ZHZT" discription="账户状态" endByteLength="20" ></checkFieldBasic>
+				<checkFieldBasic name="KHWD" discription="开户网点" endByteLength="100" ></checkFieldBasic>
+				<checkFieldBasic name="KHWDDM" discription="开户网点代码" endByteLength="20" ></checkFieldBasic>
+				<checkFieldBasic name="KHRQ" discription="开户日期" endByteLength="19" ></checkFieldBasic>
+				<checkFieldBasic name="XHRQ" discription="销户日期" endByteLength="19" ></checkFieldBasic>
+				<checkFieldBasic name="BZ" discription="计价币种" endByteLength="20" ></checkFieldBasic>
+				<checkFieldBasic name="YE" discription="资产数额" endByteLength="20" ></checkFieldBasic>
+				<checkFieldBasic name="KYYE" discription="可用资产数额" endByteLength="20" ></checkFieldBasic>
+				<checkFieldBasic name="GLZJZH" discription="关联资金账户" endByteLength="30" ></checkFieldBasic>
+				<checkFieldBasic name="FKSJ" discription="反馈结果时间" endByteLength="19" ></checkFieldBasic>
+				<checkFieldBasic name="TXDZ" discription="通讯地址" endByteLength="100" ></checkFieldBasic>
+				<checkFieldBasic name="YZBM" discription="邮政编码" endByteLength="20" ></checkFieldBasic>
+				<checkFieldBasic name="LXDH" discription="联系电话" endByteLength="20" ></checkFieldBasic>
+				<checkFieldBasic name="BEIZ" discription="备注" endByteLength="1000" ></checkFieldBasic>
+			</checkFieldBasicList>
+			<checkFieldEffectiveList>
+				<checkFieldEffective name="BZ" discription="计价币种">
+					<value>036</value>
+					<value>040</value>
+					<value>056</value>
+					<value>124</value>
+					<value>156</value>
+					<value>158</value>
+					<value>208</value>
+					<value>246</value>
+					<value>250</value>
+					<value>276</value>
+					<value>344</value>
+					<value>380</value>
+					<value>392</value>
+					<value>446</value>
+					<value>458</value>
+					<value>528</value>
+					<value>554</value>
+					<value>578</value>
+					<value>608</value>
+					<value>702</value>
+					<value>724</value>
+				</checkFieldEffective>
+			</checkFieldEffectiveList>
+		</checkTable>
+	</checkInstance>
+	  
+	  <!-- 5、金融资产信息-->
+	<checkInstance name="Check_ZDZ_JRZCXX">
+		<checkTable procedureName="Proc_Check_ZDZ_JRZCXX" procedureParam="dtDate,strInstCode" procedureDiscription="Proc_Check_ZDZ_JRZCXX" originTable="ZDZ_JRZCXX" errorMsgField="" errorStateField="RPTCheckType" successStateValue="2" errorStateValue="3" defaultLogicDaoBeanId="sqlserverProcedureResultSetDao">
+			<paramFieldList>
+				<paramField paramName="dtDate" field="dtDate" type="1"></paramField>
+				<paramField paramName="strInstCode" field="strInstCode" type="1"></paramField>
+			</paramFieldList>
+			<checkUniqueFieldList>
+				<checkUniqueField name="autoID" discription="主键" originField="autoID"></checkUniqueField>
+			</checkUniqueFieldList>
+			<checkFieldBasicList discription="基础校验">
+				<checkFieldBasic name="BDHM" discription="查询请求单号"  endByteLength="30"  emptyCheck="true"></checkFieldBasic>
+				<checkFieldBasic name="CCXH" discription="账户序号" digitalCheck="true" emptyCheck="true"></checkFieldBasic>
+				<checkFieldBasic name="ZCXH" discription="金融资产序号" digitalCheck="true" emptyCheck="true" ></checkFieldBasic>
+				<checkFieldBasic name="ZCMC" discription="金融资产名称" endByteLength="100" ></checkFieldBasic>
+				<checkFieldBasic name="ZCLX" discription="金融资产类型" endByteLength="20" ></checkFieldBasic>
+				<checkFieldBasic name="ZCGLR" discription="资产管理人" endByteLength="50" ></checkFieldBasic>
+				<checkFieldBasic name="ZCKFJY" discription="资产可否通过银行交易" endByteLength="10" ></checkFieldBasic>
+				<checkFieldBasic name="ZCJYXZ" discription="资产交易限制类型" endByteLength="50" ></checkFieldBasic>
+				<checkFieldBasic name="XZXCRQ" discription="资产交易限制消除时间" endByteLength="19" ></checkFieldBasic>
+				<checkFieldBasic name="JLDW" discription="计量单位" endByteLength="20" ></checkFieldBasic>
+				<checkFieldBasic name="BZ" discription="计价币种" endByteLength="20" ></checkFieldBasic>
+				<checkFieldBasic name="ZCDWJG" discription="资产单位价格" endByteLength="20" ></checkFieldBasic>
+				<checkFieldBasic name="SE" discription="资产数额" endByteLength="20" ></checkFieldBasic>
+				<checkFieldBasic name="KYSE" discription="可用资产数额" endByteLength="20" ></checkFieldBasic>
+				<checkFieldBasic name="BEIZ" discription="备注" endByteLength="1000" ></checkFieldBasic>
+			</checkFieldBasicList>
+			<checkFieldEffectiveList>
+				<checkFieldEffective name="BZ" discription="计价币种">
+					<value>036</value>
+					<value>040</value>
+					<value>056</value>
+					<value>124</value>
+					<value>156</value>
+					<value>158</value>
+					<value>208</value>
+					<value>246</value>
+					<value>250</value>
+					<value>276</value>
+					<value>344</value>
+					<value>380</value>
+					<value>392</value>
+					<value>446</value>
+					<value>458</value>
+					<value>528</value>
+					<value>554</value>
+					<value>578</value>
+					<value>608</value>
+					<value>702</value>
+					<value>724</value>
+				</checkFieldEffective>
+			</checkFieldEffectiveList>
+		</checkTable>
+	</checkInstance>
+	
+	 <!-- 6、司法强制措施信息-->
+	<checkInstance name="Check_ZDZ_SFQZCSXX">
+		<checkTable procedureName="Proc_Check_ZDZ_SFQZCSXX" procedureParam="dtDate,strInstCode" procedureDiscription="Proc_Check_ZDZ_SFQZCSXX" originTable="ZDZ_SFQZCSXX" errorMsgField="" errorStateField="RPTCheckType" successStateValue="2" errorStateValue="3" defaultLogicDaoBeanId="sqlserverProcedureResultSetDao">
+			<paramFieldList>
+				<paramField paramName="dtDate" field="dtDate" type="1"></paramField>
+				<paramField paramName="strInstCode" field="strInstCode" type="1"></paramField>
+			</paramFieldList>
+			<checkUniqueFieldList>
+				<checkUniqueField name="autoID" discription="主键" originField="autoID"></checkUniqueField>
+			</checkUniqueFieldList>
+			<checkFieldBasicList discription="基础校验">
+				<checkFieldBasic name="BDHM" discription="查询请求单号"  endByteLength="30"  emptyCheck="true"></checkFieldBasic>
+				<checkFieldBasic name="CCXH" discription="账户序号" digitalCheck="true" emptyCheck="true"></checkFieldBasic>
+				<checkFieldBasic name="CSXH" discription="措施序号" digitalCheck="true" emptyCheck="true" ></checkFieldBasic>
+				<checkFieldBasic name="DJJZRQ" discription="冻结截止日" endByteLength="19" ></checkFieldBasic>
+				<checkFieldBasic name="DJJG" discription="冻结机关" endByteLength="50" ></checkFieldBasic>
+				<checkFieldBasic name="DJWH" discription="冻结文号" endByteLength="50" ></checkFieldBasic>
+				<checkFieldBasic name="DJJE" discription="冻结金额/数额" endByteLength="20" ></checkFieldBasic>
+				<checkFieldBasic name="BEIZ" discription="备注" endByteLength="1000" ></checkFieldBasic>
+			</checkFieldBasicList>
+		</checkTable>
+	</checkInstance>
+	 
+	 <!-- 7、资金往来(交易)信息-->
+	<checkInstance name="Check_ZDZ_ZJWLXX">
+		<checkTable procedureName="Proc_Check_ZDZ_ZJWLXX" procedureParam="dtDate,strInstCode" procedureDiscription="Proc_Check_ZDZ_ZJWLXX" originTable="ZDZ_ZJWLXX" errorMsgField="" errorStateField="RPTCheckType" successStateValue="2" errorStateValue="3" defaultLogicDaoBeanId="sqlserverProcedureResultSetDao">
+			<paramFieldList>
+				<paramField paramName="dtDate" field="dtDate" type="1"></paramField>
+				<paramField paramName="strInstCode" field="strInstCode" type="1"></paramField>
+			</paramFieldList>
+			<checkUniqueFieldList>
+				<checkUniqueField name="autoID" discription="主键" originField="autoID"></checkUniqueField>
+			</checkUniqueFieldList>
+			<checkFieldBasicList discription="基础校验">
+				<checkFieldBasic name="BDHM" discription="查询请求单号"  endByteLength="30"  emptyCheck="true"></checkFieldBasic>
+				<checkFieldBasic name="CCXH" discription="账户序号" digitalCheck="true" emptyCheck="true"></checkFieldBasic>
+				<checkFieldBasic name="WLXH" discription="资金往来序号" digitalCheck="true" emptyCheck="true" ></checkFieldBasic>
+				<checkFieldBasic name="JYZL" discription="交易种类" endByteLength="50" ></checkFieldBasic>
+				<checkFieldBasic name="ZJLX" discription="借贷方向(资金流向)" endByteLength="20" ></checkFieldBasic>
+				<checkFieldBasic name="BZ" discription="交易币种" endByteLength="20" ></checkFieldBasic>
+				<checkFieldBasic name="JE" discription="交易金额" endByteLength="20" ></checkFieldBasic>
+				<checkFieldBasic name="JYSJ" discription="交易日期" endByteLength="19" ></checkFieldBasic>
+				<checkFieldBasic name="JYLSH" discription="交易流水号" endByteLength="50" ></checkFieldBasic>
+				<checkFieldBasic name="ZCKZXM" discription="交易对方姓名/名称" endByteLength="60" ></checkFieldBasic>
+				<checkFieldBasic name="ZCKZH" discription="交易对方账号" endByteLength="30" ></checkFieldBasic>
+				<checkFieldBasic name="ZCKZHKHH" discription="交易对方账号开户行" endByteLength="100" ></checkFieldBasic>
+				<checkFieldBasic name="JYDSYHHH" discription="交易对方账号开户行行号" endByteLength="30" ></checkFieldBasic>
+				<checkFieldBasic name="JYDSZJLX" discription="交易对方开户证件类型" endByteLength="50" ></checkFieldBasic>
+				<checkFieldBasic name="JYDSZJHM" discription="交易对方开户证件号码" endByteLength="50" ></checkFieldBasic>
+				<checkFieldBasic name="JYDSTXDZ" discription="交易对方通讯地址" endByteLength="100" ></checkFieldBasic>
+				<checkFieldBasic name="JYDSYZBM" discription="交易对方邮政编码" endByteLength="20" ></checkFieldBasic>
+				<checkFieldBasic name="JYDSLXDH" discription="交易对方联系电话" endByteLength="20" ></checkFieldBasic>
+				<checkFieldBasic name="BEIZ" discription="备注" endByteLength="1000" ></checkFieldBasic>
+			</checkFieldBasicList>
+			<checkFieldEffectiveList>
+				<checkFieldEffective name="BZ" discription="计价币种">
+					<value>036</value>
+					<value>040</value>
+					<value>056</value>
+					<value>124</value>
+					<value>156</value>
+					<value>158</value>
+					<value>208</value>
+					<value>246</value>
+					<value>250</value>
+					<value>276</value>
+					<value>344</value>
+					<value>380</value>
+					<value>392</value>
+					<value>446</value>
+					<value>458</value>
+					<value>528</value>
+					<value>554</value>
+					<value>578</value>
+					<value>608</value>
+					<value>702</value>
+					<value>724</value>
+				</checkFieldEffective>
+			</checkFieldEffectiveList>
+		</checkTable>
+	</checkInstance>
+
+	 <!-- 8、共有权/优先权信息-->
+	<checkInstance name="Check_ZDZ_GYQYXQXX">
+		<checkTable procedureName="Proc_Check_ZDZ_GYQYXQXX" procedureParam="dtDate,strInstCode" procedureDiscription="Proc_Check_ZDZ_GYQYXQXX" originTable="ZDZ_GYQYXQXX" errorMsgField="" errorStateField="RPTCheckType" successStateValue="2" errorStateValue="3" defaultLogicDaoBeanId="sqlserverProcedureResultSetDao">
+			<paramFieldList>
+				<paramField paramName="dtDate" field="dtDate" type="1"></paramField>
+				<paramField paramName="strInstCode" field="strInstCode" type="1"></paramField>
+			</paramFieldList>
+			<checkUniqueFieldList>
+				<checkUniqueField name="autoID" discription="主键" originField="autoID"></checkUniqueField>
+			</checkUniqueFieldList>
+			<checkFieldBasicList discription="基础校验">
+				<checkFieldBasic name="BDHM" discription="查询请求单号"  endByteLength="30"  emptyCheck="true"></checkFieldBasic>
+				<checkFieldBasic name="CCXH" discription="账户序号" digitalCheck="true" emptyCheck="true"></checkFieldBasic>
+				<checkFieldBasic name="XH" discription="序号" digitalCheck="true" emptyCheck="true" ></checkFieldBasic>
+				<checkFieldBasic name="QLLX" discription="权利类型" endByteLength="50" ></checkFieldBasic>
+				<checkFieldBasic name="QLR" discription="权利人" endByteLength="60" ></checkFieldBasic>
+				<checkFieldBasic name="QLJE" discription="权利金额/数额" endByteLength="20" valueDecimalLength="2"></checkFieldBasic>
+				<checkFieldBasic name="QLRDZ" discription="权利人通讯地址" endByteLength="100" ></checkFieldBasic>
+				<checkFieldBasic name="QLRLXFS" discription="权利人联系方式" endByteLength="50" ></checkFieldBasic>
+				<checkFieldBasic name="BEIZ" discription="备注" endByteLength="1000" ></checkFieldBasic>
+			</checkFieldBasicList>
+		</checkTable>
+	</checkInstance>
+
+	 <!-- 9、关联子类账户信息-->
+	<checkInstance name="Check_ZDZ_GLZLZHXX">
+		<checkTable procedureName="Proc_Check_ZDZ_GLZLZHXX" procedureParam="dtDate,strInstCode" procedureDiscription="Proc_Check_ZDZ_GLZLZHXX" originTable="GLZLZHXX" errorMsgField="" errorStateField="RPTCheckType" successStateValue="2" errorStateValue="3" defaultLogicDaoBeanId="sqlserverProcedureResultSetDao">
+			<paramFieldList>
+				<paramField paramName="dtDate" field="dtDate" type="1"></paramField>
+				<paramField paramName="strInstCode" field="strInstCode" type="1"></paramField>
+			</paramFieldList>
+			<checkUniqueFieldList>
+				<checkUniqueField name="autoID" discription="主键" originField="autoID"></checkUniqueField>
+			</checkUniqueFieldList>
+			<checkFieldBasicList discription="基础校验">
+				<checkFieldBasic name="BDHM" discription="查询请求单号"  endByteLength="30"  emptyCheck="true"></checkFieldBasic>
+				<checkFieldBasic name="CCXH" discription="账户序号" digitalCheck="true" emptyCheck="true"></checkFieldBasic>
+				<checkFieldBasic name="GLXH" discription="子账户序号" digitalCheck="true" emptyCheck="true" ></checkFieldBasic>
+				<checkFieldBasic name="ZKHZH" discription="主账户账号" endByteLength="30" ></checkFieldBasic>
+				<checkFieldBasic name="GLZHLB" discription="子账户类别" endByteLength="20" ></checkFieldBasic>
+				<checkFieldBasic name="GLZHHM" discription="子账户账号" endByteLength="30" ></checkFieldBasic>
+				<checkFieldBasic name="BZ" discription="计价币种" endByteLength="20" ></checkFieldBasic>
+				<checkFieldBasic name="YE" discription="资产数额" endByteLength="20" ></checkFieldBasic>
+				<checkFieldBasic name="KYYE" discription="可用资产数额" endByteLength="20" ></checkFieldBasic>
+				<checkFieldBasic name="BEIZ" discription="备注" endByteLength="1000" ></checkFieldBasic>
+			</checkFieldBasicList>
+			<checkFieldEffectiveList>
+				<checkFieldEffective name="BZ" discription="计价币种">
+					<value>036</value>
+					<value>040</value>
+					<value>056</value>
+					<value>124</value>
+					<value>156</value>
+					<value>158</value>
+					<value>208</value>
+					<value>246</value>
+					<value>250</value>
+					<value>276</value>
+					<value>344</value>
+					<value>380</value>
+					<value>392</value>
+					<value>446</value>
+					<value>458</value>
+					<value>528</value>
+					<value>554</value>
+					<value>578</value>
+					<value>608</value>
+					<value>702</value>
+					<value>724</value>
+				</checkFieldEffective>
+			</checkFieldEffectiveList>
+		</checkTable>
+	</checkInstance>
+
+    <!-- 10、金融机构反馈查询回退内容-->
+	<checkInstance name="Check_ZDZ_JRJJFKCXHTNR">
+		<checkTable procedureName="Proc_Check_ZDZ_JRJJFKCXHTNR" procedureParam="dtDate,strInstCode" procedureDiscription="Proc_Check_ZDZ_JRJJFKCXHTNR" originTable="ZDZ_JRJJFKCXHTNR" errorMsgField="" errorStateField="RPTCheckType" successStateValue="2" errorStateValue="3" defaultLogicDaoBeanId="sqlserverProcedureResultSetDao">
+			<paramFieldList>
+				<paramField paramName="dtDate" field="dtDate" type="1"></paramField>
+				<paramField paramName="strInstCode" field="strInstCode" type="1"></paramField>
+			</paramFieldList>
+			<checkUniqueFieldList>
+				<checkUniqueField name="autoID" discription="主键" originField="autoID"></checkUniqueField>
+			</checkUniqueFieldList>
+			<checkFieldBasicList discription="基础校验">
+				<checkFieldBasic name="BDHM" discription="查询请求单号"  endByteLength="30"  emptyCheck="true"></checkFieldBasic>
+				<checkFieldBasic name="XCHTYY" discription="回退原因" endByteLength="100" emptyCheck="true"></checkFieldBasic>
+				<checkFieldBasic name="XCHTBZ" discription="回退原因备注" endByteLength="200"></checkFieldBasic>
+				<checkFieldBasic name="XCHTR" discription="回退联系人" endByteLength="20" ></checkFieldBasic>
+				<checkFieldBasic name="XCHTDH" discription="回退联系人电话" endByteLength="30" ></checkFieldBasic>
+			</checkFieldBasicList>
+		</checkTable>
+	</checkInstance>
+
+	<!-- 13、被执行人账户信息 -->
+	<checkInstance name="Check_ZDZ_BZXRZHXX">
+		<checkTable procedureName="Proc_Check_ZDZ_BZXRZHXX" procedureParam="dtDate,strInstCode" procedureDiscription="Proc_Check_ZDZ_BZXRZHXX" originTable="ZDZ_BZXRZHXX" errorMsgField="" errorStateField="RPTCheckType" successStateValue="2" errorStateValue="3" defaultLogicDaoBeanId="sqlserverProcedureResultSetDao">
+			<paramFieldList>
+				<paramField paramName="dtDate" field="dtDate" type="1"></paramField>
+				<paramField paramName="strInstCode" field="strInstCode" type="1"></paramField>
+			</paramFieldList>
+			<checkUniqueFieldList>
+				<checkUniqueField name="autoID" discription="主键" originField="autoID"></checkUniqueField>
+			</checkUniqueFieldList>
+			<checkFieldBasicList discription="基础校验">
+				<checkFieldBasic name="BDHM" discription="控制请求单号" endByteLength="30" emptyCheck="true"></checkFieldBasic>
+				<checkFieldBasic name="CCXH" discription="序号" digitalCheck="true" emptyCheck="true" ></checkFieldBasic>
+				<checkFieldBasic name="KZLX" discription="控制类型" digitalCheck="true" ></checkFieldBasic>
+				<checkFieldBasic name="KZCS" discription="控制措施"  endByteLength="2" ></checkFieldBasic>
+				<checkFieldBasic name="KHZH" discription="开户账号"  endByteLength="30" ></checkFieldBasic>
+				<checkFieldBasic name="GLZHHM" discription="开户账号子账号"  endByteLength="30" ></checkFieldBasic>
+				<checkFieldBasic name="CCLB" discription="账户类别"  endByteLength="20" ></checkFieldBasic>
+				<checkFieldBasic name="KHWD" discription="开户网点"  endByteLength="100" ></checkFieldBasic>
+				<checkFieldBasic name="KHWDDM" discription="开户网点代码"  endByteLength="20" ></checkFieldBasic>
+				<checkFieldBasic name="ZCMC" discription="金融资产名称"  endByteLength="40" ></checkFieldBasic>
+				<checkFieldBasic name="ZCLX" discription="金融资产类型"  endByteLength="20" ></checkFieldBasic>
+				<checkFieldBasic name="JLDW" discription="计量单位"  endByteLength="20" ></checkFieldBasic>
+				<checkFieldBasic name="KZNR" discription="申请控制内容"  digitalCheck="true" ></checkFieldBasic>
+				<checkFieldBasic name="KSRQ" discription="申请控制开始时间"  endByteLength="19" ></checkFieldBasic>
+				<checkFieldBasic name="JSRQ" discription="申请控制结束时间"  endByteLength="19" ></checkFieldBasic>
+				<checkFieldBasic name="BZ" discription="申请控制金额币种"  endByteLength="19" ></checkFieldBasic>
+				<checkFieldBasic name="JE" discription="申请控制金额(数额)" valueDecimalLength="4" ></checkFieldBasic>
+				<checkFieldBasic name="SFJH" discription="是否结汇"  endByteLength="10" ></checkFieldBasic>
+				<checkFieldBasic name="CKWH" discription="裁定书文号"  endByteLength="50" ></checkFieldBasic>
+				<checkFieldBasic name="ZXKZHHM" discription="执行款专户户名"  endByteLength="100" ></checkFieldBasic>
+				<checkFieldBasic name="ZXKZHKHH" discription="执行款专户开户行"  endByteLength="100" ></checkFieldBasic>
+				<checkFieldBasic name="ZXKZHKHHHH" discription="执行款专户开户行行号"  endByteLength="30" ></checkFieldBasic>
+				<checkFieldBasic name="ZXKZHZH" discription="执行款专户账号"  endByteLength="50" ></checkFieldBasic>
+				<checkFieldBasic name="ZXKZHLX" discription="执行款专户类型"  endByteLength="20" ></checkFieldBasic>
+				<checkFieldBasic name="YDJAH" discription="原冻结案号"  endByteLength="50" ></checkFieldBasic>
+				<checkFieldBasic name="YDJDH" discription="原冻结请求单号(任务流水号)"  endByteLength="30" ></checkFieldBasic>
+				<checkFieldBasic name="BEIZ" discription="备注"  endByteLength="1000" ></checkFieldBasic>
+			</checkFieldBasicList>
+			<checkFieldEffectiveList>
+				<checkFieldEffective name="KZLX" discription="控制类型">
+					<value>1</value>
+					<value>2</value>
+				</checkFieldEffective>
+				<checkFieldEffective name="KZCS" discription="控制措施">
+					<value>01</value>
+					<value>02</value>
+					<value>03</value>
+					<value>04</value>
+					<value>05</value>
+					<value>06</value>
+					<value>07</value>
+					<value>08</value>
+				</checkFieldEffective>
+				<checkFieldEffective name="KZNR" discription="申请控制内容">
+					<value>1</value>
+					<value>2</value>
+				</checkFieldEffective>
+				<checkFieldEffective name="BZ" discription="计价币种">
+					<value>036</value>
+					<value>040</value>
+					<value>056</value>
+					<value>124</value>
+					<value>156</value>
+					<value>158</value>
+					<value>208</value>
+					<value>246</value>
+					<value>250</value>
+					<value>276</value>
+					<value>344</value>
+					<value>380</value>
+					<value>392</value>
+					<value>446</value>
+					<value>458</value>
+					<value>528</value>
+					<value>554</value>
+					<value>578</value>
+					<value>608</value>
+					<value>702</value>
+					<value>724</value>
+				</checkFieldEffective>
+			</checkFieldEffectiveList>
+		</checkTable>
+	</checkInstance>
+	
+	 <!-- 16、控制处理结果  -->
+	<checkInstance name="Check_ZDZ_KZCLJG">
+		<checkTable procedureName="Proc_Check_ZDZ_KZCLJG" procedureParam="dtDate,strInstCode" procedureDiscription="Proc_Check_ZDZ_KZCLJG" originTable="ZDZ_KZCLJG" errorMsgField="" errorStateField="RPTCheckType" successStateValue="2" errorStateValue="3" defaultLogicDaoBeanId="sqlserverProcedureResultSetDao">
+			<paramFieldList>
+				<paramField paramName="dtDate" field="dtDate" type="1"></paramField>
+				<paramField paramName="strInstCode" field="strInstCode" type="1"></paramField>
+			</paramFieldList>
+			<checkUniqueFieldList>
+				<checkUniqueField name="autoID" discription="主键" originField="autoID"></checkUniqueField>
+			</checkUniqueFieldList>
+			<checkFieldBasicList discription="基础校验">
+				<checkFieldBasic name="BDHM" discription="查询请求单号"  endByteLength="30"  emptyCheck="true"></checkFieldBasic>
+				<checkFieldBasic name="CCXH" discription="序号"  digitalCheck="true"  emptyCheck="true"></checkFieldBasic>
+				<checkFieldBasic name="KHZH" discription="开户账号" endByteLength="30"></checkFieldBasic>
+				<checkFieldBasic name="KZNR" discription="控制内容"  digitalCheck="true"></checkFieldBasic>
+				<checkFieldBasic name="KZZT" discription="控制结果" startByteLength="1" endByteLength="1"></checkFieldBasic>
+				<checkFieldBasic name="YE" discription="账户余额"  endByteLength="14" valueDecimalLength="2"></checkFieldBasic>
+				<checkFieldBasic name="KYYE" discription="可用余额"  endByteLength="20"></checkFieldBasic>
+				<checkFieldBasic name="CSKSRQ" discription="措施始期" endByteLength="19" emptyCheck="true"></checkFieldBasic>
+				<checkFieldBasic name="CSJSRQ" discription="措施终期" endByteLength="19" emptyCheck="true"></checkFieldBasic>
+				<checkFieldBasic name="DJXE" discription="冻结限额" endByteLength="14" valueDecimalLength="2" ></checkFieldBasic>
+				<checkFieldBasic name="SKJE" discription="实际控制可用金额（数额）" endByteLength="14" valueDecimalLength="2"></checkFieldBasic>
+				<checkFieldBasic name="CESKJE" discription="超额控制金额（数额）" endByteLength="14" valueDecimalLength="2"></checkFieldBasic>
+				<checkFieldBasic name="WNKZYY" discription="未能控制原因" endByteLength="1000"></checkFieldBasic>
+				<checkFieldBasic name="BEIZ" discription="备注" endByteLength="1000" ></checkFieldBasic>
+			</checkFieldBasicList>
+			<checkFieldEffectiveList>
+			   <checkFieldEffective name="KZNR" discription="控制内容">
+					<value>1</value>
+					<value>2</value>
+		       </checkFieldEffective>
+			   <checkFieldEffective name="KZZT" discription="控制结果">
+					<value>1</value>
+					<value>2</value>
+		       </checkFieldEffective>
+		   </checkFieldEffectiveList>
+		</checkTable>
+	</checkInstance>
+
+	<!-- 17、在先冻结信息  -->
+	<checkInstance name="Check_ZDZ_ZXDJXX">
+		<checkTable procedureName="Proc_Check_ZDZ_ZXDJXX" procedureParam="dtDate,strInstCode" procedureDiscription="Proc_Check_ZDZ_ZXDJXX" originTable="ZDZ_ZXDJXX" errorMsgField="" errorStateField="RPTCheckType" successStateValue="2" errorStateValue="3" defaultLogicDaoBeanId="sqlserverProcedureResultSetDao">
+			<paramFieldList>
+				<paramField paramName="dtDate" field="dtDate" type="1"></paramField>
+				<paramField paramName="strInstCode" field="strInstCode" type="1"></paramField>
+			</paramFieldList>
+			<checkUniqueFieldList>
+				<checkUniqueField name="autoID" discription="主键" originField="autoID"></checkUniqueField>
+			</checkUniqueFieldList>
+			<checkFieldBasicList discription="基础校验">
+				<checkFieldBasic name="BDHM" discription="查询请求单号"  endByteLength="30"  emptyCheck="true"></checkFieldBasic>
+				<checkFieldBasic name="CCXH" discription="控制序号"  digitalCheck="true"  emptyCheck="true"></checkFieldBasic>
+				<checkFieldBasic name="CSXH" discription="措施序号"  digitalCheck="true"  emptyCheck="true"></checkFieldBasic>
+				<checkFieldBasic name="DJJG" discription="在先冻结机关"  endByteLength="50"></checkFieldBasic>
+				<checkFieldBasic name="DJWH" discription="在先冻结文号"  endByteLength="50"></checkFieldBasic>
+				<checkFieldBasic name="DJJE" discription="在先冻结金额" endByteLength="20"></checkFieldBasic>
+				<checkFieldBasic name="DJJZRQ" discription="在先冻结到期日" endByteLength="19" ></checkFieldBasic>
+				<checkFieldBasic name="BEIZ" discription="备注" endByteLength="1000" ></checkFieldBasic>
+			</checkFieldBasicList>
+		</checkTable>
+	</checkInstance>
+
+	 <!-- 18、优先权信息  -->
+	<checkInstance name="Check_ZDZ_YXQXX">
+		<checkTable procedureName="Proc_Check_ZDZ_YXQXX" procedureParam="dtDate,strInstCode" procedureDiscription="Proc_Check_ZDZ_YXQXX" originTable="ZDZ_YXQXX" errorMsgField="" errorStateField="RPTCheckType" successStateValue="2" errorStateValue="3" defaultLogicDaoBeanId="sqlserverProcedureResultSetDao">
+			<paramFieldList>
+				<paramField paramName="dtDate" field="dtDate" type="1"></paramField>
+				<paramField paramName="strInstCode" field="strInstCode" type="1"></paramField>
+			</paramFieldList>
+			<checkUniqueFieldList>
+				<checkUniqueField name="autoID" discription="主键" originField="autoID"></checkUniqueField>
+			</checkUniqueFieldList>
+			<checkFieldBasicList discription="基础校验">
+				<checkFieldBasic name="BDHM" discription="查询请求单号"  endByteLength="30"  emptyCheck="true"></checkFieldBasic>
+				<checkFieldBasic name="CCXH" discription="账户序号"  digitalCheck="true"  emptyCheck="true"></checkFieldBasic>
+				<checkFieldBasic name="XH" discription="序号"  digitalCheck="true"  emptyCheck="true"></checkFieldBasic>
+				<checkFieldBasic name="QLLX" discription="权利类型"  endByteLength="50"></checkFieldBasic>
+				<checkFieldBasic name="QLR" discription="权利人"  endByteLength="60"></checkFieldBasic>
+				<checkFieldBasic name="QLJE" discription="权利金额/数额" endByteLength="20" valueDecimalLength="2"></checkFieldBasic>
+				<checkFieldBasic name="QLRDZ" discription="权利人通讯地址" endByteLength="100" ></checkFieldBasic>
+				<checkFieldBasic name="QLRLXFS" discription="权利人联系方式" endByteLength="50" ></checkFieldBasic>
+				<checkFieldBasic name="BEIZ" discription="备注" endByteLength="1000" ></checkFieldBasic>
+			</checkFieldBasicList>
+		</checkTable>
+	</checkInstance>
+
+	 <!-- 19、金融机构控制回退内容  -->
+	<checkInstance name="Check_ZDZ_JRJGKZHTNR">
+		<checkTable procedureName="Proc_Check_ZDZ_JRJGKZHTNR" procedureParam="dtDate,strInstCode" procedureDiscription="Proc_Check_ZDZ_JRJGKZHTNR" originTable="ZDZ_JRJGKZHTNR" errorMsgField="" errorStateField="RPTCheckType" successStateValue="2" errorStateValue="3" defaultLogicDaoBeanId="sqlserverProcedureResultSetDao">
+			<paramFieldList>
+				<paramField paramName="dtDate" field="dtDate" type="1"></paramField>
+				<paramField paramName="strInstCode" field="strInstCode" type="1"></paramField>
+			</paramFieldList>
+			<checkUniqueFieldList>
+				<checkUniqueField name="autoID" discription="主键" originField="autoID"></checkUniqueField>
+			</checkUniqueFieldList>
+			<checkFieldBasicList discription="基础校验">
+				<checkFieldBasic name="BDHM" discription="控制请求单号"  endByteLength="30"  emptyCheck="true"></checkFieldBasic>
+				<checkFieldBasic name="XCHTYY" discription="回退原因"  endByteLength="100"  emptyCheck="true"></checkFieldBasic>
+				<checkFieldBasic name="XCHTBZ" discription="回退原因备注" endByteLength="200"></checkFieldBasic>
+				<checkFieldBasic name="XCHTR" discription="回退联系人" endByteLength="20" ></checkFieldBasic>
+				<checkFieldBasic name="XCHTDH" discription="回退联系人电话" endByteLength="30" ></checkFieldBasic>
+			</checkFieldBasicList>
+		</checkTable>
+	</checkInstance>
+	
+</reportCheckRoot>
+

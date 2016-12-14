@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<navigationRoot>
+	<navigationComponentList>
+    	<navigationComponent id="DeskTop" name="桌面" url="Framework/NavigationPage.jsp"  ico="bg.png" treeIco="bg.png" treeExpandIco="bg.png" des="">
+	       <navigationComponent id="DBGS" name="担保公司业务" url="Framework/NavigationPage.jsp"  ico="128_InstInfo.png" treeIco="64_InstInfo.png" treeExpandIco="32_InstInfo.png" des="">
+	           <navigationComponent id="DBGSTaskModelInst" name="明细数据填报" url="framework/DBGSShowTree-report.dto.TaskModelInst" ico="64_Reportmodel_tableSet.png" treeIco="32_Reportmodel_tableSet.png" treeExpandIco="16_Reportmodel_tableSet.png" des=""></navigationComponent>
+				<navigationComponent id="DBGSTaskModelInstSH" name="明细数据审核" url="framework/DBGSReviewShowTree-report.dto.TaskModelInst" ico="64_TaskRptInst.png" treeIco="32_TaskRptInst.png" treeExpandIco="16_TaskRptInst.png" des=""></navigationComponent>
+				<navigationComponent id="DBGSTaskModelInstCK" name="数据查看" url="framework/DBGSCKShowTree-report.dto.TaskModelInst" ico="64_TaskRptInst.png" treeIco="32_TaskRptInst.png" treeExpandIco="16_TaskRptInst.png" des=""></navigationComponent>
+	           
+	           <navigationComponent id="DBGS_DBGSDownload" name="报文生成" url="framework/ShowList-dbgssystem.dto.DBGSDownload" ico="64_Other.png" treeIco="32_Other.png" treeExpandIco="16_Other.png" des=""></navigationComponent>
+	           <navigationComponent id="DBGS_CJFKBW" name="采集类反馈报文处理" url="framework/ShowList-dbgssystem.dto.DBGSCJFKBW" ico="64_AutoETL_Param.png" treeIco="32_AutoETL_Param.png" treeExpandIco="16_AutoETL_Param.png" des=""></navigationComponent>
+	            <navigationComponent id="SendedRejectReportForDBGS" name="已报送报文驳回" url="framework/ShowList-dbgssystem.dto.SendedRejectReportForDBGS" ico="64_Other.png" treeIco="32_Other.png" treeExpandIco="16_Other.png" des=""></navigationComponent>
+    	   		<navigationComponent id="DBGS_remoteservice" name="启动担保RMI服务" url="framework/RunRmiService-All" ico="64_Other.png" treeIco="64_Other.png" treeExpandIco="64_Other.png" des=""></navigationComponent>
+	       </navigationComponent>
+     	</navigationComponent>
+   </navigationComponentList>
+</navigationRoot>

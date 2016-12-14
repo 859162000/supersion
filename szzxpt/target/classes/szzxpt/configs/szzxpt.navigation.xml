@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<navigationRoot>
+	<navigationComponentList>
+	<navigationComponent id="DeskTop" name="桌面" url="Framework/NavigationPage.jsp"  ico="bg.png" treeIco="bg.png" treeExpandIco="bg.png" des="">
+		<navigationComponent id="WHZH" name="外汇账户报送" url="Framework/NavigationPage.jsp"  ico="128_Other.png" treeIco="64_Other.png" treeExpandIco="32_Other.png" des="">
+ 	          <navigationComponent id="WHZHTaskModelInst" name="数据填报" url="framework/WHZHShowTree-report.dto.TaskModelInst" ico="64_Reportmodel_tableSet.png" treeIco="32_Reportmodel_tableSet.png" treeExpandIco="16_Reportmodel_tableSet.png" des=""></navigationComponent>
+				<navigationComponent id="WHZHTaskModelInstSH" name="数据审核" url="framework/WHZHReviewShowTree-report.dto.TaskModelInst" ico="64_TaskRptInst.png" treeIco="32_TaskRptInst.png" treeExpandIco="16_TaskRptInst.png" des=""></navigationComponent>
+				<navigationComponent id="WHZHTaskModelInstCK" name="数据查看" url="framework/WHZHCKShowTree-report.dto.TaskModelInst" ico="64_TaskRptInst.png" treeIco="32_TaskRptInst.png" treeExpandIco="16_TaskRptInst.png" des=""></navigationComponent>
+ 	          <navigationComponent id="WHZHDownload" name="报文生成" url="framework/ShowList-szzxpt.dto.WHZHDownload" ico="64_Other.png" treeIco="32_Other.png" treeExpandIco="16_Other.png" des=""></navigationComponent>
+ 	          <navigationComponent id="WHZHCJFKBW" name="反馈处理" url="framework/ShowList-szzxpt.dto.WHZHCJFKBW" ico="64_Other.png" treeIco="32_Other.png" treeExpandIco="16_Other.png" des=""></navigationComponent>
+    	</navigationComponent>
+    	
+    	<navigationComponent id="YWDATA" name="每日业务发生量统计表" url="framework/ShowList-szzxpt.dto.YWDATA" ico="64_Other.png" treeIco="32_Other.png" treeExpandIco="16_Other.png" des=""></navigationComponent>
+	</navigationComponent>
+	</navigationComponentList>
+</navigationRoot>

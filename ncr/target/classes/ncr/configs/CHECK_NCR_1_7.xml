@@ -1,0 +1,121 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<reportCheckRoot>
+	<checkInstance name="Check_NCR_1_7">
+		<paramValueList>
+			<paramValue name="DTDATE" value="2013-12-09"></paramValue>
+			<paramValue name="strInstCode" value=""></paramValue>
+			<!--
+		  <paramValue name="strTaskRptInstID" value="000000"></paramValue>
+			<paramValue name="strFreq" value="000000"></paramValue> 
+			-->
+		</paramValueList>                                                                                                            
+
+		<freqCode value="4"></freqCode>
+
+		<checkTable procedureName="CHECK_NCR_1_7" procedureParam="DTDATE,strInstCode,rt" procedureDiscription="CHECK_NCR_1_7同业客户业务明细"
+			originTable="NCR_1_7" errorStateField="RPTCHECKTYPE" errorStateValue="3"  successStateValue="2" 
+			defaultLogicDaoBeanId="oracleProcedureResultSetDao">
+			<paramFieldList>
+				<paramField paramName="DTDATE" field="DTDATE" type="2"></paramField>
+				<paramField paramName="strInstCode" field="INSTINFO" type="1"></paramField>
+			</paramFieldList>
+
+			<checkUniqueFieldList>
+			   <checkUniqueField name="AUTOID" discription="主键" originField="AUTOID"></checkUniqueField>
+			</checkUniqueFieldList>
+
+			<checkFieldBasicList discription="表内基础校验">
+				<checkFieldBasic name="A" discription="客户名称" emptyCheck="true" startLength="2" ignoreVal="*********"></checkFieldBasic>
+				<checkFieldBasic name="B" discription="客户代码" emptyCheck="true" startLength="2"></checkFieldBasic>
+				<checkFieldBasic name="C" discription="国别代码" emptyCheck="true" upperCheck="true" startLength="3"  endLength="3"></checkFieldBasic>
+				<checkFieldBasic name="D" discription="非现场监管统计机构编码"  startLength="17" endLength="17"></checkFieldBasic>
+				<checkFieldBasic name="E" discription="组织机构代码" startLength="9" endLength="9" ></checkFieldBasic>
+				<checkFieldBasic name="F" discription="客户类别" emptyCheck="true"  startLength="1" endLength="2" ></checkFieldBasic>
+				<checkFieldBasic name="I" discription="拆放同业" valueDecimalMin="0" valueDecimalLength="2" ></checkFieldBasic>
+				<checkFieldBasic name="J" discription="存放同业" valueDecimalMin="0" valueDecimalLength="2" ></checkFieldBasic>
+				<checkFieldBasic name="K" discription="债券回购" valueDecimalMin="0" valueDecimalLength="2" ></checkFieldBasic>
+				<checkFieldBasic name="L" discription="股票质押贷款" valueDecimalMin="0" valueDecimalLength="2" ></checkFieldBasic>
+				<checkFieldBasic name="M" discription="买入返售资产" valueDecimalMin="0" valueDecimalLength="2" ></checkFieldBasic>
+				<checkFieldBasic name="N" discription="买断式转贴现" valueDecimalMin="0" valueDecimalLength="2" ></checkFieldBasic>
+				<checkFieldBasic name="O" discription="持有债券" valueDecimalMin="0" valueDecimalLength="2" ></checkFieldBasic>
+				<checkFieldBasic name="P" discription="股权投资" valueDecimalMin="0" valueDecimalLength="2" ></checkFieldBasic>
+				<checkFieldBasic name="Q" discription="同业代付" valueDecimalMin="0" valueDecimalLength="2" ></checkFieldBasic>
+				<checkFieldBasic name="R" discription="其他表内业务" valueDecimalMin="0" valueDecimalLength="2" ></checkFieldBasic>
+				<checkFieldBasic name="S" discription="卖出回购资产" valueDecimalMin="0" valueDecimalLength="2" ></checkFieldBasic>
+				<checkFieldBasic name="T" discription="不可撤销的承诺及或有负债" valueDecimalMin="0" valueDecimalLength="2" ></checkFieldBasic>
+				<checkFieldBasic name="U" discription="其他表外业务" valueDecimalMin="0" valueDecimalLength="2" ></checkFieldBasic>
+			</checkFieldBasicList>
+
+			<checkFieldCaseWhenList discription="caseWhen校验">			
+        <checkFieldCaseWhen name="D" discription="非现场监管统计机构编码" caseValue="notNull" whenValueScope="1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,26">
+        	<checkFieldCaseWhenField name="F" discription="客户类别"  ></checkFieldCaseWhenField>
+        </checkFieldCaseWhen>
+        <checkFieldCaseWhen name="E" discription="组织机构代码" caseValue="notNull" whenValue="CHN">
+        	<checkFieldCaseWhenField name="C" discription="国别代码"  ></checkFieldCaseWhenField>
+        </checkFieldCaseWhen>
+        
+        <checkFieldCaseWhen name="A" discription="客户名称" caseValue="notNull" whenValue="3">
+        	<checkFieldCaseWhenField name="A" discription="客户类型" procedureName="CHECK_NCR_1_1" procedureDiscription="授信情况" procedureParam="DTDATE,strInstCode,rt" ></checkFieldCaseWhenField>
+        </checkFieldCaseWhen>   
+         
+         <checkFieldCaseWhen name="B" discription="客户代码" caseValue="notNull" whenValue="3">                                                                                            
+         	<checkFieldCaseWhenField name="A" discription="客户类型" procedureName="CHECK_NCR_1_1" procedureDiscription="授信情况" procedureParam="DTDATE,strInstCode,rt" ></checkFieldCaseWhenField>        
+         </checkFieldCaseWhen>  
+        	 
+         <checkFieldCaseWhen name="C" discription="国别代码" caseValue="notNull" whenValue="3">                                                                                            
+        		<checkFieldCaseWhenField name="A" discription="客户类型" procedureName="CHECK_NCR_1_1" procedureDiscription="授信情况" procedureParam="DTDATE,strInstCode,rt" ></checkFieldCaseWhenField>       
+         </checkFieldCaseWhen> 
+         
+         <checkFieldCaseWhen name="F" discription="客户类别" caseValue="notNull" whenValue="3">                                                                                            
+         	<checkFieldCaseWhenField name="A" discription="客户类型" procedureName="CHECK_NCR_1_1" procedureDiscription="授信情况" procedureParam="DTDATE,strInstCode,rt" ></checkFieldCaseWhenField>                                                                                                                                                                
+        	</checkFieldCaseWhen>                                                                                                                                                         
+         <!--TSL-003 若[组织机构代码]非空，或[实际控制人证件类型]、[股东/关联企业证件类型]为“1-组织机构代码”且非空，则[国别代码]必须为“CHN”-->
+        <checkFieldCaseWhen name="C" discription="国别代码" caseValue="CHN" whenValue="notNull">
+       		<checkFieldCaseWhenField name="E" discription="组织机构代码"></checkFieldCaseWhenField>
+        </checkFieldCaseWhen>  
+        <!--TSL-004 若[国别代码]为境外（包括香港、澳门、台湾），则[客户名称]为九个星号“*********”--> 
+        <checkFieldCaseWhen name="A" discription="客户名称" caseValue="*********" whenType="5" whenValue="CHN">
+       		<checkFieldCaseWhenField name="C" discription="国别代码"></checkFieldCaseWhenField>
+        </checkFieldCaseWhen> 
+        </checkFieldCaseWhenList>
+
+			<checkFieldEffectiveList discription="有效性校验">
+				<checkFieldEffective name="F" discription="客户类别">
+          <value>1</value>
+          <value>2</value>
+          <value>3</value>
+          <value>4</value>
+          <value>5</value>
+          <value>6</value>
+          <value>7</value>
+          <value>8</value>
+          <value>9</value>
+          <value>10</value>
+          <value>11</value>
+          <value>12</value>
+          <value>13</value>
+          <value>14</value>
+          <value>15</value>
+          <value>16</value>
+          <value>17</value>
+          <value>18</value>
+          <value>19</value>
+          <value>20</value>
+          <value>21</value>
+          <value>22</value>
+          <value>23</value>
+          <value>24</value>
+          <value>25</value>
+          <value>26</value>
+          <value>27</value>
+        </checkFieldEffective>        
+			</checkFieldEffectiveList>
+      <checkFieldOrList discription="条件校验">
+				<checkFieldOr type="1">
+					<checkFieldBasic name="F" discription="客户类别" startLength="1" endLength="1"></checkFieldBasic>
+					<checkFieldBasic name="F" discription="客户类别" startLength="2" endLength="2"></checkFieldBasic>
+				</checkFieldOr>
+			</checkFieldOrList>	
+		</checkTable>	
+	</checkInstance>
+</reportCheckRoot>

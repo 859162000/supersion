@@ -1,0 +1,138 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>                                                                  
+<reportCheckRoot>                                                                                       
+	<!-- 校验名称：校验根据此名称做为校验实例-->                                                          
+	<checkInstance name="CHECK_EAS_DGKH">	                                                                
+		<!-- 参数值：配置的值为默认值，也可以通过系统传递进行替换-->		                                    
+		<paramValueList>                                                                                    
+			<paramValue name="DTDATE" value="2013-12-09"></paramValue> 
+			<paramValue name="strInstCode" value=""></paramValue>                                       
+		</paramValueList>		                                                                                
+		                                                                                                    
+		<!-- 频度标志：可通过系统参数传递进行替换:1代表年报，2代表半年报，3代表季报，4代表月报，5代表日报-->
+		<freqCode value="4"></freqCode>	                                                                    
+		<!-- 表名：真实数据库表的名称，一个校验实例中应具备唯一性-->                                        
+		<checkTable procedureName="CHECK_EAS_DGKH" procedureParam="DTDATE,strInstCode,rt" procedureDiscription="对公客户"
+			originTable="EAS_DGKH" errorStateField="RPTCHECKTYPE" errorStateValue="3"  successStateValue="2"
+			defaultLogicDaoBeanId="oracleProcedureResultSetDao">          
+			                                                                                                  
+			<!-- 参数字段：如果不配置此项为全表数据校验                                                       
+				type不填或则等于1代表字符，等于2代表时间-->                                                     
+			<paramFieldList>                                                                                  
+				<paramField paramName="DTDATE" field="DTDATE" type="2"></paramField> 
+				<paramField paramName="strInstCode" field="INSTINFO" type="1"></paramField>                           
+			</paramFieldList>                                                                                 
+			                                                                                                  
+			<!-- 唯一性字段组合：可理解为联合主键，用于未作说明的主外键关联-->                                
+			<checkUniqueFieldList>                                                                            
+				<checkUniqueField name="AUTOID" discription="主键" originField="AUTOID"></checkUniqueField>                                                   
+			</checkUniqueFieldList>                                                                           
+			                                                                                                  
+			<!-- 表内基础校验：被设置的字段每条数都需要校验                                                   
+				emptyCheck代表为空校验                                                                          
+				digitalCheck代表数字校验，dateCheck代表日期校验                                                 
+				upperCheck代表全大写字母校验，chnCheck代表汉字校验（可扩展其他特殊校验）                        
+				startLength代表起始长度，endLength代表结束长度                                                  
+				valueDecimalLength的值代表小数位数的校验-->                                                     
+				<checkFieldBasicList> 
+					<checkFieldBasic name="KHTYBH" discription="客户统一编号" emptyCheck="true" endLength="60"></checkFieldBasic>            
+					<checkFieldBasic name="ZZJGDM" discription="组织机构代码" emptyCheck="true" endLength="40"></checkFieldBasic>            
+					<checkFieldBasic name="YXJGDM" discription="银行机构代码" emptyCheck="true" endLength="30"></checkFieldBasic>            
+					<checkFieldBasic name="JRXKZH" discription="金融许可证号" emptyCheck="true" startLength="15" endLength="15"></checkFieldBasic>            
+					<checkFieldBasic name="NBJGH" discription="内部机构号" emptyCheck="true" endLength="30"></checkFieldBasic>               
+					<checkFieldBasic name="KHMC" discription="客户名称" emptyCheck="true" endLength="200"></checkFieldBasic>                  
+					<checkFieldBasic name="KHYWMC" discription="客户英文名称" endLength="200"></checkFieldBasic>            
+					<checkFieldBasic name="FRDB" discription="法人代表" endLength="30"></checkFieldBasic>                  
+					<checkFieldBasic name="FRDBZJLB" discription="法人代表证件类别" endLength="30"></checkFieldBasic>      
+					<checkFieldBasic name="FRDBZJHM" discription="法人代表证件号码" endLength="60"></checkFieldBasic>      
+					<checkFieldBasic name="JBCKZH" discription="基本存款账号" endLength="30"></checkFieldBasic>            
+					<checkFieldBasic name="JBZHKHXMC" discription="基本账户开户行名称" endLength="200"></checkFieldBasic>   
+					<checkFieldBasic name="ZCZB" discription="注册资本"  endLength="20"  valueDecimalLength="2"></checkFieldBasic>                  
+					<checkFieldBasic name="ZCDZ" discription="注册地址" endLength="400"></checkFieldBasic>                  
+					<checkFieldBasic name="LXDH" discription="联系电话" endLength="30"></checkFieldBasic>                  
+					<checkFieldBasic name="YYZZH" discription="营业执照号" endLength="60"></checkFieldBasic>               
+					<checkFieldBasic name="YYZZYXJZRQ" discription="营业执照有效截止日期"  ignoreVal="999991231" dateCheck="true" startLength="8" endLength="8" ></checkFieldBasic>
+					<checkFieldBasic name="JYFW" discription="经营范围" endLength="400"></checkFieldBasic>                  
+					<checkFieldBasic name="CLRQ" discription="成立日期"  ignoreVal="999991231" dateCheck="true" startLength="8" endLength="8" ></checkFieldBasic>                  
+					<checkFieldBasic name="SSXY" discription="所属行业" endLength="100"></checkFieldBasic>                  
+					<checkFieldBasic name="KHLB" discription="客户类别" endLength="30"></checkFieldBasic>                  
+					<checkFieldBasic name="DKZH" discription="贷款证号" endLength="60"></checkFieldBasic>                  
+					<checkFieldBasic name="GSZH" discription="国税证号" endLength="60"></checkFieldBasic>                  
+					<checkFieldBasic name="DSZH" discription="地税证号" endLength="60"></checkFieldBasic>                  
+					<checkFieldBasic name="MGSKHTYBH" discription="母公司客户统一编号" endLength="60"></checkFieldBasic>   
+					<checkFieldBasic name="TYSXBZ" discription="统一授信标志" endLength="4"></checkFieldBasic>            
+					<checkFieldBasic name="SXED" discription="授信额度" digitalCheck="true" endLength="20"  valueDecimalLength="2"></checkFieldBasic>                  
+					<checkFieldBasic name="YYED" discription="已用额度" digitalCheck="true" endLength="20"  valueDecimalLength="2"></checkFieldBasic>                  
+					<checkFieldBasic name="SSGSBZ" discription="上市公司标志" endLength="4"></checkFieldBasic>            
+					<checkFieldBasic name="XYDJBH" discription="信用评级结果" endLength="200"></checkFieldBasic>            
+					<checkFieldBasic name="ZCZBBZ" discription="注册资本币种"  startLength="3" endLength="3"  upperCheck="true"></checkFieldBasic>            
+					<checkFieldBasic name="SSZBBZ" discription="实收资本币种"  startLength="3" endLength="3"  upperCheck="true"></checkFieldBasic>            
+					<checkFieldBasic name="SSZB" discription="实收资本"  endLength="20"  valueDecimalLength="2"></checkFieldBasic>                  
+					<checkFieldBasic name="ZZC" discription="总资产"  endLength="20"  valueDecimalLength="2"></checkFieldBasic>                     
+					<checkFieldBasic name="JZC" discription="净资产"  endLength="20"  valueDecimalLength="2"></checkFieldBasic>                     
+					<checkFieldBasic name="NSR" discription="年收入"  endLength="20"  valueDecimalLength="2"></checkFieldBasic>                     
+					<checkFieldBasic name="SCJLXDGXNY" discription="首次建立信贷关系年月"  startLength="6" endLength="6" ></checkFieldBasic>
+					<checkFieldBasic name="YZBM" discription="邮政编码" digitalCheck="true" startLength="6" endLength="6"></checkFieldBasic>                  
+					<checkFieldBasic name="CZHM" discription="传真号码" endLength="30"></checkFieldBasic>                  
+					<checkFieldBasic name="YGRS" discription="员工人数"></checkFieldBasic>                  
+					<checkFieldBasic name="XZQHDM" discription="行政区划代码" endLength="20"></checkFieldBasic>            
+					<checkFieldBasic name="KHLX" discription="客户类型" endLength="12"></checkFieldBasic>                  
+					<checkFieldBasic name="FXYJXH" discription="风险预警信号" endLength="200"></checkFieldBasic>            
+					<checkFieldBasic name="CJRQ" discription="采集日期" ignoreVal="999991231" emptyCheck="true" dateCheck="true" startLength="8" endLength="8"></checkFieldBasic>                  
+				</checkFieldBasicList>
+				  <checkFieldEffectiveList discription="有效性校验">          
+				  	<checkFieldEffective name="KHLB" discription="客户类别">
+				    <value>对公</value>                                    
+				    <value>对私</value>                                   
+				    </checkFieldEffective>                                   
+				   <checkFieldEffective name="TYSXBZ" discription="统一授信标志">
+				    <value>是</value>                                               
+				    <value>否</value>                                               
+				   </checkFieldEffective>    
+				   <checkFieldEffective name="SSGSBZ" discription="上市公司标志">
+				    <value>是</value>                                            
+				    <value>否</value>                                                                                   
+				   </checkFieldEffective> 
+				   <checkFieldEffective name="FXYJXH" discription="风险预警信号">     
+				    <value>公司治理结构存在重大缺陷</value>                                            
+				    <value>关联企业多且结构复杂</value> 
+				    <value>核心主业的偏离度较大、盲目跨地区跨行业扩</value> 
+				    <value>现金流动波动太大，有相当的脆弱性</value>
+				    <value>负载率过高</value>  
+				   </checkFieldEffective> 
+				   <checkFieldEffective name="FRDBZJLB" discription="法人代表证件类别">       
+				    <value>身份证</value>                                             
+				 		<value>军官证</value>                                            	   
+				    <value>警官证</value>                                             
+            <value>士兵证</value>                                                                      
+            <value>户口簿F</value> 
+            <value>临时身份证</value>
+            <value>护照</value>
+            <value>港澳居民来往内地通行证</value>
+            <value>台湾同胞来往内地通行证</value>
+            <value>外国人居留证</value>
+            <value>其他证件</value>
+           </checkFieldEffective> 
+				  </checkFieldEffectiveList>  
+				</checkTable>    				      
+				</checkInstance> 				      
+</reportCheckRoot>       					  
+                                                 
+                                                        
+                                                
+                                                                        
+
+				    
+				    
+				                                               
+				                                         
+				   
+				          
+    
+    
+    
+    					                          
+                                                                        
+                   
+                                                                             
+                                                                             
+                                                                             

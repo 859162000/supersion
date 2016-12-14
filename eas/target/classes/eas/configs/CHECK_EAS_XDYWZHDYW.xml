@@ -1,0 +1,101 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<reportCheckRoot>
+	<!-- 校验名称：校验根据此名称做为校验实例-->
+	<checkInstance name="CHECK_EAS_XDYWZHDYW">	
+		<!-- 参数值：配置的值为默认值，也可以通过系统传递进行替换-->		
+		<paramValueList>
+			<paramValue name="DTDATE" value="2013-12-09"></paramValue>
+			<paramValue name="strInstCode" value=""></paramValue>
+			<!--
+		  <paramValue name="strTaskRptInstID" value="000000"></paramValue>
+			<paramValue name="strFreq" value="000000"></paramValue> 
+			-->
+		</paramValueList>		
+		
+		<!-- 频度标志：可通过系统参数传递进行替换:1代表年报，2代表半年报，3代表季报，4代表月报，5代表日报-->
+		<freqCode value="4"></freqCode>	
+		<!-- 表名：真实数据库表的名称，一个校验实例中应具备唯一性-->
+		<checkTable procedureName="CHECK_EAS_XDYWZHDYW" procedureParam="DTDATE,strInstCode,rt" procedureDiscription="信贷业务质或抵押物"
+			originTable="EAS_XDYWZHDYW" errorStateField="RPTCHECKTYPE" errorStateValue="3"  successStateValue="2"
+			defaultLogicDaoBeanId="oracleProcedureResultSetDao">
+			
+			<!-- 参数字段：如果不配置此项为全表数据校验 
+				type不填或则等于1代表字符，等于2代表时间-->
+			<paramFieldList>
+				<paramField paramName="DTDATE" field="DTDATE" type="2"></paramField>
+				<paramField paramName="strInstCode" field="INSTINFO" type="1"></paramField>
+			</paramFieldList>
+			
+			<!-- 唯一性字段组合：可理解为联合主键，用于未作说明的主外键关联-->
+			<checkUniqueFieldList>
+				<checkUniqueField name="AUTOID" discription="主键" originField="AUTOID"></checkUniqueField>
+			</checkUniqueFieldList>
+			
+			<!-- 表内基础校验：被设置的字段每条数都需要校验 
+				emptyCheck代表为空校验
+				digitalCheck代表数字校验，dateCheck代表日期校验 
+				upperCheck代表全大写字母校验，chnCheck代表汉字校验（可扩展其他特殊校验）
+				startLength代表起始长度，endLength代表结束长度 
+				valueDecimalLength的值代表小数位数的校验-->
+				<checkFieldBasicList>
+					<checkFieldBasic name="ZHDYWBH"  discription="质或抵押物编号" emptyCheck="true" endLength="60" ></checkFieldBasic>
+          <checkFieldBasic name="DBHTH"  discription="担保合同号" emptyCheck="true" endLength="100" ></checkFieldBasic>
+          <checkFieldBasic name="KHTYBH"  discription="客户统一编号" emptyCheck="true" endLength="60" ></checkFieldBasic>
+          <checkFieldBasic name="YXJGDM"  discription="银行机构代码" emptyCheck="true" endLength="30" ></checkFieldBasic>
+          <checkFieldBasic name="JRXKZH"  discription="金融许可证号" emptyCheck="true" startLength="15" endLength="15" ></checkFieldBasic>
+          <checkFieldBasic name="NBJGH"  discription="内部机构号" emptyCheck="true" endLength="30" ></checkFieldBasic>
+          <checkFieldBasic name="ZHDYWMC"  discription="质或抵押物名称" emptyCheck="true" endLength="100" ></checkFieldBasic>
+          <checkFieldBasic name="ZHDYWLX"  discription="质或抵押物类型" emptyCheck="true" endLength="300" ></checkFieldBasic>
+          <checkFieldBasic name="ZHDYWZMJZ"  discription="质或抵押物账面价值" endLength="20"  valueDecimalLength="2"></checkFieldBasic>
+          <checkFieldBasic name="BZ"  discription="币种" emptyCheck="true" startLength="3" endLength="3" upperCheck="true"></checkFieldBasic>
+          <checkFieldBasic name="YXRDJZ"  discription="银行认定价值" emptyCheck="true" endLength="20"   valueDecimalLength="2"></checkFieldBasic>
+          <checkFieldBasic name="PGJZ"  discription="评估价值" endLength="20"   valueDecimalLength="2"></checkFieldBasic>
+          <checkFieldBasic name="PGRQ"  discription="评估日期" ignoreVal="999991231" dateCheck="true"  startLength="8" endLength="8" ></checkFieldBasic>
+          <checkFieldBasic name="PGJGMC"  discription="评估机构名称" endLength="200" ></checkFieldBasic>
+          <checkFieldBasic name="ZHDYL"  discription="质或抵押率" emptyCheck="true" valueDecimalLength="2"></checkFieldBasic>
+          <checkFieldBasic name="DYWSYQRMC"  discription="抵押物所有权人名称" emptyCheck="true" endLength="200" ></checkFieldBasic>
+          <checkFieldBasic name="YDYJZ"  discription="已抵押价值" endLength="20" ></checkFieldBasic>
+          <checkFieldBasic name="DJRQ"  discription="登记日期" ignoreVal="999991231" emptyCheck="true" dateCheck="true"  startLength="8" endLength="8" ></checkFieldBasic>
+          <checkFieldBasic name="DJJG"  discription="登记机构" emptyCheck="true" endLength="200" ></checkFieldBasic>
+          <checkFieldBasic name="CZJG"  discription="操作机构" endLength="30" ></checkFieldBasic>
+          <checkFieldBasic name="DBQSRQ"  discription="担保起始日期" ignoreVal="999991231" emptyCheck="true" dateCheck="true"  startLength="8"  endLength="8" ></checkFieldBasic>
+          <checkFieldBasic name="DBDQRQ"  discription="担保到期日期" ignoreVal="999991231" emptyCheck="true" dateCheck="true"  startLength="8" endLength="8" ></checkFieldBasic>
+          <checkFieldBasic name="ZYPZZH"  discription="质押票证账号" endLength="60" ></checkFieldBasic>
+          <checkFieldBasic name="ZYPZLX"  discription="质押票证类型" endLength="60" ></checkFieldBasic>
+          <checkFieldBasic name="ZYPZHM"  discription="质押票证号码" endLength="300" ></checkFieldBasic>
+          <checkFieldBasic name="ZYPZQFJG"  discription="质押票证签发机构" endLength="30" ></checkFieldBasic>
+          <checkFieldBasic name="BXDH"  discription="保险单号" endLength="60" ></checkFieldBasic>
+          <checkFieldBasic name="HBRQ"  discription="核保日期" ignoreVal="999991231" endLength="8" dateCheck="true"  startLength="8" ></checkFieldBasic>
+          <checkFieldBasic name="HBRYXM"  discription="核保人一姓名" endLength="100" ></checkFieldBasic>
+          <checkFieldBasic name="HBREXM"  discription="核保人二姓名" endLength="100" ></checkFieldBasic>
+          <checkFieldBasic name="QZDJHM"  discription="权证登记号码" endLength="300" ></checkFieldBasic>
+          <checkFieldBasic name="QZMC"  discription="权证名称" endLength="200" ></checkFieldBasic>
+          <checkFieldBasic name="QZYXDQRQ"  discription="权证有效到期日期" ignoreVal="999991231" dateCheck="true"  startLength="8"  endLength="8" ></checkFieldBasic>
+          <checkFieldBasic name="DJYXZZRQ"  discription="登记有效终止日期" ignoreVal="999991231" dateCheck="true"  startLength="8"  endLength="8" ></checkFieldBasic>
+          <checkFieldBasic name="SFNRBWHS"  discription="是否纳入表外核算" endLength="4" ></checkFieldBasic>
+          <checkFieldBasic name="BWHSKSRQ"  discription="表外核算开始日期" ignoreVal="999991231" dateCheck="true"  startLength="8"   endLength="8" ></checkFieldBasic>
+          <checkFieldBasic name="CJRQ"  discription="采集日期" ignoreVal="999991231" emptyCheck="true" dateCheck="true"  startLength="8"  endLength="8" ></checkFieldBasic>
+        </checkFieldBasicList>
+				<checkFieldEffectiveList>                                      
+         <checkFieldEffective name="SFNRBWHS" discription="是否纳入表外核算" > 
+           <value>是</value>                                        
+           <value>否</value>                                        
+         </checkFieldEffective>
+         <checkFieldEffective name="ZHDYWLX" discription="质或抵押物类型" > 
+           <value>存单</value>                                           
+           <value>票据</value> 
+           <value>保单</value>
+           <value>国债</value>
+           <value>股权/股票</value>
+           <value>其他权利</value>
+           <value>房产</value>
+           <value>土地使用权(包含土地附着物)</value>
+           <value>在建工程</value>
+           <value>交通工具</value>
+           <value>机器设备</value>
+           <value>其他类</value>
+         </checkFieldEffective>                                                                                  
+       </checkFieldEffectiveList>  
+		</checkTable>
+	</checkInstance>
+</reportCheckRoot>

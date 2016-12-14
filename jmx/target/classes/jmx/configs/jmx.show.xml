@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<fieldShowsRoot>
+	<fieldShowsEntity>
+		<className>jmx.dto.J_Server</className>
+		<showInstance>
+			<showInstanceName>1</showInstanceName>
+			<fieldName fieldName="name" width="100" intOrder="1"></fieldName>
+			<fieldName fieldName="host" width="100" intOrder="2"></fieldName>
+			<fieldName fieldName="port" width="30" intOrder="3"></fieldName>
+			<fieldName fieldName="userName" width="80" intOrder="4"></fieldName>
+			<fieldName fieldName="passwd" intOrder="5" listVisible="false"></fieldName>
+			<fieldName fieldName="info" intOrder="6" listVisible="false"></fieldName>
+		</showInstance>
+	</fieldShowsEntity>
+	
+	<fieldShowsEntity>
+		<className>jmx.dto.J_App</className>
+		<showInstance>
+			<showInstanceName>1</showInstanceName>
+			<fieldName fieldName="name" width="100" intOrder="1"></fieldName>
+			<fieldName fieldName="appType" width="50" intOrder="2"></fieldName>
+			<fieldName fieldName="dir" width="200" intOrder="3"></fieldName>
+			<fieldName fieldName="url" width="150" intOrder="4"></fieldName>
+			<fieldName fieldName="info" intOrder="5" listVisible="false"></fieldName>
+		</showInstance>
+	</fieldShowsEntity>
+	
+	<fieldShowsEntity>
+		<className>jmx.dto.J_Db</className>
+		<showInstance>
+			<showInstanceName>1</showInstanceName>
+			<fieldName fieldName="name" width="100" intOrder="1"></fieldName>
+			<fieldName fieldName="dbType" width="50" intOrder="2"></fieldName>
+			<fieldName fieldName="dir" width="200" intOrder="3"></fieldName>
+			<fieldName fieldName="info" intOrder="4" listVisible="false"></fieldName>
+		</showInstance>
+	</fieldShowsEntity>
+</fieldShowsRoot>

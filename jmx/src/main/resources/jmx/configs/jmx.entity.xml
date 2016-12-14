@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<entityRoot>
+	
+	<entityMap>
+      <entityName>dbType</entityName>
+      <entity>
+	     <code>SqlServer</code>
+	     <name>SqlServer</name>
+      </entity>
+      <entity>
+	     <code>Oracle</code>
+	     <name>Oracle</name>
+      </entity>
+      <entity>
+	     <code>DB2</code>
+	     <name>DB2</name>
+      </entity>
+      <entity>
+	     <code>Mysql</code>
+	     <name>Mysql</name>
+      </entity>
+      <entity>
+	     <code>*</code>
+	     <name>Other</name>
+      </entity>
+   </entityMap>
+   
+   <entityMap>
+      <entityName>appType</entityName>
+      <entity>
+	     <code>Tomcat</code>
+	     <name>Tomcat</name>
+      </entity>
+      <entity>
+	     <code>WebLogic</code>
+	     <name>WebLogic</name>
+      </entity>
+      <entity>
+	     <code>WebSphere</code>
+	     <name>WebSphere</name>
+      </entity>
+      <entity>
+	     <code>*</code>
+	     <name>Other</name>
+      </entity>
+   </entityMap>
+   
+    <!-- 采集频度  秒[s]/分[m]/时[h]/日[d]/月[t]/年[y] -->
+   <entityMap>
+      <entityName>cfqType</entityName>
+      <entity>
+	     <code>s</code>
+	     <name>秒</name>
+      </entity>
+      <entity>
+	     <code>m</code>
+	     <name>分</name>
+      </entity>
+      <entity>
+	     <code>h</code>
+	     <name>时</name>
+      </entity>
+      <entity>
+	     <code>d</code>
+	     <name>日</name>
+      </entity>
+      <entity>
+	     <code>Mt</code>
+	     <name>月</name>
+      </entity>
+      <entity>
+	     <code>y</code>
+	     <name>年</name>
+      </entity>
+   </entityMap>
+	
+</entityRoot>

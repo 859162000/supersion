@@ -1,0 +1,57 @@
+.Menu_Frame_Div
+{
+	width: 100%;
+	border-left: 0px solid #dadada;
+	font-size: 12px; 
+	font-family:'Microsoft Yahei';
+	float: left;
+	border-bottom:1px solid #0060A6;
+	background-color:White;
+	padding-top:2px;
+}
+
+/** 修证IE6、IE7中，operationMap（即：顶部的操作按钮，非list列表中的link按钮）为空的时候，
+  * operationMap所在DIV高度过宽的问题
+  */
+.Menu_Frame_Div_Clear_Black_For_IE6-7 {
+    background-color: White;
+    border-bottom: 1px solid #0060a6;
+    border-left: 0 solid #dadada;
+    float: left;
+    font-family: "Microsoft Yahei";
+    font-size: 12px;
+    position:relative;
+    *top:-17px;
+    _top:-12px;
+    width: 100%;
+}
+
+.Menu_Frame_Div_Cell
+{
+	float:left; 
+	line-height:25px; 
+	color:White; 
+	text-decoration:none;
+	font-family:'Microsoft Yahei';
+	font-size:11px; 
+	cursor:pointer; 
+	padding-left:15px;
+	padding-right:15px; 
+	background-color:#0060A6; 
+	margin-left:1px;
+	border-radius:3px 3px 0px 0px;
+}
+
+.ChangeView
+{
+	float:left; 
+	line-height:25px; 
+	color:White; 
+	font-family:'Microsoft Yahei';
+	font-size:12px; 
+	cursor:pointer; 
+	padding-left:15px; 
+	padding-right:15px; 
+	background-color:#0060A6; 
+	margin-left:1px;
+}

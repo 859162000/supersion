@@ -1,0 +1,202 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<reportCheckRoot>
+
+	<checkInstance name="Check_NCR_1_1">
+		<paramValueList>
+			<paramValue name="DTDATE" value="2013-12-09"></paramValue>
+			<paramValue name="strInstCode" value=""></paramValue>
+			<!--
+		  <paramValue name="strTaskRptInstID" value="000000"></paramValue>
+			<paramValue name="strFreq" value="000000"></paramValue> 
+			-->
+		</paramValueList>		
+		
+		<freqCode value="4"></freqCode>
+		
+		<checkTable procedureName="Check_NCR_1_1" procedureParam="rt,DTDATE,strInstCode" procedureDiscription="授信情况"
+			originTable="NCR_1_1" errorStateField="RPTCHECKTYPE" errorStateValue="3"  successStateValue="2" 
+			defaultLogicDaoBeanId="sqlserverProcedureResultSetDao">
+			<paramFieldList>
+				<paramField paramName="DTDATE" field="DTDATE" type="2"></paramField>
+				<paramField paramName="strInstCode" field="INSTINFO" type="1"></paramField>
+			</paramFieldList>
+  
+			<checkUniqueFieldList>
+				<checkUniqueField name="AUTOID" discription="主键" originField="AUTOID"></checkUniqueField>
+			</checkUniqueFieldList>
+
+	
+			<checkFieldBasicList discription="基础性校验">
+				<checkFieldBasic name="A" discription="客户类型" emptyCheck="true" digitalCheck="true" startLength="1" endLength="1"></checkFieldBasic>
+				<checkFieldBasic name="B" discription="客户名称" emptyCheck="true" startLength="2"></checkFieldBasic>
+				<checkFieldBasic name="C" discription="客户代码" emptyCheck="true" startLength="2"></checkFieldBasic>
+				<checkFieldBasic name="D" discription="客户国籍代码" emptyCheck="true" startLength="3" endLength="3" upperCheck="true"></checkFieldBasic>
+				<checkFieldBasic name="E" discription="授信银行代码" emptyCheck="true" startLength="17" endLength="17"></checkFieldBasic>
+				<checkFieldBasic name="G" discription="授信号码" emptyCheck="true" startLength="2"></checkFieldBasic>
+				<checkFieldBasic name="H" discription="授信额度" valueDecimalMin="0" valueDecimalLength="2"></checkFieldBasic>
+				<checkFieldBasic name="I" discription="其中：贷款授信额度" valueDecimalMin="0" valueDecimalLength="2"></checkFieldBasic>
+				<checkFieldBasic name="J" discription="授信起始日期" dateCheck="true" startLength="8" endLength="8"></checkFieldBasic>
+				<checkFieldBasic name="K" discription="授信到期日期" dateCheck="true" startLength="8" endLength="8"></checkFieldBasic>
+				<checkFieldBasic name="L" discription="贷款余额" valueDecimalMin="0" valueDecimalLength="2"></checkFieldBasic>
+				<checkFieldBasic name="M" discription="持有债卷余额" valueDecimalMin="0" valueDecimalLength="2"></checkFieldBasic>
+				<checkFieldBasic name="N" discription="持有股权余额" valueDecimalMin="0" valueDecimalLength="2"></checkFieldBasic>
+				<checkFieldBasic name="O" discription="其它表内信用风险资产余额" valueDecimalMin="0" valueDecimalLength="2"></checkFieldBasic>
+				<checkFieldBasic name="P" discription="表外业务余额" valueDecimalMin="0" valueDecimalLength="2"></checkFieldBasic>
+				<checkFieldBasic name="Q" discription="现有业务余额占用授信额度" valueDecimalMin="0" valueDecimalLength="2"></checkFieldBasic>
+				<checkFieldBasic name="R" discription="其中：贷款余额占用贷款授信额度" valueDecimalMin="0" valueDecimalLength="2"></checkFieldBasic>
+				<checkFieldBasic name="S" discription="尚可使用授信额度" valueDecimalMin="0" valueDecimalLength="2"></checkFieldBasic>
+				<checkFieldBasic name="T" discription="其中：尚可使用贷款授信额度" valueDecimalMin="0" valueDecimalLength="2"></checkFieldBasic>
+				<checkFieldBasic name="U" discription="关联方授信标识" emptyCheck="true"></checkFieldBasic>
+			</checkFieldBasicList>
+   <checkFieldCaseWhenList discription="caseWhen校验">
+				
+				<checkFieldCaseWhen name="K" discription="授信到期日期" caseValue="notNull" whenType="5" whenValue="WNRSXYW">
+					<checkFieldCaseWhenField name="G" discription="G授信号码"></checkFieldCaseWhenField>
+				</checkFieldCaseWhen> 
+				<checkFieldCaseWhen name="J" discription="授信起始日期" caseValue="notnull" whenType="5" whenValue="WNRSXYW">
+					<checkFieldCaseWhenField name="G" discription="G授信号码"></checkFieldCaseWhenField>
+				</checkFieldCaseWhen>
+				<!--TSL-004 若[客户国籍代码]为境外（包括香港、澳门、台湾），则[客户名称]为九个星号“*********”--> 
+        <checkFieldCaseWhen name="B" discription="客户名称" caseValue="*********" whenType="5" whenValue="CHN">
+       		<checkFieldCaseWhenField name="D" discription="客户国籍代码"></checkFieldCaseWhenField>
+        </checkFieldCaseWhen>
+         
+		</checkFieldCaseWhenList>
+			
+			<checkFieldEffectiveList discription="有效性校验">
+				<checkFieldEffective name="A" discription="客户类型">
+					<value>1</value>
+					<value>2</value>
+					<value>3</value>
+				</checkFieldEffective>
+				<checkFieldEffective name="U" discription="关联方授信标识">
+					<value>1</value>
+					<value>2</value>
+				</checkFieldEffective>
+			</checkFieldEffectiveList>	
+			<checkFieldLineList discription="非聚合校验">	
+				<!--LJX-001	表1 PARTⅠ中，[其中：贷款授信额度]小于等于[授信额度]-->
+				<checkFieldLine compareType=">=">
+					<leftFieldList><checkFieldLineField name="H" discription="授信额度"></checkFieldLineField></leftFieldList>
+					<rightFieldList><checkFieldLineField name="I" discription="其中：贷款授信额度"></checkFieldLineField></rightFieldList>
+				</checkFieldLine>
+				<!--LJX-002	表1 PARTⅠ中，[授信起始日期]小于等于[数据日期]-->
+				<checkFieldLine compareType=">" fieldType="2">
+					<leftFieldList><checkFieldLineField name="DTDATE" discription="数据日期"></checkFieldLineField></leftFieldList>
+					<rightFieldList><checkFieldLineField name="J" discription="授信起始日期"></checkFieldLineField></rightFieldList>
+				</checkFieldLine>
+				<!--LJX-003	表1 PARTⅠ中，[授信到期日期]大于[授信起始日期]-->
+				<checkFieldLine compareType=">" fieldType="2">
+					<leftFieldList><checkFieldLineField name="K" discription="授信到期日期"></checkFieldLineField></leftFieldList>
+					<rightFieldList><checkFieldLineField name="J" discription="授信起始日期"></checkFieldLineField></rightFieldList>
+				</checkFieldLine>				
+				<!--LJX-014	表1 PART Ⅰ中，[其中：贷款余额占用贷款授信额度度]小于等于[现有业务余额占用授信额度]-->
+				<checkFieldLine compareType=">=">
+					<leftFieldList><checkFieldLineField name="Q" discription="现有业务余额占用授信额度"></checkFieldLineField></leftFieldList>
+					<rightFieldList><checkFieldLineField name="R" discription="其中：贷款余额占用贷款授信额度度"></checkFieldLineField></rightFieldList>
+				</checkFieldLine>
+				<!--LJX-016	表1 PART Ⅰ中，[尚可使用授信额度]小于等于[授信额度]-->
+				<checkFieldLine compareType=">=">
+					<leftFieldList><checkFieldLineField name="H" discription="授信额度"></checkFieldLineField></leftFieldList>
+					<rightFieldList><checkFieldLineField name="S" discription="尚可使用授信额度"></checkFieldLineField></rightFieldList>
+				</checkFieldLine>
+				<!--LJX-017	表1 PART Ⅰ中[其中：尚可使用贷款授信额度]小于等于[尚可使用授信额度]-->
+				<checkFieldLine compareType=">=">
+					<leftFieldList><checkFieldLineField name="S" discription="尚可使用授信额度"></checkFieldLineField></leftFieldList>
+					<rightFieldList><checkFieldLineField name="T" discription="其中：尚可使用贷款授信额度"></checkFieldLineField></rightFieldList>
+				</checkFieldLine>
+				<!--LJX-018	表1PARTⅠ中，[其中：尚可使用贷款授信额度]小于等于[其中：贷款授信额度]-->
+				<checkFieldLine compareType=">=">
+					<leftFieldList><checkFieldLineField name="I" discription="其中：贷款授信额度"></checkFieldLineField></leftFieldList>
+					<rightFieldList><checkFieldLineField name="T" discription="其中：尚可使用贷款授信额度"></checkFieldLineField></rightFieldList>
+				</checkFieldLine>			
+			</checkFieldLineList>
+			
+			<checkFieldOrList discription="条件校验">
+				<checkFieldOr type="2">  <!--JBL1-011_1_1 -->
+					<checkFieldCaseWhen name="I" discription="其中：贷款授信额度" caseValue="0" whenValue="3">
+						<checkFieldCaseWhenField name="A" discription="客户类型"></checkFieldCaseWhenField>
+					</checkFieldCaseWhen>
+					<checkFieldCaseWhen name="I" discription="其中：贷款授信额度" caseValue="null" whenValue="3">
+						<checkFieldCaseWhenField name="A" discription="客户类型"></checkFieldCaseWhenField>
+					</checkFieldCaseWhen>
+				</checkFieldOr>
+				
+				<checkFieldOr type="2"> <!--JBL1-014_1_1 -->
+					<checkFieldCaseWhen name="L" discription="贷款余额" caseValue="0" whenValue="3">
+						<checkFieldCaseWhenField name="A" discription="客户类型"></checkFieldCaseWhenField>
+					</checkFieldCaseWhen>
+					<checkFieldCaseWhen name="L" discription="贷款余额" caseValue="null" whenValue="3">
+						<checkFieldCaseWhenField name="A" discription="客户类型"></checkFieldCaseWhenField>
+					</checkFieldCaseWhen>
+				</checkFieldOr>	
+					
+				<checkFieldOr type="2"> <!--JBL1-015_1_1 -->
+					<checkFieldCaseWhen name="M" discription="持有债券余额" caseValue="0" whenValue="3">
+						<checkFieldCaseWhenField name="A" discription="客户类型"></checkFieldCaseWhenField>
+					</checkFieldCaseWhen>
+					<checkFieldCaseWhen name="M" discription="持有债券余额" caseValue="null" whenValue="3">
+						<checkFieldCaseWhenField name="A" discription="客户类型"></checkFieldCaseWhenField>
+					</checkFieldCaseWhen>
+				</checkFieldOr>
+        
+				<checkFieldOr type="2">  <!--JBL1-015-03_1_1 -->
+					<checkFieldCaseWhen name="N" discription="持有股权余额" caseValue="0" whenValue="3">
+						<checkFieldCaseWhenField name="A" discription="客户类型"></checkFieldCaseWhenField>
+					</checkFieldCaseWhen>
+					<checkFieldCaseWhen name="N" discription="持有股权余额" caseValue="null" whenValue="3">
+						<checkFieldCaseWhenField name="A" discription="客户类型"></checkFieldCaseWhenField>
+					</checkFieldCaseWhen>
+				</checkFieldOr>
+				<checkFieldOr type="2">  <!--JBL1-017-03_1_1 -->
+					<checkFieldCaseWhen name="O" discription="其他表内信用风险资产余额" caseValue="0" whenValue="3">
+						<checkFieldCaseWhenField name="A" discription="客户类型"></checkFieldCaseWhenField>
+					</checkFieldCaseWhen>
+					<checkFieldCaseWhen name="O" discription="其他表内信用风险资产余额" caseValue="null" whenValue="3">
+						<checkFieldCaseWhenField name="A" discription="客户类型"></checkFieldCaseWhenField>
+					</checkFieldCaseWhen>
+				</checkFieldOr>
+				<checkFieldOr type="2">  <!--JBL1-018-03_1_1 -->
+					<checkFieldCaseWhen name="P" discription="表外业务余额" caseValue="0" whenValue="3">
+						<checkFieldCaseWhenField name="A" discription="客户类型"></checkFieldCaseWhenField>
+					</checkFieldCaseWhen>
+					<checkFieldCaseWhen name="P" discription="表外业务余额" caseValue="null" whenValue="3">
+						<checkFieldCaseWhenField name="A" discription="客户类型"></checkFieldCaseWhenField>
+					</checkFieldCaseWhen>
+		    </checkFieldOr>
+				<checkFieldOr type="2">  <!--JBL1-019-03_1_1 -->
+					<checkFieldCaseWhen name="Q" discription="现有业务余额占用授信额度" caseValue="0" whenValue="3">
+						<checkFieldCaseWhenField name="A" discription="客户类型"></checkFieldCaseWhenField>
+					</checkFieldCaseWhen>
+					<checkFieldCaseWhen name="Q" discription="现有业务余额占用授信额度" caseValue="null" whenValue="3">
+						<checkFieldCaseWhenField name="A" discription="客户类型"></checkFieldCaseWhenField>
+					</checkFieldCaseWhen>
+				</checkFieldOr>
+				<checkFieldOr type="2">  <!--JBL1-020-03_1_1 -->
+					<checkFieldCaseWhen name="R" discription="其中：贷款余额占用贷款授信额度度" caseValue="0" whenValue="3">
+						<checkFieldCaseWhenField name="A" discription="客户类型"></checkFieldCaseWhenField>
+					</checkFieldCaseWhen>
+					<checkFieldCaseWhen name="R" discription="其中：贷款余额占用贷款授信额度度" caseValue="null" whenValue="3">
+						<checkFieldCaseWhenField name="A" discription="客户类型"></checkFieldCaseWhenField>
+					</checkFieldCaseWhen>
+				</checkFieldOr>
+				<checkFieldOr type="2">  <!--JBL1-021-03_1_1 -->
+					<checkFieldCaseWhen name="S" discription="尚可使用授信额度" caseValue="0" whenValue="3">
+						<checkFieldCaseWhenField name="A" discription="客户类型"></checkFieldCaseWhenField>
+					</checkFieldCaseWhen>
+					<checkFieldCaseWhen name="S" discription="尚可使用授信额度" caseValue="null" whenValue="3">
+						<checkFieldCaseWhenField name="A" discription="客户类型"></checkFieldCaseWhenField>
+					</checkFieldCaseWhen>
+				</checkFieldOr>
+				<checkFieldOr type="2">  <!--JBL1-022-03_1_1 -->
+					<checkFieldCaseWhen name="T" discription="其中：尚可使用贷款授信额度" caseValue="0" whenValue="3">
+						<checkFieldCaseWhenField name="A" discription="客户类型"></checkFieldCaseWhenField>
+					</checkFieldCaseWhen>
+					<checkFieldCaseWhen name="T" discription="其中：尚可使用贷款授信额度" caseValue="null" whenValue="3">
+						<checkFieldCaseWhenField name="A" discription="客户类型"></checkFieldCaseWhenField>
+					</checkFieldCaseWhen>
+				</checkFieldOr>	
+			</checkFieldOrList>						
+		 </checkTable>
+	 </checkInstance>
+</reportCheckRoot>

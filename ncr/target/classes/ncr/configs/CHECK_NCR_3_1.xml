@@ -1,0 +1,255 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<reportCheckRoot>
+	<checkInstance name="Check_NCR_3_1">
+		<paramValueList>
+			<paramValue name="DTDATE" value="2013-12-09"></paramValue>
+			 <paramValue name="strInstCode" value=""></paramValue>
+			 <!--
+		    <paramValue name="strTaskRptInstID" value="000000"></paramValue>
+			  <paramValue name="strFreq" value="000000"></paramValue> 
+			  -->
+		</paramValueList>
+
+		<freqCode value="4"></freqCode>
+
+		<checkTable procedureName="CHECK_NCR_3_1" procedureParam="DTDATE,strInstCode,rt" procedureDiscription="NCR_3_1单一法人基本情况"
+			originTable="NCR_3_1" errorStateField="RPTCHECKTYPE" errorStateValue="3"  successStateValue="2" 
+			defaultLogicDaoBeanId="oracleProcedureResultSetDao">
+			<paramFieldList>
+				<paramField paramName="DTDATE" field="DTDATE" type="2"></paramField>
+				<paramField paramName="strInstCode" field="INSTINFO" type="1"></paramField>
+			</paramFieldList>
+
+			 <checkUniqueFieldList>
+				<checkUniqueField name="AUTOID" discription="主键" originField="AUTOID"></checkUniqueField>
+			 </checkUniqueFieldList>
+
+			<checkFieldBasicList discription="表内基础校验">
+				<!--JBL3-003	A	客户名称			非空。	长度大于等于2个字符。-->
+				<checkFieldBasic name="A" discription="客户名称" emptyCheck="true" startLength="2" ignoreVal="*********"></checkFieldBasic>
+				<!--JBL3-004	B	客户代码			非空。	长度大于等于2个字符。-->
+				<checkFieldBasic name="B" discription="客户代码" emptyCheck="true" startLength="2"></checkFieldBasic>
+				<!--JBL3-005	C	组织机构代码	按照国家质量监督局组织机构代码（GB11714_1997）标准填报。符合组织机构代码校验规则。9位字符，大写字母或数字组成。-->
+				<checkFieldBasic name="C" discription="组织机构代码"  startLength="9" endLength="9" ></checkFieldBasic>
+			  <!--JBL3-006	D	组织机构登记/年检/更新日期	char()	合法的年月日组合。1-4位：年；5-6位：月，其中1-9月，表示为：01-09；7-8位：日，其中1-9日表示为01-09。银行不掌握相关情况的，可填报为八个9：“99999999”。8位数字字符。-->
+			  <checkFieldBasic name="D" discription="组织机构登记-年检-更新日期" dateCheck="true" ignoreVal="99999999" startLength="8" endLength="8"></checkFieldBasic>
+				<!--JBL3-007	E	登记注册代码		长度大于等于2个字符。-->
+				<checkFieldBasic name="E" discription="登记注册代码"  startLength="2" ></checkFieldBasic>
+				<!--JBL3-008	F	登记注册/年检/更新日期	合法的年月日组合。1-4位：年；5-6位：月，其中1-9月，表示为：01-09；7-8位：日，其中1-9日表示为01-09。银行不掌握相关情况的，可填报为八个9：“99999999”。8位数字字符。-->
+				<checkFieldBasic name="F" discription="登记注册-年检-更新日期"  dateCheck="true" ignoreVal="99999999" startLength="8" endLength="8" ></checkFieldBasic>
+				<!--JBL3-009	G	注册国家或地区		填写授信客户注册国家或地区。	根据《世界各国和地区名称代码》（GB/T 2659）填报。	非空。	长度大于等于2个字符。-->
+				<checkFieldBasic name="G" discription="注册国家或地区" emptyCheck="true" startLength="2" ></checkFieldBasic>
+				<!--JBL3-010	H	国别代码	填写授信客户注册国家或地区对应的代码。	根据《世界各国和地区名称代码》（GB/T 2659）填报。	非空。	3位大写字母-->。
+				<checkFieldBasic name="H" discription="国别代码" emptyCheck="true" startLength="3"  endLength="3"  upperCheck="true"></checkFieldBasic>
+				<!--JBL3-011	I	注册地址		非空。	长度大于等于2个字符。-->
+				<checkFieldBasic name="I" discription="注册地址" emptyCheck="true" startLength="2" ></checkFieldBasic>
+				<!--JBL3-012	J	行政区划代码	为客户法人注册地行政区划代码。客户为国外企业的，统一填报为六个9：“999999”。	根据《县及县以上行政区划代码》填报，或“999999”。	非空。	6位数字字符-->。
+				<checkFieldBasic name="J" discription="行政区划代码" emptyCheck="true"  ignoreVal="999999" startLength="6" endLength="6" ></checkFieldBasic>
+				<!--JBL3-013	K	上市公司标志-国别代码-上市公司代码	上市公司代码：不少于2位字符。-->
+				<checkFieldBasic name="K" discription="上市公司标志-国别代码-上市公司代码"  startLength="2" ></checkFieldBasic>
+				<!--JBL3-016	N	违约概率	decimal(,4)		保留4位小数。-->
+				<checkFieldBasic name="N" discription="违约概率"  valueDecimalLength="4" ></checkFieldBasic>
+				<!--JBL3-018	P	资产总额	decimal(,2)		数据单位为：万元。	保留两位小数。-->
+				<checkFieldBasic name="P" discription="资产总额"  valueDecimalLength="2" ></checkFieldBasic>
+				<!--JBL3-019	Q	负债总额	decimal(,2)		数据单位为：万元。	保留两位小数。-->
+				<checkFieldBasic name="Q" discription="负债总额"  valueDecimalLength="2" ></checkFieldBasic>
+				<!--JBL3-020	R	税前利润	decimal(,2)		数据单位为：万元。	保留两位小数。-->
+				<checkFieldBasic name="R" discription="税前利润"  valueDecimalLength="2" ></checkFieldBasic>
+				<!--JBL3-021	S	主营业务收入	decimal(,2)		数据单位为：万元。	保留两位小数。-->
+				<checkFieldBasic name="S" discription="主营业务收入"  valueDecimalLength="2" ></checkFieldBasic>
+				<!--JBL3-022	T	存货	decimal(,2)		数据单位为：万元。	保留两位小数。-->
+				<checkFieldBasic name="T" discription="存货"  valueDecimalLength="2" ></checkFieldBasic>
+				<!--JBL3-023	U	应收账款	decimal(,2)		数据单位为：万元。	保留两位小数。-->
+				<checkFieldBasic name="U" discription="应收账款"  valueDecimalLength="2" ></checkFieldBasic>
+				<!--JBL3-024	V	其他应收款 decimal(,2)		数据单位为：万元。	保留两位小数。-->
+				<checkFieldBasic name="V" discription="其他应收款"  valueDecimalLength="2" ></checkFieldBasic>
+				<!--JBL3-025	W	流动资产合计	decimal(,2)		数据单位为：万元。	保留两位小数。-->
+				<checkFieldBasic name="W" discription="流动资产合计"  valueDecimalLength="2" ></checkFieldBasic>
+				<!--JBL3-026	X	流动负债合计	decimal(,2)		数据单位为：万元。	保留两位小数。-->
+				<checkFieldBasic name="X" discription="流动负债合计"  valueDecimalLength="2" ></checkFieldBasic>
+				<!--JBL3-027	Y	财务报表类型		1位数字字符。-->
+				<checkFieldBasic name="Y" discription="财务报表类型"  startLength="1" endLength="1" ></checkFieldBasic>
+				<!--JBL3-028	Z	财务报表日期	合法的年月日组合。1-4位：年；5-6位：月，其中1-9月，表示为：01-09；7-8位：日，其中1-9日表示为01-09。8位数字字符。-->
+				<checkFieldBasic name="Z" discription="财务报表日期"  dateCheck="true" startLength="8" endLength="8" ></checkFieldBasic>
+				<!--JBL3-030	AB	客户所属行业代码 填报客户所属行业的代码，详细填报至小类。境外机构按五个9：“99999”填报。	参见《国民经济行业分类》（GB/T 4754），及“99999”。	非空。	5位字符-->。
+				<checkFieldBasic name="AB" discription="客户所属行业代码"  emptyCheck="true" ignore="99999" startLength="5" endLength="5" ></checkFieldBasic>
+				<!--JBL3-031	AC	贷款卡号	16位或18位数字。-->
+				<checkFieldBasic name="AC" discription="贷款卡号"  digitalCheck="true"></checkFieldBasic>
+			</checkFieldBasicList>
+
+			<checkFieldCaseWhenList discription="caseWhen校验">
+				<!--JBL3-005	C	组织机构代码		若[国别代码]为“CHN”，则非空。-->
+				<checkFieldCaseWhen name="C" discription="组织机构代码" caseValue="notNull" whenValue="CHN">
+        	<checkFieldCaseWhenField name="H" discription="国别代码"></checkFieldCaseWhenField>
+        </checkFieldCaseWhen>	
+        <!--JBL3-006	D	组织机构登记/年检/更新日期	若[组织机构代码]非空，则非空。-->	
+				<checkFieldCaseWhen name="D" discription="组织机构登记-年检-更新日期" ignoreVal="99999999" caseValue="notNull" whenValue="notNull">
+        	<checkFieldCaseWhenField name="C" discription="组织机构代码"  ></checkFieldCaseWhenField>
+        </checkFieldCaseWhen>
+        <!--JBL3-008	F	登记注册/年检/更新日期  若[登记注册代码]非空，则非空。-->
+        <checkFieldCaseWhen name="F" discription="登记注册-年检-更新日期" ignoreVal="99999999" caseValue="notNull" whenValue="notNull">
+        	<checkFieldCaseWhenField name="E" discription="登记注册代码"  ></checkFieldCaseWhenField>
+        </checkFieldCaseWhen>
+				<!--JBL3-027	Y	财务报表类型		若P+Q+|R|+S大于0则非空。-->
+        <checkFieldCaseWhen name="Y" discription="财务报表类型" caseValue="notNull" whenType="2" whenCompareType=">" whenCompareValue="0">
+        	<checkFieldCaseWhenField name="P" discription="资产总额" joinType="1" whenValueRule="1"></checkFieldCaseWhenField>
+        	<checkFieldCaseWhenField name="Q" discription="负债总额" joinType="1" whenValueRule="1"></checkFieldCaseWhenField>
+        	<checkFieldCaseWhenField name="R" discription="税前利润" joinType="1" whenValueRule="2"></checkFieldCaseWhenField>
+        	<checkFieldCaseWhenField name="S" discription="主营业务收入" joinType="1" whenValueRule="1"></checkFieldCaseWhenField>
+        </checkFieldCaseWhen>
+        <!--JBL3-028	Z	财务报表日期	若P+Q+|R|+S大于0则非空。-->
+        <checkFieldCaseWhen name="Z" discription="财务报表日期"  caseValue="notNull" whenType="2" whenCompareType=">" whenCompareValue="0">
+        	<checkFieldCaseWhenField name="P" discription="资产总额" joinType="1" whenValueRule="1"></checkFieldCaseWhenField>
+        	<checkFieldCaseWhenField name="Q" discription="负债总额" joinType="1" whenValueRule="1"></checkFieldCaseWhenField>
+        	<checkFieldCaseWhenField name="R" discription="税前利润" joinType="1" whenValueRule="2"></checkFieldCaseWhenField>
+        	<checkFieldCaseWhenField name="S" discription="主营业务收入" joinType="1" whenValueRule="1"></checkFieldCaseWhenField>
+        </checkFieldCaseWhen>                
+        <!--LJX-049	表3 PARTⅠ中，若[财务报表类型]为“1-年报”则必须是年末日期；若[财务报表类型]为“2-半年报”则必须是半年末日期；
+        						若[财务报表类型]为“3-季报”则必须是季末日期；若[财务报表类型]为“4-月报”则必须是月末日期 -->      
+       <checkFieldCaseWhen name="Z" discription="财务报表日期"  caseValue="yearEndDate" whenValue="1">
+        	<checkFieldCaseWhenField name="Y" discription="财务报表类型"  ></checkFieldCaseWhenField>
+       </checkFieldCaseWhen>
+       <checkFieldCaseWhen name="Z" discription="财务报表日期"  caseValue="halfYearEndDate" whenValue="2">
+        	<checkFieldCaseWhenField name="Y" discription="财务报表类型"  ></checkFieldCaseWhenField>
+       </checkFieldCaseWhen>
+       <checkFieldCaseWhen name="Z" discription="财务报表日期"  caseValue="seasonEndDate" whenValue="3">
+        	<checkFieldCaseWhenField name="Y" discription="财务报表类型"  ></checkFieldCaseWhenField>
+       </checkFieldCaseWhen>
+       <checkFieldCaseWhen name="Z" discription="财务报表日期"  caseValue="monthEndDate" whenValue="4">
+        	<checkFieldCaseWhenField name="Y" discription="财务报表类型"  ></checkFieldCaseWhenField>
+       </checkFieldCaseWhen>
+       <!--TSL-003 若[组织机构代码]非空，或[实际控制人证件类型]、[股东/关联企业证件类型]为“1-组织机构代码”且非空，则[国别代码]必须为“CHN” -->
+        <checkFieldCaseWhen name="H" discription="国别代码" caseValue="CHN" whenValue="notNull">
+       		<checkFieldCaseWhenField name="C" discription="组织机构代码"></checkFieldCaseWhenField>
+        </checkFieldCaseWhen>  
+        <!--TSL-004 若[国别代码]为境外（包括香港、澳门、台湾），则[客户名称]为九个星号“*********” --> 
+        <checkFieldCaseWhen name="A" discription="客户名称" caseValue="*********" whenType="5" whenValue="CHN">
+       		<checkFieldCaseWhenField name="H" discription="国别代码"></checkFieldCaseWhenField>
+        </checkFieldCaseWhen> 
+        <!--TSL-005 若[国别代码]为国外，则[行政区划代码]为六个9“999999” --> 
+        <checkFieldCaseWhen name="J" discription="行政区划代码" caseValue="999999" whenType="5" whenValue="CHN">
+       		<checkFieldCaseWhenField name="H" discription="J国别代码"></checkFieldCaseWhenField>
+        </checkFieldCaseWhen> 
+        <!--TSL-006 若[国别代码]是境外（包括香港、澳门、台湾），则[客户所属行业代码]为五个9“99999” --> 
+        <checkFieldCaseWhen name="AB" discription="客户所属行业代码" caseValue="99999" whenType="5" whenValue="CHN">
+       		<checkFieldCaseWhenField name="H" discription="国别代码"></checkFieldCaseWhenField>
+        </checkFieldCaseWhen>
+			</checkFieldCaseWhenList>
+      <!--JBL3-027	Y	财务报表类型		1-年报，2-半年报，3-季报，4-月报。	单选。填写1/2/3/4中的1个。-->
+			<checkFieldEffectiveList discription="有效性校验"> 
+				<checkFieldEffective name="Y" discription="财务报表类型">
+          <value>1</value>
+          <value>2</value>
+          <value>3</value>
+          <value>4</value>
+        </checkFieldEffective>
+        <!--JBL3-029	AA	客户类型		A1-大型企业，A2-中型企业，A3-小型企业，A4-微型企业，B-机关，C-事业单位，D-社会团体，E-其他组织机构，F-境外机构。单选。填写A1/A2/A3/A4/B/C/D/E/F中的1个。-->
+        <checkFieldEffective name="AA" discription="客户类型">
+          <value>A1</value>
+          <value>A2</value>
+          <value>A3</value>
+          <value>A4</value>
+          <value>B</value>
+          <value>C</value>
+          <value>D</value>
+          <value>E</value>
+          <value>F</value>
+        </checkFieldEffective>
+			</checkFieldEffectiveList>
+      <!--基本校验中关于大于0的那种类型的校验-->
+			<checkFieldLineList discription="非聚合校验">
+				<!--JBL3-016	N	违约概率			大于等于0，小于等于100 -->
+				<checkFieldLine compareType=">=">
+        	<leftFieldList><checkFieldLineField name="N" discription="违约概率"></checkFieldLineField></leftFieldList>
+         	<rightFieldList><checkFieldLineField value="0"></checkFieldLineField></rightFieldList>
+        </checkFieldLine>        
+       <checkFieldLine compareType=">=">
+       		<leftFieldList><checkFieldLineField value="1"></checkFieldLineField></leftFieldList>
+        	<rightFieldList><checkFieldLineField name="N" discription="违约概率"></checkFieldLineField></rightFieldList>        	
+       </checkFieldLine>
+       <!--JBL3-018	P	资产总额	大于等于0 -->
+       <checkFieldLine compareType=">=">
+       		<leftFieldList><checkFieldLineField name="P" discription="资产总额"></checkFieldLineField></leftFieldList>
+        	<rightFieldList><checkFieldLineField value="0"></checkFieldLineField></rightFieldList>        	
+       </checkFieldLine> 
+       <!--JBL3-019	Q	负债总额  大于等于0  -->
+       <checkFieldLine compareType=">=">
+       		<leftFieldList><checkFieldLineField name="Q" discription="负债总额"></checkFieldLineField></leftFieldList>
+        	<rightFieldList><checkFieldLineField value="0"></checkFieldLineField></rightFieldList>        	
+       </checkFieldLine> 
+       <!--JBL3-021	S	主营业务收入  大于等于0  -->
+       <checkFieldLine compareType=">=">
+       		<leftFieldList><checkFieldLineField name="S" discription="主营业务收入"></checkFieldLineField></leftFieldList>
+        	<rightFieldList><checkFieldLineField value="0"></checkFieldLineField></rightFieldList>        	
+       </checkFieldLine>
+        <!--JBL3-022	T	存货  大于等于0   -->
+       <checkFieldLine compareType=">=">
+       		<leftFieldList><checkFieldLineField name="T" discription="存货"></checkFieldLineField></leftFieldList>
+        	<rightFieldList><checkFieldLineField value="0"></checkFieldLineField></rightFieldList>        	
+       </checkFieldLine> 
+       <!--JBL3-023	U	应收账款  大于等于0  --> 
+       <checkFieldLine compareType=">=">
+       		<leftFieldList><checkFieldLineField name="U" discription="应收账款"></checkFieldLineField></leftFieldList>
+        	<rightFieldList><checkFieldLineField value="0"></checkFieldLineField></rightFieldList>        	
+       </checkFieldLine> 
+       <!--JBL3-024	V	其他应收款  大于等于0   -->
+       <checkFieldLine compareType=">=">
+       		<leftFieldList><checkFieldLineField name="V" discription="其他应收款"></checkFieldLineField></leftFieldList>
+        	<rightFieldList><checkFieldLineField value="0"></checkFieldLineField></rightFieldList>        	
+       </checkFieldLine> 
+       <!--JBL3-025	W	流动资产合计  大于等于0  --> 
+       <checkFieldLine compareType=">=">
+       		<leftFieldList><checkFieldLineField name="W" discription="流动资产合计"></checkFieldLineField></leftFieldList>
+        	<rightFieldList><checkFieldLineField value="0"></checkFieldLineField></rightFieldList>        	
+       </checkFieldLine> 
+       <!--JBL3-026	 X	流动负债合计  大于等于0  --> 
+       <checkFieldLine compareType=">=">
+       		<leftFieldList><checkFieldLineField name="X" discription="流动负债合计"></checkFieldLineField></leftFieldList>
+        	<rightFieldList><checkFieldLineField value="0"></checkFieldLineField></rightFieldList>        	
+       </checkFieldLine>   
+       <!--LJX-045	表3 PARTⅠ中[组织机构登记/年检/更新日期]小于等于[数据日期] -->
+       <checkFieldLine compareType=">=" fieldType="2">
+       		<leftFieldList><checkFieldLineField name="DTDATE" discription="数据日期"></checkFieldLineField></leftFieldList>
+        	<rightFieldList><checkFieldLineField name="D" discription="组织机构登记/年检/更新日期"></checkFieldLineField></rightFieldList>        	
+       </checkFieldLine>
+       <!--LJX-046	表3 PARTⅠ中[登记注册/年检/更新日期]小于等于[数据日期] -->
+       <checkFieldLine compareType=">=" fieldType="2">
+       		<leftFieldList><checkFieldLineField name="DTDATE" discription="数据日期"></checkFieldLineField></leftFieldList>
+        	<rightFieldList><checkFieldLineField name="F" discription="登记注册/年检/更新日期"></checkFieldLineField></rightFieldList>        	
+       </checkFieldLine>
+       <!--LJX-047	表3 PARTⅠ中[资产总额]>=[存货]+[应收账款]+[其他应收款]；[资产总额]>=[流动资产合计] -->
+       <checkFieldLine compareType=">=">
+       		<leftFieldList><checkFieldLineField name="P" discription="资产总额"></checkFieldLineField></leftFieldList>
+        	<rightFieldList>
+          	<checkFieldLineField name="T" discription="LJX-047_T存货" joinType="1"></checkFieldLineField>
+          	<checkFieldLineField name="U" discription="LJX-047_U应收账款" joinType="1"></checkFieldLineField>
+          	<checkFieldLineField name="V" discription="LJX-047_V其他应收款" joinType="1"></checkFieldLineField>
+        	</rightFieldList>        	
+       </checkFieldLine>
+       <checkFieldLine compareType=">=">
+       		<leftFieldList><checkFieldLineField name="P" discription="资产总额"></checkFieldLineField></leftFieldList>
+        	<rightFieldList><checkFieldLineField name="W" discription="流动资产合计"></checkFieldLineField></rightFieldList>        	
+       </checkFieldLine>
+       <!--LJX-048	表3 PARTⅠ中[财务报表日期]小于等于[数据日期] -->
+       <checkFieldLine compareType=">=" fieldType="2">
+       		<leftFieldList><checkFieldLineField name="DTDATE" discription="数据日期"></checkFieldLineField></leftFieldList>
+        	<rightFieldList><checkFieldLineField name="Z" discription="财务报表日期"></checkFieldLineField></rightFieldList>        	
+       </checkFieldLine>
+			</checkFieldLineList>
+
+			<checkFieldOrList discription="条件校验">	
+				<checkFieldOr type="1">
+					<!--JBL3-029	AA	客户类型  1或2位字符。-->
+         	<checkFieldBasic name="AA" discription="客户类型"  startLength="1" endLength="1"  ></checkFieldBasic>
+          <checkFieldBasic name="AA" discription="客户类型"  startLength="2" endLength="2" ></checkFieldBasic>
+        </checkFieldOr>
+        <checkFieldOr type="1">
+        	<!--JBL3-031  AC	贷款卡号   16位或18位数字。--> 
+         	<checkFieldBasic name="AC" discription="贷款卡号" startLength="16" endLength="16"  ></checkFieldBasic>
+          <checkFieldBasic name="AC" discription="贷款卡号" startLength="18" endLength="18" ></checkFieldBasic>
+        </checkFieldOr>
+			</checkFieldOrList>
+		</checkTable>
+						
+	</checkInstance>
+</reportCheckRoot>

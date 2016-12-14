@@ -1,0 +1,1261 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<beans
+	xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns:p="http://www.springframework.org/schema/p"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-3.0.xsd">
+
+   <bean id="autoETL_DataSourceShowListService" parent="singleObjectShowListService">
+         <property name="linkedMap">
+            <map>
+                <entry key="修改" value="Get-ShowUpdate"></entry>
+                <!--  <entry key="删除" value="PostConfirm-DeleteById"></entry>-->
+                <entry key="测试连接" value="Get-TestConnection"></entry>
+                <entry key="表管理" value="Get-ShowListLevelTable-extend.dto.ReportModel_Table"></entry>
+                <entry key="视图管理" value="Get-ShowListLevelView-extend.dto.AutoETL_View"></entry>
+                <entry key="存储过程" value="Get-ShowListLevelProcedure-extend.dto.AutoETL_Procedure"></entry>
+           </map>
+        </property>
+    </bean>
+    
+    <bean id="reportModel_TableShowListLevelTableService" parent="singleObjectShowListLevelService">
+      <property name="operationMap">
+           <map>
+	         <entry key="新增" value="Get-ShowSave"></entry>
+	         <entry key="删除" value="PostConfirm-DeleteListByIdList"></entry>
+	         <entry key="导出" value="Post-ExportData"></entry>
+	         <entry key="导入" value="Upload-ImportData"></entry>
+	         <entry key="查询" value="Select-ShowListLevelTable"></entry>
+	         <entry key="返回" value="Get-BackPreviousFirst"></entry>
+	        </map>
+	     </property>
+         <property name="linkedMap">
+            <map>
+                <entry key="修改" value="Get-ShowUpdate"></entry>
+                <!--  <entry key="删除" value="PostConfirm-DeleteById"></entry>-->
+                <entry key="同步表" value="Get-coresystem/ImportTableStructLevelTable-extend.dto.ReportModel_Table"></entry>
+                <entry key="创建表" value="Get-coresystem/DDLLevelTable-extend.dto.ReportModel_Table"></entry>
+                <entry key="字段管理" value="Get-ShowListLevelField-extend.dto.ReportModel_Field"></entry>
+            </map>
+        </property>
+        <property name="showInstanceName" value="2"></property>
+    </bean>
+    
+    <bean id="reportModel_TableShowSaveLevelTableService" parent="singleObjectShowSaveService">
+         <property name="showInstanceName" value="2"></property>
+    </bean>
+    
+    <bean id="reportModel_TableShowUpdateLevelTableService" parent="singleObjectShowUpdateService">
+         <property name="showInstanceName" value="2"></property>
+    </bean>
+    
+     <bean id="autoETL_ViewShowListLevelViewService" parent="singleObjectShowListLevelService">
+         <property name="linkedMap">
+            <map>
+                <entry key="修改" value="Get-ShowUpdate"></entry>
+                <!--  <entry key="删除" value="PostConfirm-DeleteById"></entry>-->
+                <entry key="同步视图" value="Get-coresystem/ImportTableStructLevelView-extend.dto.AutoETL_View"></entry>
+                <entry key="字段管理" value="Get-ShowListLevelViewField-extend.dto.AutoETL_ViewField"></entry>
+            </map>
+        </property>
+    </bean>
+    
+      <bean id="autoETL_ProcedureShowListLevelProcedureService" parent="singleObjectShowListLevelService">
+         <property name="linkedMap">
+            <map>
+                <entry key="修改" value="Get-ShowUpdate"></entry>
+                <!--  <entry key="删除" value="PostConfirm-DeleteById"></entry>-->
+           </map>
+        </property>
+    </bean>
+     <bean id="reportModel_FieldShowListLevelFieldService" parent="singleObjectShowListLevelService">
+      <property name="operationMap">
+           <map>
+	         <entry key="新增" value="Get-ShowSave"></entry>
+	         <entry key="删除" value="PostConfirm-DeleteListByIdList"></entry>
+	         <entry key="导出" value="Post-ExportData"></entry>
+	         <entry key="导入" value="Upload-ImportData"></entry>
+             <entry key="返回" value="Get-BackPreviousFirst"></entry>
+	         <entry key="查询" value="Select-ShowListLevelField"></entry>
+	        </map>
+	     </property>
+         <property name="linkedMap">
+            <map>
+                <entry key="修改" value="Get-ShowUpdate"></entry>
+               <!--  <entry key="删除" value="PostConfirm-DeleteById"></entry>-->
+               <entry key="条件设置" value="Get-ShowListLevelFieldCondition-extend.dto.ReportModel_FieldCondition"></entry>
+            </map>
+        </property>
+    </bean>
+    
+     <bean id="autoETL_FTPShowListService" parent="singleObjectShowListService">
+         <property name="linkedMap">
+            <map>
+                <entry key="修改" value="Get-ShowUpdate"></entry>
+               <!--  <entry key="删除" value="PostConfirm-DeleteById"></entry>-->
+                <entry key="FTPTrans" value="Get-ShowListLevelFTPTrans-autoETLsystem.dto.AutoETL_FTPTrans"></entry>
+           </map>
+        </property>
+    </bean>
+    <bean id="autoETL_WorkflowShowListService" parent="singleObjectShowListService">
+         <property name="linkedMap">
+            <map>
+                <entry key="修改" value="Get-ShowUpdate"></entry>
+               <!--  <entry key="删除" value="PostConfirm-DeleteById"></entry>-->
+                <entry key="自动参数" value="Get-JumpByType"></entry>
+                <entry key="手动参数" value="Get-ShowListLevelWorkflowParamMV-autoETLsystem.dto.AutoETL_WorkflowParamMV"></entry>
+                <entry key="执行结点" value="Get-ShowUpdateListLevelWorkflowAE-autoETLsystem.dto.AutoETL_WorkflowAE"></entry>
+                <entry key="执行工作流" value="Get-ExcuteWorkflow"></entry>
+                <entry key="结点管理" value="Get-ShowListLevelActivityNode-autoETLsystem.dto.AutoETL_ActivityNode"></entry>
+            </map>
+        </property>
+        <property name="operationMap">
+            <map>
+                <entry key="查询" value="Select-ShowList"></entry>
+                <entry key="新增" value="Get-ShowSave"></entry>
+                <entry key="删除" value="PostConfirm-DeleteListByIdList"></entry>
+           </map>
+        </property>
+        <property name="typeFieldName" value="strParamValueType"/>
+        <property name="typeFieldValueMap">
+            <map>
+             <entry key="1" value="ShowUpdateListLevelWorkflowPP-autoETLsystem.dto.AutoETL_WorkflowPP"></entry>
+             <entry key="2" value="ShowListLevelWorkflowPSDV-autoETLsystem.dto.AutoETL_WorkflowPSDV"></entry>
+             <entry key="3" value="ShowSaveOrUpdateLevelWorkflowPFPV-autoETLsystem.dto.AutoETL_Workflow?type=autoETLsystem.dto.AutoETL_WorkflowPFPV"></entry>
+             <entry key="4" value="ShowSaveOrUpdateLevelWorkflowSQLParam-autoETLsystem.dto.AutoETL_Workflow?type=autoETLsystem.dto.AutoETL_WorkflowSQLParam"></entry>
+             <entry key="5" value="ShowSaveOrUpdateLevelWorkflowPFOPV-autoETLsystem.dto.AutoETL_Workflow?type=autoETLsystem.dto.AutoETL_WorkflowPFOPV"></entry>
+            </map>
+        </property>
+    </bean>
+    
+      <bean id="showWorkflowService" parent="singleObjectShowListService">
+      <property name="pageSize" value="100000000"></property>
+         <property name="linkedMap">
+            <map>                               
+                <entry key="手动参数" value="Get-ShowListLevelWorkflowParamMVA-autoETLsystem.dto.AutoETL_WorkflowParamMV"></entry>
+                <entry key="执行结点" value="Get-ShowUpdateListLevelWorkflowAE1-autoETLsystem.dto.AutoETL_WorkflowAE"></entry>
+                <entry key="执行工作流" value="Get-ExcuteWorkflow"></entry>
+            </map>
+        </property>
+        <property name="operationMap">
+            <map>
+                <entry key="查询" value="Select-ShowWorkFlow-autoETLsystem.dto.AutoETL_Workflow"></entry>
+           </map>
+        </property>
+        </bean>
+        
+   <bean id="autoETL_WorkflowShowWorkFlowService" parent="showWorkflowService">
+   </bean>
+   
+   <bean id="autoETL_WorkflowParamMVShowListLevelWorkflowParamMVAService" parent="singleObjectShowListLevelService">
+        <property name="operationMap">
+            <map>
+                <entry key="查询" value="Select-ShowList"></entry>
+                <entry key="新增" value="Get-ShowSave"></entry>
+                <!--  <entry key="删除" value="PostConfirm-DeleteById"></entry>-->
+               <entry key="返回" value="Get-ShowWorkFlow-autoETLsystem.dto.AutoETL_Workflow"></entry>
+           </map>
+        </property>
+    </bean>
+   
+    <bean id="autoETL_WorkflowAEShowUpdateListLevelWorkflowAE1Service" parent="singleObjectShowUpdateListLevelService">
+   <property name="operationMap">
+        <map>
+	    	<entry key="保存" value="Post-UpdateList"></entry>
+	        <entry key="返回" value="Get-ShowWorkFlow-autoETLsystem.dto.AutoETL_Workflow"></entry>
+    	 </map>                    
+    </property>
+     	 <property name="defaultProceseClassList">
+            <list>
+                <value>framework.services.procese.ShowUpdateListProcese</value>
+                <value>framework.services.procese.LevelDataProcese</value>
+                <value>framework.services.procese.SortFieldProcese</value>
+                <value>autoETLsystem.service.procese.AutoETL_WorkflowAEProcese</value>
+                <!-- <value>framework.services.procese.SelectTagSortByNameProcese</value> -->
+                <value>framework.services.procese.ShowPowerButtonProcese</value>
+            </list>
+        </property>
+   </bean>
+   
+        
+     <bean id="autoETL_ActivityNodeRelationFShowListLevelActivityNodeRelationFService" parent="singleObjectShowListLevelService">
+      	 <property name="pageSize" value="100000000"></property>
+     </bean>
+
+     <bean id="autoETL_WorkflowAEShowUpdateListLevelWorkflowAEService" parent="singleObjectShowUpdateListLevelService">
+      	 <property name="defaultProceseClassList">
+            <list>
+                <value>framework.services.procese.ShowUpdateListProcese</value>
+                <value>framework.services.procese.LevelDataProcese</value>
+                <value>framework.services.procese.SortFieldProcese</value>
+                <value>autoETLsystem.service.procese.AutoETL_WorkflowAEProcese</value>
+                <value>framework.services.procese.SelectTagSortByNameProcese</value>
+                <value>framework.services.procese.ShowPowerButtonProcese</value>
+            </list>
+        </property>
+     </bean>
+     
+     <bean id="autoETL_WorkflowPFPVOneToOneShowUpdateLevelWorkflowPFPVService" parent="singleObjectShowUpdateService">
+         <property name="operationMap">
+            <map>
+                <entry key="保存" value="Post-OneToOneUpdate"></entry>
+                <entry key="返回" value="Get-BackPreviousFirst"></entry>
+                <entry key="设置参数" value="Get1-ShowListLevelWorkflowPFPVDetail-autoETLsystem.dto.AutoETL_WorkflowPFPVDetail"></entry>
+            </map>
+        </property>
+     </bean>
+    
+    <bean id="autoETL_ActivityNodeShowListLevelActivityNodeService" parent="singleObjectShowListLevelService">
+         <property name="linkedMap">
+            <map>
+                <entry key="修改" value="Get-ShowUpdate"></entry>
+               <!--  <entry key="删除" value="PostConfirm-DeleteById"></entry>-->
+                 <entry key="结点参数" value="Get-ShowUpdateListLevelAutoETL_ActivityNodeParam-autoETLsystem.dto.AutoETL_ActivityNodeParam"></entry>
+                <entry key="启动参数" value="Get-ShowUpdateListLevelActivityNodeProcP-autoETLsystem.dto.AutoETL_ActivityNodeProcP"></entry>
+               	<entry key="设置结点" value="Get-JumpByTypeLevelActivityNode"></entry>
+            </map>
+        </property>
+        <property name="typeFieldName" value="strActivityNodeType"/>
+        <property name="typeFieldValueMap">
+            <map>
+                <entry key="1" value="ShowSaveOrUpdateLevelActivityNodeForSql-autoETLsystem.dto.AutoETL_ActivityNode?type=autoETLsystem.dto.AutoETL_ActivityNodeForSql"></entry>
+                <entry key="2" value="ShowSaveOrUpdateLevelActivityNodeForSqlEx-autoETLsystem.dto.AutoETL_ActivityNode?type=autoETLsystem.dto.AutoETL_ActivityNodeForSqlEx"></entry>
+                <entry key="3" value="ShowSaveOrUpdateLevelActivityNodeForP-autoETLsystem.dto.AutoETL_ActivityNode?type=autoETLsystem.dto.AutoETL_ActivityNodeForP"></entry>
+                <entry key="4" value="ShowSaveOrUpdateLevelActivityNodeForPro-autoETLsystem.dto.AutoETL_ActivityNode?type=autoETLsystem.dto.AutoETL_ActivityNodeForPro"></entry>
+                <entry key="5" value="ShowSaveOrUpdateLevelActivityNodeForFTPTra-autoETLsystem.dto.AutoETL_ActivityNode?type=autoETLsystem.dto.AutoETL_ActivityNodeForFTPTra"></entry>
+                <entry key="6" value="ShowSaveOrUpdateLevelActivityNodeForFile-autoETLsystem.dto.AutoETL_ActivityNode?type=autoETLsystem.dto.AutoETL_ActivityNodeForFile"></entry>
+                <entry key="7" value="ShowSaveOrUpdateLevelActivityNodeForExcel-autoETLsystem.dto.AutoETL_ActivityNode?type=autoETLsystem.dto.AutoETL_ActivityNodeForExcel"></entry>
+                <entry key="8" value="ShowSaveOrUpdateLevelActivityNodeForCT-autoETLsystem.dto.AutoETL_ActivityNode?type=autoETLsystem.dto.AutoETL_ActivityNodeForCT"></entry>
+                <entry key="9" value="ShowSaveOrUpdateLevelActivityNodeForCV-autoETLsystem.dto.AutoETL_ActivityNode?type=autoETLsystem.dto.AutoETL_ActivityNodeForCV"></entry>
+                <entry key="10" value="ShowSaveOrUpdateLevelActivityNodeForCheck-autoETLsystem.dto.AutoETL_ActivityNode?type=autoETLsystem.dto.AutoETL_ActivityNodeForCheck"></entry>
+                <entry key="11" value="ShowSaveOrUpdateLevelActivityNodeForCalculate-autoETLsystem.dto.AutoETL_ActivityNode?type=autoETLsystem.dto.AutoETL_ActivityNodeForCalculate"></entry>
+                <entry key="12" value="ShowSaveOrUpdateLevelActivityNodeForSummary-autoETLsystem.dto.AutoETL_ActivityNode?type=autoETLsystem.dto.AutoETL_ActivityNodeForSummary"></entry>
+                <entry key="13" value="ShowSaveOrUpdateLevelActivityNodeForKettle-autoETLsystem.dto.AutoETL_ActivityNode?type=autoETLsystem.dto.AutoETL_ActivityNodeForKettle"></entry>
+                <entry key="14" value="ShowSaveOrUpdateLevelActivityNodeForDeleteFile-autoETLsystem.dto.AutoETL_ActivityNode?type=autoETLsystem.dto.AutoETL_ActivityNodeForDeleteFile"></entry>
+                <entry key="15" value="ShowSaveOrUpdateLevelActivityNodeForProceTranslateWithCheck-autoETLsystem.dto.AutoETL_ActivityNode?type=autoETLsystem.dto.AutoETL_ActivityNodeForProceTranslateWithCheck"></entry>
+                <entry key="17" value="ShowSaveOrUpdateLevelActivityNodeForRptCheck-autoETLsystem.dto.AutoETL_ActivityNode?type=autoETLsystem.dto.AutoETL_ActivityNodeForRptCheck"></entry>
+                <entry key="18" value="ShowSaveOrUpdateLevelActivityNodeForMail-autoETLsystem.dto.AutoETL_ActivityNode?type=autoETLsystem.dto.AutoETL_ActivityNodeForMail"></entry>
+                <entry key="19" value="ShowUpdateListLevelActivityNodeForTotalTableState-autoETLsystem.dto.AutoETL_ActivityNodeForTotalTableState"></entry>
+                <entry key="20" value="ShowSaveOrUpdateLevelActivityNodeForLogicPCheck-autoETLsystem.dto.AutoETL_ActivityNode?type=autoETLsystem.dto.AutoETL_ActivityNodeForLogicPCheck"></entry>
+                <entry key="22" value="ShowSaveOrUpdateLevelActivityNodeForMsg-autoETLsystem.dto.AutoETL_ActivityNode?type=autoETLsystem.dto.AutoETL_ActivityNodeForMsg"></entry>
+                <entry key="23" value="ShowSaveOrUpdateLevelActivityNodeForWarning-autoETLsystem.dto.AutoETL_ActivityNode?type=autoETLsystem.dto.AutoETL_ActivityNodeForWarning"></entry>
+				<entry key="100" value="ShowSaveOrUpdateLevelActivityNodeForJava-autoETLsystem.dto.AutoETL_ActivityNode?type=autoETLsystem.dto.AutoETL_ActivityNodeForJava"></entry>
+            </map>
+        </property> 
+    </bean>
+    
+    <bean id="autoETL_ActivityNodeForDeleteFileOneToOneShowUpdateLevelActivityNodeForDeleteFileService" parent="singleObjectShowUpdateService">
+         <property name="operationMap">
+            <map>
+                <entry key="保存" value="Post-OneToOneUpdate"></entry>
+                <entry key="返回" value="Get-BackPreviousFirst"></entry>
+                <entry key="设置参数" value="Get1-ShowListLevelActivityNodeForDeleteFileDetail-autoETLsystem.dto.AutoETL_ActivityNodeForDeleteFileDetail"></entry>
+            </map>
+        </property>
+    </bean>
+    
+    <bean id="autoETL_ActivityNodeForSqlOneToOneShowUpdateLevelActivityNodeForSqlService" parent="singleObjectShowUpdateService">
+         <property name="operationMap">
+            <map>
+                <entry key="保存" value="Post-OneToOneUpdate"></entry>
+                <entry key="返回" value="Get-BackPreviousFirst"></entry>
+                <entry key="设置映射" value="Get1-ShowListLevelAutoETL_ActivityNodeForSqlC-autoETLsystem.dto.AutoETL_ActivityNodeForSqlC"></entry>
+                <entry key="显示Sql" value="Get1-ShowActivityNodeForSqlLevelActivityNodeaShow-EmptyEntity"></entry>
+            </map>
+        </property>
+    </bean>
+    
+    <bean id="autoETL_ActivityNodeForFileOneToOneShowUpdateLevelActivityNodeForFileService" parent="singleObjectShowUpdateService">
+         <property name="operationMap">
+            <map>
+                <entry key="保存" value="Post-OneToOneUpdate"></entry>
+                <entry key="返回" value="Get-BackPreviousFirst"></entry>
+                <entry key="导出条件" value="Get1-ShowListLevelAutoETL_ActivityNodeForFileC-autoETLsystem.dto.AutoETL_ActivityNodeForFileC"></entry>
+                <entry key="创建所有字段" value="Get1-CreateAllFieldExport"></entry>
+                <entry key="设置字段" value="Get1-ShowListLevelAutoETL_ActivityNodeForFileF-autoETLsystem.dto.AutoETL_ActivityNodeForFileF"></entry>
+            </map>
+        </property>
+  </bean>
+  
+  <bean id="autoETL_ActivityNodeForExcelOneToOneShowUpdateLevelActivityNodeForExcelService" parent="singleObjectShowUpdateService">
+         <property name="operationMap">
+            <map>
+                <entry key="保存" value="Post-OneToOneUpdate"></entry>
+                <entry key="返回" value="Get-BackPreviousFirst"></entry>
+                <entry key="导出条件" value="Get1-ShowListLevelAutoETL_ActivityNodeForExcelC-autoETLsystem.dto.AutoETL_ActivityNodeForExcelC"></entry>
+            </map>
+        </property>
+  </bean>
+  
+  <bean id="autoETL_ActivityNodeForTotalTableStateShowUpdateListLevelActivityNodeForTotalTableStateService" class="autoETLsystem.service.imps.AutoETL_ActivityNodeForTotalTableStateService" scope="prototype">
+  		<property name="showInstanceName" value="1"></property>
+        <property name="defaultDaoBeanId" value="singleObjectFindByCriteriaDao"></property>
+        <property name="defaultLogicDaoBeanId" value="singleObjectFindByCriteriaDao"></property>
+        <property name="defaultProceseClassList">
+            <list>
+                <value>framework.services.procese.ShowUpdateListProcese</value>
+                <value>framework.services.procese.LevelDataProcese</value>
+                <value>framework.services.procese.SortFieldProcese</value>
+                <value>framework.services.procese.ShowPowerButtonProcese</value>
+            </list>
+        </property>
+        <property name="defaultTranslateClassList">
+            <list>
+                <value>framework.services.translate.LevelDataTranslate</value>
+                <value>framework.services.translate.ExampleCriteriaTranslate</value>
+                <value>framework.services.translate.DefaultValueTranslate</value>
+            </list>
+        </property>
+         <property name="operationMap">
+            <map>
+                <entry key="保存" value="Post-UpdateList"></entry>
+                <entry key="返回" value="Get-BackPreviousFirst"></entry>
+            </map>
+        </property>
+  </bean>
+
+<bean id="autoETL_ActivityNodeForSqlOneToOneSaveLevelActivityNodeForSqlService" parent="singleObjectSaveService">
+      <property name="defaultProceseClassList">
+         <list>
+             <value>autoETLsystem.service.procese.ActivityNodeForSqlSaveOrUpdateProcese</value>
+             <value>framework.services.procese.ShowPowerButtonProcese</value>
+         </list>
+      </property> 
+  </bean>
+
+  <bean id="autoETL_ActivityNodeForSqlOneToOneUpdateLevelActivityNodeForSqlService" parent="singleObjectUpdateService">
+      <property name="defaultProceseClassList">
+         <list>
+             <value>autoETLsystem.service.procese.ActivityNodeForSqlSaveOrUpdateProcese</value>
+             <value>framework.services.procese.ShowPowerButtonProcese</value>
+         </list>
+      </property> 
+  </bean>
+
+  <bean id="autoETL_ActivityNodeForSqlCShowListLevelAutoETL_ActivityNodeForSqlCService" parent="singleObjectShowListService">
+         <property name="operationMap">
+            <map>
+                 <entry key="返回" value="Get-BackPreviousFirst"></entry>
+            </map>
+        </property>
+        <property name="linkedMap">
+            <map>
+                <entry key="映射关系" value="Get-ShowListLevelAutoETL_ActivityNodeForSqlCR-autoETLsystem.dto.AutoETL_ActivityNodeForSqlCR"></entry>
+           </map>
+        </property>
+  </bean>
+
+  <bean id="autoETL_ActivityNodeForCTOneToOneShowUpdateLevelActivityNodeForCTService" parent="singleObjectShowUpdateService">
+         <property name="operationMap">
+            <map>
+                <entry key="保存" value="Post-OneToOneUpdate"></entry>
+                <entry key="返回" value="Get-BackPreviousFirst"></entry>
+                <entry key="设置条件" value="Get1-ShowListLevelActivityNodeRelationF-autoETLsystem.dto.AutoETL_ActivityNodeRelationF"></entry>
+                <entry key="创建相同字段映射" value="Get1-CreateSameSameMapping"></entry>
+                <entry key="设置映射" value="Get1-ShowListLevelActivityNodeFieldV-autoETLsystem.dto.AutoETL_ActivityNodeFieldV"></entry>
+                <entry key="显示Sql" value="Get1-ShowActivityNodeForSqlLevelActivityNodeaTableShow-EmptyEntity"></entry>
+            </map>
+        </property>
+  </bean>
+  
+    <bean id="autoETL_ActivityNodeForCVOneToOneShowUpdateLevelActivityNodeForCVService" parent="singleObjectShowUpdateService">
+         <property name="operationMap">
+            <map>
+                <entry key="保存" value="Post-OneToOneUpdate"></entry>
+                <entry key="返回" value="Get-BackPreviousFirst"></entry>
+                <entry key="设置条件" value="Get1-ShowListLevelActivityNodeRelationV-autoETLsystem.dto.AutoETL_ActivityNodeRelationV"></entry>
+                <entry key="创建相同字段映射" value="Get1-CreateSameSameForViewMapping"></entry>
+                <entry key="设置映射" value="Get1-ShowListLevelActivityNodeFieldViewV-autoETLsystem.dto.AutoETL_ActivityNodeFieldViewV"></entry>
+                <entry key="显示Sql" value="Get1-ShowActivityNodeForCVLevelActivityNodeaCVShow-EmptyEntity"></entry>
+            </map>
+        </property>
+  </bean>
+  
+  <bean id="autoETL_ActivityNodeRelationFShowSaveLevelActivityNodeRelationFService" parent="singleObjectShowSaveService">
+      <property name="defaultProceseClassList">
+            <list>
+                <value>framework.services.procese.ShowSaveProcese</value>
+                <value>framework.services.procese.LevelDataProcese</value>
+		        <value>framework.services.procese.DefaultValueProcese</value>
+		        <value>framework.services.procese.ShowListTreeProcese</value>
+		        <value>framework.services.procese.SortFieldProcese</value>
+		        <value>autoETLsystem.service.procese.AutoETL_ActivityNodeRelationFFieldPorcese</value>
+		        <value>framework.services.procese.SelectTagSortByNameProcese</value>
+		        <value>framework.services.procese.ShowPowerButtonProcese</value>
+            </list>
+        </property>
+  </bean>
+  
+   <bean id="autoETL_ActivityNodeRelationFShowUpdateLevelActivityNodeRelationFService" parent="singleObjectShowUpdateService">
+      <property name="defaultProceseClassList">
+            <list>
+                <value>framework.services.procese.ShowUpdateProcese</value>
+                <value>framework.services.procese.LevelDataProcese</value>
+                <value>framework.services.procese.SortFieldProcese</value>
+                <value>autoETLsystem.service.procese.AutoETL_ActivityNodeRelationFFieldPorcese</value>
+                <value>framework.services.procese.SelectTagSortByNameProcese</value>
+                <value>framework.services.procese.ShowPowerButtonProcese</value>
+            </list>
+        </property>
+  </bean>
+  
+  <bean id="autoETL_ActivityNodeRelationVShowSaveLevelActivityNodeRelationVService" parent="singleObjectShowSaveService">
+      <property name="defaultProceseClassList">
+            <list>
+                <value>framework.services.procese.ShowSaveProcese</value>
+                <value>framework.services.procese.LevelDataProcese</value>
+		        <value>framework.services.procese.DefaultValueProcese</value>
+		        <value>framework.services.procese.ShowListTreeProcese</value>
+		        <value>framework.services.procese.SortFieldProcese</value>
+		        <value>autoETLsystem.service.procese.AutoETL_ActivityNodeRelationViewFieldPorcese</value>
+		        <value>framework.services.procese.SelectTagSortByNameProcese</value>
+		        <value>framework.services.procese.ShowPowerButtonProcese</value>
+            </list>
+        </property>
+  </bean>
+  
+   <bean id="autoETL_ActivityNodeRelationVShowUpdateLevelActivityNodeRelationVService" parent="singleObjectShowUpdateService">
+      <property name="defaultProceseClassList">
+            <list>
+                <value>framework.services.procese.ShowUpdateProcese</value>
+                <value>framework.services.procese.LevelDataProcese</value>
+                <value>framework.services.procese.SortFieldProcese</value>
+                <value>autoETLsystem.service.procese.AutoETL_ActivityNodeRelationViewFieldPorcese</value>
+                <value>framework.services.procese.SelectTagSortByNameProcese</value>
+                <value>framework.services.procese.ShowPowerButtonProcese</value>
+            </list>
+        </property>
+  </bean>
+  
+  <bean id="autoETL_ActivityNodeRelationVShowListLevelActivityNodeRelationVService" parent="singleObjectShowListLevelService">
+       <property name="pageSize" value="100000000"></property>
+         <property name="linkedMap">
+            <map>
+                <entry key="修改" value="Get-ShowUpdate"></entry>
+            </map>
+        </property>
+        <property name="defaultProceseClassList">
+            <list>
+                <value>framework.services.procese.ShowListProcese</value>
+                <value>framework.services.procese.LevelDataProcese</value>
+                <value>framework.services.procese.ShowListTreeProcese</value>
+                <value>autoETLsystem.service.procese.AutoETL_ActivityNodeRelationViewFieldPorcese</value>
+                <value>framework.services.procese.SelectTagSortByNameProcese</value>
+                <value>framework.services.procese.ShowPowerButtonProcese</value>
+            </list>
+        </property>
+    </bean>
+    
+      <bean id="autoETL_ActivityNodeForFileFShowSaveLevelAutoETL_ActivityNodeForFileFService" parent="singleObjectShowSaveService">
+      <property name="defaultProceseClassList">
+            <list>
+                <value>framework.services.procese.ShowSaveProcese</value>
+                <value>framework.services.procese.LevelDataProcese</value>
+		        <value>framework.services.procese.DefaultValueProcese</value>
+		        <value>framework.services.procese.ShowListTreeProcese</value>
+		        <value>framework.services.procese.SortFieldProcese</value>
+		        <value>autoETLsystem.service.procese.AutoETL_ActivityNodeForFileFProcese</value>
+		        <value>framework.services.procese.SelectTagSortByNameProcese</value>
+		        <value>framework.services.procese.ShowPowerButtonProcese</value>
+            </list>
+        </property>
+  </bean>
+  
+   <bean id="autoETL_ActivityNodeForFileFShowUpdateLevelAutoETL_ActivityNodeForFileFService" parent="singleObjectShowUpdateService">
+      <property name="defaultProceseClassList">
+            <list>
+                <value>framework.services.procese.ShowUpdateProcese</value>
+                <value>framework.services.procese.LevelDataProcese</value>
+                <value>framework.services.procese.SortFieldProcese</value>
+                <value>autoETLsystem.service.procese.AutoETL_ActivityNodeForFileFProcese</value>
+                <value>framework.services.procese.SelectTagSortByNameProcese</value>
+                <value>framework.services.procese.ShowPowerButtonProcese</value>
+            </list>
+        </property>
+  </bean>
+  
+  <bean id="autoETL_ActivityNodeForFileFShowListLevelAutoETL_ActivityNodeForFileFService" parent="singleObjectShowListLevelService">
+         <property name="linkedMap">
+            <map>
+                <entry key="修改" value="Get-ShowUpdate"></entry>
+            </map>
+        </property>
+        <property name="defaultProceseClassList">
+            <list>
+                <value>framework.services.procese.ShowListProcese</value>
+                <value>framework.services.procese.LevelDataProcese</value>
+                <value>framework.services.procese.ShowListTreeProcese</value>
+                <value>autoETLsystem.service.procese.AutoETL_ActivityNodeForFileFProcese</value>
+                <value>framework.services.procese.SelectTagSortByNameProcese</value>
+                <value>framework.services.procese.ShowPowerButtonProcese</value>
+            </list>
+        </property>
+    </bean>
+    
+    <bean id="autoETL_ActivityNodeForFileCShowSaveLevelAutoETL_ActivityNodeForFileCService" parent="singleObjectShowSaveService">
+      <property name="defaultProceseClassList">
+            <list>
+                <value>framework.services.procese.ShowSaveProcese</value>
+                <value>framework.services.procese.LevelDataProcese</value>
+		        <value>framework.services.procese.DefaultValueProcese</value>
+		        <value>framework.services.procese.ShowListTreeProcese</value>
+		        <value>framework.services.procese.SortFieldProcese</value>
+		        <value>autoETLsystem.service.procese.AutoETL_ActivityNodeForFileCProcese</value>
+		        <value>framework.services.procese.SelectTagSortByNameProcese</value>
+		        <value>framework.services.procese.ShowPowerButtonProcese</value>
+            </list>
+        </property>
+  </bean>
+  
+   <bean id="autoETL_ActivityNodeForFileCShowUpdateLevelAutoETL_ActivityNodeForFileCService" parent="singleObjectShowUpdateService">
+      <property name="defaultProceseClassList">
+            <list>
+                <value>framework.services.procese.ShowUpdateProcese</value>
+                <value>framework.services.procese.LevelDataProcese</value>
+                <value>framework.services.procese.SortFieldProcese</value>
+                <value>autoETLsystem.service.procese.AutoETL_ActivityNodeForFileCProcese</value>
+                <value>framework.services.procese.SelectTagSortByNameProcese</value>
+                <value>framework.services.procese.ShowPowerButtonProcese</value>
+            </list>
+        </property>
+  </bean>
+  
+  <bean id="autoETL_ActivityNodeForFileCShowListLevelAutoETL_ActivityNodeForFileCService" parent="singleObjectShowListLevelService">
+       <property name="pageSize" value="100000000"></property>
+         <property name="linkedMap">
+            <map>
+                <entry key="修改" value="Get-ShowUpdate"></entry>
+            </map>
+        </property>
+        <property name="defaultProceseClassList">
+            <list>
+                <value>framework.services.procese.ShowListProcese</value>
+                <value>framework.services.procese.LevelDataProcese</value>
+                <value>framework.services.procese.ShowListTreeProcese</value>
+                <value>autoETLsystem.service.procese.AutoETL_ActivityNodeForFileCProcese</value>
+                <value>framework.services.procese.SelectTagSortByNameProcese</value>
+                <value>framework.services.procese.ShowPowerButtonProcese</value>
+            </list>
+        </property>
+    </bean>
+    
+   <bean id="autoETL_ActivityNodeForExcelCShowSaveLevelAutoETL_ActivityNodeForExcelCService" parent="singleObjectShowSaveService">
+      <property name="defaultProceseClassList">
+            <list>
+                <value>framework.services.procese.ShowSaveProcese</value>
+                <value>framework.services.procese.LevelDataProcese</value>
+		        <value>framework.services.procese.DefaultValueProcese</value>
+		        <value>framework.services.procese.ShowListTreeProcese</value>
+		        <value>framework.services.procese.SortFieldProcese</value>
+		        <value>autoETLsystem.service.procese.AutoETL_ActivityNodeForExcelCProcese</value>
+		        <value>framework.services.procese.SelectTagSortByNameProcese</value>
+		        <value>framework.services.procese.ShowPowerButtonProcese</value>
+            </list>
+        </property>
+  </bean>
+  
+   <bean id="autoETL_ActivityNodeForExcelCShowUpdateLevelAutoETL_ActivityNodeForExcelCService" parent="singleObjectShowUpdateService">
+      <property name="defaultProceseClassList">
+            <list>
+                <value>framework.services.procese.ShowUpdateProcese</value>
+                <value>framework.services.procese.LevelDataProcese</value>
+                <value>framework.services.procese.SortFieldProcese</value>
+                <value>autoETLsystem.service.procese.AutoETL_ActivityNodeForExcelCProcese</value>
+                <value>framework.services.procese.SelectTagSortByNameProcese</value>
+                <value>framework.services.procese.ShowPowerButtonProcese</value>
+            </list>
+        </property>
+  </bean>
+  
+  <bean id="autoETL_ActivityNodeForExcelCShowListLevelAutoETL_ActivityNodeForExcelCService" parent="singleObjectShowListLevelService">
+       <property name="pageSize" value="100000000"></property>
+         <property name="linkedMap">
+            <map>
+                <entry key="修改" value="Get-ShowUpdate"></entry>
+            </map>
+        </property>
+        <property name="defaultProceseClassList">
+            <list>
+                <value>framework.services.procese.ShowListProcese</value>
+                <value>framework.services.procese.LevelDataProcese</value>
+                <value>framework.services.procese.ShowListTreeProcese</value>
+                <value>autoETLsystem.service.procese.AutoETL_ActivityNodeForExcelCProcese</value>
+                <value>framework.services.procese.SelectTagSortByNameProcese</value>
+                <value>framework.services.procese.ShowPowerButtonProcese</value>
+            </list>
+        </property>
+    </bean>
+    
+    <bean id="autoETL_ActivityNodeFieldViewVShowSaveLevelActivityNodeFieldViewVService" parent="singleObjectShowSaveService">
+      <property name="defaultProceseClassList">
+            <list>
+                <value>framework.services.procese.ShowSaveProcese</value>
+                <value>framework.services.procese.LevelDataProcese</value>
+		        <value>framework.services.procese.DefaultValueProcese</value>
+		        <value>framework.services.procese.ShowListTreeProcese</value>
+		        <value>framework.services.procese.SortFieldProcese</value>
+		        <value>autoETLsystem.service.procese.AutoETL_ActivityNodeFieldViewVProcese</value>
+		       <value>framework.services.procese.SelectTagSortByNameProcese</value>
+		       <value>framework.services.procese.ShowPowerButtonProcese</value>
+            </list>
+        </property>
+  </bean>
+  
+   <bean id="autoETL_ActivityNodeFieldViewVShowUpdateLevelActivityNodeFieldViewVService" parent="singleObjectShowUpdateService">
+      <property name="defaultProceseClassList">
+            <list>
+                <value>framework.services.procese.ShowUpdateProcese</value>
+                <value>framework.services.procese.LevelDataProcese</value>
+                <value>framework.services.procese.SortFieldProcese</value>
+                <value>autoETLsystem.service.procese.AutoETL_ActivityNodeFieldViewVProcese</value>
+                <value>framework.services.procese.SelectTagSortByNameProcese</value>
+                <value>framework.services.procese.ShowPowerButtonProcese</value>
+            </list>
+        </property>
+  </bean>
+
+    <bean id="autoETL_ActivityNodeFieldVShowSaveLevelActivityNodeFieldVService" parent="singleObjectShowSaveService">
+      <property name="defaultProceseClassList">
+            <list>
+                <value>framework.services.procese.ShowSaveProcese</value>
+                <value>framework.services.procese.LevelDataProcese</value>
+		        <value>framework.services.procese.DefaultValueProcese</value>
+		        <value>framework.services.procese.ShowListTreeProcese</value>
+		        <value>framework.services.procese.SortFieldProcese</value>
+		        <value>autoETLsystem.service.procese.AutoETL_ActivityNodeFieldVProcese</value>
+		        <value>framework.services.procese.SelectTagSortByNameProcese</value>
+		        <value>framework.services.procese.ShowPowerButtonProcese</value>
+            </list>
+        </property>
+  </bean>
+  
+   <bean id="autoETL_ActivityNodeFieldVShowUpdateLevelActivityNodeFieldVService" parent="singleObjectShowUpdateService">
+      <property name="defaultProceseClassList">
+            <list>
+                <value>framework.services.procese.ShowUpdateProcese</value>
+                <value>framework.services.procese.LevelDataProcese</value>
+                <value>framework.services.procese.SortFieldProcese</value>
+                <value>autoETLsystem.service.procese.AutoETL_ActivityNodeFieldVProcese</value>
+               <value>framework.services.procese.SelectTagSortByNameProcese</value>
+               <value>framework.services.procese.ShowPowerButtonProcese</value>
+            </list>
+        </property>
+  </bean>
+ 
+   <bean id="autoETL_ActivityNodeFieldVShowListLevelActivityNodeFieldVService" parent="singleObjectShowListLevelService">
+         <property name="linkedMap">
+            <map>
+                <entry key="修改" value="Get-ShowUpdate"></entry>
+                <entry key="删除" value="PostConfirm-DeleteById"></entry>
+                <entry key="映射值" value="Get-ShowListLevelActivityNodeFieldVCase-autoETLsystem.dto.AutoETL_ActivityNodeFieldVCa"></entry>
+            </map>
+        </property>
+        <property name="defaultProceseClassList">
+            <list>
+                <value>framework.services.procese.ShowListProcese</value>
+                <value>framework.services.procese.LevelDataProcese</value>
+                <value>framework.services.procese.ShowListTreeProcese</value>
+                <value>autoETLsystem.service.procese.AutoETL_ActivityNodeFieldVProcese</value>
+                <value>framework.services.procese.SelectTagSortByNameProcese</value>
+                <value>framework.services.procese.ShowPowerButtonProcese</value>
+            </list>
+        </property>
+    </bean>
+    
+    
+    <bean id="autoETL_ActivityNodeFieldViewVShowListLevelActivityNodeFieldViewVService" parent="singleObjectShowListLevelService">
+         <property name="linkedMap">
+            <map>
+                <entry key="修改" value="Get-ShowUpdate"></entry>
+               <!--  <entry key="删除" value="PostConfirm-DeleteById"></entry>-->
+                <entry key="映射值" value="Get-ShowListLevelActivityNodeFieldVVCase-autoETLsystem.dto.AutoETL_ActivityNodeFieldVVCa"></entry>
+            </map>
+        </property>
+        <property name="defaultProceseClassList">
+            <list>
+                <value>framework.services.procese.ShowListProcese</value>
+                <value>framework.services.procese.LevelDataProcese</value>
+                <value>framework.services.procese.ShowListTreeProcese</value>
+                <value>autoETLsystem.service.procese.AutoETL_ActivityNodeFieldViewVProcese</value>
+                <value>framework.services.procese.SelectTagSortByNameProcese</value>
+                <value>framework.services.procese.ShowPowerButtonProcese</value>
+            </list>
+        </property>
+    </bean>
+    
+    <bean id="autoETL_ActivityNodeFieldVCoShowSaveLevelActivityNodeFieldVConService" parent="singleObjectShowSaveService">
+    <property name="defaultProceseClassList">
+            <list>
+                <value>framework.services.procese.ShowSaveProcese</value>
+                <value>framework.services.procese.LevelDataProcese</value>
+		        <value>framework.services.procese.DefaultValueProcese</value>
+		        <value>framework.services.procese.ShowListTreeProcese</value>
+		        <value>framework.services.procese.SortFieldProcese</value>
+		        <value>autoETLsystem.service.procese.AutoETL_ActivityNodeFieldVConProcese</value>
+		        <value>framework.services.procese.SelectTagSortByNameProcese</value>
+		        <value>framework.services.procese.ShowPowerButtonProcese</value>
+            </list>
+        </property>
+  </bean>
+
+   <bean id="autoETL_ActivityNodeFieldVCoShowUpdateLevelActivityNodeFieldVConService" parent="singleObjectShowUpdateService">
+      <property name="defaultProceseClassList">
+            <list>
+                <value>framework.services.procese.ShowUpdateProcese</value>
+                <value>framework.services.procese.LevelDataProcese</value>
+                <value>framework.services.procese.SortFieldProcese</value>
+                <value>autoETLsystem.service.procese.AutoETL_ActivityNodeFieldVConProcese</value>
+                <value>framework.services.procese.SelectTagSortByNameProcese</value>
+                <value>framework.services.procese.ShowPowerButtonProcese</value>
+            </list>
+        </property>
+  </bean>
+ 
+   <bean id="autoETL_ActivityNodeFieldVCoShowListLevelActivityNodeFieldVConService" parent="singleObjectShowListLevelService">
+        <property name="pageSize" value="100000000"></property>
+        <property name="defaultProceseClassList">
+            <list>
+                <value>framework.services.procese.ShowListProcese</value>
+                <value>framework.services.procese.LevelDataProcese</value>
+                <value>framework.services.procese.ShowListTreeProcese</value>
+                <value>autoETLsystem.service.procese.AutoETL_ActivityNodeFieldVConProcese</value>
+                <value>framework.services.procese.SelectTagSortByNameProcese</value>
+                <value>framework.services.procese.ShowPowerButtonProcese</value>
+            </list>
+        </property>
+    </bean>
+   
+   <bean id="autoETL_ActivityNodeFieldVVConShowSaveLevelActivityNodeFieldVVConService" parent="singleObjectShowSaveService">
+      <property name="defaultProceseClassList">
+            <list>
+                <value>framework.services.procese.ShowSaveProcese</value>
+                <value>framework.services.procese.LevelDataProcese</value>
+		        <value>framework.services.procese.DefaultValueProcese</value>
+		        <value>framework.services.procese.ShowListTreeProcese</value>
+		        <value>framework.services.procese.SortFieldProcese</value>
+		        <value>autoETLsystem.service.procese.AutoETL_ActivityNodeFieldVVConPorcese</value>
+		        <value>framework.services.procese.SelectTagSortByNameProcese</value>
+		        <value>framework.services.procese.ShowPowerButtonProcese</value>
+            </list>
+        </property>
+  </bean>
+  
+   <bean id="autoETL_ActivityNodeFieldVVConShowUpdateLevelActivityNodeFieldVVConService" parent="singleObjectShowUpdateService">
+      <property name="defaultProceseClassList">
+            <list>
+                <value>framework.services.procese.ShowUpdateProcese</value>
+                <value>framework.services.procese.LevelDataProcese</value>
+                <value>framework.services.procese.SortFieldProcese</value>
+                <value>autoETLsystem.service.procese.AutoETL_ActivityNodeFieldVVConPorcese</value>
+                <value>framework.services.procese.SelectTagSortByNameProcese</value>
+                <value>framework.services.procese.ShowPowerButtonProcese</value>
+            </list>
+        </property>
+  </bean>
+ 
+   <bean id="autoETL_ActivityNodeFieldVVConShowListLevelActivityNodeFieldVVConService" parent="singleObjectShowListLevelService">
+      <property name="pageSize" value="100000000"></property>
+        <property name="defaultProceseClassList">
+            <list>
+                <value>framework.services.procese.ShowListProcese</value>
+                <value>framework.services.procese.LevelDataProcese</value>
+                <value>framework.services.procese.ShowListTreeProcese</value>
+                <value>autoETLsystem.service.procese.AutoETL_ActivityNodeFieldVVConPorcese</value>
+                <value>framework.services.procese.SelectTagSortByNameProcese</value>
+                <value>framework.services.procese.ShowPowerButtonProcese</value>
+            </list>
+        </property>
+    </bean>
+   
+   
+    <bean id="autoETL_ActivityNodeFieldVCaShowListLevelActivityNodeFieldVCaseService" parent="singleObjectShowListLevelService">
+         <property name="linkedMap">
+            <map>
+                <entry key="修改" value="Get-ShowUpdate"></entry>
+               <!--  <entry key="删除" value="PostConfirm-DeleteById"></entry>-->
+                <entry key="设置条件" value="Get-ShowListLevelActivityNodeFieldVCon-autoETLsystem.dto.AutoETL_ActivityNodeFieldVCo"></entry>
+            </map>
+        </property>
+    </bean>
+    
+    <bean id="autoETL_ActivityNodeFieldVVCaShowListLevelActivityNodeFieldVVCaseService" parent="singleObjectShowListLevelService">
+         <property name="linkedMap">
+            <map>
+                <entry key="修改" value="Get-ShowUpdate"></entry>
+               <!--  <entry key="删除" value="PostConfirm-DeleteById"></entry>-->
+                <entry key="设置条件" value="Get-ShowListLevelActivityNodeFieldVVCon-autoETLsystem.dto.AutoETL_ActivityNodeFieldVVCon"></entry>
+            </map>
+        </property>
+    </bean>
+  
+     <bean id="autoETL_ActivityNodeFieldVCaSaveLevelActivityNodeFieldVCaseService" parent="singleObjectSaveService">
+       <property name="defaultCheckInstance" value="autoETLCheck"/>
+   </bean>
+  
+   <bean id="autoETL_ActivityNodeFieldVCaUpdateLevelActivityNodeFieldVCaseService" parent="singleObjectUpdateService">
+       <property name="defaultCheckInstance" value="autoETLCheck"/>
+   </bean>
+
+  
+  <bean id="autoETL_WorkflowLogShowListService" parent="singleObjectShowListService">
+         <property name="linkedMap">
+            <map>
+                <entry key="删除" value="PostConfirm-DeleteById"></entry>
+                <entry key="结点日志" value="Get-ShowListLevelActivityNodeLog-autoETLsystem.dto.AutoETL_ActivityNodeLog"></entry>
+           </map>
+        </property>
+       <property name="operationMap">
+            <map>
+                <entry key="查询" value="Select-ShowList"></entry>
+                <entry key="删除" value="PostConfirm-DeleteListByIdList"></entry>
+            </map>
+        </property>
+    </bean>
+     <bean id="autoETL_ActivityNodeLogShowListLevelActivityNodeLogService" parent="singleObjectShowListLevelService">
+        <property name="showInstanceName" value="2"></property>
+        <property name="linkedMap">
+            <map>
+           </map>
+        </property>
+        <property name="operationMap">
+            <map>
+              <entry key="查询" value="Select-ShowList"></entry>
+              <entry key="返回" value="Get-BackPreviousFirst"></entry>
+            </map>
+        </property>
+    </bean>
+
+    <bean id="autoETL_DataSourceDeleteByIdService" parent="singleObjectDeleteByIdService">
+        <property name="dependTableList">
+            <list>
+                <value>autoETLsystem.dto.AutoETL_ActivityNodeForSql</value>
+                <value>autoETLsystem.dto.AutoETL_ActivityNodeForSqlEx</value>
+                <value>autoETLsystem.dto.AutoETL_ActivityNodeForView</value>
+                <value>autoETLsystem.dto.AutoETL_WorkflowSQLParam</value>
+                <value>autoETLsystem.dto.AutoETL_ActivityNodeFieldViewV</value>
+                <value>autoETLsystem.dto.AutoETL_ActivityNodeForCT</value>
+                <value>autoETLsystem.dto.AutoETL_ActivityNode</value>
+            </list>
+        </property>
+    </bean>
+    
+    <bean id="autoETL_DataSourceDeleteListByIdListService" parent="singleObjectDeleteListByIdListService">
+        <property name="dependTableList">
+            <list>
+                <value>autoETLsystem.dto.AutoETL_ActivityNodeForSql</value>
+                <value>autoETLsystem.dto.AutoETL_ActivityNodeForSqlEx</value>
+                <value>autoETLsystem.dto.AutoETL_ActivityNodeForView</value>
+                <value>autoETLsystem.dto.AutoETL_WorkflowSQLParam</value>
+                <value>autoETLsystem.dto.AutoETL_ActivityNodeFieldViewV</value>
+                <value>autoETLsystem.dto.AutoETL_ActivityNodeForCT</value>
+                <value>autoETLsystem.dto.AutoETL_ActivityNode</value>
+             </list>
+        </property>
+    </bean>
+    
+    <bean id="reportModel_TableDeleteByIdLevelTableService" parent="singleObjectDeleteByIdService">
+        <property name="dependTableList">
+            <list>
+                <value>autoETLsystem.dto.AutoETL_ActivityNodeForCT</value>
+                <value>autoETLsystem.dto.AutoETL_ActivityNodeForCV</value>
+                <value>autoETLsystem.dto.AutoETL_ActivityNodeForExcel</value>
+                <value>autoETLsystem.dto.AutoETL_ActivityNodeForFile</value>
+                <value>autoETLsystem.dto.AutoETL_ActivityNodeForP</value>
+            </list>
+        </property>
+    </bean>
+    
+    <bean id="reportModel_TableDeleteListByIdListLevelTableService" parent="singleObjectDeleteListByIdListService">
+        <property name="dependTableList">
+            <list>
+                <value>autoETLsystem.dto.AutoETL_ActivityNodeForCT</value>
+                <value>autoETLsystem.dto.AutoETL_ActivityNodeForCV</value>
+                <value>autoETLsystem.dto.AutoETL_ActivityNodeForExcel</value>
+                <value>autoETLsystem.dto.AutoETL_ActivityNodeForFile</value>
+                <value>autoETLsystem.dto.AutoETL_ActivityNodeForP</value>
+                <value>autoETLsystem.dto.AutoETL_ActivityNodeForSql</value>
+                <value>report.dto.RptDto</value>
+                <value>report.dto.TaskModelInst</value>
+            </list>
+        </property>
+    </bean>
+    
+    <bean id="reportModel_FieldDeleteByIdLevelFieldService" parent="singleObjectDeleteByIdService">
+        <property name="dependTableList">
+            <list>
+                <value>autoETLsystem.dto.AutoETL_ActivityNodeFieldV</value>
+                <value>autoETLsystem.dto.AutoETL_ActivityNodeFieldVC</value>
+                <value>autoETLsystem.dto.AutoETL_ActivityNodeFieldVCo</value>
+                <value>autoETLsystem.dto.AutoETL_ActivityNodeFieldViewV</value>
+                <value>autoETLsystem.dto.AutoETL_ActivityNodeRelationF</value>
+            </list>
+        </property>
+    </bean>
+    
+    <bean id="reportModel_FieldDeleteListByIdListLevelFieldService" parent="singleObjectDeleteListByIdListService">
+        <property name="dependTableList">
+            <list>
+                <value>autoETLsystem.dto.AutoETL_ActivityNodeFieldV</value>
+                <value>autoETLsystem.dto.AutoETL_ActivityNodeFieldVC</value>
+                <value>autoETLsystem.dto.AutoETL_ActivityNodeFieldVCo</value>
+                <value>autoETLsystem.dto.AutoETL_ActivityNodeFieldViewV</value>
+                <value>autoETLsystem.dto.AutoETL_ActivityNodeRelationF</value>
+            </list>
+        </property>
+    </bean>
+    
+    <bean id="autoETL_ParamDeleteByIdService" parent="singleObjectDeleteByIdService">
+        <property name="dependTableList">
+            <list>
+                <value>autoETLsystem.dto.AutoETL_ActivityNodeParam</value>
+                <value>autoETLsystem.dto.AutoETL_ActivityNodeProcP</value>
+                <value>autoETLsystem.dto.AutoETL_WorkflowPFPVDetail</value>
+                <value>autoETLsystem.dto.AutoETL_WorkflowPP</value>
+                <value>autoETLsystem.dto.AutoETL_WorkflowPSDV</value>
+                <value>autoETLsystem.dto.AutoETL_WorkflowParamMV</value>
+            </list>
+        </property>
+    </bean>
+    
+    <bean id="autoETL_ParamDeleteListByIdListService" parent="singleObjectDeleteListByIdListService">
+        <property name="dependTableList">
+            <list>
+                <value>autoETLsystem.dto.AutoETL_ActivityNodeParam</value>
+                <value>autoETLsystem.dto.AutoETL_ActivityNodeProcP</value>
+                <value>autoETLsystem.dto.AutoETL_WorkflowPFPVDetail</value>
+                <value>autoETLsystem.dto.AutoETL_WorkflowPP</value>
+                <value>autoETLsystem.dto.AutoETL_WorkflowPSDV</value>
+                <value>autoETLsystem.dto.AutoETL_WorkflowParamMV</value>
+            </list>
+        </property>
+    </bean>
+    
+    
+    <bean id="autoETL_ProcedureDeleteByIdLevelProcedureService" parent="singleObjectDeleteByIdService">
+        <property name="dependTableList">
+            <list>
+                <value>autoETLsystem.dto.AutoETL_ActivityNode</value>
+                <value>autoETLsystem.dto.AutoETL_ActivityNodeForP</value>
+                <value>autoETLsystem.dto.AutoETL_ActivityNodeForPro</value>
+                <value>autoETLsystem.dto.AutoETL_WorkflowPP</value>
+                <value>autoETLsystem.dto.AutoETL_WorkflowPSDV</value>
+            </list>
+        </property>
+    </bean>
+    
+    <bean id="autoETL_ProcedureDeleteListByIdListLevelProcedureService" parent="singleObjectDeleteListByIdListService">
+        <property name="dependTableList">
+            <list>
+                <value>autoETLsystem.dto.AutoETL_ActivityNode</value>
+                <value>autoETLsystem.dto.AutoETL_ActivityNodeForP</value>
+                <value>autoETLsystem.dto.AutoETL_ActivityNodeForPro</value>
+                <value>autoETLsystem.dto.AutoETL_WorkflowPP</value>
+                <value>autoETLsystem.dto.AutoETL_WorkflowPSDV</value>
+            </list>
+        </property>
+    </bean>
+    
+    
+     <bean id="autoETL_ViewDeleteByIdLevelViewService" parent="singleObjectDeleteByIdService">
+        <property name="dependTableList">
+            <list>
+                <value>autoETLsystem.dto.AutoETL_ActivityNodeFieldViewV</value>
+                <value>autoETLsystem.dto.AutoETL_ActivityNodeFieldVVCon</value>
+                <value>autoETLsystem.dto.AutoETL_ActivityNodeForCV</value>
+                <value>autoETLsystem.dto.AutoETL_ActivityNodeForView</value>
+                <value>autoETLsystem.dto.AutoETL_ActivityNodeRelationV</value>
+            </list>
+        </property>
+    </bean>
+    
+    <bean id="autoETL_ViewDeleteListByIdListLevelViewService" parent="singleObjectDeleteListByIdListService">
+        <property name="dependTableList">
+            <list>
+                <value>autoETLsystem.dto.AutoETL_ActivityNodeFieldViewV</value>
+                <value>autoETLsystem.dto.AutoETL_ActivityNodeFieldVVCon</value>
+                <value>autoETLsystem.dto.AutoETL_ActivityNodeForCV</value>
+                <value>autoETLsystem.dto.AutoETL_ActivityNodeForView</value>
+                <value>autoETLsystem.dto.AutoETL_ActivityNodeRelationV</value>
+            </list>
+        </property>
+    </bean>
+    
+     <bean id="autoETL_ViewFieldDeleteByIdLevelViewFieldService" parent="singleObjectDeleteByIdService">
+        <property name="dependTableList">
+            <list>
+                <value>autoETLsystem.dto.AutoETL_ActivityNodeFieldViewV</value>
+                <value>autoETLsystem.dto.AutoETL_ActivityNodeFieldVVCon</value>
+                <value>autoETLsystem.dto.AutoETL_ActivityNodeRelationV</value>
+            </list>
+        </property>
+    </bean>
+    
+    <bean id="autoETL_ViewFieldDeleteListByIdListLevelViewFieldService" parent="singleObjectDeleteListByIdListService">
+        <property name="dependTableList">
+            <list>
+                <value>autoETLsystem.dto.AutoETL_ActivityNodeFieldViewV</value>
+                <value>autoETLsystem.dto.AutoETL_ActivityNodeFieldVVCon</value>
+                <value>autoETLsystem.dto.AutoETL_ActivityNodeRelationV</value>
+            </list>
+        </property>
+    </bean>
+    
+    <bean id="suitDeleteByIdService" parent="singleObjectDeleteByIdService">
+        <property name="dependTableList">
+            <list>
+                <value>aextend.dto.AutoETL_ActivityNodeFieldViewV</value>
+            </list>
+        </property>
+    </bean>
+    
+    <bean id="suitDeleteListByIdListService" parent="singleObjectDeleteListByIdListService">
+        <property name="dependTableList">
+            <list>
+                <value>extend.dto.AutoETL_ActivityNodeFieldViewV</value>
+            </list>
+        </property>
+    </bean>
+
+    <bean id="autoETL_WorkflowShowSaveService" parent="singleObjectShowSaveService">
+         <property name="defaultValueMap">
+            <map>
+                <entry key="startTime" value="0"></entry>
+                <entry key="endTime" value="24"></entry>
+                <entry key="errorWaitTime" value="60"></entry>
+                <entry key="proceseWaitTime" value="60"></entry>
+                <entry key="strEffectiveType" value="1"></entry>
+            </map>
+        </property>
+    </bean>
+    
+    <bean id="excuteWorkflowService" class="autoETLsystem.service.imps.ExcuteWorkflowService" scope="prototype">
+        <property name="defaultOracleProcedureParamName" value="rt"></property>
+    </bean>
+    
+    <bean id="autoETL_ParamShowListService" parent="singleObjectShowListService">
+         <property name="linkedMap">
+            <map>
+                <entry key="修改" value="Get-ShowUpdate"></entry>
+               <!--  <entry key="删除" value="PostConfirm-DeleteById"></entry>-->
+            </map>
+        </property>
+         <property name="operationMap">
+            <map>
+                <entry key="查询" value="Select-ShowList"></entry>
+                <entry key="新增" value="Get-ShowSave"></entry>
+                <entry key="删除" value="PostConfirm-DeleteListByIdList"></entry>
+           </map>
+        </property>
+    </bean><!--
+    
+    <bean id="DDLAutoETLService" class="autoETLsystem.service.imps.DDLAutoETLService" scope="prototype">
+    	<property name="defaultDaoBeanId" value="sQLExecVoidResultDao"></property>
+    	<property name="strDBType" value="Oracle"></property>
+    	<property name="successMessage" value="创建成功"></property>
+        <property name="errorMessage" value="创建失败"></property>
+         
+        <property name="autoFieldMap">
+	      <map>
+	        <entry key="1" value="dtDate.time.数据时间.-2"></entry>
+	        <entry key="2" value="instInfo.inst.机构.-1"></entry>
+	         <entry key="3" value="testvchar.vchar.测试.200.0"></entry> 
+	      </map>
+		</property> 
+    </bean>
+    
+    --><bean id="reportModel_TableSaveLevelTableService" parent="singleObjectSaveService">
+      <property name="defaultCheckInstance" value="autoETLCheck"/>
+        <property name="defaultValueMap">
+           <map>
+             <entry key="strAddFields" value="2"></entry>
+           </map>
+        </property>
+        <property name="defaultCheckClassList">
+            <list>
+                <value>framework.services.check.ReflectEmptyFieldCheck</value>
+                <value>framework.services.check.ReflectTypeFieldCheck</value>
+                <value>framework.services.check.PrimaryKeyRepeatCheck</value>
+                <value>framework.services.check.XMLSingleObjectInstanceCheck</value>
+                <value>coresystem.service.check.TableFieldCheck</value>
+                 <value>extend.service.check.OracleTableNameLengthCheck</value>
+           </list>
+        </property>
+     </bean>
+     
+      <bean id="reportModel_TableUpdateLevelTableService" parent="singleObjectUpdateService">
+      <property name="defaultCheckInstance" value="autoETLCheck"/>
+        <property name="defaultCheckClassList">
+            <list>
+                <value>framework.services.check.ReflectEmptyFieldCheck</value>
+                <value>framework.services.check.ReflectTypeFieldCheck</value>
+                <value>framework.services.check.PrimaryKeyRepeatCheck</value>
+                <value>framework.services.check.XMLSingleObjectInstanceCheck</value>
+                <value>coresystem.service.check.TableFieldCheck</value>
+                 <value>extend.service.check.OracleTableNameLengthCheck</value>
+           </list>
+        </property>
+     </bean>
+     
+     <bean id="reportModel_FieldSaveLevelFieldService" parent="singleObjectSaveService">
+      <property name="defaultCheckInstance" value="autoETLCheck"/>
+       <property name="defaultCheckClassList">
+            <list>
+                <value>framework.services.check.ReflectEmptyFieldCheck</value>
+                <value>framework.services.check.ReflectTypeFieldCheck</value>
+                <value>framework.services.check.PrimaryKeyRepeatCheck</value>
+                <value>framework.services.check.XMLSingleObjectInstanceCheck</value>
+                <value>coresystem.service.check.TableFieldCheck</value>
+                 <value>extend.service.check.OracleFieldNameLengthCheck</value>
+           </list>
+        </property>
+     </bean>
+     
+     <bean id="reportModel_FieldUpdateLevelFieldService" parent="singleObjectUpdateService">
+      <property name="defaultCheckInstance" value="autoETLCheck"/>
+       <property name="defaultCheckClassList">
+            <list>
+                <value>framework.services.check.ReflectEmptyFieldCheck</value>
+                <value>framework.services.check.ReflectTypeFieldCheck</value>
+                <value>framework.services.check.PrimaryKeyRepeatCheck</value>
+                <value>framework.services.check.XMLSingleObjectInstanceCheck</value>
+                <value>coresystem.service.check.TableFieldCheck</value>
+                 <value>extend.service.check.OracleFieldNameLengthCheck</value>
+           </list>
+        </property>
+     </bean>
+     
+      <bean id="autoETL_ProcedureSaveLevelProcedureService" parent="singleObjectSaveService">
+      	<property name="defaultCheckInstance" value="autoETLCheck"/>
+     </bean>
+     
+      <bean id="autoETL_ProcedureUpdateLevelProcedureService" parent="singleObjectUpdateService">
+      	<property name="defaultCheckInstance" value="autoETLCheck"/>
+     </bean>
+     
+     <bean id="autoETL_ViewSaveLevelViewService" parent="singleObjectSaveService">
+      	<property name="defaultCheckInstance" value="autoETLCheckForView"/>
+     </bean>
+     
+      <bean id="autoETL_ViewUpdateLevelViewService" parent="singleObjectUpdateService">
+      	<property name="defaultCheckInstance" value="autoETLCheckForView"/>
+     </bean>
+               
+      <bean id="autoETL_ViewFieldSaveLevelViewFieldService" parent="singleObjectSaveService">
+      	<property name="defaultCheckInstance" value="autoETLCheckForView"/>
+     </bean>
+     
+      <bean id="autoETL_ViewFieldUpdateLevelViewFieldService" parent="singleObjectUpdateService">
+      	<property name="defaultCheckInstance" value="autoETLCheckForView"/>
+     </bean>
+     
+       <bean id="autoETL_ActivityNodeFieldVSaveLevelActivityNodeFieldVService" parent="singleObjectSaveService">
+      	<property name="defaultCheckInstance" value="autoETLCheckForActivityNodeFieldV"/>
+     </bean>
+     
+      <bean id="autoETL_ActivityNodeFieldVUpdateLevelActivityNodeFieldVService" parent="singleObjectUpdateService">
+      	<property name="defaultCheckInstance" value="autoETLCheckForActivityNodeFieldV"/>
+     </bean>
+                                              
+      <bean id="autoETL_ActivityNodeFieldViewVSaveLevelActivityNodeFieldViewVService" parent="singleObjectSaveService">
+      	<property name="defaultCheckInstance" value="autoETLCheckForActivityNodeFieldViewV"/>
+     </bean>
+     
+      <bean id="autoETL_ActivityNodeFieldViewVUpdateLevelActivityNodeFieldViewVService" parent="singleObjectUpdateService">
+      	<property name="defaultCheckInstance" value="autoETLCheckForActivityNodeFieldViewV"/>
+     </bean>
+     
+     <bean id="autoETL_ActivityNodeFieldVCoSaveLevelActivityNodeFieldVConService" parent="singleObjectSaveService">
+      	<property name="defaultCheckInstance" value="autoETLCheckForActivityNodeFieldVCo"/>
+     </bean>
+     
+      <bean id="autoETL_ActivityNodeFieldVCoUpdateLevelActivityNodeFieldVConService" parent="singleObjectUpdateService">
+      	<property name="defaultCheckInstance" value="autoETLCheckForActivityNodeFieldVCo"/>
+     </bean>
+     
+     <bean id="autoETL_ActivityNodeFieldVVConSaveLevelActivityNodeFieldVVConService" parent="singleObjectSaveService">
+      	<property name="defaultCheckInstance" value="autoETLCheckForActivityNodeFieldVVCon"/>
+     </bean>
+     
+      <bean id="autoETL_ActivityNodeFieldVVConUpdateLevelActivityNodeFieldVVConService" parent="singleObjectUpdateService">
+      	<property name="defaultCheckInstance" value="autoETLCheckForActivityNodeFieldVVCon"/>
+     </bean>
+     
+     <bean id="autoETL_ActivityNodeRelationFSaveLevelActivityNodeRelationFService" parent="singleObjectSaveService">
+      	<property name="defaultCheckInstance" value="autoETLCheckForActivityNodeRelationF"/>
+     </bean>
+     
+      <bean id="autoETL_ActivityNodeRelationFUpdateLevelActivityNodeRelationFService" parent="singleObjectUpdateService">
+      	<property name="defaultCheckInstance" value="autoETLCheckForActivityNodeRelationF"/>
+     </bean>
+     
+     <bean id="autoETL_ActivityNodeRelationVSaveLevelActivityNodeRelationVService" parent="singleObjectSaveService">
+      	<property name="defaultCheckInstance" value="autoETLCheckForActivityNodeRelationV"/>
+     </bean>
+     
+      <bean id="autoETL_ActivityNodeRelationVUpdateLevelActivityNodeRelationVService" parent="singleObjectUpdateService">
+      	<property name="defaultCheckInstance" value="autoETLCheckForActivityNodeRelationV"/>
+     </bean>
+     
+      <bean id="autoETL_ActivityNodeForFileCSaveLevelAutoETL_ActivityNodeForFileCService" parent="singleObjectSaveService">
+      	<property name="defaultCheckInstance" value="autoETLCheckForActivityNodeForFileC"/>
+     </bean>
+     
+      <bean id="autoETL_ActivityNodeForFileCUpdateLevelAutoETL_ActivityNodeForFileCService" parent="singleObjectUpdateService">
+      	<property name="defaultCheckInstance" value="autoETLCheckForActivityNodeForFileC"/>
+     </bean>
+     
+      <bean id="autoETL_ActivityNodeForExcelCSaveLevelAutoETL_ActivityNodeForExcelCService" parent="singleObjectSaveService">
+      	<property name="defaultCheckInstance" value="autoETLCheckForActivityNodeForExcelC"/>
+     </bean>
+     
+      <bean id="autoETL_ActivityNodeForExcelCUpdateLevelAutoETL_ActivityNodeForExcelCService" parent="singleObjectUpdateService">
+      	<property name="defaultCheckInstance" value="autoETLCheckForActivityNodeForExcelC"/>
+     </bean>
+     
+      <bean id="autoETL_ActivityNodeSaveLevelActivityNodeService" parent="singleObjectSaveService">
+      	<property name="defaultCheckInstance" value="AutoETL_ActivityNode"/>
+     </bean>
+     
+      <bean id="autoETL_ActivityNodeUpdateLevelActivityNodeService" parent="singleObjectUpdateService">
+      	<property name="defaultCheckInstance" value="AutoETL_ActivityNode"/>
+     </bean>
+     
+     <bean id="singleObjectCopyAboutAutoETLSeivice" class="autoETLsystem.service.copyService.SingleObjectCopyAboutAutoETLSeivice">
+    	 <property name="defaultFromSessionFactoryIdorName" value="sessionFactory"/>
+    	 <property name="defaultToSessionFactoryIdorName" value="FTZ"/>
+    	 <property name="defaultCopyWorkflowNameList">
+			<list>
+				<value>TEST_LJJ</value>
+			</list>
+		</property>
+     </bean>
+     
+     <bean id="reportModel_FieldShowSaveLevelFieldService" parent="singleObjectShowSaveService">
+      <property name="defaultProceseClassList">
+            <list>
+                <value>framework.services.procese.ShowSaveProcese</value>
+                <value>framework.services.procese.LevelDataProcese</value>
+		        <value>framework.services.procese.DefaultValueProcese</value>
+		        <value>framework.services.procese.ShowListTreeProcese</value>
+		        <value>framework.services.procese.SortFieldProcese</value>
+		        <value>framework.services.procese.SelectTagSortByNameProcese</value>
+		        <value>autoETLsystem.service.procese.ForFieldTypeProcese</value>
+		        <value>framework.services.procese.ShowPowerButtonProcese</value>
+            </list>
+        </property>
+  </bean>
+  
+  <bean id="reportModel_FieldShowUpdateLevelFieldService" parent="singleObjectShowUpdateService">
+      <property name="defaultProceseClassList">
+            <list>
+                <value>framework.services.procese.ShowUpdateProcese</value>
+                <value>framework.services.procese.LevelDataProcese</value>
+                <value>framework.services.procese.SortFieldProcese</value>
+                <value>framework.services.procese.SelectTagSortByNameProcese</value>
+                <value>autoETLsystem.service.procese.ForFieldTypeProcese</value>
+                <value>framework.services.procese.ShowPowerButtonProcese</value>
+            </list>
+        </property>
+  </bean>
+     
+ </beans>

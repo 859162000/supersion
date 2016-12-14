@@ -1,0 +1,465 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<beans
+	xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns:p="http://www.springframework.org/schema/p"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-3.0.xsd">
+	
+	<bean id="filledWithMessageService" class="szzxpt.service.imps.FilledWithMessageService">
+	</bean>
+	<bean id="userInfoFilledWithMessageService" class="szzxpt.service.imps.UserInfoFilledWithMessageService">
+	</bean>
+	
+	<!-- 报文报送  -->
+     <bean id="wGJ_DownLoadACCXMlListService" class="szzxpt.service.imps.WGJ_DownLoadXMlListService" scope="prototype">
+        <property name="tempXMlPath" value="Download\WgjReportXML\TempPath"></property>
+        <property name="downloadType" value="2"></property>
+        <property name="downloadXMLServiceBeanList">
+            <list>
+                <value>aCCCA_DownLoadACCXMlService</value>
+                <value>aCCCB_DownLoadACCXMlService</value>
+            </list>
+        </property>
+        <property name="downloadJudgeStatusMap">
+            <map>
+                <entry key="RPTVerifyType" value="2"></entry><!-- 审核状态为：审核通过 -->
+                <entry key="RPTSendType" value="1,5"></entry>  <!--报送状态为：未报送、未全部报送 -->
+                <entry key="RPTFeedbackType" value="1,3,4"></entry><!--回执状态：未回执、回执失败 -->
+            </map>
+        </property>
+    </bean>
+    
+     <bean id="wGJ_DownLoadACCXMlService" class="szzxpt.service.imps.WGJ_DownLoadXMlService" scope="prototype">
+         <property name="maxRowSize" value="5000"></property>
+    </bean>
+     <bean id="aCCCA_DownLoadACCXMlService" parent="wGJ_DownLoadACCXMlService">
+        <property name="dtoName" value="szzxpt.dto.AutoDTO_WGJ_ACC_CA"></property>
+        <property name="entityName" value="ACC_CA_DLXML"></property>
+        <property name="applicationType" value="ACC"></property>
+        <property name="dataType" value="CA"></property>
+        <property name="controlType" value="TT"></property>
+    </bean>
+    <bean id="aCCCB_DownLoadACCXMlService" parent="wGJ_DownLoadACCXMlService">
+        <property name="dtoName" value="szzxpt.dto.AutoDTO_WGJ_ACC_CB"></property>
+        <property name="entityName" value="ACC_CB_DLXML"></property>
+        <property name="applicationType" value="ACC"></property>
+        <property name="dataType" value="CB"></property>
+        <property name="controlType" value="TT"></property>
+    </bean>
+    
+    <bean id="wHZHDownloadShowListService" class="szzxpt.service.imps.ShowDownLoadWHZHRportService" scope="prototype">
+        <property name="pageSize" value="20"></property>
+        <property name="defaultDaoBeanId" value="singleObjectFindByPageCriteriaDao"></property>
+        <property name="defaultLogicDaoBeanId" value="singleObjectFindByCriteriaDao"></property>
+        <property name="showInstanceName" value="1"></property>
+        <property name="defaultAddClassList">
+            <list>
+              <value>szzxpt.service.add.ShowWHZHDownLoadRportAdd</value>
+            </list>
+        </property>
+        <property name="defaultProceseClassList">
+            <list>
+                <value>framework.services.procese.ShowListProcese</value>
+                <value>framework.services.procese.LevelDataProcese</value>
+                <value>framework.services.procese.ShowListTreeProcese</value>
+                <value>framework.services.procese.SelectTagSortByNameProcese</value>
+            </list>
+        </property>
+        <property name="defaultTranslateClassList">
+            <list>
+                <value>framework.services.translate.LevelDataTranslate</value>
+                <value>framework.services.translate.ConditionCriteriaTranslate</value>
+                <value>framework.services.translate.SecurityTranslate</value>
+		        <value>framework.services.translate.DefaultValueTranslate</value>
+		        <value>framework.services.translate.ShowListTreeTranslate</value>
+            </list>
+        </property>
+        <property name="operationMap">
+            <map>
+                <entry key="生成报文" value="Select1-ConfirmDialogForReport-szzxpt.dto.WHZHDownload"></entry>
+            </map>
+        </property>
+        <property name="linkedMap">
+            <map> 
+            </map>
+        </property>
+    </bean>
+    
+    <bean id="yWDATAShowListService" parent="singleObjectShowListService">
+        <property name="operationMap">
+            <map>
+                <entry key="查询" value="Select-ShowList"></entry>
+            </map>
+        </property>
+        <property name="linkedMap">
+            <map> 
+            </map>
+        </property>
+         <property name="defaultProceseClassList">
+            <list>
+                <value>framework.services.procese.ShowListProcese</value>
+                <value>framework.services.procese.LevelDataProcese</value>
+                <value>framework.services.procese.ShowListTreeProcese</value>
+                <value>szzxpt.service.procese.YWDATAForDTDATEProcese</value>
+                <value>framework.services.procese.ShowPowerButtonProcese</value>
+            </list>
+        </property>
+        <property name="defaultAddClassList">
+            <list>
+              <value>szzxpt.service.add.ShowYWDATAConditionAdd</value>
+            </list>
+        </property>
+        <property name="defaultTranslateClassList">
+            <list>
+                <value>framework.services.translate.LevelDataTranslate</value>
+                <value>framework.services.translate.ConditionCriteriaTranslate</value>
+                <value>framework.services.translate.SecurityTranslate</value>
+		        <value>framework.services.translate.DefaultValueTranslate</value>
+		        <value>framework.services.translate.ShowListTreeTranslate</value>
+		        <value>report.service.translate.ComparisonConditionCriteriaTranslate</value>
+            </list>
+        </property>
+    </bean>
+    
+    <bean id="wHZHCJFKBWShowListService" parent="singleObjectShowListService">
+        <property name="operationMap">
+            <map>
+                <entry key="查询" value="Select-ShowList"></entry>
+                <entry key="报文解析" value="Upload-ConfirmDialogForUploadQYZXBWJX-szzxpt.dto.WHZHCJFKBW"></entry>
+            </map>
+        </property>
+        <property name="linkedMap">
+            <map> 
+                <entry key="详情" value="Get-ShowListLevelWHZHCJFKBWSub-szzxpt.dto.WHZHCJFKBWSub"></entry>
+            </map>
+        </property>
+    </bean>
+    
+    <bean id="wHZHCJFKBWUploadFileService" class="szzxpt.service.imps.WHZHCJFKBWUploadFileService" scope="prototype">
+       <property name="statusMap">
+            <map>
+            	<entry key="RPTCheckType" value="1"></entry>
+                <entry key="RPTSubmitStatus" value="1"></entry>
+                <entry key="RPTVerifyType" value="1"></entry>
+                <entry key="RPTSendType" value="1"></entry>
+            </map>
+        </property>
+        <property name="dataTypeDtoRelaMap">
+            <map>
+                <entry key="ACCCA" value="szzxpt.dto.AutoDTO_WGJ_ACC_CA"></entry>
+                <entry key="ACCCB" value="szzxpt.dto.AutoDTO_WGJ_ACC_CB"></entry>
+            </map>
+        </property>
+    </bean>
+    
+    <bean id="wHZHCJFKBWSubShowListLevelWHZHCJFKBWSubService" parent="singleObjectShowListLevelService">
+    	<property name="linkedMap">
+            <map> 
+            </map>
+        </property>
+        <property name="operationMap">
+            <map>
+                <entry key="查询" value="Select-ShowListLevelWHZHCJFKBWSub"></entry>
+                <entry key="返回" value="Get-ShowList-szzxpt.dto.WHZHCJFKBW"></entry>
+            </map>
+        </property>
+    </bean>
+
+    <bean id="autoDTO_WGJ_ACC_CAShowListLevelAUTODTOService" parent="singleObjectShowListLevelAUTODTOService">
+   	 <property name="showInstanceName" value="2"></property>
+    	<property name="defaultTranslateClassList">
+            <list>
+                <value>framework.services.translate.LevelDataTranslate</value>
+                <value>framework.services.translate.ConditionCriteriaTranslate</value>
+                <value>report.service.translate.ComparisonConditionCriteriaTranslate</value>
+                <value>framework.services.translate.SecurityTranslate</value>
+		        <value>framework.services.translate.DefaultValueTranslate</value>
+		        <value>framework.services.translate.ShowListTreeTranslate</value>
+		        <value>report.service.translate.OrderBySqlFormulaTranslate</value>
+            </list>
+        </property>
+        <property name="defaultProceseClassList">
+            <list>
+                <value>report.service.procese.ForReportStatusShowListProcess</value>
+                <value>framework.services.procese.ShowListProcese</value>
+                <value>framework.services.procese.LevelDataProcese</value>
+                <value>framework.services.procese.ShowListTreeProcese</value>
+                <value>framework.services.procese.SelectTagSortByNameProcese</value>
+                <value>report.service.procese.AutoDTOShowTableName</value>
+                <value>framework.services.procese.ShowPowerButtonProcese</value>
+                <value>framework.services.procese.SelectExtendProcess</value>
+            </list>
+        </property>
+    </bean>
+    
+     <bean id="autoDTO_WGJ_ACC_CBShowListLevelAUTODTOService" parent="singleObjectShowListLevelAUTODTOService">
+     <property name="showInstanceName" value="2"></property>
+    	<property name="defaultTranslateClassList">
+            <list>
+                <value>framework.services.translate.LevelDataTranslate</value>
+                <value>framework.services.translate.ConditionCriteriaTranslate</value>
+                <value>report.service.translate.ComparisonConditionCriteriaTranslate</value>
+                <value>framework.services.translate.SecurityTranslate</value>
+		        <value>framework.services.translate.DefaultValueTranslate</value>
+		        <value>framework.services.translate.ShowListTreeTranslate</value>
+		        <value>report.service.translate.OrderBySqlFormulaTranslate</value>
+            </list>
+        </property>
+        <property name="defaultProceseClassList">
+            <list>
+                <value>report.service.procese.ForReportStatusShowListProcess</value>
+                <value>framework.services.procese.ShowListProcese</value>
+                <value>framework.services.procese.LevelDataProcese</value>
+                <value>framework.services.procese.ShowListTreeProcese</value>
+                <value>framework.services.procese.SelectTagSortByNameProcese</value>
+                <value>report.service.procese.AutoDTOShowTableName</value>
+                <value>framework.services.procese.ShowPowerButtonProcese</value>
+                <value>framework.services.procese.SelectExtendProcess</value>
+            </list>
+        </property>
+    </bean>
+    
+    <bean id="confirmDialogForWHZHReportService" class="szzxpt.service.imps.ConfirmDialogForWHZHReportService" scope="prototype">
+     	<property name="downloadJudgeStatusMap">
+            <map>
+                <entry key="RPTVerifyType" value="2"></entry><!-- 审核状态为：审核通过 -->
+                <entry key="RPTSendType" value="1,5"></entry>  <!--报送状态为：未报送、未全部报送 -->
+                <entry key="RPTFeedbackType" value="1,3,4"></entry><!--回执状态：未回执、回执失败 -->
+            </map>
+        </property>
+     </bean>
+    
+    <bean id="autoDTO_WGJ_ACC_CASaveLevelAUTODTOService" parent="singleObjectSaveLevelAUTODTOService">
+		<property name="logicPrimaryKey">
+			<list>
+				<value>ACTIONTYPE</value>
+				<value>ACTIONDESC</value>
+				<value>BRANCH_CODE</value>
+				<value>BRANCH_NAME</value>
+				<value>accountNO</value>
+				<value>accountSTAT</value>
+				<value>AMTYPE</value>
+				<value>en_code</value>
+				<value>en_name</value>
+				<value>account_type</value>
+				<value>account_CATA</value>
+				<value>CURRENCY_code</value>
+				<value>BUSINESS_DATE</value>
+				<value>file_number</value>
+				<value>Limit_type</value>
+				<value>Account_limit</value>
+				<value>REMARK</value>
+			</list>
+		</property>
+		<property name="defaultCheckClassList">
+            <list>
+                <value>framework.services.check.PrimaryKeyRepeatCheck</value>
+                <value>framework.services.check.XMLSingleObjectContainClassInstanceCheck</value>
+                <value>framework.services.check.LogicPrimaryKeyCheck</value>
+                <value>szzxpt.service.check.WHZHCheck</value>
+            </list>
+        </property>
+	</bean>
+
+	<bean id="autoDTO_WGJ_ACC_CAUpdateLevelAUTODTOService" parent="singleObjectUpdateLevelAUTODTOService">
+		<property name="logicPrimaryKey">
+			<list>
+				<value>ACTIONTYPE</value>
+				<value>ACTIONDESC</value>
+				<value>BRANCH_CODE</value>
+				<value>BRANCH_NAME</value>
+				<value>accountNO</value>
+				<value>accountSTAT</value>
+				<value>AMTYPE</value>
+				<value>en_code</value>
+				<value>en_name</value>
+				<value>account_type</value>
+				<value>account_CATA</value>
+				<value>CURRENCY_code</value>
+				<value>BUSINESS_DATE</value>
+				<value>file_number</value>
+				<value>Limit_type</value>
+				<value>Account_limit</value>
+				<value>REMARK</value>
+			</list>
+		</property>
+		<property name="defaultCheckClassList">
+            <list>
+                <value>framework.services.check.XMLSingleObjectContainClassInstanceCheck</value>
+                <value>framework.services.check.LogicPrimaryKeyCheck</value>
+                <value>szzxpt.service.check.WHZHCheck</value>
+            </list>
+        </property>
+	</bean>
+	
+	<bean id="autoDTO_WGJ_ACC_CAShowCheckUpdateLevelAUTODTOService" parent="singleObjectShowCheckUpdateLevelAUTODTOService">
+		<property name="logicPrimaryKey">
+			<list>
+				<value>ACTIONTYPE</value>
+				<value>ACTIONDESC</value>
+				<value>BRANCH_CODE</value>
+				<value>BRANCH_NAME</value>
+				<value>accountNO</value>
+				<value>accountSTAT</value>
+				<value>AMTYPE</value>
+				<value>en_code</value>
+				<value>en_name</value>
+				<value>account_type</value>
+				<value>account_CATA</value>
+				<value>CURRENCY_code</value>
+				<value>BUSINESS_DATE</value>
+				<value>file_number</value>
+				<value>Limit_type</value>
+				<value>Account_limit</value>
+				<value>REMARK</value>
+			</list>
+		</property>
+		<property name="defaultCheckClassList">
+            <list>
+                <value>framework.services.check.XMLSingleObjectContainClassInstanceCheck</value>
+                <value>szzxpt.service.check.WHZHCheck</value>
+            </list>
+        </property>
+	</bean>
+	
+	<bean id="autoDTO_WGJ_ACC_CACopySaveLevelAUTODTOService" parent="singleObjectCopySaveLevelAUTODTOService">
+		<property name="logicPrimaryKey">
+			<list>
+				<value>ACTIONTYPE</value>
+				<value>ACTIONDESC</value>
+				<value>BRANCH_CODE</value>
+				<value>BRANCH_NAME</value>
+				<value>accountNO</value>
+				<value>accountSTAT</value>
+				<value>AMTYPE</value>
+				<value>en_code</value>
+				<value>en_name</value>
+				<value>account_type</value>
+				<value>account_CATA</value>
+				<value>CURRENCY_code</value>
+				<value>BUSINESS_DATE</value>
+				<value>file_number</value>
+				<value>Limit_type</value>
+				<value>Account_limit</value>
+				<value>REMARK</value>
+			</list>
+		</property>
+		<property name="defaultCheckClassList">
+            <list>
+                <value>framework.services.check.PrimaryKeyRepeatCheck</value>
+                <value>framework.services.check.XMLSingleObjectContainClassInstanceCheck</value>
+                <value>framework.services.check.LogicPrimaryKeyCheck</value>
+                <value>szzxpt.service.check.WHZHCheck</value>
+            </list>
+        </property>
+	</bean>
+
+	 <bean id="autoDTO_WGJ_ACC_CBSaveLevelAUTODTOService" parent="singleObjectSaveLevelAUTODTOService">
+		<property name="logicPrimaryKey">
+			<list>
+				<value>ACTIONTYPE</value>
+				<value>ACTIONDESC</value>
+				<value>accountNO</value>
+				<value>BRANCH_CODE</value>
+				<value>deal_date</value>
+				<value>CURRENCY_code</value>
+				<value>credit</value>
+				<value>debit</value>
+				<value>balance</value>
+				<value>REMARK</value>
+			</list>
+		</property>
+	</bean>
+	
+	<bean id="autoDTO_WGJ_ACC_CBUpdateLevelAUTODTOService" parent="singleObjectUpdateLevelAUTODTOService">
+		<property name="logicPrimaryKey">
+			<list>
+				<value>ACTIONTYPE</value>
+				<value>ACTIONDESC</value>
+				<value>accountNO</value>
+				<value>BRANCH_CODE</value>
+				<value>deal_date</value>
+				<value>CURRENCY_code</value>
+				<value>credit</value>
+				<value>debit</value>
+				<value>balance</value>
+				<value>REMARK</value>
+			</list>
+		</property>
+	</bean>
+	
+	<bean id="autoDTO_WGJ_ACC_CBShowCheckUpdateLevelAUTODTOService" parent="singleObjectShowCheckUpdateLevelAUTODTOService">
+		<property name="logicPrimaryKey">
+			<list>
+				<value>ACTIONTYPE</value>
+				<value>ACTIONDESC</value>
+				<value>accountNO</value>
+				<value>BRANCH_CODE</value>
+				<value>deal_date</value>
+				<value>CURRENCY_code</value>
+				<value>credit</value>
+				<value>debit</value>
+				<value>balance</value>
+				<value>REMARK</value>
+			</list>
+		</property>
+	</bean>
+	
+	<bean id="autoDTO_WGJ_ACC_CBCopySaveLevelAUTODTOService" parent="singleObjectCopySaveLevelAUTODTOService">
+		<property name="logicPrimaryKey">
+			<list>
+				<value>ACTIONTYPE</value>
+				<value>ACTIONDESC</value>
+				<value>accountNO</value>
+				<value>BRANCH_CODE</value>
+				<value>deal_date</value>
+				<value>CURRENCY_code</value>
+				<value>credit</value>
+				<value>debit</value>
+				<value>balance</value>
+				<value>REMARK</value>
+			</list>
+		</property>
+	</bean>
+	
+	<bean id="autoDTO_WGJ_ACC_CBCKShowListLevelAUTODTOService" parent="singleObjectCKShowListLevelAUTODTOService">
+		<property name="showInstanceName" value="CK"></property>
+	</bean>	
+	<bean id="autoDTO_WGJ_ACC_CACKShowListLevelAUTODTOService" parent="singleObjectCKShowListLevelAUTODTOService">
+		<property name="showInstanceName" value="CK"></property>
+	</bean>	
+	
+	<bean id="taskModelInstWHZHShowTreeService" parent="taskModelInstShowTreeService">
+     	<property name="strSuitCode" value="WHZH"></property>
+     	<property name="defaultProceseClassList">
+           <list>
+               <value>report.service.procese.ShowTaskFlowTreeExcludeDateProcese</value><!-- 放置于ShowTreeProcese之前 -->
+               <value>framework.services.procese.ShowTreeProcese</value>
+               <value>framework.services.procese.ShowPowerButtonProcese</value>
+           </list>
+       </property>
+     </bean>
+     
+      <bean id="taskModelInstWHZHReviewShowTreeService" parent="taskModelInstReviewShowTreeService">
+     	<property name="strSuitCode" value="WHZH"></property>
+     	<property name="defaultProceseClassList">
+           <list>
+               <value>report.service.procese.ShowTaskFlowTreeExcludeDateProcese</value><!-- 放置于ShowTreeProcese之前 -->
+               <value>framework.services.procese.ShowTreeProcese</value>
+               <value>framework.services.procese.ShowPowerButtonProcese</value>
+           </list>
+       </property>
+     </bean>
+     
+       <bean id="taskModelInstWHZHCKShowTreeService" parent="CKShowTreeService">
+        <property name="strSuitCode" value="WHZH"></property>
+        <property name="defaultProceseClassList">
+           <list>
+               <value>report.service.procese.ShowTaskFlowTreeExcludeDateProcese</value><!-- 放置于ShowTreeProcese之前 -->
+               <value>framework.services.procese.ShowTreeProcese</value>
+               <value>framework.services.procese.ShowPowerButtonProcese</value>
+           </list>
+       </property>
+       </bean>
+	
+ </beans>

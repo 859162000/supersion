@@ -1,0 +1,1526 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:p="http://www.springframework.org/schema/p"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-3.0.xsd">
+	<bean id="ExportReportDataService" class="report.service.imps.SingleObjectExportReportDataService" scope="prototype">
+		<property name="successMessage" value="导出成功"></property>
+		<property name="errorMessage" value="导出失败"></property>
+		<property name="defaultDaoBeanId" value="singleObjectFindByCriteriaDao"></property>
+		<property name="defaultTranslateClassList">
+			<list>
+				<value>framework.services.translate.LevelDataTranslate</value>
+				<value>framework.services.translate.ConditionCriteriaTranslate</value>
+				<value>framework.services.translate.SecurityTranslate</value>
+				<value>framework.services.translate.ShowListTreeTranslate</value>
+			</list>
+		</property>
+	</bean>
+
+	<bean id="ImportReportDataService" class="report.service.imps.SingleObjectImportReportDataService" scope="prototype">
+		<property name="showInstanceName" value="1"></property>
+		<property name="successMessage" value="导入成功"></property>
+		<property name="errorMessage" value="导入失败"></property>
+	</bean>
+	<bean id="mergeRuleShowListForTreeLevelMergeService" parent="singleObjectShowListForTreeService">
+		<property name="operationMap">
+			<map>
+				<entry key="查询" value="Select-ShowListForTree"></entry>
+				<entry key="新增" value="Get-ShowSave"></entry>
+				<entry key="删除" value="PostConfirm-TreeNodeDelete"></entry>
+				<entry key="返回" value="Get-BackParentPreviousFirst"></entry><!-- Get-BackPreviousFirst -->
+			</map>
+		</property>
+		<property name="linkedMap">
+			<map>
+				<!-- <entry key="修改" value="Get-ShowUpdate"></entry> <entry key="删除" value="Get-DeleteById"></entry> -->
+			</map>
+		</property>
+	</bean>
+
+	<bean id="mergeRuleShowSaveLevelMergeService" parent="singleObjectShowSaveService">
+		<property name="operationMap">
+			<map>
+				<entry key="保存" value="Post-TreeNodeSave"></entry>
+				<entry key="返回" value="Get-BackFirst"></entry>
+			</map>
+		</property>
+		<property name="defaultProceseClassList">
+			<list>
+				<value>framework.services.procese.ShowSaveProcese</value>
+				<value>framework.services.procese.LevelDataProcese</value>
+				<value>framework.services.procese.DefaultValueProcese</value>
+				<value>framework.services.procese.ShowListTreeProcese</value>
+				<value>report.service.procese.MergeRuleShowSaveOrUpdateProcese</value>
+				<value>framework.services.procese.SortFieldProcese</value>
+				<value>framework.services.procese.SelectTagSortByNameProcese</value>
+				<value>framework.services.procese.ShowPowerButtonProcese</value>
+			</list>
+		</property>
+	</bean>
+
+
+
+	<bean id="mergeRuleShowUpdateLevelMergeService" parent="singleObjectShowUpdateService">
+		<property name="operationMap">
+			<map>
+				<entry key="保存" value="Post-TreeNodeUpdate"></entry>
+				<entry key="返回" value="Get-BackFirst"></entry>
+			</map>
+		</property>
+		<property name="defaultProceseClassList">
+			<list>
+				<value>framework.services.procese.ShowSaveProcese</value>
+				<value>framework.services.procese.LevelDataProcese</value>
+				<value>framework.services.procese.DefaultValueProcese</value>
+				<value>framework.services.procese.ShowListTreeProcese</value>
+				<value>report.service.procese.MergeRuleShowSaveOrUpdateProcese</value>
+				<value>framework.services.procese.SortFieldProcese</value>
+				<value>framework.services.procese.SelectTagSortByNameProcese</value>
+				<value>framework.services.procese.ShowPowerButtonProcese</value>
+			</list>
+		</property>
+	</bean>
+
+	<bean id="rptInfoShowListForTreeService" parent="singleObjectShowListForTreeService">
+		<property name="linkedMap">
+			<map>
+				<entry key="修改" value="Get-ShowUpdate"></entry>
+				<entry key="删除" value="Get-DeleteByIdForTree"></entry>
+				<entry key="设置明细" value="Get-ShowListLevelRptDto-report.dto.RptDto"></entry>
+				<!-- <entry key="设置指标" value="Get-ShowListLevelRptItem-report.dto.RptItem"></entry> -->
+				<entry key="报表设计器" value="OpenWin-report/EditTemplate"></entry>
+			</map>
+		</property>
+	</bean>
+
+	<bean id="rptInfoSaveService" parent="singleObjectSaveService">
+		<property name="defaultCheckInstance" value="Check_RptInfo" />
+		<!-- 定义联合的逻辑主键 -->
+		<property name="logicPrimaryKey">
+			<list>
+				<value>strRptVersion</value>
+				<value>strBCode</value>
+			</list>
+		</property>
+		<property name="defaultAddClassList">
+			<list>
+
+				<value>report.service.add.RptInfoAddDefultValueAdd</value>
+
+			</list>
+		</property>
+		<property name="defaultCheckClassList">
+			<list>
+				<value>framework.services.check.ReflectEmptyFieldCheck</value>
+				<value>framework.services.check.ReflectTypeFieldCheck</value>
+				<value>framework.services.check.PrimaryKeyRepeatCheck</value>
+				<value>framework.services.check.XMLSingleObjectInstanceCheck</value>
+				<value>framework.services.check.LogicPrimaryKeyCheck</value>
+			</list>
+		</property>
+		<property name="defaultProceseClassList">
+			<list>
+				<value>report.service.procese.CheckReportInstancePropertyProcese</value>
+
+			</list>
+		</property>
+	</bean>
+
+	<bean id="rptInfoUpdateService" parent="singleObjectUpdateService">
+		<property name="defaultCheckInstance" value="Check_RptInfo" />
+		<!-- 定义联合的逻辑主键 -->
+		<property name="logicPrimaryKey">
+			<list>
+				<value>strRptVersion</value>
+				<value>strBCode</value>
+			</list>
+		</property>
+		<property name="defaultCheckClassList">
+			<list>
+				<value>framework.services.check.ReflectEmptyFieldCheck</value>
+				<value>framework.services.check.ReflectTypeFieldCheck</value>
+				<value>framework.services.check.PrimaryKeyRepeatCheck</value>
+				<value>framework.services.check.XMLSingleObjectInstanceCheck</value>
+				<value>framework.services.check.LogicPrimaryKeyCheck</value>
+			</list>
+		</property>
+		<property name="defaultAddClassList">
+			<list>
+				<value>report.service.add.RptInfoAddDefultValueAdd</value>
+			</list>
+		</property>
+		<property name="defaultProceseClassList">
+			<list>
+				<value>report.service.procese.CheckReportInstancePropertyProcese</value>
+				<value>report.service.procese.RptInfoTempleRenameProcese</value>
+			</list>
+		</property>
+	</bean>
+
+	<bean id="itemInfoShowListForTreeService" parent="singleObjectShowListForTreeService">
+		<property name="operationMap">
+			<map>
+				<entry key="新增" value="Get-ShowSave"></entry>
+				<entry key="删除" value="PostConfirm-DeleteListByIdList"></entry>
+				<entry key="删除" value="PostConfirm-TreeNodeDelete"></entry>
+				<entry key="导出" value="Post-ExportData"></entry>
+				<entry key="导入" value="Upload-ImportDataForTree"></entry>
+				<entry key="查询" value="Select-ShowListForTree"></entry>
+			</map>
+		</property>
+	</bean>
+
+	<bean id="itemInfoShowSaveService" parent="singleObjectShowSaveService">
+		<property name="operationMap">
+			<map>
+				<entry key="保存" value="Post-TreeNodeSave"></entry>
+				<entry key="返回" value="Get-BackFirst"></entry>
+			</map>
+		</property>
+	</bean>
+
+	<bean id="itemInfoShowTreeService" parent="singleObjectShowTreeService">
+		<property name="rootName" value="主题层级 " />
+		<property name="treeServiceMap">
+			<map>
+				<entry key="suitShowTreeService" value="extend.dto.Suit,report.dto.ItemInfo"></entry>
+			</map>
+		</property>
+	</bean>
+
+
+	<bean id="taskRptInstUpdateListLevelTaskFlowService" parent="singleObjectUpdateListService">
+		<property name="defaultDaoBeanId" value="taskRptInstUpdateListDao"></property>
+	</bean>
+
+	<bean id="taskRptInstShowListService" parent="singleObjectShowListService">
+		<property name="showInstanceName" value="2"></property>
+		<property name="operationMap">
+			<map>
+				<entry key="查询" value="Select-ShowList"></entry>
+				<entry key="导出" value="Post-ExportData"></entry>
+				<entry key="导入" value="Upload-ImportData"></entry>
+			</map>
+		</property>
+		<property name="linkedMap">
+			<map>
+				<entry key="填报" value="Pop-report/ShowReport"></entry>
+				<entry key="汇总" value="Get-report/ReportSummary"></entry>
+				<entry key="导出" value="Post-report/ExportReportData"></entry>
+				<entry key="导入" value="Upload-report/ImportReportData"></entry>
+				<!-- <entry key="提交" value="Post-AcceptApply"></entry> -->
+			</map>
+		</property>
+		<property name="typeFieldName" value="rptInfo.rptDto.table.strTableName" /><!-- 根据表名跳转 -->
+	</bean>
+
+	<!-- 报表补录、任务报表填报 校验、提交、审核 开始 -->
+
+	<bean id="taskRptInstTaskRptInstShowListForTreeService" parent="singleObjectShowListForTreeService">
+		<property name="pageSize" value="20"></property>
+		<property name="showInstanceName" value="2"></property>
+		<property name="defaultTranslateClassList">
+			<list>
+				<value>framework.services.translate.LevelDataTranslate</value>
+				<value>framework.services.translate.ConditionCriteriaTranslate</value>
+				<value>framework.services.translate.ConditionMultipleCriteriaTranslate</value>
+				<value>framework.services.translate.SecurityTranslate</value>
+				<value>framework.services.translate.DefaultValueTranslate</value>
+				<value>framework.services.translate.ShowListTreeTranslate</value>
+				<value>report.service.translate.TaskStateFilterTranslate</value>
+			</list>
+		</property>
+		<property name="defaultProceseClassList">
+			<list>
+				<value>framework.services.procese.ShowListProcese</value>
+				<value>framework.services.procese.LevelDataProcese</value>
+				<value>framework.services.procese.ShowListTreeProcese</value>
+				<value>framework.services.procese.SelectTagSortByNameProcese</value>
+				<value>framework.services.procese.ShowPowerButtonProcese</value><!-- <value>report.service.procese.TaskRptInstOpFilterProcese</value> -->
+			</list>
+		</property>
+		<property name="operationMap">
+			<map>
+				<entry key="查询" value="Select-TaskRptInstShowListForTree"></entry>
+				<entry key="提交" value="Post-TaskRptInstSubmitStatusALLUpdateField"></entry>
+				<entry key="强制提交" value="PostInput-framework/RptSubmitStatusALLForceUpdateField-TaskRptInfo"></entry>
+				<entry key="批量导出" value="PostConfirm-report/ExportReports"></entry>
+				<entry key="批量校验" value="PostConfirm-report/ReportsCheck"></entry>
+			</map>
+		</property>
+		<property name="linkedMap">
+			<map>
+				<entry key="填报" value="Post-report/ShowReport"></entry>
+				<entry key="导入" value="Upload-report/ImportReportData,250"></entry>
+				<entry key="导出" value="Post-report/ExportReportData"></entry>
+				<!-- <entry key="汇总" value="Get-report/ReportSummary"></entry> -->
+				<entry key="修改备注" value="PostUpdate-report/UpdateFieldStrRemark"></entry>
+			</map>
+		</property>
+		<property name="typeFieldName" value="rptInfo.rptDto.table.strTableName" />
+	</bean>
+
+
+
+
+	<bean id="taskRptInstSHReviewShowListForTreeService" parent="singleObjectShowListForTreeService">
+		<property name="defaultProceseClassList">
+			<list>
+				<value>framework.services.procese.ShowListProcese</value>
+				<value>framework.services.procese.LevelDataProcese</value>
+				<value>framework.services.procese.ShowListTreeProcese</value>
+				<value>framework.services.procese.SelectTagSortByNameProcese</value>
+				<value>framework.services.procese.ShowPowerButtonProcese</value>
+			</list>
+		</property>
+		<property name="defaultTranslateClassList">
+			<list>
+				<value>framework.services.translate.LevelDataTranslate</value>
+				<value>framework.services.translate.ConditionCriteriaTranslate</value>
+				<value>framework.services.translate.SecurityTranslate</value>
+				<value>framework.services.translate.DefaultValueTranslate</value>
+				<value>framework.services.translate.ShowListTreeTranslate</value>
+				<value>report.service.translate.TaskStateFilterTranslate</value>
+
+			</list>
+		</property>
+		<property name="showInstanceName" value="2"></property>
+		<property name="operationMap">
+			<map>
+				<entry key="查询" value="Select-SHReviewShowListForTree"></entry><!-- <entry key="导出" value="Post-ExportData"></entry> -->
+				<entry key="审核通过" value="Post-RptAllowStateUpdateField"></entry>
+				<entry key="审核未通过" value="Post-RptAllowStateCancleUpdateField"></entry>
+				<!-- 
+					<entry key="生成本任务IJ报文" value="PostConfirm-report/MakeIJFileAll"></entry> 
+					<entry key="生成本机构IJ报文" value="PostConfirm-report/MakeIJFileByOrg"></entry> 
+					<entry key="导出本任务XML" value="PostConfirm-report/ExportXmlFileAll"></entry> 
+					<entry key="导出本机构XML" value="PostConfirm-report/ExportXmlFileByOrg"></entry> 
+				-->
+					
+				<entry key="导出本任务Excel" value="PostConfirm-report/ExportReportForTask"></entry>
+				<entry key="导出本机构Excel" value="PostConfirm-report/ExportReportForInst"></entry>
+			</map>
+		</property>
+		<property name="linkedMap">
+			<map>
+				<entry key="查看" value="Pop-report/ShowViewReport"></entry><!-- <entry key="生成IJ报文" value="Post-report/MakeIJFileBySingle"></entry> <entry key="导出XML" value="Post-report/ExportXmlFileBySingle"></entry> -->
+			</map>
+		</property>
+		<property name="typeFieldName" value="rptInfo.rptDto.table.strTableName" /><!-- 根据表名跳转 -->
+		<property name="defaultValueMap">
+			<map>
+				<entry key="taskFlow.dtTaskDate" value="Greater-365"></entry>
+			</map>
+		</property>
+	</bean>
+
+	<bean id="rptSubmitStatusALLForceUpdateFieldService" parent="singleObjectUpdateFieldService">
+		<property name="fieldName" value="SubmitStatus"></property>
+		<property name="fieldValue" value="2"></property>
+		<property name="successMessage" value="提交成功(强制提交必须备注原因)"></property>
+		<property name="errorMessage" value="提交失败(强制提交必须备注原因)"></property>
+		<property name="defaultProceseClassList">
+			<list>
+				<value>report.service.procese.ReportAllSubmitStatusByCheckStateProcess</value>
+				<value>framework.services.procese.ShowPowerButtonProcese</value>
+			</list>
+		</property>
+		<property name="defaultCheckClassList">
+			<list>
+				<value>framework.services.check.IdListNullCheck</value>
+				<value>report.service.check.FilterReMaskValueCheck</value>
+			</list>
+		</property>
+		<property name="defaultTranslateClassList">
+			<list>
+				<value>framework.services.translate.IdAndIdListTypeTranslate</value>
+
+			</list>
+		</property>
+	</bean>
+
+
+	<bean id="taskRptInstSubmitStatusALLUpdateFieldService" parent="rptSubmitStatusALLUpdateFieldService">
+	</bean>
+	
+	<bean id="taskRptInstReviewShowTreeService" parent="taskRptInstTreeService">
+		<property name="constructType" value="2" />
+		<property name="rootName" value="任务报表" />
+		<property name="foreignFieldMap">
+			<map>
+				<entry key="taskFlow" value=""></entry>
+				<entry key="instInfo" value=""></entry>
+			</map>
+		</property>
+		<property name="imgList">
+			<list>
+				<value>dtree/img/folder.gif,dtree/img/folderopen.gif</value>
+				<value>dtree/img/folder.gif,dtree/img/folderopen.gif</value>
+			</list>
+		</property>
+		<property name="operationMap">
+			<map>
+				<entry key="" value="Get-SHReviewShowListForTree"></entry>
+			</map>
+		</property>
+		<property name="defaultTranslateClassList">
+			<list>
+				<value>framework.services.translate.ShowTreeTranslate</value>
+				<value>framework.services.translate.LevelDataTranslate</value>
+				<value>framework.services.translate.SecurityTreeTranslate</value>
+				<value>report.service.translate.TaskStateFilterTranslate</value>
+			</list>
+		</property>
+	</bean>
+
+
+
+
+	<!-- 报表补录、任务报表填报 校验、提交、审核 结束 -->
+	<bean id="taskRptInstShowSaveService" parent="singleObjectShowSaveService">
+		<property name="showInstanceName" value="3"></property>
+	</bean>
+	<bean id="ShowReportService" class="report.service.imps.ShowReportService" scope="prototype">
+		<property name="defaultDaoBeanId" value="sQLExecVoidResultDao"></property>
+		<property name="onlyShow" value="false"></property>
+	</bean>
+
+	<bean id="ShowViewReportService" parent="ShowReportService">
+		<property name="onlyShow" value="true"></property>
+	</bean>
+
+	<bean id="SubmitItemsService" class="report.service.imps.SubmitItemsService" scope="prototype">
+		<property name="defaultDaoBeanId" value="sQLExecVoidResultDao"></property>
+	</bean>
+
+	<bean id="rptInfoShowTreeService" parent="singleObjectShowTreeService">
+		<property name="rootName" value="主题层级 " />
+		<property name="treeServiceMap">
+			<map>
+				<entry key="suitShowTreeService" value="extend.dto.Suit,report.dto.RptInfo"></entry>
+			</map>
+		</property>
+	</bean>
+
+	<bean id="exampleInfoRuleShowTreeService" parent="singleObjectShowTreeService">
+		<property name="constructType" value="3" />
+		<property name="rootName" value="计算实例" />
+		<property name="rootUrl" value="_blank" />
+		<property name="foreignFieldMap">
+			<map>
+				<entry key="calculationExampleInfo" value="calculationRule"></entry>
+			</map>
+		</property>
+	</bean>
+
+	<bean id="calculationRuleShowSaveForTreeService" parent="singleObjectShowSaveService">
+		<property name="operationMap">
+			<map>
+				<entry key="保存" value="Post-TreeNodeSave"></entry>
+				<entry key="返回" value="Get-BackFirst"></entry>
+			</map>
+		</property>
+	</bean>
+
+	<bean id="checkRuleShowSaveForTreeService" parent="singleObjectShowSaveService">
+		<property name="operationMap">
+			<map>
+				<entry key="保存" value="Post-TreeNodeSave"></entry>
+				<entry key="返回" value="Get-BackFirst"></entry>
+			</map>
+		</property>
+	</bean>
+	<bean id="calculationRuleShowListForTreeService" parent="singleObjectShowListService">
+		<property name="linkedMap">
+			<map>
+				<entry key="修改" value="Get-ShowUpdateForTree"></entry>
+				<entry key="删除" value="Get-DeleteByIdForTree"></entry>
+				<!-- <entry key="子项" value="Get-ShowListLevelItemsCalculation-report.dto.ItemsCalculation"></entry> -->
+				<entry key="子项" value="OpenWin-report/ShowCalcRuleCfg-report.dto.ItemsCalculation"></entry>
+			</map>
+		</property>
+		<property name="operationMap">
+			<map>
+				<entry key="查询" value="Select-ShowListForTree"></entry>
+				<entry key="新增" value="Get-ShowSaveForTree"></entry>
+				<entry key="删除" value="PostConfirm-TreeNodeDelete"></entry>
+			</map>
+		</property>
+		<property name="defaultTranslateClassList">
+			<list>
+				<value>framework.services.translate.LevelDataTranslate</value>
+				<value>framework.services.translate.ConditionCriteriaTranslate</value>
+				<value>framework.services.translate.ConditionMultipleCriteriaTranslate</value>
+				<value>framework.services.translate.SecurityTranslate</value>
+				<value>framework.services.translate.DefaultValueTranslate</value>
+				<value>framework.services.translate.ShowListTreeOneToManyTranslate</value>
+			</list>
+		</property>
+	</bean>
+
+
+	<bean id="checkInstanceRuleShowTreeService" parent="singleObjectShowTreeService">
+		<property name="constructType" value="3" />
+		<property name="rootName" value="校验实例" />
+		<property name="rootUrl" value="_blank" />
+		<property name="foreignFieldMap">
+			<map>
+				<entry key="autoCheckInstanceID" value="checkRule"></entry>
+			</map>
+		</property>
+	</bean>
+
+	<bean id="checkRuleShowListForTreeService" parent="singleObjectShowListService">
+		<property name="linkedMap">
+			<map>
+				<entry key="修改" value="Get-ShowUpdateForTree"></entry>
+				<entry key="删除" value="Get-DeleteByIdForTree"></entry>
+				<entry key="子项" value="OpenWin-report/ShowCalcRuleCfg-report.dto.ItemsCheck"></entry>
+			</map>
+		</property>
+		<property name="operationMap">
+			<map>
+				<entry key="查询" value="Select-ShowListForTree"></entry>
+				<entry key="新增" value="Get-ShowSaveForTree"></entry>
+				<entry key="删除" value="PostConfirm-TreeNodeDelete"></entry>
+			</map>
+		</property>
+		<property name="defaultTranslateClassList">
+			<list>
+				<value>framework.services.translate.LevelDataTranslate</value>
+				<value>framework.services.translate.ConditionCriteriaTranslate</value>
+				<value>framework.services.translate.ConditionMultipleCriteriaTranslate</value>
+				<value>framework.services.translate.SecurityTranslate</value>
+				<value>framework.services.translate.DefaultValueTranslate</value>
+				<value>framework.services.translate.ShowListTreeOneToManyTranslate</value>
+			</list>
+		</property>
+	</bean>
+
+
+
+
+
+
+	<bean id="taskRptInstTreeService" class="report.service.imps.ReportTaskRptInstShowTreeService" scope="prototype">
+		<!-- <property name="strSuitCode" value="NCR,zhangqiu,EAS,PCR,21,22,24,2111,2112,2114,211101,211102,211103,211104,211211,211212,211213,211214,211215,211216,211217,211218,211219,211220,211221,211461,23,245101,245102,243201,243202,2131,2201,2204,2208,WHZH,0001,01,csh,zhangqiu"></property> -->
+		<property name="defaultDaoBeanId" value="singleObjectFindByCriteriaDao"></property>
+		<property name="defaultLogicDaoBeanId" value="singleObjectFindByCriteriaDao"></property>
+		<property name="constructType" value="2" />
+		<property name="rootName" value="任务报表" />
+		<property name="foreignFieldMap">
+			<map>
+				<entry key="taskFlow" value=""></entry>
+				<entry key="instInfo" value=""></entry>
+			</map>
+		</property>
+		<property name="imgList">
+			<list>
+				<value>dtree/img/folder.gif,dtree/img/folderopen.gif</value>
+				<value>dtree/img/folder.gif,dtree/img/folderopen.gif</value>
+			</list>
+		</property>
+		<property name="defaultProceseClassList">
+			<list>
+				<value>report.service.procese.ShowTaskFlowNameProcese</value>
+				<value>framework.services.procese.ShowTreeProcese</value>
+				<value>framework.services.procese.ShowPowerButtonProcese</value>
+			</list>
+		</property>
+		<property name="defaultTranslateClassList">
+			<list>
+				<value>framework.services.translate.ShowTreeTranslate</value>
+				<value>framework.services.translate.LevelDataTranslate</value>
+				<value>framework.services.translate.SecurityTreeTranslate</value>
+			</list>
+		</property>
+		<property name="operationMap">
+			<map>
+				<entry key="" value="Get-ShowListForTree"></entry>
+			</map>
+		</property>
+	</bean>
+
+	<bean id="taskRptInstShowTreeService" parent="taskRptInstTreeService">
+		<property name="operationMap">
+			<map>
+				<entry key="" value="Get-TaskRptInstShowListForTree"></entry>
+			</map>
+		</property>
+		<property name="defaultTranslateClassList">
+			<list>
+				<value>framework.services.translate.ShowTreeTranslate</value>
+				<value>framework.services.translate.LevelDataTranslate</value>
+				<value>framework.services.translate.SecurityTreeTranslate</value>
+				<value>report.service.translate.TaskStateFilterTranslate</value>
+			</list>
+		</property>
+	</bean>
+	<bean id="mergeInstanceShowListService" parent="singleObjectShowListService">
+		<property name="linkedMap">
+			<map>
+				<entry key="修改" value="Get-ShowUpdate"></entry>
+				<!--<entry key="删除" value="Get-DeleteById"></entry> -->
+				<entry key="汇总关系" value="Get-ShowTreeLevelMerge-report.dto.MergeRule"></entry>
+			</map>
+		</property>
+	</bean>
+
+	<bean id="mergeSummaryShowListService" parent="singleObjectShowListService">
+		<property name="linkedMap">
+			<map>
+				<entry key="修改" value="Get-ShowUpdate"></entry>
+				<entry key="设置指标" value="Get-ShowListLevelMergeItemInfo-report.dto.MergeItemInfo"></entry>
+			</map>
+		</property>
+	</bean>
+
+	<bean id="mergeRuleShowTreeLevelMergeService" parent="singleObjectShowTreeService">
+		<property name="constructType" value="1" />
+		<property name="rootName" value="机构汇总关系" />
+		<property name="foreignFieldMap">
+			<map>
+				<entry key="higherInst" value="instInfo"></entry>
+			</map>
+		</property>
+	</bean>
+
+	<bean id="calculationExampleInfoShowListService" parent="singleObjectShowListService">
+		<property name="linkedMap">
+			<map>
+				<entry key="修改" value="Get-ShowUpdate"></entry>
+				<entry key="删除" value="Get-DeleteById"></entry>
+			</map>
+		</property>
+	</bean>
+
+
+
+	<bean id="editTemplateService" class="report.service.imps.EditTemplateService" scope="prototype">
+	</bean>
+	<bean id="selectFieldsService" class="report.service.imps.SelectFieldsService" scope="prototype">
+	</bean>
+	<bean id="select-ShowTaskRptInstService" class="report.service.imps.SelectShowTaskRptInstService" scope="prototype">
+	</bean>
+
+	<bean id="select-ShowRptSetService" class="report.service.imps.SelectShowRptSetService" scope="prototype">
+	</bean>
+
+	<bean id="showItemDataHistoryService" class="report.service.imps.ShowItemDataHistoryService" scope="prototype">
+	</bean>
+
+	<bean id="webOfficeUploadFileService" class="report.service.imps.WebOfficeUploadFileService" scope="prototype">
+		<property name="defaultProceseClassList">
+			<list>
+				<value>report.service.procese.ReCalcuRuleOrder</value>
+			</list>
+		</property>
+	</bean>
+	<bean id="reportItemCheckWFService" class="report.service.imps.ReportItemCheckWFService" scope="prototype">
+	</bean>
+	<bean id="reportMergeCopyService" class="report.service.imps.ReportMergeCopyService" scope="prototype">
+	</bean>
+
+	<bean id="reportSummaryCopyService" class="report.service.imps.ReportSummaryCopyService" scope="prototype">
+	</bean>
+	<!-- 模型指标分析 -->
+	<bean id="repItemWarningService" class="report.service.imps.RepItemWarningService" scope="prototype"></bean>
+
+	<!-- 校验实例 -->
+	<bean id="checkInstanceShowListService" parent="singleObjectShowListService">
+		<property name="linkedMap">
+			<map>
+				<entry key="修改" value="Get-ShowUpdate"></entry>
+				<entry key="删除" value="Get-DeleteById"></entry>
+			</map>
+		</property>
+		<property name="operationMap">
+			<map>
+				<entry key="查询" value="Select-ShowList"></entry>
+				<entry key="新增" value="Get-ShowSave"></entry>
+			</map>
+		</property>
+	</bean>
+
+
+	<bean id="reportMergeService" class="report.service.imps.ReportMergeService" scope="prototype">
+		<property name="defaultLogicDaoBeanId" value="oracleProcedureListMapDao"></property>
+		<property name="successMessage" value="计算完成"></property>
+		<property name="errorMessage" value="计算失败"></property>
+	</bean>
+
+	<bean id="reportSummaryService" class="report.service.imps.ReportSummaryService" scope="prototype">
+		<property name="defaultLogicDaoBeanId" value="oracleProcedureListMapDao"></property>
+		<property name="successMessage" value="汇总完成"></property>
+		<property name="errorMessage" value="汇总失败"></property>
+	</bean>
+
+	<bean id="reportsSummaryService" class="report.service.imps.ReportsSummaryService" scope="prototype">
+		<property name="defaultLogicDaoBeanId" value="oracleProcedureListMapDao"></property>
+		<property name="successMessage" value="汇总完成"></property>
+		<property name="errorMessage" value="汇总失败"></property>
+	</bean>
+	
+	<bean id="reportsTopNService" class="report.service.imps.ReportTopNService" scope="prototype">
+		<property name="defaultLogicDaoBeanId" value="oracleProcedureListMapDao"></property>
+		<property name="successMessage" value="汇总完成"></property>
+		<property name="errorMessage" value="汇总失败"></property>
+	</bean>
+	
+	
+
+	<bean id="taskRptInstStatisicalShowSingleStatisticalService" parent="showSingleStatisticalService">
+		<property name="showNullCondtion" value="true"></property>
+		<property name="dealWithClassName" value="report.dto.TaskRptInst"></property>
+		<property name="countFieldList">
+			<list>
+				<value>taskFlow</value>
+				<value>taskFlow,instInfo</value>
+				<value>taskFlow,rptInfo</value>
+			</list>
+		</property>
+		<property name="showFieldList">
+			<list>
+				<!-- 1.配置gruop字段的类型 -->
+				<value>1,FieldListName</value>
+				<value>2,FieldListName,FieldListName</value>
+				<value>2,startDate,taskFlow.dtTaskDate</value><!-- 配置Condition对应的名称 -->
+				<value>2,endDate,taskFlow.dtTaskDate</value><!-- 配置Condition对应的名称 -->
+				<!-- 备注3,unCheckCount,1,CheckType=1 中,1,中1表示sum; 2表示Avg; 3表示count; 4表示countDistinct; 5表示max; 6表示min -->
+				<value>3,countSubmitStatus,3,SubmitStatus=2</value>
+				<value>3,countUnSubmitStatus,3,SubmitStatus=1</value>
+				<value>3,countCheckSuccessState,3,strCheckState=2</value>
+				<value>3,countCheckFaildState,3,strCheckState=3</value>
+				<value>3,countUnCheckState,3,strCheckState=1</value>
+				<value>3,countAllowSuccessState,3,strAllowState=2</value>
+				<value>3,countAllowFaildState,3,strAllowState=3</value>
+				<value>3,countUnAllowState,3,strAllowState=1</value>
+				<value>3,countTotaltaskFlow,4,id</value>
+				<value>5,taskFlow,taskFlow</value>
+				<value>5,instInfo,instInfo</value>
+				<value>5,rptInfo,rptInfo</value>
+			</list>
+		</property>
+	</bean>
+
+
+
+	<!-- lanyuesheng 页面最顶端的批量导出 -->
+	<bean id="exportReportsService" class="report.service.imps.ExportReportsService" scope="prototype">
+		<property name="successMessage" value="导出成功"></property>
+		<property name="errorMessage" value="导出失败"></property>
+		<property name="defaultDaoBeanId" value="singleObjectFindByCriteriaDao"></property>
+		<property name="defaultTranslateClassList">
+			<list>
+				<value>framework.services.translate.LevelDataTranslate</value>
+				<value>framework.services.translate.ConditionCriteriaTranslate</value>
+				<value>framework.services.translate.SecurityTranslate</value>
+				<value>framework.services.translate.ShowListTreeTranslate</value>
+			</list>
+		</property>
+	</bean>
+
+
+
+	<bean id="showCalcRuleCfgService" class="report.service.imps.ShowCalcRuleCfgService" scope="prototype">
+		<property name="defaultDaoBeanId" value="singleObjectFindByPageCriteriaDao"></property>
+	</bean>
+	<bean id="showCalcRuleDetailService" class="report.service.imps.ShowCalcRuleDetailService" scope="prototype">
+		<property name="defaultDaoBeanId" value="singleObjectFindByPageCriteriaDao"></property>
+	</bean>
+	<bean id="jsAndExpressionConverter" class="report.service.expression.converter.JsAndExpressionConverter" scope="prototype" />
+	<bean id="jsOrExpressionConverter" class="report.service.expression.converter.JsORExpressionConverter" scope="prototype" />
+	<bean id="jsItemExpressionConverter" class="report.service.expression.converter.JsItemExpressionConverter" scope="prototype" />
+	<bean id="jsSQLExpressionConverter" class="report.service.expression.converter.SQLExpressionConverter" scope="prototype" />
+	<bean id="jsDetailExpressionConverter" class="report.service.expression.converter.JsDetailExpressionConverter" scope="prototype" />
+	<bean id="jsConstExpressionConverter" class="report.service.expression.converter.JsConstExpressionConverter" scope="prototype" />
+	<bean id="jsOperatorExpressionConverter" class="report.service.expression.converter.JsOperatorExpressionConverter" scope="prototype" />
+	<bean id="jsEqExpressionConverter" class="report.service.expression.converter.JsEqExpressionConverter" scope="prototype" />
+
+	<bean id="itemExpressionParse" class="report.service.expression.parser.ItemExpressionParser" scope="prototype">
+		<property name="expressionFormatter">
+			<ref bean="itemExpressionFormatter" />
+		</property>
+	</bean>
+	<bean id="sqlExpressionParse" class="report.service.expression.parser.SqlExpressionParser" scope="prototype">
+		<property name="expressionFormatter">
+			<ref bean="sqlExpressionFormatter" />
+		</property>
+	</bean>
+
+	<bean id="sqlCal" class="report.service.expression.parser.SqlCal" scope="prototype">
+		<property name="expressionFormatter">
+			<ref bean="sqlExpressionFormatter" />
+		</property>
+	</bean>
+	<bean id="itemWordCal" class="report.service.expression.parser.ItemWordCal" scope="prototype">
+		<property name="expressionFormatter">
+			<ref bean="itemExpressionFormatter" />
+		</property>
+	</bean>
+
+	<bean id="expCheckDefaultCal" class="report.service.expression.parser.ExpCheckDefaultCal" scope="prototype">
+	</bean>
+	<bean id="itemExpCheck" class="report.service.expression.check.ItemExpCheck" scope="prototype">
+	</bean>
+	<bean id="sqlExpCheck" class="report.service.expression.check.SqlExpCheck" scope="prototype">
+	</bean>
+	<bean id="jsExpressionBuilder" class="report.service.expression.builder.JsExpressionBuilder" scope="prototype">
+
+		<property name="converters">
+			<list>
+				<ref bean="jsAndExpressionConverter" />
+				<ref bean="jsOrExpressionConverter" />
+				<ref bean="jsItemExpressionConverter" />
+				<ref bean="jsSQLExpressionConverter" />
+				<ref bean="jsDetailExpressionConverter" />
+				<ref bean="jsConstExpressionConverter" />
+				<ref bean="jsOperatorExpressionConverter" />
+				<ref bean="jsEqExpressionConverter" />
+
+			</list>
+		</property>
+	</bean>
+
+	<bean id="sqlExpressionFormatter" class="report.service.expression.log.ExpressionSqlLogFormatter" scope="prototype" />
+	<bean id="itemExpressionFormatter" class="report.service.expression.log.ExpressionItemLogFormatter" scope="prototype" />
+	<bean id="calRuleFormatter" class="report.service.expression.log.ExpressionCalRuleFormatter" scope="prototype" />
+	<bean id="compareFormatter" class="report.service.expression.log.ExpressionCompareFormatter" scope="prototype" />
+
+	<bean id="expressionLog" class="report.service.expression.log.ExpressionLog" scope="prototype" />
+
+	<bean id="jsExpressionCalculater" class="report.service.expression.JsExpressionCalculater" scope="prototype">
+		<property name="converters">
+			<list>
+				<ref bean="itemExpressionParse" />
+				<ref bean="sqlExpressionParse" />
+			</list>
+		</property>
+		<property name="wordCals">
+			<list>
+				<ref bean="itemWordCal" />
+				<ref bean="sqlCal" />
+			</list>
+		</property>
+		<property name="commonFun">
+			<value><![CDATA[Array.prototype.max=function(){return Math.max.apply({},this)};Array.prototype.min=function(){return Math.min.apply({},this)};function max(){var lenth=arguments.length;var params=new Array();for(var i=0;i<lenth;i++){if(!isNaN(arguments[i])){params.push(arguments[i])}}if(params.length==0){return 0}else{return params.max()}}function min(){var lenth=arguments.length;var params=new Array();for(var i=0;i<lenth;i++){if(!isNaN(arguments[i])){params.push(arguments[i])}}if(params.length==0){return 0}else{return params.min()}}function abs(param){if(isNaN(param)){return 0}else{return Math.abs(param)}}function round(number,e){if(isNaN(number)){return 0}else{if(isNaN(e)){return number}else{var t=1;e=Math.abs(e);for(;e>0;t*=10,e--){}return Math.round(number*t)/t}}}function average(){var sum=0;var lenth=arguments.length;if(lenth==0){return 0}for(var i=0;i<lenth;i++){if(isNaN(arguments[i])){sum+=0}else{sum+=arguments[i]}}return sum/lenth}function processCompare(cond){var regexp=/[^><!]+=\w+/;var str=new String(cond);if(str.match(regexp)!=null){str=str.replace("=","==")}else{if(str.indexOf("<>")>=0){str=str.replace("<>","!=")}}return str}function or(){var result=new Boolean(false);var lenth=arguments.length;if(lenth==0){return result}for(var i=0;i<lenth;i++){var cond=processCompare(arguments[i]);var b=eval(cond);if(b){result=true;break}}return result}function and(){var result=new Boolean(true);var lenth=arguments.length;if(lenth==0){return result}for(var i=0;i<lenth;i++){var cond=processCompare(arguments[i]);var b=eval(cond);if(!b){result=false;break}}return result}function getCompareCond(cond){var exp=/(>|>=|<|<=|=)\w+/;var compare=new String(cond);if(compare.match(exp)==null){compare="=="+str}else{if(compare.match("/=w+/g")!=null){compare=compare.replace("=","==")}else{compare=compare.replace("<>","!=")}}return compare}function sumif(){var result=0;var len=arguments.length;if(len==1){result=arguments[0]}else{if(len>1){var compare=getCompareCond(arguments[len-1]);for(var i=0;i<len-1;i++){if(!isNaN(arguments[i])&&eval(arguments[i]+compare)){result=result+parseFloat(arguments[i])}}}}return result}function countif(){var result=0;var len=arguments.length;if(len==1){result=1}else{if(len>1){var compare=getCompareCond(arguments[len-1]);for(var i=0;i<len-1;i++){if(!isNaN(arguments[i])&&eval(arguments[i]+compare)){result=result+1}}}}return result}function month(date){var d=new Date(date);return d.getMonth()+1}function count(){return arguments.length};]]></value>
+		</property>
+	</bean>
+	<bean id="jsExpCheckCal" parent="jsExpressionCalculater" scope="prototype">
+
+
+		<property name="wordChecks">
+			<list>
+				<ref bean="itemExpCheck" />
+				<ref bean="sqlExpCheck" />
+			</list>
+		</property>
+
+		<property name="wordCals">
+			<list>
+				<ref bean="expCheckDefaultCal" />
+			</list>
+		</property>
+	</bean>
+
+
+
+	<bean id="ajaxRequestService" class="report.service.imps.AjaxRequestService" scope="prototype">
+		<property name="defaultDataCount" value="100"></property>
+	</bean>
+	<bean id="ajaxRequestInstanceService" class="report.service.imps.AjaxRequestInstanceService" scope="prototype">
+	</bean>
+
+	<bean id="ItemDataTraceService" class="report.service.imps.ItemDataTraceService" scope="prototype"></bean>
+	<!-- 报表填报说明 -->
+	<bean id="repMarkService" class="report.service.imps.RepMarkService" scope="prototype"></bean>
+
+	<bean id="reportItemCheckService" class="report.service.imps.ReportItemCheckService" scope="prototype">
+		<property name="checkResultPath" value="Download/checkResult.txt"></property>
+		<property name="successMessage" value="校验成功！"></property>
+		<property name="errorMessage" value="校验未通过，双击对应的数据，查看详细信息"></property>
+	</bean>
+	
+	<!-- 批量校验 -->
+	<bean id="reportsItemCheckService" class="report.service.imps.ReportsItemCheckService" scope="prototype">
+		<property name="checkResultPath" value="Download/checkResult.txt"></property>
+		<property name="successMessage" value="校验成功！"></property>
+		<property name="errorMessage" value="部分校验未通过!"></property>
+		<property name="defaultCheckClassList">
+			<list>
+				<value>framework.services.check.IdListNullCheck</value>
+			</list>
+		</property>
+	</bean>
+	
+	<bean id="reportSumCheckService" class="report.service.imps.ReportSummaryCheckService" scope="prototype">
+		<property name="successMessage" value="校验成功！"></property>
+		<property name="errorMessage" value="校验未通过"></property>
+	</bean>
+
+	<bean id="rptInfoCopySaveService" class="report.service.imps.CopyRptInfoSaveService" scope="prototype">
+		<property name="defaultCheckInstance" value="Check_RptInfo" />
+		<property name="defaultLogicDaoBeanId" value="singleObjectFindByCriteriaDao"></property>
+		<property name="defaultDaoBeanId" value="singleObjectSaveDao"></property>
+		<property name="defaultAddClassList">
+			<list>
+				<value>report.service.add.RptCopySaveDefultValueAdd</value>
+
+			</list>
+		</property>
+
+		<property name="defaultCheckClassList">
+			<list>
+				<value>framework.services.check.ReflectEmptyFieldCheck</value>
+				<value>framework.services.check.ReflectTypeFieldCheck</value>
+				<value>framework.services.check.PrimaryKeyRepeatCheck</value>
+				<value>framework.services.check.XMLSingleObjectInstanceCheck</value>
+				<value>framework.services.check.LogicPrimaryKeyCheck</value>
+				<value>report.service.check.RptInfoUniqueSaveCheck</value>
+			</list>
+		</property>
+	</bean>
+
+	<bean id="rptInfoShowUpdateService" parent="singleObjectShowUpdateService">
+
+		<property name="operationMap">
+			<map>
+
+				<entry key="保存" value="Post-framework/Update"></entry>
+				<entry key="返回" value="Get-framework/BackFirst"></entry>
+				<entry key="复制保存" value="Post-report/RptCopySave"></entry>
+				<!-- <entry key="返回" value="Get-ShowViewLevelAutoDTOMX"></entry> -->
+			</map>
+		</property>
+
+	</bean>
+	<bean id="calculationRuleSaveService" parent="singleObjectSaveService">
+		<property name="defaultCheckInstance" value="Check_CalculationRule" />
+		<property name="defaultAddClassList">
+			<list>
+				<value>framework.services.add.LevelDataAdd</value>
+				<value>framework.services.add.SystemInfoAdd</value>
+				<value>framework.services.add.DefaultValueAdd</value>
+				<value>framework.services.add.IsThousandthAdd</value>
+			</list>
+		</property>
+		<property name="defaultCheckClassList">
+			<list>
+				<value>framework.services.check.ReflectEmptyFieldCheck</value>
+				<value>framework.services.check.ReflectTypeFieldCheck</value>
+				<value>framework.services.check.PrimaryKeyRepeatCheck</value>
+				<value>framework.services.check.XMLSingleObjectInstanceCheck</value>
+				<value>framework.services.check.LogicPrimaryKeyCheck</value>
+				<value>report.service.check.ReportExpressCheck</value>
+				<value>report.service.check.RptCalAndCheckInstanceEmptyCheck</value>
+			</list>
+		</property>
+		<property name="defaultTranslateClassList">
+			<list>
+				<value>framework.services.translate.SingleIdListTranslate</value>
+			</list>
+		</property>
+	</bean>
+
+	<bean id="calculationRuleTreeNodeSaveService" parent="singleObjectSaveService">
+		<property name="defaultCheckInstance" value="Check_CalculationRule" />
+		<property name="defaultAddClassList">
+			<list>
+				<value>framework.services.add.LevelDataAdd</value>
+				<value>framework.services.add.SystemInfoAdd</value>
+				<value>framework.services.add.DefaultValueAdd</value>
+				<value>framework.services.add.IsThousandthAdd</value>
+			</list>
+		</property>
+		<property name="defaultCheckClassList">
+			<list>
+				<value>framework.services.check.ReflectEmptyFieldCheck</value>
+				<value>framework.services.check.ReflectTypeFieldCheck</value>
+				<value>framework.services.check.PrimaryKeyRepeatCheck</value>
+				<value>framework.services.check.XMLSingleObjectInstanceCheck</value>
+				<value>framework.services.check.LogicPrimaryKeyCheck</value>
+				<value>report.service.check.ReportExpressCheck</value>
+				<value>report.service.check.RptCalAndCheckInstanceEmptyCheck</value>
+			</list>
+		</property>
+		<property name="defaultTranslateClassList">
+			<list>
+				<value>framework.services.translate.SingleIdListTranslate</value>
+			</list>
+		</property>
+	</bean>
+
+	<bean id="calculationRuleUpdateService" parent="singleObjectUpdateService">
+		<property name="defaultCheckInstance" value="Check_CalculationRule" />
+		<property name="defaultAddClassList">
+			<list>
+				<value>framework.services.add.LevelDataAdd</value>
+				<value>framework.services.add.DefaultValueAdd</value>
+				<value>framework.services.add.IsThousandthAdd</value>
+			</list>
+		</property>
+		<property name="defaultCheckClassList">
+			<list>
+				<value>framework.services.check.ReflectEmptyFieldCheck</value>
+				<value>framework.services.check.ReflectTypeFieldCheck</value>
+				<value>framework.services.check.XMLSingleObjectInstanceCheck</value>
+				<value>framework.services.check.LogicPrimaryKeyCheck</value>
+				<value>report.service.check.ReportExpressCheck</value>
+				<value>report.service.check.RptCalAndCheckInstanceEmptyCheck</value>
+			</list>
+		</property>
+		<property name="defaultTranslateClassList">
+			<list>
+				<value>framework.services.translate.SingleIdListTranslate</value>
+			</list>
+		</property>
+	</bean>
+	<bean id="checkRuleSaveService" parent="singleObjectSaveService">
+		<property name="defaultCheckInstance" value="Check_CheckRule" />
+		<property name="defaultAddClassList">
+			<list>
+				<value>framework.services.add.LevelDataAdd</value>
+				<value>framework.services.add.SystemInfoAdd</value>
+				<value>framework.services.add.DefaultValueAdd</value>
+				<value>framework.services.add.IsThousandthAdd</value>
+			</list>
+		</property>
+		<property name="defaultCheckClassList">
+			<list>
+				<value>framework.services.check.ReflectEmptyFieldCheck</value>
+				<value>framework.services.check.ReflectTypeFieldCheck</value>
+				<value>framework.services.check.PrimaryKeyRepeatCheck</value>
+				<value>framework.services.check.XMLSingleObjectInstanceCheck</value>
+				<value>framework.services.check.LogicPrimaryKeyCheck</value>
+				<value>report.service.check.ReportExpressCheck</value>
+				<value>report.service.check.RptCalAndCheckInstanceEmptyCheck</value>
+			</list>
+		</property>
+		<property name="defaultTranslateClassList">
+			<list>
+				<value>framework.services.translate.SingleIdListTranslate</value>
+			</list>
+		</property>
+	</bean>
+	<bean id="checkRuleTreeNodeSaveService" parent="singleObjectSaveService">
+		<property name="defaultCheckInstance" value="Check_CheckRule" />
+		<property name="defaultAddClassList">
+			<list>
+				<value>framework.services.add.LevelDataAdd</value>
+				<value>framework.services.add.SystemInfoAdd</value>
+				<value>framework.services.add.DefaultValueAdd</value>
+				<value>framework.services.add.IsThousandthAdd</value>
+			</list>
+		</property>
+		<property name="defaultCheckClassList">
+			<list>
+				<value>framework.services.check.ReflectEmptyFieldCheck</value>
+				<value>framework.services.check.ReflectTypeFieldCheck</value>
+				<value>framework.services.check.PrimaryKeyRepeatCheck</value>
+				<value>framework.services.check.XMLSingleObjectInstanceCheck</value>
+				<value>framework.services.check.LogicPrimaryKeyCheck</value>
+				<value>report.service.check.ReportExpressCheck</value>
+				<value>report.service.check.RptCalAndCheckInstanceEmptyCheck</value>
+			</list>
+		</property>
+		<property name="defaultTranslateClassList">
+			<list>
+				<value>framework.services.translate.SingleIdListTranslate</value>
+			</list>
+		</property>
+	</bean>
+
+
+	<bean id="checkRuleUpdateService" parent="singleObjectUpdateService">
+		<property name="defaultCheckInstance" value="Check_CheckRule" />
+		<property name="defaultAddClassList">
+			<list>
+				<value>framework.services.add.LevelDataAdd</value>
+				<value>framework.services.add.DefaultValueAdd</value>
+				<value>framework.services.add.IsThousandthAdd</value>
+			</list>
+		</property>
+		<property name="defaultCheckClassList">
+			<list>
+				<value>framework.services.check.ReflectEmptyFieldCheck</value>
+				<value>framework.services.check.ReflectTypeFieldCheck</value>
+				<value>framework.services.check.XMLSingleObjectInstanceCheck</value>
+				<value>framework.services.check.LogicPrimaryKeyCheck</value>
+				<value>report.service.check.ReportExpressCheck</value>
+				<value>report.service.check.RptCalAndCheckInstanceEmptyCheck</value>
+			</list>
+		</property>
+		<property name="defaultTranslateClassList">
+			<list>
+				<value>framework.services.translate.SingleIdListTranslate</value>
+			</list>
+		</property>
+	</bean>
+	<!-- 数据补录中心，币种汇率管理 by liutao -->
+	<bean id="currencyRateSaveService" parent="singleObjectSaveService">
+		<property name="defaultCheckInstance" value="CurrencyRateCheck" />
+	</bean>
+	<bean id="currencyRateUpdateService" parent="singleObjectUpdateService">
+		<property name="defaultCheckInstance" value="CurrencyRateCheck" />
+	</bean>
+	<bean id="taskRptInstUpdateFieldStrRemarkService" parent="UpdateFieldService" scope="prototype">
+		<property name="defaultCheckInstance" value="Check_TaskRptInst_UpdateFieldStrRemark" />
+		<property name="defaultCheckClassList">
+			<list>
+				<value>framework.services.check.XMLSingleObjectInstanceCheck</value>
+			</list>
+		</property>
+	</bean>
+	<bean id="showRptChartCondService" class="report.service.imps.ShowRptChartCondService">
+		<property name="defaultProceseClassList">
+			<list>
+				<value>report.service.procese.RptShowChartProcess</value>
+			</list>
+		</property>
+	</bean>
+
+	<bean id="taskRptInstHistoryShowListService" parent="singleObjectShowListService">
+		<property name="defaultProceseClassList">
+			<list>
+				<value>framework.services.procese.ShowListProcese</value>
+				<value>framework.services.procese.LevelDataProcese</value>
+				<value>framework.services.procese.ShowListTreeProcese</value>
+				<value>framework.services.procese.SelectTagSortByNameProcese</value>
+				<value>framework.services.procese.ShowPowerButtonProcese</value>
+			</list>
+		</property>
+		<property name="defaultTranslateClassList">
+			<list>
+				<value>framework.services.translate.LevelDataTranslate</value>
+				<value>framework.services.translate.ConditionCriteriaTranslate</value>
+				<value>framework.services.translate.ConditionMultipleCriteriaTranslate</value>
+				<value>framework.services.translate.SecurityTranslate</value>
+				<value>framework.services.translate.DefaultValueTranslate</value>
+				<value>framework.services.translate.ShowListTreeTranslate</value>
+				<value>report.service.translate.TaskHistoryTranslate</value>
+			</list>
+		</property>
+
+		<property name="operationMap">
+			<map>
+				<entry key="查询" value="Select-ShowList"></entry>
+			</map>
+		</property>
+		<property name="linkedMap">
+			<map>
+				<entry key="查看" value="Pop-report/ShowViewReport"></entry>
+			</map>
+		</property>
+	</bean>
+	
+	<!-- 模型管理列表 -->
+	<bean id="rep_AnalyseModelShowListService" parent="singleObjectShowListService">
+		<property name="operationMap">
+			<map>
+                <entry key="新增" value="Get-report/ShowAnalyseModelSave"></entry>
+                <entry key="删除" value="PostConfirm-DeleteListByIdList"></entry>
+                <entry key="查询" value="Select-ShowList"></entry>
+			</map>
+		</property>
+		<property name="linkedMap">
+			<map>
+				<entry key="定义" value="Post-report/ShowTabUpdate"></entry>
+				<entry key="分析" value="Post-report/ShowTabAnalyse"></entry>
+			</map>
+		</property>
+	</bean>
+	
+	<bean id="rep_ItemWarningResultShowListService" parent="singleObjectShowListService">
+		<property name="defaultProceseClassList">
+            <list>
+           		<value>framework.services.procese.ShowListProcese</value>
+            	<value>report.service.procese.ShowListWarningRsProcess</value>
+                <value>framework.services.procese.LevelDataProcese</value>
+                <value>framework.services.procese.ShowListTreeProcese</value>
+                <value>framework.services.procese.SelectTagSortByNameProcese</value>
+                <value>framework.services.procese.ShowPowerButtonProcese</value>
+            </list>
+        </property>
+		<property name="operationMap">
+			<map>
+                <entry key="查询" value="Select-ShowList"></entry>
+                <entry key="导出" value="Post-ExportData"></entry>
+			</map>
+		</property>
+		<property name="linkedMap">
+			<map>
+			</map>
+		</property>
+	</bean>
+	
+	<bean id="rep_AnalyseModelShowAnalyseModelSaveService" parent="singleObjectShowSaveService">
+		<property name="operationMap">
+            <map>
+                <entry key="保存" value="Post-framework/Save"></entry>
+                <entry key="返回" value="Get-framework/BackFirst"></entry>
+            </map>
+        </property>
+	</bean>
+	
+	<bean id="showRptChartService" class="report.service.imps.ShowRptChartService"></bean>
+	<bean id="mergeSummaryUpdateService" parent="singleObjectUpdateService">
+		<property name="defaultProceseClassList">
+			<list>
+				<value>report.service.procese.BindItemInfoProcese</value>
+			</list>
+		</property>
+	</bean>
+
+	<bean id="mergeSummarySaveService" parent="singleObjectSaveService">
+		<property name="defaultProceseClassList">
+			<list>
+				<value>report.service.procese.BindItemInfoProcese</value>
+			</list>
+		</property>
+	</bean>
+	<bean id="mergeRuleTreeNodeSaveLevelMergeService" parent="singleObjectSaveService">
+		<property name="defaultDaoBeanId" value="singleObjectUpdateListDao"></property>
+		<property name="defaultTranslateClassList">
+			<list>
+				<value>framework.services.translate.MultiIdListByNewTranslate</value>
+			</list>
+		</property>
+	</bean>
+	<!-- 本机构数据的导出的导出by gechenglian -->
+	<bean id="exportReportForInstService" class="report.service.imps.ExportReportForExcelService" scope="prototype">
+		<property name="successMessage" value="导出成功"></property>
+		<property name="errorMessage" value="导出失败"></property>
+		<property name="dataScope" value="2" />
+		<property name="defaultDaoBeanId" value="singleObjectFindByCriteriaDao"></property>
+	</bean>
+	<!-- 本任务所有数据的导出 by gechenglian -->
+	<bean id="exportReportForTaskService" class="report.service.imps.ExportReportForExcelService" scope="prototype">
+		<property name="successMessage" value="导出成功"></property>
+		<property name="errorMessage" value="导出失败"></property>
+		<property name="dataScope" value="3" />
+		<property name="defaultDaoBeanId" value="singleObjectFindByCriteriaDao"></property>
+	</bean>
+	<bean id="instRptRelaShowListService" parent="singleObjectShowListService">
+		<property name="operationMap">
+			<map>
+				<entry key="查询" value="Select-ShowList"></entry>
+				<entry key="新增" value="Get-report/InsertInstRptRelaPageInitAction-report.dto.InstRptRela"></entry>
+				<entry key="删除" value="PostConfirm-DeleteListByIdList"></entry>
+			</map>
+		</property>
+		<property name="linkedMap">
+			<map>
+			</map>
+		</property>
+		<property name="defaultProceseClassList">
+			<list>
+				<value>framework.services.procese.ShowListProcese</value>
+				<value>framework.services.procese.LevelDataProcese</value>
+				<value>framework.services.procese.ShowListTreeProcese</value>
+				<value>framework.services.procese.SelectTagSortByNameProcese</value>
+				<value>framework.services.procese.ShowPowerButtonProcese</value>
+				<value>report.service.procese.InstRptRelaInstInfoProcese</value>
+			</list>
+		</property>
+	</bean>
+
+	<bean id="instRptRelaShowSaveService" parent="singleObjectShowSaveService">
+		<property name="operationMap">
+			<map>
+				<entry key="保存" value="Post-report/InstRptRelaSave"></entry>
+				<entry key="返回" value="Get-framework/BackFirst"></entry>
+			</map>
+		</property>
+	</bean>
+
+	<bean id="insertInstRptRelaDataInitService" class="report.service.imps.InsertInstRptRelaDataInitService">
+		<property name="operationMap">
+			<map>
+				<entry key="保存" value="Post-Save"></entry>
+				<entry key="返回" value="Get-BackFirst"></entry>
+			</map>
+		</property>
+	</bean>
+	<bean id="instRptRelaInstRptRelaSaveService" parent="singleObjectUpdateListService">
+		<property name="defaultTranslateClassList">
+			<list>
+				<value>framework.services.translate.LevelDataTranslate</value>
+				<value>framework.services.translate.MultiIdListByNewTranslate</value>
+			</list>
+		</property>
+	</bean>
+
+	<bean id="singleObjectShowFromSaveByAjaxService" class="report.service.imps.ShowFromSaveByAjaxService" scope="prototype">
+		<property name="defaultProceseClassList">
+			<list>
+				<value>report.service.procese.ReCalcuRuleOrder</value>
+			</list>
+		</property>
+	</bean>
+
+
+
+	<bean id="taskRptInstUpdateListLevelTaskRptInstService" parent="singleObjectUpdateListService">
+		<property name="defaultValueMap">
+			<map>
+				<entry key="strAllowState" value="1"></entry>
+				<entry key="strCheckState" value="1"></entry>
+				<entry key="SubmitStatus" value="1"></entry>
+				<entry key="RPTSendType" value="1"></entry>
+			</map>
+		</property>
+	</bean>
+	<bean id="autoTaskRptInstUpdateListLevelTaskRptInstService" parent="singleObjectUpdateListService">
+		<property name="defaultValueMap">
+			<map>
+				<entry key="strAllowState" value="1"></entry>
+				<entry key="strCheckState" value="1"></entry>
+				<entry key="SubmitStatus" value="1"></entry>
+				<entry key="RPTSendType" value="1"></entry>
+			</map>
+		</property>
+	</bean>
+	<!-- 指标报表报文下载 -->
+	<bean id="taskRptInstBuildReportService" parent="taskRptInstReviewShowTreeService">
+	<property name="strSuitCode" value=""></property>
+		<property name="operationMap">
+			<map>
+				<entry key="" value="Get-BuildReportShowListForTree"></entry>
+			</map>
+		</property>
+	</bean>
+	<bean id="taskRptInstBuildReportShowListForTreeService" parent="taskRptInstSHReviewShowListForTreeService">
+		<property name="operationMap">
+			<map>
+				<entry key="查询" value="Select-BuildReportShowListForTree"></entry>
+			</map>
+		</property>
+		<property name="linkedMap">
+			<map>
+				<entry key="查看" value="Pop-report/ShowViewReport"></entry>
+			</map>
+		</property>
+
+		<property name="defaultProceseClassList">
+			<list>
+				<value>framework.services.procese.ShowListProcese</value>
+				<value>framework.services.procese.LevelDataProcese</value>
+				<value>framework.services.procese.ShowListTreeProcese</value>
+				<value>framework.services.procese.SelectTagSortByNameProcese</value>
+				<value>report.service.procese.TaskRptInstOpFilterProcese</value>
+				<value>framework.services.procese.ShowPowerButtonProcese</value>
+			</list>
+		</property>
+	</bean>
+
+
+	<!-- 王川 add 任务树  framework.services.imps.SingleObjectShowTreeService-->
+	<bean id="taskFlowShowTreeService" class="report.service.imps.ReportTaskFlowShowTreeService" scope="prototype">
+		<property name="defaultDaoBeanId" value="singleObjectFindByCriteriaDao"></property>
+		<property name="defaultLogicDaoBeanId" value="singleObjectFindByCriteriaDao"></property>
+		<property name="imgList">
+			<list>
+				<value>dtree/img/folder.gif,dtree/img/folderopen.gif</value>
+				<value>dtree/img/folder.gif,dtree/img/folderopen.gif</value>
+			</list>
+		</property>
+		<property name="rootName" value="任务层级 " />
+		<property name="defaultProceseClassList">
+			<list>
+				<value>report.service.procese.ShowTaskTreeProcese</value>
+				<value>framework.services.procese.ShowPowerButtonProcese</value>
+			</list>
+		</property>
+		<property name="defaultTranslateClassList">
+			<list>
+				<value>framework.services.translate.LevelDataTranslate</value>
+				<value>framework.services.translate.SecurityTreeTranslate</value>
+				<value>report.service.translate.ShowTaskTreeTranslate</value>
+			</list>
+		</property>
+		<property name="operationMap">
+			<map>
+				<entry key="" value="Get-ShowListForTree"></entry>
+			</map>
+		</property>
+	</bean>
+	
+	<!-- 分析模型 -定义  -->
+	<bean id="showRep_AnalyseModelTabService" class="report.service.imps.TabShowService" scope="prototype">
+		<property name="showInstanceName" value="tab"></property>
+		<property name="defaultDao" value="singleObjectFindByIdDao"></property>
+		<property name="defaultLogicDaoBeanId" value="singleObjectFindByCriteriaDao"></property>
+        <property name="defaultComponentProceseClassList">
+            <list>
+		        <value>report.service.procese.ShowModelAnalyseSaveOrUpdateProcese</value>
+		        <value>framework.services.procese.ShowPowerButtonProcese</value>
+            </list>
+        </property>
+        <property name="defaultTranslateClassList">
+            <list>
+                <value>framework.services.translate.ConditionCriteriaTranslate</value> 
+            </list>
+        </property>  
+        <property name="dtoShowInstanceMap">
+			<map>
+				<entry key="report.dto.analyse.Rep_AnalyseModel_Items" value="list"></entry>
+				<entry key="report.dto.analyse.Rep_AnalyseModel_Orgs" value="list"></entry>
+				<entry key="report.dto.analyse.Rep_AnalyseModel_Currs" value="list"></entry>
+				<entry key="report.dto.analyse.Rep_AnalyseModel_ItemPros" value="list"></entry>
+			</map>
+		</property>
+		<property name="operationMap">
+			<map>
+				<entry key="保存" value="Post-ModelSave"></entry>
+				<entry key="分析" value="Post1-ModelAnalyse"></entry>
+				<entry key="返回" value="Get-framework/BackFirst"></entry>
+			</map>
+		</property>
+	</bean>
+	
+	<!-- 分析模型-分析  -->
+	<bean id="showRep_AnalyseModelTabAnalyseService" class="report.service.imps.TabShowService" scope="prototype">
+		<property name="showInstanceName" value="tab"></property>
+		<property name="defaultDao" value="singleObjectFindByIdDao"></property>
+		<property name="defaultLogicDaoBeanId" value="singleObjectFindByCriteriaDao"></property>
+        <property name="defaultComponentProceseClassList">
+            <list>
+		        <value>report.service.procese.ShowModelAnalyseSaveOrUpdateProcese</value>
+		        <value>report.service.procese.IsAnalyseModelProcess</value>
+		        <value>framework.services.procese.ShowPowerButtonProcese</value>
+            </list>
+        </property>
+		<property name="operationMap">
+			<map>
+				<entry key="分析" value="Post1-ModelAnalyse"></entry>
+				<entry key="返回" value="Get-framework/BackFirst"></entry>
+			</map>
+		</property>
+	</bean>
+	
+	<!-- 分析模型-保存 -->
+	<bean id="analyseModelConfigSaveService" class="framework.services.imps.BaseVoidDaoResultService" scope="prototype">
+		<property name="showInstanceName" value="10"></property>
+		<property name="defaultDaoBeanId" value="analyseModelConfigDao"></property>
+		<property name="defaultAddClassList">
+            <list>
+                <value>framework.services.add.SystemInfoAdd</value>
+            </list>
+        </property>
+		<property name="successMessage" value="更新成功"></property>
+        <property name="errorMessage" value="更新失败"></property>
+	</bean>
+	
+	<!-- 分析模型-图形 -->
+	<bean id="showModelAnalyseChartService" class="report.service.imps.ShowModelAnalyseChartService">
+		<property name="defaultAddClassList">
+            <list>
+                <value>framework.services.add.SystemInfoAdd</value>
+            </list>
+        </property>
+	</bean>
+
+	<!-- 制度包管理Service -->
+	<bean id="mRepPackInfoShowListService" parent="singleObjectShowListService">
+		<property name="showInstanceName" value="2"></property>
+		<property name="operationMap">
+			<map>
+				<entry key="制作" value="Post-report/MakeRepPack"></entry>
+				<entry key="查询" value="Select-ShowList"></entry>
+				<entry key="删除" value="PostConfirm-DeleteListByIdList"></entry>
+			</map>
+		</property>
+		<property name="linkedMap">
+			<map>
+				<entry key="下载" value="Post-Download"></entry>
+			</map>
+		</property>
+	</bean>
+	
+	<!-- 制作报表制度包Service -->
+	<bean id="makeRepPackService" class="report.service.imps.MakeRepPackService"></bean>
+	<!-- 制度升级Service -->
+	<bean id="mRepUpgradeInfoShowListService" parent="singleObjectShowListService">
+		<property name="showInstanceName" value="2"></property>
+		<property name="operationMap">
+			<map>
+				<entry key="升级" value="Upload-report/MakeRepUpgrade"></entry>
+				<entry key="查询" value="Select-ShowList"></entry>
+				<entry key="删除" value="PostConfirm-DeleteListByIdList"></entry>
+			</map>
+		</property>
+		<property name="linkedMap">
+			<map>
+			</map>
+		</property>
+	</bean>
+	<!-- 多法人制度升级Service -->
+	<bean id="mRepLeUpgradeInfoShowListService" parent="singleObjectShowListService">
+		<property name="showInstanceName" value="2"></property>
+		<property name="operationMap">
+			<map>
+				<entry key="配置" value="Get-report/UpgradeLeRep"></entry>
+				<entry key="查询" value="Select-ShowList"></entry>
+				<entry key="删除" value="PostConfirm-DeleteListByIdList"></entry>
+			</map>
+		</property>
+		<property name="linkedMap">
+			<map>
+			</map>
+		</property>
+	</bean>
+	
+	<!-- 制度升级 -->
+	<bean id="makeRepUpgradeService" class="report.service.imps.MakeRepUpgradeService" scope="prototype"></bean>
+	
+	<!-- 制度包下载 -->
+	<bean id="mRepPackInfoDownloadService" class="report.service.imps.DownloadRepPackService" scope="prototype">
+		<property name="defaultDaoBeanId" value="singleObjectFindByIdDao"></property>
+	</bean>
+	
+	<!-- 法人制度升级配置界面 service -->
+	<bean id="upgradeLeRepService" class="report.service.imps.UpgradeLeRepService" scope="prototype">
+		<property name="operationMap">
+			<map>
+				<entry key="升级" value="Post-report/MakeRepLeUpgrade"></entry>
+				<entry key="返回" value="Get-framework/BackFirst"></entry>
+			</map>
+		</property>
+	</bean>
+	<!-- 法人制度升级 -->
+	<bean id="makeRepLeUpgradeService" class="report.service.imps.MakeRepLeUpgradeService" scope="prototype"></bean>
+	
+	<!-- 明细报表sql查询下载  service-->
+	<bean id="downloadRepDetailService" class="report.service.imps.DownloadRepDetailService" scope="prototype">
+	</bean>
+	
+	 <!-- insert by xiajieli -2016-10-18 -->
+    <!-- 统计报表填报 -->
+    <bean id="taskRptInstCDShowTreeService" parent="taskRptInstShowTreeService">
+     	<property name="strSuitCode" value=""></property>
+     </bean>
+    
+    <!-- 统计报表审核 -->
+     <bean id="taskRptInstCDReviewShowTreeService" parent="taskRptInstReviewShowTreeService">
+     	<property name="strSuitCode" value=""></property>
+     </bean>
+    
+    <!-- 数据汇总  -->
+     <bean id="taskFlowCDShowTreeService" parent="taskFlowShowTreeService">
+     	 <property name="strSuitCode" value=""></property> 
+     </bean>
+     
+    <!-- 明细数据填报 -->
+     <bean id="taskModelInstCDShowTreeService" parent="taskModelInstShowTreeService">
+     	<property name="strSuitCode" value=""></property>
+     </bean>
+     
+     <!-- 明细数据审核 -->
+      <bean id="taskModelInstCDReviewShowTreeService" parent="taskModelInstReviewShowTreeService">
+     	<property name="strSuitCode" value=""></property>
+     </bean>
+     
+     <!-- 数据查看 -->
+       <bean id="taskModelInstCDCKShowTreeService" parent="CKShowTreeService">
+        <property name="strSuitCode" value=""></property>
+       </bean>
+</beans>

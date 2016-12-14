@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE struts PUBLIC "-//Apache Software Foundation//DTD Struts Configuration 2.1//EN" "http://struts.apache.org/dtds/struts-2.1.dtd">
+<struts> 
+   <include file="framework/configs/struts.xml"></include>
+ 
+   <include file="report/configs/itemreport.struts.xml"></include>
+   <include file="autoETLsystem/configs/autoETLsystem.struts.xml"></include>
+   <include file="framework/configs/action.framework.struts.xml"></include>
+ </struts>    

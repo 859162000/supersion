@@ -1,0 +1,153 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- 新客户风险<1>：对公及同业客户授信和表内外业务统计表	 -->
+<cbrc reportnumber="01" bankcode="B0192H243010001" bankname="长沙银行股份有限公司" reportdate="" version="1.0">
+	<credit>
+		<customerType column="A"></customerType>
+		<customerName column="B"></customerName>
+		<customerCode column="C"></customerCode>
+		<nationalityCode column="D"></nationalityCode>
+		<creditBankCode column="E"></creditBankCode>
+		<creditBankName column="F"></creditBankName>
+		<creditCode column="G"></creditCode>
+		<creditLimit column="H"></creditLimit>
+		<loanLimit column="I"></loanLimit>
+		<startDate column="J"></startDate>
+		<dueDate column="K"></dueDate>
+		<loanBalance column="L"></loanBalance>
+		<bondBalance column="M"></bondBalance>
+		<equitystakeBalance column="N"></equitystakeBalance>
+		<otherOnbalanceSheet column="O"></otherOnbalanceSheet>
+		<offbalanceSheet column="P"></offbalanceSheet>
+		<balanceOfLimit column="Q"></balanceOfLimit>
+		<balanceOfLoanLimit column="R"></balanceOfLoanLimit>
+		<usableCreditLimit column="S"></usableCreditLimit>
+		<usableLoanLimit column="T"></usableLoanLimit>
+		<relatedPartyCreditLogo column="U"></relatedPartyCreditLogo>
+		<groupClient>
+			<groupClientDetail>
+				<customerName column="A"></customerName>
+				<customerCode column="B"></customerCode>
+				<creditCode column="C"></creditCode>
+				<creditLimit column="D"></creditLimit>
+				<loanLimit column="E"></loanLimit>
+				<loanBalance column="F"></loanBalance>
+				<bondBalance column="G"></bondBalance>
+				<equitystakeBalance column="H"></equitystakeBalance>
+				<otherOnbalanceSheet column="I"></otherOnbalanceSheet>
+				<offbalanceSheet column="J"></offbalanceSheet>
+				<balanceOfLimit column="K"></balanceOfLimit>
+				<balanceOfLoanLimit column="L"></balanceOfLoanLimit>
+				<usableCreditLimit column="M"></usableCreditLimit>
+				<usableLoanLimit column="N"></usableLoanLimit>
+			</groupClientDetail>
+		</groupClient>
+		<loan>
+			<loanDetail>
+				<customerName column="A"></customerName>
+				<customerCode column="B"></customerCode>
+				<loanBankCode column="C"></loanBankCode>
+				<creditCode column="D"></creditCode>
+				<loanContractNumber column="E"></loanContractNumber>
+				<evidenceofdebt column="F"></evidenceofdebt>
+				<startDate column="G"></startDate>
+				<dueDate column="H"></dueDate>
+				<issueMoney column="I"></issueMoney>
+				<loanBalance column="J"></loanBalance>
+				<fiveClassify column="K"></fiveClassify>
+				<loanType column="L"></loanType>
+				<businessType column="M"></businessType>
+				<vocationCode column="N"></vocationCode>
+				<currencyCode column="O"></currencyCode>
+				<guaranteeType column="P"></guaranteeType>
+				<principalBalance column="Q"></principalBalance>
+				<principalDays column="R"></principalDays>
+				<accrualBalance column="S"></accrualBalance>
+				<accrualDays column="T"></accrualDays>
+				<repayment column="U"></repayment>
+				<principalRepaymentType column="V"></principalRepaymentType>
+				<accrualRepaymentType column="W"></accrualRepaymentType>
+				<nextPrincipalRepaymentDate column="X"></nextPrincipalRepaymentDate>
+				<nextPrincipalRepaymentMoney column="Y"></nextPrincipalRepaymentMoney>
+				<nextAccrualRepaymentDate column="Z"></nextAccrualRepaymentDate>
+				<nextAccrualRepaymentMoney column="AA"></nextAccrualRepaymentMoney>
+				<loanIssueType column="AB"></loanIssueType>
+				<depreciationreserves column="AC"></depreciationreserves>
+				<industryType column="AD"></industryType>
+				<industryTransform column="AE"></industryTransform>
+				<newIndustry column="AF"></newIndustry>
+				<syndication column="AG"></syndication>
+				<paymentMethod column="AH"></paymentMethod>
+			</loanDetail>
+		</loan>
+		<bond>
+			<bondDetail>
+				<enterpriseName column="A"></enterpriseName>
+				<enterpriseCode column="B"></enterpriseCode>
+				<bankCode column="C"></bankCode>
+				<creditCode column="D"></creditCode>
+				<bondCode column="E"></bondCode>
+				<bondType column="F"></bondType>
+				<bondValue column="G"></bondValue>
+				<bookBalance column="H"></bookBalance>
+				<issuingDate column="I"></issuingDate>
+				<cashDate column="J"></cashDate>
+				<accountType column="K"></accountType>
+				<internalRatings column="L"></internalRatings>
+				<externalRatings column="M"></externalRatings>
+			</bondDetail>
+		</bond>
+		<equitystake>
+			<equitystakeDetail>
+				<enterpriseName column="A"></enterpriseName>
+				<enterpriseCode column="B"></enterpriseCode>
+				<bankCode column="C"></bankCode>
+				<creditCode column="D"></creditCode>
+				<bookBalance column="E"></bookBalance>
+			</equitystakeDetail>
+		</equitystake>
+		<offbalanceSheetActivities>
+			<offbalanceDetail>
+				<customerName column="A"></customerName>
+				<customerCode column="B"></customerCode>
+				<bankCode column="C"></bankCode>
+				<businessType column="D"></businessType>
+				<creditCode column="E"></creditCode>
+				<contractNumber column="F"></contractNumber>
+				<businessNumber column="G"></businessNumber>
+				<businessBalance column="H"></businessBalance>
+				<currencyCode column="I"></currencyCode>
+				<startDate column="J"></startDate>
+				<dueDate column="K"></dueDate>
+				<marginAmount column="L"></marginAmount>
+				<industryType column="M"></industryType>
+				<industryTransform column="N"></industryTransform>
+				<newIndustry column="O"></newIndustry>
+			</offbalanceDetail>
+		</offbalanceSheetActivities>
+		<tradeCustomers>
+			<tradeCustomersDetail>
+				<customerName column="A"></customerName>
+				<customerCode column="B"></customerCode>
+				<nationalityCode column="C"></nationalityCode>
+				<offsiteCode column="D"></offsiteCode>
+				<organizationCode column="E"></organizationCode>
+				<customerType column="F"></customerType>
+				<internalRatings column="G"></internalRatings>
+				<externalRatings column="H"></externalRatings>
+				<interBankOffered column="I"></interBankOffered>
+				<bankDeposit column="J"></bankDeposit>
+				<bondRepurchase column="K"></bondRepurchase>
+				<stockCollateral column="L"></stockCollateral>
+				<buyingBack column="M"></buyingBack>
+				<buyOutTurnDiscount column="N"></buyOutTurnDiscount>
+				<bondHolding column="O"></bondHolding>
+				<equityInvestment column="P"></equityInvestment>
+				<tradePaid column="Q"></tradePaid>
+				<otherOnbalanceSheet column="R"></otherOnbalanceSheet>
+				<sellingBack column="S"></sellingBack>
+				<irrepealableCommitment column="T"></irrepealableCommitment>
+				<otherOffbalanceSheet column="U"></otherOffbalanceSheet>
+			</tradeCustomersDetail>
+		</tradeCustomers>
+	</credit>
+</cbrc>

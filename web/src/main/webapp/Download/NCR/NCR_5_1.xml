@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!-- 新客户风险<5>：个人贷款违约情况统计表 -->
+<cbrc reportnumber="05" bankcode="B0192H243010001" bankname="长沙银行股份有限公司" reportdate="" version="1.0">
+	<personalLoan>
+		<borrowerName column="A"></borrowerName>
+		<paperType column="B"></paperType>
+		<paperCode column="C"></paperCode>
+		<bankCode column="D"></bankCode>
+		<loanContractNumber column="E"></loanContractNumber>
+		<evidenceofdebtNumber column="F"></evidenceofdebtNumber>
+		<loanVarieties column="G"></loanVarieties>
+		<guaranteeWay column="H"></guaranteeWay>
+		<issueMoney column="I"></issueMoney>
+		<loanBalance column="J"></loanBalance>
+		<issueDate column="K"></issueDate>
+		<dueDate column="L"></dueDate>
+		<defaultAmount column="M"></defaultAmount>
+		<defaultDays column="N"></defaultDays>
+		<fiveClassify column="O"></fiveClassify>
+		<paymentMethod column="P"></paymentMethod>
+		<recentlyPaymentMoney column="Q"></recentlyPaymentMoney>
+		<recentlyPaymentDate column="R"></recentlyPaymentDate>
+		<customerAddress column="S"></customerAddress>
+		<addressAdministrativeCode column="T"></addressAdministrativeCode>
+		<otherPaperType column="U"></otherPaperType>
+		<otherPaperCode column="V"></otherPaperCode>
+		<jointDebtor>
+			<debtorDetail>
+				<name column="W"></name>
+				<paperType column="X"></paperType>
+				<paperCode column="Y"></paperCode>
+			</debtorDetail>
+		</jointDebtor>
+		<schoolName column="Z"></schoolName>
+		<schoolAddress column="AA"></schoolAddress>
+		<schoolAdministrativeCode column="AB"></schoolAdministrativeCode>
+		<studentNumber column="AC"></studentNumber>
+		<familyAddress column="AD"></familyAddress>
+		<familyAdministrativeCode column="AE"></familyAdministrativeCode>
+		<studentLoanType column="AF"></studentLoanType>
+	</personalLoan>
+</cbrc>

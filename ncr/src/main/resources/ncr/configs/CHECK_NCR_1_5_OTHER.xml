@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<reportCheckRoot>
+	<checkInstance name="CHECK_NCR_1_5_OTHER">
+		<paramValueList>
+			<paramValue name="DTDATE" value="2013-12-09"></paramValue>
+			<paramValue name="strInstCode" value=""></paramValue>
+			<!--
+		  <paramValue name="strTaskRptInstID" value="000000"></paramValue>
+			<paramValue name="strFreq" value="000000"></paramValue> 
+			-->
+		</paramValueList>
+
+		<freqCode value="4"></freqCode>
+
+		<checkTable procedureName="Check_NCR_1_5" procedureParam="DTDATE,strInstCode" procedureDiscription="持有企业股权明细"
+			originTable="NCR_1_5" errorStateField="RPTCHECKTYPE" errorStateValue="3"  successStateValue="2" 
+			defaultLogicDaoBeanId="oracleProcedureResultSetDao">
+			<paramFieldList>
+				<paramField paramName="DTDATE" field="DTDATE" type="2"></paramField>
+					<paramField paramName="strInstCode" field="INSTINFO" type="1"></paramField>
+			</paramFieldList>
+			
+			<checkUniqueFieldList>
+				<checkUniqueField name="AUTOID" discription="主键" originField="AUTOID"></checkUniqueField>
+			</checkUniqueFieldList>
+		<checkFieldAggregationList discription="聚合校验">
+			<paramFieldList>
+				<paramField paramName="DTDATE" field="DTDATE" type="2"></paramField>
+				<paramField paramName="strInstCode" field="INSTINFO" type="1"></paramField>
+			</paramFieldList>
+			<!--LJX-008	表1 PART<input type="password"  />Ⅰ中，同一[客户代码]、同一[授信号码]下，[持有股权余额]等于《PARTⅤ：持有企业股权明细》中该[授信号码]下的持有股权[账面余额]之和-->
+			<checkFieldAggregation compareType="=" splitDiscription="客户代码_授信号码" leftSplitField="SPLITFIELD" rightSplitField="SPLITFIELD">
+				<leftFieldList >
+					<checkFieldAggregationField procedureResultField="N" procedureDiscription="持有股权余额" procedureName="Check_NCR_1_1_LJX_008_L" procedureParam="DTDATE,strInstCode,rt" ></checkFieldAggregationField>
+				</leftFieldList>
+				<rightFieldList>
+					<checkFieldAggregationField procedureResultField="SUM_E" procedureDiscription="账面余额" procedureName="Check_NCR_1_5_LJX_008_R" procedureParam="DTDATE,strInstCode,rt"></checkFieldAggregationField>
+				</rightFieldList>
+			</checkFieldAggregation>							
+		</checkFieldAggregationList>
+		
+		<checkFieldConsistentList consistenttype="1" discription="一致性校验">
+			<paramFieldList>
+				<paramField paramName="DTDATE" field="DTDATE" type="2"></paramField>
+				<paramField paramName="strInstCode" field="INSTINFO" type="1"></paramField>
+			</paramFieldList>
+			<!--HNYZ-FR-003 表内及表间，同一个内部客户代码，对应的名称应一致-->		
+			<checkFieldConsistent>
+				<consistentGroup keyField="B" keyDiscription="银行持股企业代码"  nameField="A" nameDiscription="银行持股企业名称" procedureName="Check_NCR_1_5" procedureDiscription="持有企业股权明细" procedureParam="DTDATE,strInstCode,rt"></consistentGroup>
+			</checkFieldConsistent>			
+		</checkFieldConsistentList>
+    </checkTable>		
+	</checkInstance>
+</reportCheckRoot>

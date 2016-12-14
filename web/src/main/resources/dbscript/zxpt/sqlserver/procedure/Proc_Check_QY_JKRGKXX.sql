@@ -1,0 +1,96 @@
+CREATE procedure [dbo].[Proc_Check_QY_JKRGKXX]
+(
+	@dtDate varchar(10),
+	@strInstCode varchar(20)
+)
+as
+if @dtDate='*****' and @strInstCode='*****'
+SELECT 
+	   a.dtDate
+      ,a.instInfo
+	  ,b.autoID
+      ,b.CYRS
+      ,b.DJZCH
+      ,b.DJZCLX
+      ,b.DSDJZHM
+      ,b.GSDJZHM
+      ,b.HYFL
+      ,b.JCKQBZ
+      ,b.JKRCLNF
+      ,b.JKRCZHM
+      ,b.JKREMAILDZ
+      ,b.JKRGB
+      ,b.JKRLXDH
+      ,b.JKRTXDZ
+      ,b.JKRTZ
+      ,b.JKRWWMC
+      ,b.JKRWZ
+      ,b.JKRXZ
+      ,b.JKRZCDZ
+      ,b.JKRZWMC
+      ,b.JTKHBZ
+      ,b.JYCDMJ
+      ,b.JYCDSYQ
+      ,b.RPTCheckType
+      ,b.RPTFeedbackType
+      ,b.RPTSendType
+      ,b.SSGSBZ
+      ,b.XZQH
+      ,b.YYZZDQRQ
+      ,b.YZBM
+      ,b.ZCDJRQ
+      ,b.ZYCPQK
+      ,b.ZZJGDM
+      ,b.extend1
+      ,b.extend2
+      ,b.extend3
+      ,b.extend4
+      ,b.extend5
+      ,b.FOREIGNID
+ FROM QY_JKRGK_JC as a,QY_JKRGKXX as b where a.autoID = b.foreignid;
+
+else
+SELECT 
+	   a.dtDate
+      ,a.instInfo
+	  ,b.autoID
+      ,b.CYRS
+      ,b.DJZCH
+      ,b.DJZCLX
+      ,b.DSDJZHM
+      ,b.GSDJZHM
+      ,b.HYFL
+      ,b.JCKQBZ
+      ,b.JKRCLNF
+      ,b.JKRCZHM
+      ,b.JKREMAILDZ
+      ,b.JKRGB
+      ,b.JKRLXDH
+      ,b.JKRTXDZ
+      ,b.JKRTZ
+      ,b.JKRWWMC
+      ,b.JKRWZ
+      ,b.JKRXZ
+      ,b.JKRZCDZ
+      ,b.JKRZWMC
+      ,b.JTKHBZ
+      ,b.JYCDMJ
+      ,b.JYCDSYQ
+      ,b.RPTCheckType
+      ,b.RPTFeedbackType
+      ,b.RPTSendType
+      ,b.SSGSBZ
+      ,b.XZQH
+      ,b.YYZZDQRQ
+      ,b.YZBM
+      ,b.ZCDJRQ
+      ,b.ZYCPQK
+      ,b.ZZJGDM
+      ,b.extend1
+      ,b.extend2
+      ,b.extend3
+      ,b.extend4
+      ,b.extend5
+      ,b.FOREIGNID
+ FROM QY_JKRGK_JC as a,QY_JKRGKXX as b where a.dtDate = @dtDate and a.instInfo = @strInstCode and 
+  a.autoID = b.foreignid;

@@ -1,0 +1,47 @@
+body {TEXT-ALIGN: center;}
+.HeaderArea,.ControlArea,.CommandArea,.DataArea{
+	width:95%;border:1px solid black;margin-bottom:5px;
+}
+.HeaderArea div{
+	height:98%;font-size:14px
+}
+table{ 
+	margin-top:5px;margin-bottom:5px;
+	border:1px solid black; 
+	border-collapse: collapse;
+	color:#666; 
+	table-layout:fixed;
+}
+
+table tr td{
+    text-overflow: ellipsis; /* for All IE */
+    +text-overflow: ellipsis; /* IE7/IE8 */
+    _text-overflow: ellipsis; /* only IE6 */
+    overflow: hidden;
+    white-space: nowrap;  
+}
+
+
+table td,table th{ 
+border:1px solid black; 
+padding:0 0em 0; 
+} 
+
+.HeaderArea{
+	height:40px;
+	line-height:40px;
+	background:#e8e8e8;	
+}
+.HeaderArea div{
+	float:left;
+	margin-left:5px
+}
+.ControlArea{
+	TEXT-ALIGN: left;
+}
+.tr_highlight{
+	background-color:#B2E0FF
+}
+.DataArea{
+	
+}

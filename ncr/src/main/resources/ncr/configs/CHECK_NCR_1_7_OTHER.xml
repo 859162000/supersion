@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<reportCheckRoot>
+	<checkInstance name="CHECK_NCR_1_7_OTHER">
+		<paramValueList>
+			<paramValue name="DTDATE" value="2013-12-09"></paramValue>
+			<paramValue name="strInstCode" value=""></paramValue>
+			<!--
+		  <paramValue name="strTaskRptInstID" value="000000"></paramValue>
+			<paramValue name="strFreq" value="000000"></paramValue> 
+			-->
+		</paramValueList>                                                                                                            
+
+		<freqCode value="4"></freqCode>
+
+		<checkTable procedureName="Check_NCR_1_7" procedureParam="DTDATE,strInstCode" procedureDiscription="Check_NCR_1_7同业客户业务明细"
+			originTable="NCR_1_7" errorStateField="RPTCHECKTYPE" errorStateValue="3"  successStateValue="2" 
+			defaultLogicDaoBeanId="oracleProcedureResultSetDao">
+			<paramFieldList>
+				<paramField paramName="DTDATE" field="DTDATE" type="2"></paramField>
+				<paramField paramName="strInstCode" field="INSTINFO" type="1"></paramField>
+			</paramFieldList>
+
+			<checkUniqueFieldList>
+			   <checkUniqueField name="AUTOID" discription="主键" originField="AUTOID"></checkUniqueField>
+			</checkUniqueFieldList>
+
+		<checkFieldConsistentList consistenttype="2" discription="唯一性校验">
+			<paramFieldList>
+				<paramField paramName="DTDATE" field="DTDATE" type="2"></paramField>
+				<paramField paramName="strInstCode" field="INSTINFO" type="1"></paramField>
+			</paramFieldList>
+			<!--  WYX-006|表1《PART Ⅶ：同业客户业务明细》|同一[填报机构代码]下|[客户代码](B)  -->			
+			<checkFieldConsistent>
+				<consistentGroup keyField="INSTINFO" keyDiscription="填报机构代码" nameField="B" nameDiscription="客户代码" procedureName="Check_NCR_1_7_WYX_006" procedureDiscription="同业客户业务明细" procedureParam="DTDATE,strInstCode,rt"></consistentGroup>
+			</checkFieldConsistent>		
+			<!--  WYX-007|表1《PART Ⅶ：同业客户业务明细》|同一[填报机构代码]下|[非现场监管统计机构编码](D)  -->			
+			<checkFieldConsistent>
+				<consistentGroup keyField="INSTINFO" keyDiscription="填报机构代码" nameField="D" nameDiscription="非现场监管统计机构编码" procedureName="Check_NCR_1_7_WYX_007" procedureDiscription="同业客户业务明细" procedureParam="DTDATE,strInstCode,rt"></consistentGroup>
+			</checkFieldConsistent>	
+			<!--  WYX-008|表1《PART Ⅶ：同业客户业务明细》|同一[填报机构代码]下|[组织机构代码](E)  -->			
+			<checkFieldConsistent>
+				<consistentGroup keyField="INSTINFO" keyDiscription="填报机构代码" nameField="E" nameDiscription="组织机构代码" procedureName="Check_NCR_1_7_WYX_008" procedureDiscription="同业客户业务明细" procedureParam="DTDATE,strInstCode,rt"></consistentGroup>
+			</checkFieldConsistent>		
+		</checkFieldConsistentList>						
+		<checkFieldConsistentList consistenttype="1" discription="一致性校验">
+			<paramFieldList>
+				<paramField paramName="DTDATE" field="DTDATE" type="2"></paramField>
+				<paramField paramName="strInstCode" field="INSTINFO" type="1"></paramField>
+			</paramFieldList>
+			<!--HNYZ-GB-001|相同信息值中：任意两个法人客户代码相同，国别需一致-->
+			<checkFieldConsistent>
+				<consistentGroup keyField="B" keyDiscription="客户代码"  nameField="C" nameDiscription="国别代码" procedureName="Check_NCR_1_7_HNYZ_GB_001" procedureDiscription="同业客户业务明细" procedureParam="DTDATE,strInstCode"></consistentGroup>
+			</checkFieldConsistent>
+			<!-- HNYZ-FR-001|表内及表间，同一个内部客户代码，对应的组织机构代码应一致-->
+			<checkFieldConsistent>
+				<consistentGroup keyField="B" keyDiscription="客户代码"  nameField="E" nameDiscription="组织机构代码" procedureName="Check_NCR_1_7" procedureDiscription="同业客户业务明细" procedureParam="DTDATE,strInstCode"></consistentGroup>
+			</checkFieldConsistent>
+			<!-- HNYZ-FR-002|表内及表间，同一个监管统计机构编码，对应的组织机构代码应一致-->
+			<checkFieldConsistent>
+				<consistentGroup keyField="D" keyDiscription="非现场监管统计机构编码"  nameField="E" nameDiscription="组织机构代码" procedureName="Check_NCR_1_7" procedureDiscription="同业客户业务明细" procedureParam="DTDATE,strInstCode"></consistentGroup>
+			</checkFieldConsistent>	
+			<!-- HNYZ-FR-003|表内及表间，同一个内部客户代码，对应的名称应一致-->
+			<checkFieldConsistent>
+				<consistentGroup keyField="B" keyDiscription="客户代码"  nameField="A" nameDiscription="客户名称" procedureName="Check_NCR_1_7" procedureDiscription="同业客户业务明细" procedureParam="DTDATE,strInstCode"></consistentGroup>
+			</checkFieldConsistent>
+			<!-- HNYZ-FR-004|表内及表间，同一个组织机构代码，对应的名称应一致-->
+			<checkFieldConsistent>
+				<consistentGroup keyField="E" keyDiscription="组织机构代码"  nameField="A" nameDiscription="客户名称" procedureName="Check_NCR_1_7" procedureDiscription="同业客户业务明细" procedureParam="DTDATE,strInstCode"></consistentGroup>
+			</checkFieldConsistent>
+			<!-- HNYZ-FR-005|表内及表间，同一个名称，对应的组织机构代码应一致。对于某一企业确实有多个组织机构代码的，银监会定期维护例外名单，名单中的企业除外-->
+			<checkFieldConsistent>
+				<consistentGroup keyField="A" keyDiscription="客户名称"  nameField="E" nameDiscription="组织机构代码" procedureName="Check_NCR_1_7" procedureDiscription="同业客户业务明细" procedureParam="DTDATE,strInstCode"></consistentGroup>
+			</checkFieldConsistent>									
+		</checkFieldConsistentList>
+   </checkTable>			
+	</checkInstance>
+</reportCheckRoot>

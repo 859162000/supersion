@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans
+	xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns:p="http://www.springframework.org/schema/p"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-3.0.xsd">
+
+    <bean id="filledWithMessageAction" class="szzxpt.actions.imps.FilledWithMessageAction" scope="prototype">
+       <property name="defaultServiceBeanId" value="filledWithMessageService"></property>
+    </bean>
+	<bean id="userInfoFilledWithMessageAction" class="szzxpt.actions.imps.UserInfoFilledWithMessageAction" scope="prototype">
+       <property name="defaultServiceBeanId" value="userInfoFilledWithMessageService"></property>
+    </bean>
+
+    <bean id="ajaxForWHZHDownLoadRequestAction" class="zxptsystem.actions.imps.AjaxForDownLoadRequestAction" scope="prototype">
+        <property name="defaultServiceBeanId" value="confirmDialogForWHZHReportService"></property>
+    </bean>
+    
+    <!-- 报文报送 -->
+  
+    <bean id="interfaceFileDownWgjACCXmlAction" class="szzxpt.actions.imps.InterfaceDownLoadWgjXMLViewAction" scope="prototype">
+          <property name="defaultServiceBeanId" value="wGJ_DownLoadACCXMlListService"></property>
+    </bean>
+    
+     <bean id="wHZHCJFKBWUploadFileAction" class="framework.actions.imps.BaseSTModelDrivenConditionFileAction" scope="prototype">
+       <property name="defaultServiceBeanId" value="wHZHCJFKBWUploadFileService"></property>
+    </bean>
+    
+        <bean id="confirmDialogForUploadWHZHBWJXAction" class="framework.actions.imps.BaseSTModelDrivenConditionFileAction" scope="prototype">
+        <property name="defaultServiceBeanId" value="szzxpt.service.imps.ConfirmDialogForUploadWHZHBWJXService"></property>
+    </bean>
+</beans>

@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE struts PUBLIC "-//Apache Software Foundation//DTD Struts Configuration 2.1//EN" "http://struts.apache.org/dtds/struts-2.1.dtd">
+<struts>
+
+	 <package name="ncr" extends="framework.default" namespace="/ncr">
+	 
+		<action name="ShowView-InterfaceDownNewCustomView" class="InterfaceDownNcrView">
+			<result name="success">/NCR/InterfaceDownNewCustom.jsp</result>
+		</action>
+		
+		<action name="ShowView-InterfaceDownNewCustom" class="interfaceFileDownNewAction">
+<!--			<result name="success" type="stream">-->
+<!--			    <param name="contentType">${serviceResult.contentType}</param>-->
+<!--			    <param name="inputName">inputStream</param>-->
+<!--			    <param name="contentDisposition">${serviceResult.contentDisposition}</param>-->
+<!--			    <param name="bufferSize">${serviceResult.bufferSize}</param>-->
+<!--			</result>-->
+<!--			<result name="error" type="redirectAction">-->
+<!--			    <param name="actionName">ShowAlertMessage</param>-->
+<!--			    <param name="message">${serviceResult.message}</param>-->
+<!--			</result>-->
+
+			<result name="success" type="redirectAction">
+			    <param name="actionName">ShowAlertMessage</param>
+			    <param name="message">执行成功,并等待报文生成完成后下载!</param>
+			</result>
+			<result name="error" type="redirectAction">
+			    <param name="actionName">ShowAlertMessage</param>
+			    <param name="message">${serviceResult.message}</param>
+			</result>
+		</action>
+		<action name="ShowView-NCRReportCheck" class="NCRReportCheckViewAction">
+			<result name="success">/Report/RportPrepCheck.jsp</result>
+		</action>
+		
+		<action name="ShowView-FeedbackReportView" class="FeedbackReportViewAction">
+			<result name="success">/NCR/FeedbackReport.jsp</result>
+		</action>
+		
+		<action name="FeedbackReport" class="feedbackReportAction">
+			<result name="success" type="redirectAction">
+			    <param name="actionName">ShowAlertMessage</param>
+			    <param name="message">${serviceResult.message}</param>
+			</result>
+			<result name="error" type="redirectAction">
+			    <param name="actionName">ShowAlertMessage</param>
+			    <param name="message">${serviceResult.message}</param>
+			</result>
+		</action>
+	
+	 </package>
+	 <include file="report/configs/report.struts.xml"/>
+</struts>    

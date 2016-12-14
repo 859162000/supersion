@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<navigationRoot>
+    <navigationComponentList>
+    	  <navigationComponent id="DeskTop" name="桌面" url="Framework/NavigationPage.jsp"  ico="bg.png" treeIco="bg.png" treeExpandIco="bg.png" des="">
+    	    <navigationComponent id="ZDZ" name="总对总报送" url="Framework/NavigationPage.jsp"  ico="128_Other.png" treeIco="64_Other.png" treeExpandIco="32_Other.png" des="">
+ 	        	<navigationComponent id="ZDZTaskModelInst" name="数据填报" url="framework/ZDZShowTree-report.dto.TaskModelInst" ico="64_Reportmodel_tableSet.png" treeIco="32_Reportmodel_tableSet.png" treeExpandIco="16_Reportmodel_tableSet.png" des=""></navigationComponent>
+				<navigationComponent id="ZDZTaskModelInstSH" name="数据审核" url="framework/ZDZReviewShowTree-report.dto.TaskModelInst" ico="64_TaskRptInst.png" treeIco="32_TaskRptInst.png" treeExpandIco="16_TaskRptInst.png" des=""></navigationComponent>
+				<navigationComponent id="ZDZTaskModelInstCK" name="数据查看" url="framework/ZDZCKShowTree-report.dto.TaskModelInst" ico="64_TaskRptInst.png" treeIco="32_TaskRptInst.png" treeExpandIco="16_TaskRptInst.png" des=""></navigationComponent>
+				<navigationComponent id="CustInfo" name="客户信息补录" url="framework/ShowList-zdzsystem.dto.CustInfo" ico="64_TaskRptInst.png" treeIco="32_TaskRptInst.png" treeExpandIco="16_TaskRptInst.png" des=""></navigationComponent>
+			</navigationComponent>
+    	</navigationComponent>
+    </navigationComponentList>
+</navigationRoot>

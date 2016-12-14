@@ -1,0 +1,235 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<navigationRoot>
+   <!-- 
+   <navigation>
+     <level>2</level>
+     <navigationName>PrimaryKeyString</navigationName>
+     <navigationUrl>framework/ShowList-coresystem.dto.PrimaryKeyString</navigationUrl>
+   </navigation>
+   <navigation>
+     <level>2</level>
+     <navigationName>PrimaryKeyAutoString</navigationName>
+     <navigationUrl>framework/ShowList-coresystem.dto.PrimaryKeyAutoString</navigationUrl>
+   </navigation>
+   <navigation>
+     <level>2</level>
+     <navigationName>PrimaryKeyAutoInt</navigationName>
+     <navigationUrl>framework/ShowList-coresystem.dto.PrimaryKeyAutoInt</navigationUrl>
+   </navigation>
+   <navigation>
+     <level>2</level>
+     <navigationName>PrimaryKeyAutoLong</navigationName>
+     <navigationUrl>framework/ShowList-coresystem.dto.PrimaryKeyAutoLong</navigationUrl>
+   </navigation>
+   <navigation>
+     <level>2</level>
+     <navigationName>FieldType</navigationName>
+     <navigationUrl>framework/ShowList-coresystem.dto.FieldType</navigationUrl>
+   </navigation>
+    -->
+   <!--<navigation>
+     <level>2</level>
+     <navigationName>机构管理</navigationName>
+     <navigationUrl>framework/ShowList-coresystem.dto.InstInfo</navigationUrl>
+   </navigation>-->
+   <navigation>
+     <level>2</level>
+     <navigationName>机构管理</navigationName>
+     <navigationUrl>framework/ShowTree-coresystem.dto.InstInfo</navigationUrl>
+   </navigation>
+   <navigation>
+     <level>2</level>
+     <navigationName>文件管理</navigationName>
+     <navigationUrl>framework/ShowList-coresystem.dto.FileInfo</navigationUrl>
+   </navigation>
+   <navigation>
+     <level>2</level>
+     <navigationName>机构审批</navigationName>
+     <navigationUrl>framework/ShowApply-coresystem.dto.InstInfo</navigationUrl>
+   </navigation>
+
+   <navigation>
+     <level>2</level>
+     <navigationName>用户管理</navigationName>
+     <navigationUrl>framework/ShowTree-coresystem.dto.UserInfo</navigationUrl>
+   </navigation>
+   <navigation>
+     <level>2</level>
+     <navigationName>用户审批</navigationName>
+     <navigationUrl>framework/ShowApply-coresystem.dto.UserInfo</navigationUrl>
+   </navigation>
+   <navigation>
+     <level>2</level>
+     <navigationName>角色管理</navigationName>
+     <navigationUrl>framework/ShowList-coresystem.dto.RoleInfo</navigationUrl>
+   </navigation>
+   <navigation>
+     <level>2</level>
+     <navigationName>角色功能权限</navigationName>
+     <navigationUrl>framework/ShowUpdateList-coresystem.dto.RoleFunction</navigationUrl>
+   </navigation>
+   <navigation>
+     <level>2</level>
+     <navigationName>角色机构数据权限</navigationName>
+     <navigationUrl>framework/ShowUpdateList-coresystem.dto.RoleClassInst</navigationUrl>
+   </navigation>
+  
+   <navigation>
+     <level>2</level>
+     <navigationName>主题管理</navigationName>
+     <navigationUrl>framework/ShowTree-extend.dto.Suit.action?type=extend.dto.Suit</navigationUrl>
+   </navigation>
+
+   <navigation>
+     <level>2</level>
+     <navigationName>参数</navigationName>
+     <navigationUrl>framework/ShowList-extend.dto.AutoETL_Param</navigationUrl>
+   </navigation>
+
+    <navigation>
+     <level>2</level>
+     <navigationName>常量管理</navigationName>
+     <navigationUrl>framework/ShowList-extend.dto.SystemCodeSet</navigationUrl>
+   </navigation>
+
+
+    <navigation>
+     <level>8</level>
+     <navigationName>角色管理</navigationName>
+     <navigationUrl>framework/ShowList-coresystem.dto.RoleInfo</navigationUrl>
+   </navigation>
+   
+   <navigation>
+     <level>8</level>
+     <navigationName>角色功能权限</navigationName>
+     <navigationUrl>framework/ShowUpdateList-coresystem.dto.RoleFunction</navigationUrl>
+   </navigation>
+   <navigation>
+     <level>8</level>
+     <navigationName>角色功能查询</navigationName>
+     <navigationUrl>framework/ShowList-coresystem.dto.RoleFunction</navigationUrl>
+   </navigation>
+   
+   <navigation>
+     <level>8</level>
+     <navigationName>角色机构数据权限</navigationName>
+     <navigationUrl>framework/ShowUpdateList-coresystem.dto.RoleClassInst</navigationUrl>
+   </navigation>
+   
+   <navigation>
+     <level>8</level>
+     <navigationName>机构管理</navigationName>
+     <navigationUrl>framework/ShowTree-coresystem.dto.InstInfo</navigationUrl>
+   </navigation>
+
+  <navigation>
+     <level>8</level>
+     <navigationName>用户管理</navigationName>
+     <navigationUrl>framework/ShowTree-coresystem.dto.UserInfo</navigationUrl>
+   </navigation>
+   
+   <navigation>
+     <level>8</level>
+     <navigationName>常量管理</navigationName>
+     <navigationUrl>framework/ShowList-extend.dto.SystemCodeSet</navigationUrl>
+   </navigation>
+   
+   <navigation>
+     <level>8</level>
+     <navigationName>主题管理</navigationName>
+     <navigationUrl>framework/ShowTree-extend.dto.Suit</navigationUrl>
+   </navigation>
+
+    <navigation>
+     <level>2</level>
+     <navigationName>系统执行日志</navigationName>
+     <navigationUrl>framework/ShowList-coresystem.dto.ActionExcute</navigationUrl>
+   </navigation>
+   
+   <navigation>
+     <level>2</level>
+     <navigationName>数据修改日志</navigationName>
+     <navigationUrl>framework/ShowList-coresystem.dto.ActionUpdateExcute</navigationUrl>
+   </navigation>
+   
+    <navigation>
+     <level>2</level>
+     <navigationName>操作日志</navigationName>
+     <navigationUrl>framework/ShowList-coresystem.dto.UserOperationLog</navigationUrl>
+   </navigation>
+
+	<navigationComponentList>
+	    <navigationComponent id="DeskTop" name="桌面" url="Framework/NavigationPage.jsp"  ico="bg.png" treeIco="bg.png" treeExpandIco="bg.png" des="">
+	    	<navigationComponent id="PlatformManagementCenter" name="平台管理中心" url="Framework/NavigationPage.jsp"  ico="128_SystemFunctionManager.png" treeIco="128_SystemFunctionManager.png" treeExpandIco="128_SystemFunctionManager.png" des="">
+				<navigationComponent id="Suit" name="主题管理" url = "framework/ShowTree-extend.dto.Suit" ico="Suit.png" treeIco="Suit.png" treeExpandIco="Suit.png" des=""></navigationComponent>
+				<navigationComponent id="InstManagement" name="机构管理" url="Framework/NavigationPage.jsp" ico="64_InstInfo.png" treeIco="32_InstInfo.png" treeExpandIco="16_InstInfo.png" des="">
+					<navigationComponent id="InstInfo" name="机构信息管理" url="framework/ShowTree-coresystem.dto.InstInfo" ico="64_InstInfo.png" treeIco="32_InstInfo.png" treeExpandIco="16_InstInfo.png" des=""></navigationComponent>
+					<navigationComponent id="InstInfoStateRecovery" name="机构信息状态恢复" url="framework/StateRecoveryShowTree-coresystem.dto.InstInfo" ico="64_InstInfo.png" treeIco="32_InstInfo.png" treeExpandIco="16_InstInfo.png" des=""></navigationComponent>
+					<navigationComponent id="InnerInstInfo" name="采集机构信息管理" url="framework/ShowList-coresystem.dto.InnerInstInfo" ico="64_InstInfo.png" treeIco="32_InstInfo.png" treeExpandIco="16_InstInfo.png" des=""></navigationComponent>
+					<navigationComponent id="InstInfoSet" name="机构集合管理" url="framework/ShowList-report.dto.InstInfoSet" ico="64_InstInfoSet.png" treeIco="32_InstInfoSet.png" treeExpandIco="16_InstInfoSet.png" des=""></navigationComponent>
+					<navigationComponent id="ReportInstInfo" name="报送机构管理" url="framework/ShowList-report.dto.ReportInstInfo" ico="64_InstInfo.png" treeIco="64_InstInfo.png" treeExpandIco="64_InstInfo.png" des=""></navigationComponent>
+					<navigationComponent id="InstCodeMap" name="报送机构编码对照" url="framework/ShowList-report.dto.InstCodeMap" ico="64_InstInfo.png" treeIco="32_InstInfo.png" treeExpandIco="16_InstInfo.png" des=""></navigationComponent>
+				</navigationComponent>
+				<navigationComponent id="RoleInfo" name="角色信息管理" url="framework/ShowList-coresystem.dto.RoleInfo" ico="64_RoleInfo.png" treeIco="32_RoleInfo.png" treeExpandIco="16_RoleInfo.png" des=""></navigationComponent>
+				<navigationComponent id="RightsManagement" name="权限管理" url="Framework/NavigationPage.jsp" ico="64_InstInfo.png" treeIco="32_InstInfo.png" treeExpandIco="16_InstInfo.png" des="">
+					<navigationComponent id="RoleClassInst" name="角色机构权限配置" url="framework/ShowUpdateList-coresystem.dto.RoleClassInst" ico="64_Other.png" treeIco="32_Other.png" treeExpandIco="16_Other.png" des=""></navigationComponent>
+					<navigationComponent id="RoleFunction" name="角色功能权限配置" url="framework/ShowUpdateList-coresystem.dto.RoleFunction" ico="64_RoleFunction.png" treeIco="32_RoleFunction.png" treeExpandIco="16_RoleFunction.png" des=""></navigationComponent>
+			        <navigationComponent id="RoleClassTable" name="角色明细报表权限配置" url="framework/ShowUpdateList-coresystem.dto.RoleClassTable" ico="64_Other.png" treeIco="32_Other.png" treeExpandIco="16_Other.png" des=""></navigationComponent>
+			        <navigationComponent id="RoleClassIndexTable" name="角色指标报表权限配置" url="framework/ShowUpdateList-report.dto.RoleClassIndexTable" ico="64_Other.png" treeIco="32_Other.png" treeExpandIco="16_Other.png" des=""></navigationComponent>
+			        <navigationComponent id="showRoleFunction" name="角色功能查询" url="framework/ShowList-coresystem.dto.RoleFunction" ico="64_FundDataInput.png" treeIco="32_FundDataInput.png" treeExpandIco="16_FundDataInput.png" des=""></navigationComponent>
+					<navigationComponent id="RoleClassUser" name="角色用户权限配置" url="framework/ShowUpdateList-coresystem.dto.RoleClassUser" ico="64_Other.png" treeIco="32_Other.png" treeExpandIco="16_Other.png" des=""></navigationComponent>
+				</navigationComponent>
+				<navigationComponent id="UserInfo" name="用户信息管理" url="framework/ShowTree-coresystem.dto.UserInfo" ico="64_UserInfo.png" treeIco="32_UserInfo.png" treeExpandIco="16_UserInfo.png" des=""></navigationComponent>
+				<navigationComponent id="NoticeManagement" name="公告管理" url="framework/ShowList-report.dto.Notice" ico="64_InstInfoSet.png" treeIco="32_InstInfoSet.png" treeExpandIco="16_InstInfoSet.png" des=""></navigationComponent>
+				<navigationComponent id="PF_LegalInfo" name="法人信息管理" url="framework/ShowList-coresystem.dto.PF_LegalInfo" ico="64_InstInfoSet.png" treeIco="32_InstInfoSet.png" treeExpandIco="16_InstInfoSet.png" des=""></navigationComponent>
+	    	</navigationComponent>
+	    	
+	    	<navigationComponent id="ParameterConfigurationCenter" name="参数配置中心" url="Framework/NavigationPage.jsp"  ico="64_RoleFunctionManager.png" treeIco="64_RoleFunctionManager.png" treeExpandIco="32_RoleFunctionManager.png" des="">
+	    		<navigationComponent id="SystemParam" name="系统参数管理" url="framework/ShowList-extend.dto.SystemParam" ico="64_SystemParam.png" treeIco="32_SystemParam.png" treeExpandIco="16_SystemParam.png" des=""></navigationComponent>
+	    		<navigationComponent id="SystemCodeSet" name="系统常量管理" url="framework/ShowList-extend.dto.SystemCodeSet" ico="64_SystemCodeSet.png" treeIco="32_SystemCodeSet.png" treeExpandIco="16_SystemCodeSet.png" des=""></navigationComponent>
+				
+		  		<navigationComponent id="TaskFlow" name="报表任务定义器" url="framework/ShowList-report.dto.TaskFlow" ico="64_TaskControl.png" treeIco="32_TaskControl.png" treeExpandIco="16_TaskControl.png" des=""></navigationComponent>
+				<navigationComponent id="AutoTaskFlow" name="自动报表任务定义器" url="framework/ShowList-report.dto.AutoTaskFlow" ico="64_TaskControl.png" treeIco="32_TaskControl.png" treeExpandIco="16_TaskControl.png" des=""></navigationComponent>
+				
+				<navigationComponent id="ReportModel_Table" name="模型管理 " url="framework/ShowTree-extend.dto.ReportModel_Table" ico="64_ReportModel_Table.png" treeIco="32_ReportModel_Table.png" treeExpandIco="16_ReportModel_Table.png" des=""></navigationComponent>
+				
+				<navigationComponent id="NeedDoThing" name="待办事项定义器" url="framework/ShowList-coresystem.dto.NeedDoThing" ico="64_Helpe.png" treeIco="32_Helpe.png" treeExpandIco="16_Helpe.png" des=""></navigationComponent>
+	    	 	<navigationComponent id="InitXMLConfiguration" name="初始化XML参数" url="framework/InitXMLConfiguration-All" ico="64_NeedDoThing.png" treeIco="32_NeedDoThing.png" treeExpandIco="16_NeedDoThing.png" des=""></navigationComponent>
+			</navigationComponent>
+	    	
+	    	<navigationComponent id="DataMonitorCenter" name="数据监控中心" url="Framework/NavigationPage.jsp"  ico="128_DataManagerment.png" treeIco="64_DataManagerment.png" treeExpandIco="32_DataManagerment.png" des="">
+<!--	    		<navigationComponent id="TaskControl" name="任务监控" url="report/Show-TaskControl" ico="64_TaskControl.png" treeIco="32_TaskControl.png" treeExpandIco="16_TaskControl.png" des=""></navigationComponent>-->
+	    		
+		       	<navigationComponent id="SystemLogManger" name="日志信息监控" url="Framework/NavigationPage.jsp"  ico="128_SystemLogManger.png" treeIco="64_SystemLogManger.png" treeExpandIco="32_SystemLogManger.png" des="">
+		           <navigationComponent id="ActionExcute" name="系统操作日志" url="framework/ShowList-coresystem.dto.ActionExcute" ico="64_ActionExcute.png" treeIco="32_ActionExcute.png" treeExpandIco="16_ActionExcute.png" des=""></navigationComponent>
+		           <navigationComponent id="ActionUpdateExcute" name="数据操作日志" url="framework/ShowList-coresystem.dto.ActionUpdateExcute" ico="64_ActionUpdateExcute.png" treeIco="32_ActionUpdateExcute.png" treeExpandIco="16_ActionUpdateExcute.png" des=""></navigationComponent>
+		      	   <navigationComponent id="AutoETL_WorkflowLog" name="工作流日志" url="framework/ShowList-autoETLsystem.dto.AutoETL_WorkflowLog" ico="64_AutoETL_WorkflowLog.png" treeIco="32_AutoETL_WorkflowLog.png" treeExpandIco="16_AutoETL_WorkflowLog.png" des=""></navigationComponent>
+		      	   <navigationComponent id="UserOperationLog" name="操作日志" url="framework/ShowList-coresystem.dto.UserOperationLog" ico="64_ActionUpdateExcute.png" treeIco="32_ActionUpdateExcute.png" treeExpandIco="16_ActionUpdateExcute.png" des=""></navigationComponent>
+	    		</navigationComponent>
+	    		
+	     	</navigationComponent>  
+	     	
+	    	<navigationComponent id="PersonalWorkStation" name="个人工作台" url="Framework/NavigationPage.jsp"  ico="128_DownloadMany.png" treeIco="64_DownloadMany.png" treeExpandIco="32_DownloadMany.png" des="">
+	    		<navigationComponent id="ShowUpdatePassword" name="密码管理" url="coresystem/ShowUpdatePassword-coresystem.dto.ShowUpdatePassword" ico="64_DownloadMany.png" treeIco="32_DownloadMany.png" treeExpandIco="16_DownloadMany.png" des=""></navigationComponent>
+	    		<navigationComponent id="NoticeShowView" name="公告浏览" url="framework/ShowNoticeView-report.dto.Notice" ico="64_InstInfoSet.png" treeIco="32_InstInfoSet.png" treeExpandIco="16_InstInfoSet.png" des=""></navigationComponent>
+	    		<navigationComponent id="ShowUserNeedDoThing" name="待办事项" url="coresystem/ShowUserNeedDoThing-coresystem.dto.ShowUserNeedDoThing" ico="64_Helpe.png" treeIco="32_Helpe.png" treeExpandIco="16_Helpe.png" des=""></navigationComponent>
+	    	</navigationComponent>
+	    	
+	    	<navigationComponent id="AUTOETL" name="AUTOETL" url="Framework/NavigationPage.jsp" ico="64_AUTOETL.png" treeIco="32_AUTOETL.png" treeExpandIco="16_AUTOETL.png" des="">
+					<navigationComponent id="AutoETL_DataSource" name="数据连接配置" url="framework/ShowList-extend.dto.AutoETL_DataSource" ico="64_AutoETL_Param.png" treeIco="32_AutoETL_Param.png" treeExpandIco="16_AutoETL_Param.png" des=""></navigationComponent>
+					<navigationComponent id="AutoETL_FTP" name="FTP信息配置" url="framework/ShowList-autoETLsystem.dto.AutoETL_FTP" ico="64_AutoETL_Param.png" treeIco="32_AutoETL_Param.png" treeExpandIco="16_AutoETL_Param.png" des=""></navigationComponent>
+					<navigationComponent id="AutoETL_MAIL" name="MAIL信息配置" url="framework/ShowList-autoETLsystem.dto.AutoETL_MAIL" ico="64_AutoETL_Param.png" treeIco="32_AutoETL_Param.png" treeExpandIco="16_AutoETL_Param.png" des=""></navigationComponent>
+					<navigationComponent id="AutoETL_MSG" name="MSG信息配置" url="framework/ShowList-autoETLsystem.dto.AutoETL_MSG" ico="64_AutoETL_Param.png" treeIco="32_AutoETL_Param.png" treeExpandIco="16_AutoETL_Param.png" des=""></navigationComponent>
+					<navigationComponent id="AutoETL_Param" name="AUTOETL参数配置" url="framework/ShowList-extend.dto.AutoETL_Param" ico="64_AutoETL_Param.png" treeIco="32_AutoETL_Param.png" treeExpandIco="16_AutoETL_Param.png" des=""></navigationComponent>
+					<navigationComponent id="AutoETL_Workflow" name="工作流" url="framework/ShowList-autoETLsystem.dto.AutoETL_Workflow" ico="64_AutoETL_Param.png" treeIco="32_AutoETL_Param.png" treeExpandIco="16_AutoETL_Param.png" des=""></navigationComponent>
+					<navigationComponent id="AutoETL_Workflow1" name="执行工作流" url="framework/ShowWorkFlow-autoETLsystem.dto.AutoETL_Workflow" ico="64_AutoETL_Param.png" treeIco="32_AutoETL_Param.png" treeExpandIco="16_AutoETL_Param.png" des=""></navigationComponent>
+					<navigationComponent id="AutoETL_WorkflowLog1" name="工作流日志" url="framework/ShowList-autoETLsystem.dto.AutoETL_WorkflowLog" ico="64_AutoETL_WorkflowLog.png" treeIco="32_AutoETL_WorkflowLog.png" treeExpandIco="16_AutoETL_WorkflowLog.png" des=""></navigationComponent>
+			</navigationComponent>
+				
+			
+			 	
+			 	
+			 
+			</navigationComponent>
+	</navigationComponentList>
+</navigationRoot>

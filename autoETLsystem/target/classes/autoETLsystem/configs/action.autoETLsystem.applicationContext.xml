@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans
+	xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns:p="http://www.springframework.org/schema/p"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-3.0.xsd">
+    
+    <bean id="excuteWorkflowAction" class="framework.actions.imps.BaseSTNameAndIdAction" scope="prototype">
+        <property name="defaultServiceBeanId" value="excuteWorkflowService"></property>
+    </bean>
+    
+     <bean id="programmingAction" class="framework.actions.imps.BaseSAction" scope="prototype">
+        <property name="defaultServiceBeanId" value="autoETLsystem.service.imps.ProgrammingService"></property>
+    </bean>
+    
+    <bean id="testConnectionAction" class="framework.actions.imps.BaseSTNameAndIdAction" scope="prototype">
+        <property name="defaultServiceBeanId" value="autoETLsystem.service.imps.TestConnectionService"></property>
+    </bean>
+    
+    <bean id="createETLTableAction" class="framework.actions.imps.BaseSTNameAndIdAction" scope="prototype">
+        <property name="defaultServiceBeanId" value="DDLETLService"></property>
+    </bean>
+    
+    <bean id="showActivityNodeForSqlAction" class="framework.actions.imps.BaseSTAction" scope="prototype">
+        <property name="defaultServiceBeanId" value="autoETLsystem.service.imps.ShowActivityNodeForSqlService"></property>
+    </bean>
+    
+     <bean id="showActivityNodeForTableSqlAction" class="framework.actions.imps.BaseSTAction" scope="prototype">
+        <property name="defaultServiceBeanId" value="autoETLsystem.service.imps.ShowActivityNodeForTableSqlService"></property>
+    </bean>
+    
+    <bean id="showActivityNodeForCVSqlAction" class="framework.actions.imps.BaseSTAction" scope="prototype">
+        <property name="defaultServiceBeanId" value="autoETLsystem.service.imps.ShowActivityNodeForCVSqlService"></property>
+    </bean>
+    
+    
+     <bean id="createSameSameMappingAction" class="framework.actions.imps.BaseSTAction" scope="prototype">
+        <property name="defaultServiceBeanId" value="autoETLsystem.service.imps.CreateSameSameMappingService"></property>
+    </bean>
+      <bean id="createSameSameForViewMappingAction" class="framework.actions.imps.BaseSTAction" scope="prototype">
+        <property name="defaultServiceBeanId" value="autoETLsystem.service.imps.CreateSameSameForViewMappingService"></property>
+    </bean>
+    
+     <bean id="createAllFieldExportAction" class="framework.actions.imps.BaseSTAction" scope="prototype">
+        <property name="defaultServiceBeanId" value="autoETLsystem.service.imps.CreateAllFieldExportService"></property>
+    </bean>
+    
+    <bean id="createAutoETLTableAction" class="framework.actions.imps.BaseSTNameAndIdAction" scope="prototype">
+        <property name="defaultServiceBeanId" value="DDLAutoETLService"></property>
+    </bean>
+                                           
+      <bean id="showWorkFlowAction" class="framework.actions.imps.BaseSTModelDrivenConditionAction" scope="prototype">
+        <property name="defaultServiceBeanId" value="showWorkFlowService"></property>
+    </bean>
+
+  	<bean id="autoETL_ActivityNodeForTotalTableStateShowUpdateListLevelActivityNodeForTotalTableStateAction" class="framework.actions.imps.BaseSTModelDrivenAction" scope="prototype">
+        <property name="defaultServiceBeanId" value="autoETL_ActivityNodeForTotalTableStateShowUpdateListLevelActivityNodeForTotalTableStateService"></property>
+    </bean>
+    
+</beans>

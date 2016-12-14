@@ -1,0 +1,96 @@
+.dk_container {
+	MARGIN-BOTTOM: 18px; FONT-SIZE: 12px; FONT-FAMILY: 'Helvetica',Arial,sans-serif; FONT-WEIGHT: bold; TEXT-ALIGN: center; LINE-HEIGHT: 24px; border-radius: 5px 5px 5px 5px
+}
+.dk_container:focus {
+	OUTLINE-WIDTH: 0px; OUTLINE-STYLE: none
+}
+.dk_container A {
+	CURSOR: pointer; TEXT-DECORATION: none;
+}
+.dk_toggle {
+	BORDER-TOP: #cccccc 1px solid; BORDER-RIGHT: #cccccc 1px solid; BACKGROUND-IMAGE: url(dk_arrows.png); BACKGROUND-REPEAT: no-repeat; BORDER-BOTTOM: #cccccc 1px solid; BACKGROUND-POSITION: 90% center; COLOR: #333333; PADDING-BOTTOM: 7px; PADDING-TOP: 7px; PADDING-LEFT: 10px; BORDER-LEFT: #cccccc 1px solid; PADDING-RIGHT: 19px; border-radius: 5px 5px 5px 5px; text-shadow: 1px 1px 0 #FFFFFF; transition: border-color 0.5s ease 0s
+}
+.dk_toggle:hover {
+	BORDER-TOP-COLOR: #8c8c8c; BORDER-BOTTOM-COLOR: #8c8c8c; BORDER-RIGHT-COLOR: #8c8c8c; BORDER-LEFT-COLOR: #8c8c8c
+}
+.dk_focus .dk_toggle {
+	BORDER-TOP-COLOR: #40b5e2; BORDER-BOTTOM-COLOR: #40b5e2; BORDER-RIGHT-COLOR: #40b5e2; BORDER-LEFT-COLOR: #40b5e2
+}
+.dk_focus .dk_toggle {
+	box-shadow: 0 0 5px #40B5E2
+}
+.dk_open {
+	Z-INDEX: 10; box-shadow: 0 0 5px #40B5E2
+}
+.dk_open .dk_toggle {
+	BORDER-TOP-COLOR: #8c8c8c; COLOR: #cccccc; BORDER-BOTTOM-COLOR: #8c8c8c; BORDER-RIGHT-COLOR: #8c8c8c; BACKGROUND-COLOR: #ececec; BORDER-LEFT-COLOR: #8c8c8c; border-radius: 5px 5px 0 0; box-shadow: 0 -2px 5px #CCCCCC inset
+}
+.dk_options {
+	border-radius: 0 0 5px 5px; box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2)
+}
+.dk_options UL {
+	LIST-STYLE: none none outside
+}
+.dk_options A {
+	BORDER-BOTTOM: #999999 1px solid; FONT-WEIGHT: bold; PADDING-BOTTOM: 8px; PADDING-TOP: 8px; PADDING-LEFT: 10px; PADDING-RIGHT: 10px; BACKGROUND-COLOR: #ffffff
+}
+.dk_options LI:unknown A {
+	BORDER-BOTTOM: medium none
+}
+.dk_options A:hover {
+	COLOR: #ffffff; BORDER-BOTTOM-COLOR: #004c72; TEXT-DECORATION: none; BACKGROUND-COLOR: #0084c7; text-shadow: 0 1px 0 rgba(0, 0, 0, 0.5)
+}
+.dk_option_current A {
+	COLOR: #ffffff; BORDER-BOTTOM-COLOR: #004c72; TEXT-DECORATION: none; BACKGROUND-COLOR: #0084c7; text-shadow: 0 1px 0 rgba(0, 0, 0, 0.5)
+}
+.dk_options_inner {
+	BORDER-TOP: #8c8c8e 1px solid; BORDER-RIGHT: #8c8c8e 1px solid; BORDER-BOTTOM: #999999 2px solid; COLOR: #333333; PADDING-BOTTOM: 0px; PADDING-TOP: 0px; PADDING-LEFT: 0px; MARGIN: 0px; BORDER-LEFT: #8c8c8e 1px solid; PADDING-RIGHT: 0px; MAX-HEIGHT: 250px; border-radius: 0 0 5px 5px; text-shadow: 0 1px 0 #FFFFFF; -moz-border-bottom-colors: none; -moz-border-left-colors: none; -moz-border-right-colors: none; -moz-border-top-colors: none; border-image: none
+}
+.dk_options_inner {
+	MAX-HEIGHT: 250px
+}
+.dk_touch .dk_options {
+	MAX-HEIGHT: 250px
+}
+.dk_container {
+	POSITION: relative; FLOAT: left; DISPLAY: none
+}
+.dk_container A {
+	OUTLINE-WIDTH: 0px; OUTLINE-STYLE: none
+}
+.dk_toggle {
+	POSITION: relative; DISPLAY: inline-block
+}
+.dk_open {
+	POSITION: relative
+}
+.dk_open .dk_options {
+	DISPLAY: block
+}
+.dk_open .dk_label {
+	COLOR: 
+}
+.dk_options {
+	RIGHT: 0px; POSITION: absolute; MARGIN-TOP: -1px; DISPLAY: none; WIDTH: 100%
+}
+.dk_options A {
+	DISPLAY: block
+}
+.dk_options A:link {
+	DISPLAY: block
+}
+.dk_options A:visited {
+	DISPLAY: block
+}
+.dk_options_inner {
+	OVERFLOW: auto; POSITION: relative
+}
+.dk_touch .dk_options {
+	OVERFLOW: hidden
+}
+.dk_touch .dk_options_inner {
+	OVERFLOW: visible; MAX-HEIGHT: none
+}
+.dk_fouc SELECT {
+	POSITION: relative; TOP: -99999em; VISIBILITY: hidden
+}

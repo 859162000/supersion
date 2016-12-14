@@ -1,0 +1,240 @@
+.Table_Frame_Div_Bak
+{
+	width:100%; 
+	height:300px; 
+	overflow:auto;
+	float:left;
+	 
+}
+
+.Table_Frame_Div
+{	
+	width: 100%; height:auto;border-bottom:1px solid #fff;
+	clear: both; top:30px; background-color:White; z-index:1000;float:left;
+	overflow:auto;
+}
+.Grid_Table
+{
+	width:100%;
+	float:left;
+	table-layout:fixed;
+	
+}
+.Grid_CheckBox
+{
+	margin-top:5px;
+	margin-left:15px;
+	*margin-left:13px;
+	_margin-left:13px;
+}
+.JS_Grid_Head_Row
+{
+	 /*margin: 5px; background-color: #E7E7E7; background-color: #CCFFCC;*/ /*border:1px solid #00CCFF;*/ /*border:1px solid #dadada;*/
+	border-bottom: 1px double #dadada;
+	color: White;
+	background-image: url('../images/windows/lines_2.png');
+	background-color: #548CB8;
+	_background-image: none;
+}
+
+.JS_Grid_Head_Row_Fixed_Null_Rows
+{
+	margin: 5px;
+}
+.JS_Grid_Head_Row_Cell
+{
+	 font-family:'Microsoft Yahei';
+	 font-size:12px;
+	 cursor:pointer;
+	 line-height:40px;
+	 height:40px;
+	 margin-left:5px;
+	 /*font-weight:bold;*/
+	 text-align:center;
+	 text-overflow:ellipsis; 
+	 white-space:nowrap; 
+	 overflow:visible;
+	 width:auto;
+	 padding-left:10px;
+	 padding-right:10px;
+	 word-break: keep-all;
+}
+
+.JS_Grid_Head_Row_CellLink
+{
+	 font-family:'Microsoft Yahei';
+	 font-size:12px;
+	 cursor:pointer;
+	 line-height:40px;
+	 height:40px;
+	 margin-left:5px;
+	 /*font-weight:bold;*/
+	 text-align:center;
+	text-overflow:ellipsis; 
+	white-space:nowrap; 
+	overflow:visible;
+	padding-left:10px;
+	padding-right:10px;
+
+}
+.JS_Grid_Data_Row_CellLink
+{
+	 font-family:'Microsoft Yahei';
+	 font-size:11px;
+	 cursor:pointer;
+	 line-height:40px;
+	 height:40px;
+	 margin-left:5px;
+	 /*font-weight:bold;*/
+	 text-align:center;
+	 text-overflow:ellipsis; 
+	 white-space:nowrap; 
+	 overflow:hidden;
+	 padding-left:10px;
+	 padding-right:10px;
+}
+
+.JS_Grid_Data_Row_CellLink a
+{
+	text-overflow:ellipsis;
+	white-space:nowrap;
+	overflow:hidden;
+}
+
+.JS_Grid_Data
+{
+	float: left;
+}
+
+.JS_Grid_Data_Row
+{
+	/*width:940px;*/
+	/*margin-right: 5px;*/
+	font-size: 12px;
+	border-bottom: solid 1px #C0C0C0;
+	border-left: solid 1px #C0C0C0;
+	border-right: solid 1px #C0C0C0;
+	margin-left:2px;
+	text-align:left;
+	
+}
+.JS_Grid_Data_Row_Cell
+{
+	 font-family:'Microsoft Yahei';
+	 font-size:11px;
+	 cursor:pointer;
+	 line-height:40px;
+	 /*margin-left:5px;*/
+	 height:40px;
+	 padding-left:10px;
+	 padding-right:10px;
+	 text-align:center;
+	 overflow: hidden; 
+	 white-space: nowrap;
+	 text-overflow: ellipsis;
+}
+.JS_Grid_Data_Row:hover
+{
+	/*background-color: #0066FF;
+	box-shadow: 0 5px 30px Black;
+	color: White;*/
+	background-color: #F7F7F7;
+	/*box-shadow: 0 0px 5px Black;
+	border-radius: 2px;*/
+}
+.JS_Grid_Data_Row_Select
+{
+	background-color:#E8E8E8;
+	/*box-shadow:0 0px 5px 1px Black;*/
+	color:Black;
+}
+.JS_Grid_Head_Row_Cell_R
+{
+	 float:left;
+	 font-family:'Microsoft Yahei';
+	 font-size:12px;
+	 cursor:pointer;
+	 line-height:40px;
+	 margin-left:5px;
+	 font-weight:bold;
+	 text-align:right;
+}
+.JS_Grid_Data_Row_Cell_R
+{
+	 float:left;
+	 font-family:'Microsoft Yahei';
+	 font-size:12px;
+	 cursor:pointer;
+	 line-height:40px;
+	 margin-left:5px;
+	 text-align:right;
+	 text-overflow:ellipsis; 
+	 white-space:nowrap; 
+	 overflow:hidden;
+}
+.JS_Grid_Head_Row_Cell_L
+{
+	 float:left;
+	 font-family:'Microsoft Yahei';
+	 font-size:12px;
+	 cursor:pointer;
+	 line-height:30px;
+	 margin-left:5px;
+	 font-weight:bold;
+	 text-align:left;
+}
+.JS_Grid_Data_Row_Cell_L
+{
+	 float:left;
+	 font-family:'Microsoft Yahei';
+	 font-size:12px;
+	 cursor:pointer;
+	 line-height:30px;
+	 margin-left:5px;
+	 text-align:left;
+	 text-overflow:ellipsis; 
+	 white-space:nowrap; 
+	 overflow:hidden;
+}
+.ReportColDown_Div
+{
+	position:relative;
+	cursor:pointer;
+	font-family:'Microsoft Yahei';
+	font-size:12px;
+	height:auto;
+	border:1px solid #dadada;
+	border-radius:5px;
+	box-shadow:0 0px 20px #000066;
+	background-color:Red;
+	background-color:White;
+	padding-left:10px;
+	padding-right:10px;
+	padding-top:5px;
+	padding-bottom:5px;
+	line-height:30px;
+	color:AppWorkspace;
+	max-height:300px;
+    overflow:auto;
+    background-color:White;
+    clear:left;
+    overflow-x:hidden;
+    z-index:10000;
+}
+.ReportColDown_Text
+{
+	width:120px;
+	float:left;
+	margin-top:5px; 
+}
+.ReportColDown_Radio
+{
+	margin-right:5px;
+	margin-top:5px; 
+	float:left;
+}
+.ReportColDown_Txt
+{
+	width:40px;
+	float:left;
+}

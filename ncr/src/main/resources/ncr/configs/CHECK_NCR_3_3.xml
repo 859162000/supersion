@@ -1,0 +1,157 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<reportCheckRoot>
+	<checkInstance name="Check_NCR_3_3">		
+		<paramValueList>
+			<paramValue name="DTDATE" value="2013-12-31"></paramValue>
+			<paramValue name="strInstCode" value=""></paramValue>
+	      <!--
+		    <paramValue name="strTaskRptInstID" value="000000"></paramValue>
+			  <paramValue name="strFreq" value="000000"></paramValue> 
+			  -->
+		</paramValueList>
+
+		<freqCode value="4"></freqCode>
+		
+		<checkTable procedureName="CHECK_NCR_3_3" procedureParam="DTDATE,strInstCode,rt" procedureDiscription="重要股东及主要关联企业"
+			originTable="NCR_3_3" errorStateField="RPTCHECKTYPE" errorStateValue="3"  successStateValue="2" 
+      	defaultLogicDaoBeanId="oracleProcedureResultSetDao">
+			<paramFieldList>
+				<paramField paramName="DTDATE" field="DTDATE" type="2"></paramField>
+				<paramField paramName="strInstCode" field="INSTINFO" type="1"></paramField>
+			</paramFieldList>
+
+			<checkUniqueFieldList>
+				<checkUniqueField name="AUTOID" discription="主键" originField="AUTOID"></checkUniqueField>
+			</checkUniqueFieldList>
+
+			<checkFieldBasicList discription="表内基础性校验">
+			<!--JBL3-044	A	关联类型	非空  1位数字字符。-->
+				<checkFieldBasic name="A" discription="关联类型" emptyCheck="true" digitalCheck="true" startLength="1" endLength="1"></checkFieldBasic>
+				<!--JBL3-045	B	股东/关联企业名称		非空。	长度大于等于2个字符 -->
+				<checkFieldBasic name="B" discription="股东/关联企业名称" emptyCheck="true" startLength="2" ignoreVal="*********"></checkFieldBasic>
+				<!--JBL3-046	C	股东/关联企业类型		非空。	1位数字字符。-->
+				<checkFieldBasic name="C" discription="股东/关联企业类型" emptyCheck="true" digitalCheck="true" startLength="1" endLength="1"></checkFieldBasic>
+				<!--JBL3-047	D	股东/关联企业证件类型	非空。	1或2位数字字符。-->
+				<checkFieldBasic name="D" discription="股东/关联企业证件类型" emptyCheck="true" digitalCheck="true"></checkFieldBasic>
+				<!--JBL3-048	E	股东/关联企业证件代码		长度大于等于2个字符。-->
+				<checkFieldBasic name="E" discription="股东/关联企业证件代码" startLength="2"></checkFieldBasic>
+				<!--JBL3-049	F	登记注册代码			长度大于等于2个字符。-->
+				<checkFieldBasic name="F" discription="登记注册代码" startLength="2"></checkFieldBasic>
+				<!--JBL3-050	G	股东/关联企业客户代码			长度大于等于2个字符。-->
+				<checkFieldBasic name="G" discription="股东/关联企业客户代码" startLength="2"></checkFieldBasic>
+				<!--JBL3-051	H	国别代码		对个人股东，填报该股东国籍对应的国别代码；对法人股东/关联企业，填报该股东/关联企业注册所在国家或地区的代码。	根据《世界各国和地区名称代码》（GB/T 2659）填报。	非空。	3位大写字母-->。
+				<checkFieldBasic name="H" discription="国别代码" emptyCheck="true" startLength="3" endLength="3" upperCheck="true"></checkFieldBasic>
+				<!--JBL3-052	I	持股比例	decimal(,2)		百分比。保留两位小数。-->
+				<checkFieldBasic name="I" discription="持股比例" valueDecimalLength="2"></checkFieldBasic>
+				<!--JBL3-053	J	股东结构对应日期		合法的年月日组合。1-4位：年；5-6位：月，其中1-9月，表示为：01-09；7-8位：日，其中1-9日表示为01-09。银行不掌握相关情况的，可填报为八个9：“99999999”。	8位数字字符。-->
+				<checkFieldBasic name="J" discription="股东结构对应日期" startLength="8" endLength="8" ></checkFieldBasic>
+				<!--JBL3-054	K	更新信息日期	合法的年月日组合。1-4位：年；5-6位：月，其中1-9月，表示为：01-09；7-8位：日，其中1-9日表示为01-09。银行不掌握相关情况的，可填报为八个9：“99999999”。8位数字字符。-->
+				<checkFieldBasic name="K" discription="更新信息日期" startLength="8" endLength="8" ></checkFieldBasic>
+				<!--JBL3-055	L	实际控制人标识		非空。	1位数字字符。-->
+				<checkFieldBasic name="L" discription="实际控制人标识" emptyCheck="true" digitalCheck="true" startLength="1" endLength="1"></checkFieldBasic>
+			</checkFieldBasicList>
+      <!--基本类中的case...when校验 -->
+			<checkFieldCaseWhenList discription="CaseWhen校验">	
+				<!--JBL3-048	E	股东/关联企业证件代码	[股东/关联企业证件类型]为“1”或“2”的情况，分别符合组织机构代码、居民身份证校验号码规则。	若[股东/关联企业证件类型]为“1”-“11”，则非空；若[股东/关联企业证件类型]为“12”，则为空。-->		
+				<checkFieldCaseWhen name="E" discription="股东/关联企业证件代码" caseValue="notNull" whenValueScope="1,2,3,4,5,6,7,8,9,10,11">
+        	<checkFieldCaseWhenField name="D" discription="股东/关联企业证件类型"></checkFieldCaseWhenField>
+        </checkFieldCaseWhen>
+      	<checkFieldCaseWhen name="E" discription="股东/关联企业证件代码" caseValue="null" whenValue="12">
+        	<checkFieldCaseWhenField name="D" discription="股东/关联企业证件类型"></checkFieldCaseWhenField>
+        </checkFieldCaseWhen>
+        <!--JBL3-053	J	股东结构对应日期	合法的年月日组合。1-4位：年；5-6位：月，其中1-9月，表示为：01-09；7-8位：日，其中1-9日表示为01-09。银行不掌握相关情况的，可填报为八个9：“99999999”。	若[持股比例]大于0，则非空。-->
+        <checkFieldCaseWhen name="J" discription="股东结构对应日期" caseValue="notNull" whenCompareType=">" whenValue="0">
+        	<checkFieldCaseWhenField name="I" discription="持股比例"></checkFieldCaseWhenField>
+        </checkFieldCaseWhen>
+        <!--LJX-057|表3 PART III中机关不能为关联企业|若[关联类型]为2/3/4/5之一，则[股东/关联企业类型]不能为“2-机关” -->
+        <checkFieldCaseWhen name="C" discription="股东/关联企业类型" caseValue="2" whenType="5" whenValueScope="2,3,4,5">
+        	<checkFieldCaseWhenField name="A" discription="关联类型"  ></checkFieldCaseWhenField>
+        </checkFieldCaseWhen>
+        <!--LJX-074	表3 PART Ⅲ中，若[股东/关联企业类型]=“1/2/3/4/5”中的一个，则[股东/关联企业证件类型]为“1”或“12”；
+        			若[股东/关联企业类型]=“6”，则[股东/关联企业证件类型]为“2”至“12”中的一个 -->
+        			
+        <checkFieldCaseWhen name="D" discription="股东/关联企业证件类型" caseValueScope="1,12" whenValueScope="1,2,3,4,5">
+        	<checkFieldCaseWhenField name="C" discription="股东/关联企业类型"  ></checkFieldCaseWhenField>
+        </checkFieldCaseWhen>
+        <checkFieldCaseWhen name="D" discription="股东/关联企业证件类型" caseValueScope="2,3,4,5,6,7,8,9,10,11,12" whenValue="6">
+        	<checkFieldCaseWhenField name="C" discription="股东/关联企业类型"  ></checkFieldCaseWhenField>
+        </checkFieldCaseWhen>
+       
+        <!--TSL-003 若[组织机构代码]非空，或[实际控制人证件类型]、[股东/关联企业证件类型]为“1-组织机构代码”且非空，则[国别代码]必须为“CHN” -->
+        <checkFieldCaseWhen name="H" discription="国别代码" caseValue="CHN" whenValue="1">
+       		<checkFieldCaseWhenField name="D" discription="股东/关联企业证件类型"></checkFieldCaseWhenField>
+        </checkFieldCaseWhen> 
+			</checkFieldCaseWhenList>
+       <!--基本类中值域类型的校验-->
+			<checkFieldEffectiveList discription="有效性校验">
+				<!--JBL3-044	A	关联类型	1-持股5%以上及银行认为重要的股东。2-除本企业的股东外，直接或间接控制本企业的关联企业。3-本企业直接或间接控制的关联企业。4-直接或间接被同一控制方控制的关联企业。5-符合《企业会计制度》第147条规定的其他关联企业。	单选。填写1/2/3/4/5中的1个 。-->
+				<checkFieldEffective name="A" discription="关联类型">
+                    <value>1</value>
+                    <value>2</value>
+                    <value>3</value>
+                    <value>4</value>
+                    <value>5</value>
+        </checkFieldEffective>
+        <!--JBL3-046	C	股东/关联企业类型 1-企业，2-机关，3-事业单位，4-社会团体，5-其他组织机构，6-自然人。	单选。填写1/2/3/4/5/6中的1个。-->
+        <checkFieldEffective name="C" discription="股东/关联企业类型">    
+        	          <value>1</value>
+                    <value>2</value>     
+                    <value>3</value>
+                    <value>4</value>
+                    <value>5</value>
+                    <value>6</value>                    
+        </checkFieldEffective>
+        <!--JBL3-047	D	股东/关联企业证件类型 1-组织机构代码，2-居民身份证，3-军官证，4-文职干部证，5-警官证，6-士兵证，7-户口本，8-临时身份证，9-其他有效通行旅行证件，10-护照，11-学生证，12-无证件。	单选。填写1/2/3/4/5/6/7/8/9/10/11/12中的1个。-->
+        <checkFieldEffective name="D" discription="股东/关联企业证件类型">     
+        	          <value>1</value>
+                    <value>2</value>   
+                    <value>3</value>
+                    <value>4</value>
+                    <value>5</value>
+                    <value>6</value>
+                    <value>7</value>
+                    <value>8</value>
+                    <value>9</value>                    
+                    <value>10</value>
+                    <value>11</value>
+                    <value>12</value>
+        </checkFieldEffective>
+        <!--JBL3-055	L	实际控制人标识	char()	1-是，2-否。	单选。填写1/2中的1个。-->
+        <checkFieldEffective name="L" discription="实际控制人标识">                   
+                    <value>1</value>
+                    <value>2</value>                  
+        </checkFieldEffective>
+			</checkFieldEffectiveList>	
+     <!--基本类校验中的JBL3-052|大于等于0，小于等于100 -->
+			<checkFieldLineList discription="非聚合校验">
+				<checkFieldLine compareType=">=">
+        	<leftFieldList><checkFieldLineField name="I" discription="持股比例"></checkFieldLineField></leftFieldList>
+         	<rightFieldList><checkFieldLineField value="0"></checkFieldLineField></rightFieldList>
+        </checkFieldLine>        
+       <checkFieldLine compareType=">=">
+       		<leftFieldList><checkFieldLineField value="100"></checkFieldLineField></leftFieldList>
+        	<rightFieldList><checkFieldLineField name="I" discription="持股比例"></checkFieldLineField></rightFieldList>        	
+       </checkFieldLine> 
+       <!--LJX-055	表3 PART III中[股东结构对应日期]小于等于[数据日期] -->  
+       <checkFieldLine compareType=">=" fieldType="2">
+       		<leftFieldList><checkFieldLineField name="DTDATE" discription="数据日期"></checkFieldLineField></leftFieldList>
+        	<rightFieldList><checkFieldLineField name="J" discription="股东结构对应日期"></checkFieldLineField></rightFieldList>        	
+       </checkFieldLine>
+       <!--LJX-056	表3 PART III中[更新信息日期]小于等于[数据日期] -->
+       <checkFieldLine compareType=">=" fieldType="2">
+       		<leftFieldList><checkFieldLineField name="DTDATE" discription="数据日期"></checkFieldLineField></leftFieldList>
+        	<rightFieldList><checkFieldLineField name="K" discription="更新信息日期"></checkFieldLineField></rightFieldList>        	
+       </checkFieldLine>           
+			</checkFieldLineList>
+      <!--基本类校验|JBL3-047|1或2位数字字符 -->      
+			<checkFieldOrList discription="条件校验">	
+				<!--JBL3-047	D	股东/关联企业证件类型 1或2位数字字符。-->
+				<checkFieldOr type="1">
+         	<checkFieldBasic name="D" discription="股东/关联企业证件类型" startLength="1" endLength="1"  ></checkFieldBasic>
+          <checkFieldBasic name="D" discription="股东/关联企业证件类型" startLength="2" endLength="2" ></checkFieldBasic>
+        </checkFieldOr>
+			</checkFieldOrList>					
+		</checkTable>
+												
+	</checkInstance>
+</reportCheckRoot>

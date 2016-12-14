@@ -1,0 +1,103 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>                                                                   
+<reportCheckRoot>                                                                                        
+	<!-- 校验名称：校验根据此名称做为校验实例-->                                                           
+	<checkInstance name="CHECK_EAS_GYB">	                                                                 
+		<!-- 参数值：配置的值为默认值，也可以通过系统传递进行替换-->		                                     
+		<paramValueList>                                                                                     
+			<paramValue name="DTDATE" value="2013-12-09"></paramValue>
+			<paramValue name="strInstCode" value=""></paramValue>                                         
+		</paramValueList>		                                                                                 
+		                                                                                                     
+		<!-- 频度标志：可通过系统参数传递进行替换:1代表年报，2代表半年报，3代表季报，4代表月报，5代表日报--> 
+		<freqCode value="4"></freqCode>	                                                                     
+		<!-- 表名：真实数据库表的名称，一个校验实例中应具备唯一性-->                                         
+		<checkTable procedureName="CHECK_EAS_GYB" procedureParam="DTDATE,strInstCode,rt" procedureDiscription="柜员表"
+			originTable="EAS_GYB" errorStateField="RPTCHECKTYPE" errorStateValue="3"  successStateValue="2"
+			defaultLogicDaoBeanId="oracleProcedureResultSetDao">                                                                                                 
+			                                                                                                   
+			<!-- 参数字段：如果不配置此项为全表数据校验                                                        
+				type不填或则等于1代表字符，等于2代表时间-->                                                      
+			<paramFieldList>                                                                                   
+				<paramField paramName="DTDATE" field="DTDATE" type="2"></paramField>
+				<paramField paramName="strInstCode" field="INSTINFO" type="1"></paramField>                              
+			</paramFieldList>                                                                                  
+			                                                                                                   
+			<!-- 唯一性字段组合：可理解为联合主键，用于未作说明的主外键关联-->                                 
+			<checkUniqueFieldList>                                                                             
+				<checkUniqueField name="AUTOID" discription="主键" originField="AUTOID"></checkUniqueField>                                                   
+			</checkUniqueFieldList>                                                                            
+			                                                                                                   
+			<!-- 表内基础校验：被设置的字段每条数都需要校验                                                    
+				emptyCheck代表为空校验                                                                           
+				digitalCheck代表数字校验，dateCheck代表日期校验                                                  
+				upperCheck代表全大写字母校验，chnCheck代表汉字校验（可扩展其他特殊校验）                         
+				startLength代表起始长度，endLength代表结束长度                                                   
+				valueDecimalLength的值代表小数位数的校验-->                                                      
+				<checkFieldBasicList> 
+					<checkFieldBasic name="GYH" discription="柜员号" emptyCheck="reue" endLength="30" ></checkFieldBasic>         
+					<checkFieldBasic name="GH" discription="工号" emptyCheck="reue" endLength="30" ></checkFieldBasic>            
+					<checkFieldBasic name="YXJGDM" discription="银行机构代码" emptyCheck="reue" endLength="30" ></checkFieldBasic>
+					<checkFieldBasic name="NBJGH" discription="内部机构号" emptyCheck="reue" endLength="30" ></checkFieldBasic>   
+					<checkFieldBasic name="ZXJGDM" discription="总行机构代码" emptyCheck="true" endLength="30" ></checkFieldBasic>
+					<checkFieldBasic name="JRXKZH" discription="金融许可证号" emptyCheck="true" startLength="15"  endLength="15"></checkFieldBasic>
+					<checkFieldBasic name="GYLX" discription="柜员类型" emptyCheck="reue" endLength="30" ></checkFieldBasic>      
+					<checkFieldBasic name="SFSTGY" discription="是否实体柜员" emptyCheck="true" endLength="4" ></checkFieldBasic>
+					<checkFieldBasic name="KHJLBZ" discription="客户经理标志" endLength="4"></checkFieldBasic>
+					<checkFieldBasic name="JBZWBZ" discription="经办账务标志" endLength="4"></checkFieldBasic>
+					<checkFieldBasic name="QXGLBZ" discription="权限管理标志" endLength="4"></checkFieldBasic>
+					<checkFieldBasic name="YBGLBZ" discription="一般管理标志" endLength="4"></checkFieldBasic>
+					<checkFieldBasic name="XDYBZ" discription="信贷员标志" endLength="4"></checkFieldBasic>   
+					<checkFieldBasic name="KGYBZ" discription="库管员标志" endLength="4"></checkFieldBasic>   
+					<checkFieldBasic name="ZHGYBZ" discription="综合柜员标志" endLength="4"></checkFieldBasic>
+					<checkFieldBasic name="SQBZ" discription="授权标志" endLength="4"></checkFieldBasic>      
+					<checkFieldBasic name="SQFW" discription="授权范围" endLength="60"></checkFieldBasic>      
+					<checkFieldBasic name="GWBH" discription="岗位编号" endLength="60"></checkFieldBasic>      
+					<checkFieldBasic name="GYYHJB" discription="柜员用户级别" endLength="30"></checkFieldBasic>
+					<checkFieldBasic name="GYQXJB" discription="柜员权限级别" endLength="30"></checkFieldBasic>
+					<checkFieldBasic name="SGRQ" discription="上岗日期" ignoreVal="999991231" emptyCheck="true" dateCheck="true" startLength="8" endLength="8" ></checkFieldBasic>      
+					<checkFieldBasic name="CJRQ" discription="采集日期" ignoreVal="999991231" emptyCheck="true" dateCheck="true" startLength="8" endLength="8" ></checkFieldBasic>      	                                                                                               
+				</checkFieldBasicList>  
+				  <checkFieldEffectiveList discription="有效性校验">                       
+					<checkFieldEffective name="SFSTGY" discription="是否实体柜员"> 
+				    <value>是</value>                                                     
+				    <value>否</value>                                                     
+				  </checkFieldEffective>                                                    
+				  <checkFieldEffective name="KHJLBZ" discription="客户经理标志">    
+				    <value>否</value>                                                        
+				    <value>是</value>                                                        
+				  </checkFieldEffective>
+				  <checkFieldEffective name="JBZWBZ" discription="经办财务标志"> 
+				    <value>否</value>                                            
+				    <value>是</value>                                            
+				  </checkFieldEffective>  
+				  <checkFieldEffective name="QXGLBZ" discription="权限管理标志">
+				    <value>否</value>                                           
+				    <value>是</value>                                           
+				  </checkFieldEffective>  
+				  <checkFieldEffective name="YBGLBZ" discription="一般管理标志">                                      
+				    <value>否</value>                                           
+				    <value>是</value>                                           
+				  </checkFieldEffective> 
+				  <checkFieldEffective name="XDYBZ" discription="信贷员标志">                                       
+				    <value>否</value>                                           
+				    <value>是</value>                                            
+				  </checkFieldEffective>  
+				  <checkFieldEffective name="KGYBZ" discription="库管员标志">
+				    <value>否</value>                                           
+				    <value>是</value>                                           
+				  </checkFieldEffective> 
+				  <checkFieldEffective name="ZHGYBZ" discription="综合柜员标志">                                       
+				    <value>否</value>                                           
+				    <value>是</value>                                           
+				  </checkFieldEffective> 
+				  <checkFieldEffective name="SQBZ" discription="授权标志">                                      
+				    <value>否</value>                                           
+				    <value>是</value>                                           
+				  </checkFieldEffective>                                        
+				  </checkFieldEffectiveList>                                                  
+				   </checkTable>                                                                                    
+				</checkInstance>                                                                                                                                      
+</reportCheckRoot>                                                                                                                                                                  
+                                                                           
+                                                                           
+                                                                           

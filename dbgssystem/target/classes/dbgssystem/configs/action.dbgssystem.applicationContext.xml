@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans
+	xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns:p="http://www.springframework.org/schema/p"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-3.0.xsd">
+	
+	<bean id="downLoadDBGSReportAction" class="dbgssystem.actions.imps.ReportDownloadAction" scope="prototype">
+        <property name="defaultServiceBeanId" value="downLoadDBGSReportService"></property>
+    </bean>
+	
+	<bean id="dBGSCJFKBWUploadFileAction" class="framework.actions.imps.BaseSTModelDrivenConditionFileAction" scope="prototype">
+       <property name="defaultServiceBeanId" value="dBGSCJFKBWUploadFileService"></property>
+    </bean>
+	
+	 <bean id="importBatchExcleDataForDBYWAction" class="framework.actions.imps.BaseSTModelDrivenConditionFileAction" scope="prototype">
+       <property name="defaultServiceBeanId" value="importBatchExcleDataForDBYWService"></property>
+    </bean>
+    
+    <bean id="runRmiServiceAction" class="dbgssystem.actions.imps.RunRmiServiceAction" scope="prototype">
+    </bean>
+    
+    <bean id="ajaxForDBGSDownLoadRequestAction" class="dbgssystem.actions.imps.AjaxForDownLoadRequestAction" scope="prototype">
+        <property name="defaultServiceBeanId" value="confirmDialogForDBGSReportService"></property>
+    </bean>
+    
+     <bean id="confirmDialogForUploadDBGSBWJXAction" class="framework.actions.imps.BaseSTModelDrivenConditionFileAction" scope="prototype">
+        <property name="defaultServiceBeanId" value="dbgssystem.service.imps.ConfirmDialogForDBGSUploadReportService"></property>
+    </bean>
+    
+     <bean id="rejectReportForDBGSAction" class="framework.actions.imps.BaseSTNameAndIdListAction" scope="prototype">
+       <property name="defaultServiceBeanId" value="rejectReportForDBGSService"></property>
+    </bean>
+    
+ </beans>

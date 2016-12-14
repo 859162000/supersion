@@ -1,0 +1,214 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<fieldShowsRoot>
+    <!-- 
+	<fieldShowsEntity>
+      <className>coresystem.dto.UserRole</className>
+      <showInstance>
+        <showInstanceName>1</showInstanceName>
+        <fieldName fieldName="roleInfo" singleTag="selectField" fieldTargetPrimaryKey="strRoleCode" paramName="roleInfo.strRoleCode"></fieldName> 
+      </showInstance>
+	</fieldShowsEntity>
+
+
+	<fieldShowsEntity>
+      <className>coresystem.dto.UserInfo</className>
+      <showInstance>
+        <showInstanceName>2</showInstanceName>
+        <fieldName fieldName="strUserCode" fieldShowName="用户代码1" listVisible="true" ></fieldName> 
+        <fieldName fieldName="strUserName" listVisible="true" ></fieldName>
+        <fieldName fieldName="strUserShowName" listVisible="false" ></fieldName>
+        <fieldName fieldName="strInstShowName" listVisible="false" ></fieldName>
+        <fieldName fieldName="strPassword" listVisible="true" ></fieldName>
+        <fieldName fieldName="instInfo" listVisible="true" ></fieldName>
+      </showInstance>
+	</fieldShowsEntity>
+     -->
+     <fieldShowsEntity>
+      <className>coresystem.dto.UserInfo</className>
+      <showInstance>
+        <showInstanceName showModal="false" showView="false">1</showInstanceName>
+        <fieldName fieldName="strUserCode" fieldShowName="用户代码" listVisible="true"  titleField="true"></fieldName> 
+        <fieldName fieldName="strUserName" fieldShowName="用户名称" listVisible="true" titleField="true" width="200"></fieldName>
+        <fieldName fieldName="instInfo" titleField="true"  width="200"></fieldName>
+        <fieldName fieldName="strAllowState"></fieldName>
+        <fieldName fieldName="strLockState" splitField="true"></fieldName>
+        <fieldName fieldName="updatePasswordTime"></fieldName>
+        <fieldName fieldName="errorCount" listVisible="false"></fieldName>
+        <fieldName fieldName="createTime" width="150"></fieldName>
+        <fieldName fieldName="lastLoginTime" width="150"></fieldName>
+        <fieldName fieldName="strPassword" listVisible="true"></fieldName>
+        
+        
+      </showInstance>
+      <showInstance>
+        <showInstanceName>ExportAllData</showInstanceName>
+        <fieldName fieldName="strUserCode" listVisible="true" ></fieldName> 
+        <fieldName fieldName="strUserName" listVisible="true"></fieldName>
+        <fieldName fieldName="strPassword" listVisible="true"></fieldName>
+        <fieldName fieldName="instInfo" listVisible="true"></fieldName>
+        <fieldName fieldName="strAllowState" listVisible="true"></fieldName>
+        <fieldName fieldName="strLockState" listVisible="true"></fieldName>
+        <fieldName fieldName="updatePasswordTime" listVisible="true"></fieldName>
+        <fieldName fieldName="errorCount" listVisible="true"></fieldName>
+        <fieldName fieldName="createTime" listVisible="true"></fieldName>
+        <fieldName fieldName="lastLoginTime" listVisible="true"></fieldName>
+      </showInstance>
+      
+      
+	</fieldShowsEntity>
+	<fieldShowsEntity>
+      <className>coresystem.dto.InstInfo</className>
+      <showInstance>
+        <showInstanceName>1</showInstanceName>
+          <fieldName fieldName="strInstCode" listVisible="true" intOrder="1"></fieldName>
+        <fieldName fieldName="strInstName"  listVisible="true" intOrder="2" width="200"></fieldName>
+        <fieldName fieldName="higherInst"  listVisible="true" intOrder="3" width="200"></fieldName>
+        <fieldName fieldName="strAllowState" fieldShowName="状态" listVisible="false" intOrder="4"></fieldName>
+         <fieldName fieldName="strInstStatus"  listVisible="true" intOrder="5" ></fieldName>
+         <fieldName fieldName="UpdateTime"  listVisible="true" intOrder="6" width="120"></fieldName>
+         <fieldName fieldName="jrxkzh"  listVisible="true" intOrder="7"></fieldName>
+         <fieldName fieldName="rxzfhh"  listVisible="true" intOrder="8"></fieldName>
+         <fieldName fieldName="jgdz"  listVisible="true" intOrder="9" ></fieldName>
+         <fieldName fieldName="fxcjgdm"  listVisible="true" intOrder="10" ></fieldName>
+         <fieldName fieldName="yzbm"  listVisible="true" intOrder="11" ></fieldName>
+         <fieldName fieldName="clsj"  listVisible="true" intOrder="12" singleTag="dateField"></fieldName>
+      </showInstance>
+	</fieldShowsEntity>
+	
+	<fieldShowsEntity>
+      <className>coresystem.dto.ActionExcute</className>
+      <showInstance>
+        <showInstanceName windowHeight="520" windowWidth="1000">1</showInstanceName>
+        <fieldName fieldName="userInfo"  listVisible="false"></fieldName>
+        <fieldName fieldName="actionName"  listVisible="false" width="300"></fieldName>
+        <fieldName fieldName="actionShowName" width="300"></fieldName>
+      	<fieldName fieldName="actionTime" width="120"></fieldName>
+      </showInstance>
+	</fieldShowsEntity>
+	<fieldShowsEntity>
+      <className>coresystem.dto.ActionUpdateExcute</className>
+      <showInstance>
+        <showInstanceName>1</showInstanceName>
+        <fieldName fieldName="userInfo"  listVisible="false" ></fieldName>
+        <fieldName fieldName="updateTName"  listVisible="false" ></fieldName>
+        <fieldName fieldName="updateFieldName"  listVisible="false" ></fieldName>
+        <fieldName fieldName="linkUrl"  listVisible="false" ></fieldName>
+        <fieldName fieldName="updateTShowName"  width="200" ></fieldName>
+        <fieldName fieldName="updateId"  width="250"></fieldName>
+        <fieldName fieldName="updateFieldShowName"  width="200" ></fieldName>
+        <fieldName fieldName="strPreviousValue"  width="250" ></fieldName>
+        <fieldName fieldName="strUpdateValue"  width="250"></fieldName>
+        <fieldName fieldName="actionTime"  width="120" ></fieldName>
+        <fieldName fieldName="actionExcute"  listVisible="false" ></fieldName>
+      </showInstance>
+	</fieldShowsEntity>
+	
+	<fieldShowsEntity>
+      <className>coresystem.dto.RoleClassInst</className>
+      <showInstance>
+        <showInstanceName>1</showInstanceName>
+        <fieldName fieldName="roleInfo" errorSpace="true" ></fieldName> 
+        <fieldName fieldName="strClassCode" errorSpace="true" ></fieldName>
+        <fieldName fieldName="instInfo" errorSpace="true"></fieldName>
+      </showInstance>
+	</fieldShowsEntity>
+	
+	<fieldShowsEntity>
+      <className>coresystem.dto.RoleFunction</className>
+      <showInstance>
+        <showInstanceName>1</showInstanceName>
+        <fieldName fieldName="roleInfo" errorSpace="true" width="150"></fieldName> 
+        <fieldName fieldName="strFunctionCode" width="500" errorSpace="true" singleTag="treeField"></fieldName>
+        
+        
+      </showInstance>
+	</fieldShowsEntity>
+	
+	<fieldShowsEntity>
+      <className>coresystem.dto.RoleInfo</className>
+      <showInstance>
+        <showInstanceName windowHeight="600" windowWidth="1200">1</showInstanceName>
+        <fieldName fieldName="strRoleName"  width="120"></fieldName>
+      </showInstance>
+	</fieldShowsEntity>
+	
+	<fieldShowsEntity>
+      <className>coresystem.dto.ShowUserNeedDoThing</className>
+      <showInstance>
+        <showInstanceName>1</showInstanceName>
+        <fieldName fieldName="thingName"  width="600" ></fieldName>
+      </showInstance>
+	</fieldShowsEntity>
+	
+	<fieldShowsEntity>
+      <className>coresystem.dto.NeedDoThing</className>
+      <showInstance>
+        <showInstanceName>1</showInstanceName>
+        <fieldName fieldName="thingName"  width="120" ></fieldName>
+        <fieldName fieldName="countSql"  width="250" ></fieldName>
+        <fieldName fieldName="strActionName"  width="250" ></fieldName>
+      </showInstance>
+	</fieldShowsEntity>
+	
+	<fieldShowsEntity>
+      <className>coresystem.dto.UserOperationLog</className>
+      <showInstance>
+        <showInstanceName>1</showInstanceName>
+        <fieldName fieldName="strUserCode"   listVisible="false"></fieldName>
+        <fieldName fieldName="strUserName"  width="200" ></fieldName>
+        <fieldName fieldName="strInstName"  width="200" ></fieldName>
+        <fieldName fieldName="strIpAddress"  width="250" ></fieldName>
+        <fieldName fieldName="dtOperationTime"  width="250" ></fieldName>
+        <fieldName fieldName="strOperationType"  width="200" ></fieldName>
+        <fieldName fieldName="strReason"  width="500" ></fieldName>
+        <fieldName fieldName="strDetailActionDesc"  width="1000" ></fieldName>
+      </showInstance>
+	</fieldShowsEntity>
+	
+	<fieldShowsEntity>
+      <className>coresystem.dto.ShowUpdatePassword</className>
+      <showInstance>
+        <showInstanceName>1</showInstanceName>
+        <fieldName fieldName="oldPassword" singleTag="textPassWordField"></fieldName>
+        <fieldName fieldName="newPassword1" singleTag="textPassWordField"></fieldName>
+        <fieldName fieldName="newPassword2" singleTag="textPassWordField"></fieldName>
+      </showInstance>
+	</fieldShowsEntity>
+	<fieldShowsEntity>
+      <className>extend.dto.SystemCodeSet</className>
+      <showInstance>
+        <showInstanceName>1</showInstanceName>
+          <fieldName fieldName="strCodeID" listVisible="true" intOrder="1" width="250"></fieldName>
+          <fieldName fieldName="strSetName"  listVisible="true" intOrder="2" width="500"></fieldName>
+        </showInstance>
+	</fieldShowsEntity>
+	<fieldShowsEntity>
+      <className>extend.dto.SystemCodeValue</className>
+      <showInstance>
+        <showInstanceName>1</showInstanceName>
+          <fieldName fieldName="autoSystemCodeID" listVisible="false"></fieldName>
+          <fieldName fieldName="strCode" listVisible="true" intOrder="1" width="250"></fieldName>
+          <fieldName fieldName="strValue"  listVisible="true" intOrder="2" width="500"></fieldName>
+          <fieldName fieldName="strOrder"  listVisible="true" intOrder="2" width="150"></fieldName>
+          <fieldName fieldName="codeSet"  listVisible="true" intOrder="2" width="500"></fieldName>
+        </showInstance>
+	</fieldShowsEntity>
+	<fieldShowsEntity>
+      <className>extend.dto.Suit</className>
+      <showInstance>
+        <showInstanceName>1</showInstanceName>
+          <fieldName fieldName="strSuitName" width="150"></fieldName>
+          <fieldName fieldName="higerSuit" width="150"></fieldName>
+        </showInstance>
+	</fieldShowsEntity>
+	
+	
+	<fieldShowsEntity>
+      <className>extend.dto.SystemParam</className>
+      <showInstance>
+        <showInstanceName>1</showInstanceName>
+          <fieldName fieldName="strItemCode" width="250"></fieldName>
+          <fieldName fieldName="strParamValue" width="200"></fieldName>
+        </showInstance>
+	</fieldShowsEntity>
+</fieldShowsRoot>

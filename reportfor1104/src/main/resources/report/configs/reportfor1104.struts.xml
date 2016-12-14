@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE struts PUBLIC "-//Apache Software Foundation//DTD Struts Configuration 2.1//EN" "http://struts.apache.org/dtds/struts-2.1.dtd">
+<struts>
+	<include file="report/configs/itemreport.struts.xml"/>
+	 <package name="reportfor1104" extends="framework.default" namespace="/report">
+		<action name="ExportXmlFileAll*-report.dto.TaskRptInst" class="exportXmlFileAllAction">
+            <result name="success" type="redirectAction">
+            	<param name="message">${serviceResult.message}</param>
+			    <param name="actionName">ShowAlertMessage.action</param>
+			    
+			</result>
+			<result name="error" type="redirectAction">
+            	<param name="message">${serviceResult.message}</param>
+			    <param name="actionName">ShowAlertMessage.action</param>
+			    
+			</result>
+		</action>
+		<action name="ExportXmlFileByOrg*-report.dto.TaskRptInst" class="exportXmlFileByOrgAction">
+            <result name="success" type="redirectAction">
+            	<param name="message">${serviceResult.message}</param>
+			    <param name="actionName">ShowAlertMessage.action</param>
+			</result>
+			<result name="error" type="redirectAction">
+            	<param name="message">${serviceResult.message}</param>
+			    <param name="actionName">ShowAlertMessage.action</param>
+			 </result>
+		</action>
+		<action name="ExportXmlFileBySingle*-report.dto.TaskRptInst" class="exportXmlFileBySingleAction">
+            <result name="success" type="redirectAction">
+            	<param name="message">${serviceResult.message}</param>
+			    <param name="actionName">ShowAlertMessage.action</param>
+			</result>
+			<result name="error" type="redirectAction">
+            	<param name="message">${serviceResult.message}</param>
+			    <param name="actionName">ShowAlertMessage.action</param>
+			 </result>
+		</action>
+		
+		<!-- 指标报表报文下载 -->
+		<action name="R1104BuildReport-*" class="ReviewShowTreeAction">
+			<result name="success">/Framework/ShowTree.jsp</result>
+		</action>
+	</package>
+	
+	<package name="reportfor11041" extends="framework.default" namespace="/framework">
+		<!-- 数据汇总 -->
+		<action name="R1104TaskShowTree*-*" class="taskShowTreeAction">
+			<result name="success">/Framework/ShowTree.jsp</result>
+		</action>
+	
+		<!-- 明细数据填报 -->
+		<action name="R1104ShowTree*-*" class="singleObjectShowTreeAction">
+				<result name="success">/Framework/ShowTree.jsp</result>
+		</action>
+	
+		<!-- 明细数据审核 -->
+		<action name="R1104ReviewShowTree*-*" class="ReviewShowTreeAction">
+				<result name="success">/Framework/ShowTree.jsp</result>
+		</action>
+		
+		<!-- 数据查看 -->
+		<action name="R1104CKShowTree*-*" class="ReviewShowTreeAction">
+				<result name="success">/Framework/ShowTree.jsp</result>
+		</action>
+	
+		<!-- TopN汇总任务列表树 -->
+		<action name="TaskTopNShowTree*-*" class="taskTopNShowTreeAction">
+			<result name="success">/Framework/ShowTree.jsp</result>
+		</action>
+	</package>
+	 
+	
+</struts>    

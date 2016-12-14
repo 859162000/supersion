@@ -1,0 +1,148 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<navigationRoot>
+ 
+   <navigation>
+     <level>2</level>
+     <navigationName>报送机构编码对照</navigationName>
+     <navigationUrl>framework/ShowList-report.dto.InstCodeMap</navigationUrl>
+   </navigation>
+
+<!--   <navigation>-->
+<!--     <level>2</level>-->
+<!--     <navigationName>明细表单管理</navigationName>-->
+<!--     <navigationUrl>framework/ShowList-extend.dto.ReportModel_Table</navigationUrl>-->
+<!--   </navigation>-->
+
+   <navigation>
+     <level>2</level>
+     <navigationName>报表管理</navigationName>
+     <navigationUrl>framework/ShowTree-extend.dto.Suit.action?type=report.dto.RptInfo</navigationUrl>
+   </navigation>
+   
+   <navigation>
+     <level>2</level>
+     <navigationName>任务管理</navigationName>
+     <navigationUrl>framework/ShowList-report.dto.TaskFlow</navigationUrl>
+   </navigation>
+   
+   <navigation>
+     <level>2</level>
+     <navigationName>任务填报</navigationName>
+     <navigationUrl>framework/ShowTree-report.dto.TaskRptInst</navigationUrl>
+   </navigation>
+   
+   <navigation>
+     <level>2</level>
+     <navigationName>报表编辑</navigationName>
+     <navigationUrl>coresystem/ShowReport-report.dto.TaskRptInst</navigationUrl>
+   </navigation>
+ 
+   <navigation>
+     <level>2</level>
+     <navigationName>指标属性</navigationName>
+     <navigationUrl>framework/ShowList-report.dto.ItemProperty</navigationUrl>
+   </navigation>
+
+   <navigation>
+     <level>2</level>
+     <navigationName>币种管理</navigationName>
+     <navigationUrl>framework/ShowList-report.dto.CurrencyType</navigationUrl>
+   </navigation>
+   
+   <navigation>
+     <level>2</level>
+     <navigationName>指标管理</navigationName>
+     <navigationUrl>framework/ShowTree-report.dto.ItemInfo</navigationUrl>
+   </navigation>
+   
+   <navigation>
+     <level>2</level>
+     <navigationName>指标值</navigationName>
+     <navigationUrl>framework/ShowList-report.dto.ItemData</navigationUrl>
+   </navigation>
+   
+   <navigation>
+     <level>2</level>
+     <navigationName>汇总关系</navigationName>
+     <navigationUrl>framework/ShowList-report.dto.MergeInstance</navigationUrl>
+   </navigation>
+ 
+   <navigation>
+     <level>2</level>
+     <navigationName>计算实例</navigationName>
+     <navigationUrl>framework/ShowList-report.dto.CalculationExampleInfo</navigationUrl>
+   </navigation>
+   
+   <navigation>
+     <level>2</level>
+     <navigationName>任务监控</navigationName>
+     <navigationUrl>report/Show-TaskControl</navigationUrl>
+   </navigation>
+   
+   <navigation>
+     <level>2</level>
+     <navigationName>公告管理</navigationName>
+     <navigationUrl>framework/ShowList-report.dto.Notice</navigationUrl>
+   </navigation>
+   
+   <navigation>
+     <level>2</level>
+     <navigationName>系统参数管理</navigationName>
+     <navigationUrl>framework/ShowList-extend.dto.SystemParam</navigationUrl>
+   </navigation>
+
+   <navigation>
+     <level>8</level>
+     <navigationName>机构集管理</navigationName>
+     <navigationUrl>framework/ShowList-report.dto.InstInfoSet</navigationUrl>
+   </navigation>
+   
+   <navigation>
+     <level>8</level>
+     <navigationName>文件集管理</navigationName>
+     <navigationUrl>framework/ShowList-report.dto.FileInfoSet</navigationUrl>
+   </navigation>
+   
+   <navigation>
+     <level>8</level>
+     <navigationName>文件集合管理</navigationName>
+     <navigationUrl>framework/ShowList-report.dto.Reportmodel_tableSet</navigationUrl>
+   </navigation>
+   
+   <navigation>
+     <level>8</level>
+     <navigationName>报表管理</navigationName>
+     <navigationUrl>framework/ShowTree-report.dto.RptInfo</navigationUrl>
+   </navigation>
+   
+   <navigation>
+     <level>8</level>
+     <navigationName>任务管理</navigationName>
+     <navigationUrl>framework/ShowList-report.dto.TaskFlow</navigationUrl>
+   </navigation>
+   
+   <navigation>
+     <level>8</level>
+     <navigationName>历史任务查看</navigationName>
+     <navigationUrl>framework/ShowList-report.dto.TaskRptInst</navigationUrl>
+   </navigation>
+   
+   <navigation>
+     <level>8</level>
+     <navigationName>任务明细填报</navigationName>
+     <navigationUrl>framework/ShowTree-report.dto.TaskModelInst</navigationUrl>
+   </navigation>
+   
+    <navigation>
+     <level>8</level>
+     <navigationName>任务报表统计</navigationName>
+     <navigationUrl>framework/ShowSingleStatistical-report.dto.TaskRptInstStatisical</navigationUrl>
+   </navigation>
+   
+   
+	<navigationComponentList>
+	    <navigationComponent id="DeskTop" name="桌面" url="Framework/NavigationPage.jsp"  ico="bg.png" treeIco="bg.png" treeExpandIco="bg.png" des="">
+	  		<navigationComponent id="DownloadResourceStoreroom" name="下载资源库" url="framework/ShowList-report.dto.DownloadResource" ico="128_DocumentInfo.png" treeIco="64_DocumentInfo.png" treeExpandIco="32_DocumentInfo.png" des=""></navigationComponent>
+	     </navigationComponent>
+	</navigationComponentList>
+</navigationRoot>

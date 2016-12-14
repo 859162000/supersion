@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE struts PUBLIC "-//Apache Software Foundation//DTD Struts Configuration 2.1//EN" "http://struts.apache.org/dtds/struts-2.1.dtd">
+<struts>
+	 <package name="SRCB" extends="framework.default" namespace="/framework"><!--
+		<action name="ShowCheckUpdateLevelAutoDTOMX-*" class="singleObjectShowCheckUpdateLevelAutoDTOMXAction">
+            <result name="success">/SRCB/ShowSaveOrUpdate.jsp</result>
+            <result name="input" type="chain">
+			    <param name="actionName">ShowInputUpdateLevelAutoDTOMX-{1}</param>
+			</result>
+		</action>
+		<action name="ShowSaveLevelAutoDTOMX-*" class="singleObjectShowSaveLevelAutoDTOMXAction">
+            <result name="success">/SRCB/ShowSaveOrUpdate.jsp</result>
+            <result name="error" type="redirectAction">
+			    <param name="actionName">ShowAlertMessage</param>
+			    <param name="message">${serviceResult.message}</param>
+			</result>
+		</action>
+
+		<action name="ShowUpdateLevelAutoDTOMX-*" class="singleObjectShowUpdateLevelAutoDTOMXAction">
+            <result name="success">/SRCB/ShowSaveOrUpdate.jsp</result>
+		</action>
+		<action name="ShowCheckUpdateLevelAUTODTO-*" class="singleObjectShowCheckUpdateLevelAUTODTOAction">
+            <result name="success">/SRCB/ShowSaveOrUpdate.jsp</result>
+            <result name="input" type="chain">
+			    <param name="actionName">ShowInputUpdateLevelAUTODTO-{1}</param>
+			</result>
+		</action>
+		<action name="ShowSaveLevelAUTODTO-*" class="singleObjectShowSaveLevelAUTODTOAction">
+            <result name="success">/SRCB/ShowSaveOrUpdate.jsp</result>
+		</action>
+		<action name="ShowUpdateLevelAUTODTO-*" class="singleObjectShowUpdateLevelAUTODTOAction">
+            <result name="success">/SRCB/ShowSaveOrUpdate.jsp</result>
+		</action>
+		<action name="ShowCheckUpdateLevelAUTODTO-*" class="singleObjectShowCheckUpdateLevelAUTODTOAction">
+            <result name="success">/SRCB/ShowSaveOrUpdate.jsp</result>
+            <result name="input" type="chain">
+			    <param name="actionName">ShowInputUpdateLevelAUTODTO-{1}</param>
+			</result>
+		</action>
+		<action name="ShowSave-coresystem.dto.UserInfo" class="singleObjectShowSaveAction">
+			<result name="success">/SRCB/ShowSaveOrUpdate.jsp</result>
+		</action>
+	 --></package>
+	 <include file="SRCB/configs/SRCBJSON.struts.xml"/>
+	 <include file="zxptsystem/configs/zxptsystem.struts.xml"/>
+</struts>    

@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<dataSecurityRoot>
+   <dataSecurityMap>
+ 	  <dataSecurityName>coresystem.dto.RoleClassInst</dataSecurityName>
+      <dataSecurity>
+      	 <className>coresystem.dto.UserInfo</className>
+	     <fieldName>instInfo</fieldName>
+      </dataSecurity>
+      
+      <dataSecurity>
+      	 <className>report.dto.TaskRptInst</className>
+	     <fieldName>instInfo</fieldName>
+      </dataSecurity>
+      
+   </dataSecurityMap>
+</dataSecurityRoot>

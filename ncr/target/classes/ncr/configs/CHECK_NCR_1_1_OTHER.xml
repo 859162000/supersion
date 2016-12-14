@@ -1,0 +1,459 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<reportCheckRoot>
+	<checkInstance name="CHECK_NCR_1_1_OTHER">
+		<paramValueList>
+			<paramValue name="DTDATE" value="2013-12-09"></paramValue>
+			<paramValue name="strInstCode" value=""></paramValue>
+			<!--
+		  <paramValue name="strTaskRptInstID" value="000000"></paramValue>
+			<paramValue name="strFreq" value="000000"></paramValue> 
+			-->
+		</paramValueList>		
+		
+		<freqCode value="4"></freqCode>
+		
+		<checkTable procedureName="Check_NCR_1_1" procedureParam="DTDATE,strInstCode" procedureDiscription="授信情况"
+			originTable="NCR_1_1" errorStateField="RPTCHECKTYPE" errorStateValue="3"  successStateValue="2" 
+			defaultLogicDaoBeanId="oracleProcedureResultSetDao">
+			<paramFieldList>
+				<paramField paramName="DTDATE" field="DTDATE" type="2"></paramField>
+				<paramField paramName="strInstCode" field="INSTINFO" type="1"></paramField>
+			</paramFieldList>  	
+			<checkUniqueFieldList>
+				<checkUniqueField name="AUTOID" discription="主键" originField="AUTOID"></checkUniqueField>
+			</checkUniqueFieldList>
+		</checkTable>
+	  
+		    <!--统计类指标跨期异常值变动提示：授信额度-->
+		    
+		    <checkTable procedureName="Check_NCR_1_1_TJL_KQ01_003"  procedureParam="DTDATE,strInstCode,NUM" 
+		    procedureDiscription="统计类指标跨期异常值变动提示（授信额度大于1万亿）" defaultLogicDaoBeanId="oracleProcedureResultSetDao">    
+	  		<paramFieldList>
+	  			<paramField paramName="DTDATE" field="DTDATE" type="2"></paramField>
+	  			<paramField paramName="strInstCode" field="INSTINFO" type="1"></paramField>
+	  			<paramField paramName="NUM" field="NUM" type="1" value="1"></paramField>
+	  		</paramFieldList>
+        <checkUniqueFieldList>
+        </checkUniqueFieldList>
+       	<checkFieldOrList>
+            <checkFieldOr type="1">                                                 
+                <checkFieldBasic name="SUBSUM" discription="授信额度变动" valueMin='-50000000000' valueMax='50000000000'></checkFieldBasic>
+                <checkFieldBasic name="RATE" discription="授信额度变动比率" valueMin='-0.01' valueMax='0.02'></checkFieldBasic>
+            </checkFieldOr>
+        </checkFieldOrList>
+        </checkTable>
+       <checkTable procedureName="Check_NCR_1_1_TJL_KQ01_003"  procedureParam="DTDATE,strInstCode,NUM" 
+       procedureDiscription="统计类指标跨期异常值变动提示（1千亿-1万亿）" defaultLogicDaoBeanId="oracleProcedureResultSetDao">    
+	  		<paramFieldList>
+	  			<paramField paramName="DTDATE" field="DTDATE" type="2"></paramField>
+	  			<paramField paramName="strInstCode" field="INSTINFO" type="1"></paramField>
+	  			<paramField paramName="NUM" field="NUM" type="1" value="2"></paramField>
+	  		</paramFieldList>
+        <checkUniqueFieldList>
+        </checkUniqueFieldList>
+       	<checkFieldOrList>
+            <checkFieldOr type="1">                                                 
+                <checkFieldBasic name="SUBSUM" discription="授信额度变动" valueMin='-20000000000' valueMax='20000000000'></checkFieldBasic>
+                <checkFieldBasic name="RATE" discription="授信额度变动比率" valueMin='-0.02' valueMax='0.03'></checkFieldBasic>
+            </checkFieldOr>
+        </checkFieldOrList>
+      </checkTable>    
+     
+     <checkTable procedureName="Check_NCR_1_1_TJL_KQ01_003"  procedureParam="DTDATE,strInstCode,NUM" 
+     procedureDiscription="统计类指标跨期异常值变动提示（100亿-1千亿）" defaultLogicDaoBeanId="oracleProcedureResultSetDao">    
+	  		<paramFieldList>
+	  			<paramField paramName="DTDATE" field="DTDATE" type="2"></paramField>
+	  			<paramField paramName="strInstCode" field="INSTINFO" type="1"></paramField>
+	  			<paramField paramName="NUM" field="NUM" type="1" value="3"></paramField>
+	  		</paramFieldList>
+        <checkUniqueFieldList>
+        </checkUniqueFieldList>
+       	<checkFieldOrList>
+            <checkFieldOr type="1">
+                <checkFieldBasic name="SUBSUM" discription="授信额度变动" valueMin='-10000000000' valueMax='10000000000'></checkFieldBasic>
+                <checkFieldBasic name="RATE" discription="授信额度变动比率" valueMin='-0.04' valueMax='0.05'></checkFieldBasic>
+            </checkFieldOr>
+        </checkFieldOrList>
+     </checkTable>         
+     
+		 <checkTable procedureName="Check_NCR_1_1_TJL_KQ01_003"  procedureParam="DTDATE,strInstCode,NUM" 
+		 procedureDiscription="统计类指标跨期异常值变动提示（10亿-100亿）" defaultLogicDaoBeanId="oracleProcedureResultSetDao">    
+	  		<paramFieldList>
+	  			<paramField paramName="DTDATE" field="DTDATE" type="2"></paramField>
+	  			<paramField paramName="strInstCode" field="INSTINFO" type="1"></paramField>
+	  			<paramField paramName="NUM" field="NUM" type="1" value="4"></paramField>
+	  		</paramFieldList>
+        <checkUniqueFieldList>
+        </checkUniqueFieldList>
+       	<checkFieldOrList>
+            <checkFieldOr type="1">                                                           
+                <checkFieldBasic name="SUBSUM" discription="授信额度变动" valueMin='-1000000000' valueMax='1000000000'></checkFieldBasic>
+                <checkFieldBasic name="RATE" discription="授信额度变动比率" valueMin='-0.08' valueMax='0.15'></checkFieldBasic>
+            </checkFieldOr>
+        </checkFieldOrList>
+     </checkTable>          
+     
+		 <checkTable procedureName="Check_NCR_1_1_TJL_KQ01_003"  procedureParam="DTDATE,strInstCode,NUM" 
+		 procedureDiscription="统计类指标跨期异常值变动提示（10亿以下）" defaultLogicDaoBeanId="oracleProcedureResultSetDao">    
+	  		<paramFieldList>
+	  			<paramField paramName="DTDATE" field="DTDATE" type="2"></paramField>
+	  			<paramField paramName="strInstCode" field="INSTINFO" type="1"></paramField>
+	  			<paramField paramName="NUM" field="NUM" type="1" value="5"></paramField>
+	  		</paramFieldList>
+        <checkUniqueFieldList>
+        </checkUniqueFieldList>
+       	<checkFieldOrList>
+            <checkFieldOr type="1">                                                           
+                <checkFieldBasic name="SUBSUM" discription="授信额度变动" valueMin='500000000' valueMax='500000000'></checkFieldBasic>
+                <checkFieldBasic name="RATE" discription="授信额度变动比率" valueMin='-0.2' valueMax='0.2'></checkFieldBasic>
+            </checkFieldOr>
+        </checkFieldOrList>
+     </checkTable>
+       <!--统计类指标跨期异常值变动提示：贷款余额-->
+		  <checkTable procedureName="Check_NCR_1_1_TJL_KQ01_004"  procedureParam="DTDATE,strInstCode,NUM" 
+		  procedureDiscription="统计类指标跨期异常值变动提示（贷款余额大于1万亿）" defaultLogicDaoBeanId="oracleProcedureResultSetDao">    
+	  		<paramFieldList>
+	  			<paramField paramName="DTDATE" field="DTDATE" type="2"></paramField>
+	  			<paramField paramName="strInstCode" field="INSTINFO" type="1"></paramField>
+	  			<paramField paramName="NUM" field="NUM" type="1" value="1"></paramField>
+	  		</paramFieldList>
+        <checkUniqueFieldList>
+        </checkUniqueFieldList>
+       	<checkFieldOrList>
+            <checkFieldOr type="1">                                                 
+                <checkFieldBasic name="SUBSUM" discription="贷款余额变动" valueMin='-20000000000' valueMax='20000000000'></checkFieldBasic>
+                <checkFieldBasic name="RATE" discription="贷款余额变动比率" valueMin='-0.01' valueMax='0.02'></checkFieldBasic>
+            </checkFieldOr>
+        </checkFieldOrList>
+     </checkTable>
+     
+     <checkTable procedureName="Check_NCR_1_1_TJL_KQ01_004"  procedureParam="DTDATE,strInstCode,NUM" 
+     procedureDiscription="统计类指标跨期异常值变动提示（1千亿-1万亿）" defaultLogicDaoBeanId="oracleProcedureResultSetDao">    
+	  		<paramFieldList>
+	  			<paramField paramName="DTDATE" field="DTDATE" type="2"></paramField>
+	  			<paramField paramName="strInstCode" field="INSTINFO" type="1"></paramField>
+	  			<paramField paramName="NUM" field="NUM" type="1" value="2"></paramField>
+	  		</paramFieldList>
+        <checkUniqueFieldList>
+        </checkUniqueFieldList>
+       	<checkFieldOrList>
+            <checkFieldOr type="1">                                                 
+                <checkFieldBasic name="SUBSUM" discription="贷款余额变动" valueMin='-5000000000' valueMax='5000000000'></checkFieldBasic>
+                <checkFieldBasic name="RATE" discription="贷款余额变动比率" valueMin='-0.02' valueMax='0.03'></checkFieldBasic>
+            </checkFieldOr>
+        </checkFieldOrList>
+     </checkTable>    
+     
+     <checkTable procedureName="Check_NCR_1_1_TJL_KQ01_004"  procedureParam="DTDATE,strInstCode,NUM" 
+     procedureDiscription="统计类指标跨期异常值变动提示（100亿-1千亿）" defaultLogicDaoBeanId="oracleProcedureResultSetDao">    
+	  		<paramFieldList>
+	  			<paramField paramName="DTDATE" field="DTDATE" type="2"></paramField>
+	  			<paramField paramName="strInstCode" field="INSTINFO" type="1"></paramField>
+	  			<paramField paramName="NUM" field="NUM" type="1" value="3"></paramField>
+	  		</paramFieldList>
+        <checkUniqueFieldList>
+        </checkUniqueFieldList>
+       	<checkFieldOrList>
+            <checkFieldOr type="1">
+                <checkFieldBasic name="SUBSUM" discription="贷款余额变动" valueMin='-2000000000' valueMax='2000000000'></checkFieldBasic>
+                <checkFieldBasic name="RATE" discription="贷款余额变动比率" valueMin='-0.04' valueMax='0.05'></checkFieldBasic>
+            </checkFieldOr>
+        </checkFieldOrList>
+     </checkTable>         
+     
+		 <checkTable procedureName="Check_NCR_1_1_TJL_KQ01_004"  procedureParam="DTDATE,strInstCode,NUM" 
+		 procedureDiscription="统计类指标跨期异常值变动提示（10亿-100亿）" defaultLogicDaoBeanId="oracleProcedureResultSetDao">    
+	  		<paramFieldList>
+	  			<paramField paramName="DTDATE" field="DTDATE" type="2"></paramField>
+	  			<paramField paramName="strInstCode" field="INSTINFO" type="1"></paramField>
+	  			<paramField paramName="NUM" field="NUM" type="1" value="4"></paramField>
+	  		</paramFieldList>
+        <checkUniqueFieldList>
+        </checkUniqueFieldList>
+       	<checkFieldOrList>
+            <checkFieldOr type="1">                                                           
+                <checkFieldBasic name="SUBSUM" discription="贷款余额变动" valueMin='-500000000' valueMax='500000000'></checkFieldBasic>
+                <checkFieldBasic name="RATE" discription="贷款余额变动比率" valueMin='-0.08' valueMax='0.15'></checkFieldBasic>
+            </checkFieldOr>
+        </checkFieldOrList>
+     </checkTable>          
+     
+		 <checkTable procedureName="Check_NCR_1_1_TJL_KQ01_004"  procedureParam="DTDATE,strInstCode,NUM" 
+		 procedureDiscription="统计类指标跨期异常值变动提示（10亿以下）" defaultLogicDaoBeanId="oracleProcedureResultSetDao">    
+	  		<paramFieldList>
+	  			<paramField paramName="DTDATE" field="DTDATE" type="2"></paramField>
+	  			<paramField paramName="strInstCode" field="INSTINFO" type="1"></paramField>
+	  			<paramField paramName="NUM" field="NUM" type="1" value="5"></paramField>
+	  		</paramFieldList>
+        <checkUniqueFieldList>
+        </checkUniqueFieldList>
+       	<checkFieldOrList>
+            <checkFieldOr type="1">                                                           
+                <checkFieldBasic name="SUBSUM" discription="贷款余额变动" valueMin='200000000' valueMax='200000000'></checkFieldBasic>
+                <checkFieldBasic name="RATE" discription="贷款余额变动比率" valueMin='-0.2' valueMax='0.2'></checkFieldBasic>
+            </checkFieldOr>
+        </checkFieldOrList>
+     </checkTable>
+     <!--统计类指标跨期异常值变动提示：表外业务余额-->
+      <checkTable procedureName="Check_NCR_1_1_TJL_KQ01_009"  procedureParam="DTDATE,strInstCode,NUM" 
+      procedureDiscription="统计类指标跨期异常值变动提示（表外业务余额大于1万亿）" defaultLogicDaoBeanId="oracleProcedureResultSetDao">    
+	  		<paramFieldList>
+	  			<paramField paramName="DTDATE" field="DTDATE" type="2"></paramField>
+	  			<paramField paramName="strInstCode" field="INSTINFO" type="1"></paramField>
+	  			<paramField paramName="NUM" field="NUM" type="1" value="1"></paramField>
+	  		</paramFieldList>
+        <checkUniqueFieldList>
+        </checkUniqueFieldList>
+       	<checkFieldOrList>
+            <checkFieldOr type="1">                                                 
+                <checkFieldBasic name="SUBSUM" discription="贷款余额变动" valueMin='-2000000000' valueMax='2000000000'></checkFieldBasic>
+                <checkFieldBasic name="RATE" discription="贷款余额变动比率" valueMin='-0.01' valueMax='0.01'></checkFieldBasic>
+            </checkFieldOr>
+        </checkFieldOrList>
+     </checkTable>
+     
+     <checkTable procedureName="Check_NCR_1_1_TJL_KQ01_009"  procedureParam="DTDATE,strInstCode,NUM" 
+     procedureDiscription="统计类指标跨期异常值变动提示（1千亿-1万亿）" defaultLogicDaoBeanId="oracleProcedureResultSetDao">    
+	  		<paramFieldList>
+	  			<paramField paramName="DTDATE" field="DTDATE" type="2"></paramField>
+	  			<paramField paramName="strInstCode" field="INSTINFO" type="1"></paramField>
+	  			<paramField paramName="NUM" field="NUM" type="1" value="2"></paramField>
+	  		</paramFieldList>
+        <checkUniqueFieldList>
+        </checkUniqueFieldList>
+       	<checkFieldOrList>
+            <checkFieldOr type="1">                                                 
+                <checkFieldBasic name="SUBSUM" discription="贷款余额变动" valueMin='-1000000000' valueMax='1000000000'></checkFieldBasic>
+                <checkFieldBasic name="RATE" discription="贷款余额变动比率" valueMin='-0.02' valueMax='0.02'></checkFieldBasic>
+            </checkFieldOr>
+        </checkFieldOrList>
+     </checkTable>    
+     
+     <checkTable procedureName="Check_NCR_1_1_TJL_KQ01_009"  procedureParam="DTDATE,strInstCode,NUM" 
+     procedureDiscription="统计类指标跨期异常值变动提示（100亿-1千亿）" defaultLogicDaoBeanId="oracleProcedureResultSetDao">    
+	  		<paramFieldList>
+	  			<paramField paramName="DTDATE" field="DTDATE" type="2"></paramField>
+	  			<paramField paramName="strInstCode" field="INSTINFO" type="1"></paramField>
+	  			<paramField paramName="NUM" field="NUM" type="1" value="3"></paramField>
+	  		</paramFieldList>
+        <checkUniqueFieldList>
+        </checkUniqueFieldList>
+       	<checkFieldOrList>
+            <checkFieldOr type="1">
+                <checkFieldBasic name="SUBSUM" discription="贷款余额变动" valueMin='-500000000' valueMax='500000000'></checkFieldBasic>
+                <checkFieldBasic name="RATE" discription="贷款余额变动比率" valueMin='-0.03' valueMax='0.03'></checkFieldBasic>
+            </checkFieldOr>
+        </checkFieldOrList>
+     </checkTable>         
+     
+		 <checkTable procedureName="Check_NCR_1_1_TJL_KQ01_009"  procedureParam="DTDATE,strInstCode,NUM" 
+		 procedureDiscription="统计类指标跨期异常值变动提示（10亿-100亿）" defaultLogicDaoBeanId="oracleProcedureResultSetDao">    
+	  		<paramFieldList>
+	  			<paramField paramName="DTDATE" field="DTDATE" type="2"></paramField>
+	  			<paramField paramName="strInstCode" field="INSTINFO" type="1"></paramField>
+	  			<paramField paramName="NUM" field="NUM" type="1" value="4"></paramField>
+	  		</paramFieldList>
+        <checkUniqueFieldList>
+        </checkUniqueFieldList>
+       	<checkFieldOrList>
+            <checkFieldOr type="1">                                                           
+                <checkFieldBasic name="SUBSUM" discription="贷款余额变动" valueMin='-300000000' valueMax='300000000'></checkFieldBasic>
+                <checkFieldBasic name="RATE" discription="贷款余额变动比率" valueMin='-0.4' valueMax='0.4'></checkFieldBasic>
+            </checkFieldOr>
+        </checkFieldOrList>
+     </checkTable>          
+     
+		 <checkTable procedureName="Check_NCR_1_1_TJL_KQ01_009"  procedureParam="DTDATE,strInstCode,NUM" 
+		 procedureDiscription="统计类指标跨期异常值变动提示（10亿以下）" defaultLogicDaoBeanId="oracleProcedureResultSetDao">    
+	  		<paramFieldList>
+	  			<paramField paramName="DTDATE" field="DTDATE" type="2"></paramField>
+	  			<paramField paramName="strInstCode" field="INSTINFO" type="1"></paramField>
+	  			<paramField paramName="NUM" field="NUM" type="1" value="5"></paramField>
+	  		</paramFieldList>
+        <checkUniqueFieldList>
+        </checkUniqueFieldList>
+       	<checkFieldOrList>
+            <checkFieldOr type="1">                                                           
+                <checkFieldBasic name="SUBSUM" discription="贷款余额变动" valueMin='300000000' valueMax='300000000'></checkFieldBasic>
+                <checkFieldBasic name="RATE" discription="贷款余额变动比率" valueMin='-0.5' valueMax='0.5'></checkFieldBasic>
+            </checkFieldOr>
+        </checkFieldOrList>
+     </checkTable>	
+        
+      <checkFieldAggregationList discription="聚合校验">
+			<paramFieldList>
+				<paramField paramName="DTDATE" field="DTDATE" type="2"></paramField>
+				<paramField paramName="strInstCode" field="INSTINFO" type="1"></paramField>
+			</paramFieldList>
+			<!--LJX-004	表1 PARTⅠ中，同一[客户代码]、同一[授信号码]下，[贷款余额]等于《PARTⅢ:贷款明细》中该[授信号码]下的[贷款余额]之和-->	
+		
+			<checkFieldAggregation compareType="="	splitDiscription="客户代码_授信号码" leftSplitField="SPLITFIELD" rightSplitField="SPLITFIELD">
+				<leftFieldList>
+					<checkFieldAggregationField procedureName=" Check_NCR_1_1_LJX_004_L" procedureParam="DTDATE,strInstCode,rt" procedureDiscription="贷款余额" procedureResultField="L"></checkFieldAggregationField>
+				</leftFieldList>
+				<rightFieldList>
+					<checkFieldAggregationField procedureName=" Check_NCR_1_3_LJX_004_R" procedureParam="DTDATE,strInstCode,rt" procedureDiscription="SUM(贷款余额)" procedureResultField="SUM_J"></checkFieldAggregationField>
+				</rightFieldList>
+			</checkFieldAggregation>
+		
+			
+			 <!--LJX-005	若[客户类型]为“1-集团客户”，则该集团PARTⅠ中，同一[客户代码]、同一[授信号码]下[贷款余额]等于PARTⅡ中该[授信号码]对应的[贷款余额]之和-->
+			 
+			 			<checkFieldAggregation compareType="="	splitDiscription="客户代码_授信号码" leftSplitField="SPLITFIELD" rightSplitField="SPLITFIELD">
+				<leftFieldList>
+					<checkFieldAggregationField procedureName="Check_NCR_1_1_LJX_005_L" procedureParam="DTDATE,strInstCode,rt" procedureDiscription="贷款余额" procedureResultField="L"></checkFieldAggregationField>
+				</leftFieldList>
+				<rightFieldList>
+					<checkFieldAggregationField procedureName="Check_NCR_1_2_LJX_005_R" procedureParam="DTDATE,strInstCode,rt" procedureDiscription="SUM(贷款余额)" procedureResultField="SUM_F"></checkFieldAggregationField>
+				</rightFieldList>
+			</checkFieldAggregation>
+		
+			<!--LJX-006	表1 PARTⅠ中，同一[客户代码]、同一[授信号码]下，[持有债券余额]等于《PARTⅣ：持有企业债券明细》中该[授信号码]下的债券[账面余额]之和-->
+				
+			<checkFieldAggregation compareType="="	splitDiscription="客户代码_授信号码" leftSplitField="SPLITFIELD" rightSplitField="SPLITFIELD">
+				<leftFieldList>
+					<checkFieldAggregationField procedureName="Check_NCR_1_1_LJX_006_L" procedureParam="DTDATE,strInstCode,rt" procedureDiscription="持有债券余额" procedureResultField="M"></checkFieldAggregationField>
+				</leftFieldList>
+				<rightFieldList>
+					<checkFieldAggregationField procedureName="Check_NCR_1_4_LJX_006_R" procedureParam="DTDATE,strInstCode,rt" procedureDiscription="SUM(账面余额)" procedureResultField="SUM_E203207"></checkFieldAggregationField>
+				</rightFieldList>
+			</checkFieldAggregation>		
+			
+			
+			<!--LJX-007	若[客户类型]为“1-集团客户”，则该集团PARTⅠ中，同一[客户代码]、同一[授信号码]下[持有债券余额]等于PARTⅡ中该[授信号码]对应的[持有债券余额]之和-->
+			
+			<checkFieldAggregation compareType="="	splitDiscription="客户代码_授信号码" leftSplitField="SPLITFIELD" rightSplitField="SPLITFIELD">
+				<leftFieldList>
+					<checkFieldAggregationField procedureName="Check_NCR_1_1_LJX_007_L" procedureParam="DTDATE,strInstCode,rt" procedureDiscription="持有债券余额" procedureResultField="M"></checkFieldAggregationField>
+				</leftFieldList>
+				<rightFieldList>
+					<checkFieldAggregationField procedureName="Check_NCR_1_2_LJX_007_R" procedureParam="DTDATE,strInstCode,rt" procedureDiscription="SUM(持有债券余额)" procedureResultField="SUM_G"></checkFieldAggregationField>
+				</rightFieldList>
+			</checkFieldAggregation>	
+			
+	
+			<!--LJX-008	表1 PARTⅠ中，同一[客户代码]、同一[授信号码]下，[持有股权余额]等于《PARTⅤ：持有企业股权明细》中该[授信号码]下的持有股权[账面余额]之和-->
+			
+			<checkFieldAggregation compareType="=" splitDiscription="客户代码_授信号码" leftSplitField="SPLITFIELD" rightSplitField="SPLITFIELD">
+				<leftFieldList >
+					<checkFieldAggregationField procedureResultField="N" procedureDiscription="持有股权余额" procedureName="Check_NCR_1_1_LJX_008_L" procedureParam="DTDATE,strInstCode,rt" ></checkFieldAggregationField>
+				</leftFieldList>
+				<rightFieldList>
+					<checkFieldAggregationField procedureResultField="SUM_E" procedureDiscription="账面余额" procedureName="Check_NCR_1_5_LJX_008_R" procedureParam="DTDATE,strInstCode,rt"></checkFieldAggregationField>
+				</rightFieldList>
+			</checkFieldAggregation>	
+								
+			<!--LJX-009	若[客户类型]为“1-集团客户”，则该集团PARTⅠ中，同一[客户代码]、同一[授信号码]下[持有股权余额]等于PARTⅡ中该[授信号码]对应的[持有股权余额]之和-->
+			
+			<checkFieldAggregation compareType="="	splitDiscription="客户代码_授信号码" leftSplitField="SPLITFIELD" rightSplitField="SPLITFIELD">
+				<leftFieldList>
+					<checkFieldAggregationField procedureName="Check_NCR_1_1_LJX_009_L" procedureParam="DTDATE,strInstCode,rt" procedureDiscription="持有股权余额" procedureResultField="N"></checkFieldAggregationField>
+				</leftFieldList>
+				<rightFieldList>
+					<checkFieldAggregationField procedureName="Check_NCR_1_2_LJX_009_R" procedureParam="DTDATE,strInstCode,rt" procedureDiscription="SUM(持有股权余额)" procedureResultField="SUM_H"></checkFieldAggregationField>
+				</rightFieldList>
+			</checkFieldAggregation>	
+			
+
+			<!--LJX-010	若[客户类型]为“1-集团客户”，则该集团PARTⅠ中，同一[客户代码]、同一[授信号码]下[其他表内信用风险资产余额]等于PARTⅡ中该[授信号码]对应的[其他表内信用风险资产余额]之和-->
+			
+	
+			<checkFieldAggregation compareType="="	splitDiscription="客户代码_授信号码" leftSplitField="SPLITFIELD" rightSplitField="SPLITFIELD">
+				<leftFieldList>
+					<checkFieldAggregationField procedureName=" Check_NCR_1_1_LJX_010_L" procedureParam="DTDATE,strInstCode,rt" procedureDiscription="其他表内信用风险资产余额" procedureResultField="O"></checkFieldAggregationField>
+				</leftFieldList>
+				<rightFieldList>
+					<checkFieldAggregationField procedureName="Check_NCR_1_2_LJX_010_R" procedureParam="DTDATE,strInstCode,rt" procedureDiscription="SUM(其他表内信用风险资产余额)" procedureResultField="SUM_I"></checkFieldAggregationField>
+				</rightFieldList>
+			</checkFieldAggregation>	
+				
+			 
+			<!--LJX-011	表1 PART Ⅰ中，同一[客户代码]、同一[授信号码]下，[表外业务余额]等于《PARTⅥ：表外业务明细》中该[授信号码]下的[业务余额]之和-->
+
+			<checkFieldAggregation compareType="=" splitDiscription="客户代码_授信号码" leftSplitField="SPLITFIELD" rightSplitField="SPLITFIELD">
+				<leftFieldList>
+					<checkFieldAggregationField  procedureResultField="P" procedureDiscription="表外业务余额" procedureName="Check_NCR_1_1_LJX_011_L" procedureParam="DTDATE,strInstCode,rt"></checkFieldAggregationField>
+				</leftFieldList>
+				<rightFieldList>
+					<checkFieldAggregationField procedureResultField="SUM_H" procedureDiscription="SUM(业务余额)"  procedureName="Check_NCR_1_6_LJX_011_R" procedureParam="DTDATE,strInstCode,rt" ></checkFieldAggregationField>
+				</rightFieldList>
+			</checkFieldAggregation>		
+
+				
+			<!--LJX-012	若[客户类型]为“1-集团客户”，则该集团PARTⅠ中，同一[客户代码]、同一[授信号码]下[表外业务余额]等于PARTⅡ中该[授信号码]对应的[表外业务余额]之和-->	
+					
+			<checkFieldAggregation compareType="="	splitDiscription="客户代码_授信号码" leftSplitField="SPLITFIELD" rightSplitField="SPLITFIELD">
+				<leftFieldList>
+					<checkFieldAggregationField procedureName="Check_NCR_1_1_LJX_012_L" procedureParam="DTDATE,strInstCode,rt" procedureDiscription="表外业务余额" procedureResultField="P"></checkFieldAggregationField>
+				</leftFieldList>
+				<rightFieldList>
+					<checkFieldAggregationField procedureName="Check_NCR_1_2_LJX_012_R" procedureParam="DTDATE,strInstCode,rt" procedureDiscription="SUM(表外业务余额)" procedureResultField="SUM_J"></checkFieldAggregationField>
+				</rightFieldList>
+			</checkFieldAggregation>	
+			
+			<!--LJX-013	若[客户类型]为“1-集团客户”，则该集团PARTⅠ中，同一[客户代码]、同一[授信号码]下[现有业务余额占用授信额度]等于PARTⅡ中该[授信号码]对应的[现有业务余额占用授信额度]之和-->		
+		
+			<checkFieldAggregation compareType="="	splitDiscription="客户代码_授信号码" leftSplitField="SPLITFIELD" rightSplitField="SPLITFIELD">
+				<leftFieldList>
+					<checkFieldAggregationField procedureName="Check_NCR_1_1_LJX_013_L" procedureParam="DTDATE,strInstCode,rt" procedureDiscription="现有业务余额占用授信额度" procedureResultField="Q"></checkFieldAggregationField>
+				</leftFieldList>
+				<rightFieldList>
+					<checkFieldAggregationField procedureName="Check_NCR_1_2_LJX_013_R" procedureParam="DTDATE,strInstCode,rt" procedureDiscription="SUM(现有业务余额占用授信额度)" procedureResultField="SUM_K"></checkFieldAggregationField>
+				</rightFieldList>
+			</checkFieldAggregation>	
+					
+			<!--LJX-015	若[客户类型]为“1-集团客户”，则该集团PARTⅠ中，同一[客户代码]、同一[授信号码]下[其中：贷款余额占用贷款授信额度度]等于PARTⅡ中该[授信号码]对应的[其中：贷款余额占用贷款授信额度度]之和-->				
+						<checkFieldAggregation compareType="="	splitDiscription="客户代码_授信号码" leftSplitField="SPLITFIELD" rightSplitField="SPLITFIELD">
+				<leftFieldList>
+					<checkFieldAggregationField procedureName="Check_NCR_1_1_LJX_015_L" procedureParam="DTDATE,strInstCode,rt" procedureDiscription="其中：贷款余额占用贷款授信额度度" procedureResultField="R"></checkFieldAggregationField>
+				</leftFieldList>
+				<rightFieldList>
+					<checkFieldAggregationField procedureName="Check_NCR_1_2_LJX_015_R" procedureParam="DTDATE,strInstCode,rt" procedureDiscription="SUM(其中：贷款余额占用贷款授信额度度)" procedureResultField="SUM_L"></checkFieldAggregationField>
+				</rightFieldList>
+			</checkFieldAggregation>
+			
+			<!--LJX-075|表1PARTⅠ中，若[客户类型]为“1-集团客户”，则该集团PARTⅠ中，同一[客户代码]、同一[授信号码]下[授信额度]大于等于PARTⅡ中该[授信号码]对应所有成员单位中的最大[授信额度]。-->
+			<checkFieldAggregation compareType=">="	splitDiscription="授信号码" leftSplitField="SPLITFIELD" rightSplitField="SPLITFIELD">
+				<leftFieldList>
+					<checkFieldAggregationField procedureResultField="PROC_RESULT" procedureDiscription="授信额度" procedureName="Check_NCR_1_1_LJX_075_L" procedureParam="DTDATE,strInstCode,rt" ></checkFieldAggregationField>
+				</leftFieldList>
+				<rightFieldList>
+					<checkFieldAggregationField procedureResultField="PROC_RESULT" procedureDiscription="最大授信额度" procedureName="Check_NCR_1_1_LJX_075_R" procedureParam="DTDATE,strInstCode,rt" ></checkFieldAggregationField>
+				</rightFieldList>
+			</checkFieldAggregation>
+			
+		</checkFieldAggregationList>
+					 
+		
+		  <checkFieldConsistentList consistenttype="2" discription="唯一性校验">
+			<paramFieldList>
+				<paramField paramName="DTDATE" field="DTDATE" type="2"></paramField>
+				<paramField paramName="strInstCode" field="INSTINFO" type="1"></paramField>
+			</paramFieldList>
+			 <!--WYX-001|表1《PART I：授信情况》|同一[客户代码]下|[授信号码]-->			
+			 <checkFieldConsistent>
+				<consistentGroup keyField="C" keyDiscription="客户代码"  nameField="G" nameDiscription="授信号码" procedureName="Check_NCR_1_1_WYX_001" procedureDiscription="NCR_1_1授信情况" procedureParam="DTDATE,strInstCode,rt"></consistentGroup>
+			</checkFieldConsistent>
+			<!--WYX-002|表1《PART I：授信情况》|[填报机构代码]下所有的[授信号码]，除[授信号码]为“WNRSXYW”外|[授信号码]-->
+			  <checkFieldConsistent>
+				<consistentGroup keyField="INSTINFO" keyDiscription="填报机构代码"  nameField="G" nameDiscription="授信号码" procedureName="Check_NCR_1_1_WYX_002" procedureDiscription="NCR_1_1授信情况" procedureParam="DTDATE,strInstCode,rt"></consistentGroup>
+			  </checkFieldConsistent>
+		  </checkFieldConsistentList>	
+				
+		  <checkFieldConsistentList consistenttype="1" discription="一致性校验">
+			 <paramFieldList>
+				  <paramField paramName="DTDATE" field="DTDATE" type="2"></paramField>
+				  <paramField paramName="strInstCode" field="INSTINFO" type="1"></paramField>
+			 </paramFieldList>
+			<!--HNYZ-GB-001|相同信息值中：任意两个法人客户代码相同，国别需一致-->
+			<checkFieldConsistent>
+				<consistentGroup keyField="C" keyDiscription="客户代码"  nameField="D" nameDiscription="客户国籍代码" procedureName="Check_NCR_1_1_HNYZ_GB_001" procedureDiscription="NCR_1_1授信情况" procedureParam="DTDATE,strInstCode,rt"></consistentGroup>
+			</checkFieldConsistent>
+			<!--HNYZ-FR-003 表内及表间，同一个内部客户代码，对应的名称应一致-->
+			<checkFieldConsistent>
+				<consistentGroup keyField="C" keyDiscription="客户代码"  nameField="B" nameDiscription="客户名称" procedureName="Check_NCR_1_1" procedureDiscription="NCR_1_1授信情况" procedureParam="DTDATE,strInstCode,rt"></consistentGroup>
+			</checkFieldConsistent>			
+		</checkFieldConsistentList>	
+			  						
+	</checkInstance>
+</reportCheckRoot>

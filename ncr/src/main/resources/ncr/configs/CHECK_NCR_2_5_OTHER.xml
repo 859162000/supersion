@@ -1,0 +1,39 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<reportCheckRoot>  
+	<checkInstance name="CHECK_NCR_2_5_OTHER">
+	    <paramValueList>
+	      <paramValue name="DTDATE" value="2013-12-31"></paramValue>
+	       <paramValue name="strInstCode" value=""></paramValue>
+	       <!--
+		    <paramValue name="strTaskRptInstID" value="000000"></paramValue>
+			  <paramValue name="strFreq" value="000000"></paramValue> 
+			  -->
+	    </paramValueList>
+
+	    <freqCode value="4"></freqCode>
+	    
+	    <checkTable procedureName="Check_NCR_2_5"  procedureParam="DTDATE,strInstCode" procedureDiscription="关联集团信息" 
+      	originTable="NCR_2_5" errorStateField="RPTCHECKTYPE" errorStateValue="3"  successStateValue="2" 
+      	defaultLogicDaoBeanId="oracleProcedureResultSetDao">    
+  		<paramFieldList>
+  			<paramField paramName="DTDATE" field="DTDATE" type="2"></paramField>
+  			<paramField paramName="strInstCode" field="INSTINFO" type="1"></paramField>
+  		</paramFieldList>
+      </checkTable> 
+	    <checkUniqueFieldList>
+				<checkUniqueField name="AUTOID" discription="主键" originField="AUTOID"></checkUniqueField>
+			</checkUniqueFieldList>
+
+		  <checkFieldConsistentList consistenttype="2" discription="唯一性校验">
+      	<paramFieldList>
+						<paramField paramName="DTDATE" field="DTDATE" type="2"></paramField>
+						<paramField paramName="strInstCode" field="INSTINFO" type="1"></paramField>
+				</paramFieldList>
+				<!--WYX-016	表2《PART Ⅴ：关联集团信息》	同一[授信类型]，同一[客户代码/供应链编码]下	[关联集团代码]-->
+    	 	<checkFieldConsistent>
+      			<consistentGroup keyField="CONDITION" keyDiscription="授信类型,客户代码/供应链编码" nameField="A" nameDiscription="关联集团代码"   procedureName="Check_NCR_2_5_WYX_16"  procedureDiscription="关联集团信息唯一性校验存储过程" procedureParam="DTDATE,strInstCode,rt" ></consistentGroup>
+      	</checkFieldConsistent>
+      </checkFieldConsistentList>	                     
+        
+	</checkInstance>	
+</reportCheckRoot>

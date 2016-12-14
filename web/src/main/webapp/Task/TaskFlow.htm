@@ -1,0 +1,202 @@
+﻿<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title>任务流程配置</title>
+    <script src="../js/jquery/jquery.1.7.js" type="text/javascript"></script>
+    <link href="../css/Comm.css" rel="stylesheet" type="text/css" />
+    <link href="../css/buttons.css" rel="stylesheet" type="text/css" />
+    <link href="../css/TaskFlowCss.css" rel="stylesheet" type="text/css" />
+    <script src="../js/JsGrid.js" type="text/javascript"></script>
+    <link href="../css/JSGrid.css" rel="stylesheet" type="text/css" />
+    <script src="../js/TaskIco.js" type="text/javascript"></script>
+    <script src="../js/DatePicker/WdatePicker.js" type="text/javascript"></script>
+    <script src="../js/jquery/jquery.roundabout.js" type="text/javascript"></script>
+    <script src="../js/jquery/jquery.roundabout-shapes.js" type="text/javascript"></script>
+    <link href="../css/RoundaboutCSS.css" rel="stylesheet" type="text/css" />
+    <script type="text/javascript">
+        function stop()
+        { 
+            return false; 
+        } 
+        document.oncontextmenu=stop; 
+        document.oncontextmenu=new Function('event.returnValue=false;');
+        document.onselectstart=new Function('event.returnValue=false;');
+        function WhenUserClickAddTask()
+        {
+            window.parent.OpenRptWindows("AddTaskInfo","yes","添加流程任务","task/AddTaskInfo.htm");
+        }
+        function AutiSize()
+        {
+            document.getElementById('Grid_Task').style.height = ($(window).height() - 133)+'px';
+        }
+        $(document).ready(function(){
+        
+            /*create the gird table-head
+            var ColArray = new Array();
+                ColArray.push({ColumnWidth:'60',ColumnName:'报表编号',ColumnCode:"Col1"});
+                ColArray.push({ColumnWidth:'160',ColumnName:'报表名称',ColumnCode:"Col2"});
+                ColArray.push({ColumnWidth:'100',ColumnName:'报表状态',ColumnCode:"Col3"});
+                ColArray.push({ColumnWidth:'60',ColumnName:'校验状态',ColumnCode:"Col4"});
+                ColArray.push({ColumnWidth:'100',ColumnName:'审核人',ColumnCode:"Col5"});
+                ColArray.push({ColumnWidth:'100',ColumnName:'最后操作人',ColumnCode:"Col6"});*/
+            
+            /*create a new grid
+            var ProjectGrid_Task =  new CreateJsGrid("Grid_Task",660,ColArray,
+                {
+                    HeadRowCss:'JS_Grid_Head_Row',
+                    HeadCellCss:'JS_Grid_Head_Row_Cell',
+                    DataRowCss:'JS_Grid_Data_Row',
+                    DataCellCss:'JS_Grid_Data_Row_Cell'
+                });
+
+          var NewRow = new Array("A1411",'资产负债表',"待填报","未校验","马骏","马骏");
+          ProjectGrid_Task.AddNewRow(NewRow);
+          ProjectGrid_Task.AddNewRow(NewRow);
+          ProjectGrid_Task.AddNewRow(NewRow);
+          ProjectGrid_Task.AddNewRow(NewRow);
+          ProjectGrid_Task.AddNewRow(NewRow);
+          ProjectGrid_Task.AddNewRow(NewRow);
+          ProjectGrid_Task.AddNewRow(NewRow);
+          ProjectGrid_Task.AddNewRow(NewRow);*/
+          //(strFatherID,strTaskID,strSuitIco,strTaskStatus,strSuitName,strTaskName,strTaskData)
+          InsertNewTaskIco("Grid_Task","Div1","1","do","银监会1104","2014年5月30日[月报]","2014/12/031~2015-12-31");
+          InsertNewTaskIco("Grid_Task","Div2","2","wating","人民银行数据大集中","2014年5月30日[月报]","2014/12/031~2015-12-31");
+          InsertNewTaskIco("Grid_Task","Div3","3","wating","人民银行数据存贷款标准化","2014年5月30日[月报]","2014/12/031~2015-12-31");
+          InsertNewTaskIco("Grid_Task","Div4","6","do","银监会新客户风险","2014年5月30日[月报]","2014/12/031~2015-12-31");
+          InsertNewTaskIco("Grid_Task","Div5","4","stop","银监会EAST","2014年5月30日[月报]","2014/12/031~2015-12-31");
+          InsertNewTaskIco("Grid_Task","Div6","5","do","人民银行支付报送","2014年5月30日[月报]","2014/12/031~2015-12-31");
+          InsertNewTaskIco("Grid_Task","Div7","6","wating","银监会1104","2014年5月30日[月报]","2014/12/031~2015-12-31");
+          InsertNewTaskIco("Grid_Task","Div8","1","wating","人民银行数据大集中","2014年5月30日[月报]","2014/12/031~2015-12-31");
+          InsertNewTaskIco("Grid_Task","Div9","3","do","人民银行数据存贷款标准化","2014年5月30日[月报]","2014/12/031~2015-12-31");
+          InsertNewTaskIco("Grid_Task","Div10","4","stop","银监会新客户风险","2014年5月30日[月报]","2014/12/031~2015-12-31");
+          InsertNewTaskIco("Grid_Task","Div11","5","do","银监会EAST","2014年5月30日[月报]","2014/12/031~2015-12-31");
+          InsertNewTaskIco("Grid_Task","Div12","6","wating","人民银行支付报送","2014年5月30日[月报]","2014/12/031~2015-12-31");
+          InsertNewTaskIco("Grid_Task","Div13","1","stop","银监会1104","2014年5月30日[月报]","2014/12/031~2015-12-31");
+          InsertNewTaskIco("Grid_Task","Div14","2","do","人民银行数据大集中","2014年5月30日[月报]","2014/12/031~2015-12-31");
+          InsertNewTaskIco("Grid_Task","Div15","3","stop","人民银行数据存贷款标准化","2014年5月30日[月报]","2014/12/031~2015-12-31");
+          InsertNewTaskIco("Grid_Task","Div16","4","wating","银监会新客户风险","2014年5月30日[月报]","2014/12/031~2015-12-31");
+          InsertNewTaskIco("Grid_Task","Div17","5","do","银监会EAST","2014年5月30日[月报]","2014/12/031~2015-12-31");
+          InsertNewTaskIco("Grid_Task","Div18","1","stop","人民银行支付报送","2014年5月30日[月报]","2014/12/031~2015-12-31");
+          
+          
+          //$("[Function_Type='AM']").click(function(){
+          $(".Image_Css").click(function(){
+                $("[SuitType='Select']").remove();
+                var ThisID = "Ico_Frame";//$(this).attr("id");
+                    InsertSuitIco(ThisID,"1_Select","4","数据大集中");
+                    InsertSuitIco(ThisID,"2_Select","2","反洗钱");
+                    InsertSuitIco(ThisID,"3_Select","3","存贷款标准化");
+                    InsertSuitIco(ThisID,"4_Select","4","企业征信");
+                    InsertSuitIco(ThisID,"5_Select","5","个人征信");
+                    InsertSuitIco(ThisID,"6_Select","6","人民币跨境");
+                    InsertSuitIco(ThisID,"7_Select","1","支付报送");
+
+                //$(this).css({"border":"solid 1px #CCCCCC"});
+                //$(this).animate({width:650,height:175},"slow");
+                
+          });
+          /*
+          $("[Function_Type='AM']").mouseleave(function(){
+                $("[SuitType='Select']").remove();
+                $(this).animate({width:80,height:75},"slow");
+                $(this).css({"border":"","background-color":""});
+
+                
+          });*/
+        $(document).click(function(){
+            $("#RightMeum").remove();
+            //window.parent.SetWindowzIndex('TaskFlow');
+        });
+            $('ul').roundabout({
+                //shape: 'lazySusan'
+                //shape: 'waterWheel'
+                //shape: 'figure8'
+                //shape: 'square'
+                //shape: 'conveyorBeltLeft'
+                //shape: 'conveyorBeltRight'
+                //shape: 'diagonalRingLeft'
+                //shape: 'diagonalRingRight'
+                //shape: 'rollerCoaster'
+                //shape: 'tearDrop'
+                //shape: 'theJuggler'
+                //shape: 'goodbyeCruelWorld'
+                shape: 'tearDrop'
+            });
+      });
+    </script>
+</head>
+<body id="Main_Body" onResize="AutiSize();" onload ="AutiSize();">
+<div id="Top_Bar" style="width:100%; height:30px; margin-left:0px; border-left:0px solid #dadada; background-color:#F3F3F3; float:left;box-shadow:0px 0px 10px 2px black;">
+    <div style="float:right; margin-right:20px; line-height:30px;font-family:微软雅黑;  color:Black; font-size:12px; cursor:pointer;" onclick="location.reload();">刷新</div>
+    <div class="button-group" style="margin-top:2px; margin-left:5px; float:left;">
+        <a href="#" class="button primary approve icon" onclick="WhenUserClickAddTask();">添加任务</a>
+        <a href="#" class="button settings icon">修改任务</a>
+        <a href="#" class="button calendar icon">删除任务</a>
+        <a href="#" class="button chat icon">查看任务</a>
+    </div>
+    <div class="TaskBarText">任务状态:</div>
+    <select id="TaskStatusBar TextBox" class="TaskStatusBar">
+        <option>任务状态</option>
+        <option>开始</option>
+        <option>等待</option>
+        <option>暂停</option>
+        <option>结束</option>
+    </select>
+    <div class="TaskBarText">任务时间:</div>
+    <input class="TaskDateTimeBar TextBox" type="text" onfocus="WdatePicker({doubleCalendar:true,dateFmt:'yyyy-MM-dd'})"/>
+</div>
+<div id="Ico_Frame" style=" position:relative; width:100%; height:110px; margin-left:0px; border-left:0px solid #dadada; float:left; overflow :hidden ;">
+    <!--div id="PBOC" class="Suit_Ico_Div" Function_Type="AM" >
+        <img src="../images/suit/1.png" style="width:60px;" />
+        <div style="width:100%;">PBOC</div>
+    </div>
+    <div id="CBRC" class="Suit_Ico_Div" Function_Type="AM">
+        <img src="../images/suit/2.png" style="width:60px;" />
+        <div style="width:100%;">CBRC</div>
+    </div>
+    <div id="SAFE" class="Suit_Ico_Div" Function_Type="AM">
+        <img src="../images/suit/3.png" style="width:60px;" />
+        <div style="width:100%;">SAFE</div>
+    </div>
+    <div id="SELF" class="Suit_Ico_Div" Function_Type="AM" >
+        <img src="../images/suit/4.png" style="width:60px; " />
+        <div style="width:100%;">SELF</div> 
+        
+    </div-->
+    <div id="Roundabout_DIV" align="center">
+        <ul>
+    	    <li>
+	            <div style="  width:30px; height:30px;">
+	            <img class="Image_Css" src="../images/suit/1.ico"/>
+	            <div class="RoundText">人民银行</div>
+	            </div>
+	        </li>
+	        <li>
+	            <div style="  width:30px; height:30px;">
+	            <img class="Image_Css" src="../images/suit/2.ico"/>
+	            <div class="RoundText">银监会</div>
+	            </div>
+	        </li>
+	        <li>
+	            <div style="  width:30px; height:30px;">
+	            <img class="Image_Css" src="../images/suit/3.ico"/>
+	            <div class="RoundText">外管局</div>
+	            </div>
+	        </li>
+	        <li >
+	            <div style=" width:30px; height:30px;">
+	            <img class="Image_Css" src="../images/suit/4.ico"/>
+	            <div class="RoundText">自定义</div>
+	            </div>
+	        </li>
+        </ul>
+    </div>
+</div>
+<div id="Grid_Task" style="width:100%; height:auto;margin-top:0px;overflow:auto; float:left; border-top:solid 1px #CCCCCC; padding-top:5px;overflow:auto; border-top-style: dotted;">
+
+   
+</div>
+</body>
+
+</html>

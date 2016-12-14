@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<dataSecurityRoot>
+ <dataSecurityMap>
+    <dataSecurityName>coresystem.dto.RoleClassInst</dataSecurityName>
+    
+      <dataSecurity>
+      	 <className>szzxpt.dto.AutoDTO_WGJ_ACC_CA</className>
+	     <fieldName>instInfo</fieldName>
+      </dataSecurity>
+      
+      <dataSecurity>
+      	 <className>szzxpt.dto.AutoDTO_WGJ_ACC_CB</className>
+	     <fieldName>instInfo</fieldName>
+      </dataSecurity>
+    
+  </dataSecurityMap>
+
+</dataSecurityRoot>

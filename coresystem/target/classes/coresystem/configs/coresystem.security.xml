@@ -1,0 +1,494 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<securityRoot>
+    <function>
+	     <functionCode>DeskTop</functionCode>
+	     <functionName>DeskTop-桌面</functionName>
+	     <actionName>Framework/NavigationPage.jsp?id=DeskTop</actionName>
+     </function>
+
+	<!-- 以下内容，根据菜单排序   -->
+	<function>
+	    <functionParentId>DeskTop</functionParentId>
+		<functionCode>PlatformManagementCenter</functionCode>
+		<functionName>CoreSystem-平台管理中心</functionName>
+		<actionName>Framework/NavigationPage.jsp?id=PlatformManagementCenter</actionName>
+    </function>
+    
+    <function>
+        <functionParentId>PlatformManagementCenter</functionParentId>
+		<functionCode>Suit</functionCode>
+		<functionName>CoreSystem-主题管理</functionName>
+		<actionName>framework/ShowTree-extend.dto.Suit</actionName> 
+		<actionName>*-extend.dto.Suit</actionName>
+   	</function>
+    
+    <function>
+       <functionParentId>PlatformManagementCenter</functionParentId>
+		<functionCode>InstManagement</functionCode>
+		<functionName>CoreSystem-机构管理</functionName>
+		<actionName>Framework/NavigationPage.jsp?id=InstManagement</actionName>
+    </function>
+    
+    <function>
+        <functionParentId>InstManagement</functionParentId>
+		<functionCode>InstInfo</functionCode>
+		<functionName>CoreSystem-机构信息管理</functionName>
+		<actionName>framework/ShowTree-coresystem.dto.InstInfo</actionName>
+		<actionName>*-coresystem.dto.InstInfo</actionName>
+		<actionName>framework/RefleshParent</actionName>  
+   	</function>
+   	
+   	<function>
+        <functionParentId>InstInfoStateRecovery</functionParentId>
+		<functionCode>InstInfo</functionCode>
+		<functionName>CoreSystem-机构信息状态恢复管理</functionName>
+		<actionName>framework/StateRecoveryShowTree-coresystem.dto.InstInfo</actionName>
+		<actionName>framework/StateRecoveryShowListForTree-coresystem.dto.InstInfo</actionName>
+		<actionName>*-coresystem.dto.InstInfo</actionName>
+		<actionName>framework/RefleshParent</actionName>  
+   	</function>
+   	
+   	<function>
+   	    <functionParentId>InstManagement</functionParentId>
+		<functionCode>InnerInstInfo</functionCode>
+		<functionName>CoreSystem-采集机构信息管理</functionName>
+		<actionName>framework/ShowList-coresystem.dto.InnerInstInfo</actionName>
+		<actionName>*-coresystem.dto.InnerInstInfo</actionName>
+   	</function>
+   	
+   	
+   	<function>
+   	     <functionParentId>InstManagement</functionParentId>
+	     <functionCode>InstInfoSet</functionCode>
+	     <functionName>CoreSystem-机构集合管理</functionName>
+	     <actionName>framework/ShowList-report.dto.InstInfoSet</actionName> 
+	     <actionName>*-report.dto.InstInfoSet</actionName>
+   	</function> 
+   
+    <function>
+       <functionParentId>PlatformManagementCenter</functionParentId>
+		<functionCode>SystemManagement03</functionCode>
+		<functionName>CoreSystem-用户信息管理</functionName>
+		<actionName>framework/ShowTree-coresystem.dto.UserInfo</actionName>
+		<actionName>*-coresystem.dto.UserInfo</actionName>
+		<actionName>framework/singleObjectUpdateFieldAction</actionName>
+   	</function>
+    
+    <function>
+        <functionParentId>PlatformManagementCenter</functionParentId>
+		<functionCode>SystemManagement04</functionCode>
+		<functionName>CoreSystem-角色信息管理</functionName>
+		<actionName>framework/ShowList-coresystem.dto.RoleInfo</actionName> 
+		<actionName>*-coresystem.dto.RoleInfo</actionName>
+	</function>
+
+   	<function>
+   	   <functionParentId>PlatformManagementCenter</functionParentId>
+     	<functionCode>NoticeManagement</functionCode>
+     	<functionName>CoreSystem-公告管理</functionName>
+     	<actionName>framework/ShowList-report.dto.Notice</actionName>
+     	<actionName>*-report.dto.Notice</actionName>
+   	</function>
+    
+    <function>
+   	   <functionParentId>PlatformManagementCenter</functionParentId>
+     	<functionCode>PF_LegalInfo</functionCode>
+     	<functionName>CoreSystem-法人信息管理</functionName>
+     	<actionName>framework/ShowList-coresystem.dto.PF_LegalInfo</actionName>
+     	<actionName>*-coresystem.dto.PF_LegalInfo</actionName>
+   	</function>
+   	
+    <function>
+        <functionParentId>PlatformManagementCenter</functionParentId>
+		<functionCode>RightsManagement</functionCode>
+		<functionName>CoreSystem-权限管理</functionName>
+		<actionName>Framework/NavigationPage.jsp?id=RightsManagement</actionName>
+    </function>
+    
+    
+	<function>
+	    <functionParentId>RightsManagement</functionParentId>
+		<functionCode>SystemManagement05</functionCode>
+		<functionName>CoreSystem-角色功能权限配置</functionName>
+		<actionName>framework/ShowUpdateList-coresystem.dto.RoleFunction</actionName> 
+		<actionName>*-coresystem.dto.RoleFunction</actionName>
+	</function>
+	
+	<function>
+	    <functionParentId>RightsManagement</functionParentId>
+		<functionCode>RoleClassUser</functionCode>
+		<functionName>CoreSystem-角色用户权限配置</functionName>
+		<actionName>framework/ShowUpdateList-coresystem.dto.RoleClassUser</actionName> 
+		<actionName>*-coresystem.dto.RoleClassUser</actionName>
+	</function>
+	
+	<function>
+	    <functionParentId>RightsManagement</functionParentId>
+		<functionCode>SystemManagement06</functionCode>
+		<functionName>CoreSystem-角色机构权限配置</functionName>
+		<actionName>framework/ShowUpdateList-coresystem.dto.RoleClassInst</actionName> 
+		<actionName>*-coresystem.dto.RoleClassInst</actionName>
+	</function>
+    
+    <function>
+	    <functionParentId>RightsManagement</functionParentId>
+		<functionCode>RoleClassTable</functionCode>
+		<functionName>CoreSystem-角色明细报表权限配置</functionName>
+		<actionName>framework/ShowUpdateList-coresystem.dto.RoleClassTable</actionName> 
+		<actionName>*-coresystem.dto.RoleClassTable</actionName>
+	</function>
+    
+    <function>
+       <functionParentId>RightsManagement</functionParentId>
+	    <functionCode>showRoleFunction</functionCode>
+	    <functionName>CoreSystem-角色功能查询</functionName>
+	    <actionName>framework/ShowList-coresystem.dto.RoleFunction</actionName> 
+	    <actionName>*-coresystem.dto.RoleFunction</actionName>
+   	</function>
+    
+    
+	<function>
+		<functionParentId>DeskTop</functionParentId>
+		<functionCode>ParameterConfigurationCenter</functionCode>
+		<functionName>CoreSystem-参数配置中心</functionName>
+		<actionName>Framework/NavigationPage.jsp?id=ParameterConfigurationCenter</actionName>
+    </function>
+    
+     <function>
+         <functionParentId>ParameterConfigurationCenter</functionParentId>
+	     <functionCode>SystemParam</functionCode>
+	     <functionName>CoreSystem-系统参数管理</functionName>
+	     <actionName>framework/ShowList-extend.dto.SystemParam</actionName>
+	     <actionName>*-extend.dto.SystemParam</actionName>
+    </function>
+    
+    <function>
+         <functionParentId>ParameterConfigurationCenter</functionParentId>
+	     <functionCode>SystemManager13</functionCode>
+	     <functionName>CoreSystem-系统常量管理</functionName>
+	     <actionName>framework/ShowList-extend.dto.SystemCodeSet</actionName> 
+	     <actionName>*-extend.dto.SystemCodeSet</actionName>
+	     <actionName>*-extend.dto.SystemCodeValue</actionName>
+	</function> 
+	
+	<function>
+	   <functionParentId>ParameterConfigurationCenter</functionParentId>
+		<functionCode>ReportModel_Table</functionCode>
+		<functionName>CoreSystem-模型管理</functionName>
+		<actionName>framework/ShowTree-extend.dto.ReportModel_Table</actionName>
+		<actionName>framework/ShowListForTree-extend.dto.ReportModel_Table</actionName>
+		<actionName>*-extend.dto.ReportModel_Table</actionName>
+		<actionName>framework/ShowListLevelField-extend.dto.ReportModel_Field</actionName>
+		<actionName>*-extend.dto.ReportModel_Field</actionName>
+		<actionName>*-extend.dto.ReportModel_FieldCondition</actionName>
+	</function>
+
+	<function>
+	     <functionParentId>ParameterConfigurationCenter</functionParentId>
+		 <functionCode>ReportDefinition</functionCode>
+		 <functionName>CoreSystem-报表定义器</functionName>
+		 <actionName>Framework/NavigationPage.jsp?id=ReportDefinition</actionName>
+	</function>
+	
+	<function>
+     <functionParentId>ReportDefinition</functionParentId>
+     <functionCode>ReportSystemManager20</functionCode>
+     <functionName>CoreSystem-机构报表关系</functionName>
+     <actionName>framework/ShowList-report.dto.InstRptRela</actionName> 
+     <actionName>*-report.dto.InstRptRela</actionName>
+   </function>
+   
+   <function>
+	   <functionParentId>ReportDefinition</functionParentId>
+		<functionCode>InstRptBaseInfoManager</functionCode>
+		<functionName>CoreSystem-制表信息</functionName>
+		<actionName>framework/ShowList-report.dto.InstRptBaseInfo</actionName> 
+		<actionName>*-report.dto.InstRptBaseInfo</actionName>
+   </function> 
+   
+    
+   <function>
+     <functionParentId>ReportDefinition</functionParentId>
+     <functionCode>ReportSystemManager09</functionCode>
+     <functionName>CoreSystem-指标基本信息管理</functionName>
+     <actionName>framework/ShowTree-extend.dto.Suit</actionName> 
+     <actionName>*-extend.dto.Suit</actionName> 
+     <actionName>framework/ShowTree-report.dto.ItemInfo</actionName> 
+      <actionName>*-report.dto.ItemInfo</actionName> 
+   </function>
+   
+   <function>
+     <functionParentId>ReportDefinition</functionParentId>
+     <functionCode>ReportSystemManager07</functionCode>
+     <functionName>CoreSystem-指标属性管理</functionName>
+     <actionName>framework/ShowList-report.dto.ItemProperty</actionName> 
+     <actionName>framework/*-report.dto.ItemProperty</actionName> 
+   </function>
+   
+   <function>
+     <functionParentId>ReportDefinition</functionParentId>
+     <functionCode>ReportSystemManager08</functionCode>
+     <functionName>CoreSystem-指标币种管理</functionName>
+     <actionName>framework/ShowList-report.dto.CurrencyType</actionName> 
+     <actionName>*-report.dto.CurrencyType</actionName>
+   </function>
+
+	<function>
+	    <functionParentId>ReportDefinition</functionParentId>
+		<functionCode>ReportSystemManager03</functionCode>
+		<functionName>CoreSystem-报表信息管理</functionName>
+		<actionName>framework/ShowTree-report.dto.RptInfo</actionName> 
+		<actionName>framework/ShowListForTree-report.dto.RptInfo</actionName>
+		<actionName>*-report.dto.RptInfo</actionName>
+		<actionName>framework/ShowListLevelRptDto-report.dto.RptDto</actionName>
+		<actionName>*-report.dto.RptDto</actionName>
+		<actionName>report/Select-showFields</actionName>
+		<actionName>report/UploadWebOfficeExcelFile</actionName>
+		<actionName>framework/ShowList-report.dto.ItemData</actionName>
+		<actionName>*-report.dto.ItemData</actionName>
+   	</function>
+   
+	<function>
+	   <functionParentId>ReportDefinition</functionParentId>
+		<functionCode>SystemManager15</functionCode>
+		<functionName>CoreSystem-报表集合管理</functionName>
+		<actionName>framework/ShowList-report.dto.RptInfoSet</actionName> 
+		<actionName>*-report.dto.RptInfoSet</actionName>
+   </function> 
+   
+   
+	<function>
+		<functionParentId>ReportDefinition</functionParentId>
+		<functionCode>SystemManager16</functionCode>
+		<functionName>CoreSystem-明细表集合管理</functionName>
+		<actionName>framework/ShowList-report.dto.Reportmodel_tableSet</actionName> 
+		<actionName>*-report.dto.Reportmodel_tableSet</actionName>
+   </function> 
+   
+   <function>
+	    <functionParentId>DeskTop</functionParentId>
+		<functionCode>ReportDefine</functionCode>
+		<functionName>CoreSystem-报表定义</functionName>
+		<actionName>Framework/NavigationPage.jsp?id=ReportDefine</actionName>
+   </function>
+   
+	<function>
+	    <functionParentId>ReportDefine</functionParentId>
+		 <functionCode>RoleFunctionManager</functionCode>
+		 <functionName>CoreSystem-计算规则定义器</functionName>
+		 <actionName>Framework/NavigationPage.jsp?id=RoleFunctionManager</actionName>
+	</function>
+	
+	<function>
+	 <functionParentId>RoleFunctionManager</functionParentId>
+     <functionCode>ReportSystemManager12</functionCode>
+     <functionName>CoreSystem-计算实例管理</functionName>
+     <actionName>framework/ShowList-report.dto.CalculationExampleInfo</actionName>
+     <actionName>*-report.dto.CalculationExampleInfo</actionName>
+     <actionName>framework/ShowList-report.dto.CalculationRule</actionName>
+     <actionName>*-report.dto.CalculationRule</actionName>
+     <actionName>framework/ShowSaveOrUpdateLevelDetailedInfo-report.dto.ItemsCalculation</actionName>
+     <actionName>framework/TypeHidden-ShowSaveOrUpdateLevelDetailedInfo</actionName>
+     <actionName>framework/ShowListLevelDetailedFieldInfo-report.dto.DetailedFieldInfo</actionName>
+     <actionName>*-report.dto.DetailedInfo</actionName>
+     <actionName>*-report.dto.DetailedFieldInfo</actionName>
+   </function> 
+
+	<function>
+	 <functionParentId>RoleFunctionManager</functionParentId>
+     <functionCode>ReportSystemManager13</functionCode>
+     <functionName>CoreSystem-计算规则配置</functionName>
+     <actionName>*-report.dto.CalculationRule</actionName>
+     <actionName>*-report.dto.ExampleInfoRule</actionName>
+     <actionName>framework/ShowTree-report.dto.ExampleInfoRule</actionName>
+   </function> 
+   
+   
+      	<!-- 校验规则定义器   2015-07-27 -->
+   <function>
+	    <functionParentId>ReportDefine</functionParentId>
+		 <functionCode>CheckInstanceManager</functionCode>
+		 <functionName>CoreSystem-校验规则定义器</functionName>
+		 <actionName>Framework/NavigationPage.jsp?id=CheckInstanceManager</actionName>
+	</function>
+	
+	
+	<function>
+	 <functionParentId>CheckInstanceManager</functionParentId>
+     <functionCode>CheckInstance</functionCode>
+     <functionName>CoreSystem-校验实例管理</functionName>
+     <actionName>framework/ShowList-report.dto.CheckInstance</actionName>
+     <actionName>*-report.dto.CheckInstance</actionName>
+   </function>
+   
+  <function>
+	 <functionParentId>CheckInstanceManager</functionParentId>
+     <functionCode>CheckRule</functionCode>
+     <functionName>CoreSystem-校验规则配置</functionName>
+     <actionName>framework/ShowTree-report.dto.CheckInstanceRule</actionName>
+     <actionName>*-report.dto.CheckInstanceRule</actionName>
+     <actionName>*-report.dto.CheckRule</actionName>  
+   </function>  
+
+	<function>
+	     <functionParentId>ReportDefine</functionParentId>
+		 <functionCode>SummaryRoleDefinition</functionCode>
+		 <functionName>CoreSystem-汇总规则定义器</functionName>
+		 <actionName>Framework/NavigationPage.jsp?id=SummaryRoleDefinition</actionName>
+	</function>
+	
+	<function>
+	    <functionParentId>SummaryRoleDefinition</functionParentId>
+		<functionCode>MergeSummary</functionCode>
+		<functionName>CoreSystem-汇总实例管理</functionName>
+     	<actionName>*-report.dto.MergeSummary</actionName> 
+	</function>
+	
+   <function>
+     <functionParentId>SummaryRoleDefinition</functionParentId>
+     <functionCode>ReportSystemManager11</functionCode>
+     <functionName>CoreSystem-汇总规则配置</functionName>
+     <actionName>framework/ShowList-report.dto.MergeInstance</actionName> 
+     <actionName>*-report.dto.MergeInstance</actionName>
+     <actionName>framework/ShowList-report.dto.MergeSummary</actionName> 
+     <actionName>*-report.dto.MergeSummary</actionName> 
+     <actionName>framework/ShowTreeLevelMerge-report.dto.MergeRule</actionName>
+     <actionName>*-report.dto.MergeRule</actionName>
+     <actionName>ShowListLevelMergeItemInfo-report.dto.MergeItemInfo</actionName>
+     <actionName>*-report.dto.MergeItemInfo</actionName>
+   </function> 		 	
+			 
+	<!-- 具体的报表任务定义器标题按钮 -->	
+   <function>
+   	 <functionParentId>ReportSystemManager05</functionParentId>
+     <functionCode>ReportSystemManager04</functionCode>
+     <functionName>CoreSystem-报表任务定义器</functionName>
+     <actionName>framework/ShowList-report.dto.TaskFlow</actionName> 
+      <actionName>*-report.dto.TaskFlow</actionName>
+     <actionName>framework/ShowUpdateListLevelTaskRptInst-report.dto.TaskRptInst</actionName>
+     <actionName>*-report.dto.TaskRptInst</actionName>
+     <actionName>framework/InstInfoShowUpdateListLevelTaskModelInst-report.dto.TaskModelInst</actionName>
+     <actionName>*-report.dto.TaskModelInst</actionName>
+     <actionName>report/Select-showInstSet</actionName>
+     <actionName>report/Select-showFileSet</actionName>
+     <actionName>report/Select-showReportModel_TableSet</actionName>
+     <actionName>report/Select-showRptSet</actionName>
+     <actionName>framework/ShowSaveLevelAUTODTO-*</actionName>
+     <actionName>framework/BackPreviousFirstLevelAUTODTO-*</actionName>
+     <actionName>framework/DeleteListByIdListLevelAUTODTO-*</actionName>
+     <actionName>framework/BackFirstLevelAUTODTO-*</actionName>
+   </function>
+   
+   <!-- 报表任务定义器父级 -->
+   <function>
+        <functionParentId>ParameterConfigurationCenter</functionParentId>
+		<functionCode>ReportSystemManager05</functionCode>
+		<functionName>CoreSystem-报表任务定义器</functionName>
+		<actionName>Framework/NavigationPage.jsp?id=TaskFlow</actionName>
+   </function>
+	
+	<!-- 
+   <function>
+    <functionParentId>ParameterConfigurationCenter</functionParentId>
+     <functionCode>SystemManager16</functionCode>
+     <functionName>CoreSystem-待办事项定义器</functionName>
+     <actionName>framework/ShowList-coresystem.dto.NeedDoThing</actionName> 
+     <actionName>*-coresystem.dto.NeedDoThing</actionName> 
+     <actionName>*-coresystem.dto.UserNeedDoThing</actionName> 
+   </function>  
+    
+   <function>
+    <functionParentId>ParameterConfigurationCenter</functionParentId>
+     <functionCode>SystemManager18</functionCode>
+     <functionName>CoreSystem-初始化XML参数</functionName>
+     <actionName>framework/InitXMLConfiguration-All</actionName> 
+   </function> -->
+	
+	<function>
+		 <functionParentId>DeskTop</functionParentId>
+		 <functionCode>DataMonitorCenter</functionCode>
+		 <functionName>CoreSystem-数据监控中心</functionName>
+		 <actionName>Framework/NavigationPage.jsp?id=DataMonitorCenter</actionName>
+	</function>
+   
+   <function>
+     <functionParentId>DataMonitorCenter</functionParentId>
+     <functionCode>TaskRptInstStatisical</functionCode>
+     <functionName>CoreSystem-任务报表统计</functionName>
+     <actionName>framework/ShowSingleStatistical-report.dto.TaskRptInstStatisical</actionName>
+     <actionName>*-report.dto.TaskRptInstStatisical</actionName>
+   </function>
+   
+   <function>
+         <functionParentId>DataMonitorCenter</functionParentId>
+	     <functionCode>SystemLogManger</functionCode>
+	     <functionName>CoreSystem-日志信息监控</functionName>
+	     <actionName>Framework/NavigationPage.jsp?id=SystemLogManger</actionName>
+    </function>
+    
+    <function>
+         <functionParentId>SystemLogManger</functionParentId>
+	     <functionCode>SystemManager10</functionCode>
+	     <functionName>CoreSystem-系统操作日志</functionName>
+	     <actionName>framework/ShowList-coresystem.dto.ActionExcute</actionName>
+	     <actionName>*-coresystem.dto.ActionExcute</actionName>
+   	</function>
+
+   	<function>
+   		<functionParentId>SystemLogManger</functionParentId>
+	     <functionCode>SystemManager11</functionCode>
+	     <functionName>CoreSystem-数据操作日志</functionName>
+	     <actionName>framework/ShowList-coresystem.dto.ActionUpdateExcute</actionName>
+	     <actionName>*-coresystem.dto.ActionUpdateExcute</actionName>
+   	</function>
+   
+	<function>
+	 	<functionParentId>SystemLogManger</functionParentId>
+	     <functionCode>SystemManager12</functionCode>
+	     <functionName>CoreSystem-工作流日志</functionName>
+	     <actionName>framework/ShowList-autoETLsystem.dto.AutoETL_WorkflowLog</actionName>
+	     <actionName>*-autoETLsystem.dto.AutoETL_WorkflowLog</actionName>
+	     <actionName>*-autoETLsystem.dto.AutoETL_ActivityNodeLog</actionName>
+	</function>
+ 
+ 	
+   	
+	<function>
+		 <functionParentId>DeskTop</functionParentId>
+		 <functionCode>PersonalWorkStation</functionCode>
+		 <functionName>CoreSystem-个人工作台</functionName>
+		 <actionName>Framework/NavigationPage.jsp?id=PersonalWorkStation</actionName>
+	</function>
+	
+    <function>
+   		 <functionParentId>PersonalWorkStation</functionParentId>
+	     <functionCode>ShowUpdatePassword</functionCode>
+	     <functionName>CoreSystem-修改管理</functionName>
+	     <actionName>coresystem/ShowUpdatePassword-coresystem.dto.ShowUpdatePassword</actionName>
+	     <actionName>coresystem/*-coresystem.dto.ShowUpdatePassword</actionName>
+    </function>
+    
+    <!-- 
+   	<function>
+   		<functionParentId>PersonalWorkStation</functionParentId>
+     	<functionCode>ShowUserNeedDoThing</functionCode>
+     	<functionName>CoreSystem-待办事项</functionName>
+     	<actionName>coresystem/ShowUserNeedDoThing-coresystem.dto.ShowUserNeedDoThing</actionName> 
+	</function>  -->
+   
+   <systemuser>
+     <usercode>admin</usercode>
+     <initpassword>123</initpassword>
+   </systemuser>
+   
+   
+   	<function>
+   	   <functionParentId>PersonalWorkStation</functionParentId>
+     	<functionCode>NoticeShowView</functionCode>
+     	<functionName>CoreSystem-公告浏览</functionName>
+     	<actionName>framework/ShowNoticeView-report.dto.Notice</actionName>
+     	<actionName>*-report.dto.Notice</actionName>
+   	</function>
+   	
+   
+</securityRoot>

@@ -1,0 +1,244 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE struts PUBLIC "-//Apache Software Foundation//DTD Struts Configuration 2.1//EN" "http://struts.apache.org/dtds/struts-2.1.dtd">
+<struts>
+	 <package name="coresystemForFramework" extends="framework.default" namespace="/framework">
+	 
+	 	<action name="SaveLevelDetailedInfo-report.dto.DetailedInfo" class="singleObjectSaveAction">
+            <result name="success" type="redirectAction">
+            	<param name="message">${serviceResult.message}</param>
+			    <param name="actionName">ShowAlertMessage</param>
+			    <param name="redirectActionName">ShowListLevelItemsCalculation-report.dto.ItemsCalculation</param>
+			    <param name="redirectActionNamespace">/framework</param>
+			</result>
+			<result name="error" type="redirectAction">
+			    <param name="actionName">ShowAlertMessage</param>
+			    <param name="message">${serviceResult.message}</param>
+			</result>
+		</action> 
+		              
+		<action name="UpdateLevelDetailedInfo-report.dto.DetailedInfo" class="singleObjectUpdateAction">
+            <result name="success" type="redirectAction">
+            	<param name="message">${serviceResult.message}</param>
+			    <param name="actionName">ShowAlertMessage.action</param>
+			</result>
+			<result name="error" type="redirectAction">
+			    <param name="actionName">ShowAlertMessage</param>
+			    <param name="message">${serviceResult.message}</param>
+			</result>
+		</action>
+		
+		<action name="UpdateField-coresystem.dto.UserInfo" class="singleObjectUpdateFieldAction">
+             <result name="success" type="redirectAction">
+            	<param name="message">${serviceResult.message}</param>
+			    <param name="actionName">ShowAlertMessage.action</param>
+			    <param name="redirectActionName">ShowListForTree-coresystem.dto.UserInfo</param>
+			    <param name="redirectActionNamespace">/framework</param>
+			</result>
+			<result name="error" type="redirectAction">
+            	<param name="message">${serviceResult.message}</param>
+			    <param name="actionName">ShowAlertMessage.action</param>
+			    <param name="redirectActionName">ShowListForTree-coresystem.dto.UserInfo</param>
+			    <param name="redirectActionNamespace">/framework</param>
+			</result>
+		</action>
+		
+		<action name="Save-coresystem.dto.UserInfo" class="singleObjectSaveAction">
+            <result name="success" type="redirectAction">
+            	<param name="message">${serviceResult.message}</param>
+			    <param name="actionName">ShowAlertMessage</param>
+			    <param name="redirectActionName">ShowListForTree-coresystem.dto.UserInfo</param> 
+			    <param name="redirectActionNamespace">/framework</param>
+			</result>
+			<result name="error" type="redirectAction">
+			    <param name="actionName">ShowAlertMessage</param>
+			    <param name="message">${serviceResult.message}</param>
+			</result>
+			<result name="input" type="chain">
+			    <param name="actionName">ShowInputSave-coresystem.dto.UserInfo</param>
+			</result>
+		</action>
+		
+		<action name="Update-coresystem.dto.UserInfo" class="singleObjectUpdateAction">
+            <result name="success" type="redirectAction">
+            	<param name="message">${serviceResult.message}</param>
+			    <param name="actionName">ShowAlertMessage</param>
+			    <param name="redirectActionName">ShowListForTree-coresystem.dto.UserInfo</param> 
+			    <param name="redirectActionNamespace">/framework</param>
+			</result>
+			<result name="error" type="redirectAction">
+			    <param name="actionName">ShowAlertMessage</param>
+			    <param name="message">${serviceResult.message}</param>
+			</result>
+			<result name="input" type="chain">
+			    <param name="actionName">ShowInputSave-coresystem.dto.UserInfo</param>
+			</result>
+		</action>
+		
+		<action name="DeleteListByIdList-coresystem.dto.UserInfo" class="singleObjectDeleteListByIdListAction">
+            <result name="success" type="redirectAction">
+            	<param name="message">${serviceResult.message}</param>
+			    <param name="actionName">ShowAlertMessage.action</param>
+			    <param name="redirectActionName">ShowListForTree-coresystem.dto.UserInfo</param>
+			    <param name="redirectActionNamespace">/framework</param>
+			</result>
+			<result name="error" type="redirectAction">
+            	<param name="message">${serviceResult.message}</param>
+			    <param name="actionName">ShowAlertMessage.action</param>
+			    <param name="redirectActionName">ShowListForTree-coresystem.dto.UserInfo</param>
+			    <param name="redirectActionNamespace">/framework</param>
+			</result>
+		</action>
+		
+		<action name="TreeNodeSave-extend.dto.Suit" class="singleObjectSaveAction">
+            <result name="success" type="redirectAction">
+            	<param name="message">${serviceResult.message}</param>
+			    <param name="actionName">ShowAlertMessage</param>
+			    <param name="redirectActionName">RefleshParent</param> 
+			    <param name="redirectActionNamespace">/framework</param>
+			</result>
+			<result name="error" type="redirectAction">
+			    <param name="actionName">ShowAlertMessage</param>
+			    <param name="message">${serviceResult.message}</param>
+			</result>
+			<result name="input" type="chain">
+			    <param name="actionName">ShowInputSave-extend.dto.Suit</param>
+			</result>
+		</action>
+		
+		<action name="TreeNodeUpdate-extend.dto.Suit" class="singleObjectUpdateAction">
+            <result name="success" type="redirectAction">
+            	<param name="message">${serviceResult.message}</param>
+			    <param name="actionName">ShowAlertMessage</param>
+			    <param name="redirectActionName">RefleshParent</param> 
+			    <param name="redirectActionNamespace">/framework</param>
+			</result>
+			<result name="error" type="redirectAction">
+			    <param name="actionName">ShowAlertMessage</param>
+			    <param name="message">${serviceResult.message}</param>
+			</result>
+			<result name="input" type="chain">
+			    <param name="actionName">ShowInputSave-extend.dto.Suit</param>
+			</result>
+		</action>
+		
+		<action name="TreeNodeDelete-extend.dto.Suit" class="singleObjectDeleteListByIdListAction">
+            <result name="success" type="redirectAction">
+            	<param name="message">${serviceResult.message}</param>
+			    <param name="actionName">ShowAlertMessage.action</param>
+			    <param name="redirectActionName">RefleshParent</param>
+			    <param name="redirectActionNamespace">/framework</param>
+			</result>
+			<result name="error" type="redirectAction">
+            	<param name="message">${serviceResult.message}</param>
+			    <param name="actionName">ShowAlertMessage.action</param>
+			    <param name="redirectActionName">ShowListForTree-extend.dto.Suit</param>
+			    <param name="redirectActionNamespace">/framework</param>
+			</result>
+		</action>
+		
+		<action name="TreeNodeDelete-extend.dto.ReportModel_Table" class="singleObjectDeleteListByIdListAction">
+           <result name="success" type="redirectAction">
+            	<param name="message">${serviceResult.message}</param>
+			    <param name="actionName">ShowAlertMessage.action</param>
+			    <param name="redirectActionName">RefleshParent</param>
+			    <param name="redirectActionNamespace">/framework</param>
+			</result>
+			<result name="error" type="redirectAction">
+            	<param name="message">${serviceResult.message}</param>
+			    <param name="actionName">ShowAlertMessage.action</param>
+			    <param name="redirectActionName">ShowListForTree-extend.dto.ReportModel_Table</param>
+			    <param name="redirectActionNamespace">/framework</param>
+			</result>
+		</action><!--
+		
+		ImportData-extend.dto.ReportModel_Table
+     -->
+     
+       <action name="DeleteApply-coresystem.dto.UserInfo" class="singleObjectUpdateFieldAction">
+			<result name="success" type="redirectAction">
+			    <param name="message">${serviceResult.message}</param>
+			    <param name="actionName">ShowAlertMessage.action</param>
+			    <param name="redirectActionName">ShowListForTree-coresystem.dto.UserInfo</param>
+			    <param name="redirectActionNamespace">/framework</param>
+			</result>
+			<result name="error" type="redirectAction">
+			    <param name="actionName">ShowAlertMessage</param>
+			    <param name="message">${serviceResult.message}</param>
+			</result>
+		</action>
+		
+       <action name="TreeNodeDelete-coresystem.dto.UserInfo" class="singleObjectDeleteListByIdListAction">
+			<result name="success" type="redirectAction">
+			    <param name="message">${serviceResult.message}</param>
+			    <param name="actionName">ShowAlertMessage.action</param>
+			    <param name="redirectActionName">ShowListForTree-coresystem.dto.UserInfo</param>
+			    <param name="redirectActionNamespace">/framework</param>
+			</result>
+			<result name="error" type="redirectAction">
+			    <param name="actionName">ShowAlertMessage</param>
+			    <param name="message">${serviceResult.message}</param>
+			</result>
+		</action>
+		
+		<action name="ShowNoticeView-*" class="showNoticeViewAction">
+			<result name="success">/Framework/ShowList.jsp</result>
+		</action>
+		
+		<action name="ShowNoticeUpdate-*" class="showNoticeUpdateAction">
+            <result name="success">/Framework/ShowSaveOrUpdate.jsp</result>
+		</action>
+		
+		<action name="StateRecoveryShowTree*-*" class="singleObjectStateRecoveryShowTreeAction">
+			<result name="success">/Framework/ShowTree.jsp</result>
+		</action>
+		
+		<action name="StateRecoveryShowListForTree*-*" class="instInfoStateRecoveryShowListForTreeAction">
+			<result name="success">/Framework/ShowList.jsp</result>
+		</action>
+		
+		<action name="StateRecoveryForBusinessUpdateField-coresystem.dto.InstInfo" class="stateRecoveryForBusinessUpdateFieldAction">
+             <result name="success" type="redirectAction">
+            	<param name="message">${serviceResult.message}</param>
+			    <param name="actionName">ShowAlertMessage.action</param>
+			    <param name="redirectActionName">RefleshParent</param>
+			    <param name="redirectActionNamespace">/framework</param>
+			</result>
+			<result name="error" type="redirectAction">
+            	<param name="message">${serviceResult.message}</param>
+			    <param name="actionName">ShowAlertMessage.action</param>
+			    <param name="redirectActionName">RefleshParent</param>
+			    <param name="redirectActionNamespace">/framework</param>
+			</result>
+		</action>
+		
+		<action name="ImportData-coresystem.dto.InstInfo" class="singleObjectImportDataAction">
+             <result name="success" type="redirectAction">
+            	<param name="message">${serviceResult.message}</param>
+			    <param name="actionName">ShowAlertMessage.action</param>
+			    <param name="redirectActionName">RefleshParent</param>
+			    <param name="redirectActionNamespace">/framework</param>
+			</result>
+			<result name="error" type="redirectAction">
+            	<param name="message">${serviceResult.message}</param>
+			    <param name="actionName">ShowAlertMessage.action</param>
+			    <param name="redirectActionName">RefleshParent</param>
+			    <param name="redirectActionNamespace">/framework</param>
+			</result>
+		</action>
+		
+		<action name="UserLockUpdateFieldById*-*" class="singleObjectUpdateFieldAction">
+			<result name="success" type="redirectAction">
+				<param name="message">${serviceResult.message}</param>
+				<param name="actionName">ShowAlertMessage.action</param>
+				<param name="redirectActionName">ShowListForTree{1}-{2}</param>
+				<param name="redirectActionNamespace">/framework</param>
+			</result>
+			<result name="error" type="redirectAction">
+				<param name="actionName">ShowAlertMessage</param>
+				<param name="message">${serviceResult.message}</param>
+			</result>
+		</action>
+		
+		
+     </package>
+</struts>    

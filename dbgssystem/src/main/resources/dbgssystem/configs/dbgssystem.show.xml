@@ -1,0 +1,640 @@
+<?xml version="1.0" encoding="UTF-8"?>
+ 
+<fieldShowsRoot>
+	<fieldShowsEntity>
+      <className>dbgssystem.dto.AutoDTO_DB_DBXX_JC</className>
+      <showInstance>
+        <showInstanceName>1</showInstanceName>
+        <fieldName fieldName="DBYWBH" listVisible="true"  intOrder="1"></fieldName>
+        <fieldName fieldName="strReportCode" width="150" intOrder="2" ></fieldName> 
+        <fieldName fieldName="strReportName" width="400" intOrder="3" ></fieldName>
+        <fieldName fieldName="BDBRLX" width="90" intOrder="4" multipleSelect="true"></fieldName>
+        <fieldName fieldName="BDBRZJLX" width="140" intOrder="5" multipleSelect="true"></fieldName>
+        <fieldName fieldName="BDBRZJHM" width="120" intOrder="6"></fieldName>
+        <fieldName fieldName="YLZD" listVisible="true" intOrder="7"></fieldName>
+        <fieldName fieldName="XZXH" listVisible="false" intOrder="8"></fieldName>
+        <fieldName fieldName="YLZD" listVisible="false" intOrder="9" ></fieldName>
+        
+        <fieldName fieldName="RPTCheckType"  updateReadOnly="true" intOrder="10" width="120" listVisible="false" multipleSelect="true"></fieldName>
+        <fieldName fieldName="RPTSubmitStatus"  updateReadOnly="true" intOrder="11" width="100" multipleSelect="true"></fieldName>
+        <fieldName fieldName="RPTVerifyType"   updateReadOnly="true" intOrder="12" width="100" listVisible="false" multipleSelect="true"></fieldName>
+        <fieldName fieldName="RPTSendType"   updateReadOnly="true"  intOrder="13" width="120" listVisible="false" multipleSelect="true"></fieldName>
+        <fieldName fieldName="RPTFeedbackType"  updateReadOnly="true"  intOrder="14" width="100" listVisible="false" multipleSelect="true"></fieldName>
+        <fieldName fieldName="lastUpdateDate" updateReadOnly="true" singleTag="dateFieldNoSlash" width="120" intOrder="15"  listVisible="false"></fieldName>
+        <fieldName fieldName="dtDate" listVisible="false" updateReadOnly="true" singleTag="dateFieldNoSlash" intOrder="16" ></fieldName>
+        <fieldName fieldName="operationUser" updateReadOnly="true" width="120" intOrder="17" listVisible="false"></fieldName>
+        <fieldName fieldName="instInfo" updateReadOnly="true" width="120" intOrder="18" listVisible="false"></fieldName>
+        <fieldName fieldName="SJBGRQ" updateReadOnly="true" listVisible="false"  intOrder="19" ></fieldName>
+        <fieldName fieldName="autoID"  listVisible="false" intOrder="20"></fieldName>
+        <fieldName fieldName="extend1"  listVisible="false" intOrder="21"></fieldName>
+        <fieldName fieldName="extend2"  listVisible="false" intOrder="22"></fieldName>
+        <fieldName fieldName="extend3"  listVisible="false" intOrder="23"></fieldName>
+        <fieldName fieldName="extend4"  listVisible="false" intOrder="24"></fieldName>
+        <fieldName fieldName="extend5"  listVisible="false" intOrder="25"></fieldName>
+      </showInstance>
+      <showInstance>
+        <showInstanceName>7</showInstanceName>
+        <fieldName fieldName="DBYWBH" listVisible="true"  intOrder="1"></fieldName>
+        <fieldName fieldName="strReportCode" width="150" intOrder="2" ></fieldName> 
+        <fieldName fieldName="strReportName" width="400" intOrder="3" ></fieldName>
+        <fieldName fieldName="BDBRLX" width="90" intOrder="4" multipleSelect="true"></fieldName>
+        <fieldName fieldName="BDBRZJLX" width="140" intOrder="5" multipleSelect="true"></fieldName>
+        <fieldName fieldName="BDBRZJHM" width="120" intOrder="6"></fieldName>
+        <fieldName fieldName="YLZD" listVisible="true" intOrder="7"></fieldName>
+        <fieldName fieldName="XZXH" listVisible="false" intOrder="8"></fieldName>
+        <fieldName fieldName="YLZD" listVisible="false" intOrder="9" ></fieldName>
+        
+        <fieldName fieldName="RPTCheckType"  updateReadOnly="true" intOrder="10" width="120" listVisible="false" multipleSelect="true"></fieldName>
+        <fieldName fieldName="RPTSubmitStatus"  updateReadOnly="true" intOrder="11" width="100" listVisible="false" multipleSelect="true"></fieldName>
+        <fieldName fieldName="RPTVerifyType"   updateReadOnly="true" intOrder="12" width="100" multipleSelect="true"></fieldName>
+        <fieldName fieldName="RPTSendType"   updateReadOnly="true"  intOrder="13" width="120" listVisible="false" multipleSelect="true"></fieldName>
+        <fieldName fieldName="RPTFeedbackType"  updateReadOnly="true"  intOrder="14" width="100" listVisible="false" multipleSelect="true"></fieldName>
+        <fieldName fieldName="lastUpdateDate" updateReadOnly="true" singleTag="dateFieldNoSlash" width="120" intOrder="15"  listVisible="false"></fieldName>
+        <fieldName fieldName="dtDate" listVisible="false" updateReadOnly="true" singleTag="dateFieldNoSlash" intOrder="16" ></fieldName>
+        <fieldName fieldName="operationUser" updateReadOnly="true" width="120" intOrder="17" listVisible="false"></fieldName>
+        <fieldName fieldName="instInfo" updateReadOnly="true" width="120" intOrder="18" listVisible="false"></fieldName>
+        <fieldName fieldName="SJBGRQ" updateReadOnly="true" listVisible="false"  intOrder="19" ></fieldName>
+        <fieldName fieldName="autoID"  listVisible="false" intOrder="20"></fieldName>
+        <fieldName fieldName="extend1"  listVisible="false" intOrder="21"></fieldName>
+        <fieldName fieldName="extend2"  listVisible="false" intOrder="22"></fieldName>
+        <fieldName fieldName="extend3"  listVisible="false" intOrder="23"></fieldName>
+        <fieldName fieldName="extend4"  listVisible="false" intOrder="24"></fieldName>
+        <fieldName fieldName="extend5"  listVisible="false" intOrder="25"></fieldName>
+      </showInstance>
+       <showInstance>
+        <showInstanceName>ExportAllData</showInstanceName>
+        <fieldName fieldName="DBJGDM" listVisible="true"  intOrder="1"></fieldName>
+        <fieldName fieldName="DBYWBH"  listVisible="true" intOrder="2"></fieldName>
+        <fieldName fieldName="DBHTHM" listVisible="true"  intOrder="3"></fieldName>
+        <fieldName fieldName="BDBRLX" listVisible="true" intOrder="4"></fieldName>
+        <fieldName fieldName="BDBRMC" listVisible="true" intOrder="5"></fieldName>
+        <fieldName fieldName="BDBRZJLX" listVisible="true" intOrder="6"></fieldName>
+        <fieldName fieldName="BDBRZJHM" listVisible="true" intOrder="7"></fieldName>
+        <fieldName fieldName="YLZD" listVisible="true" intOrder="8"></fieldName>
+        <fieldName fieldName="autoID" listVisible="false"  intOrder="9"></fieldName>
+        <fieldName fieldName="XZXH" listVisible="false" intOrder="10"></fieldName>
+        <fieldName fieldName="RPTSubmitStatus" listVisible="false" intOrder="11"></fieldName>
+        <fieldName fieldName="RPTVerifyType" listVisible="false" intOrder="12"></fieldName>
+        <fieldName fieldName="lastUpdateDate" listVisible="false" intOrder="13"></fieldName>
+        <fieldName fieldName="operationUser" listVisible="false" intOrder="14"></fieldName>
+        <fieldName fieldName="RPTSendType" listVisible="false" intOrder="15"></fieldName>
+        <fieldName fieldName="RPTCheckType" listVisible="false" intOrder="16"></fieldName>
+        <fieldName fieldName="instInfo" listVisible="false" intOrder="17"> </fieldName>
+        <fieldName fieldName="dtDate" listVisible="false" intOrder="18"></fieldName>
+        <fieldName fieldName="RPTFeedbackType" listVisible="false" intOrder="19"></fieldName>
+        <fieldName fieldName="SJBGRQ" listVisible="false" intOrder="20"></fieldName>
+        <fieldName fieldName="extend1"  listVisible="false" intOrder="21"></fieldName>
+        <fieldName fieldName="extend2"  listVisible="false" intOrder="22"></fieldName>
+        <fieldName fieldName="extend3"  listVisible="false" intOrder="23"></fieldName>
+        <fieldName fieldName="extend4"  listVisible="false" intOrder="24"></fieldName>
+        <fieldName fieldName="extend5"  listVisible="false" intOrder="25"></fieldName>
+      </showInstance>
+	</fieldShowsEntity>
+
+	<fieldShowsEntity>
+      <className>dbgssystem.dto.AutoDTO_DB_DBHTXX</className>
+      <showInstance>
+        <showInstanceName>1</showInstanceName>
+        <fieldName fieldName="DBQSRQ" fieldShowName="担保起始日期" singleTag="dateFieldNoSlash"></fieldName>
+        <fieldName fieldName="DBDQRQ" fieldShowName="担保到期日期" singleTag="dateFieldNoSlash"></fieldName>
+        <fieldName fieldName="YLZD" listVisible="false"></fieldName>
+        <fieldName fieldName="RPTCheckType"  width="100" updateReadOnly="true" singleTag="hiddenField"  multipleSelect="true"></fieldName>
+		<fieldName fieldName="RPTSendType"   width="100" updateReadOnly="true" singleTag="hiddenField"  multipleSelect="true"></fieldName>
+		<fieldName fieldName="RPTFeedbackType" width="100" updateReadOnly="true" singleTag="hiddenField"  multipleSelect="true"></fieldName>
+		<fieldName fieldName="extend1"  listVisible="false" ></fieldName>
+        <fieldName fieldName="extend2"  listVisible="数据报告日期" ></fieldName>
+        <fieldName fieldName="extend3"  listVisible="false" ></fieldName>
+        <fieldName fieldName="extend4"  listVisible="false" ></fieldName>
+        <fieldName fieldName="extend5"  listVisible="false" ></fieldName>
+        <fieldName fieldName="FOREIGNID"  listVisible="false"></fieldName>
+      </showInstance>
+      <showInstance>
+        <showInstanceName>UpdateShowStatus</showInstanceName>
+        <fieldName fieldName="FOREIGNID"  listVisible="false"></fieldName>
+        <fieldName fieldName="DBQSRQ" fieldShowName="担保起始日期" singleTag="dateFieldNoSlash"></fieldName>
+        <fieldName fieldName="DBDQRQ" fieldShowName="担保到期日期" singleTag="dateFieldNoSlash"></fieldName>
+        <fieldName fieldName="YLZD" listVisible="false"></fieldName>
+        <fieldName fieldName="RPTCheckType"  width="100" updateReadOnly="true" ></fieldName>
+		<fieldName fieldName="RPTSendType"   width="100" updateReadOnly="true" ></fieldName>
+		<fieldName fieldName="RPTFeedbackType" width="100" updateReadOnly="true" ></fieldName>
+		<fieldName fieldName="extend1"  listVisible="false" ></fieldName>
+        <fieldName fieldName="extend2"  listVisible="false" ></fieldName>
+        <fieldName fieldName="extend3"  listVisible="false" ></fieldName>
+        <fieldName fieldName="extend4"  listVisible="false" ></fieldName>
+        <fieldName fieldName="extend5"  listVisible="false" ></fieldName>
+      </showInstance>
+       <showInstance>
+        <showInstanceName>ExportAllData</showInstanceName>
+        <fieldName fieldName="extend3" fieldShowName="担保机构代码" listVisible="true" intOrder="1"></fieldName>
+        <fieldName fieldName="extend4" fieldShowName="担保业务编号" listVisible="true" intOrder="2"></fieldName>
+        <fieldName fieldName="extend2"  fieldShowName="数据报告日期" listVisible="true" intOrder="3"></fieldName>
+        <fieldName fieldName="DBYWZL" listVisible="true" intOrder="4"></fieldName>
+        <fieldName fieldName="DBFS" listVisible="true" intOrder="5"></fieldName>
+        <fieldName fieldName="DBJE" listVisible="true" intOrder="6"></fieldName>
+        <fieldName fieldName="DBQSRQ" listVisible="true" intOrder="7"></fieldName>
+        <fieldName fieldName="DBDQRQ" listVisible="true" intOrder="8"></fieldName>
+        <fieldName fieldName="CCBZJBL" listVisible="true" intOrder="9"></fieldName>
+        <fieldName fieldName="FDBFS" listVisible="true" intOrder="10"></fieldName>
+        <fieldName fieldName="YDZDBBCBL" listVisible="true" intOrder="11"></fieldName>
+        <fieldName fieldName="FL" listVisible="true" intOrder="12"></fieldName>
+        <fieldName fieldName="NHFL" listVisible="true" intOrder="13"></fieldName>
+        <fieldName fieldName="YLZD" listVisible="true" intOrder="14"></fieldName>
+        <fieldName fieldName="autoID" listVisible="false" intOrder="15"></fieldName>
+        <fieldName fieldName="RPTCheckType" listVisible="false" intOrder="16"></fieldName>
+        <fieldName fieldName="RPTSendType" listVisible="false" intOrder="17"></fieldName>
+        <fieldName fieldName="RPTFeedbackType" listVisible="false" intOrder="18"></fieldName>
+        <fieldName fieldName="extend1"  listVisible="false" intOrder="19"></fieldName>
+        <fieldName fieldName="extend5"  listVisible="false" intOrder="20"></fieldName>
+        <fieldName fieldName="FOREIGNID"  listVisible="false" intOrder="21"></fieldName>
+      </showInstance>
+	</fieldShowsEntity>
+	
+	<fieldShowsEntity>
+      <className>dbgssystem.dto.AutoDTO_DB_BDBRXX</className>
+      <showInstance>
+        <showInstanceName>1</showInstanceName>
+        <fieldName fieldName="FOREIGNID" listVisible="false"></fieldName>
+        <fieldName fieldName="BDBRZJLX" width="140"></fieldName>
+        <fieldName fieldName="BDBRZJHM" width="150"></fieldName>
+        <fieldName fieldName="BDBRLX" width="90"></fieldName>
+       <fieldName fieldName="RPTCheckType"  width="100" updateReadOnly="true"  multipleSelect="true"></fieldName>
+		<fieldName fieldName="RPTSendType"   width="100" updateReadOnly="true"  multipleSelect="true"></fieldName>
+		<fieldName fieldName="RPTFeedbackType" width="100" updateReadOnly="true"  multipleSelect="true"></fieldName>
+		<fieldName fieldName="extend1"  listVisible="false" ></fieldName>
+        <fieldName fieldName="extend2"  listVisible="false" ></fieldName>
+        <fieldName fieldName="extend3"  listVisible="false" ></fieldName>
+        <fieldName fieldName="extend4"  listVisible="false" ></fieldName>
+        <fieldName fieldName="extend5"  listVisible="false" ></fieldName>
+      </showInstance>
+      <showInstance>
+        <showInstanceName>ExportAllData</showInstanceName>
+        <fieldName fieldName="extend3" fieldShowName="担保机构代码" listVisible="true" intOrder="1"></fieldName>
+        <fieldName fieldName="extend4" fieldShowName="担保业务编号" listVisible="true" intOrder="2"></fieldName>
+        <fieldName fieldName="extend2"  fieldShowName="数据报告日期" listVisible="true" intOrder="3"></fieldName>
+        <fieldName fieldName="BDBRLX" listVisible="true" intOrder="4"></fieldName>
+        <fieldName fieldName="BDBRMC" listVisible="true" intOrder="5"></fieldName>
+        <fieldName fieldName="BDBRZJLX" listVisible="true" intOrder="6"></fieldName>
+        <fieldName fieldName="BDBRZJHM" listVisible="true" intOrder="7"></fieldName>
+        <fieldName fieldName="ZTW" listVisible="true" intOrder="8"></fieldName>
+        <fieldName fieldName="autoID" listVisible="false" intOrder="9"></fieldName>
+        <fieldName fieldName="RPTCheckType" listVisible="false" intOrder="10"></fieldName>
+        <fieldName fieldName="RPTSendType" listVisible="false" intOrder="11"></fieldName>
+        <fieldName fieldName="RPTFeedbackType" listVisible="false" intOrder="12"></fieldName>
+        <fieldName fieldName="extend1"  listVisible="false" intOrder="13"></fieldName>
+        <fieldName fieldName="extend5"  listVisible="false" intOrder="14"></fieldName>
+        <fieldName fieldName="FOREIGNID"  listVisible="false" intOrder="15"></fieldName>
+      </showInstance>
+	</fieldShowsEntity>
+	
+	<fieldShowsEntity>
+      <className>dbgssystem.dto.AutoDTO_DB_ZQRJZHTXX</className>
+      <showInstance>
+        <showInstanceName>1</showInstanceName>
+        <fieldName fieldName="FOREIGNID" listVisible="false"></fieldName>
+        <fieldName fieldName="ZQRZJLX" width="140"></fieldName>
+        <fieldName fieldName="ZQRZJHM" width="130"></fieldName>
+        <fieldName fieldName="ZHTBH" width="180"></fieldName>
+        <fieldName fieldName="ZHTHM" width="180"></fieldName>
+        <fieldName fieldName="TX" width="250" singleTag="selectExtendField"></fieldName>
+        <fieldName fieldName="RPTCheckType"  width="100" updateReadOnly="true"  multipleSelect="true"></fieldName>
+		<fieldName fieldName="RPTSendType"   width="100" updateReadOnly="true"  multipleSelect="true"></fieldName>
+		<fieldName fieldName="RPTFeedbackType" width="100" updateReadOnly="true"  multipleSelect="true"></fieldName>
+		<fieldName fieldName="extend1"  listVisible="false" ></fieldName>
+        <fieldName fieldName="extend2"  listVisible="false" ></fieldName>
+        <fieldName fieldName="extend3"  listVisible="false" ></fieldName>
+        <fieldName fieldName="extend4"  listVisible="false" ></fieldName>
+        <fieldName fieldName="extend5"  listVisible="false" ></fieldName>
+      </showInstance>
+      <showInstance>
+        <showInstanceName>ExportAllData</showInstanceName>
+        <fieldName fieldName="extend3" fieldShowName="担保机构代码" listVisible="true" intOrder="1"></fieldName>
+        <fieldName fieldName="extend4" fieldShowName="担保业务编号" listVisible="true" intOrder="2"></fieldName>
+        <fieldName fieldName="extend2"  fieldShowName="数据报告日期" listVisible="true" intOrder="3"></fieldName>
+        <fieldName fieldName="ZQRLX" listVisible="true" intOrder="4"></fieldName>
+        <fieldName fieldName="ZQRMC" listVisible="true" intOrder="5"></fieldName>
+        <fieldName fieldName="ZQRZJLX" listVisible="true" intOrder="6"></fieldName>
+        <fieldName fieldName="ZQRZJHM" listVisible="true" intOrder="7"></fieldName>
+        <fieldName fieldName="ZHTBH" listVisible="true" intOrder="8"></fieldName>
+        <fieldName fieldName="ZHTHM" listVisible="true" intOrder="9"></fieldName>
+        <fieldName fieldName="TX" listVisible="true" intOrder="10"></fieldName>
+        <fieldName fieldName="ZTW" listVisible="true" intOrder="11"></fieldName>
+        <fieldName fieldName="autoID" listVisible="false" intOrder="12"></fieldName>
+        <fieldName fieldName="RPTCheckType" listVisible="false" intOrder="13"></fieldName>
+       <fieldName fieldName="RPTSendType" listVisible="false" intOrder="14"></fieldName>
+       <fieldName fieldName="RPTFeedbackType" listVisible="false" intOrder="15"></fieldName>
+       <fieldName fieldName="extend1"  listVisible="false" intOrder="16"></fieldName>
+        <fieldName fieldName="extend5"  listVisible="false" intOrder="17"></fieldName>
+        <fieldName fieldName="FOREIGNID"  listVisible="false" intOrder="18"></fieldName>
+      </showInstance>
+	</fieldShowsEntity>
+	
+	<fieldShowsEntity>
+      <className>dbgssystem.dto.AutoDTO_DB_FDBRXX</className>
+      <showInstance>
+        <showInstanceName>1</showInstanceName>
+        <fieldName fieldName="FOREIGNID" listVisible="false"></fieldName>
+        <fieldName fieldName="FDBRZJLX" width="140"></fieldName>
+        <fieldName fieldName="FDBRZJHM" width="130"></fieldName>
+        <fieldName fieldName="FDBZRJE" width="130"></fieldName>
+        <fieldName fieldName="FDBRLX" width="90"></fieldName>
+        <fieldName fieldName="RPTCheckType"  width="100" updateReadOnly="true"  multipleSelect="true"></fieldName>
+		<fieldName fieldName="RPTSendType"   width="100" updateReadOnly="true"  multipleSelect="true"></fieldName>
+		<fieldName fieldName="RPTFeedbackType" width="100" updateReadOnly="true"  multipleSelect="true"></fieldName>
+		<fieldName fieldName="extend1"  listVisible="false"></fieldName>
+        <fieldName fieldName="extend2"  listVisible="false"></fieldName>
+        <fieldName fieldName="extend3"  listVisible="false"></fieldName>
+        <fieldName fieldName="extend4"  listVisible="false"></fieldName>
+        <fieldName fieldName="extend5"  listVisible="false"></fieldName>
+      </showInstance>
+      <showInstance>
+        <showInstanceName>ExportAllData</showInstanceName>
+        <fieldName fieldName="extend3" fieldShowName="担保机构代码" listVisible="true" intOrder="1"></fieldName>
+        <fieldName fieldName="extend4" fieldShowName="担保业务编号" listVisible="true" intOrder="2"></fieldName>
+        <fieldName fieldName="extend2"  fieldShowName="数据报告日期" listVisible="true" intOrder="3"></fieldName>
+        <fieldName fieldName="FDBRLX" listVisible="true" intOrder="4"></fieldName>
+        <fieldName fieldName="FDBRMC" listVisible="true" intOrder="5"></fieldName>
+        <fieldName fieldName="FDBRZJLX" listVisible="true" intOrder="6"></fieldName>
+        <fieldName fieldName="FDBRZJHM" listVisible="true" intOrder="7"></fieldName>
+        <fieldName fieldName="FDBZRJE"  listVisible="true" intOrder="8"></fieldName>
+        <fieldName fieldName="ZTW" listVisible="true" intOrder="9"></fieldName>
+        <fieldName fieldName="autoID" listVisible="false" intOrder="10"></fieldName>
+        <fieldName fieldName="RPTCheckType" listVisible="false" intOrder="11"></fieldName>
+        <fieldName fieldName="RPTSendType" listVisible="false" intOrder="12"></fieldName>
+        <fieldName fieldName="RPTFeedbackType" listVisible="false" intOrder="13"></fieldName>
+        <fieldName fieldName="extend1"  listVisible="false" intOrder="14"></fieldName>
+        <fieldName fieldName="extend5"  listVisible="false" intOrder="15"></fieldName>
+        <fieldName fieldName="FOREIGNID"  listVisible="false" intOrder="16"></fieldName>
+      </showInstance>
+	</fieldShowsEntity>
+
+	<fieldShowsEntity>
+      <className>dbgssystem.dto.AutoDTO_DB_SJZBZRXX</className>
+      <showInstance>
+        <showInstanceName>1</showInstanceName>
+        <fieldName fieldName="FOREIGNID" listVisible="false"></fieldName>
+        <fieldName fieldName="DBZRJCRQ" singleTag="dateFieldNoSlash" width="130"></fieldName>
+        <fieldName fieldName="YEBHRQ" singleTag="dateFieldNoSlash"></fieldName>
+       <fieldName fieldName="RPTCheckType"  width="100" updateReadOnly="true" singleTag="hiddenField"  multipleSelect="true"></fieldName>
+		<fieldName fieldName="RPTSendType"   width="100" updateReadOnly="true" singleTag="hiddenField"  multipleSelect="true"></fieldName>
+		<fieldName fieldName="RPTFeedbackType" width="100" updateReadOnly="true" singleTag="hiddenField"  multipleSelect="true"></fieldName>
+		<fieldName fieldName="extend1"  listVisible="false"></fieldName>
+        <fieldName fieldName="extend2"  listVisible="false"></fieldName>
+        <fieldName fieldName="extend3"  listVisible="false"></fieldName>
+        <fieldName fieldName="extend4"  listVisible="false" ></fieldName>
+        <fieldName fieldName="extend5"  listVisible="false"></fieldName>
+      </showInstance>
+      <showInstance>
+        <showInstanceName>UpdateShowStatus</showInstanceName>
+        <fieldName fieldName="FOREIGNID" listVisible="false"></fieldName>
+        <fieldName fieldName="DBZRJCRQ" singleTag="dateFieldNoSlash" width="130"></fieldName>
+        <fieldName fieldName="YEBHRQ" singleTag="dateFieldNoSlash"></fieldName>
+       <fieldName fieldName="RPTCheckType"  width="100" updateReadOnly="true" ></fieldName>
+		<fieldName fieldName="RPTSendType"   width="100" updateReadOnly="true" ></fieldName>
+		<fieldName fieldName="RPTFeedbackType" width="100" updateReadOnly="true" ></fieldName>
+		<fieldName fieldName="extend1"  listVisible="false"></fieldName>
+        <fieldName fieldName="extend2"  listVisible="false"></fieldName>
+        <fieldName fieldName="extend3"  listVisible="false"></fieldName>
+        <fieldName fieldName="extend4"  listVisible="false"></fieldName>
+        <fieldName fieldName="extend5"  listVisible="false"></fieldName>
+      </showInstance>
+      <showInstance>
+        <showInstanceName>ExportAllData</showInstanceName>
+        <fieldName fieldName="extend3" fieldShowName="担保机构代码" listVisible="true" intOrder="1"></fieldName>
+        <fieldName fieldName="extend4" fieldShowName="担保业务编号" listVisible="true" intOrder="2"></fieldName>
+        <fieldName fieldName="extend2"  fieldShowName="数据报告日期" listVisible="true" intOrder="3"></fieldName>
+        <fieldName fieldName="DBHTZT" listVisible="true" intOrder="4"></fieldName>
+        <fieldName fieldName="DBZRJCRQ" listVisible="true" intOrder="5"></fieldName>
+        <fieldName fieldName="ZBYE"  listVisible="true" intOrder="6"></fieldName>
+        <fieldName fieldName="YEBHRQ" listVisible="true" intOrder="7"></fieldName>
+        <fieldName fieldName="autoID" listVisible="false" intOrder="8"></fieldName>
+        <fieldName fieldName="RPTCheckType" listVisible="false" intOrder="9"></fieldName>
+        <fieldName fieldName="RPTSendType" listVisible="false" intOrder="10"></fieldName>
+        <fieldName fieldName="RPTFeedbackType" listVisible="false" intOrder="11"></fieldName>
+        <fieldName fieldName="extend1"  listVisible="false" intOrder="12"></fieldName>
+        <fieldName fieldName="extend5"  listVisible="false" intOrder="13"></fieldName>
+        <fieldName fieldName="FOREIGNID"  listVisible="false" intOrder="14"></fieldName>
+      </showInstance>
+	</fieldShowsEntity>
+	
+	<fieldShowsEntity>
+      <className>dbgssystem.dto.AutoDTO_DB_DCGKXX</className>
+      <showInstance>
+        <showInstanceName>1</showInstanceName>
+        <fieldName fieldName="FOREIGNID" listVisible="false"></fieldName>
+        <fieldName fieldName="JZRQ" singleTag="dateFieldNoSlash"></fieldName>
+        <fieldName fieldName="ZJYCDCRQ" singleTag="dateFieldNoSlash" width="130"></fieldName>
+        <fieldName fieldName="ZJYCZCRQ" singleTag="dateFieldNoSlash" width="130"></fieldName>
+        <fieldName fieldName="BJGCDDCJE" width="150"></fieldName>
+        <fieldName fieldName="BJGCDDCYE" width="150"></fieldName>
+        <fieldName fieldName="YLZD" listVisible="flase"></fieldName>
+       <fieldName fieldName="RPTCheckType"  width="100" updateReadOnly="true" singleTag="hiddenField"  multipleSelect="true"></fieldName>
+		<fieldName fieldName="RPTSendType"   width="100" updateReadOnly="true" singleTag="hiddenField"   multipleSelect="true"></fieldName>
+		<fieldName fieldName="RPTFeedbackType" width="100" updateReadOnly="true" singleTag="hiddenField"   multipleSelect="true"></fieldName>
+		<fieldName fieldName="extend1"  listVisible="false"></fieldName>
+        <fieldName fieldName="extend2"  listVisible="false"></fieldName>
+        <fieldName fieldName="extend3"  listVisible="false"></fieldName>
+        <fieldName fieldName="extend4"  listVisible="false"></fieldName>
+        <fieldName fieldName="extend5"  listVisible="false"></fieldName>
+      </showInstance>
+      <showInstance>
+        <showInstanceName>UpdateShowStatus</showInstanceName>
+        <fieldName fieldName="FOREIGNID" listVisible="false"></fieldName>
+        <fieldName fieldName="JZRQ" singleTag="dateFieldNoSlash"></fieldName>
+        <fieldName fieldName="ZJYCDCRQ" singleTag="dateFieldNoSlash" width="130"></fieldName>
+        <fieldName fieldName="ZJYCZCRQ" singleTag="dateFieldNoSlash" width="130"></fieldName>
+        <fieldName fieldName="BJGCDDCJE" width="150"></fieldName>
+        <fieldName fieldName="BJGCDDCYE" width="150"></fieldName>
+        <fieldName fieldName="YLZD" listVisible="flase"></fieldName>
+       <fieldName fieldName="RPTCheckType"  width="100" updateReadOnly="true" ></fieldName>
+		<fieldName fieldName="RPTSendType"   width="100" updateReadOnly="true" ></fieldName>
+		<fieldName fieldName="RPTFeedbackType" width="100" updateReadOnly="true" ></fieldName>
+		<fieldName fieldName="extend1"  listVisible="false"></fieldName>
+        <fieldName fieldName="extend2"  listVisible="false"></fieldName>
+        <fieldName fieldName="extend3"  listVisible="false"></fieldName>
+        <fieldName fieldName="extend4"  listVisible="false"></fieldName>
+        <fieldName fieldName="extend5"  listVisible="false"></fieldName>
+      </showInstance>
+      <showInstance>
+        <showInstanceName>ExportAllData</showInstanceName>
+        <fieldName fieldName="extend3" fieldShowName="担保机构代码" listVisible="true" intOrder="1"></fieldName>
+        <fieldName fieldName="extend4" fieldShowName="担保业务编号" listVisible="true" intOrder="2"></fieldName>
+        <fieldName fieldName="extend2"  fieldShowName="数据报告日期" listVisible="true" intOrder="3"></fieldName>
+        <fieldName fieldName="JZRQ" listVisible="true" intOrder="4"></fieldName>
+        <fieldName fieldName="JXZCBZ" listVisible="true" intOrder="5"></fieldName>
+        <fieldName fieldName="ZJYCDCRQ" listVisible="true" intOrder="6"></fieldName>
+        <fieldName fieldName="LJDCJE"  listVisible="true" intOrder="7"></fieldName>
+        <fieldName fieldName="BJGCDDCJE"  listVisible="true" intOrder="8"></fieldName>
+        <fieldName fieldName="ZJYCZCRQ" listVisible="true" intOrder="9"></fieldName>
+        <fieldName fieldName="DCYE"  listVisible="true" intOrder="10"></fieldName>
+        <fieldName fieldName="BJGCDDCYE"  listVisible="true" intOrder="11"></fieldName>
+        <fieldName fieldName="LJZCJE"  listVisible="true" intOrder="12"></fieldName>
+        <fieldName fieldName="LJSSJE"  listVisible="true" intOrder="13"></fieldName>
+        <fieldName fieldName="YLZD" listVisible="true" intOrder="14"></fieldName>
+        <fieldName fieldName="autoID" listVisible="false" intOrder="15"></fieldName>
+        <fieldName fieldName="RPTCheckType" listVisible="false" intOrder="16"></fieldName>
+        <fieldName fieldName="RPTSendType" listVisible="false" intOrder="17"></fieldName>
+        <fieldName fieldName="RPTFeedbackType" listVisible="false" intOrder="18"></fieldName>
+        <fieldName fieldName="extend1"  listVisible="false" intOrder="19"></fieldName>
+        <fieldName fieldName="extend5"  listVisible="false" intOrder="20"></fieldName>
+        <fieldName fieldName="FOREIGNID"  listVisible="false" intOrder="21"></fieldName>
+      </showInstance>
+	</fieldShowsEntity>
+	
+	<fieldShowsEntity>
+      <className>dbgssystem.dto.AutoDTO_DB_DCMXXX</className>
+      <showInstance>
+        <showInstanceName>1</showInstanceName>
+        <fieldName fieldName="RPTCheckType"  width="100" updateReadOnly="true"  multipleSelect="true"></fieldName>
+		<fieldName fieldName="RPTSendType"   width="100" updateReadOnly="true"  multipleSelect="true"></fieldName>
+		<fieldName fieldName="RPTFeedbackType" width="100" updateReadOnly="true"  multipleSelect="true"></fieldName>
+        <fieldName fieldName="FOREIGNID" listVisible="false"></fieldName>
+        <fieldName fieldName="DCRQ" singleTag="dateFieldNoSlash"></fieldName>
+        <fieldName fieldName="extend1"  listVisible="false"></fieldName>
+        <fieldName fieldName="extend2"  listVisible="false"></fieldName>
+        <fieldName fieldName="extend3"  listVisible="false"></fieldName>
+        <fieldName fieldName="extend4"  listVisible="false"></fieldName>
+        <fieldName fieldName="extend5"  listVisible="false"></fieldName>
+      </showInstance>
+      <showInstance>
+        <showInstanceName>ExportAllData</showInstanceName>
+         <fieldName fieldName="extend3" fieldShowName="担保机构代码" listVisible="true" intOrder="1"></fieldName>
+        <fieldName fieldName="extend4" fieldShowName="担保业务编号" listVisible="true" intOrder="2"></fieldName>
+        <fieldName fieldName="extend2"  fieldShowName="数据报告日期" listVisible="true" intOrder="3"></fieldName>
+        <fieldName fieldName="DCRQ" listVisible="true" intOrder="4"></fieldName>
+        <fieldName fieldName="DCJE"  listVisible="true" intOrder="5"></fieldName>
+        <fieldName fieldName="autoID" listVisible="false" intOrder="6"></fieldName>
+        <fieldName fieldName="RPTCheckType" listVisible="false" intOrder="7"></fieldName>
+        <fieldName fieldName="RPTSendType" listVisible="false" intOrder="8"></fieldName>
+        <fieldName fieldName="RPTFeedbackType" listVisible="false" intOrder="9"></fieldName>
+        <fieldName fieldName="extend1"  listVisible="false" intOrder="10"></fieldName>
+        <fieldName fieldName="extend5"  listVisible="false" intOrder="11"></fieldName>
+        <fieldName fieldName="FOREIGNID"  listVisible="false" intOrder="12"></fieldName>
+      </showInstance>
+	</fieldShowsEntity>
+	
+	<fieldShowsEntity>
+      <className>dbgssystem.dto.AutoDTO_DB_BFJNGKXX</className>
+      <showInstance>
+        <showInstanceName>1</showInstanceName>
+        <fieldName fieldName="FOREIGNID" listVisible="false"></fieldName>
+        <fieldName fieldName="JZRQ" singleTag="dateFieldNoSlash"></fieldName>
+        <fieldName fieldName="JFQSRQ" singleTag="dateFieldNoSlash"></fieldName>
+        <fieldName fieldName="JNJSRQ" singleTag="dateFieldNoSlash"></fieldName>
+        <fieldName fieldName="JNPL" width="90"></fieldName>
+        <fieldName fieldName="YLZD" listVisible="false"></fieldName>
+        <fieldName fieldName="RPTCheckType"  width="100" updateReadOnly="true" singleTag="hiddenField"  multipleSelect="true"></fieldName>
+		<fieldName fieldName="RPTSendType"   width="100" updateReadOnly="true" singleTag="hiddenField"  multipleSelect="true"></fieldName>
+		<fieldName fieldName="RPTFeedbackType" width="100" updateReadOnly="true" singleTag="hiddenField"  multipleSelect="true"></fieldName>
+		<fieldName fieldName="extend1"  listVisible="false"></fieldName>
+        <fieldName fieldName="extend2"  listVisible="false"></fieldName>
+        <fieldName fieldName="extend3"  listVisible="false"></fieldName>
+        <fieldName fieldName="extend4"  listVisible="false"></fieldName>
+        <fieldName fieldName="extend5"  listVisible="false"></fieldName>
+      </showInstance>
+      <showInstance>
+        <showInstanceName>UpdateShowStatus</showInstanceName>
+        <fieldName fieldName="FOREIGNID" listVisible="false"></fieldName>
+        <fieldName fieldName="JZRQ" singleTag="dateFieldNoSlash"></fieldName>
+        <fieldName fieldName="JFQSRQ" singleTag="dateFieldNoSlash"></fieldName>
+        <fieldName fieldName="JNJSRQ" singleTag="dateFieldNoSlash"></fieldName>
+        <fieldName fieldName="JNPL" width="90"></fieldName>
+        <fieldName fieldName="YLZD" listVisible="false"></fieldName>
+        <fieldName fieldName="RPTCheckType"  width="100" updateReadOnly="true" ></fieldName>
+		<fieldName fieldName="RPTSendType"   width="100" updateReadOnly="true" ></fieldName>
+		<fieldName fieldName="RPTFeedbackType" width="100" updateReadOnly="true" ></fieldName>
+		<fieldName fieldName="extend1"  listVisible="false"></fieldName>
+        <fieldName fieldName="extend2"  listVisible="false"></fieldName>
+        <fieldName fieldName="extend3"  listVisible="false"></fieldName>
+        <fieldName fieldName="extend4"  listVisible="false"></fieldName>
+        <fieldName fieldName="extend5"  listVisible="false"></fieldName>
+      </showInstance>
+      <showInstance>
+        <showInstanceName>ExportAllData</showInstanceName>
+        <fieldName fieldName="extend3" fieldShowName="担保机构代码" listVisible="true" intOrder="1"></fieldName>
+        <fieldName fieldName="extend4" fieldShowName="担保业务编号" listVisible="true" intOrder="2"></fieldName>
+        <fieldName fieldName="extend2"  fieldShowName="数据报告日期" listVisible="true" intOrder="3"></fieldName>
+        <fieldName fieldName="JFLB" listVisible="true" intOrder="4"></fieldName>
+        <fieldName fieldName="JZRQ" listVisible="true" intOrder="5"></fieldName>
+        <fieldName fieldName="JE" listVisible="true" intOrder="6"></fieldName>
+        <fieldName fieldName="JNFS" listVisible="true" intOrder="7"></fieldName>
+        <fieldName fieldName="JNPL" listVisible="true" intOrder="8"></fieldName>
+        <fieldName fieldName="JFQSRQ" listVisible="true" intOrder="9"></fieldName>
+        <fieldName fieldName="BFJNZT" listVisible="true" intOrder="10"></fieldName>
+        <fieldName fieldName="JNJSRQ" listVisible="true" intOrder="11"></fieldName>
+        <fieldName fieldName="YE"  listVisible="true" intOrder="12"></fieldName>
+        <fieldName fieldName="LJQJJE"  listVisible="true" intOrder="13"></fieldName>
+        <fieldName fieldName="YLZD" listVisible="true" intOrder="14"></fieldName>
+        
+        <fieldName fieldName="autoID" listVisible="false" intOrder="15"></fieldName>
+        <fieldName fieldName="RPTCheckType" listVisible="false" intOrder="16"></fieldName>
+        <fieldName fieldName="RPTSendType" listVisible="false" intOrder="17"></fieldName>
+        <fieldName fieldName="RPTFeedbackType" listVisible="false" intOrder="18"></fieldName>
+        <fieldName fieldName="extend1"  listVisible="false" intOrder="19"></fieldName>
+        <fieldName fieldName="extend5"  listVisible="false" intOrder="20"></fieldName>
+        <fieldName fieldName="FOREIGNID"  listVisible="false" intOrder="21"></fieldName>
+      </showInstance>
+	</fieldShowsEntity>
+	
+	<fieldShowsEntity> 
+      <className>dbgssystem.dto.AutoDTO_DB_BFJNMXXX</className>
+      <showInstance>
+        <showInstanceName>1</showInstanceName>
+        <fieldName fieldName="FOREIGNID" listVisible="false"></fieldName>
+        <fieldName fieldName="YJRQ" singleTag="dateFieldNoSlash"></fieldName>
+        <fieldName fieldName="SJRQ" singleTag="dateFieldNoSlash"></fieldName>
+        <fieldName fieldName="BQBFJNZT" width="130"></fieldName>
+        <fieldName fieldName="YLZD" listVisible="false"></fieldName>
+      <fieldName fieldName="RPTCheckType"  width="100" updateReadOnly="true"  multipleSelect="true"></fieldName>
+		<fieldName fieldName="RPTSendType"   width="100" updateReadOnly="true"  multipleSelect="true"></fieldName>
+		<fieldName fieldName="RPTFeedbackType" width="100" updateReadOnly="true"  multipleSelect="true"></fieldName>
+		 <fieldName fieldName="extend1"  listVisible="false"></fieldName>
+        <fieldName fieldName="extend2"  listVisible="false"></fieldName>
+        <fieldName fieldName="extend3"  listVisible="false"></fieldName>
+        <fieldName fieldName="extend4"  listVisible="false"></fieldName>
+        <fieldName fieldName="extend5"  listVisible="false"></fieldName>
+      </showInstance>
+      <showInstance>
+        <showInstanceName>ExportAllData</showInstanceName>
+         <fieldName fieldName="extend3" fieldShowName="担保机构代码" listVisible="true" intOrder="1"></fieldName>
+        <fieldName fieldName="extend4" fieldShowName="担保业务编号" listVisible="true" intOrder="2"></fieldName>
+        <fieldName fieldName="extend2"  fieldShowName="数据报告日期" listVisible="true" intOrder="3"></fieldName>
+        <fieldName fieldName="YJRQ" listVisible="true" intOrder="4"></fieldName>
+        <fieldName fieldName="YJJE"  listVisible="true" intOrder="5"></fieldName>
+        <fieldName fieldName="SJRQ" listVisible="true" intOrder="6"></fieldName>
+        <fieldName fieldName="QJJE"  listVisible="true" intOrder="7"></fieldName>
+        <fieldName fieldName="BQBFJNZT" listVisible="true" intOrder="8"></fieldName>
+        <fieldName fieldName="YLZD" listVisible="true" intOrder="9"></fieldName>
+        <fieldName fieldName="autoID" listVisible="false" intOrder="10"></fieldName>
+        <fieldName fieldName="RPTCheckType" listVisible="false" intOrder="11"></fieldName>
+        <fieldName fieldName="RPTSendType" listVisible="false" intOrder="12"></fieldName>
+        <fieldName fieldName="RPTFeedbackType" listVisible="false" intOrder="13"></fieldName>
+        <fieldName fieldName="extend1"  listVisible="false" intOrder="14"></fieldName>
+        <fieldName fieldName="extend5"  listVisible="false" intOrder="15"></fieldName>
+        <fieldName fieldName="FOREIGNID"  listVisible="false" intOrder="16"></fieldName>
+      </showInstance>
+	</fieldShowsEntity>
+	
+	<fieldShowsEntity>
+      <className>dbgssystem.dto.AutoDTO_DB_ZCMXXX</className>
+      <showInstance>
+        <showInstanceName>1</showInstanceName>
+       <fieldName fieldName="RPTCheckType"  width="100" updateReadOnly="true"  multipleSelect="true"></fieldName>
+		<fieldName fieldName="RPTSendType"   width="100" updateReadOnly="true"  multipleSelect="true"></fieldName>
+		<fieldName fieldName="RPTFeedbackType" width="100" updateReadOnly="true"  multipleSelect="true"></fieldName>
+        <fieldName fieldName="FOREIGNID" listVisible="false"></fieldName>
+        <fieldName fieldName="ZCRQ" singleTag="dateFieldNoSlash"></fieldName>
+         <fieldName fieldName="extend1"  listVisible="false"></fieldName>
+        <fieldName fieldName="extend2"  listVisible="false"></fieldName>
+        <fieldName fieldName="extend3"  listVisible="false"></fieldName>
+        <fieldName fieldName="extend4"  listVisible="false"></fieldName>
+        <fieldName fieldName="extend5"  listVisible="false"></fieldName>
+      </showInstance>
+      <showInstance>
+        <showInstanceName>ExportAllData</showInstanceName>
+         <fieldName fieldName="extend3" fieldShowName="担保机构代码" listVisible="true" intOrder="1"></fieldName>
+        <fieldName fieldName="extend4" fieldShowName="担保业务编号" listVisible="true" intOrder="2"></fieldName>
+        <fieldName fieldName="extend2"  fieldShowName="数据报告日期" listVisible="true" intOrder="3"></fieldName>
+        <fieldName fieldName="ZCRQ" listVisible="true" intOrder="4"></fieldName>
+        <fieldName fieldName="ZCJE"  listVisible="true" intOrder="5"></fieldName>
+        <fieldName fieldName="autoID" listVisible="false" intOrder="6"></fieldName>
+        <fieldName fieldName="RPTCheckType" listVisible="false" intOrder="7"></fieldName>
+        <fieldName fieldName="RPTSendType" listVisible="false" intOrder="8"></fieldName>
+        <fieldName fieldName="RPTFeedbackType" listVisible="false" intOrder="9"></fieldName>
+         <fieldName fieldName="extend1"  listVisible="false" intOrder="10"></fieldName>
+        <fieldName fieldName="extend5"  listVisible="false" intOrder="11"></fieldName>
+        <fieldName fieldName="FOREIGNID"  listVisible="false" intOrder="12"></fieldName>
+      </showInstance>
+	</fieldShowsEntity>
+	
+	<fieldShowsEntity>
+      <className>dbgssystem.dto.DBGSDownload</className>
+      <showInstance>
+        <showInstanceName>1</showInstanceName>
+        <fieldName fieldName="strReportCode" width="150"></fieldName> 
+        <fieldName fieldName="strReportName" width="400"></fieldName>
+        <fieldName fieldName="strSendType" listVisible="false"></fieldName>
+        <fieldName fieldName="dtDate" listVisible="false"></fieldName>
+        <fieldName fieldName="strJRJGCode" listVisible="false"></fieldName>
+        <fieldName fieldName="strReportType" listVisible="false"></fieldName>
+        <fieldName fieldName="SJBGRQ"  listVisible="false"></fieldName>
+      </showInstance>
+	</fieldShowsEntity>
+	
+	<fieldShowsEntity>
+      <className>dbgssystem.dto.DBGSCJFKBW</className>
+      <showInstance>
+        <showInstanceName>1</showInstanceName>
+        <fieldName fieldName="dtInportTime" width="150"></fieldName>
+        <fieldName fieldName="strBWLX" width="180"></fieldName> 
+        <fieldName fieldName="strCCBWM" width="200"></fieldName> 
+        <fieldName fieldName="strBWSCSJ" width="90"></fieldName>
+        <fieldName fieldName="userInfo" width="120"></fieldName>
+        <fieldName fieldName="strXXJLS" listVisible="false"></fieldName>
+      </showInstance>
+	</fieldShowsEntity>
+	
+	<fieldShowsEntity>
+      <className>dbgssystem.dto.DBGSCJFKBWSub</className>
+      <showInstance>
+        <showInstanceName>1</showInstanceName>
+        <fieldName fieldName="dBGSCJFKBW" listVisible="false"></fieldName> 
+        <fieldName fieldName="strShowCCXX" width="250"></fieldName>
+        <fieldName fieldName="strCCXX" listVisible="false"></fieldName>
+        <fieldName fieldName="strCCXXJL" listVisible="false"></fieldName>
+      </showInstance>
+	</fieldShowsEntity>
+	
+	<fieldShowsEntity>
+      <className>dbgssystem.dto.AutoDTO_DB_DBGSBSBGJL</className>
+      <showInstance>
+        <showInstanceName>1</showInstanceName>
+        <fieldName fieldName="DBJGDM" width="150"></fieldName>
+        <fieldName fieldName="YDBYWBH" width="150"></fieldName> 
+        <fieldName fieldName="BGHDDBYWBH" width="150"></fieldName>
+        <fieldName fieldName="SJBGRQ" width="150" singleTag="dateFieldNoSlash" ></fieldName>
+        
+        <fieldName fieldName="RPTCheckType"  updateReadOnly="true"  width="120" listVisible="false" multipleSelect="true"></fieldName>
+        <fieldName fieldName="RPTSubmitStatus"  updateReadOnly="true"  width="100" multipleSelect="true"></fieldName>
+        <fieldName fieldName="RPTVerifyType"   updateReadOnly="true"  width="100" listVisible="false" multipleSelect="true"></fieldName>
+        <fieldName fieldName="RPTSendType"   updateReadOnly="true"   width="120" listVisible="false" multipleSelect="true"></fieldName>
+        <fieldName fieldName="RPTFeedbackType"  updateReadOnly="true"   width="100" listVisible="false" multipleSelect="true"></fieldName>
+        <fieldName fieldName="lastUpdateDate" updateReadOnly="true" singleTag="dateFieldNoSlash" width="120" listVisible="false"></fieldName>
+        <fieldName fieldName="dtDate" listVisible="false" updateReadOnly="true" singleTag="dateFieldNoSlash"  ></fieldName>
+        <fieldName fieldName="operationUser" updateReadOnly="true" width="120"  listVisible="false"></fieldName>
+        <fieldName fieldName="instInfo" updateReadOnly="true" width="120" listVisible="false"></fieldName>
+        <fieldName fieldName="autoID"  listVisible="false" ></fieldName>
+        <fieldName fieldName="extend1"  listVisible="false" ></fieldName>
+        <fieldName fieldName="extend2"  listVisible="false" ></fieldName>
+        <fieldName fieldName="extend3"  listVisible="false" ></fieldName>
+        <fieldName fieldName="extend4"  listVisible="false" ></fieldName>
+        <fieldName fieldName="extend5"  listVisible="false" ></fieldName>
+      </showInstance>
+	</fieldShowsEntity>
+	
+	<fieldShowsEntity>
+      <className>dbgssystem.dto.AutoDTO_DB_DBGSSCQQJL</className>
+      <showInstance>
+        <showInstanceName>1</showInstanceName>
+        <fieldName fieldName="SJBGRQ" width="150" singleTag="dateFieldNoSlash" ></fieldName> 
+        <fieldName fieldName="DBJGDM" width="150"></fieldName>
+        <fieldName fieldName="DBYWBH" width="150"></fieldName>
+        <fieldName fieldName="SCLX" width="150"></fieldName>
+        
+        <fieldName fieldName="RPTCheckType"  updateReadOnly="true"  width="120" listVisible="false" multipleSelect="true"></fieldName>
+        <fieldName fieldName="RPTSubmitStatus"  updateReadOnly="true"  width="100" multipleSelect="true"></fieldName>
+        <fieldName fieldName="RPTVerifyType"   updateReadOnly="true"  width="100" listVisible="false" multipleSelect="true"></fieldName>
+        <fieldName fieldName="RPTSendType"   updateReadOnly="true"   width="120" listVisible="false" multipleSelect="true"></fieldName>
+        <fieldName fieldName="RPTFeedbackType"  updateReadOnly="true"   width="100" listVisible="false" multipleSelect="true"></fieldName>
+        <fieldName fieldName="lastUpdateDate" updateReadOnly="true" singleTag="dateFieldNoSlash" width="120" listVisible="false"></fieldName>
+        <fieldName fieldName="dtDate" listVisible="false" updateReadOnly="true" singleTag="dateFieldNoSlash"  ></fieldName>
+        <fieldName fieldName="operationUser" updateReadOnly="true" width="120"  listVisible="false"></fieldName>
+        <fieldName fieldName="instInfo" updateReadOnly="true" width="120" listVisible="false"></fieldName>
+        <fieldName fieldName="autoID"  listVisible="false" ></fieldName>
+        <fieldName fieldName="extend1"  listVisible="false" ></fieldName>
+        <fieldName fieldName="extend2"  listVisible="false" ></fieldName>
+        <fieldName fieldName="extend3"  listVisible="false" ></fieldName>
+        <fieldName fieldName="extend4"  listVisible="false" ></fieldName>
+        <fieldName fieldName="extend5"  listVisible="false" ></fieldName>
+      </showInstance>
+	</fieldShowsEntity>
+</fieldShowsRoot>

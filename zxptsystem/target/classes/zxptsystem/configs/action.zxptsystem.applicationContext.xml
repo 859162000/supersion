@@ -1,0 +1,347 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans
+	xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns:p="http://www.springframework.org/schema/p"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-3.0.xsd">
+    
+     <bean id="singleObjectPositionJumpAction" class="framework.actions.imps.BaseSTNameAndIdListAction" scope="prototype">
+       <property name="defaultServiceBeanId" value="singleObjectPositionJumpService"></property>
+    </bean>
+    
+    <bean id="zXTBAccordingInstInfoShowViewAction" class="framework.actions.imps.BaseSTModelDrivenConditionAction" scope="prototype">
+        <property name="defaultServiceBeanId" value="zXTBAccordingInstInfoShowViewService"></property>
+    </bean>
+    
+    <!-- <bean id="view_QY_JKRGKXXZXTBShowViewStatisticalAction" class="framework.actions.imps.BaseSTModelDrivenConditionAction" scope="prototype">
+        <property name="defaultServiceBeanId" value="view_QY_JKRGKXXZXTBShowViewStatisticalService"></property>
+    </bean>
+    
+    <bean id="view_JG_JGJBXXZXTBShowViewStatisticalAction" class="framework.actions.imps.BaseSTModelDrivenConditionAction" scope="prototype">
+        <property name="defaultServiceBeanId" value="view_JG_JGJBXXZXTBShowViewStatisticalService"></property>
+    </bean> -->
+    
+    <bean id="singleObjectZXPTShowListLevelAUTODTOAction" class="framework.actions.imps.BaseSTModelDrivenAction" scope="prototype">
+        <property name="defaultServiceBeanId" value="singleObjectZXPTShowListLevelAUTODTOService"></property>
+    </bean>
+    
+    <bean id="baseSTModelDrivenAction" class="framework.actions.imps.BaseSTModelDrivenAction" scope="prototype">
+    	<property name="defaultServiceBeanId" value="singObjectClearJKRGKPositionService"></property>
+    </bean>
+
+    <bean id="downLoadReportAction" class="zxptsystem.actions.imps.ReportDownloadAction" scope="prototype">
+        <property name="defaultServiceBeanId" value="downLoadReportService"></property>
+    </bean>
+   
+    <bean id="confirmDialogForReportAction" class="zxptsystem.actions.imps.ReportDownloadAction" scope="prototype">
+        <property name="defaultServiceBeanId" value="qYZXCJFKBWUploadFileService"></property>
+    </bean>
+    
+     <bean id="confirmDialogForUploadQYZXBWJXAction" class="framework.actions.imps.BaseSTModelDrivenConditionFileAction" scope="prototype">
+        <property name="defaultServiceBeanId" value="zxptsystem.service.imps.ConfirmDialogForUploadReportService"></property>
+    </bean>
+
+    <bean id="qYZXCJFKBWUploadFileAction" class="framework.actions.imps.BaseSTModelDrivenConditionFileAction" scope="prototype">
+       <property name="defaultServiceBeanId" value="qYZXCJFKBWUploadFileService"></property>
+    </bean>
+    <!-- 新增批量信贷业务数据删除结果反馈 -->
+     <bean id="qYZXPLXDYWSJSCJGFKBWUploadFileAction" class="framework.actions.imps.BaseSTModelDrivenConditionFileAction" scope="prototype">
+       <property name="defaultServiceBeanId" value="qYZXPLXDYWSJSCJGFKBWUploadFileService"></property>
+    </bean>
+    <bean id="downLoadGRZXReportAction" class="zxptsystem.actions.imps.ReportDownloadAction" scope="prototype">
+        <property name="defaultServiceBeanId" value="downLoadGRZXReportService"></property>
+    </bean>
+    <bean id="overridedownLoadGRZXReportAction" class="zxptsystem.actions.imps.ReportDownloadAction" scope="prototype">
+        <property name="defaultServiceBeanId" value="overriddownLoadGRZXReportService"></property>
+    </bean>
+    <bean id="testQueryAction" class="zxptsystem.actions.imps.DownLoadCreditReportAction" scope="prototype">
+        <property name="defaultServiceBeanId" value="testQueryService"></property>
+    </bean>
+    
+     <bean id="gRZXSHShowListAction" class="framework.actions.imps.BaseSTModelDrivenConditionAction" scope="prototype">
+        <property name="defaultServiceBeanId" value="gRZXSHShowListService"></property>
+    </bean>
+    
+     <bean id="qYZXSHShowListAction" class="framework.actions.imps.BaseSTModelDrivenConditionAction" scope="prototype">
+        <property name="defaultServiceBeanId" value="qYZXSHShowListService"></property>
+    </bean>
+    
+     <bean id="qYZXUpdateFieldAction" class="framework.actions.imps.BaseSTNameAndIdListAction" scope="prototype">
+        <property name="defaultServiceBeanId" value="qYZXUpdateFieldService"></property>
+    </bean>
+    
+     <bean id="qYZXFalseUpdateFieldAction" class="framework.actions.imps.BaseSTNameAndIdListAction" scope="prototype">
+        <property name="defaultServiceBeanId" value="qYZXFalseUpdateFieldService"></property>
+    </bean>
+    
+     <bean id="gRZXUpdateFieldAction" class="framework.actions.imps.BaseSTNameAndIdListAction" scope="prototype">
+        <property name="defaultServiceBeanId" value="gRZXUpdateFieldService"></property>
+    </bean>
+    
+     <bean id="gRZXFalseUpdateFieldAction" class="framework.actions.imps.BaseSTNameAndIdListAction" scope="prototype">
+        <property name="defaultServiceBeanId" value="gRZXFalseUpdateFieldService"></property>
+    </bean> 
+    
+      <bean id="pLJSUpdateFieldAction" class="framework.actions.imps.BaseSTNameAndIdListAction" scope="prototype">
+        <property name="defaultServiceBeanId" value="pLJSUpdateFieldService"></property>
+    </bean>
+    
+     <bean id="pLSDUpdateFieldAction" class="framework.actions.imps.BaseSTNameAndIdListAction" scope="prototype">
+        <property name="defaultServiceBeanId" value="pLSDUpdateFieldService"></property>
+    </bean>
+    
+     <bean id="qYZXShowUpdateAction" class="framework.actions.imps.BaseSTNameAndIdAction" scope="prototype">
+        <property name="defaultServiceBeanId" value="qYZXShowUpdateService"></property>
+      </bean>
+      
+      <bean id="gRZXShowUpdateAction" class="framework.actions.imps.BaseSTNameAndIdAction" scope="prototype">
+        <property name="defaultServiceBeanId" value="gRZXShowUpdateService"></property>
+      </bean>
+    
+      <bean id="qYZXSHPassUpdateAction" class="framework.actions.imps.BaseSTModelDrivenValidateAction" scope="prototype">
+       <property name="defaultServiceBeanId" value="qYZXSHPassUpdateService"></property>
+     </bean>
+    
+    <bean id="qYZXSHNoPassUpdateAction" class="framework.actions.imps.BaseSTModelDrivenValidateAction" scope="prototype">
+       <property name="defaultServiceBeanId" value="qYZXSHNoPassUpdateService"></property>
+    </bean>
+    
+     <bean id="gRZXSHPassUpdateAction" class="framework.actions.imps.BaseSTModelDrivenValidateAction" scope="prototype">
+       <property name="defaultServiceBeanId" value="gRZXSHPassUpdateService"></property>
+     </bean>
+    
+    <bean id="gRZXSHNoPassUpdateAction" class="framework.actions.imps.BaseSTModelDrivenValidateAction" scope="prototype">
+       <property name="defaultServiceBeanId" value="gRZXSHNoPassUpdateService"></property>
+    </bean>
+    
+     <bean id="gRZXGrantDataCXShowListAction" class="framework.actions.imps.BaseSTModelDrivenConditionAction" scope="prototype">
+        <property name="defaultServiceBeanId" value="gRZXGrantDataCXShowListService"></property>
+    </bean>
+      
+       <bean id="gRZXGrantDataShowUpdateAction" class="framework.actions.imps.BaseSTNameAndIdAction" scope="prototype">
+        <property name="defaultServiceBeanId" value="gRZXGrantDataShowUpdateService"></property>
+      </bean>
+   
+    <bean id="downLoadJGXXReportAction" class="zxptsystem.actions.imps.ReportDownloadAction" scope="prototype">
+        <property name="defaultServiceBeanId" value="downLoadJGXXReportService"></property>
+    </bean>
+    <bean id="gRZXCJFKBWUploadFileAction" class="framework.actions.imps.BaseSTModelDrivenConditionFileAction" scope="prototype">
+       <property name="defaultServiceBeanId" value="gRZXCJFKBWUploadFileService"></property>
+    </bean>
+    
+     <bean id="gRZXZHBSBGCJFKBWUploadFileAction" class="framework.actions.imps.BaseSTModelDrivenConditionFileAction" scope="prototype">
+       <property name="defaultServiceBeanId" value="gRZXZHBSBGCJFKBWUploadFileService"></property>
+    </bean>
+    
+     <bean id="gRZXSJSCCJFKBWUploadFileAction" class="framework.actions.imps.BaseSTModelDrivenConditionFileAction" scope="prototype">
+       <property name="defaultServiceBeanId" value="gRZXSJSCCJFKBWUploadFileService"></property>
+    </bean>
+    
+     <bean id="gRZXLSYQJLGXFKBWUploadFileAction" class="framework.actions.imps.BaseSTModelDrivenConditionFileAction" scope="prototype">
+       <property name="defaultServiceBeanId" value="gRZXLSYQJLGXFKBWUploadFileService"></property>
+    </bean>
+    
+     <bean id="gRZXLSYQJLSCFKBWUploadFileAction" class="framework.actions.imps.BaseSTModelDrivenConditionFileAction" scope="prototype">
+       <property name="defaultServiceBeanId" value="gRZXLSYQJLSCFKBWUploadFileService"></property>
+    </bean>
+    
+     <bean id="gRZXCreditSubmitUpdateFieldAction" class="framework.actions.imps.BaseSTNameAndIdListAction" scope="prototype">
+       <property name="defaultServiceBeanId" value="gRZXCreditSubmitUpdateFieldService"></property>
+    </bean>
+    
+     <bean id="gRZXCreditReportInfoShowViewAction" class="framework.actions.imps.BaseSTModelDrivenConditionAction" scope="prototype">
+        <property name="defaultServiceBeanId" value="gRZXCreditReportInfoShowViewService"></property>
+    </bean>
+    
+     <bean id="gRZXGrantDataShowViewAction" class="framework.actions.imps.BaseSTModelDrivenConditionAction" scope="prototype">
+        <property name="defaultServiceBeanId" value="gRZXGrantDataShowViewService"></property>
+    </bean>
+    
+    <bean id="gRZXGrantDataUpdateViewAction" class="framework.actions.imps.BaseSTNameAndIdAction" scope="prototype">
+        <property name="defaultServiceBeanId" value="gRZXGrantDataUpdateViewService"></property>
+    </bean>
+    
+    <bean id="gRZXGrantDataCXShowUpdateAction" class="framework.actions.imps.BaseSTNameAndIdAction" scope="prototype">
+        <property name="defaultServiceBeanId" value="gRZXGrantDataCXShowUpdateService"></property>
+    </bean>
+    
+     <bean id="gRZXCreditReportInfoShowViewUpdateAction" class="framework.actions.imps.BaseSTNameAndIdAction" scope="prototype">
+        <property name="defaultServiceBeanId" value="gRZXCreditReportInfoShowViewUpdateService"></property>
+    </bean>
+    
+     <bean id="qYZXCreditSubmitUpdateFieldAction" class="framework.actions.imps.BaseSTNameAndIdListAction" scope="prototype">
+       <property name="defaultServiceBeanId" value="qYZXCreditSubmitUpdateFieldService"></property>
+    </bean>
+    
+     <bean id="qYZXCreditReportInfoShowViewAction" class="framework.actions.imps.BaseSTModelDrivenConditionAction" scope="prototype">
+        <property name="defaultServiceBeanId" value="qYZXCreditReportInfoShowViewService"></property>
+    </bean>
+        
+     <bean id="qYZXCreditReportInfoShowViewUpdateAction" class="framework.actions.imps.BaseSTNameAndIdAction" scope="prototype">
+        <property name="defaultServiceBeanId" value="qYZXCreditReportInfoShowViewUpdateService"></property>
+    </bean>
+    
+    <bean id="jGXXCJFKBWUploadFileAction" class="framework.actions.imps.BaseSTModelDrivenConditionFileAction" scope="prototype">
+       <property name="defaultServiceBeanId" value="jGXXCJFKBWUploadFileService"></property>
+    </bean>
+    
+    <bean id="gRZXWFKBWCLAction" class="framework.actions.imps.BaseSTNameAndIdListAction" scope="prototype">
+       <property name="defaultServiceBeanId" value="gRZXWFKBWCLService"></property>
+    </bean>
+    
+     <bean id="qYZXCWBBRedirectByXXJLLXAction" class="zxptsystem.actions.imps.QYZXCWBBJumpByTypeAction" scope="prototype">
+		<property name="typeFieldName" value="XXJLLX"></property>
+        <property name="typeFieldValueMap">
+            <map>
+             <entry key="03" value="ShowListLevelAutoDTOMX-zxptsystem.dto.AutoDTO_QY_02ZCFZB"></entry>
+             <entry key="04" value="ShowListLevelAutoDTOMX-zxptsystem.dto.AutoDTO_QY_02LRJLRFPB"></entry>
+             <entry key="05" value="ShowListLevelAutoDTOMX-zxptsystem.dto.AutoDTO_QY_02XJLLB"></entry>
+             <entry key="43" value="ShowListLevelAutoDTOMX-zxptsystem.dto.AutoDTO_QY_07ZCFZB"></entry>
+             <entry key="44" value="ShowListLevelAutoDTOMX-zxptsystem.dto.AutoDTO_QY_07LRJLRFPB"></entry>
+             <entry key="45" value="ShowListLevelAutoDTOMX-zxptsystem.dto.AutoDTO_QY_07XJLLB"></entry>
+             <entry key="46" value="ShowListLevelAutoDTOMX-zxptsystem.dto.AutoDTO_QY_SYDWZCFZB"></entry>
+             <entry key="47" value="ShowListLevelAutoDTOMX-zxptsystem.dto.AutoDTO_QY_SYDWSRZCB"></entry>
+            </map>
+        </property>
+    </bean>
+    
+    <bean id="sHQYZXCWBBRedirectByXXJLLXAction" class="zxptsystem.actions.imps.QYZXCWBBJumpByTypeAction" scope="prototype">
+		<property name="typeFieldName" value="XXJLLX"></property>
+        <property name="typeFieldValueMap">
+            <map>
+             <entry key="03" value="SHShowListLevelAUTODTOSHMX-zxptsystem.dto.AutoDTO_QY_02ZCFZB"></entry>
+                <entry key="04" value="SHShowListLevelAUTODTOSHMX-zxptsystem.dto.AutoDTO_QY_02LRJLRFPB"></entry>
+                <entry key="05" value="SHShowListLevelAUTODTOSHMX-zxptsystem.dto.AutoDTO_QY_02XJLLB"></entry>
+                <entry key="43" value="SHShowListLevelAUTODTOSHMX-zxptsystem.dto.AutoDTO_QY_07ZCFZB"></entry>
+                <entry key="44" value="SHShowListLevelAUTODTOSHMX-zxptsystem.dto.AutoDTO_QY_07LRJLRFPB"></entry>
+                <entry key="45" value="SHShowListLevelAUTODTOSHMX-zxptsystem.dto.AutoDTO_QY_07XJLLB"></entry>
+                <entry key="46" value="SHShowListLevelAUTODTOSHMX-zxptsystem.dto.AutoDTO_QY_SYDWZCFZB"></entry>
+                <entry key="47" value="SHShowListLevelAUTODTOSHMX-zxptsystem.dto.AutoDTO_QY_SYDWSRZCB"></entry>
+            </map>
+        </property>
+    </bean>
+    
+    <bean id="fKBWQYZXCWBBRedirectByXXJLLXAction" class="zxptsystem.actions.imps.QYZXCWBBJumpByTypeAction" scope="prototype">
+		<property name="typeFieldName" value="XXJLLX"></property>
+        <property name="typeFieldValueMap">
+            <map>
+             	<entry key="03" value="FKBWShowListLevelFKBWAutoDTOMX-zxptsystem.dto.AutoDTO_QY_02ZCFZB"></entry>
+                <entry key="04" value="FKBWShowListLevelFKBWAutoDTOMX-zxptsystem.dto.AutoDTO_QY_02LRJLRFPB"></entry>
+                <entry key="05" value="FKBWShowListLevelFKBWAutoDTOMX-zxptsystem.dto.AutoDTO_QY_02XJLLB"></entry>
+                <entry key="43" value="FKBWShowListLevelFKBWAutoDTOMX-zxptsystem.dto.AutoDTO_QY_07ZCFZB"></entry>
+                <entry key="44" value="FKBWShowListLevelFKBWAutoDTOMX-zxptsystem.dto.AutoDTO_QY_07LRJLRFPB"></entry>
+                <entry key="45" value="FKBWShowListLevelFKBWAutoDTOMX-zxptsystem.dto.AutoDTO_QY_07XJLLB"></entry>
+                <entry key="46" value="FKBWShowListLevelFKBWAutoDTOMX-zxptsystem.dto.AutoDTO_QY_SYDWZCFZB"></entry>
+                <entry key="47" value="FKBWShowListLevelFKBWAutoDTOMX-zxptsystem.dto.AutoDTO_QY_SYDWSRZCB"></entry>
+            </map>
+        </property>
+    </bean>
+
+    <bean id="fKBWShowInputUpdateQYZXCWBBRedirectByXXJLLXAction" class="zxptsystem.actions.imps.QYZXCWBBJumpByTypeAction" scope="prototype">
+		<property name="typeFieldName" value="XXJLLX"></property>
+        <property name="typeFieldValueMap">
+            <map>
+             <entry key="03" value="FKBWShowListLevelFKBWAutoDTOMX-zxptsystem.dto.AutoDTO_QY_02ZCFZB"></entry>
+                <entry key="04" value="FKBWShowListLevelFKBWAutoDTOMX-zxptsystem.dto.AutoDTO_QY_02LRJLRFPB"></entry>
+                <entry key="05" value="FKBWShowListLevelFKBWAutoDTOMX-zxptsystem.dto.AutoDTO_QY_02XJLLB"></entry>
+                <entry key="43" value="FKBWShowListLevelFKBWAutoDTOMX-zxptsystem.dto.AutoDTO_QY_07ZCFZB"></entry>
+                <entry key="44" value="FKBWShowListLevelFKBWAutoDTOMX-zxptsystem.dto.AutoDTO_QY_07LRJLRFPB"></entry>
+                <entry key="45" value="FKBWShowListLevelFKBWAutoDTOMX-zxptsystem.dto.AutoDTO_QY_07XJLLB"></entry>
+                <entry key="46" value="FKBWShowListLevelFKBWAutoDTOMX-zxptsystem.dto.AutoDTO_QY_SYDWZCFZB"></entry>
+                <entry key="47" value="FKBWShowListLevelFKBWAutoDTOMX-zxptsystem.dto.AutoDTO_QY_SYDWSRZCB"></entry>
+            </map>
+        </property>
+    </bean>
+    
+    <bean id="cKShowListQYZXCWBBRedirectByXXJLLXAction" class="zxptsystem.actions.imps.QYZXCWBBJumpByTypeAction" scope="prototype">
+		<property name="typeFieldName" value="XXJLLX"></property>
+        <property name="typeFieldValueMap">
+            <map>
+             <entry key="03" value="CKShowListLevelMXCK-zxptsystem.dto.AutoDTO_QY_02ZCFZB"></entry>
+                <entry key="04" value="CKShowListLevelMXCK-zxptsystem.dto.AutoDTO_QY_02LRJLRFPB"></entry>
+                <entry key="05" value="CKShowListLevelMXCK-zxptsystem.dto.AutoDTO_QY_02XJLLB"></entry>
+                <entry key="43" value="CKShowListLevelMXCK-zxptsystem.dto.AutoDTO_QY_07ZCFZB"></entry>
+                <entry key="44" value="CKShowListLevelMXCK-zxptsystem.dto.AutoDTO_QY_07LRJLRFPB"></entry>
+                <entry key="45" value="CKShowListLevelMXCK-zxptsystem.dto.AutoDTO_QY_07XJLLB"></entry>
+                <entry key="46" value="CKShowListLevelMXCK-zxptsystem.dto.AutoDTO_QY_SYDWZCFZB"></entry>
+                <entry key="47" value="CKShowListLevelMXCK-zxptsystem.dto.AutoDTO_QY_SYDWSRZCB"></entry>
+            </map>
+        </property>
+    </bean>
+   
+    <bean id="jiajiemiAction" class="zxptsystem.actions.imps.JiaJieMiFileAction" scope="prototype">
+       <property name="defaultServiceBeanId" value="jiajiemiService"></property>
+    </bean> 			
+    
+    <bean id="rejectReportAction" class="framework.actions.imps.BaseSTNameAndIdListAction" scope="prototype">
+       <property name="defaultServiceBeanId" value="rejectReportService"></property>
+    </bean>
+    
+    <bean id="singleObjectShowImgAction" class="zxptsystem.actions.imps.SingleObjectShowImgAction" scope="prototype">
+        <property name="defaultServiceBeanId" value="singleObjectShowImgService"></property>
+    </bean>
+    
+    <bean id="getAsynDataAction" class="zxptsystem.actions.imps.GetAsynDataAction" scope="prototype">
+       <property name="defaultServiceBeanId" value="getAsynDataService"></property>
+    </bean>
+    
+     <bean id="ajaxForQYZXDownLoadRequestAction" class="zxptsystem.actions.imps.AjaxForDownLoadRequestAction" scope="prototype">
+        <property name="defaultServiceBeanId" value="confirmDialogForReportService"></property>
+    </bean>
+    
+     <bean id="ajaxForOverrideQYZXDownLoadRequestAction" class="zxptsystem.actions.imps.AjaxForDownLoadRequestAction" scope="prototype">
+        <property name="defaultServiceBeanId" value="confirmDialogForOverRideReportService"></property>
+    </bean>
+      <bean id="showProcedureForQYZXStatisticalAction" class="framework.actions.imps.BaseSTModelDrivenConditionAction" scope="prototype">
+        <property name="defaultServiceBeanId" value="showProcedureForQYZXStatisticalService"></property>
+    </bean>
+    
+     <bean id="showProcedureForQYZXEndsData_CheckAction" class="framework.actions.imps.BaseSTModelDrivenConditionAction" scope="prototype">
+        <property name="defaultServiceBeanId" value="showProcedureForQYZXEndsData_CheckService"></property>
+    </bean>
+    
+    <bean id="singleObjectExportTemplateWithDataAction" class="zxptsystem.actions.imps.ReportDownloadAction" scope="prototype">
+       <property name="defaultServiceBeanId" value="autoDTO_QY_JKRCWBB_JCExportTemplateWithDataLevelAUTODTOService"></property>
+    </bean>
+    
+     <bean id="pROC_EndsData_CheckFirstShowProcedureStatisticalAction" class="framework.actions.imps.BaseSTModelDrivenConditionAction" scope="prototype">
+        <property name="defaultServiceBeanId" value="pROC_EndsData_CheckFirstShowProcedureStatisticalService"></property>
+        <property name="firstShowData" value="true"></property>
+    </bean>
+    
+     <bean id="pROC_QYZXZLKPFirstShowProcedureStatisticalAction" class="framework.actions.imps.BaseSTModelDrivenConditionAction" scope="prototype">
+        <property name="defaultServiceBeanId" value="pROC_QYZXZLKPFirstShowProcedureStatisticalService"></property>
+        <property name="firstShowData" value="true"></property>
+    </bean>
+    
+     <bean id="pROC_PEndsData_CheckFirstShowProcedureStatisticalAction" class="framework.actions.imps.BaseSTModelDrivenConditionAction" scope="prototype">
+        <property name="defaultServiceBeanId" value="pROC_PEndsData_CheckFirstShowProcedureStatisticalService"></property>
+        <property name="firstShowData" value="true"></property>
+    </bean>
+    
+     <bean id="pROC_GRZXZLKPFirstShowProcedureStatisticalAction" class="framework.actions.imps.BaseSTModelDrivenConditionAction" scope="prototype">
+        <property name="defaultServiceBeanId" value="pROC_GRZXZLKPFirstShowProcedureStatisticalService"></property>
+        <property name="firstShowData" value="true"></property>
+    </bean>
+    
+      <bean id="zxptsystemRptSubmitStatusUpdateFieldAction" class="framework.actions.imps.BaseSTNameAndIdListAction" scope="prototype">
+       <property name="defaultServiceBeanId" value="zxptsystemRptSubmitStatusUpdateFieldService"></property>
+    </bean>
+    
+    <bean id="importFixedLineExcleDataAction" class="framework.actions.imps.BaseSTModelDrivenConditionFileAction" scope="prototype">
+       <property name="defaultServiceBeanId" value="importFixedLineExcleDataService"></property>
+    </bean>
+    
+    <bean id="CopySaveLevelAutoDTOMXByIdListAction" class="framework.actions.imps.BaseSTNameAndIdListAction" scope="prototype">
+    	<property name="defaultServiceBeanId" value="CopySaveLevelAutoDTOMXListService" />
+    </bean>
+    
+    <bean id="zXRHLinkQueryAction" class="framework.actions.imps.BaseSTNameAndIdListAction" scope="prototype">
+       <property name="defaultServiceBeanId" value="zXRHLinkQueryService"></property>
+    </bean>
+    
+    <!-- 个人征信报告手动推送处理action，添加人：刘涛，添加时间：2016/09/19 14:43 -->
+    <bean id="SendGrzxReportDatasAction" class="framework.actions.imps.BaseSTNameAndIdListAction" scope="prototype">
+    	<property name="defaultServiceBeanId" value="SendGrzxReportDatasService"></property>
+    </bean>
+ </beans>

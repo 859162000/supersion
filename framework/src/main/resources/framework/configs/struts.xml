@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE struts PUBLIC "-//Apache Software Foundation//DTD Struts Configuration 2.1//EN" "http://struts.apache.org/dtds/struts-2.1.dtd">
+<struts>
+    <bean type="com.opensymphony.xwork2.conversion.ObjectTypeDeterminer" name="oneToManyTypeDeterminer" class="framework.struts.ext.OneToManyElementTypeDeterminer"/> 
+	<!--对象工厂是spring -->
+	<constant name="struts.objectFactory" value="spring" />
+	<!--编码语言 -->
+	<!--
+    <constant name="struts.i18n.encoding" value="gbk" />  
+    -->
+    <!-- 指定请求后缀为.action，指定多个请求后缀用逗号分隔 -->   
+    <constant name="struts.action.extension" value="action" />  
+    <!--设置浏览器是否缓存静态内容，建议：开发阶段关闭，运行时开启  -->   
+    <constant name="struts.serve.static.browserCache" value="false" />  
+	<!--当struts.xml配置文件修改后，系统是否重新加载该文件，开发阶段打开此功能  -->  
+	<constant name="struts.configuration.xml.reload" value="true" />  
+	<!--  开发提示：出错时打印更详细的信息-->   
+	<constant name="struts.devMode" value="false" /> 
+    <!--  关闭动态方法调用-->
+    <constant name="struts.enable.DynamicMethodInvocation" value="false"/> 
+    <!--  允许静态方法调用-->
+    <constant name="struts.ognl.allowStaticMethodAccess" value="true" />
+    <!--  设置标签默认主题-->
+    
+    <constant name="struts.ui.theme" value="simple" />
+    
+    <constant name="struts.multipart.saveDir"  value="temp"/>
+    
+    <!-- 设置文件导入最大size -->
+    <constant name="struts.multipart.maxSize" value="52428800" />
+    <constant name="struts.objectTypeDeterminer" value="oneToManyTypeDeterminer"/>
+    
+    <include file="framework/configs/framework.struts.xml"></include>
+    <!--<include file="extend/configs/extend.struts.xml"></include>
+    -->
+    
+</struts>    

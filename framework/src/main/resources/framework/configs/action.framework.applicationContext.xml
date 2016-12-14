@@ -1,0 +1,181 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:p="http://www.springframework.org/schema/p"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-3.0.xsd">
+
+	<bean id="singleObjectShowListAction" class="framework.actions.imps.BaseSTModelDrivenConditionAction" scope="prototype">
+		<property name="defaultServiceBeanId" value="singleObjectShowListService"></property>
+	</bean>
+	<bean id="showListForComponentDetailAction" class="framework.actions.imps.BaseSTModelDrivenConditionAction" scope="prototype">
+		<property name="defaultServiceBeanId" value="showListForComponentDetailService"></property>
+	</bean>
+
+	<bean id="singleObjectShowTreeAction" class="framework.actions.imps.BaseSTModelDrivenAction" scope="prototype">
+		<property name="defaultServiceBeanId" value="singleObjectShowTreeService"></property>
+	</bean>
+
+	<bean id="singleObjectShowSaveAction" class="framework.actions.imps.BaseSTAction" scope="prototype">
+		<property name="defaultServiceBeanId" value="singleObjectShowSaveService"></property>
+	</bean>
+
+	<bean id="singleObjectOneToOneShowSaveAction" class="framework.actions.imps.BaseSTAction" scope="prototype">
+		<property name="defaultServiceBeanId" value="singleObjectOneToOneShowSaveService"></property>
+	</bean>
+
+	<bean id="singleObjectShowInputSaveAction" class="framework.actions.imps.BaseSTModelDrivenValidateInputAction" scope="prototype">
+		<property name="defaultServiceBeanId" value="singleObjectShowInputSaveService"></property>
+	</bean>
+
+	<bean id="singleObjectComponentSaveAction" class="framework.actions.imps.BaseSTModelDrivenAction" scope="prototype">
+		<property name="defaultServiceBeanId" value="singleObjectComponentSaveService"></property>
+	</bean>
+
+	<bean id="singleObjectSaveAction" class="framework.actions.imps.BaseSTModelDrivenAction" scope="prototype">
+		<property name="defaultServiceBeanId" value="singleObjectSaveService"></property>
+	</bean>
+
+	<bean id="singleObjectShowUpdateAction" class="framework.actions.imps.BaseSTNameAndIdAction" scope="prototype">
+		<property name="defaultServiceBeanId" value="singleObjectShowUpdateService"></property>
+	</bean>
+
+	<bean id="singleObjectShowCheckUpdateAction" class="framework.actions.imps.BaseSTModelDrivenValidateAction" scope="prototype">
+		<property name="defaultServiceBeanId" value="singleObjectShowCheckUpdateService"></property>
+	</bean>
+
+	<bean id="singleObjectOneToOneShowUpdateAction" class="framework.actions.imps.BaseSTNameAndIdAction" scope="prototype">
+		<property name="defaultServiceBeanId" value="singleObjectOneToOneShowUpdateService"></property>
+	</bean>
+
+	<bean id="singleObjectShowUpdateListAction" class="framework.actions.imps.BaseSTModelDrivenAction" scope="prototype">
+		<property name="defaultServiceBeanId" value="singleObjectShowUpdateListService"></property>
+	</bean>
+
+	<bean id="singleObjectShowInputUpdateAction" class="framework.actions.imps.BaseSTModelDrivenValidateInputAction" scope="prototype">
+		<property name="defaultServiceBeanId" value="singleObjectShowInputUpdateService"></property>
+	</bean>
+
+	<bean id="singleObjectComponentUpdateAction" class="framework.actions.imps.BaseSTModelDrivenAction" scope="prototype">
+		<property name="defaultServiceBeanId" value="singleObjectComponentUpdateService"></property>
+	</bean>
+
+	<bean id="singleObjectUpdateAction" class="framework.actions.imps.BaseSTModelDrivenAction" scope="prototype">
+		<property name="defaultServiceBeanId" value="singleObjectUpdateService"></property>
+	</bean>
+
+	<bean id="singleObjectUpdateListAction" class="framework.actions.imps.BaseSTModelDrivenAction" scope="prototype">
+		<property name="defaultServiceBeanId" value="singleObjectUpdateListService"></property>
+	</bean>
+
+	<bean id="singleObjectDeleteByIdAction" class="framework.actions.imps.BaseSTNameAndIdAction" scope="prototype">
+		<property name="defaultServiceBeanId" value="singleObjectDeleteByIdService"></property>
+	</bean>
+
+	<bean id="singleObjectDeleteListByIdListAction" class="framework.actions.imps.BaseSTNameAndIdListAction" scope="prototype">
+		<property name="defaultServiceBeanId" value="singleObjectDeleteListByIdListService"></property>
+	</bean>
+	<bean id="deleteForComponentDetailAction" class="framework.actions.imps.BaseSTNameAndIdListAction" scope="prototype">
+		<property name="defaultServiceBeanId" value="singleObjectDeleteListByCriteriaService"></property>
+	</bean>
+
+	<bean id="singleObjectShowSaveOrUpdateAction" class="framework.actions.imps.SingleObjectShowSaveOrUpdateAction" scope="prototype">
+		<property name="defaultServiceBeanId" value="singleObjectShowSaveOrUpdateService"></property>
+	</bean>
+
+	<bean id="singleObjectBackFirstAction" class="framework.actions.imps.SingleObjectBackFirstAction" scope="prototype">
+	</bean>
+
+	<bean id="singleObjectBackPreviousFirstAction" class="framework.actions.imps.SingleObjectBackFirstAction" scope="prototype">
+		<property name="backPreviousFirst" value="true"></property>
+	</bean>
+
+	<bean id="singleObjectUploadFileAction" class="framework.actions.imps.BaseSTModelDrivenConditionFileAction" scope="prototype">
+		<property name="defaultServiceBeanId" value="singleObjectUploadFileService"></property>
+	</bean>
+
+	<bean id="singleObjectUpdateFieldAction" class="framework.actions.imps.BaseSTNameAndIdListAction" scope="prototype">
+		<property name="defaultServiceBeanId" value="singleObjectUpdateFieldService"></property>
+	</bean>
+
+	<bean id="singleObjectUpdateFieldByIdAction" class="framework.actions.imps.BaseSTNameAndIdAction" scope="prototype">
+		<property name="defaultServiceBeanId" value="singleObjectUpdateFieldByIdService"></property>
+	</bean>
+
+	<bean id="singleObjectDownloadAction" class="framework.actions.imps.SingleObjectDownloadAction" scope="prototype">
+		<property name="defaultServiceBeanId" value="singleObjectDownloadService"></property>
+	</bean>
+
+	<bean id="initXMLConfigurationAction" class="framework.actions.imps.BaseSAction" scope="prototype">
+		<property name="defaultServiceBeanId" value="initXMLConfiguration"></property>
+	</bean>
+
+	<bean id="reportCheckAction" class="framework.actions.imps.ReportCommonAction" scope="prototype">
+		<property name="defaultServiceBeanId" value="reportCheckService"></property>
+	</bean>
+
+	<bean id="singleObjectJumpByTypeAction" class="framework.actions.imps.SingleObjectJumpByTypeAction" scope="prototype">
+	</bean>
+
+	<bean id="singleObjectExportDataAction" class="framework.actions.imps.SingleObjectConditionDownloadAction" scope="prototype">
+		<property name="defaultServiceBeanId" value="ExportDataService"></property>
+	</bean>
+
+	<bean id="singleObjectExportAllDataAction" class="framework.actions.imps.SingleObjectConditionDownloadAction" scope="prototype">
+		<property name="defaultServiceBeanId" value="ExportAllDataService"></property>
+	</bean>
+
+	<bean id="singleObjectImportDataAction" class="framework.actions.imps.BaseSTModelDrivenConditionFileAction" scope="prototype">
+		<property name="defaultServiceBeanId" value="ImportDataService"></property>
+	</bean>
+	<!--使用coresystem中的登陆配置 <bean id="loginAction" class="framework.actions.imps.LoginAction" scope="prototype"> <property name="defaultServiceBeanId" value="loginService"></property> </bean> -->
+	<bean id="showStatisticalCountAction" class="framework.actions.imps.BaseSTModelDrivenConditionAction" scope="prototype">
+		<property name="defaultServiceBeanId" value="showStatisticalCountService"></property>
+	</bean>
+
+	<bean id="showSingleStatisticalAction" class="framework.actions.imps.BaseSTModelDrivenConditionAction" scope="prototype">
+		<property name="defaultServiceBeanId" value="showSingleStatisticalService"></property>
+	</bean>
+
+	<bean id="singleObjectValidateUpdateAction" class="framework.actions.imps.BaseSTModelDrivenValidateAction" scope="prototype">
+		<property name="defaultServiceBeanId" value="singleObjectValidateUpdateService"></property>
+	</bean>
+
+	<bean id="singleObjectShowComponentSaveAction" class="framework.actions.imps.BaseSTAction" scope="prototype">
+		<property name="defaultServiceBeanId" value="singleObjectShowComponentSaveService"></property>
+	</bean>
+
+	<bean id="singleObjectShowComponentUpdateAction" class="framework.actions.imps.BaseSTNameAndIdAction" scope="prototype">
+		<property name="defaultServiceBeanId" value="singleObjectShowComponentUpdateService"></property>
+	</bean>
+
+	<bean id="showViewStatisticalAction" class="framework.actions.imps.BaseSTModelDrivenConditionAction" scope="prototype">
+		<property name="defaultServiceBeanId" value="showViewStatisticalService"></property>
+	</bean>
+
+	<bean id="showProcedureStatisticalAction" class="framework.actions.imps.BaseSTModelDrivenConditionAction" scope="prototype">
+		<property name="defaultServiceBeanId" value="showProcedureStatisticalService"></property>
+	</bean>
+
+	<bean id="singleObjectExportForProcedureAction" class="framework.actions.imps.SingleObjectConditionDownloadAction" scope="prototype">
+		<property name="defaultServiceBeanId" value="singleObjectExportForProcedureService"></property>
+	</bean>
+
+	<bean id="singleObjectExportForViewAction" class="framework.actions.imps.SingleObjectConditionDownloadAction" scope="prototype">
+		<property name="defaultServiceBeanId" value="singleObjectExportForViewService"></property>
+	</bean>
+
+	<bean id="firstShowViewStatisticalAction" class="framework.actions.imps.BaseSTModelDrivenConditionAction" scope="prototype">
+		<property name="defaultServiceBeanId" value="showViewStatisticalService"></property>
+		<property name="firstShowData" value="true"></property>
+	</bean>
+
+	<bean id="firstShowProcedureStatisticalAction" class="framework.actions.imps.BaseSTModelDrivenConditionAction" scope="prototype">
+		<property name="defaultServiceBeanId" value="showProcedureStatisticalService"></property>
+		<property name="firstShowData" value="true"></property>
+	</bean>
+	<bean id="showModelListAction" class="framework.actions.imps.BaseSTModelDrivenConditionAction" scope="prototype">
+		<property name="defaultServiceBeanId" value="showModelListService"></property>
+	</bean>
+	<bean id="exportForComponentDetailAction" class="framework.actions.imps.SingleObjectConditionDownloadAction" scope="prototype">
+		<property name="defaultServiceBeanId" value="ExportForComponentDetailService"></property>
+	</bean>
+
+</beans>

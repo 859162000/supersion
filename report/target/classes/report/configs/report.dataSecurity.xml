@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<dataSecurityRoot>
+   <dataSecurityMap>
+	<dataSecurityName>coresystem.dto.RoleClassInst</dataSecurityName>
+
+ 		<dataSecurity>
+      	 	<className>report.dto.TaskModelInst</className>
+	     	<fieldName>instInfo</fieldName>
+      	</dataSecurity>
+	    
+   </dataSecurityMap>
+   
+   
+    <dataSecurityMap>
+		<dataSecurityName>coresystem.dto.RoleClassTable</dataSecurityName>
+		
+ 		<dataSecurity>
+      	 	<className>report.dto.TaskModelInst</className>
+	     	<fieldName>reportModel_Table</fieldName>
+      	</dataSecurity>
+	    
+   </dataSecurityMap>
+   
+   <dataSecurityMap>
+		<dataSecurityName>report.dto.RoleClassIndexTable</dataSecurityName>
+		
+ 		<dataSecurity>
+      	 	<className>report.dto.TaskRptInst</className>
+	     	<fieldName>rptInfo</fieldName>
+      	</dataSecurity>
+	    
+   </dataSecurityMap>
+
+</dataSecurityRoot>

@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- 新客户风险<3>：单一法人客户基本信息统计表 -->
+<cbrc reportnumber="03" bankcode="B0192H243010001" bankname="长沙银行股份有限公司" reportdate="" version="1.0">
+	<corporation>
+		<customerName column="A"></customerName>
+		<customerCode column="B"></customerCode>
+		<organizationCode column="C"></organizationCode>
+		<organizationUpdateDate column="D"></organizationUpdateDate>
+		<registerCode column="E"></registerCode>
+		<registerUpdateDate column="F"></registerUpdateDate>
+		<registerNation column="G"></registerNation>
+		<nationalityCode column="H"></nationalityCode>
+		<registerAddress column="I"></registerAddress>
+		<administrativeCode column="J"></administrativeCode>
+		<listedCompany column="K"></listedCompany>
+		<warningSignal column="L"></warningSignal>
+		<attentionEvent column="M"></attentionEvent>
+		<defaultProbability column="N"></defaultProbability>
+		<creditRating column="O"></creditRating>
+		<generalAssets column="P"></generalAssets>
+		<totalLiabilities column="Q"></totalLiabilities>
+		<pretaxProfit column="R"></pretaxProfit>
+		<businessIncome column="S"></businessIncome>
+		<inventory column="T"></inventory>
+		<accountsReceivable column="U"></accountsReceivable>
+		<otherAccountsReceivable column="V"></otherAccountsReceivable>
+		<totalCurrentAssets column="W"></totalCurrentAssets>
+		<totalCurrentLiabilities column="X"></totalCurrentLiabilities>
+		<financialStatementType column="Y"></financialStatementType>
+		<financialStatementDate column="Z"></financialStatementDate>
+		<customerType column="AA"></customerType>
+		<industryCode column="AB"></industryCode>
+		<loanCardNumber column="AC"></loanCardNumber>
+		<environmentalAndSocialRisk column="AD"></environmentalAndSocialRisk>
+		<executives>
+			<executivesDetail>
+				<personType column="A"></personType>
+				<name column="B"></name>
+				<nationalityCode column="C"></nationalityCode>
+				<identityCode column="D"></identityCode>
+				<passport>
+					<passportDetail>
+						<passportNumber column="E"></passportNumber>
+						<issuingDate column="F"></issuingDate>
+						<dueDate column="G"></dueDate>
+					</passportDetail>
+				</passport>
+				<paper>
+					<paperDetail>
+						<paperType column="H"></paperType>
+						<paperCode column="I"></paperCode>
+					</paperDetail>
+				</paper>
+				<updateDate column="J"></updateDate>
+				<actualController column="K"></actualController>
+			</executivesDetail>
+		</executives>
+		<affiliatedEnterprises>
+			<enterpriseDetail>
+				<affiliatedType column="A"></affiliatedType>
+				<enterpriseName column="B"></enterpriseName>
+				<enterpriseType column="C"></enterpriseType>
+				<paperType column="D"></paperType>
+				<paperCode column="E"></paperCode>
+				<registerCode column="F"></registerCode>
+				<customerCode column="G"></customerCode>
+				<nationalityCode column="H"></nationalityCode>
+				<shareholdingRatio column="I"></shareholdingRatio>
+				<stockholderDate column="J"></stockholderDate>
+				<updateDate column="K"></updateDate>
+				<actualController column="L"></actualController>
+			</enterpriseDetail>
+		</affiliatedEnterprises>
+	</corporation>
+</cbrc>

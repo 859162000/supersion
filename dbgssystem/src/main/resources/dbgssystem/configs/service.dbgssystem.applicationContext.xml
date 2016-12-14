@@ -1,0 +1,547 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans
+	xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns:p="http://www.springframework.org/schema/p"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-3.0.xsd">
+     
+     <!-- 数据补录 -->                        
+	<bean id="autoDTO_DB_DBXX_JCShowListLevelAUTODTOService" parent="singleObjectShowListLevelAUTODTOService">
+        <property name="linkedMap">
+            <map>
+                <entry key="基础段" value="Get-JumpByType,,,orangered*RPTCheckType:1%3%4|forestgreen*RPTCheckType:2@RPTSendType:1,2"></entry>
+                <entry key="担保合同" value="Get-ShowListLevelAutoDTOMX-dbgssystem.dto.AutoDTO_DB_DBHTXX,,,orangered*RPTCheckType:1%3|forestgreen*RPTCheckType:2@RPTSendType:1"></entry>
+                <entry key="被担保人" value="Get-ShowListLevelAutoDTOMX-dbgssystem.dto.AutoDTO_DB_BDBRXX,,,orangered*RPTCheckType:1%3|forestgreen*RPTCheckType:2@RPTSendType:1"></entry>
+                <entry key="债权人" value="Get-ShowListLevelAutoDTOMX-dbgssystem.dto.AutoDTO_DB_ZQRJZHTXX,,,orangered*RPTCheckType:1%3|forestgreen*RPTCheckType:2@RPTSendType:1"></entry>
+                <entry key="反担保人" value="Get-ShowListLevelAutoDTOMX-dbgssystem.dto.AutoDTO_DB_FDBRXX,,,orangered*RPTCheckType:1%3|forestgreen*RPTCheckType:2@RPTSendType:1"></entry>
+                <entry key="实际在保" value="Get-ShowListLevelAutoDTOMX-dbgssystem.dto.AutoDTO_DB_SJZBZRXX,,,orangered*RPTCheckType:1%3|forestgreen*RPTCheckType:2@RPTSendType:1"></entry>
+                <entry key="代偿概况" value="Get-ShowListLevelAutoDTOMX-dbgssystem.dto.AutoDTO_DB_DCGKXX,,,orangered*RPTCheckType:1%3|forestgreen*RPTCheckType:2@RPTSendType:1"></entry>
+                <entry key="代偿明细" value="Get-ShowListLevelAutoDTOMX-dbgssystem.dto.AutoDTO_DB_DCMXXX,,,orangered*RPTCheckType:1%3|forestgreen*RPTCheckType:2@RPTSendType:1"></entry>
+                <entry key="保费概况" value="Get-ShowListLevelAutoDTOMX-dbgssystem.dto.AutoDTO_DB_BFJNGKXX,,,orangered*RPTCheckType:1%3|forestgreen*RPTCheckType:2@RPTSendType:1"></entry>
+                <entry key="保费明细" value="Get-ShowListLevelAutoDTOMX-dbgssystem.dto.AutoDTO_DB_BFJNMXXX,,,orangered*RPTCheckType:1%3|forestgreen*RPTCheckType:2@RPTSendType:1"></entry>
+                <entry key="追偿明细" value="Get-ShowListLevelAutoDTOMX-dbgssystem.dto.AutoDTO_DB_ZCMXXX,,,orangered*RPTCheckType:1%3|forestgreen*RPTCheckType:2@RPTSendType:1"></entry>
+            </map>
+        </property>
+        <property name="operationMap">
+            <map>
+                <entry key="查询" value="Select-ShowList"></entry>
+                <entry key="重置" value="ReSet-ShowReSet"></entry>
+                <entry key="新增" value="Get-ShowSaveLevelAUTODTO"></entry>
+                <entry key="删除" value="PostConfirm-ForReportDeleteListByIdList"></entry>
+                <entry key="提交" value="Post-RptSubmitStatusUpdateField"></entry>
+                <entry key="excel模板导入" value="Upload-ImportBatchExcleDataForDBYW"></entry> 
+                <entry key="返回" value="Get-BackPreviousFirst"></entry>
+            </map>
+        </property>
+    </bean>
+    
+    <!-- 数据审核 -->
+    <bean id="autoDTO_DB_DBXX_JCSHShowListLevelAUTODTOSHService" parent="singleObjectSHShowListLevelAUTODTOSHService">
+        <property name="linkedMap">
+            <map>
+               <entry key="基础段" value="Get-JumpByType,,,forestgreen*RPTSubmitStatus:2@RPTSendType:1,2"></entry>
+                <entry key="担保合同" value="Get-SHShowListLevelAUTODTOSHMX-dbgssystem.dto.AutoDTO_DB_DBHTXX,,,forestgreen*RPTCheckType:2@RPTSendType:1"></entry>
+                <entry key="被担保人" value="Get-SHShowListLevelAUTODTOSHMX-dbgssystem.dto.AutoDTO_DB_BDBRXX,,,forestgreen*RPTCheckType:2@RPTSendType:1"></entry>
+                <entry key="债权人" value="Get-SHShowListLevelAUTODTOSHMX-dbgssystem.dto.AutoDTO_DB_ZQRJZHTXX,,,forestgreen*RPTCheckType:2@RPTSendType:1"></entry>
+                <entry key="反担保人" value="Get-SHShowListLevelAUTODTOSHMX-dbgssystem.dto.AutoDTO_DB_FDBRXX,,,forestgreen*RPTCheckType:2@RPTSendType:1"></entry>
+                <entry key="实际在保" value="Get-SHShowListLevelAUTODTOSHMX-dbgssystem.dto.AutoDTO_DB_SJZBZRXX,,,forestgreen*RPTCheckType:2@RPTSendType:1"></entry>
+                <entry key="代偿概况" value="Get-SHShowListLevelAUTODTOSHMX-dbgssystem.dto.AutoDTO_DB_DCGKXX,,,forestgreen*RPTCheckType:2@RPTSendType:1"></entry>
+                <entry key="代偿明细" value="Get-SHShowListLevelAUTODTOSHMX-dbgssystem.dto.AutoDTO_DB_DCMXXX,,,forestgreen*RPTCheckType:2@RPTSendType:1"></entry>
+                <entry key="保费概况" value="Get-SHShowListLevelAUTODTOSHMX-dbgssystem.dto.AutoDTO_DB_BFJNGKXX,,,forestgreen*RPTCheckType:2@RPTSendType:1"></entry>
+                <entry key="保费明细" value="Get-SHShowListLevelAUTODTOSHMX-dbgssystem.dto.AutoDTO_DB_BFJNMXXX,,,forestgreen*RPTCheckType:2@RPTSendType:1"></entry>
+                <entry key="追偿明细" value="Get-SHShowListLevelAUTODTOSHMX-dbgssystem.dto.AutoDTO_DB_ZCMXXX,,,forestgreen*RPTCheckType:2@RPTSendType:1"></entry>
+            </map>
+        </property>
+    </bean>
+    
+    <bean id="dBGSDownloadShowListService" class="dbgssystem.service.imps.ShowDownLoadDBGSRportService" scope="prototype">
+        <property name="pageSize" value="20"></property>
+        <property name="defaultDaoBeanId" value="singleObjectFindByPageCriteriaDao"></property>
+        <property name="defaultLogicDaoBeanId" value="singleObjectFindByCriteriaDao"></property>
+        <property name="showInstanceName" value="1"></property>
+        <property name="defaultAddClassList">
+            <list>
+              <value>dbgssystem.service.add.ShowDownLoadRportAdd</value>
+            </list>
+        </property>
+        <property name="defaultProceseClassList">
+            <list>
+                <value>framework.services.procese.ShowListProcese</value>
+                <value>framework.services.procese.LevelDataProcese</value>
+                <value>framework.services.procese.ShowListTreeProcese</value>
+                <value>framework.services.procese.SelectTagSortByNameProcese</value>
+                <value>framework.services.procese.ShowPowerButtonProcese</value>
+            </list>
+        </property>
+        <property name="defaultTranslateClassList">
+            <list>
+                <value>framework.services.translate.LevelDataTranslate</value>
+                <value>framework.services.translate.ConditionCriteriaTranslate</value>
+                <value>framework.services.translate.SecurityTranslate</value>
+		        <value>framework.services.translate.DefaultValueTranslate</value>
+		        <value>framework.services.translate.ShowListTreeTranslate</value>
+            </list>
+        </property>
+        <property name="operationMap">
+            <map>
+                <entry key="生成报文" value="Select1-ConfirmDialogForDBGSReport"></entry>
+            </map>                                    
+        </property>
+        <property name="linkedMap">
+            <map> 
+            </map>
+        </property>
+    </bean>
+                                                                                                                        
+    <bean id="downLoadDBGSReportService" class="dbgssystem.service.imps.DownLoadDBGSRportService" scope="prototype">
+    	<property name="systemCode" value="1"></property>
+    	<property name="instType" value="1"></property>
+    	<property name="strVersion" value="1.0"></property>
+        <property name="crypConfig" value="conf/dbgs/Crypt.xml"></property>
+    	<property name="crypPublickey" value="conf/dbgs/public.key"></property>
+    	<property name="cryptKeystore" value="conf/dbgs/.keystore"></property>
+    	<property name="v_file" value="conf/dbgs/validator.xml"></property>
+    	<property name="dic_file" value="conf/dbgs/dic.xml"></property>
+    	<property name="batchFile" value="conf/dbgs/batch.xml"></property>
+    	<!-- <property name="reportFilePath" value="D:\test\"></property> -->
+    	<property name="downloadJudgeStatusMap">
+            <map>
+                <entry key="RPTVerifyType" value="2"></entry><!-- 审核状态为：审核通过 -->
+               <entry key="RPTSendType" value="1,5"></entry>  <!--报送状态为：未报送、未全部报送 -->
+                 <entry key="RPTFeedbackType" value="1,3,4"></entry><!--回执状态：未回执、回执失败 -->
+            </map>
+        </property>
+    	<property name="reportMap">
+            <map>
+                <entry key="81" value="B%dbgssystem.dto.AutoDTO_DB_DBXX_JC,D%dbgssystem.dto.AutoDTO_DB_DBHTXX,E%dbgssystem.dto.AutoDTO_DB_BDBRXX,F%dbgssystem.dto.AutoDTO_DB_ZQRJZHTXX,G%dbgssystem.dto.AutoDTO_DB_FDBRXX,H%dbgssystem.dto.AutoDTO_DB_SJZBZRXX,I%dbgssystem.dto.AutoDTO_DB_DCGKXX,J%dbgssystem.dto.AutoDTO_DB_DCMXXX,K%dbgssystem.dto.AutoDTO_DB_ZCMXXX,L%dbgssystem.dto.AutoDTO_DB_BFJNGKXX,M%dbgssystem.dto.AutoDTO_DB_BFJNMXXX"></entry>
+                <entry key="82" value="C%dbgssystem.dto.AutoDTO_DB_DBGSBSBGJL"></entry>
+                <entry key="83" value="S%dbgssystem.dto.AutoDTO_DB_DBGSSCQQJL"></entry>
+            </map>
+        </property>
+        <property name="mxOneToOneDtoNameList">
+            <list>
+            </list>
+        </property>
+    </bean>
+    
+     <bean id="dBGSCJFKBWUploadFileService" class="dbgssystem.service.imps.DBGSCJFKBWUploadFileService" scope="prototype">
+    	<property name="statusMap">
+            <map>
+                <entry key="RPTSubmitStatus" value="1"></entry>
+                <entry key="RPTVerifyType" value="1"></entry>
+                <entry key="RPTSendType" value="1"></entry>
+            </map>
+        </property>
+    </bean>
+    
+    <bean id="dBGSCJFKBWShowListService" parent="singleObjectShowListService">
+        <property name="operationMap">
+            <map>
+                <entry key="查询" value="Select-ShowList"></entry>
+                <entry key="报文解析" value="Upload-UploadDBGSBWJX-dbgssystem.dto.DBGSCJFKBW"></entry>
+                <entry key="报文解析" value="Upload-ConfirmDialogForUploadDBGSBWJX-dbgssystem.dto.DBGSCJFKBW"></entry>
+            </map>
+        </property>
+        <property name="linkedMap">
+            <map> 
+                <entry key="详情" value="Get-ShowListLevelDBGSCJFKBWSub-dbgssystem.dto.DBGSCJFKBWSub"></entry>
+            </map>
+        </property>
+    </bean>
+    
+     <bean id="dBGSCJFKBWSubShowListLevelDBGSCJFKBWSubService" parent="singleObjectShowListLevelService">
+        <property name="operationMap">
+            <map>
+                <entry key="查询" value="Select-ShowListLevelDBGSCJFKBWSub"></entry>
+                <entry key="返回" value="Get-ShowList-dbgssystem.dto.DBGSCJFKBW"></entry>
+            </map>
+        </property>
+        <property name="linkedMap">
+            <map> 
+            </map>
+        </property>
+    </bean>
+    
+    <!-- 反馈定位 -->
+    <bean id="autoDTO_DB_DBXX_JCFKBWShowCheckUpdateLevelFKBWAutoDTOService" parent="FKBWShowCheckUpdateLevelFKBWAutoDTOService">
+        <property name="operationMap">
+            <map>
+                <entry key="保存" value="Post-FKBWValidateUpdate"></entry>
+                <entry key="担保合同" value="Get1-FKBWShowListLevelFKBWAutoDTOMX-dbgssystem.dto.AutoDTO_DB_DBHTXX,,,red*RPTFeedbackType:3"></entry>
+                <entry key="被担保人" value="Get1-FKBWShowListLevelFKBWAutoDTOMX-dbgssystem.dto.AutoDTO_DB_BDBRXX,,,red*RPTFeedbackType:3"></entry>
+                <entry key="债权人" value="Get1-FKBWShowListLevelFKBWAutoDTOMX-dbgssystem.dto.AutoDTO_DB_ZQRJZHTXX,,,red*RPTFeedbackType:3"></entry>
+                <entry key="反担保人" value="Get1-FKBWShowListLevelFKBWAutoDTOMX-dbgssystem.dto.AutoDTO_DB_FDBRXX,,,red*RPTFeedbackType:3"></entry>
+                <entry key="实际在保" value="Get1-FKBWShowListLevelFKBWAutoDTOMX-dbgssystem.dto.AutoDTO_DB_SJZBZRXX,,,red*RPTFeedbackType:3"></entry>
+                <entry key="代偿概况" value="Get1-FKBWShowListLevelFKBWAutoDTOMX-dbgssystem.dto.AutoDTO_DB_DCGKXX,,,red*RPTFeedbackType:3"></entry>
+                <entry key="代偿明细" value="Get1-FKBWShowListLevelFKBWAutoDTOMX-dbgssystem.dto.AutoDTO_DB_DCMXXX,,,red*RPTFeedbackType:3"></entry>
+                <entry key="保费概况" value="Get1-FKBWShowListLevelFKBWAutoDTOMX-dbgssystem.dto.AutoDTO_DB_BFJNGKXX,,,red*RPTFeedbackType:3"></entry>
+                <entry key="保费明细" value="Get1-FKBWShowListLevelFKBWAutoDTOMX-dbgssystem.dto.AutoDTO_DB_BFJNMXXX,,,red*RPTFeedbackType:3"></entry>
+                <entry key="追偿明细" value="Get1-FKBWShowListLevelFKBWAutoDTOMX-dbgssystem.dto.AutoDTO_DB_ZCMXXX,,,red*RPTFeedbackType:3"></entry>
+            </map>
+        </property>
+     </bean>
+     
+     <!-- 反馈定位ShowInput -->
+      <bean id="autoDTO_DB_DBXX_JCFKBWShowInputUpdateService" parent="singleObjectFKBWShowInputUpdateService">
+        <property name="operationMap">
+            <map>
+                <entry key="保存" value="Post-FKBWValidateUpdateLevelFKBWAutoDTO"></entry>
+                <entry key="担保合同" value="Get1-FKBWShowListLevelFKBWAutoDTOMX-dbgssystem.dto.AutoDTO_DB_DBHTXX,,,red*RPTFeedbackType:3"></entry>
+                <entry key="被担保人" value="Get1-FKBWShowListLevelFKBWAutoDTOMX-dbgssystem.dto.AutoDTO_DB_BDBRXX,,,red*RPTFeedbackType:3"></entry>
+                <entry key="债权人" value="Get1-FKBWShowListLevelFKBWAutoDTOMX-dbgssystem.dto.AutoDTO_DB_ZQRJZHTXX,,,red*RPTFeedbackType:3"></entry>
+                <entry key="反担保人" value="Get1-FKBWShowListLevelFKBWAutoDTOMX-dbgssystem.dto.AutoDTO_DB_FDBRXX,,,red*RPTFeedbackType:3"></entry>
+                <entry key="实际在保" value="Get1-FKBWShowListLevelFKBWAutoDTOMX-dbgssystem.dto.AutoDTO_DB_SJZBZRXX,,,red*RPTFeedbackType:3"></entry>
+                <entry key="代偿概况" value="Get1-FKBWShowListLevelFKBWAutoDTOMX-dbgssystem.dto.AutoDTO_DB_DCGKXX,,,red*RPTFeedbackType:3"></entry>
+                <entry key="代偿明细" value="Get1-FKBWShowListLevelFKBWAutoDTOMX-dbgssystem.dto.AutoDTO_DB_DCMXXX,,,red*RPTFeedbackType:3"></entry>
+                <entry key="保费概况" value="Get1-FKBWShowListLevelFKBWAutoDTOMX-dbgssystem.dto.AutoDTO_DB_BFJNGKXX,,,red*RPTFeedbackType:3"></entry>
+                <entry key="保费明细" value="Get1-FKBWShowListLevelFKBWAutoDTOMX-dbgssystem.dto.AutoDTO_DB_BFJNMXXX,,,red*RPTFeedbackType:3"></entry>
+                <entry key="追偿明细" value="Get1-FKBWShowListLevelFKBWAutoDTOMX-dbgssystem.dto.AutoDTO_DB_ZCMXXX,,,red*RPTFeedbackType:3"></entry>
+            </map>
+        </property>
+     </bean> 
+     
+      <bean id="autoDTO_DB_DBXX_JCFKBWShowInputCheckUpdateLevelFKBWAutoDTOService" parent="singleObjectFKBWShowInputCheckUpdateLevelFKBWAutoDTOService">
+        <property name="operationMap">
+            <map>
+               <entry key="保存" value="Post-FKBWValidateUpdateLevelFKBWAutoDTO"></entry>
+               <entry key="担保合同" value="Get1-FKBWShowListLevelFKBWAutoDTOMX-dbgssystem.dto.AutoDTO_DB_DBHTXX,,,red*RPTFeedbackType:3"></entry>
+                <entry key="被担保人" value="Get1-FKBWShowListLevelFKBWAutoDTOMX-dbgssystem.dto.AutoDTO_DB_BDBRXX,,,red*RPTFeedbackType:3"></entry>
+                <entry key="债权人" value="Get1-FKBWShowListLevelFKBWAutoDTOMX-dbgssystem.dto.AutoDTO_DB_ZQRJZHTXX,,,red*RPTFeedbackType:3"></entry>
+                <entry key="反担保人" value="Get1-FKBWShowListLevelFKBWAutoDTOMX-dbgssystem.dto.AutoDTO_DB_FDBRXX,,,red*RPTFeedbackType:3"></entry>
+                <entry key="实际在保" value="Get1-FKBWShowListLevelFKBWAutoDTOMX-dbgssystem.dto.AutoDTO_DB_SJZBZRXX,,,red*RPTFeedbackType:3"></entry>
+                <entry key="代偿概况" value="Get1-FKBWShowListLevelFKBWAutoDTOMX-dbgssystem.dto.AutoDTO_DB_DCGKXX,,,red*RPTFeedbackType:3"></entry>
+                <entry key="代偿明细" value="Get1-FKBWShowListLevelFKBWAutoDTOMX-dbgssystem.dto.AutoDTO_DB_DCMXXX,,,red*RPTFeedbackType:3"></entry>
+                <entry key="保费概况" value="Get1-FKBWShowListLevelFKBWAutoDTOMX-dbgssystem.dto.AutoDTO_DB_BFJNGKXX,,,red*RPTFeedbackType:3"></entry>
+                <entry key="保费明细" value="Get1-FKBWShowListLevelFKBWAutoDTOMX-dbgssystem.dto.AutoDTO_DB_BFJNMXXX,,,red*RPTFeedbackType:3"></entry>
+                <entry key="追偿明细" value="Get1-FKBWShowListLevelFKBWAutoDTOMX-dbgssystem.dto.AutoDTO_DB_ZCMXXX,,,red*RPTFeedbackType:3"></entry>
+            </map>
+        </property>
+    </bean>
+     
+     <!-- 特殊校验 -->
+      <bean id="autoDTO_DB_DBXX_JCSaveLevelAUTODTOService" parent="singleObjectSaveLevelAUTODTOService">
+      <property name="logicPrimaryKey">
+             <list>
+                <value>DBYWBH</value>
+                <value>DBJGDM</value>
+            </list>
+        </property>
+     </bean>
+     
+    <bean id="autoDTO_DB_DBXX_JCUpdateLevelAUTODTOService" parent="singleObjectUpdateLevelAUTODTOService">
+       <property name="logicPrimaryKey">
+             <list>
+                <value>DBYWBH</value>
+                <value>DBJGDM</value>
+            </list>
+        </property>
+     </bean>
+     
+       <bean id="autoDTO_DB_DBXX_JCShowCheckUpdateLevelAUTODTOService" parent="singleObjectShowCheckUpdateLevelAUTODTOService">
+        <property name="logicPrimaryKey">
+             <list>
+                <value>DBYWBH</value>
+                <value>DBJGDM</value>
+            </list>
+        </property>
+     </bean>
+ 
+      <bean id="dBGSBSBGJLSaveService" parent="singleObjectSaveService">
+     	<property name="defaultCheckInstance" value="DBGSBSBGJL"/>
+     	<property name="defaultValueMap">
+             <map>
+                <entry key="RPTSendType" value="1"></entry>
+                <entry key="RPTFeedbackType" value="1"></entry>
+             </map>
+        </property>
+     </bean>
+     
+     <bean id="dBGSBSBGJLUpdateService" parent="singleObjectUpdateService">
+     	<property name="defaultCheckInstance" value="DBGSBSBGJL"/>
+     </bean>
+     
+     <bean id="dBGSSCQQJLSaveService" parent="singleObjectSaveService">
+     	<property name="defaultCheckInstance" value="DBGSSCQQJL"/>
+     	<property name="defaultValueMap">
+             <map>
+                <entry key="RPTSendType" value="1"></entry>
+                <entry key="RPTFeedbackType" value="1"></entry>
+             </map>
+        </property>
+     </bean>
+     
+     <bean id="dBGSSCQQJLUpdateService" parent="singleObjectUpdateService">
+     	<property name="defaultCheckInstance" value="DBGSSCQQJL"/>
+     </bean>
+     
+     <bean id="autoDTO_DB_DBXX_JCCopySaveLevelAUTODTOService" parent="singleObjectCopySaveLevelAUTODTOService">
+       <property name="logicPrimaryKey">
+             <list>
+                <value>DBYWBH</value>
+                <value>DBJGDM</value>
+            </list>
+        </property>
+    </bean>
+
+     <bean id="autoDTO_DB_DBXX_JCCKShowListLevelAUTODTOService" parent="singleObjectCKShowListLevelAUTODTOService">
+        <property name="linkedMap">
+            <map>
+                <entry key="查看" value="Get-ReportCKShowViewCancelLevelAUTODTO"></entry>
+                <entry key="担保合同" value="Get-CKShowListLevelMXCK-dbgssystem.dto.AutoDTO_DB_DBHTXX"></entry>
+                <entry key="被担保人" value="Get-CKShowListLevelMXCK-dbgssystem.dto.AutoDTO_DB_BDBRXX"></entry>
+                <entry key="债权人" value="Get-CKShowListLevelMXCK-dbgssystem.dto.AutoDTO_DB_ZQRJZHTXX"></entry>
+                <entry key="反担保人" value="Get-CKShowListLevelMXCK-dbgssystem.dto.AutoDTO_DB_FDBRXX"></entry>
+                <entry key="实际在保" value="Get-CKShowListLevelMXCK-dbgssystem.dto.AutoDTO_DB_SJZBZRXX"></entry>
+                <entry key="代偿概况" value="Get-CKShowListLevelMXCK-dbgssystem.dto.AutoDTO_DB_DCGKXX"></entry>
+                <entry key="代偿明细" value="Get-CKShowListLevelMXCK-dbgssystem.dto.AutoDTO_DB_DCMXXX"></entry>
+                <entry key="保费概况" value="Get-CKShowListLevelMXCK-dbgssystem.dto.AutoDTO_DB_BFJNGKXX"></entry>
+                <entry key="保费明细" value="Get-CKShowListLevelMXCK-dbgssystem.dto.AutoDTO_DB_BFJNMXXX"></entry>
+                <entry key="追偿明细" value="Get-CKShowListLevelMXCK-dbgssystem.dto.AutoDTO_DB_ZCMXXX"></entry>
+            </map>
+        </property>
+    </bean>
+     
+     <!-- 报表补录导入 -->                            
+      <bean id="forReportImportDataService"   class="report.service.imps.ForReportImportDataService" scope="prototype">
+       <property name="defaultCheckInstance" value="extend.dto.ReportModel_Table.strCheckInstance"></property>
+       <property name="showInstanceName" value="ExportAllData"></property>
+        <property name="successMessage" value="导入成功"></property>
+        <property name="errorMessage" value="导入失败"></property>
+        <property name="sheetName" value="Sheet1"></property><!--sheetIndex:base 1-->
+        <property name="showForeignId" value="false"></property>
+        <property name="showHeader" value="true"></property>
+        <property name="startLine" value="0"></property>
+        <property name="startCol" value="0"></property>
+        <property name="deleteOld" value="false"></property>
+        <property name="afterIgnorSeg" value="|"></property>
+        <property name="levelFieldMap">
+          <map>
+                <entry key="instInfo" value="instInfo"></entry>
+                <entry key="taskFlow.dtTaskDate" value="dtDate"></entry>
+          </map>
+        </property>
+        <property name="defaultTranslateClassList">
+            <list>
+                <value>framework.services.translate.LevelDataTranslate</value>
+                <value>framework.services.translate.ConditionCriteriaTranslate</value>
+                <value>framework.services.translate.SecurityTranslate</value>
+		        <value>framework.services.translate.DefaultValueTranslate</value>
+		        <value>framework.services.translate.ShowListTreeTranslate</value>
+            </list>
+        </property>
+         <property name="insertAddClassList">
+            <list>
+                <value>report.service.add.ReportImportAddDefaultValueForStatusField</value>
+            </list>
+        </property>
+        <property name="insertCheckClassList">
+            <list>
+                <value>dbgssystem.service.check.CheckDBJCReport</value>
+                <value>framework.services.check.LogicPrimaryKeyCheck</value>
+                <value>report.service.check.XMLSingleObjectContainClassInstanceForReportCheck</value>
+            </list>
+        </property>
+        <property name="defaultProceseClassList">
+            <list>
+               <value>report.service.procese.AutoDTOUpdateStatusForReportImportDataProcess</value>
+              <value>framework.services.procese.ShowPowerButtonProcese</value>
+            </list>
+        </property>
+     </bean>
+     
+      <bean id="ReportOneToOneImportDataService"  parent="forReportImportDataService">
+     </bean>
+
+	<bean id="autoDTO_DB_DBXX_JCForReportImportDataLevelAUTODTOService" parent="forReportImportDataService">
+		<property name="sheetName" value="基础段"></property>
+	 </bean>
+	 
+	 <bean id="autoDTO_DB_BDBRXXForReportImportDataLevelAutoDTOMXService" parent="forReportImportDataService">
+		<property name="sheetName" value="被担保人信息段"></property>
+	 </bean>
+	 
+	 <bean id="autoDTO_DB_BFJNGKXXForReportImportDataLevelAutoDTOMXService" parent="forReportImportDataService">
+		<property name="sheetName" value="保费缴纳概况信息段"></property>
+	 </bean>
+	 
+	  <bean id="autoDTO_DB_BFJNMXXXForReportImportDataLevelAutoDTOMXService" parent="forReportImportDataService">
+		<property name="sheetName" value="保费缴纳明细信息段"></property>
+	 </bean>
+	 
+	  <bean id="autoDTO_DB_DBHTXXForReportImportDataLevelAutoDTOMXService" parent="forReportImportDataService">
+		<property name="sheetName" value="担保合同信息段"></property>
+	 </bean>
+	 
+	  <bean id="autoDTO_DB_DCGKXXForReportImportDataLevelAutoDTOMXService" parent="forReportImportDataService">
+		<property name="sheetName" value="代偿概况信息段"></property>
+	 </bean>
+	 
+	   <bean id="autoDTO_DB_DCMXXXForReportImportDataLevelAutoDTOMXService" parent="forReportImportDataService">
+		<property name="sheetName" value="代偿明细信息段"></property>
+	 </bean>
+
+ 	<bean id="autoDTO_DB_FDBRXXForReportImportDataLevelAutoDTOMXService" parent="forReportImportDataService">
+		<property name="sheetName" value="反担保人信息段"></property>
+	 </bean>
+	 
+	 <bean id="autoDTO_DB_SJZBZRXXForReportImportDataLevelAutoDTOMXService" parent="forReportImportDataService">
+		<property name="sheetName" value="实际在保（代偿）责任信息段"></property>
+	 </bean>
+	 
+	  <bean id="autoDTO_DB_ZCMXXXForReportImportDataLevelAutoDTOMXService" parent="forReportImportDataService">
+		<property name="sheetName" value="追偿明细信息段"></property>
+	 </bean>
+	 
+	 <bean id="autoDTO_DB_ZQRJZHTXXForReportImportDataLevelAutoDTOMXService" parent="forReportImportDataService">
+		<property name="sheetName" value="债权人及主合同信息段"></property>
+	 </bean>
+
+
+	<!-- 担保业务Excle批量导入 -->
+	<bean id="importBatchExcleDataForDBYWService" class="dbgssystem.service.imps.ImportBatchExcleDataForDBYWService" scope="prototype">
+        <property name="showInstanceName" value="ExportAllData"></property>
+        <property name="startLine" value="0"></property>
+        <property name="startCol" value="0"></property>
+        <property name="afterIgnorSeg" value="|"></property>
+        <property name="jxOverWrite" value="true"/>
+        <property name="mxOverWrite" value="true"/>
+        <property name="FileTempDirectory" value="D:\testTemp"/> <!-- 文件导入时存放的临时目录，读取完后程序会自动删除，默认是D:\testTemp -->
+       	<property name="sheetNameMapFor07">
+            <map>
+            	<entry key="dbgssystem.dto.AutoDTO_DB_DBXX_JC" value="担保业务-基础段.xlsx"></entry>
+                <entry key="dbgssystem.dto.AutoDTO_DB_BDBRXX" value="担保业务-被担保人信息段.xlsx"></entry>
+                <entry key="dbgssystem.dto.AutoDTO_DB_BFJNGKXX" value="担保业务-保费缴纳概况信息段.xlsx"></entry>
+                <entry key="dbgssystem.dto.AutoDTO_DB_BFJNMXXX" value="担保业务-保费缴纳明细信息段.xlsx"></entry>
+                <entry key="dbgssystem.dto.AutoDTO_DB_DBHTXX" value="担保业务-担保合同信息段.xlsx"></entry>
+                <entry key="dbgssystem.dto.AutoDTO_DB_DCGKXX" value="担保业务-代偿概况信息段.xlsx"></entry>
+                <entry key="dbgssystem.dto.AutoDTO_DB_DCMXXX" value="担保业务-代偿明细信息段.xlsx"></entry>
+                <entry key="dbgssystem.dto.AutoDTO_DB_FDBRXX" value="担保业务-反担保人信息段.xlsx"></entry>
+                <entry key="dbgssystem.dto.AutoDTO_DB_SJZBZRXX" value="担保业务-实际在保（代偿）责任信息段.xlsx"></entry>
+                <entry key="dbgssystem.dto.AutoDTO_DB_ZCMXXX" value="担保业务-追偿明细信息段.xlsx"></entry>
+                <entry key="dbgssystem.dto.AutoDTO_DB_ZQRJZHTXX" value="担保业务-债权人及主合同信息段.xlsx"></entry>
+            </map>
+        </property>
+         <property name="imprtCheckMap">
+            <map>
+               <entry key="dbgssystem.dto.AutoDTO_DB_DBXX_JC" value="framework.services.check.XMLSingleObjectContainClassInstanceCheck-Check_DB_DBXX_JC,framework.services.check.LogicPrimaryKeyCheck"></entry>
+                <entry key="dbgssystem.dto.AutoDTO_DB_BDBRXX" value="framework.services.check.XMLSingleObjectContainClassInstanceCheck-Check_DB_BDBRXX,framework.services.check.LogicPrimaryKeyCheck"></entry>
+                <entry key="dbgssystem.dto.AutoDTO_DB_BFJNGKXX" value="framework.services.check.XMLSingleObjectContainClassInstanceCheck-Check_DB_BFJNGKXX,framework.services.check.LogicPrimaryKeyCheck"></entry>
+                <entry key="dbgssystem.dto.AutoDTO_DB_BFJNMXXX" value="framework.services.check.XMLSingleObjectContainClassInstanceCheck-Check_DB_BFJNMXXX,framework.services.check.LogicPrimaryKeyCheck"></entry>
+                <entry key="dbgssystem.dto.AutoDTO_DB_DBHTXX" value="framework.services.check.XMLSingleObjectContainClassInstanceCheck-Check_DB_DBHTXX,framework.services.check.LogicPrimaryKeyCheck"></entry>
+                <entry key="dbgssystem.dto.AutoDTO_DB_DCGKXX" value="framework.services.check.XMLSingleObjectContainClassInstanceCheck-Check_DB_DCGKXX,framework.services.check.LogicPrimaryKeyCheck"></entry>
+                <entry key="dbgssystem.dto.AutoDTO_DB_DCMXXX" value="framework.services.check.XMLSingleObjectContainClassInstanceCheck-Check_DB_DCMXXX,framework.services.check.LogicPrimaryKeyCheck"></entry>
+                <entry key="dbgssystem.dto.AutoDTO_DB_FDBRXX" value="framework.services.check.XMLSingleObjectContainClassInstanceCheck-Check_DB_FDBRXX,framework.services.check.LogicPrimaryKeyCheck"></entry>
+                <entry key="dbgssystem.dto.AutoDTO_DB_SJZBZRXX" value="framework.services.check.XMLSingleObjectContainClassInstanceCheck-Check_DB_SJZBZRXX,framework.services.check.LogicPrimaryKeyCheck"></entry>
+                <entry key="dbgssystem.dto.AutoDTO_DB_ZCMXXX" value="framework.services.check.XMLSingleObjectContainClassInstanceCheck-Check_DB_ZCMXXX,framework.services.check.LogicPrimaryKeyCheck"></entry>
+                <entry key="dbgssystem.dto.AutoDTO_DB_ZQRJZHTXX" value="framework.services.check.XMLSingleObjectContainClassInstanceCheck-Check_DB_ZQRJZHTXX,framework.services.check.LogicPrimaryKeyCheck"></entry>
+            </map>
+        </property>
+        <property name="jcDefaultValueMap">
+            <map>
+                <entry key="RPTCheckType" value="1"></entry>
+                <entry key="RPTSubmitStatus" value="1"></entry>
+                <entry key="RPTVerifyType" value="1"></entry>
+                <entry key="RPTSendType" value="1"></entry>
+                <entry key="RPTFeedbackType" value="1"></entry>
+                <entry key="extend1" value=""></entry>
+                <entry key="extend2" value=""></entry>
+                <entry key="extend3" value=""></entry>
+                <entry key="extend4" value=""></entry>
+                <entry key="extend5" value=""></entry>
+            </map>
+        </property>
+        <property name="mxDefaultValueMap">
+            <map>
+                <entry key="RPTCheckType" value="1"></entry>
+                <entry key="RPTSendType" value="1"></entry>
+                <entry key="RPTFeedbackType" value="1"></entry>
+                <entry key="extend1" value=""></entry>
+                <entry key="extend5" value=""></entry>
+            </map>
+        </property>
+         <property name="jcExtendValueMap">
+            <map>
+                <entry key="instInfo" value="instInfo"></entry>
+                <entry key="dtDate" value="dtDate"></entry>
+                <entry key="lastUpdateDate" value="SystemDate"></entry>
+                <entry key="operationUser" value="LoginUserInfo"></entry>
+            </map>
+        </property>
+        <property name="mxExtendValueMap">
+            <map>
+            <entry key="FOREIGNID" value="FOREIGNID"></entry>
+            </map>
+        </property>
+        <property name="mxLogicPrimaryKey">
+            <map>
+            </map>
+        </property>
+    </bean>
+    
+    <bean id="confirmDialogForDBGSReportService" class="dbgssystem.service.imps.ConfirmDialogForDBGSReportService" scope="prototype">
+		<property name="downloadJudgeStatusMap">
+            <map>
+                <entry key="RPTVerifyType" value="2"></entry><!-- 审核状态为：审核通过 -->
+               <entry key="RPTSendType" value="1,5"></entry>  <!--报送状态为：未报送、未全部报送 -->
+                 <entry key="RPTFeedbackType" value="1,3,4"></entry><!--回执状态：未回执、回执失败 -->
+            </map>
+        </property>
+    	<property name="reportMap">
+            <map>
+                <entry key="81" value="B%dbgssystem.dto.AutoDTO_DB_DBXX_JC,D%dbgssystem.dto.AutoDTO_DB_DBHTXX,E%dbgssystem.dto.AutoDTO_DB_BDBRXX,F%dbgssystem.dto.AutoDTO_DB_ZQRJZHTXX,G%dbgssystem.dto.AutoDTO_DB_FDBRXX,H%dbgssystem.dto.AutoDTO_DB_SJZBZRXX,I%dbgssystem.dto.AutoDTO_DB_DCGKXX,J%dbgssystem.dto.AutoDTO_DB_DCMXXX,K%dbgssystem.dto.AutoDTO_DB_ZCMXXX,L%dbgssystem.dto.AutoDTO_DB_BFJNGKXX,M%dbgssystem.dto.AutoDTO_DB_BFJNMXXX"></entry>
+                <entry key="82" value="C%dbgssystem.dto.AutoDTO_DB_DBGSBSBGJL"></entry>
+                <entry key="83" value="S%dbgssystem.dto.AutoDTO_DB_DBGSSCQQJL"></entry>
+            </map>
+        </property>
+     </bean>
+	
+	 <bean id="taskModelInstDBGSShowTreeService" parent="taskModelInstShowTreeService">
+     	<property name="strSuitCode" value="23"></property>
+     	<property name="defaultProceseClassList">
+           <list>
+               <value>report.service.procese.ShowTaskFlowTreeExcludeDateProcese</value><!-- 放置于ShowTreeProcese之前 -->
+               <value>framework.services.procese.ShowTreeProcese</value>
+               <value>framework.services.procese.ShowPowerButtonProcese</value>
+           </list>
+       </property>
+     </bean>
+     
+      <bean id="taskModelInstDBGSReviewShowTreeService" parent="taskModelInstReviewShowTreeService">
+     	<property name="strSuitCode" value="23"></property>
+     	<property name="defaultProceseClassList">
+           <list>
+               <value>report.service.procese.ShowTaskFlowTreeExcludeDateProcese</value><!-- 放置于ShowTreeProcese之前 -->
+               <value>framework.services.procese.ShowTreeProcese</value>
+               <value>framework.services.procese.ShowPowerButtonProcese</value>
+           </list>
+       </property>
+     </bean>
+     
+       <bean id="taskModelInstDBGSCKShowTreeService" parent="CKShowTreeService">
+        <property name="strSuitCode" value="23"></property>
+        <property name="defaultProceseClassList">
+           <list>
+               <value>report.service.procese.ShowTaskFlowTreeExcludeDateProcese</value><!-- 放置于ShowTreeProcese之前 -->
+               <value>framework.services.procese.ShowTreeProcese</value>
+               <value>framework.services.procese.ShowPowerButtonProcese</value>
+           </list>
+       </property>
+       </bean>
+	
+	<bean id="sendedRejectReportForDBGSShowListService" parent="singleObjectShowListService">
+      <property name="operationMap">
+           <map>
+	         <entry key="驳回" value="Post-RejectReportForDBGS"></entry>
+	         <entry key="查询" value="Select-ShowList"></entry>
+	        </map>
+	     </property>
+         <property name="linkedMap">
+            <map>
+            </map>
+        </property>
+    </bean>
+    
+    <bean id="rejectReportForDBGSService" class="dbgssystem.service.imps.RejectReportForDBGSService" scope="prototype">
+    </bean>
+	
+ </beans>

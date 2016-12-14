@@ -1,0 +1,388 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<reportCheckRoot>
+	<checkInstance name="E200">
+		<paramValueList>
+			<paramValue name="dtDate" value="REPORT_DATE"></paramValue>
+		</paramValueList>
+
+		<freqCode value="4"></freqCode>
+
+		<checkTable procedureName="CHECK_12_E200" procedureParam="dtDate,rs" procedureDiscription="E200贷款明细" originTable="E200" errorMsgField="field2" errorStateField="field1" errorStateValue="err" defaultLogicDaoBeanId="oracleProcedureListMapDao">
+			<paramFieldList>
+				<paramField paramName="dtDate" field="DTDATE" type="1"></paramField>
+			</paramFieldList>
+
+			<checkUniqueFieldList>
+				<checkUniqueField name="E200203" discription="授信号码" originField="E200203"></checkUniqueField>
+				<checkUniqueField name="E200205" discription="借据号" originField="E200205"></checkUniqueField>
+			</checkUniqueFieldList>
+
+			<checkFieldBasicList discription="表内基础性校验">
+				<checkFieldBasic name="E200200" discription="客户名称" emptyCheck="true" startLength="2" ignoreVal="*********"></checkFieldBasic>
+        <checkFieldBasic name="E200201" discription="客户代码" emptyCheck="true"  startLength="2" ></checkFieldBasic>
+        <checkFieldBasic name="E200202" discription="贷款发放行代码" emptyCheck="true" startLength="17" endLength="17"></checkFieldBasic>
+        <checkFieldBasic name="E200203" discription="授信号码" emptyCheck="true" startLength="2" ></checkFieldBasic>
+        <checkFieldBasic name="E200204" discription="贷款合同号"  emptyCheck="true" startLength="2" ></checkFieldBasic>
+        <checkFieldBasic name="E200205" discription="借据号" emptyCheck="true" startLength="2" ></checkFieldBasic>
+        <checkFieldBasic name="E200206" discription="发放日期"  dateCheck="true" startLength="8" endLength="8"></checkFieldBasic>
+        <checkFieldBasic name="E200207" discription="到期日期"  dateCheck="true"  startLength="8" endLength="8"></checkFieldBasic>
+				<checkFieldBasic name="E200208" discription="发放金额" emptyCheck="true"  valueDecimalLength="2" ></checkFieldBasic>
+				<checkFieldBasic name="E200209" discription="贷款余额" valueDecimalLength="2" ></checkFieldBasic>
+        <checkFieldBasic name="E200210" discription="五级分类" startLength="1" endLength="1" digitalCheck="true"></checkFieldBasic> 
+        <checkFieldBasic name="E200211" discription="贷款类型" emptyCheck="true"  startLength="1" endLength="1" ></checkFieldBasic> 
+        <checkFieldBasic name="E200212" discription="贷款业务品种" startLength="1" endLength="1"></checkFieldBasic> 
+        <checkFieldBasic name="E200213" discription="投向行业"  startLength="5" endLength="5" ignore="99999" ></checkFieldBasic> 
+        <checkFieldBasic name="E200214" discription="币种代码"  emptyCheck="true" startLength="3" endLength="3"></checkFieldBasic> 
+        <checkFieldBasic name="E200215" discription="担保方式"  startLength="1" endLength="1" digitalCheck="true"></checkFieldBasic> 
+        <checkFieldBasic name="E200216" discription="欠本余额"  valueDecimalLength="2" digitalCheck="true" ></checkFieldBasic> 
+        <checkFieldBasic name="E200217" discription="欠本天数"  digitalCheck="true"></checkFieldBasic> 
+        <checkFieldBasic name="E200218" discription="欠息余额"  digitalCheck="true" valueDecimalLength="2" ></checkFieldBasic> 
+        <checkFieldBasic name="E200219" discription="欠息天数"  digitalCheck="true" ></checkFieldBasic> 
+        <checkFieldBasic name="E200220" discription="本期还款"  digitalCheck="true" valueDecimalLength="2"></checkFieldBasic> 
+        <checkFieldBasic name="E200221" discription="还本方式"  emptyCheck="true" digitalCheck="true" startLength="1" endLength="1"></checkFieldBasic> 
+        <checkFieldBasic name="E200222" discription="还息方式"  emptyCheck="true" digitalCheck="true" startLength="1" endLength="1" ></checkFieldBasic> 
+        <checkFieldBasic name="E200223" discription="下期还本日期"  dateCheck="true" startLength="8" endLength="8" ></checkFieldBasic> 
+        <checkFieldBasic name="E200224" discription="下期还本金额"  digitalCheck="true" valueDecimalLength="2"></checkFieldBasic> 
+        <checkFieldBasic name="E200225" discription="下期还息日期"   dateCheck="true" startLength="8" endLength="8" ></checkFieldBasic> 
+        <checkFieldBasic name="E200226" discription="下期还息金额"  digitalCheck="true" valueDecimalLength="2"></checkFieldBasic> 
+        <checkFieldBasic name="E200227" discription="贷款发放类型" emptyCheck="true" digitalCheck="true" startLength="1" endLength="1"></checkFieldBasic>   
+        <checkFieldBasic name="E200228" discription="减值准备"   valueDecimalLength="2"></checkFieldBasic> 
+        <checkFieldBasic name="E200229" discription="产业结构调整"    startLength="1" endLength="1" ></checkFieldBasic> 
+        <checkFieldBasic name="E200230" discription="工业转型升级标识"   startLength="1" endLength="1" ></checkFieldBasic> 
+        <checkFieldBasic name="E200231" discription="战略新兴产业类型"   startLength="1" endLength="1"></checkFieldBasic>
+        <checkFieldBasic name="E200232" discription="银团标识"   startLength="1" endLength="1"></checkFieldBasic>    
+        <checkFieldBasic name="E200233" discription="支付方式"   startLength="1" endLength="1"></checkFieldBasic> 
+			</checkFieldBasicList>
+
+			<checkFieldCaseWhenList discription="caseWhen校验">
+				<checkFieldCaseWhen name="E200210" discription="五级分类" caseValue="notNull" whenValue="0" whenCompareType=">">
+					<checkFieldCaseWhenField name="E200209" discription="贷款余额"></checkFieldCaseWhenField>					
+				</checkFieldCaseWhen>
+				<checkFieldCaseWhen name="E200212" discription="贷款业务种类" caseValue="notNull" whenValue="0" whenCompareType=">">
+					<checkFieldCaseWhenField name="E200209" discription="贷款余额"></checkFieldCaseWhenField>
+				</checkFieldCaseWhen>
+				
+        <checkFieldCaseWhen name="E200212" discription="贷款业务种类" caseValue="notNull" whenType="4" whenValue="2010-02-13" whenCompareType=">">
+					<checkFieldCaseWhenField name="E200206" discription="发放日期"></checkFieldCaseWhenField>
+				</checkFieldCaseWhen>
+					
+				<checkFieldCaseWhen name="E200214" discription="投向行业" caseValue="notNull" whenValue="0" whenCompareType=">">
+					<checkFieldCaseWhenField name="E200209" discription="贷款余额"></checkFieldCaseWhenField>					
+				</checkFieldCaseWhen>
+				
+				
+				<checkFieldCaseWhen name="E200213" discription="投向行业" caseValue="notNull" whenValue="0" whenCompareType=">">
+					<checkFieldCaseWhenField name="E200209" discription="贷款余额"></checkFieldCaseWhenField>
+				</checkFieldCaseWhen>
+	
+        <checkFieldCaseWhen name="E200213" discription="投向行业" caseValue="notNull" whenType="4" whenValue="2010-02-13" whenCompareType=">">
+					<checkFieldCaseWhenField name="E200206" discription="发放日期"></checkFieldCaseWhenField>
+				</checkFieldCaseWhen>			
+				<checkFieldCaseWhen name="E200215" discription="担保方式" caseValue="null" whenValue="2">
+					<checkFieldCaseWhenField name="E200211" discription="贷款类型"></checkFieldCaseWhenField>
+				</checkFieldCaseWhen>	
+				<checkFieldCaseWhen name="E200215" discription="担保方式" caseValue="notNull" whenType="5" whenValue="2">
+					<checkFieldCaseWhenField name="E200211" discription="贷款类型"></checkFieldCaseWhenField>
+				</checkFieldCaseWhen>	
+				
+				<checkFieldCaseWhen name="E200223" discription="下期还本日期" caseValue="notNull" whenValue="0" whenCompareType=">">
+					<checkFieldCaseWhenField name="E200224" discription="下期还本金额"></checkFieldCaseWhenField>
+				</checkFieldCaseWhen>	
+				<checkFieldCaseWhen name="E200223" discription="下期还本日期" caseValue="null" whenValue="0">
+					<checkFieldCaseWhenField name="E200224" discription="下期还本金额"></checkFieldCaseWhenField>
+				</checkFieldCaseWhen>	
+				<checkFieldCaseWhen name="E200223" discription="下期还本日期" caseValue="null" whenValue="null">
+					<checkFieldCaseWhenField name="E200224" discription="下期还本金额"></checkFieldCaseWhenField>
+				</checkFieldCaseWhen>	
+				<checkFieldCaseWhen name="E200224" discription="下期还息日期" caseValue="notNull" whenValue="0" whenCompareType=">">
+					<checkFieldCaseWhenField name="E200226" discription="下期还息金额"></checkFieldCaseWhenField>
+				</checkFieldCaseWhen>	
+				<checkFieldCaseWhen name="E200224" discription="下期还息日期" caseValue="null" whenValue="0">
+					<checkFieldCaseWhenField name="E200226" discription="下期还息金额"></checkFieldCaseWhenField>
+				</checkFieldCaseWhen>	
+				<checkFieldCaseWhen name="E200224" discription="下期还息日期" caseValue="null" whenValue="null">
+					<checkFieldCaseWhenField name="E200226" discription="下期还息金额"></checkFieldCaseWhenField>
+				</checkFieldCaseWhen>	
+				<checkFieldCaseWhen name="E200230" discription="工业转型升级标识" caseValue="notNull" whenValue="0" whenCompareType=">">
+					<checkFieldCaseWhenField name="E200209" discription="贷款余额"></checkFieldCaseWhenField>
+				</checkFieldCaseWhen>
+        <checkFieldCaseWhen name="E200230" discription="工业转型升级标识" caseValue="notNull" whenType="4" whenValue="2010-02-13" whenCompareType=">">
+					<checkFieldCaseWhenField name="E200206" discription="发放日期"></checkFieldCaseWhenField>
+				</checkFieldCaseWhen>
+				<checkFieldCaseWhen name="E200232" discription="银团标识" caseValue="notNull" whenValue="0" whenCompareType=">">
+					<checkFieldCaseWhenField name="E200209" discription="贷款余额"></checkFieldCaseWhenField>
+				</checkFieldCaseWhen>
+        <checkFieldCaseWhen name="E200232" discription="银团标识" caseValue="notNull" whenType="4" whenValue="2010-02-13" whenCompareType=">">
+					<checkFieldCaseWhenField name="E200206" discription="发放日期"></checkFieldCaseWhenField>
+				</checkFieldCaseWhen>	
+				
+				<!--LJX-077	表1 PART III中，若欠本余额大于0，则欠本天数必须大于0-->				
+	      <checkFieldCaseWhen name="E200217" discription="欠本天数" caseCompareType=">" caseValue="0"  whenCompareType=">" whenValue="0" >
+	         <checkFieldCaseWhenField name="E200216" discription="欠本余额"  ></checkFieldCaseWhenField>
+	      </checkFieldCaseWhen>
+	      <!--LJX-078	表1 PART III中，若欠息余额大于0，则欠息天数必须大于0-->
+				<checkFieldCaseWhen name="E200219" discription="欠息天数" caseCompareType=">" caseValue="0"  whenCompareType=">" whenValue="0" >
+	         <checkFieldCaseWhenField name="E200218" discription="欠息余额"  ></checkFieldCaseWhenField>
+	      </checkFieldCaseWhen>		          
+			</checkFieldCaseWhenList>
+
+			<checkFieldEffectiveList discription="有效性校验">
+				<checkFieldEffective name="E200210" discription="五级分类">
+					<value>1</value>
+					<value>2</value>
+					<value>3</value>
+					<value>4</value>
+					<value>5</value>
+				</checkFieldEffective>
+				<checkFieldEffective name="E200211" discription="贷款类型">
+					<value>1</value>
+					<value>2</value>
+					<value>3</value>
+					<value>4</value>
+					<value>5</value>
+					<value>6</value>
+				</checkFieldEffective>
+				<checkFieldEffective name="E200212" discription="贷款业务种类">
+					<value>1</value>
+					<value>2</value>
+					<value>3</value>
+					<value>4</value>
+				</checkFieldEffective>
+				<checkFieldEffective name="E200215" discription="担保方式">
+					<value>1</value>
+					<value>2</value>
+					<value>3</value>
+					<value>4</value>
+				</checkFieldEffective>
+				<checkFieldEffective name="E200221" discription="还本方式">
+					<value>1</value>
+					<value>2</value>
+					<value>3</value>
+					<value>4</value>
+					<value>5</value>
+					<value>6</value>
+					<value>7</value>
+				</checkFieldEffective>
+				<checkFieldEffective name="E200222" discription="还息方式">
+					<value>1</value>
+					<value>2</value>
+					<value>3</value>
+					<value>4</value>
+					<value>5</value>
+					<value>6</value>
+				</checkFieldEffective>		
+				<checkFieldEffective name="E200227" discription="贷款发放类型">
+					<value>1</value>
+					<value>2</value>
+					<value>3</value>
+					<value>4</value>
+				</checkFieldEffective>
+				<checkFieldEffective name="E200229" discription="产业结构调整类型">
+					<value>1</value>
+					<value>2</value>
+					<value>3</value>
+				</checkFieldEffective>		
+				<checkFieldEffective name="E200230" discription="工业转型升级标识">
+					<value>1</value>
+					<value>2</value>
+					<value>3</value>
+				</checkFieldEffective>	
+				<checkFieldEffective name="E200231" discription="战略新兴产业类型">
+					<value>1</value>
+					<value>2</value>
+					<value>3</value>
+					<value>4</value>
+					<value>5</value>
+					<value>6</value>
+					<value>7</value>
+				</checkFieldEffective>	
+				<checkFieldEffective name="E200232" discription="银团标识">
+					<value>1</value>
+					<value>2</value>
+				</checkFieldEffective>	
+				<checkFieldEffective name="E200233" discription="支付方式">
+					<value>1</value>
+					<value>2</value>
+				</checkFieldEffective>										
+			</checkFieldEffectiveList>
+
+			<checkFieldLineList discription="非聚合校验">
+				<checkFieldLine compareType=">">
+					<leftFieldList><checkFieldLineField name="E200208" discription="发放金额"></checkFieldLineField></leftFieldList>
+					<rightFieldList><checkFieldLineField value="0"></checkFieldLineField></rightFieldList>
+				</checkFieldLine>
+				<checkFieldLine compareType=">=">
+					<leftFieldList><checkFieldLineField name="E200209" discription="贷款余额"></checkFieldLineField></leftFieldList>
+					<rightFieldList><checkFieldLineField value="0"></checkFieldLineField></rightFieldList>
+				</checkFieldLine>
+				<checkFieldLine compareType=">=">
+					<leftFieldList><checkFieldLineField name="E200216" discription="贷款余额"></checkFieldLineField></leftFieldList>
+					<rightFieldList><checkFieldLineField value="0"></checkFieldLineField></rightFieldList>
+				</checkFieldLine>
+				<checkFieldLine compareType=">=">
+					<leftFieldList><checkFieldLineField name="E200217" discription="欠本天数"></checkFieldLineField></leftFieldList>
+					<rightFieldList><checkFieldLineField value="0"></checkFieldLineField></rightFieldList>
+				</checkFieldLine>
+				<checkFieldLine compareType=">=">
+					<leftFieldList><checkFieldLineField name="E200218" discription="欠息余额"></checkFieldLineField></leftFieldList>
+					<rightFieldList><checkFieldLineField value="0"></checkFieldLineField></rightFieldList>
+				</checkFieldLine>
+				<checkFieldLine compareType=">=">
+					<leftFieldList><checkFieldLineField name="E200219" discription="欠息天数"></checkFieldLineField></leftFieldList>
+					<rightFieldList><checkFieldLineField value="0"></checkFieldLineField></rightFieldList>
+				</checkFieldLine>
+				<checkFieldLine compareType=">=">
+					<leftFieldList><checkFieldLineField name="E200220" discription="本期还款"></checkFieldLineField></leftFieldList>
+					<rightFieldList><checkFieldLineField value="0"></checkFieldLineField></rightFieldList>
+				</checkFieldLine>
+				<checkFieldLine compareType=">=">
+					<leftFieldList><checkFieldLineField name="E200228" discription="减值准备"></checkFieldLineField></leftFieldList>
+					<rightFieldList><checkFieldLineField value="0"></checkFieldLineField></rightFieldList>
+				</checkFieldLine>
+				<!--LJX-024	表1 PART III中[发放日期]小于等于[数据日期]-->
+				<checkFieldLine compareType=">=" fieldType="2">
+					<leftFieldList><checkFieldLineField name="dataDate" discription="数据日期"></checkFieldLineField></leftFieldList>
+					<rightFieldList><checkFieldLineField name="E200206" discription="发放日期"></checkFieldLineField></rightFieldList>
+				</checkFieldLine>		
+				<!--LJX-025	表1 PART III中[到期日期]大于等于[发放日期]-->
+				<checkFieldLine compareType=">="  fieldType="2">
+					<leftFieldList><checkFieldLineField name="E200207" discription="到期日期"></checkFieldLineField></leftFieldList>
+					<rightFieldList><checkFieldLineField name="E200206" discription="发放日期"></checkFieldLineField></rightFieldList>
+				</checkFieldLine>	
+				<!--LJX-026	表1 PART III中[发放金额]大于等于[贷款余额]-->
+				<checkFieldLine compareType=">=">
+					<leftFieldList><checkFieldLineField name="E200208" discription="发放金额"></checkFieldLineField></leftFieldList>
+					<rightFieldList><checkFieldLineField name="E200209" discription="贷款余额"></checkFieldLineField></rightFieldList>
+				</checkFieldLine>	
+				<!--LJX-027	表1 PART III中[欠本余额]小于等于[贷款余额]-->
+				<checkFieldLine compareType=">=">
+					<leftFieldList><checkFieldLineField name="E200209" discription="贷款余额"></checkFieldLineField></leftFieldList>
+					<rightFieldList><checkFieldLineField name="E200216" discription="欠本余额"></checkFieldLineField></rightFieldList>
+				</checkFieldLine>	
+				<!--LJX-028	表1 PART III中[欠本天数]小于等于[数据日期]-[发放日期]+1-->
+
+				<!--LJX-029	表1 PART III中[欠息天数]小于等于[数据日期]-[发放日期]-->
+	
+				<!--LJX-030	表1 PART III中[下期还本日期]大于[数据日期]；小于等于[到期日期]-->
+				<checkFieldLine compareType=">="  fieldType="2">
+					<leftFieldList><checkFieldLineField name="E200223" discription="下期还本日期"></checkFieldLineField></leftFieldList>
+					<rightFieldList><checkFieldLineField name="dataDate" discription="数据日期"></checkFieldLineField></rightFieldList>
+				</checkFieldLine>	
+				<checkFieldLine compareType=">="  fieldType="2">
+					<leftFieldList><checkFieldLineField name="E200228" discription="到期日期"></checkFieldLineField></leftFieldList>
+					<rightFieldList><checkFieldLineField name="E200223" discription="下期还本日期"></checkFieldLineField></rightFieldList>
+				</checkFieldLine>	
+				<!--LJX-031	表1 PART III中[下期还本金额]小于等于[贷款余额]-->
+				<checkFieldLine compareType=">=">
+					<leftFieldList><checkFieldLineField name="E200209" discription="贷款余额"></checkFieldLineField></leftFieldList>
+					<rightFieldList><checkFieldLineField name="E200224" discription="下期还本金额"></checkFieldLineField></rightFieldList>
+				</checkFieldLine>
+				<!--LJX-032	表1 PART III中[下期还息日期]大于[数据日期]；小于等于[到期日期]-->
+				<checkFieldLine compareType=">="  fieldType="2">
+					<leftFieldList><checkFieldLineField name="E200225" discription="下期还息日期"></checkFieldLineField></leftFieldList>
+					<rightFieldList><checkFieldLineField name="dataDate" discription="数据日期"></checkFieldLineField></rightFieldList>
+				</checkFieldLine>
+				<checkFieldLine compareType=">="  fieldType="2">
+					<leftFieldList><checkFieldLineField name="E200207" discription="到期日期"></checkFieldLineField></leftFieldList>
+					<rightFieldList><checkFieldLineField name="E200225" discription="下期还息日期"></checkFieldLineField></rightFieldList>
+				</checkFieldLine>
+				<!--LJX-033	表1 PART III中[贷款余额]+[欠本余额]+[欠息余额]大于0-->
+			</checkFieldLineList>
+
+			<checkFieldOrList discription="条件校验"> 
+        <checkFieldOr type="2">
+         	<checkFieldCaseWhen name="E200224" discription="下期还本金额" caseValue="0" whenType="4" whenValue="dataDate" whenCompareType="&lt;">
+					<checkFieldCaseWhenField name="E200207" discription="到期日期"></checkFieldCaseWhenField>
+				</checkFieldCaseWhen>
+          <checkFieldCaseWhen name="E200224" discription="下期还本金额" caseValue="0" whenType="4" whenValue="dataDate" whenCompareType="&lt;">
+					<checkFieldCaseWhenField name="E200207" discription="到期日期"></checkFieldCaseWhenField>
+				</checkFieldCaseWhen>
+        </checkFieldOr>
+        <checkFieldOr type="2">
+         	<checkFieldCaseWhen name="E200226" discription="下期还息金额" caseValue="0" whenType="4" whenValue="dataDate" whenCompareType="&lt;">
+					<checkFieldCaseWhenField name="E200207" discription="到期日期"></checkFieldCaseWhenField>
+				</checkFieldCaseWhen>
+          <checkFieldCaseWhen name="E200226" discription="下期还息金额" caseValue="0" whenType="4" whenValue="dataDate" whenCompareType="&lt;">
+					<checkFieldCaseWhenField name="E200207" discription="到期日期"></checkFieldCaseWhenField>
+				</checkFieldCaseWhen>
+        </checkFieldOr>					
+			</checkFieldOrList>
+		</checkTable>
+
+		<checkFieldAggregationList discription="聚合校验">
+			<paramFieldList>
+				<paramField paramName="dtDate" field="dtDate" type="1"></paramField>
+			</paramFieldList>
+			<!--LJX-004	表1 PARTⅠ中，同一[客户代码]、同一[授信号码]下，[贷款余额]等于《PARTⅢ:贷款明细》中该[授信号码]下的[贷款余额]之和-->			
+			<checkFieldAggregation compareType="="	splitDiscription="客户代码_授信号码" leftSplitField="SPLITFIELD" rightSplitField="SPLITFIELD">
+				<leftFieldList>
+					<checkFieldAggregationField procedureName="CHECK_12_E201_LJX_004_L" procedureParam="dtDate,RS" procedureDiscription="贷款余额" procedureResultField="E201211"></checkFieldAggregationField>
+				</leftFieldList>
+				<rightFieldList>
+					<checkFieldAggregationField procedureName="CHECK_12_E200_LJX_004_R" procedureParam="dtDate,RS" procedureDiscription="SUM(贷款余额)" procedureResultField="E201202"></checkFieldAggregationField>
+				</rightFieldList>
+			</checkFieldAggregation>								
+		</checkFieldAggregationList>
+		
+		<checkFieldConsistentList consistenttype="2" discription="唯一性校验">
+			<paramFieldList>
+				<paramField paramName="dtDate" field="DTDATE" type="1"></paramField>
+			</paramFieldList>
+			<!--  WYX-004|表1《PART III：贷款明细》|同一[填报机构代码]下|[借据号]  -->			
+			<checkFieldConsistent>
+				<consistentGroup keyField="E200ORGID" keyDiscription="填报机构代码" nameField="E200205" nameDiscription="借据号" procedureName="CHECK_12_E200_WYX_004" procedureDiscription="E200贷款明细" procedureParam="dtDate,rs"></consistentGroup>
+			</checkFieldConsistent>			
+		</checkFieldConsistentList>	
+		
+		<checkFieldConsistentList consistenttype="1" discription="一致性校验">
+			<paramFieldList>
+				<paramField paramName="dtDate" field="DTDATE" type="1"></paramField>
+			</paramFieldList>
+			<!--HNYZ-FR-003 表内及表间，同一个内部客户代码，对应的名称应一致-->		
+			<checkFieldConsistent>
+				<consistentGroup keyField="E200201" keyDiscription="贷款客户代码" nameField="E200200" nameDiscription="贷款客户名称" procedureName="CHECK_12_E200" procedureDiscription="E200贷款明细" procedureParam="dtDate,rs"></consistentGroup>
+			</checkFieldConsistent>			
+		</checkFieldConsistentList>	
+		
+			<!--TSL-011	若表1《PART I：授信情况》中[客户类型]是“2-单一法人客户”，则该客户《PART III：贷款明细》中[贷款客户代码]与《PART I：授信情况》中[客户代码]相同。-->			
+		<checkTable procedureName="CHECK_12_E200_TSL_011" procedureParam="dtDate,rs" procedureDiscription="E200贷款明细111">
+			<paramFieldList>
+				<paramField paramName="dtDate" field="dtDate" type="1"></paramField>
+			</paramFieldList>
+			<checkUniqueFieldList>
+				<checkUniqueField name="SPLITFIELD" discription="授信号码"></checkUniqueField>
+			</checkUniqueFieldList>	
+			<checkFieldLineList discription="非聚合校验">				
+				<checkFieldLine compareType="=">
+					<leftFieldList><checkFieldLineField name="E200201" discription="贷款客户代码"></checkFieldLineField></leftFieldList>
+					<rightFieldList><checkFieldLineField name="E201202" discription="客户代码"></checkFieldLineField></rightFieldList>
+				</checkFieldLine>
+			</checkFieldLineList>
+		</checkTable>
+					
+	</checkInstance>
+	
+	
+	<checkInstance name="getHtable9Instance">
+
+		<checkTable procedureName="getHtable9" procedureParam="rs" procedureDiscription="校验测试" originTable="Htable9" errorMsgField="" errorStateField="strStartConditionType" errorStateValue="4" successStateValue = "3" defaultLogicDaoBeanId="oracleProcedureListMapDao">
+			<checkUniqueFieldList>
+				<checkUniqueField name="FIELD1" discription="字段3" originField="FIELD1"></checkUniqueField>
+			</checkUniqueFieldList>
+
+			<checkFieldBasicList discription="Htable9空校验测试">
+				<checkFieldBasic name="FIELD3" discription="字段3" emptyCheck="true" dateCheck="true"></checkFieldBasic>
+				<checkFieldBasic name="STRACTIVITYNODETYPE" discription="结点类型" emptyCheck="true"></checkFieldBasic>
+		     </checkFieldBasicList>
+		     
+		     <checkFieldEffectiveList discription="有效性校验">
+				<checkFieldEffective name="STRACTIVITYNODETYPE" discription="结点类型">
+					<value>1111111111111111111111111111111111111111111111111111</value>
+					<value>2</value>
+				</checkFieldEffective>
+			</checkFieldEffectiveList>
+	    </checkTable>
+					
+	</checkInstance>
+	
+</reportCheckRoot>

@@ -1,0 +1,119 @@
+CREATE procedure [dbo].[Proc_Check_GR_GRXX_JC]
+(
+	@dtDate varchar(10),
+	@strInstCode varchar(20)
+)
+as
+if @dtDate='*****' and @strInstCode='*****'
+SELECT autoID
+      ,BYSJHKJE
+      ,BYYHKJE
+      ,BZ
+      ,DBFS
+      ,DQRQ
+      ,DQYQQS
+      ,DQYQZE
+      ,FSDD
+      ,GXSXED
+      ,HKPL
+      ,HKYS
+      ,HKZT
+      ,HKZT_24
+      ,JRJGDM
+      ,JSYHKRQ
+      ,KHRQ
+      ,LJYQQS
+      ,RPTCheckType
+      ,RPTFeedbackType
+      ,RPTSendType
+      ,RPTSubmitStatus
+      ,RPTVerifyType
+      ,SXED
+      ,SYHKYS
+      ,WJFLZT
+      ,WZFYE
+      ,XM
+      ,XZXH
+      ,YE
+      ,YLZD
+      ,YQ180YSHDKBJ
+      ,YQ31_60HDKBJ
+      ,YQ61_90HDKBJ
+      ,YQ91_180HDKBJ
+      ,YWH
+      ,YWZL
+      ,YWZLXF
+      ,ZDFZE
+      ,ZGYQQS
+      ,ZHYCSJHKRQ
+      ,ZHYYZXXTS
+      ,ZHZT
+      ,ZJHM
+      ,ZJLX
+      ,dtDate
+      ,extend1
+      ,extend2
+      ,extend3
+      ,extend4
+      ,extend5
+      ,lastUpdateDate
+      ,instInfo
+      ,operationUser
+  FROM GR_GRXX_JC;
+
+else
+SELECT autoID
+      ,BYSJHKJE
+      ,BYYHKJE
+      ,BZ
+      ,DBFS
+      ,DQRQ
+      ,DQYQQS
+      ,DQYQZE
+      ,FSDD
+      ,GXSXED
+      ,HKPL
+      ,HKYS
+      ,HKZT
+      ,HKZT_24
+      ,JRJGDM
+      ,JSYHKRQ
+      ,KHRQ
+      ,LJYQQS
+      ,RPTCheckType
+      ,RPTFeedbackType
+      ,RPTSendType
+      ,RPTSubmitStatus
+      ,RPTVerifyType
+      ,SXED
+      ,SYHKYS
+      ,WJFLZT
+      ,WZFYE
+      ,XM
+      ,XZXH
+      ,YE
+      ,YLZD
+      ,YQ180YSHDKBJ
+      ,YQ31_60HDKBJ
+      ,YQ61_90HDKBJ
+      ,YQ91_180HDKBJ
+      ,YWH
+      ,YWZL
+      ,YWZLXF
+      ,ZDFZE
+      ,ZGYQQS
+      ,ZHYCSJHKRQ
+      ,ZHYYZXXTS
+      ,ZHZT
+      ,ZJHM
+      ,ZJLX
+      ,dtDate
+      ,extend1
+      ,extend2
+      ,extend3
+      ,extend4
+      ,extend5
+      ,lastUpdateDate
+      ,instInfo
+      ,operationUser
+  FROM GR_GRXX_JC where dtDate=@dtDate and instInfo=@strInstCode;

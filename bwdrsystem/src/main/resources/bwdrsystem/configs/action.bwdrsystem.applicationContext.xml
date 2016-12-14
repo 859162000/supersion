@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans
+	xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns:p="http://www.springframework.org/schema/p"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-3.0.xsd">
+	
+	<bean id="ReportImportAction" class="bwdrsystem.actions.imps.ReportImportAction" scope="prototype">
+		<property name="defaultServiceBeanId" value="ReportImportService"></property>
+	</bean>
+	
+	<bean id="ClearZXBusinessHistoryDataAction" class="framework.actions.imps.BaseSAction" scope="prototype">
+		<property name="defaultServiceBeanId" value="ClearZXBusinessHistoryDataService"></property>
+	</bean>
+	
+	<bean id="ConfirmReportImportAction" class="framework.actions.imps.BaseSTModelDrivenConditionFileAction">
+		<property name="defaultServiceBeanId" value="ConfirmReportImportService"></property>
+	</bean>
+	
+	<bean id="GetInstInfoJsonAction" class="framework.actions.imps.BaseSAction">
+		<property name="defaultServiceBeanId" value="GetInstInfoJsonService"></property>
+	</bean>
+ </beans>

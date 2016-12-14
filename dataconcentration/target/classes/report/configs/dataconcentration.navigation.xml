@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<navigationRoot>
+ <navigationComponentList>
+ 	<navigationComponent id="DeskTop" name="桌面" url="Framework/NavigationPage.jsp"  ico="bg.png" treeIco="bg.png" treeExpandIco="bg.png" des="">
+ 		<navigationComponent id="DataconCentration" name="大集中主题报表产品" url="Framework/NavigationPage.jsp" ico="128_MergeSummary.png" treeIco="64_MergeSummary.png" treeExpandIco="32_MergeSummary.png" des="">
+ 			    <navigationComponent id="DCDataManagerment" name="报表处理平台 " url="Framework/NavigationPage.jsp"  ico="128_NeedDoThing.png" treeIco="64_NeedDoThing.png" treeExpandIco="32_NeedDoThing.png" des="">
+	 			    <navigationComponent id="DCTaskRptInst" name="统计报表填报" url="framework/DCShowTree-report.dto.TaskRptInst" ico="64_DocumentInfo.png" treeIco="32_DocumentInfo.png" treeExpandIco="16_DocumentInfo.png" des=""></navigationComponent>
+					<navigationComponent id="DCTaskRptInstSH" name="统计报表审核" url="framework/DCReviewShowTree-report.dto.TaskRptInst" ico="64_FundDataCheck.png" treeIco="32_FundDataCheck.png" treeExpandIco="16_FundDataCheck.png" des=""></navigationComponent>
+					<navigationComponent id="DCTaskRptInstMEGER" name="数据汇总" url="framework/DCShowTree-report.dto.TaskFlow" ico="64_TaskRptInst.png" treeIco="32_TaskRptInst.png" treeExpandIco="16_TaskRptInst.png" des=""></navigationComponent>
+					<navigationComponent id="DCTaskModelInst" name="明细数据填报" url="framework/DCShowTree-report.dto.TaskModelInst" ico="64_Reportmodel_tableSet.png" treeIco="32_Reportmodel_tableSet.png" treeExpandIco="16_Reportmodel_tableSet.png" des=""></navigationComponent>
+					<navigationComponent id="DCTaskModelInstSH" name="明细数据审核" url="framework/DCReviewShowTree-report.dto.TaskModelInst" ico="64_TaskRptInst.png" treeIco="32_TaskRptInst.png" treeExpandIco="16_TaskRptInst.png" des=""></navigationComponent>
+					<navigationComponent id="DCTaskModelInstCK" name="数据查看" url="framework/DCCKShowTree-report.dto.TaskModelInst" ico="64_TaskRptInst.png" treeIco="32_TaskRptInst.png" treeExpandIco="16_TaskRptInst.png" des=""></navigationComponent>
+ 			    </navigationComponent>
+ 				<navigationComponent id="DCBuildReport" name="指标报文生成" url="report/DCBuildReport-report.dto.TaskRptInst" ico="64_ItemInfo.png" treeIco="32_ItemInfo.png" treeExpandIco="16_ItemInfo.png" des=""></navigationComponent>
+ 		</navigationComponent>
+ 		
+ 	</navigationComponent>
+ </navigationComponentList>
+  
+   
+</navigationRoot>

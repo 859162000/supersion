@@ -1,0 +1,49 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<reportCheckRoot> 
+	<checkInstance name="CHECK_NCR_2_3_OTHER">
+	    <paramValueList>
+	      <paramValue name="DTDATE" value="2013-12-31"></paramValue>
+	      <paramValue name="strInstCode" value=""></paramValue>
+			<!--
+		  <paramValue name="strTaskRptInstID" value="000000"></paramValue>
+			<paramValue name="strFreq" value="000000"></paramValue> 
+			-->
+	    </paramValueList>
+
+	    <freqCode value="4"></freqCode>
+
+		 	<checkFieldConsistent>
+	  			<consistentGroup keyField="E,B" keyDiscription="授信类型,客户代码/供应链编码" nameField="C"  nameDiscription="成员单位的客户代码"  procedureName="CHECK_NCR_2_3_WYX_14"  procedureDiscription="成员名单唯一性校验存储过程" procedureParam="DTDATE" ></consistentGroup>
+	  	</checkFieldConsistent>
+	                 
+	    <checkTable procedureName="CHECK_NCR_2_3"  procedureParam="DTDATE,strInstCode" procedureDiscription="成员名单"
+	    	originTable="NCR_2_3" errorStateField="RPTCHECKTYPE" errorStateValue="3"  successStateValue="2" 
+			defaultLogicDaoBeanId="oracleProcedureResultSetDao">    
+				<paramFieldList>
+					<paramField paramName="DTDATE" field="DTDATE" type="2"></paramField>
+					<paramField paramName="strInstCode" field="INSTINFO" type="1"></paramField>
+				</paramFieldList>
+
+		    <checkUniqueFieldList>
+				<checkUniqueField name="AUTOID" discription="主键" originField="AUTOID"></checkUniqueField>
+			 </checkUniqueFieldList>
+   
+	    </checkTable>
+	    
+	    <checkTable procedureName="CHECK_NCR_2_3_JBL2_039"  procedureParam="DTDATE,strInstCode" procedureDiscription="成员名单"
+	    	originTable="NCR_2_3" errorStateField="RPTCHECKTYPE" errorStateValue="3"  successStateValue="2" 
+			defaultLogicDaoBeanId="oracleProcedureResultSetDao">
+	    	<paramFieldList>
+			<paramField paramName="DTDATE" field="DTDATE" type="2"></paramField>
+			<paramField paramName="strInstCode" field="INSTINFO" type="1"></paramField>
+			 </paramFieldList>
+ 			<checkUniqueFieldList>
+		  </checkUniqueFieldList>
+	    <checkFieldCaseWhenList  discription="caseWhen校验">
+    	<checkFieldCaseWhen name="G1" discription="母公司标识" caseValue="null" whenValue="2">
+           <checkFieldCaseWhenField name="E1" discription="授信类型" ></checkFieldCaseWhenField>
+       </checkFieldCaseWhen>
+    	</checkFieldCaseWhenList>
+			</checkTable>
+    	</checkInstance>	
+</reportCheckRoot>

@@ -1,0 +1,190 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans
+	xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns:p="http://www.springframework.org/schema/p"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-3.0.xsd">
+
+    <bean id="interfaceDownEastService" class="eas.service.imps.InterfaceDownEastService" scope="prototype">
+    	<property name="suitCode" value="EAS"></property>
+    </bean>
+    
+    <bean id="interfaceDownEastViewService" class="eas.service.imps.InterfaceDownEastViewService" scope="prototype">
+    	<property name="suitCode" value="EAS"></property>
+    </bean>
+    
+    <bean id="EASReportCheckViewService" class="report.service.imps.ReportCheckViewService" scope="prototype">
+    	<property name="checkInstanceEntity" value="EAS_ReportCheck"></property>
+    </bean>
+    
+        <!--  以下为xiajieli新增 -->
+      <bean id="taskFlowEasShowListService"  class="report.service.imps.ReportShowListService" scope="prototype">
+      <property name="suitListCode" value="EAS"></property>
+      <property name="pageSize" value="10"></property>
+      <property name="defaultDaoBeanId" value="singleObjectFindByPageCriteriaDao"></property>
+      <property name="defaultLogicDaoBeanId" value="singleObjectFindByCriteriaDao"></property>
+      <property name="showInstanceName" value="1"></property>
+      <property name="linkedMap">
+            <map>
+                <entry key="修改" value="Get-EasShowUpdate"></entry>
+                <entry key="统计报表任务设置" value="Get-framework/EasInstInfoShowUpdateListLevelEasTaskRptInst-report.dto.TaskRptInst"></entry>
+                <entry key="明细表单任务设置" value="Get-framework/EasInstInfoShowUpdateListLevelEasTaskModelInst-report.dto.TaskModelInst"></entry>
+            </map>
+        </property>
+         <property name="defaultProceseClassList">
+            <list>
+                <value>framework.services.procese.ShowListProcese</value>
+                <value>framework.services.procese.LevelDataProcese</value>
+                <value>framework.services.procese.ShowListTreeProcese</value>
+                <value>framework.services.procese.SelectTagSortByNameProcese</value>
+            </list>
+        </property>
+        <property name="defaultTranslateClassList">
+            <list>
+                <value>framework.services.translate.LevelDataTranslate</value>
+                <value>framework.services.translate.ConditionCriteriaTranslate</value>
+                <value>framework.services.translate.SecurityTranslate</value>
+		        <value>framework.services.translate.DefaultValueTranslate</value>
+		        <value>framework.services.translate.ShowListTreeTranslate</value>
+            </list>
+        </property>
+        <property name="operationMap">
+            <map>
+                <entry key="查询" value="Select-EasShowList"></entry>
+                <entry key="新增" value="Get-EasShowSave"></entry>
+                <entry key="删除" value="PostConfirm-EasDeleteListByIdList"></entry>
+            </map>
+        </property>
+     </bean>
+     
+     <bean id="easShowSaveService" parent="singleObjectShowSaveService">
+        <property name="operationMap">
+            <map>
+                <entry key="保存" value="Post-EasSave"></entry>
+                <entry key="返回" value="Get-EasShowList"></entry>
+            </map>
+        </property>
+     </bean>
+     
+     <bean id="easShowUpdateService" parent="singleObjectShowUpdateService">
+        <property name="operationMap">
+            <map>
+                <entry key="保存" value="Post-EasUpdate"></entry>
+                <entry key="返回" value="Get-EasShowList"></entry>
+            </map>
+        </property>
+     </bean>
+     
+   <bean id="easSaveService" class="report.service.imps.ReportForSuitCodeBaseVoidDaoResultService" scope="prototype" >
+     	<property name="strSuitCode" value="EAS"></property>
+     	<property name="showInstanceName" value="1"></property>
+         <property name="defaultDaoBeanId" value="singleObjectSaveDao"></property>
+     	 <property name="defaultAddClassList">
+            <list>
+                <value>framework.services.add.LevelDataAdd</value>
+                <value>framework.services.add.SystemInfoAdd</value>
+				<value>framework.services.add.DefaultValueAdd</value>
+				<value>framework.services.add.IsThousandthAdd</value>
+            </list>
+        </property>
+         <property name="defaultCheckClassList">
+            <list>
+                <value>framework.services.check.ReflectEmptyFieldCheck</value>
+                <value>framework.services.check.ReflectTypeFieldCheck</value>
+                <value>framework.services.check.PrimaryKeyRepeatCheck</value>
+                <value>framework.services.check.XMLSingleObjectInstanceCheck</value>
+            </list>
+        </property>
+        <property name="defaultTranslateClassList">
+            <list>
+                <value>framework.services.translate.SingleIdListTranslate</value>
+            </list>
+        </property>
+        <property name="successMessage" value="保存成功"></property>
+        <property name="errorMessage" value="保存失败"></property> 
+     </bean>
+     
+      <bean id="easUpdateService" class="report.service.imps.ReportForSuitCodeBaseVoidDaoResultService" scope="prototype">
+        <property name="strSuitCode" value="EAS"></property>
+        <property name="showInstanceName" value="1"></property>
+        <property name="defaultDaoBeanId" value="actionUpdateExcuteDao"></property>
+        <property name="defaultAddClassList">
+            <list>
+                <value>framework.services.add.LevelDataAdd</value>
+                <value>framework.services.add.DefaultValueAdd</value>
+                <value>framework.services.add.IsThousandthAdd</value>
+            </list>
+        </property>
+        <property name="defaultCheckClassList">
+            <list>
+                <value>framework.services.check.ReflectEmptyFieldCheck</value>
+                <value>framework.services.check.ReflectTypeFieldCheck</value>
+                <value>framework.services.check.XMLSingleObjectInstanceCheck</value>
+            </list>
+        </property>
+        <property name="defaultTranslateClassList">
+            <list>
+                <value>framework.services.translate.SingleIdListTranslate</value>
+            </list>
+        </property>
+        <property name="successMessage" value="更新成功"></property>
+        <property name="errorMessage" value="更新失败"></property>
+     </bean>
+     
+      <bean id="easShowInputSaveService" parent="singleObjectShowInputSaveService">
+    </bean>
+    
+    <bean id="easShowInputUpdateService" parent="easShowInputSaveService">
+        <property name="operationMap">
+            <map>
+                <entry key="保存" value="Post-EasUpdate"></entry>
+                <entry key="返回" value="Get-EasShowList"></entry>
+            </map>
+        </property>
+    </bean>
+    
+     <bean id="easDeleteListByIdListService" parent="singleObjectDeleteListByIdListService">
+     </bean>
+         <!--  以下为xiajieli新增 -->
+     <bean id="taskModelInstEasReviewShowTreeService" parent="taskModelInstReviewShowTreeService">
+     	<property name="strSuitCode" value="EAS"></property>
+     </bean>
+     <bean id="taskRptInstEasShowTreeService" parent="taskRptInstShowTreeService">
+     </bean>
+     <bean id="taskRptInstEasReviewShowTreeService" parent="taskRptInstReviewShowTreeService">
+     </bean>
+     
+     <bean id="taskModelInstEasShowListForTreeService" parent="singleObjectForReportShowListForTreeService">
+        <property name="pageSize" value="20"></property>
+        <property name="operationMap">
+            <map>
+                <entry key="查询" value="Select-ShowListForTree"></entry>
+                <entry key="提交" value="Post-RptSubmitStatusALLUpdateField"></entry>
+            </map>
+        </property>
+        <property name="linkedMap">
+           <map>
+             <entry key="填报" value="Get-JumpByTypeLevelAUTODTO"></entry>
+           </map>
+         </property>
+         <property name="typeFieldName" value="reportModel_Table.strTableName"/>
+     </bean>
+     
+     <bean id="taskModelInstEasShowTreeService" parent="taskModelInstShowTreeService">
+     	<property name="strSuitCode" value="EAS"></property>
+     </bean>
+     
+     <bean id="EasInstInfoShowUpdateListLevelEasTaskRptInstService" parent="InstInfoShowUpdateListLevelTaskRptInstService">
+      <property name="suitListCode" value="EAS"></property>
+    </bean>
+    
+    <bean id="EasInstInfoShowUpdateListLevelEasTaskModelInstService" parent="InstInfoShowUpdateListLevelTaskModelInstService">
+      <property name="suitListCode" value="EAS"></property>
+    </bean>
+    
+   <bean id="taskRptInstUpdateListLevelEasTaskRptInstService"  parent="taskRptInstUpdateListLevelTaskRptInstService">
+     </bean>
+     
+    <bean id="taskModelInstUpdateListLevelEasTaskModelInstService"  parent="taskModelInstUpdateListLevelTaskModelInstService">
+     </bean>
+</beans>

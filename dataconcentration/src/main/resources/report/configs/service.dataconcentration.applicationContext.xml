@@ -1,0 +1,61 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<beans 
+	xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns:p="http://www.springframework.org/schema/p"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-3.0.xsd">
+    <bean id="makeIJFileALLService" class="report.service.imps.MakeReportsIJFilesService" scope="prototype">
+           <property name="dataScope" value="3"/>
+            
+    </bean>
+     <bean id="makeIJFileByOrgService" class="report.service.imps.MakeReportsIJFilesService" scope="prototype">
+           <property name="dataScope" value="2"/>
+            
+    </bean>
+     <bean id="makeIJFileBySingleService" class="report.service.imps.MakeReportsIJFilesService" scope="prototype">
+           <property name="dataScope" value="1"/>
+            
+    </bean>
+    
+    <!-- insert by xiajieli -2016-10-18 -->
+    <!-- 统计报表填报 -->
+    <bean id="taskRptInstDCShowTreeService" parent="taskRptInstShowTreeService">
+     	<property name="strSuitCode" value="01"></property>
+     </bean>
+    
+    <!-- 统计报表审核 -->
+     <bean id="taskRptInstDCReviewShowTreeService" parent="taskRptInstReviewShowTreeService">
+     	<property name="strSuitCode" value="01"></property>
+     </bean>
+    
+    <!-- 数据汇总  -->
+     <bean id="taskFlowDCShowTreeService" parent="taskFlowShowTreeService">
+     	 <property name="strSuitCode" value="01"></property> 
+     </bean>
+     
+    <!-- 明细数据填报 -->
+     <bean id="taskModelInstDCShowTreeService" parent="taskModelInstShowTreeService">
+     	<property name="strSuitCode" value="01"></property>
+     </bean>
+     
+     <!-- 明细数据审核 -->
+      <bean id="taskModelInstDCReviewShowTreeService" parent="taskModelInstReviewShowTreeService">
+     	<property name="strSuitCode" value="01"></property>
+     </bean>
+     
+     <!-- 数据查看 -->
+       <bean id="taskModelInstDCCKShowTreeService" parent="CKShowTreeService">
+        <property name="strSuitCode" value="01"></property>
+       </bean>
+       
+       <!-- 指标报表报文下载 -->
+	<bean id="taskRptInstDCBuildReportService" parent="taskRptInstReviewShowTreeService">
+	<property name="strSuitCode" value="01"></property>
+		<property name="operationMap">
+			<map>
+				<entry key="" value="Get-BuildReportShowListForTree"></entry>
+			</map>
+		</property>
+	</bean>
+     
+  </beans>

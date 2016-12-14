@@ -1,0 +1,119 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<reportCheckRoot>
+	<checkInstance name="CHECK_NCR_3_2_OTHER">				
+		<paramValueList>
+			<paramValue name="DTDATE" value="2013-12-09"></paramValue>
+			 <paramValue name="strInstCode" value=""></paramValue>
+			 <!--
+		    <paramValue name="strTaskRptInstID" value="000000"></paramValue>
+			  <paramValue name="strFreq" value="000000"></paramValue> 
+			  -->
+		</paramValueList>		
+
+		<freqCode value="4"></freqCode>	
+
+		<checkTable procedureName="Check_NCR_3_2" procedureParam="DTDATE,strInstCode" procedureDiscription="法定代表人、高管及重要关联人信息"
+			originTable="NCR_3_2" errorStateField="RPTCHECKTYPE" errorStateValue="3"  successStateValue="2" 
+			defaultLogicDaoBeanId="oracleProcedureResultSetDao">
+			<paramFieldList>
+				<paramField paramName="DTDATE" field="DTDATE"	 type="2"></paramField>
+				<paramField paramName="strInstCode" field="INSTINFO" type="1"></paramField>
+			</paramFieldList>
+
+			<checkUniqueFieldList>
+				<checkUniqueField name="AUTOID" discription="主键" originField="AUTOID"></checkUniqueField>
+			</checkUniqueFieldList>
+		</checkTable>
+	
+		<checkFieldConsistentList consistenttype="2" discription="唯一性校验">
+			<paramFieldList>
+				<paramField paramName="DTDATE" field="DTDATE" type="2"></paramField>
+				<paramField paramName="strInstCode" field="INSTINFO" type="1"></paramField>
+			</paramFieldList>
+			<!--  WYX-018|表3《PART II：法定代表人、高管及重要关联人信息》|对于PARTⅠ中同一[客户代码]下，PART II 同一[关系人类型]下|[身份证号码]   -->			
+			<checkFieldConsistent>
+				<consistentGroup keyField="CONDITOIN" keyDiscription="客户代码-关系人类型" nameField="D" nameDiscription="身份证号码" procedureName="Check_NCR_3_2_WYX_018" procedureDiscription="E213法定代表人、高管及重要关联人信息" procedureParam="DTDATE,strInstCode,rt"></consistentGroup>
+			</checkFieldConsistent>		
+			<!--  WYX-019|表3《PART II：法定代表人、高管及重要关联人信息》|对于PARTⅠ中同一[客户代码]下，PART II 同一[关系人类型]下|[护照号码]   -->		
+			<checkFieldConsistent>
+				<consistentGroup keyField="CONDITOIN" keyDiscription="客户代码-关系人类型" ignoreVal="null" nameField="E_1" nameDiscription="护照1-护照号码" procedureName="Check_NCR_3_2_WYX_019" procedureDiscription="E213法定代表人、高管及重要关联人信息" procedureParam="DTDATE,strInstCode,rt"></consistentGroup>
+			</checkFieldConsistent>					
+			<!--  WYX-019|表3《PART II：法定代表人、高管及重要关联人信息》|对于PARTⅠ中同一[客户代码]下，PART II 同一[关系人类型]下|[护照号码]   -->		
+			<checkFieldConsistent>
+				<consistentGroup keyField="CONDITOIN" keyDiscription="客户代码-关系人类型" ignoreVal="isnull" nameField="E_2" nameDiscription="护照2-护照号码" procedureName="Check_NCR_3_2_WYX_019" procedureDiscription="E213法定代表人、高管及重要关联人信息" procedureParam="DTDATE,strInstCode,rt"></consistentGroup>
+			</checkFieldConsistent>	
+			<!--  WYX-019|表3《PART II：法定代表人、高管及重要关联人信息》|对于PARTⅠ中同一[客户代码]下，PART II 同一[关系人类型]下|[护照号码]   -->		
+			<checkFieldConsistent>
+				<consistentGroup keyField="CONDITOIN" keyDiscription="客户代码-关系人类型" ignoreVal="isnull" nameField="E_N" nameDiscription="护照N-护照号码" procedureName="Check_NCR_3_2_WYX_019" procedureDiscription="E213法定代表人、高管及重要关联人信息" procedureParam="DTDATE,strInstCode,rt"></consistentGroup>
+			</checkFieldConsistent>		
+			<!--  WYX-020|表3《PART II：法定代表人、高管及重要关联人信息》|同一“[客户代码]-[关系人类型]-[其他证件类型]”下|[其他证件号码]  -->		
+			<checkFieldConsistent>
+				<consistentGroup keyField="CONDITOIN_1" keyDiscription="客户代码-关系人类型-其他证件类型" nameField="H_1" nameDiscription="其他证件1-证件号码" procedureName="Check_NCR_3_2_WYX_020" procedureDiscription="E213法定代表人、高管及重要关联人信息" procedureParam="DTDATE,strInstCode,rt"></consistentGroup>
+			</checkFieldConsistent>
+			<!--  WYX-020|表3《PART II：法定代表人、高管及重要关联人信息》|同一“[客户代码]-[关系人类型]-[其他证件类型]”下|[其他证件号码]   -->		
+			<checkFieldConsistent>
+				<consistentGroup keyField="CONDITOIN_N" keyDiscription="客户代码-关系人类型-其他证件类型" nameField="H_N" nameDiscription="其他证件N-证件号码" procedureName="Check_NCR_3_2_WYX_020" procedureDiscription="E213法定代表人、高管及重要关联人信息" procedureParam="DTDATE,strInstCode,rt"></consistentGroup>
+			</checkFieldConsistent>	
+			<!-- WYX-029|表3《PART II：法定代表人、高管及重要关联人信息》|PARTⅠ中同一[客户代码]下，PART II [关系人类型]=1时|[客户代码] -->		
+			<checkFieldConsistent>
+				<consistentGroup keyField="REL_2_1_A" keyDiscription="客户代码" nameField="A" nameDiscription="关系人类型" procedureName="Check_NCR_3_2_WYX_029" procedureDiscription="E213法定代表人、高管及重要关联人信息" procedureParam="DTDATE,strInstCode,rt"></consistentGroup>
+			</checkFieldConsistent>																					
+		</checkFieldConsistentList>											
+	
+		<checkFieldConsistentList consistenttype="1" discription="一致性校验">
+			<paramFieldList>
+				<paramField paramName="DTDATE" field="DTDATE" type="2"></paramField>
+				<paramField paramName="strInstCode" field="INSTINFO" type="1"></paramField>
+			</paramFieldList>
+			<!-- HNYZ-GB-002|法定代表人、高管、重要关联人、股东、实际控制人代码相同，国别需一致 -->		
+			<checkFieldConsistent>
+				<consistentGroup keyField="D" keyDiscription="身份证号码" nameField="C" nameDiscription="国别代码" procedureName="Check_NCR_3_2_HNYZ_GB_002_1" procedureDiscription="E213法定代表人、高管及重要关联人信息" procedureParam="DTDATE,strInstCode,rt"></consistentGroup>
+			</checkFieldConsistent>
+			<!-- HNYZ-GB-002|法定代表人、高管、重要关联人、股东、实际控制人代码相同，国别需一致 -->		
+			<checkFieldConsistent>
+				<consistentGroup keyField="E_1" keyDiscription="护照1-护照号码" nameField="C" nameDiscription="国别代码" procedureName="Check_NCR_3_2_HNYZ_GB_002_2" procedureDiscription="E213法定代表人、高管及重要关联人信息" procedureParam="DTDATE,strInstCode,rt"></consistentGroup>
+			</checkFieldConsistent>	
+			<!-- HNYZ-GB-002|法定代表人、高管、重要关联人、股东、实际控制人代码相同，国别需一致 -->		
+			<checkFieldConsistent>
+				<consistentGroup keyField="E_2" keyDiscription="护照2-护照号码" nameField="C" nameDiscription="国别代码" procedureName="Check_NCR_3_2_HNYZ_GB_002_3" procedureDiscription="E213法定代表人、高管及重要关联人信息" procedureParam="DTDATE,strInstCode,rt"></consistentGroup>
+			</checkFieldConsistent>	
+			<!-- HNYZ-GB-002|法定代表人、高管、重要关联人、股东、实际控制人代码相同，国别需一致 -->		
+			<checkFieldConsistent>
+				<consistentGroup keyField="E_N" keyDiscription="护照N-护照号码" nameField="C" nameDiscription="国别代码" procedureName="Check_NCR_3_2_HNYZ_GB_002_4" procedureDiscription="E213法定代表人、高管及重要关联人信息" procedureParam="DTDATE,strInstCode,rt"></consistentGroup>
+			</checkFieldConsistent>	
+			<!-- HNYZ-GB-002|法定代表人、高管、重要关联人、股东、实际控制人代码相同，国别需一致 -->		
+			<checkFieldConsistent>
+				<consistentGroup keyField="CONDITION" keyDiscription="其他证件1-证件类型-证件号码" nameField="C" nameDiscription="国别代码" procedureName="Check_NCR_3_2_HNYZ_GB_002_5" procedureDiscription="E213法定代表人、高管及重要关联人信息" procedureParam="DTDATE,strInstCode,rt"></consistentGroup>
+			</checkFieldConsistent>	
+			<!-- HNYZ-GB-002|法定代表人、高管、重要关联人、股东、实际控制人代码相同，国别需一致 -->		
+			<checkFieldConsistent>
+				<consistentGroup keyField="CONDITION" keyDiscription="其他证件N-证件类型-证件号码" nameField="C" nameDiscription="国别代码" procedureName="Check_NCR_3_2_HNYZ_GB_002_6" procedureDiscription="E213法定代表人、高管及重要关联人信息" procedureParam="DTDATE,strInstCode,rt"></consistentGroup>
+			</checkFieldConsistent>		
+			<!-- HNYZ-GR-001|个人的代码任意两个相同，名称应一致。此处“代码”指国别代码+证件类型+证件号码 -->		
+			<checkFieldConsistent>
+				<consistentGroup keyField="SPLITFIELD" keyDiscription="国别代码-2-身份证号码" nameField="B" nameDiscription="姓名" procedureName="Check_NCR_3_2_HNYZ_GR_001_1" procedureDiscription="E213法定代表人、高管及重要关联人信息" procedureParam="DTDATE,strInstCode,rt"></consistentGroup>
+			</checkFieldConsistent>	
+			<!-- HNYZ-GR-001|个人的代码任意两个相同，名称应一致。此处“代码”指国别代码+证件类型+证件号码 -->		
+			<checkFieldConsistent>
+				<consistentGroup keyField="SPLITFIELD" keyDiscription="国别代码-10-护照1号码" nameField="B" nameDiscription="姓名" procedureName="Check_NCR_3_2_HNYZ_GR_001_2" procedureDiscription="E213法定代表人、高管及重要关联人信息" procedureParam="DTDATE,strInstCode,rt"></consistentGroup>
+			</checkFieldConsistent>	
+			<!-- HNYZ-GR-001|个人的代码任意两个相同，名称应一致。此处“代码”指国别代码+证件类型+证件号码 -->		
+			<checkFieldConsistent>
+				<consistentGroup keyField="SPLITFIELD" keyDiscription="国别代码-10-护照2号码" nameField="B" nameDiscription="姓名" procedureName="Check_NCR_3_2_HNYZ_GR_001_3" procedureDiscription="E213法定代表人、高管及重要关联人信息" procedureParam="DTDATE,strInstCode,rt"></consistentGroup>
+			</checkFieldConsistent>	
+			<!-- HNYZ-GR-001|个人的代码任意两个相同，名称应一致。此处“代码”指国别代码+证件类型+证件号码 -->		
+			<checkFieldConsistent>
+				<consistentGroup keyField="SPLITFIELD" keyDiscription="国别代码-10-护照N号码" nameField="B" nameDiscription="姓名" procedureName="Check_NCR_3_2_HNYZ_GR_001_4" procedureDiscription="E213法定代表人、高管及重要关联人信息" procedureParam="DTDATE,strInstCode,rt"></consistentGroup>
+			</checkFieldConsistent>	
+			<!-- HNYZ-GR-001|个人的代码任意两个相同，名称应一致。此处“代码”指国别代码+证件类型+证件号码 -->		
+			<checkFieldConsistent>
+				<consistentGroup keyField="SPLITFIELD" keyDiscription="国别代码-其他证件1类型-其他证件1号码" nameField="B" nameDiscription="姓名" procedureName="Check_NCR_3_2_HNYZ_GR_001_5" procedureDiscription="E213法定代表人、高管及重要关联人信息" procedureParam="DTDATE,strInstCode,rt"></consistentGroup>
+			</checkFieldConsistent>	
+			<!-- HNYZ-GR-001|个人的代码任意两个相同，名称应一致。此处“代码”指国别代码+证件类型+证件号码 -->		
+			<checkFieldConsistent>
+				<consistentGroup keyField="SPLITFIELD" keyDiscription="国别代码-其他证件N类型-其他证件N号码" nameField="B" nameDiscription="姓名" procedureName="Check_NCR_3_2_HNYZ_GR_001_6" procedureDiscription="E213法定代表人、高管及重要关联人信息" procedureParam="DTDATE,strInstCode,rt"></consistentGroup>
+			</checkFieldConsistent>																																		
+		</checkFieldConsistentList>	
+										
+	</checkInstance>
+</reportCheckRoot>

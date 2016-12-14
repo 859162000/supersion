@@ -1,0 +1,3055 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<beans 
+	xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns:p="http://www.springframework.org/schema/p"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-3.0.xsd">
+     
+     <!-- 反馈报文明细段 -->
+      <bean id="singleObjectFKBWShowListLevelFKBWAutoDTOMXService" parent="singleObjectShowListLevelAutoDTOMXService">
+         <property name="operationMap">
+            <map>
+                <entry key="查询" value="Select-FKBWShowList"></entry>
+                <entry key="重置" value="ReSet-ShowReSet"></entry>
+                <entry key="新增" value="Get-FKBWShowSaveLevelFKBWAutoDTOMX"></entry>
+                <entry key="删除" value="PostConfirm-DeleteListByIdList"></entry>
+                <entry key="返回" value="Get-BackPreviousFirst"></entry>
+            </map>
+        </property>
+       <property name="linkedMap">
+            <map>                           
+                <entry key="修改" value="Get-FKBWShowCheckUpdateLevelFKBWAutoDTOMX"></entry>
+            </map>                    
+        </property>
+        <property name="defaultProceseClassList">
+            <list>
+                <value>report.service.procese.ForReportStatusShowListProcess</value>
+                <value>framework.services.procese.ShowListProcese</value>
+                <value>framework.services.procese.LevelDataProcese</value>
+                <value>framework.services.procese.ShowListTreeProcese</value>
+                <value>framework.services.procese.SelectTagSortByNameProcese</value>
+                <value>framework.services.procese.ShowPowerButtonProcese</value>
+            </list>
+        </property>
+     </bean>
+     
+     <bean id="singleObjectFKBWShowSaveLevelFKBWAutoDTOMXService" parent="singleObjectShowSaveLevelAutoDTOMXService">
+      <property name="operationMap">
+            <map>
+                <entry key="保存" value="Post-FKBWSaveLevelFKBWAutoDTOMX"></entry>
+                <entry key="返回" value="Get-FKBWShowListLevelFKBWAutoDTOMX"></entry>
+            </map>
+        </property>
+     </bean>
+     
+     <bean id="singleObjectFKBWShowCheckUpdateLevelFKBWAutoDTOMXService" parent="singleObjectShowCheckUpdateLevelAutoDTOMXService">
+       <property name="operationMap">
+            <map>
+                <entry key="保存" value="Post-FKBWUpdateLevelFKBWAutoDTOMX"></entry> 
+                <entry key="返回" value="Get-FKBWShowListLevelFKBWAutoDTOMX"></entry>
+            </map>
+        </property>
+  	</bean>
+  
+  	<bean id="singleObjectFKBWShowInputSaveLevelFKBWAutoDTOMXService" parent="singleObjectShowInputSaveService">
+    <property name="operationMap">
+            <map>
+               <entry key="保存" value="Post-FKBWSaveLevelFKBWAutoDTOMX"></entry><!-- Post-FKBWValidateUpdate -->
+        	   <entry key="返回" value="Get-FKBWShowListLevelFKBWAutoDTOMX"></entry>
+            </map>
+        </property> 
+        <property name="defaultProceseClassList">
+            <list>
+                <value>report.service.procese.ForReportStatusShowHiddenProcess</value>
+                <value>framework.services.procese.ShowUpdateProcese</value>
+                <value>framework.services.procese.LevelDataProcese</value>
+                <value>framework.services.procese.SortFieldProcese</value>
+                <value>framework.services.procese.SelectTagSortByNameProcese</value>
+                <value>framework.services.procese.ShowPowerButtonProcese</value>
+                <value>framework.services.procese.SelectExtendProcess</value>
+            </list>
+        </property>
+    </bean>
+  
+  <bean id="singleObjectFKBWShowInputUpdateLevelFKBWAutoDTOMXService" parent="singleObjectShowInputUpdateService">
+    	 <property name="operationMap">
+            <map>
+                <entry key="保存" value="Post-FKBWUpdateLevelFKBWAutoDTOMX"></entry> 
+                <entry key="返回" value="Get-FKBWShowListLevelFKBWAutoDTOMX"></entry>
+            </map>
+         </property>
+        <property name="defaultProceseClassList">
+            <list>
+            <value>report.service.procese.ForReportStatusShowHiddenProcess</value>
+                <value>framework.services.procese.ShowUpdateProcese</value>
+                <value>framework.services.procese.LevelDataProcese</value>
+                <value>framework.services.procese.SortFieldProcese</value>
+                <value>framework.services.procese.SelectTagSortByNameProcese</value>
+                <value>framework.services.procese.ShowPowerButtonProcese</value>
+                <value>framework.services.procese.SelectExtendProcess</value>
+            </list>
+        </property>
+    </bean>
+    
+    <bean id="singleObjectFKBWSaveLevelFKBWAutoDTOMXService" parent="singleObjectSaveLevelAutoDTOMXService">
+     <property name="defaultCheckInstance" value="extend.dto.ReportModel_Table.strCheckInstance"></property>
+        <property name="defaultCheckClassList">
+            <list>
+                <value>framework.services.check.XMLSingleObjectContainClassInstanceCheck</value>
+            </list>
+        </property>
+        <property name="defaultAddClassList">
+            <list>
+                <value>framework.services.add.LevelDataAdd</value>
+                <value>framework.services.add.SystemInfoAdd</value>
+				<value>framework.services.add.DefaultValueAdd</value>
+				<value>framework.services.add.IsThousandthAdd</value>
+				<value>report.service.add.ReportAddCheckValue</value>
+            </list>
+        </property>
+         <property name="defaultProceseClassList">
+            <list>
+                <value>report.service.procese.UpdateReportStatusProcess</value>
+                <value>framework.services.procese.ShowPowerButtonProcese</value>
+            </list>
+        </property>
+     </bean>
+     
+      <bean id="singleObjectFKBWUpdateLevelFKBWAutoDTOMXService" parent="singleObjectUpdateLevelAutoDTOMXService">
+     </bean>
+     
+     <bean id="singleObjectFKBWShowSaveOrUpdateLevelFKBWAUTODTOMXService" parent="singleObjectShowSaveOrUpdateService">
+         <property name="operationMap">
+            <map>
+               <entry key="保存" value="Post-ReportUpdateList"></entry>
+                <entry key="返回" value="Get-BackPreviousFirst"></entry>
+            </map>
+        </property>
+     </bean>
+     
+     <!-- 反馈报文基础段 -->
+     <bean id="FKBWShowCheckUpdateLevelFKBWAutoDTOService" parent="singleObjectShowCheckUpdateService">
+     <property name="defaultCheckInstance" value="extend.dto.ReportModel_Table.strCheckInstance"></property>
+        <property name="operationMap">
+            <map>
+               <entry key="保存" value="Post-FKBWValidateUpdateLevelFKBWAutoDTO"></entry>
+            </map>
+        </property>
+        <property name="defaultCheckClassList">
+            <list>
+                <value>framework.services.check.XMLSingleObjectContainClassInstanceCheck</value>
+            </list>
+        </property>
+        <property name="defaultProceseClassList">
+            <list>
+                <value>framework.services.procese.ShowUpdateProcese</value>
+                <value>framework.services.procese.LevelDataProcese</value>
+                <value>framework.services.procese.SortFieldProcese</value>
+                <value>report.service.procese.ForReportStatusShowVisibleProcess</value>
+                <value>framework.services.procese.SelectTagSortByNameProcese</value>
+                <value>framework.services.procese.ShowPowerButtonProcese</value>
+                <value>framework.services.procese.SelectExtendProcess</value>
+            </list>
+        </property>
+       </bean>
+     
+     <bean id="singleObjectFKBWValidateUpdateLevelFKBWAutoDTOService" parent="singleObjectValidateUpdateService">
+       <property name="defaultCheckInstance" value="extend.dto.ReportModel_Table.strCheckInstance"></property>
+         <property name="defaultValueMap">
+             <map>
+             	<entry key="RPTSubmitStatus" value="1"></entry>
+                <entry key="RPTVerifyType" value="1"></entry>
+                <entry key="RPTCheckType" value="2"></entry>
+             </map>
+        </property>
+         <property name="defaultCheckClassList">
+            <list>
+                <value>framework.services.check.XMLSingleObjectContainClassInstanceCheck</value>
+                <value>framework.services.check.LogicPrimaryKeyCheck</value>
+            </list>
+        </property>
+        <property name="defaultProceseClassList">
+            <list>
+                <value>report.service.procese.UpdateJumpProcess</value>
+                <value>report.service.procese.AutoDTOUpdateFlowStatusProcess</value>
+                <value>framework.services.procese.ShowPowerButtonProcese</value>
+            </list>
+        </property>
+         <property name="defaultAddClassList">
+            <list>
+                <value>framework.services.add.LevelDataAdd</value>
+                <value>framework.services.add.DefaultValueAdd</value>
+                <value>framework.services.add.IsThousandthAdd</value>
+            </list>
+        </property>
+     </bean>
+     
+     <bean id="singleObjectFKBWShowInputCheckUpdateLevelFKBWAutoDTOService" parent="singleObjectShowInputUpdateService">
+       <property name="defaultCheckInstance" value="extend.dto.ReportModel_Table.strCheckInstance"></property>
+        <property name="operationMap">
+            <map>
+               <entry key="保存" value="Post-FKBWValidateUpdateLevelFKBWAutoDTO"></entry>
+            </map>
+        </property>
+        <property name="defaultProceseClassList">
+            <list>
+                <value>framework.services.procese.ShowUpdateProcese</value>
+                <value>framework.services.procese.LevelDataProcese</value>
+                <value>framework.services.procese.SortFieldProcese</value>
+                <value>report.service.procese.ForReportStatusShowVisibleProcess</value>
+                <value>framework.services.procese.SelectTagSortByNameProcese</value>
+                <value>framework.services.procese.ShowPowerButtonProcese</value>
+                <value>framework.services.procese.SelectExtendProcess</value>
+            </list>
+        </property>
+    </bean>
+    
+    <!-- 明细段查看 -->
+    <bean id="singleObjectCKShowListLevelMXCKService" parent="singleObjectShowListLevelService">
+         <property name="operationMap">
+            <map>
+                <entry key="导出" value="Post-MXExportAllData"></entry>
+                <entry key="返回" value="Get-BackPreviousFirst"></entry>
+                 <entry key="查询" value="Select-CKShowListLevelMXCK"></entry>
+            </map>
+        </property>
+       <property name="linkedMap">
+            <map>
+               <entry key="查看" value="Get-AutoDTOMXCKShowUpdateLevelMXCK"></entry> 
+            </map>                    
+        </property>
+         <property name="defaultProceseClassList">
+            <list>
+                <value>report.service.procese.ForReportStatusShowListProcess</value>
+                <value>framework.services.procese.ShowListProcese</value>
+                <value>framework.services.procese.LevelDataProcese</value>
+                <value>framework.services.procese.ShowListTreeProcese</value>
+                <value>framework.services.procese.SelectTagSortByNameProcese</value>
+                <value>report.service.procese.AutoDTOShowTableName</value>
+               <value>framework.services.procese.ShowPowerButtonProcese</value>
+            </list>
+        </property>
+        <property name="defaultValueMap">
+             <map>
+                 <entry key="RPTFeedbackType" value="1,2,3,4"></entry>
+             </map>
+        </property> 
+     </bean>
+     
+     <bean id="singleObjectAutoDTOMXCKShowUpdateLevelMXCKService" parent="singleObjectShowCheckUpdateLevelAutoDTOMXService">
+        <property name="operationMap">
+            <map>
+                 <entry key="返回" value="Get-CKShowListLevelMXCK"></entry>
+            </map>
+        </property>
+         <property name="defaultProceseClassList">
+           <list>
+             <value>report.service.procese.ForReportStatusShowHiddenProcess</value>
+             <value>framework.services.procese.ShowUpdateProcese</value>
+             <value>framework.services.procese.LevelDataProcese</value>
+             <value>framework.services.procese.SortFieldProcese</value>
+             <value>framework.services.procese.ShowViewProcese</value>
+             <value>framework.services.procese.ShowPowerButtonProcese</value>
+             <value>framework.services.procese.SelectExtendProcess</value>
+           </list>
+         </property>
+     </bean>
+     
+     <!-- 基础段查看 -->
+     <bean id="singleObjectCKShowListLevelAUTODTOService" parent="singleObjectShowListLevelService">
+         <property name="levelFieldMap">
+          <map>
+                <entry key="instInfo" value="instInfo"></entry>
+                <entry key="taskFlow.dtTaskDate" value="dtDate"></entry>
+          </map>
+         </property>
+        <property name="operationMap">
+            <map>
+            	<entry key="导出" value="Post-ExportData"></entry>
+                <entry key="查询" value="Select-CKShowListLevelAUTODTO"></entry>
+                <entry key="返回" value="Get-CKShowListForTree-report.dto.TaskModelInst"></entry>
+            </map>
+        </property>
+        <property name="linkedMap">
+            <map>
+                <entry key="查看" value="Get-ReportCKShowViewCancelLevelAUTODTO"></entry>
+            </map>
+        </property>
+        <property name="defaultProceseClassList">
+            <list>
+               <value>report.service.procese.ForReportStatusShowListProcess</value>
+                <value>framework.services.procese.ShowListProcese</value>
+                <value>framework.services.procese.LevelDataProcese</value>
+                <value>framework.services.procese.ShowListTreeProcese</value>
+                <value>framework.services.procese.SelectTagSortByNameProcese</value>
+                <value>framework.services.procese.ShowPowerButtonProcese</value>
+                <value>report.service.procese.AutoDTOShowTableName</value> 
+            </list>
+        </property>
+     </bean>
+     
+    <bean id="reportCKShowViewCancelLevelAUTODTOService" parent="singleObjectShowUpdateService">
+          <property name="operationMap">
+            <map>
+                <entry key="返回" value="Get-CKShowListLevelAUTODTO"></entry>
+            </map>
+        </property>
+         <property name="defaultProceseClassList">
+           <list>
+             <value>report.service.procese.ForReportStatusShowHiddenProcess</value>
+             <value>framework.services.procese.ShowUpdateProcese</value>
+             <value>framework.services.procese.LevelDataProcese</value>
+             <value>framework.services.procese.SortFieldProcese</value>
+             <value>framework.services.procese.ShowViewProcese</value>
+             <value>framework.services.procese.ShowPowerButtonProcese</value>
+             <value>framework.services.procese.SelectExtendProcess</value>
+           </list>
+		</property>
+	</bean>
+	
+	<bean id="singleObjectCKShowUpdateLevelAUTODTOService" parent="singleObjectShowUpdateService">
+          <property name="levelFieldMap">
+            <map>
+              <entry key="HiddenoperationUser" value="operationUser"></entry>
+              <entry key="HiddenlastUpdateDate" value="lastUpdateDate"></entry>
+              <entry key="instInfo" value="instInfo"></entry>
+              <entry key="taskFlow.dtTaskDate" value="dtDate"></entry>
+            </map>
+         </property>
+         <property name="operationMap">
+           <map>
+               <entry key="复制保存" value="Post-CopySave"></entry>
+               <entry key="返回" value="Get-ShowListLevelAUTODTO"></entry>
+           </map>
+       </property>
+         <property name="defaultProceseClassList">
+           <list>
+            <value>report.service.procese.ForReportStatusShowHiddenProcess</value>
+             <value>framework.services.procese.ShowUpdateProcese</value>
+             <value>framework.services.procese.LevelDataProcese</value>
+             <value>framework.services.procese.SortFieldProcese</value>
+             <value>framework.services.procese.ShowViewProcese</value>
+             <value>framework.services.procese.ShowPowerButtonProcese</value>
+             <value>framework.services.procese.SelectExtendProcess</value>
+           </list>
+         </property>
+     </bean>
+     
+     <!-- 任务层查看 -->
+     <bean id="CKShowTreeService" parent="taskModelInstShowTreeService">
+		<property name="operationMap">
+            <map>
+                <entry key="" value="Get-CKShowListForTree"></entry>
+            </map>
+        </property>
+	   	<property name="defaultProceseClassList">
+           <list>
+               <value>framework.services.procese.ShowTreeProcese</value>
+               <value>framework.services.procese.ShowPowerButtonProcese</value>
+           </list>
+       	</property>
+	</bean>
+	
+	<bean id="taskModelInstCKShowListForTreeService" parent="singleObjectShowListForTreeService">
+      <property name="showInstanceName" value="2"></property>
+      <property name="pageSize" value="20"></property>
+         <property name="operationMap">
+            <map>
+                <entry key="查询" value="Select-CKShowListForTree"></entry>
+                <entry key="导出" value="Post-ExportData"></entry> 
+            </map>
+        </property>
+          <property name="linkedMap">
+           <map>
+             <entry key="查看" value="Get-JumpByTypeLevelAUTODTO"></entry>
+           </map>
+         </property>
+         <property name="typeFieldName" value="reportModel_Table.strTableName"/><!-- 根据表名跳转 -->
+         <property name="defaultTranslateClassList">
+            <list>
+                <value>framework.services.translate.LevelDataTranslate</value>
+                <value>framework.services.translate.ConditionCriteriaTranslate</value>
+                <value>framework.services.translate.ConditionMultipleCriteriaTranslate</value>
+                <value>framework.services.translate.SecurityTranslate</value>
+		        <value>framework.services.translate.DefaultValueTranslate</value>
+		        <value>framework.services.translate.ShowListTreeTranslate</value>
+		        <value>report.service.translate.ShowTaskModelInstOrderByTableNameTranslate</value>
+            </list>
+        </property>
+     </bean>
+     
+     <!-- 明细段审核 -->
+	<bean id="singleObjectSHShowListLevelAUTODTOSHMXService" parent="singleObjectShowListLevelService">
+         <property name="operationMap">
+            <map>
+               <!-- <entry key="导出" value="Post-MXExportAllData"></entry> -->
+                <entry key="查询" value="Select-SHShowListLevelAUTODTOSHMX"></entry>
+                <entry key="重置" value="ReSet-ShowReSet"></entry>
+                <entry key="返回" value="Get-BackPreviousFirst"></entry>
+            </map>
+        </property>
+         <property name="linkedMap">
+            <map>                       
+                <entry key="查看" value="Get-SHShowUpdateLevelAUTODTOSHMX,,,forestgreen*RPTCheckType:2@RPTSendType:1,2"></entry>
+            </map>                     
+        </property>
+        <property name="defaultProceseClassList">
+            <list>
+               <value>report.service.procese.ForReportStatusShowListProcess</value>
+                <value>framework.services.procese.ShowListProcese</value>
+                <value>framework.services.procese.LevelDataProcese</value>
+                <value>framework.services.procese.ShowListTreeProcese</value>
+                <value>framework.services.procese.SelectTagSortByNameProcese</value>
+                <value>report.service.procese.IsShowOrHiddenForStatusField</value>
+                <value>framework.services.procese.ShowPowerButtonProcese</value>
+                <value>report.service.procese.AutoDTOShowTableName</value>
+            </list>
+        </property>
+        <property name="defaultTranslateClassList">
+            <list>
+                <value>framework.services.translate.LevelDataTranslate</value>
+                <value>framework.services.translate.ConditionCriteriaTranslate</value>
+                <value>framework.services.translate.SecurityTranslate</value>
+		        <value>framework.services.translate.DefaultValueTranslate</value>
+		        <value>framework.services.translate.ShowListTreeTranslate</value>
+		        <value>report.service.translate.MXOrderByYWFSRQTranslate</value>
+            </list>
+        </property>
+        <property name="defaultValueMap">
+             <map>
+                 <entry key="RPTFeedbackType" value="1,2,3,4"></entry>
+             </map>
+        </property> 
+    </bean>
+    
+    <bean id="singleObjectSHShowUpdateLevelAUTODTOSHMXService" parent="singleObjectShowUpdateService">
+          <property name="operationMap">
+            <map>
+                <entry key="返回" value="Get-SHShowListLevelAUTODTOSHMX"></entry>
+            </map>
+        </property>
+         <property name="defaultProceseClassList">
+           <list>
+            <value>report.service.procese.ForReportStatusShowHiddenProcess</value>
+             <value>framework.services.procese.ShowUpdateProcese</value>
+             <value>framework.services.procese.LevelDataProcese</value>
+             <value>framework.services.procese.SortFieldProcese</value>
+             <value>framework.services.procese.ShowViewProcese</value>
+             <value>framework.services.procese.ShowPowerButtonProcese</value>
+             <value>framework.services.procese.SelectExtendProcess</value>
+           </list>
+         </property>
+     </bean>
+     
+     <!-- 基础段审核-->
+      <bean id="singleObjectSHShowListLevelAUTODTOSHService" parent="singleObjectShowListLevelService">
+        <property name="showInstanceName" value="7"></property>
+         <property name="levelFieldMap">
+          <map>
+                <entry key="instInfo" value="instInfo"></entry>
+                <entry key="taskFlow.dtTaskDate" value="dtDate"></entry>
+          </map>
+         </property>
+        <property name="operationMap">
+            <map>
+                <entry key="通过审核" value="Post-ReportUpdateField"></entry>
+                <entry key="未通过审核" value="Post-ReportFalseUpdateField"></entry>
+            	<!-- <entry key="导出" value="Post-ExportData"></entry> -->
+                <entry key="查询" value="Select-SHShowListLevelAUTODTOSH"></entry>
+                <entry key="重置" value="ReSet-ShowReSet"></entry>
+                <entry key="返回" value="Get-SHReviewShowListForTree-report.dto.TaskModelInst"></entry>
+            </map>
+        </property>
+        <property name="linkedMap">
+            <map>
+                <entry key="基础段" value="Get-JumpByType,,,forestgreen*RPTSubmitStatus:2@RPTSendType:1,2"></entry>
+            </map>
+        </property>
+        <property name="typeFieldName" value="RPTVerifyType"/>
+        <property name="typeFieldValueMap">
+            <map>
+             <entry key="1" value="SHShowUpdateLevelAUTODTOSH"></entry>
+             <entry key="2" value="ReportSHShowViewCancelLevelAUTODTOSH"></entry>
+             <entry key="3" value="ReportSHShowViewResetLevelAUTODTOSH"></entry>
+            </map>
+        </property>
+        <property name="defaultValueMap">
+             <map>
+                <entry key="RPTSubmitStatus" value="2,4"></entry>
+                <entry key="RPTFeedbackType" value="1,2,3,4"></entry>
+             </map>
+        </property>
+        <property name="defaultProceseClassList">
+            <list>
+               <value>report.service.procese.ForReportStatusShowListProcess</value>
+                <value>framework.services.procese.ShowListProcese</value>
+                <value>framework.services.procese.LevelDataProcese</value>
+                <value>framework.services.procese.ShowListTreeProcese</value>
+                <value>framework.services.procese.SelectTagSortByNameProcese</value>
+                <value>report.service.procese.IsShowOrHiddenForStatusField</value>
+                <value>framework.services.procese.ShowPowerButtonProcese</value>
+                <value>report.service.procese.HiddenStatusConditionProcese</value>
+                <value>report.service.procese.AutoDTOShowTableName</value>
+            </list>
+        </property>
+        <property name="defaultTranslateClassList">
+            <list>
+                <value>framework.services.translate.LevelDataTranslate</value>
+                <value>framework.services.translate.ConditionCriteriaTranslate</value>
+                <value>report.service.translate.ComparisonConditionCriteriaTranslate</value>
+                <value>framework.services.translate.ConditionMultipleCriteriaTranslate</value>
+                <value>framework.services.translate.SecurityTranslate</value>
+		        <value>framework.services.translate.DefaultValueTranslate</value>
+		        <value>framework.services.translate.ShowListTreeTranslate</value>
+            </list>
+        </property>
+        <property name="defaultAddClassList">
+            <list>
+                <value>report.service.add.DefaultStatusValueMapAdd</value>
+            </list>
+        </property>
+     </bean>
+     
+     <bean id="ReportUpdateFieldService"  parent="singleObjectUpdateFieldService">
+       <property name="judgeFieldName" value="RPTSubmitStatus"></property>
+        <property name="fieldName" value="RPTVerifyType"></property>
+        <property name="fieldValue" value="2To2"></property>
+        <property name="successMessage" value="审核成功（已提交未报送才能审核）"></property>
+        <property name="errorMessage" value="审核失败（已提交未报送才能审核）"></property>
+        <property name="defaultTranslateClassList">
+            <list>
+                <value>framework.services.translate.IdAndIdListTypeTranslate</value>
+		        <value>report.service.translate.AutoDTOUpdateFlowStatusTranslate</value>
+            </list>
+        </property>
+        <property name="defaultProceseClassList">
+            <list>
+		         <value>report.service.procese.AutoDTOUpdateFlowStatusProcess</value>
+		        <value>framework.services.procese.ShowPowerButtonProcese</value>
+            </list>
+        </property>
+   </bean>
+   
+   <bean id="ReportFalseUpdateFieldService"  parent="singleObjectUpdateFieldService">
+       <property name="judgeFieldName" value="RPTSubmitStatus"></property>
+        <property name="fieldName" value="RPTVerifyType"></property>
+        <property name="fieldValue" value="2To3"></property>
+        <property name="successMessage" value="审核未通过成功（已提交未报送才能审核）"></property>
+        <property name="errorMessage" value="审核未通过失败（已提交未报送才能审核）"></property>
+         <property name="defaultTranslateClassList">
+            <list>
+                <value>framework.services.translate.IdAndIdListTypeTranslate</value>
+		        <value>report.service.translate.AutoDTOUpdateFlowStatusTranslate</value>
+            </list>
+        </property>
+        <property name="defaultProceseClassList">
+            <list>
+            	<value>report.service.procese.AutoDTOUpdateFlowStatusProcess</value>
+		        <value>framework.services.procese.ShowPowerButtonProcese</value>
+            </list>
+        </property>
+		 <property name="updateValueMap">
+            <map>
+               <entry key="RPTSubmitStatus" value="1"></entry>
+            </map>
+        </property>
+        <property name="defaultCheckClassList">
+            <list>
+            	<value>framework.services.check.IdListNullCheck</value>
+                <value>report.service.check.UpdateRPTVerifyTypeByRPTSendTypeCheck</value>
+            </list>	
+        </property>
+      </bean>
+      
+      <bean id="reportRPTVerifyTypeFalseUpdateFieldService"  parent="singleObjectUpdateFieldService">
+        <property name="judgeFieldName" value="RPTSubmitStatus"></property>
+        <property name="fieldName" value="RPTVerifyType"></property>
+        <property name="fieldValue" value="2To3"></property>
+        <property name="successMessage" value="审核未通过成功（已提交未报送才能审核）"></property>
+        <property name="errorMessage" value="审核未通过失败（已提交未报送才能审核）"></property>
+         <property name="defaultCheckClassList">
+            <list>
+             <value>report.service.check.UpdateRPTVerifyTypeByRPTSendTypeCheck</value>
+            </list>
+        </property>
+        <property name="defaultProceseClassList">
+            <list>
+		         <value>report.service.procese.AutoDTOUpdateFlowStatusProcess</value>
+		        <value>framework.services.procese.ShowPowerButtonProcese</value>
+            </list>
+        </property>
+        <property name="updateValueMap">
+            <map>
+               <entry key="RPTSubmitStatus" value="1"></entry>
+            </map>
+        </property>
+        <property name="defaultValueMap">
+             <map>
+                <entry key="operationUser" value="ObjectKeyEmptyToNull"></entry>
+             </map>
+        </property>
+         <property name="defaultAddClassList">
+            <list>
+                <value>framework.services.add.DefaultValueAdd</value>
+            </list>
+        </property>
+  </bean>
+      
+      
+      <bean id="reportRPTVerifyTypeUpdateFieldService"  parent="singleObjectUpdateFieldService">
+        <property name="defaultValueMap">
+             <map>
+                <entry key="operationUser" value="ObjectKeyEmptyToNull"></entry>
+             </map>
+        </property>
+        <property name="judgeFieldName" value="RPTSubmitStatus"></property>
+        <property name="fieldName" value="RPTVerifyType"></property>
+        <property name="fieldValue" value="2To2"></property>
+        <property name="successMessage" value="审核成功（已提交未报送才能审核）"></property>
+        <property name="errorMessage" value="审核失败（已提交未报送才能审核）"></property>
+       	 <property name="defaultCheckClassList">
+            <list>
+            </list>
+       	 </property>
+        <property name="defaultProceseClassList">
+            <list>
+		         <value>report.service.procese.AutoDTOUpdateFlowStatusProcess</value>
+		        <value>framework.services.procese.ShowPowerButtonProcese</value>
+            </list>
+        </property>
+        <property name="defaultAddClassList">
+            <list>
+                <value>framework.services.add.DefaultValueAdd</value>
+            </list>
+        </property>
+  </bean>
+  
+  	<bean id="reportSHShowViewCancelLevelAUTODTOSHService"  parent="singleObjectSHShowUpdateLevelAUTODTOSHService">
+        <property name="operationMap">
+            <map>
+                <entry key="审核未通过" value="Post-ReportRPTVerifyTypeFalseUpdateField"></entry> 
+                <entry key="返回" value="Get-SHShowListLevelAUTODTOSH"></entry>
+            </map> 
+        </property>
+  	</bean>  
+  	
+  	<bean id="reportSHShowViewResetLevelAUTODTOSHService"  parent="singleObjectSHShowUpdateLevelAUTODTOSHService">
+        <property name="operationMap">
+            <map>
+                <entry key="审核通过" value="Post-ReportRPTVerifyTypeUpdateField"></entry> 
+                <entry key="返回" value="Get-SHShowListLevelAUTODTOSH"></entry>
+            </map>
+        </property>
+        <property name="defaultProceseClassList">
+           <list>
+            <value>report.service.procese.ForReportStatusShowHiddenProcess</value>
+             <value>framework.services.procese.ShowUpdateProcese</value>
+             <value>framework.services.procese.LevelDataProcese</value>
+             <value>framework.services.procese.SortFieldProcese</value>
+             <value>framework.services.procese.ShowViewProcese</value>
+             <value>framework.services.procese.ShowPowerButtonProcese</value>
+             <value>framework.services.procese.SelectExtendProcess</value>
+           </list>
+         </property>
+  </bean> 
+  
+  	<!-- 明细段填报 -->
+	<bean id="singleObjectShowListLevelAutoDTOMXService" parent="singleObjectShowListLevelService">
+         <property name="defaultAddClassList">
+            <list>
+            </list>
+        </property>
+         <property name="operationMap">
+            <map>
+                <entry key="新增" value="Get-ShowSave"></entry>
+                <entry key="漏报新增" value="Get-OtherShowSave"></entry>
+                <entry key="删除" value="PostConfirm-AutoDTOMXDeleteListByIdList"></entry>
+<!--                 <entry key="条件删除" value="PostConfirm-ForReportDeleteByCondition"></entry> -->
+                <!--<entry key="导入" value="Upload-ForReportImportData"></entry>
+                <entry key="导出" value="Post-MXExportAllData"></entry>-->
+                <entry key="返回" value="Get-BackPreviousFirst"></entry>
+                <entry key="查询" value="Select-ShowList"></entry>
+                <entry key="重置" value="ReSet-ShowReSet"></entry>
+            </map>
+        </property>
+       <property name="linkedMap">
+            <map>
+               <!--  <entry key="修改" value="Get-ShowCheckUpdateLevelAutoDTOMX"></entry> -->
+               <entry key="修改" value="Get-JumpByTypeLevelAutoDTOMX,,,orangered*RPTCheckType:1%3|forestgreen*RPTCheckType:2@RPTSendType:1,2"></entry> 
+            </map>                    
+        </property>
+         <property name="defaultProceseClassList">
+            <list>
+                <value>report.service.procese.ForReportStatusShowListProcess</value>
+                <value>framework.services.procese.ShowListProcese</value>
+                <value>framework.services.procese.LevelDataProcese</value>
+                <value>framework.services.procese.ShowListTreeProcese</value>
+                <value>framework.services.procese.SelectTagSortByNameProcese</value>
+                <value>report.service.procese.AutoDTOShowTableName</value>
+                <value>report.service.procese.AutoDTOMXUpdateByJCRPTSubmitStatusProcess</value>
+               <value>framework.services.procese.ShowPowerButtonProcese</value>
+            </list>
+        </property>
+        <property name="defaultTranslateClassList">
+            <list>
+                <value>framework.services.translate.LevelDataTranslate</value>
+                <value>framework.services.translate.ConditionCriteriaTranslate</value>
+                <value>framework.services.translate.SecurityTranslate</value>
+		        <value>framework.services.translate.DefaultValueTranslate</value>
+		        <value>framework.services.translate.ShowListTreeTranslate</value>
+		        <value>report.service.translate.MXOrderByYWFSRQTranslate</value>
+            </list>
+        </property>
+        <property name="typeFieldName" value="RPTSendType"/>
+        <property name="typeFieldValueMap">
+            <map>
+                <entry key="1" value="ShowCheckUpdateLevelAutoDTOMX"></entry>
+                <entry key="2" value="ShowCheckViewLevelAutoDTOMX"></entry>
+            </map>
+        </property>
+        <property name="defaultValueMap">
+             <map>
+                 <entry key="RPTFeedbackType" value="1,2,3,4"></entry>
+             </map>
+        </property> 
+     </bean>
+  
+  	<bean id="singleObjectShowViewLevelAutoDTOMXService" parent="singleObjectShowListLevelAutoDTOMXService">
+        <property name="operationMap">
+            <map>
+                <entry key="返回" value="Get-BackPreviousFirst"></entry>
+            </map>
+        </property>
+       <property name="linkedMap">
+            <map>
+                <entry key="修改" value="Get-ShowCheckViewLevelAutoDTOMX,,,orangered*RPTCheckType:1%3|forestgreen*RPTCheckType:2@RPTSendType:1"></entry>
+            </map>                    
+        </property>
+     </bean>
+  	
+ 	 <bean id="singleObjectShowSaveLevelAutoDTOMXService" parent="singleObjectShowSaveService">
+      <property name="operationMap">
+            <map>
+                <entry key="保存" value="Post-SaveLevelAutoDTOMX"></entry>
+                <entry key="返回" value="Get-ShowListLevelAutoDTOMX"></entry>
+            </map>
+        </property>
+        <property name="defaultProceseClassList">
+            <list>
+               <value>report.service.procese.ForReportStatusShowHiddenProcess</value>
+                <value>framework.services.procese.ShowSaveProcese</value>
+                <value>report.service.procese.ReportShowSaveOrUpdateProcese</value>
+                <value>framework.services.procese.LevelDataProcese</value>
+		        <value>framework.services.procese.DefaultValueProcese</value>
+		        <value>framework.services.procese.ShowListTreeProcese</value>
+		        <value>framework.services.procese.SortFieldProcese</value>
+		        <value>framework.services.procese.SelectTagSortByNameProcese</value>
+		        <value>framework.services.procese.ShowPowerButtonProcese</value>
+		         <value>framework.services.procese.ShowModelListProceses</value>
+		          <value>framework.services.procese.SelectExtendProcess</value>
+            </list>
+        </property>
+     </bean>
+  	
+  	<bean id="otherShowSaveService" parent="singleObjectShowSaveLevelAutoDTOMXService">
+     	<property name="defaultProceseClassList">
+            <list>
+               <value>report.service.procese.ForReportStatusShowHiddenProcess</value>
+                <value>framework.services.procese.ShowSaveProcese</value>
+                <value>report.service.procese.ReportShowSaveOrUpdateProcese</value>
+                <value>framework.services.procese.LevelDataProcese</value>
+		        <value>framework.services.procese.DefaultValueProcese</value>
+		        <value>framework.services.procese.ShowListTreeProcese</value>
+		        <value>framework.services.procese.SortFieldProcese</value>
+		        <value>framework.services.procese.SelectTagSortByNameProcese</value>
+		        <value>framework.services.procese.ShowPowerButtonProcese</value>
+		        <value>framework.services.procese.SelectExtendProcess</value>
+            </list>
+        </property> 
+        <property name="operationMap">
+            <map>
+                <entry key="保存" value="Post-OtherSave"></entry>
+                <entry key="返回" value="Get-ShowListLevelAutoDTOMX"></entry>
+            </map>
+        </property>
+     </bean>
+  		
+  	<bean id="singleObjectShowUpdateLevelAutoDTOMXService" parent="singleObjectShowUpdateService">
+        <property name="operationMap">
+            <map>
+                <entry key="保存" value="Post-UpdateLevelAutoDTOMX"></entry>
+                <entry key="复制保存" value="Post-MXCopySaveLevelAutoDTOMX"></entry>
+               <!-- <entry key="返回" value="Get-BackPreviousFirst"></entry>  -->
+               <entry key="返回" value="Get-ShowListLevelAutoDTOMX"></entry>
+            </map>
+        </property>
+         <property name="defaultProceseClassList">
+            <list>
+                <value>report.service.procese.ForReportStatusShowHiddenProcess</value>
+                <value>framework.services.procese.ShowUpdateProcese</value>
+                <value>report.service.procese.ReportShowSaveOrUpdateProcese</value>
+                <value>framework.services.procese.LevelDataProcese</value>
+                <value>framework.services.procese.SortFieldProcese</value>
+                <value>framework.services.procese.SelectTagSortByNameProcese</value>
+                <value>framework.services.procese.ShowPowerButtonProcese</value>
+                <value>framework.services.procese.ShowModelListProceses</value>
+                 <value>framework.services.procese.SelectExtendProcess</value>
+            </list>
+        </property>
+     </bean>
+     
+     <bean id="singleObjectShowCheckUpdateLevelAutoDTOMXService" parent="singleObjectShowCheckUpdateService">
+        <property name="defaultCheckInstance" value="extend.dto.ReportModel_Table.strCheckInstance"></property>
+         <property name="defaultCheckClassList">
+            <list>
+                <value>framework.services.check.XMLSingleObjectContainClassInstanceCheck</value>
+            </list>
+        </property>
+        <property name="operationMap">
+            <map>
+                <entry key="保存" value="Post-UpdateLevelAutoDTOMX"></entry>
+                <entry key="复制保存" value="Post-MXCopySaveLevelAutoDTOMX"></entry>
+                <entry key="返回" value="Get-ShowListLevelAutoDTOMX"></entry>
+            </map>
+        </property>
+        <property name="defaultProceseClassList">
+            <list>
+                <value>report.service.procese.ForReportStatusShowHiddenProcess</value>
+                <value>framework.services.procese.ShowUpdateProcese</value>
+                <value>framework.services.procese.LevelDataProcese</value>
+                <value>framework.services.procese.SortFieldProcese</value>
+                <value>framework.services.procese.SelectTagSortByNameProcese</value>
+                <value>framework.services.procese.ShowPowerButtonProcese</value>
+                <value>framework.services.procese.SelectExtendProcess</value>
+            </list>
+        </property>
+     </bean>
+     
+     <bean id="singleObjectShowCheckViewLevelAutoDTOMXService" parent="singleObjectShowCheckUpdateLevelAutoDTOMXService">
+        <property name="operationMap">
+            <map>
+                <entry key="复制保存" value="Post-MXCopySaveLevelAutoDTOMX"></entry>
+                 <entry key="返回" value="Get-ShowListLevelAutoDTOMX"></entry>
+               <!--  <entry key="返回" value="Get-ShowViewLevelAutoDTOMX"></entry> -->
+            </map>
+        </property>
+         <property name="defaultProceseClassList">
+           <list>
+             <value>report.service.procese.ForReportStatusShowHiddenProcess</value>
+             <value>framework.services.procese.ShowUpdateProcese</value>
+             <value>framework.services.procese.LevelDataProcese</value>
+             <value>framework.services.procese.SortFieldProcese</value>
+             <value>framework.services.procese.ShowViewProcese</value>
+             <value>framework.services.procese.ShowPowerButtonProcese</value>
+             <value>framework.services.procese.SelectExtendProcess</value>
+           </list>
+         </property>
+     </bean>
+     
+  	<bean id="singleObjectShowInputSaveLevelAutoDTOMXService" parent="singleObjectShowInputSaveService">
+       <property name="defaultProceseClassList">
+            <list>
+               <value>report.service.procese.ForReportStatusShowHiddenProcess</value>
+                <value>framework.services.procese.ShowUpdateProcese</value>
+                <value>report.service.procese.ReportShowSaveOrUpdateProcese</value>
+                <value>framework.services.procese.LevelDataProcese</value>
+		        <value>framework.services.procese.DefaultValueProcese</value>
+		        <value>framework.services.procese.ShowListTreeProcese</value>
+		        <value>framework.services.procese.SortFieldProcese</value>
+		        <value>framework.services.procese.SelectTagSortByNameProcese</value>
+		        <value>framework.services.procese.ShowPowerButtonProcese</value>
+		        <value>framework.services.procese.SelectExtendProcess</value>
+            </list>
+        </property>
+    </bean>
+    
+    <bean id="singleObjectShowInputUpdateLevelAutoDTOMXService" parent="singleObjectShowInputSaveLevelAutoDTOMXService">
+   	 <property name="operationMap">
+            <map>
+                <entry key="保存" value="Post-Update"></entry>
+                <entry key="返回" value="Get-BackFirst"></entry>
+            </map>
+        </property>
+         <property name="defaultProceseClassList">
+            <list>
+                <value>report.service.procese.ForReportStatusShowHiddenProcess</value>
+                <value>framework.services.procese.ShowUpdateProcese</value>
+                <value>report.service.procese.ReportShowSaveOrUpdateProcese</value>
+                <value>framework.services.procese.LevelDataProcese</value>
+                <value>framework.services.procese.SortFieldProcese</value>
+                <value>framework.services.procese.SelectTagSortByNameProcese</value>
+                <value>framework.services.procese.ShowPowerButtonProcese</value>
+                <value>framework.services.procese.SelectExtendProcess</value>
+            </list>
+        </property>
+    </bean>
+    
+    <bean id="singleObjectShowInputCheckUpdateLevelAutoDTOMXService" parent="singleObjectShowInputSaveService">
+         <property name="operationMap">
+            <map>
+                <entry key="保存" value="Post-UpdateLevelAutoDTOMX"></entry>
+                <entry key="返回" value="Get-ShowListLevelAutoDTOMX"></entry>
+            </map>
+        </property>
+         <property name="defaultProceseClassList">
+            <list>
+                <value>report.service.procese.ForReportStatusShowHiddenProcess</value>
+                <value>framework.services.procese.ShowUpdateProcese</value>
+                <value>framework.services.procese.LevelDataProcese</value>
+                <value>framework.services.procese.SortFieldProcese</value>
+                <value>framework.services.procese.SelectTagSortByNameProcese</value>
+                <value>framework.services.procese.ShowPowerButtonProcese</value>
+                <value>framework.services.procese.SelectExtendProcess</value>
+            </list>
+        </property>
+    </bean>
+    
+    <bean id="singleObjectJCShowInputMXCopySaveLevelAutoDTOMXService" parent="singleObjectShowInputSaveService">
+       <property name="operationMap">
+            <map>
+                <entry key="保存" value="Post-Save"></entry>
+                <entry key="返回" value="Get-BackFirst"></entry>
+            </map>
+        </property>
+        <property name="defaultProceseClassList">
+            <list>
+                <value>report.service.procese.ForReportStatusShowHiddenProcess</value>
+                <value>framework.services.procese.ShowUpdateProcese</value>
+                <value>framework.services.procese.LevelDataProcese</value>
+                <value>framework.services.procese.SortFieldProcese</value>
+                <value>framework.services.procese.SelectTagSortByNameProcese</value>
+                <value>framework.services.procese.ShowPowerButtonProcese</value>
+                <value>framework.services.procese.SelectExtendProcess</value>
+            </list>
+        </property>
+    </bean>
+    
+    <bean id="otherShowInputSaveService" parent="singleObjectShowInputSaveService">
+      <property name="operationMap">
+            <map>
+                <entry key="保存" value="Post-OtherSave"></entry>
+                <entry key="返回" value="Get-ShowListLevelAutoDTOMX"></entry>
+            </map>
+        </property>
+        <property name="defaultProceseClassList">
+            <list>
+                <value>framework.services.procese.ShowUpdateProcese</value>
+                <value>framework.services.procese.LevelDataProcese</value>
+                <value>framework.services.procese.SortFieldProcese</value>
+                <value>framework.services.procese.SelectTagSortByNameProcese</value>
+                <value>framework.services.procese.ShowPowerButtonProcese</value>
+                <value>framework.services.procese.SelectExtendProcess</value>
+            </list>
+        </property>
+     </bean>
+    
+     
+    
+    <bean id="singleObjectUpdateLevelAutoDTOMXService" parent="singleObjectUpdateService">
+     <property name="defaultCheckInstance" value="extend.dto.ReportModel_Table.strCheckInstance"></property>
+        <property name="defaultCheckClassList">
+            <list>
+                <value>framework.services.check.XMLSingleObjectContainClassInstanceCheck</value>
+            </list>
+        </property>
+         <property name="defaultProceseClassList">
+           <list>
+               <value>report.service.procese.AutoDTOUpdateFlowStatusProcess</value>
+               <value>framework.services.procese.ShowPowerButtonProcese</value>
+           </list>
+       </property>
+       <property name="defaultValueMap">
+             <map>
+                <entry key="RPTCheckType" value="2"></entry>
+             </map>
+        </property>
+        <property name="defaultAddClassList">
+            <list>
+                <value>framework.services.add.LevelDataAdd</value>
+                <value>framework.services.add.DefaultValueAdd</value>
+                <value>framework.services.add.IsThousandthAdd</value>
+            </list>
+        </property>
+     </bean>
+     
+     <bean id="singleObjectMXCopySaveLevelAutoDTOMXService" parent="singleObjectSaveService">
+     <property name="defaultCheckInstance" value="extend.dto.ReportModel_Table.strCheckInstance"></property>
+        <property name="defaultAddClassList">
+            <list>
+                <value>framework.services.add.LevelDataAdd</value>
+                <value>framework.services.add.SystemInfoAdd</value>
+				<value>framework.services.add.DefaultValueAdd</value>
+				<value>framework.services.add.IsThousandthAdd</value>
+				<value>framework.services.add.CopySaveAdd</value>
+            </list>
+        </property>
+        <property name="defaultCheckClassList">
+            <list>
+                <value>framework.services.check.XMLSingleObjectContainClassInstanceCheck</value>
+            </list>
+        </property>
+        <property name="defaultValueMap">
+             <map>
+                <entry key="RPTCheckType" value="2"></entry>
+                <entry key="RPTSendType" value="1"></entry>
+                <entry key="RPTFeedbackType" value="1"></entry>
+                <entry key="extend2" value=""></entry>
+                <entry key="extend1" value=""></entry>
+             </map>
+        </property>
+          <property name="defaultProceseClassList">
+           <list>
+               <value>report.service.procese.AutoDTOUpdateFlowStatusProcess</value>
+           </list>
+       </property>
+     </bean>
+    
+    <bean id="otherSaveService" parent="singleObjectSaveLevelAutoDTOMXService">
+     	<property name="defaultCheckClassList">
+            <list>
+                <value>framework.services.check.XMLSingleObjectContainClassInstanceCheck</value>
+            </list>
+        </property>
+     </bean>
+     
+     <bean id="singleObjectMXExportAllDataService" parent="ExportAllDataService">
+     <property name="levelFieldMap">
+          <map>
+          </map>
+        </property>
+     </bean>
+     
+     <bean id="autoDTOMXDeleteListByIdListService" parent="singleObjectDeleteListByIdListService">
+       <property name="defaultTranslateClassList">
+           <list>
+               <value>report.service.translate.AutoDTOUpdateFlowStatusTranslate</value>
+           </list>
+       </property>
+        <property name="defaultProceseClassList">
+           <list>
+               <value>report.service.procese.AutoDTOUpdateFlowStatusProcess</value>
+           </list>
+       </property>
+       <property name="defaultCheckClassList">
+            <list>
+                <value>framework.services.check.IdListNullCheck</value>
+                <value>framework.services.check.DeleteDependentDataCheck</value>
+                <value>report.service.check.AutoDTODeleteByJCSubmitStatusAndMXSendTypeCheck</value>
+            </list>
+        </property>
+     </bean>
+     
+     <!-- 基础段填报 -->
+     <bean id="singleObjectShowListLevelAUTODTOService" parent="singleObjectShowListLevelService">
+        <property name="levelFieldMap">
+          <map>
+                <entry key="instInfo" value="instInfo"></entry>
+                <entry key="taskFlow.dtTaskDate" value="dtDate"></entry>
+          </map>
+         </property>
+         <property name="operationMap">
+            <map>
+                <entry key="查询" value="Select-ShowList"></entry>
+                <entry key="重置" value="ReSet-ShowReSet"></entry>
+                <entry key="新增" value="Get-ShowSaveLevelAUTODTO"></entry>
+                <entry key="删除" value="PostConfirm-ForReportDeleteListByIdList"></entry>
+<!--                 <entry key="条件删除" value="PostConfirm-ForReportDeleteByCondition"></entry> -->
+                <!--<entry key="清空数据" value="PostConfirm-CommonSCListUpdateField"></entry>-->
+                <entry key="提交" value="Post-RptSubmitStatusUpdateField"></entry>
+                <!--<entry key="导入" value="Upload-ForReportImportData"></entry> 
+                <entry key="导出" value="Post-ExportAllData"></entry>-->
+                <entry key="返回" value="Get-BackPreviousFirst"></entry>
+            </map>
+        </property>
+        <property name="linkedMap">
+            <map>
+                  <entry key="基础段" value="Get-JumpByType,,,orangered*RPTCheckType:1%3%4|forestgreen*RPTCheckType:2@RPTSendType:1,2"></entry>
+            </map>
+        </property>							
+        <property name="typeFieldName" value="RPTSubmitStatus"/>
+        <property name="typeFieldValueMap">
+            <map>
+             <entry key="1" value="ShowCheckUpdateLevelAUTODTO"></entry>
+             <entry key="2" value="CKShowUpdateLevelAUTODTO"></entry>
+             <entry key="3" value="ShowCheckUpdateLevelAUTODTO"></entry>
+             <entry key="4" value="ShowCheckUpdateLevelAUTODTO"></entry>
+            </map>
+        </property>
+        <property name="defaultValueMap">
+             <map>
+                <entry key="RPTSubmitStatus" value="1,2,3"></entry>
+                <entry key="RPTFeedbackType" value="1,2,3,4"></entry>
+             </map>
+        </property> 
+       <property name="defaultProceseClassList">
+            <list>
+                <value>report.service.procese.ForReportStatusShowListProcess</value>
+                <value>framework.services.procese.ShowListProcese</value>
+                <value>framework.services.procese.LevelDataProcese</value>
+                <value>framework.services.procese.ShowListTreeProcese</value>
+                <value>framework.services.procese.SelectTagSortByNameProcese</value>
+                <value>report.service.procese.AutoDTOShowTableName</value>
+                <value>framework.services.procese.ShowPowerButtonProcese</value>
+                <value>report.service.procese.HiddenStatusConditionProcese</value>
+            </list>
+        </property>
+        <property name="defaultTranslateClassList">
+            <list>
+                <value>framework.services.translate.LevelDataTranslate</value>
+                <value>framework.services.translate.ConditionCriteriaTranslate</value>
+                <value>framework.services.translate.SecurityTranslate</value>
+		        <value>framework.services.translate.DefaultValueTranslate</value>
+		        <value>framework.services.translate.ShowListTreeTranslate</value>
+		        <value>report.service.translate.OrderBySqlFormulaTranslate</value>
+		        <value>framework.services.translate.ConditionMultipleCriteriaTranslate</value>
+            </list>
+        </property>
+        <property name="defaultAddClassList">
+            <list>
+                <value>report.service.add.DefaultStatusValueMapAdd</value>
+            </list>
+        </property>
+     </bean>
+     
+     <bean id="singleObjectShowSaveLevelAUTODTOService" parent="singleObjectShowSaveService">
+        <property name="levelFieldMap">
+          <map>
+                <entry key="instInfo" value="instInfo"></entry>
+                <entry key="taskFlow.dtTaskDate" value="dtDate"></entry>
+                <entry key="HiddenRPTCheckType" value="RPTCheckType"></entry>
+                <entry key="HiddenRPTSendType" value="RPTSendType"></entry>
+                <entry key="HiddenRPTVerifyType" value="RPTVerifyType"></entry>
+                <entry key="HiddenoperationUser" value="operationUser"></entry>
+                <entry key="HiddenlastUpdateDate" value="lastUpdateDate"></entry>
+                <entry key="HiddenRPTSubmitStatus" value="RPTSubmitStatus"></entry>
+                <entry key="HiddenRPTFeedbackType" value="RPTFeedbackType"></entry> 
+         </map>
+         </property>
+         <property name="defaultProceseClassList">
+            <list>
+                <value>report.service.procese.ForReportStatusShowHiddenProcess</value>
+                <value>framework.services.procese.ShowSaveProcese</value>
+                <value>framework.services.procese.LevelDataProcese</value>
+		        <value>framework.services.procese.DefaultValueProcese</value>
+		        <value>framework.services.procese.ShowListTreeProcese</value>
+		        <value>framework.services.procese.SortFieldProcese</value>
+		        <value>framework.services.procese.SelectTagSortByNameProcese</value>
+		        <value>framework.services.procese.ShowPowerButtonProcese</value>
+		         <value>framework.services.procese.SelectExtendProcess</value>
+            </list>
+        </property>
+     </bean>
+     
+     <bean id="singleObjectShowUpdateLevelAUTODTOService" parent="singleObjectShowUpdateService">
+        <property name="levelFieldMap">
+          <map>
+                <entry key="instInfo" value="instInfo"></entry>
+                <entry key="taskFlow.dtTaskDate" value="dtDate"></entry>
+                <entry key="HiddenRPTCheckType" value="RPTCheckType"></entry>
+                <entry key="HiddenRPTSendType" value="RPTSendType"></entry>
+                 <entry key="HiddenRPTVerifyType" value="RPTVerifyType"></entry>
+                <entry key="HiddenoperationUser" value="operationUser"></entry>
+                <entry key="HiddenlastUpdateDate" value="lastUpdateDate"></entry>
+                <entry key="HiddenRPTSubmitStatus" value="RPTSubmitStatus"></entry>
+                <entry key="HiddenRPTFeedbackType" value="RPTFeedbackType"></entry> 
+          </map>
+         </property>
+          <property name="defaultProceseClassList">
+            <list>
+                <value>report.service.procese.ForReportStatusShowHiddenProcess</value>
+                <value>framework.services.procese.ShowUpdateProcese</value>
+                <value>framework.services.procese.LevelDataProcese</value>
+                <value>framework.services.procese.SortFieldProcese</value>
+                <value>framework.services.procese.SelectTagSortByNameProcese</value>
+                <value>framework.services.procese.ShowPowerButtonProcese</value>
+                <value>framework.services.procese.SelectExtendProcess</value>
+            </list>
+        </property>
+         <property name="operationMap">
+            <map>
+                <entry key="保存" value="Post-Update"></entry>
+                 <entry key="复制保存" value="Post-CopySave"></entry>
+                <entry key="返回" value="Get-BackFirst"></entry>
+            </map>
+        </property>
+     </bean>
+     
+      <bean id="singleObjectShowCheckUpdateLevelAUTODTOService" parent="singleObjectShowCheckUpdateService">
+        <property name="defaultCheckInstance" value="extend.dto.ReportModel_Table.strCheckInstance"></property>
+         <property name="levelFieldMap">
+          <map>
+                <entry key="instInfo" value="instInfo"></entry>
+                <entry key="taskFlow.dtTaskDate" value="dtDate"></entry>
+                 <entry key="HiddenRPTCheckType" value="RPTCheckType"></entry>
+                <entry key="HiddenRPTSendType" value="RPTSendType"></entry>
+                 <entry key="HiddenRPTVerifyType" value="RPTVerifyType"></entry>
+                <entry key="HiddenoperationUser" value="operationUser"></entry>
+                <entry key="HiddenlastUpdateDate" value="lastUpdateDate"></entry>
+                <entry key="HiddenRPTSubmitStatus" value="RPTSubmitStatus"></entry>
+                <entry key="HiddenRPTFeedbackType" value="RPTFeedbackType"></entry> 
+          </map>
+         </property>
+         <property name="defaultCheckClassList">
+            <list>
+                <value>framework.services.check.XMLSingleObjectContainClassInstanceCheck</value>
+            </list>
+        </property>
+        <property name="defaultProceseClassList">
+            <list>
+               <value>report.service.procese.ForReportStatusShowHiddenProcess</value>
+                <value>framework.services.procese.ShowUpdateProcese</value>
+                <value>framework.services.procese.LevelDataProcese</value>
+                <value>framework.services.procese.SortFieldProcese</value>
+                <value>framework.services.procese.SelectTagSortByNameProcese</value>
+                <value>framework.services.procese.ShowPowerButtonProcese</value>
+                 <value>framework.services.procese.SelectExtendProcess</value>
+            </list>
+        </property>
+         <property name="operationMap">
+            <map>
+                <entry key="保存" value="Post-Update"></entry>
+                 <entry key="复制保存" value="Post-CopySave"></entry>
+                <entry key="返回" value="Get-BackFirst"></entry>
+            </map>
+        </property>
+     </bean>
+     
+     <bean id="singleObjectShowInputSaveLevelAUTODTOService" parent="singleObjectShowInputSaveService">
+       <property name="defaultProceseClassList">
+            <list>
+                <value>report.service.procese.ForReportStatusShowHiddenProcess</value>
+                <value>framework.services.procese.ShowUpdateProcese</value>
+                <value>framework.services.procese.LevelDataProcese</value>
+                <value>framework.services.procese.SortFieldProcese</value>
+                <value>framework.services.procese.SelectTagSortByNameProcese</value>
+                <value>framework.services.procese.ShowPowerButtonProcese</value>
+                <value>framework.services.procese.SelectExtendProcess</value>
+            </list>
+        </property>
+    </bean>
+     
+     <bean id="singleObjectShowInputUpdateLevelAUTODTOService" parent="singleObjectShowInputSaveLevelAUTODTOService">
+   	 <property name="operationMap">
+            <map>
+                <entry key="保存" value="Post-Update"></entry>
+                <entry key="复制保存" value="Post-CopySave"></entry>
+                <entry key="返回" value="Get-BackFirst"></entry>
+            </map>
+        </property>
+         <property name="defaultProceseClassList">
+            <list>
+                <value>report.service.procese.ForReportStatusShowHiddenProcess</value>
+                <value>framework.services.procese.ShowUpdateProcese</value>
+                <value>framework.services.procese.LevelDataProcese</value>
+                <value>framework.services.procese.SortFieldProcese</value>
+                <value>framework.services.procese.SelectTagSortByNameProcese</value>
+                <value>framework.services.procese.ShowPowerButtonProcese</value>
+                <value>framework.services.procese.SelectExtendProcess</value>
+            </list>
+        </property>
+    </bean>
+     
+     <bean id="singleObjectJCShowInputCopySaveLevelAUTODTOService" parent="singleObjectShowInputSaveService">
+       <property name="operationMap">
+            <map>
+                <entry key="保存" value="Post-Save"></entry>
+                <entry key="返回" value="Get-BackFirst"></entry>
+            </map>
+        </property>
+        <property name="defaultProceseClassList">
+            <list>
+                <value>report.service.procese.ForReportStatusShowHiddenProcess</value>
+                <value>framework.services.procese.ShowUpdateProcese</value>
+                <value>framework.services.procese.LevelDataProcese</value>
+                <value>framework.services.procese.SortFieldProcese</value>
+                <value>framework.services.procese.SelectTagSortByNameProcese</value>
+                <value>framework.services.procese.ShowPowerButtonProcese</value>
+                <value>framework.services.procese.SelectExtendProcess</value>
+            </list>
+        </property>
+    </bean>
+    
+    <bean id="noMXShowInputSaveService" parent="singleObjectShowInputSaveService">
+     <property name="showInstanceName" value="2"></property>
+      <property name="operationMap">
+            <map>
+                <entry key="保存" value="Post-NoMXSave"></entry>
+                <entry key="返回" value="Get-ShowListLevelAUTODTO"></entry>
+            </map>
+        </property>
+     </bean>
+    
+    <bean id="singleObjectSaveLevelAUTODTOService" parent="singleObjectSaveService">
+     <property name="defaultCheckInstance" value="extend.dto.ReportModel_Table.strCheckInstance"></property>
+        <property name="defaultValueMap">
+             <map>
+                <entry key="RPTVerifyType" value="1"></entry>
+                <entry key="RPTCheckType" value="2"></entry>
+                <entry key="RPTSendType" value="1"></entry>
+                <entry key="RPTFeedbackType" value="1"></entry>
+                <entry key="RPTSubmitStatus" value="1"></entry>
+                <entry key="operationUser" value="LoginUserInfo"></entry>
+                <entry key="lastUpdateDate" value="SystemDate"></entry>
+             </map>
+        </property>
+        <property name="defaultCheckClassList">
+            <list>
+               <!--  <value>framework.services.check.PrimaryKeyRepeatCheck</value> -->
+                <value>framework.services.check.XMLSingleObjectContainClassInstanceCheck</value>
+                <value>framework.services.check.LogicPrimaryKeyCheck</value>
+            </list>
+        </property>
+         <property name="defaultProceseClassList">
+            <list>
+		        <value>report.service.procese.AutoDTOUpdateFlowStatusProcess</value>
+		        <value>framework.services.procese.ShowPowerButtonProcese</value>
+            </list>
+        </property>
+        <property name="defaultAddClassList">
+            <list>
+                <value>framework.services.add.LevelDataAdd</value>
+                <value>framework.services.add.SystemInfoAdd</value>
+				<value>framework.services.add.DefaultValueAdd</value>
+				<value>framework.services.add.IsThousandthAdd</value>
+            </list>
+        </property>
+     </bean>
+     
+     <bean id="singleObjectUpdateLevelAUTODTOService" parent="singleObjectUpdateService">
+     <property name="defaultCheckInstance" value="extend.dto.ReportModel_Table.strCheckInstance"></property>
+        <property name="defaultValueMap">
+             <map>
+             	<entry key="RPTSubmitStatus" value="1"></entry>
+                <entry key="RPTVerifyType" value="1"></entry>
+                <entry key="RPTCheckType" value="2"></entry>
+                <entry key="operationUser" value="LoginUserInfo"></entry>
+                <entry key="lastUpdateDate" value="SystemDate"></entry>
+             </map>
+        </property>
+        <property name="defaultCheckClassList">
+            <list>
+                <value>framework.services.check.XMLSingleObjectContainClassInstanceCheck</value>
+                <value>framework.services.check.LogicPrimaryKeyCheck</value>
+            </list>
+        </property>
+         <property name="defaultProceseClassList">
+            <list>
+		       <value>report.service.procese.AutoDTOUpdateFlowStatusProcess</value>
+		        <value>framework.services.procese.ShowPowerButtonProcese</value>
+            </list>
+        </property>
+        <property name="defaultAddClassList">
+            <list>
+                <value>framework.services.add.LevelDataAdd</value>
+                <value>framework.services.add.DefaultValueAdd</value>
+                <value>framework.services.add.IsThousandthAdd</value>
+            </list>
+        </property>
+     </bean>
+     
+     <bean id="singleObjectCopySaveLevelAUTODTOService" parent="singleObjectSaveService">
+     <property name="defaultCheckInstance" value="extend.dto.ReportModel_Table.strCheckInstance"></property>
+        <property name="defaultValueMap">
+             <map>
+                <entry key="RPTVerifyType" value="1"></entry>
+                <entry key="RPTCheckType" value="2"></entry>
+                <entry key="RPTSendType" value="1"></entry>
+                <entry key="RPTFeedbackType" value="1"></entry>
+                <entry key="RPTSubmitStatus" value="1"></entry>
+                <entry key="operationUser" value="LoginUserInfo"></entry>
+                <entry key="lastUpdateDate" value="SystemDate"></entry>
+                <entry key="extend2" value=""></entry>
+                <entry key="extend1" value=""></entry>
+             </map>
+        </property>
+        <property name="defaultAddClassList">
+            <list>
+                <value>framework.services.add.LevelDataAdd</value>
+                <value>framework.services.add.SystemInfoAdd</value>
+				<value>framework.services.add.DefaultValueAdd</value>
+				<value>framework.services.add.IsThousandthAdd</value>
+				<value>framework.services.add.CopySaveAdd</value>
+            </list>
+        </property>
+        <property name="defaultCheckClassList">
+            <list>
+                <!-- <value>framework.services.check.PrimaryKeyRepeatCheck</value> -->
+                <value>framework.services.check.XMLSingleObjectContainClassInstanceCheck</value>
+                <value>framework.services.check.LogicPrimaryKeyCheck</value>
+            </list>
+        </property>
+         <property name="defaultProceseClassList">
+            <list>
+		        <value>report.service.procese.AutoDTOUpdateFlowStatusProcess</value>
+		        <value>framework.services.procese.ShowPowerButtonProcese</value>
+            </list>
+        </property>
+     </bean>
+     
+     <bean id="noMXSaveService" parent="singleObjectSaveLevelAUTODTOService">
+        <property name="defaultCheckClassList">
+            <list>
+              <!--   <value>framework.services.check.PrimaryKeyRepeatCheck</value> -->
+                <value>framework.services.check.XMLSingleObjectContainClassInstanceCheck</value>
+                <value>framework.services.check.LogicPrimaryKeyCheck</value>
+            </list>
+        </property>
+     </bean>
+     
+     <!-- 报表补录导入 -->                            
+      <bean id="forReportImportDataService"   class="report.service.imps.ForReportImportDataService" scope="prototype">
+       <property name="defaultCheckInstance" value="extend.dto.ReportModel_Table.strCheckInstance"></property>
+       <property name="showInstanceName" value="ExportAllData"></property>
+        <property name="successMessage" value="导入成功"></property>
+        <property name="errorMessage" value="导入失败"></property>
+        <property name="sheetName" value="Sheet1"></property><!--sheetIndex:base 1-->
+        <property name="showForeignId" value="false"></property>
+        <property name="showHeader" value="true"></property>
+        <property name="startLine" value="0"></property>
+        <property name="startCol" value="0"></property>
+        <property name="deleteOld" value="false"></property>
+        <property name="afterIgnorSeg" value="|"></property>
+        <property name="levelFieldMap">
+          <map>
+                <entry key="instInfo" value="instInfo"></entry>
+                <entry key="taskFlow.dtTaskDate" value="dtDate"></entry>
+          </map>
+        </property>
+        <property name="defaultTranslateClassList">
+            <list>
+                <value>framework.services.translate.LevelDataTranslate</value>
+                <value>framework.services.translate.ConditionCriteriaTranslate</value>
+                <value>framework.services.translate.SecurityTranslate</value>
+		        <value>framework.services.translate.DefaultValueTranslate</value>
+		        <value>framework.services.translate.ShowListTreeTranslate</value>
+            </list>
+        </property>
+         <property name="insertAddClassList">
+            <list>
+                <value>report.service.add.ReportImportDefaultValueAdd</value>
+            </list>
+        </property>
+        <property name="insertCheckClassList">
+            <list>
+                <value>report.service.check.XMLSingleObjectContainClassInstanceForReportCheck</value>
+            </list>
+        </property>
+        <property name="defaultProceseClassList">
+            <list>
+               <value>report.service.procese.AutoDTOUpdateStatusForReportImportDataProcess</value>
+              <value>framework.services.procese.ShowPowerButtonProcese</value>
+            </list>
+        </property>
+     </bean>
+     
+      <bean id="ReportOneToOneImportDataService"  parent="forReportImportDataService">
+     </bean>
+     
+     
+     <bean id="singleObjectDeleteListByIdListForReportService" parent="singleObjectDeleteListByIdListService">
+    	 <property name="defaultTranslateClassList">
+            <list>
+		        <value>report.service.translate.AutoDTOUpdateFlowStatusTranslate</value>
+            </list>
+        </property>
+    	 <property name="defaultProceseClassList">
+            <list>
+		        <value>report.service.procese.AutoDTOUpdateFlowStatusProcess</value>
+		        <value>framework.services.procese.ShowPowerButtonProcese</value>
+            </list>
+        </property>
+        <property name="defaultCheckClassList">
+            <list>
+                <value>framework.services.check.IdListNullCheck</value>
+                <value>framework.services.check.DeleteDependentDataCheck</value>
+                <value>report.service.check.AutoDTODeleteByJCSubmitStatusAndMXSendTypeCheck</value>
+            </list>
+        </property>
+	 </bean>
+	 
+	 <bean id="singleObjectDeleteByConditionForReportService" parent="singleObjectDeleteByConditionService">
+	 	<property name="defaultDaoBeanId" value="singleObjectDeleteListByIdListDao"></property>
+		<property name="defaultLogicDaoBeanId" value="singleObjectFindByIdDao"></property>
+        <property name="defaultTranslateClassList">
+            <list>
+		        <value>report.service.translate.AutoDTOUpdateFlowStatusTranslate</value>
+		<!--   <value>framework.services.translate.ConditionCriteriaTranslate</value> -->
+            </list>
+        </property>
+    	 <property name="defaultProceseClassList">
+            <list>
+		        <value>report.service.procese.AutoDTOUpdateFlowStatusProcess</value>
+		        <value>framework.services.procese.ShowPowerButtonProcese</value>
+            </list>
+        </property>
+        <property name="defaultCheckClassList">
+            <list>
+                <value>report.service.check.ByConditionIdListNullCheck</value>
+                <value>framework.services.check.DeleteDependentDataCheck</value>
+                <value>report.service.check.AutoDTODeleteByJCSubmitStatusAndMXSendTypeCheck</value>
+            </list>
+        </property>
+	 </bean>
+	 
+	 <bean id="commonSCListUpdateFieldService" parent="singleObjectUpdateFieldService">
+        <property name="fieldName" value="StrComminDataState"></property>
+        <property name="fieldValue" value="1To2"></property>
+        <property name="successMessage" value="清空成功"></property>
+        <property name="errorMessage" value="清空失败"></property>
+        <property name="defaultCheckClassList">
+        <list>
+        </list>
+        </property>
+         <property name="defaultProceseClassList">
+            <list>
+                <value>framework.services.procese.ShowPowerButtonProcese</value>
+            </list>
+        </property>
+     </bean>
+	 
+	 <bean id="singleObjectDeleteByConditionService" class="framework.services.imps.BaseVoidDaoResultService" scope="prototype">
+        <property name="defaultDaoBeanId" value="singleObjectDeleteByCriteriaDao"></property>
+        <property name="defaultTranslateClassList">
+            <list>
+                <value>framework.services.translate.ConditionCriteriaTranslate</value>
+            </list>
+        </property>
+        <property name="successMessage" value="删除成功"></property>
+        <property name="errorMessage" value="删除失败"></property>
+     </bean>
+	 
+	 <bean id="rptSubmitStatusUpdateFieldService" parent="singleObjectUpdateFieldService">
+        <property name="judgeFieldName" value="RPTCheckType"></property>  
+        <property name="fieldName" value="RPTSubmitStatus"></property>
+        <property name="fieldValue" value="2To2"></property>
+        <property name="successMessage" value="提交成功(校验成功数据才会提交)"></property>
+        <property name="errorMessage" value="提交失败(校验成功数据才会提交)"></property>
+        <property name="defaultTranslateClassList">
+            <list>
+                <value>report.service.translate.AutoDTOUpdateFlowStatusTranslate</value>
+                <value>framework.services.translate.IdAndIdListTypeTranslate</value>
+            </list>
+        </property>
+        <property name="defaultProceseClassList">
+            <list>
+		        <value>report.service.procese.AutoDTOUpdateFlowStatusProcess</value>
+		        <value>framework.services.procese.ShowPowerButtonProcese</value>
+            </list>
+        </property>
+        <property name="defaultCheckClassList">
+            <list>
+                <value>framework.services.check.IdListNullCheck</value>
+         </list>
+        </property>
+      </bean>
+     
+	 <bean id="rptCancleSubmitStatusUpdateFieldService" parent="singleObjectUpdateFieldService">
+        <property name="fieldName" value="SubmitStatus"></property>
+        <property name="fieldValue" value="2To3"></property>
+        <property name="successMessage" value="撤销提交成功"></property>
+        <property name="errorMessage" value="撤销提交失败"></property>
+     </bean>
+     
+     <!-- 任务层 -->
+     <bean id="rptAllowStateUpdateFieldService" parent="singleObjectUpdateFieldService">
+        <property name="judgeFieldName" value="SubmitStatus"></property>  
+        <property name="fieldName" value="strAllowState"></property>
+        <property name="fieldValue" value="2To2"></property>
+        <property name="successMessage" value="审核通过成功(提交成功数据才会审核)"></property>
+        <property name="errorMessage" value="审核通过失败(提交成功数据才会审核)"></property>
+         <property name="defaultProceseClassList">
+            <list>
+		         <value>report.service.procese.ReportAllAllowStateBySubmitStatusProcess</value>
+		        <value>framework.services.procese.ShowPowerButtonProcese</value>
+            </list>
+        </property>
+      </bean>
+      
+      <bean id="rptAllowStateCancleUpdateFieldService" parent="singleObjectUpdateFieldService">
+        <property name="judgeFieldName" value="SubmitStatus"></property>  
+        <property name="fieldName" value="strAllowState"></property>
+        <property name="fieldValue" value="2To3"></property>
+         <property name="successMessage" value="审核未通过成功(已提交未报送才能审核)"></property>
+        <property name="errorMessage" value="审核未通过失败(已提交未报送才能审核)"></property>
+         <property name="defaultProceseClassList">
+            <list>
+		        <value>report.service.procese.ReportAllAllowStateBySubmitStatusProcess</value>
+		        <value>framework.services.procese.ShowPowerButtonProcese</value>
+            </list>
+        </property> 
+           <property name="defaultCheckClassList">
+            <list>
+                <value>framework.services.check.IdListNullCheck</value>
+				<value>report.service.check.UpdateRPTVerifyTypeByRPTSendTypeCheck</value>
+            </list>
+        </property>
+         <property name="updateValueMap">
+            <map>
+               <entry key="SubmitStatus" value="1"></entry>
+               <entry key="strAllowState" value="3"></entry>
+            </map>
+        </property>
+     </bean>
+     
+     <bean id="taskModelInstSHReviewShowListForTreeService" parent="singleObjectShowListForTreeService">
+      <property name="showInstanceName" value="7"></property>
+      <property name="pageSize" value="20"></property>
+         <property name="operationMap">
+            <map>
+                <entry key="查询" value="Select-SHReviewShowListForTree"></entry>
+                <!--<entry key="导出" value="Post-ExportData"></entry>-->
+                <entry key="审核通过" value="Post-RptAllowStateUpdateField"></entry>
+                <entry key="审核未通过" value="Post-RptAllowStateCancleUpdateField"></entry>
+            </map>
+        </property>
+          <property name="linkedMap">
+           <map>
+             <entry key="查看" value="Get-SHJumpByTypeLevelAUTODTOSH,,,forestgreen*RPTSubmitStatus:2@RPTVerifyType:1,3"></entry>
+           </map>
+         </property>
+         <property name="typeFieldName" value="reportModel_Table.strTableName"/><!-- 根据表名跳转 -->
+         <property name="defaultProceseClassList">
+            <list>
+                <value>framework.services.procese.ShowListProcese</value>
+                <value>framework.services.procese.LevelDataProcese</value>
+                <value>framework.services.procese.ShowListTreeProcese</value>
+                <value>framework.services.procese.SelectTagSortByNameProcese</value>
+                <value>report.service.procese.IsShowOrHiddenForStatusField</value>
+                <value>framework.services.procese.ShowPowerButtonProcese</value>
+            </list>
+        </property>
+        <property name="defaultTranslateClassList">
+            <list>
+                <value>framework.services.translate.LevelDataTranslate</value>
+                <value>framework.services.translate.ConditionCriteriaTranslate</value>
+                <value>framework.services.translate.ConditionMultipleCriteriaTranslate</value>
+                <value>framework.services.translate.SecurityTranslate</value>
+		        <value>framework.services.translate.DefaultValueTranslate</value>
+		        <value>framework.services.translate.ShowListTreeTranslate</value>
+		        <value>report.service.translate.ShowTaskModelInstOrderByTableNameTranslate</value>
+            </list>
+        </property>
+     </bean>
+     
+     <bean id="ReviewShowTreeService" parent="taskModelInstShowTreeService">
+      <property name="operationMap">
+            <map>
+                <entry key="" value="Get-SHReviewShowListForTree"></entry>
+            </map>
+        </property>
+	 </bean>
+     
+      <bean id="rptSubmitStatusALLUpdateFieldService" parent="singleObjectUpdateFieldService">
+        <property name="judgeFieldName" value="strCheckState"></property>  
+        <property name="fieldName" value="SubmitStatus"></property>
+        <property name="fieldValue" value="2To2"></property>
+        <property name="successMessage" value="提交成功(校验成功数据才会提交)"></property>
+        <property name="errorMessage" value="提交失败(校验成功数据才会提交)"></property>
+        <property name="defaultProceseClassList">
+            <list>
+		        <value>report.service.procese.ReportAllSubmitStatusByCheckStateProcess</value>
+		        <value>framework.services.procese.ShowPowerButtonProcese</value>
+            </list>
+        </property>
+         <property name="defaultCheckClassList">
+            <list>
+                <value>framework.services.check.IdListNullCheck</value>
+                 <value>report.service.check.ExtPointWrapperForTaskCheck</value>
+            </list>
+        </property>
+      </bean>
+    
+    <bean id="singleObjectForReportShowListForTreeService" parent="singleObjectShowListForTreeService">
+	 </bean>
+	 
+	  <!-- 校验数据（报表通用） -->
+	  <bean id="rptCheckService" class="report.service.imps.RptCheckService" scope="prototype">
+        <property name="defaultLogicDaoBeanId" value="sqlserverProcedureListMapDao"></property>
+        <property name="checkInstanceType" value="2"></property>
+         <property name="dtDateParamName" value="dtDate"></property>
+        <property name="strInstCodeParamName" value="strInstCode"></property>
+        <property name="successMessage" value="校验完成，请查看校验结果。"></property>
+        <property name="errorMessage" value="校验完成，请查看校验结果。"></property>
+        <property name="defaultCheckClassList">
+            <list>
+                <value>framework.services.check.ReflectEmptyFieldCheck</value>
+                <value>framework.services.check.ReflectTypeFieldCheck</value>
+                <value>framework.services.check.PrimaryKeyRepeatCheck</value>
+                <value>framework.services.check.XMLSingleObjectInstanceCheck</value>
+                <value>report.services.check.RptReportTypeService</value>
+            </list>
+        </property>
+    </bean>
+
+     <!-- 基础明细一对一 (暂时没用了) start -->
+     <bean id="singleObjectFKBWOneToOneSaveService" parent="singleObjectSaveService">
+     <property name="defaultCheckInstance" value="extend.dto.ReportModel_Table.strCheckInstance"></property>
+     <property name="defaultCheckClassList">
+            <list>
+                <value>framework.services.check.XMLSingleObjectContainClassInstanceCheck</value>
+            </list>
+        </property>
+        <property name="defaultAddClassList">
+            <list>
+                <value>framework.services.add.LevelDataAdd</value>
+                <value>framework.services.add.SystemInfoAdd</value>
+				<value>framework.services.add.DefaultValueAdd</value>
+				<value>framework.services.add.IsThousandthAdd</value>
+				<value>report.service.add.ReportAddCheckValue</value>
+            </list>
+        </property>
+        <property name="defaultValueMap">
+             <map>
+                <entry key="RPTCheckType" value="2"></entry>
+                <entry key="RPTSendType" value="1"></entry>
+                <entry key="RPTFeedbackType" value="1"></entry>
+             </map>
+        </property>
+     </bean>
+     
+	 <bean id="singleObjectFKBWOneToOneUpdateService" parent="singleObjectUpdateService">
+     <property name="defaultCheckInstance" value="extend.dto.ReportModel_Table.strCheckInstance"></property>
+     <property name="defaultCheckClassList">
+            <list>
+                <value>framework.services.check.XMLSingleObjectContainClassInstanceCheck</value>
+            </list>
+        </property>
+        <property name="defaultAddClassList">
+            <list>
+                <value>framework.services.add.LevelDataAdd</value>
+                <value>framework.services.add.SystemInfoAdd</value>
+				<value>framework.services.add.DefaultValueAdd</value>
+				<value>framework.services.add.IsThousandthAdd</value>
+				<value>report.service.add.ReportAddCheckValue</value>
+            </list>
+        </property>
+         <property name="defaultValueMap">
+             <map>
+                <entry key="RPTCheckType" value="2"></entry>
+             </map>
+        </property>
+     </bean>
+     
+      <bean id="fKBWOneToOneShowInputSaveService" parent="singleObjectShowInputSaveService">
+     <property name="operationMap">
+            <map>
+                <entry key="保存" value="Post-FKBWOneToOneSave"></entry>
+                <entry key="导出" value="Post-MXExportAllData"></entry>
+	            <entry key="导入" value="Upload-ReportOneToOneImportData"></entry>
+                <entry key="返回" value="Get-BackPreviousFirst"></entry>
+            </map>
+        </property>
+        <property name="defaultProceseClassList">
+            <list>
+                <value>report.service.procese.ForReportStatusShowHiddenProcess</value>
+                <value>framework.services.procese.ShowUpdateProcese</value>
+                <value>framework.services.procese.LevelDataProcese</value>
+                <value>framework.services.procese.SortFieldProcese</value>
+                <value>framework.services.procese.SelectTagSortByNameProcese</value>
+                <value>framework.services.procese.ShowPowerButtonProcese</value>
+            </list>
+        </property>
+    </bean>
+     
+     <bean id="fKBWOneToOneShowInputUpdateService" parent="singleObjectShowInputUpdateService">
+       <property name="operationMap">
+            <map>
+               <entry key="保存" value="Post-FKBWOneToOneUpdate"></entry>
+               <entry key="导出" value="Post-MXExportAllData"></entry>
+	           <entry key="导入" value="Upload-ReportOneToOneImportData"></entry>
+               <entry key="返回" value="Get-BackPreviousFirst"></entry>
+            </map>
+        </property>
+        <property name="defaultProceseClassList">
+            <list>
+                <value>report.service.procese.ForReportStatusShowHiddenProcess</value>
+                <value>framework.services.procese.ShowUpdateProcese</value>
+                <value>framework.services.procese.LevelDataProcese</value>
+                <value>framework.services.procese.SortFieldProcese</value>
+                <value>framework.services.procese.SelectTagSortByNameProcese</value>
+                <value>framework.services.procese.ShowPowerButtonProcese</value>
+            </list>
+        </property>
+     </bean>
+     
+     <bean id="singleObjectFKBWOneToOneShowSaveLevelAUTODTOMXService" parent="singleObjectShowSaveService">
+         <property name="operationMap">
+            <map>
+                <entry key="保存" value="Post-FKBWOneToOneSave"></entry>
+                <entry key="导出" value="Post-MXExportAllData"></entry>
+	            <entry key="导入" value="Upload-ReportOneToOneImportData"></entry>
+                <entry key="返回" value="Get-BackPreviousFirst"></entry>
+            </map>
+        </property>
+         <property name="defaultProceseClassList">
+            <list>
+                <value>report.service.procese.ForReportStatusShowHiddenProcess</value>
+                <value>framework.services.procese.ShowSaveProcese</value>
+                <value>framework.services.procese.LevelDataProcese</value>
+		        <value>framework.services.procese.DefaultValueProcese</value>
+		        <value>framework.services.procese.ShowListTreeProcese</value>
+		        <value>framework.services.procese.SortFieldProcese</value>
+		        <value>framework.services.procese.SelectTagSortByNameProcese</value>
+		        <value>framework.services.procese.ShowPowerButtonProcese</value>
+            </list>
+        </property>
+     </bean>
+     
+     <bean id="singleObjectFKBWOneToOneShowUpdateLevelAUTODTOMXService" parent="singleObjectShowUpdateService">
+         <property name="operationMap">
+            <map>
+               <entry key="保存" value="Post-FKBWOneToOneUpdate"></entry>
+               <entry key="导出" value="Post-MXExportAllData"></entry>
+	           <entry key="导入" value="Upload-ReportOneToOneImportData"></entry>
+               <entry key="返回" value="Get-BackPreviousFirst"></entry>
+            </map>
+        </property>
+        <property name="defaultProceseClassList">
+            <list>
+                <value>framework.services.procese.ShowUpdateProcese</value>
+                <value>framework.services.procese.LevelDataProcese</value>
+                <value>framework.services.procese.SortFieldProcese</value>
+                <value>report.service.procese.ForReportStatusShowVisibleProcess</value>
+                <value>framework.services.procese.SelectTagSortByNameProcese</value>
+                <value>framework.services.procese.ShowPowerButtonProcese</value>
+            </list>
+        </property>
+     </bean>
+     
+     <bean id="rPTShowListLevelAUTODTOService" parent="singleObjectShowListLevelAUTODTOService">
+         <property name="operationMap">
+            <map>
+                <entry key="查询" value="Select-ShowList"></entry>
+                <entry key="新增" value="Get-ShowSaveLevelAUTODTO"></entry>
+                <entry key="删除" value="PostConfirm-DeleteListByIdList"></entry>
+                <entry key="校验" value="Post-RPTCheckType"></entry>
+                <entry key="返回" value="Get-BackPreviousFirst"></entry>
+            </map>
+        </property>
+        <property name="linkedMap">
+            <map>
+                <entry key="修改" value="Get-ShowUpdateLevelAUTODTO"></entry>
+            </map>
+        </property>
+     </bean>
+     
+     <bean id="singleObjectSHShowSaveOrUpdateLevelAUTODTOMXService" parent="singleObjectShowSaveOrUpdateService">
+         <property name="operationMap">
+            <map>
+               <entry key="导出" value="Post-MXExportAllData"></entry>
+               <entry key="返回" value="Get-BackPreviousFirst"></entry>
+            </map>
+        </property>
+     </bean>
+     
+      <bean id="singleObjectShowSaveOrUpdateLevelAUTODTOMXService" parent="singleObjectShowSaveOrUpdateService">
+         <property name="operationMap">
+            <map>
+               <entry key="保存" value="Post-ReportUpdateList"></entry>
+               <entry key="导出" value="Post-MXExportAllData"></entry>
+	           <entry key="导入" value="Upload-ReportOneToOneImportData"></entry>
+	          <!-- <entry key="删除" value="Get-ReportDeleteById"></entry>-->
+               <entry key="返回" value="Get-BackPreviousFirst"></entry>
+            </map>
+        </property>
+     </bean>
+     
+     <bean id="singleObjectReportUpdateListService" parent="singleObjectUpdateListService">
+     <property name="defaultCheckInstance" value="extend.dto.ReportModel_Table.strCheckInstance"></property>
+     <property name="defaultCheckClassList">
+            <list>
+                <value>framework.services.check.XMLSingleObjectContainClassInstanceCheck</value>
+            </list>
+        </property>
+        <property name="defaultAddClassList">
+            <list>
+                <value>framework.services.add.LevelDataAdd</value>
+                <value>framework.services.add.SystemInfoAdd</value>
+				<value>framework.services.add.DefaultValueAdd</value>
+				<value>framework.services.add.IsThousandthAdd</value>
+				<value>report.service.add.ReportAddCheckValue</value>
+            </list>
+        </property>
+     </bean>  
+     
+     <bean id="singleObjectReportOneToOneSaveService" parent="singleObjectSaveService">
+     <property name="defaultCheckInstance" value="extend.dto.ReportModel_Table.strCheckInstance"></property>
+     <property name="defaultCheckClassList">
+            <list>
+                <value>framework.services.check.XMLSingleObjectContainClassInstanceCheck</value>
+            </list>
+        </property>
+         <property name="defaultProceseClassList">
+            <list>
+		        <value>report.service.procese.AutoDTOUpdateFlowStatusProcess</value>
+		        <value>framework.services.procese.ShowPowerButtonProcese</value>
+            </list>
+        </property>
+       <property name="defaultValueMap">
+             <map>
+                <entry key="RPTCheckType" value="2"></entry>
+                <entry key="RPTSendType" value="1"></entry>
+                <entry key="RPTFeedbackType" value="1"></entry>
+             </map>
+        </property>
+     </bean>
+     
+     <bean id="reportOneToOneShowInputSaveService" parent="singleObjectShowInputSaveService">
+     <property name="operationMap">
+            <map>
+                <entry key="保存" value="Post-ReportOneToOneSave"></entry>
+                <entry key="导出" value="Post-MXExportAllData"></entry>
+	            <entry key="导入" value="Upload-ReportOneToOneImportData"></entry>
+                <entry key="返回" value="Get-BackPreviousFirst"></entry>
+            </map>
+        </property>
+        <property name="defaultProceseClassList">
+            <list>
+                <value>report.service.procese.ForReportStatusShowHiddenProcess</value>
+                <value>framework.services.procese.ShowUpdateProcese</value>
+                <value>framework.services.procese.LevelDataProcese</value>
+                <value>framework.services.procese.SortFieldProcese</value>
+                <value>framework.services.procese.SelectTagSortByNameProcese</value>
+                <value>framework.services.procese.ShowPowerButtonProcese</value>
+            </list>
+        </property>
+    </bean>
+    
+    <bean id="singleObjectReportOneToOneUpdateService" parent="singleObjectUpdateService">
+     <property name="defaultCheckInstance" value="extend.dto.ReportModel_Table.strCheckInstance"></property>
+     <property name="defaultCheckClassList">
+            <list>
+                <value>framework.services.check.XMLSingleObjectContainClassInstanceCheck</value>
+            </list>
+        </property>
+        <property name="defaultAddClassList">
+            <list>
+                <value>framework.services.add.LevelDataAdd</value>
+                <value>framework.services.add.SystemInfoAdd</value>
+				<value>framework.services.add.DefaultValueAdd</value>
+				<value>framework.services.add.IsThousandthAdd</value>
+				<value>report.service.add.ReportAddCheckValue</value>
+            </list>
+        </property>
+         <property name="defaultProceseClassList">
+            <list>
+		        <value>report.service.procese.AutoDTOUpdateFlowStatusProcess</value>
+		        <value>framework.services.procese.ShowPowerButtonProcese</value>
+            </list>
+        </property>
+     </bean>
+     
+     <bean id="reportOneToOneShowInputUpdateService" parent="singleObjectShowInputUpdateService">
+       <property name="ShowInstanceName" value="UpdateShowStatus"></property>
+       <property name="operationMap">
+            <map>
+               <entry key="保存" value="Post-ReportOneToOneUpdate"></entry>
+               <entry key="导出" value="Post-MXExportAllData"></entry>
+	           <entry key="导入" value="Upload-ReportOneToOneImportData"></entry>
+               <entry key="返回" value="Get-BackPreviousFirst"></entry>
+            </map>
+        </property>
+         <property name="defaultProceseClassList">
+            <list>
+               <value>report.service.procese.ForReportStatusShowHiddenProcess</value>
+                <value>framework.services.procese.ShowUpdateProcese</value>
+                <value>framework.services.procese.LevelDataProcese</value>
+                <value>framework.services.procese.SortFieldProcese</value>
+                <value>framework.services.procese.SelectTagSortByNameProcese</value>
+                <value>framework.services.procese.ShowPowerButtonProcese</value>
+            </list>
+        </property>
+     </bean>
+     
+     <bean id="singleObjectReportOneToOneShowSaveLevelAUTODTOMXService" parent="singleObjectShowSaveService">
+         <property name="operationMap">
+            <map>
+                <entry key="保存" value="Post-ReportOneToOneSave"></entry>
+                <entry key="导出" value="Post-MXExportAllData"></entry>
+	            <entry key="导入" value="Upload-ReportOneToOneImportData"></entry>
+	             <!-- <entry key="删除" value="Get-ReportDeleteById"></entry>-->
+                <entry key="返回" value="Get-BackPreviousFirst"></entry>
+            </map>
+        </property>
+         <property name="defaultProceseClassList">
+           <list>
+             <value>report.service.procese.ForReportStatusShowHiddenProcess</value>
+             <value>framework.services.procese.ShowUpdateProcese</value>
+             <value>framework.services.procese.LevelDataProcese</value>
+             <value>framework.services.procese.SortFieldProcese</value>
+           <!-- <value>dbgssystem.service.process.ShowViewForOneToOneProcese</value> 只能查看视图-->
+             <value>framework.services.procese.ShowPowerButtonProcese</value>
+           </list>
+         </property>
+     </bean>
+     
+     <bean id="singleObjectReportSHOneToOneShowUpdateLevelAUTODTOMXService" parent="singleObjectShowUpdateService">
+         <property name="operationMap">
+            <map>
+               <entry key="导出" value="Post-MXExportAllData"></entry>
+               <entry key="返回" value="Get-BackPreviousFirst"></entry>
+            </map>
+        </property>
+        <property name="defaultProceseClassList">
+           <list>
+             <value>framework.services.procese.ShowUpdateProcese</value>
+             <value>framework.services.procese.LevelDataProcese</value>
+             <value>framework.services.procese.SortFieldProcese</value>
+             <value>framework.services.procese.ShowViewProcese</value>
+             <value>framework.services.procese.ShowPowerButtonProcese</value>
+           </list>
+         </property>
+     </bean>
+     
+     <bean id="singleObjectReportSHOneToOneShowSaveLevelAUTODTOMXService" parent="singleObjectShowUpdateService">
+     	<property name="defaultProceseClassList">
+            <list>
+                <value>report.service.procese.ForReportStatusShowHiddenProcess</value>
+                <value>framework.services.procese.ShowUpdateProcese</value>
+                <value>framework.services.procese.LevelDataProcese</value>
+                <value>framework.services.procese.SortFieldProcese</value>
+                <value>framework.services.procese.SelectTagSortByNameProcese</value>
+                <value>framework.services.procese.ShowPowerButtonProcese</value>
+            </list>
+        </property>
+     </bean>
+     
+     <bean id="singleObjectReportOneToOneShowUpdateLevelAUTODTOMXService" parent="singleObjectShowUpdateService">
+        <property name="ShowInstanceName" value="UpdateShowStatus"></property>
+         <property name="operationMap">
+            <map>
+               <entry key="保存" value="Post-ReportOneToOneUpdate"></entry>
+               <entry key="导出" value="Post-MXExportAllData"></entry>
+	           <entry key="导入" value="Upload-ReportOneToOneImportData"></entry>
+	            <!-- <entry key="删除" value="Get-ReportDeleteById"></entry>-->
+               <entry key="返回" value="Get-BackPreviousFirst"></entry>
+            </map>
+        </property>
+         <property name="defaultProceseClassList">
+           <list>
+            <value>report.service.procese.ForReportStatusShowVisibleProcess</value>
+             <value>framework.services.procese.ShowUpdateProcese</value>
+             <value>framework.services.procese.LevelDataProcese</value>
+             <value>framework.services.procese.SortFieldProcese</value>
+          <!--  <value>dbgssystem.service.process.ShowViewForOneToOneProcese</value>  --> <!-- 只能查看视图--> 
+             <value>framework.services.procese.ShowPowerButtonProcese</value>
+           </list>
+         </property>
+     </bean>
+      <!-- 基础明细一对一 (暂时没用了) end -->
+      
+      <!-- 指标报表 -->
+     <bean id="extendPointWrapperCheck" class="report.service.check.ExtPointWrapperForTaskCheck" scope="prototype">
+	  	<property name="extendCheckList">
+			<list></list>
+		</property>
+	</bean> 
+
+     <bean id="rptDtoShowListLevelRptDtoService" parent="singleObjectShowListLevelService">
+        <property name="linkedMap">
+          <map>
+                <entry key="修改" value="Get-ShowUpdate"></entry>
+                <!--<entry key="删除" value="Get-DeleteById"></entry>
+                <entry key="数据管理" value="Get-JumpByTypeLevelAUTODTO"></entry>-->
+          </map>
+         </property>
+         <property name="typeFieldName" value="table.strTableName"/>
+     </bean>
+
+    
+     
+     <!--<bean id="noticeShowListService" parent="singleObjectShowListService">
+        <property name="linkedMap">
+            <map>
+            
+                <entry key="修改" value="Get-ShowUpdate"></entry>
+                 <entry key="上传文件1" value="Upload-UploadFile"></entry>
+                 <entry key="上传文件2" value="Upload-UploadFile"></entry>
+                   <entry key="上传文件3" value="Upload-UploadFile"></entry>
+                  <entry key="上传文件4" value="Upload-UploadFile"></entry>
+                   <entry key="上传文件5" value="Upload-UploadFile"></entry>
+          </map>
+         </property>
+     </bean>-->
+     
+    
+     
+     <!-- 报表补录、任务报表填报  校验、提交、审核 开始 -->
+     
+     
+     
+    
+            
+     <bean id="taskModelInstShowListForTreeService" parent="singleObjectShowListForTreeService">
+      <property name="showInstanceName" value="2"></property>
+        <property name="pageSize" value="20"></property>
+        <property name="defaultProceseClassList">
+            <list>
+                <value>framework.services.procese.ShowListProcese</value>
+                <value>framework.services.procese.LevelDataProcese</value>
+                <value>framework.services.procese.ShowListTreeProcese</value>
+                <value>framework.services.procese.SelectTagSortByNameProcese</value>
+                <value>framework.services.procese.ShowPowerButtonProcese</value>
+                <value>report.service.procese.ZXPTChangeButtonLinkProcese</value><!-- 非企业征信可不加,改变企业征信填报按钮链接 -->
+            </list>
+        </property>
+        <property name="defaultTranslateClassList">
+            <list>
+                <value>framework.services.translate.LevelDataTranslate</value>
+                <value>framework.services.translate.ConditionCriteriaTranslate</value>
+                <value>framework.services.translate.ConditionMultipleCriteriaTranslate</value>
+                <value>framework.services.translate.SecurityTranslate</value>
+		        <value>framework.services.translate.DefaultValueTranslate</value>
+		        <value>framework.services.translate.ShowListTreeTranslate</value>
+		        <value>report.service.translate.ShowTaskModelInstOrderByTableNameTranslate</value>
+            </list>
+        </property>
+        <property name="operationMap">
+            <map>
+            	<!-- <entry key="重置条件" value="Post-param=resetCondition|ShowListForTree"></entry> -->
+                <entry key="查询" value="Select-ShowListForTree"></entry>
+                <entry key="提交" value="Post-RptSubmitStatusALLUpdateField"></entry>
+              <!--  <entry key="条件删除" value="PostConfirm-DeleteByConditionForTree"></entry>
+                <entry key="撤销提交" value="Post-RptCancleSubmitStatusUpdateField"></entry>-->
+            </map>
+        </property>
+        <property name="linkedMap">
+           <map>
+             <entry key="填报" value="Get-JumpByTypeLevelAUTODTO,,,orangered*RPTCheckType:1%3%4|forestgreen*RPTCheckType:2@RPTSubmitStatus:1,3"></entry>
+           </map>
+         </property>
+         <property name="typeFieldName" value="reportModel_Table.strTableName"/><!-- 根据表名跳转 -->
+     </bean>
+      
+     
+     
+    
+     
+     <bean id="taskModelInstReviewShowTreeService" parent="ReviewShowTreeService">
+       <property name="constructType" value="2"/>
+       <property name="rootName" value="任务明细"/>
+       <property name="foreignFieldMap">
+             <map>
+                 <entry key="taskFlow" value=""></entry>
+                 <entry key="instInfo" value=""></entry>
+             </map>
+       </property>
+       <property name="imgList">
+            <list>
+                <value>dtree/img/folder.gif,dtree/img/folderopen.gif</value>
+                <value>dtree/img/folder.gif,dtree/img/folderopen.gif</value>
+            </list>
+        </property>
+     </bean>
+     
+     <bean id="taskRptInstAcceptApplyService" parent="singleObjectUpdateFieldService">
+        <property name="fieldName" value="strAllowState"></property>
+        <property name="fieldValue" value="1To2,3To2"></property>
+        <property name="successMessage" value="提交完成"></property>
+        <property name="errorMessage" value="提交失败"></property>
+     </bean>
+     
+     <!-- 报表补录、任务报表填报  校验、提交、审核 结束-->
+     <bean id="taskRptInstShowListLevelTaskRptInstService" parent="singleObjectShowListService">
+        <property name="showInstanceName" value="2"></property>
+        <property name="operationMap">
+            <map>
+                <entry key="查询" value="Select-ShowList"></entry>
+                <entry key="新增" value="Get-ShowSave"></entry>
+            </map>
+        </property>
+        <property name="linkedMap">
+           <map>
+             <entry key="填报" value="Pop-JumpByTypeLevelAUTODTO"></entry>
+             <entry key="汇总" value="Get-report/ReportSummary"></entry>
+             <!--<entry key="导出" value="Post-coresystem/ExportReportData"></entry>
+             <entry key="导入" value="Upload-coresystem/ImportReportData"></entry>-->
+           </map>
+         </property>
+         <property name="typeFieldName" value="rptInfo.rptDto.table.strTableName"/>
+     </bean>
+     
+     
+    
+    <bean id="DDLService" class="coresystem.service.imps.DDLService" scope="prototype">
+    	<property name="defaultDaoBeanId" value="sQLExecVoidResultDao"></property>
+    	<property name="strDBType" value="Oracle"></property>
+    	
+    	<property name="successMessage" value="创建成功"></property>
+        <property name="errorMessage" value="创建失败"></property>
+         <!--
+        <property name="autoFieldMap">
+	      <map>
+	        <entry key="1" value="dtDate.time.数据时间.-2"></entry>
+	        <entry key="2" value="instInfo.inst.机构.-1"></entry>
+	         <entry key="3" value="testvchar.vchar.测试.200.0"></entry> 
+	      </map>
+		</property> -->
+    </bean>
+    
+   
+    
+     
+     <bean id="suitShowTreeService" parent="singleObjectShowTreeService">
+       <property name="rootName" value="主题层级 "/>
+       <property name="foreignFieldMap">
+             <map>
+                 <entry key="higerSuit" value=""></entry>
+             </map>
+       </property>
+     </bean>
+     
+	  
+     <bean id="taskModelInstShowTreeService" class="report.service.imps.ReportTaskModelInstShowTreeService" scope="prototype">
+       <!-- <property name="strSuitCode" value="NCR,zhangqiu,EAS,PCR,21,22,24,2111,2112,2114,211101,211102,211103,211104,211211,211212,211213,211214,211215,211216,211217,211218,211219,211220,211221,211461,23,245101,245102,243201,243202,2131,2201,2204,2208,WHZH,220A,2209,0001,01,csh"></property> -->
+       <property name="defaultDaoBeanId" value="singleObjectFindByCriteriaDao"></property>
+	   <property name="defaultLogicDaoBeanId" value="singleObjectFindByCriteriaDao"></property>
+       <property name="constructType" value="2"/>
+       <property name="rootName" value="任务明细"/>
+       <property name="foreignFieldMap">
+             <map>
+                 <entry key="taskFlow" value=""></entry>
+                 <entry key="instInfo" value=""></entry>
+             </map>
+       </property>
+       <property name="imgList">
+            <list>
+                <value>dtree/img/folder.gif,dtree/img/folderopen.gif</value>
+                <value>dtree/img/folder.gif,dtree/img/folderopen.gif</value>
+            </list>
+        </property>
+	   <property name="defaultProceseClassList">
+           <list>
+               <value>report.service.procese.ShowTaskFlowTreeProcese</value><!-- 放置于ShowTreeProcese之前 -->
+               <value>framework.services.procese.ShowTreeProcese</value>
+               <value>framework.services.procese.ShowPowerButtonProcese</value>
+           </list>
+       </property>
+        <property name="defaultTranslateClassList">
+            <list>
+		        <value>framework.services.translate.ShowTreeTranslate</value>
+		        <value>framework.services.translate.LevelDataTranslate</value>
+		        <value>framework.services.translate.SecurityTreeTranslate</value>
+		        <value>report.service.translate.ShowTaskTreeTranslate</value>
+            </list>
+        </property>
+        <property name="operationMap">
+            <map>
+                <entry key="" value="Get-ShowListForTree"></entry>
+            </map>
+        </property>
+     </bean>
+     
+    
+    
+    <bean id="itemsCalculationShowListLevelItemsCalculationService" parent="singleObjectShowListLevelService">
+      <property name="showInstanceName" value="5"></property>
+         <property name="linkedMap">
+            <map>
+                <entry key="修改" value="Get-ShowUpdate"></entry>
+                <entry key="删除" value="Get-DeleteById"></entry>
+                <entry key="明细" value="TypeHidden-ShowSaveOrUpdateLevelDetailedInfo"></entry>
+           </map>
+        </property>
+         <property name="typeFieldName" value="strItemType"/>
+        <property name="typeFieldValueMap">
+            <map>
+                <entry key="3" value="report.dto.DetailedInfo"></entry>
+                <entry key="1" value="**********"></entry>
+                <entry key="2" value="**********"></entry>
+                <entry key="4" value="**********"></entry>
+            </map>
+        </property>
+    </bean>
+  
+   <bean id="itemsCalculationSaveLevelItemsCalculationService" parent="singleObjectSaveService">
+       <property name="defaultCheckInstance" value="ItemsCalculation"/>
+   </bean>
+   
+   <bean id="itemsCalculationUpdateLevelItemsCalculationService" parent="singleObjectUpdateService">
+       <property name="defaultCheckInstance" value="ItemsCalculation"/>
+   </bean>
+  
+   <bean id="detailedFieldInfoSaveLevelDetailedFieldInfoService" parent="singleObjectSaveService">
+       <property name="defaultCheckInstance" value="DetailedFieldInfo"/>
+   </bean>
+    <bean id="detailedFieldInfoUpdateLevelDetailedFieldInfoService" parent="singleObjectUpdateService">
+      	<property name="defaultCheckInstance" value="DetailedFieldInfo"/>
+     </bean>
+ 
+     <bean id="detailedInfoOneToOneShowUpdateLevelDetailedInfoService" parent="singleObjectShowUpdateService">
+         <property name="operationMap">
+            <map>                       <!-- Post-OneToOneUpdate -->
+                <entry key="保存" value="Post-Update"></entry>
+                <entry key="返回" value="Get-BackPreviousFirst"></entry>
+                 <entry key="明细字段" value="Get1-ShowListLevelDetailedFieldInfo-report.dto.DetailedFieldInfo"></entry>
+            </map>
+        </property>
+         <property name="defaultProceseClassList">
+            <list>
+               <value>framework.services.procese.ShowUpdateProcese</value>
+                <value>framework.services.procese.LevelDataProcese</value>
+                <value>framework.services.procese.SortFieldProcese</value>
+		        <value>report.service.procese.DetailedInfoProcese</value>
+		        <value>framework.services.procese.SelectTagSortByNameProcese</value>
+		        <value>framework.services.procese.ShowPowerButtonProcese</value>
+            </list>
+        </property>
+  </bean>
+             
+  <bean id="detailedInfoOneToOneShowSaveLevelDetailedInfoService" parent="singleObjectShowSaveService">
+         <property name="defaultProceseClassList">
+            <list>
+               <value>framework.services.procese.ShowUpdateProcese</value>
+                <value>framework.services.procese.LevelDataProcese</value>
+                <value>framework.services.procese.SortFieldProcese</value>
+		        <value>report.service.procese.DetailedInfoProcese</value>
+		        <value>framework.services.procese.SelectTagSortByNameProcese</value>
+		        <value>framework.services.procese.ShowPowerButtonProcese</value>
+            </list>
+        </property>
+  </bean>
+  
+   <bean id="detailedFieldInfoShowListLevelDetailedFieldInfoService" parent="singleObjectShowListLevelService">
+         <property name="linkedMap">
+            <map>
+                <entry key="修改" value="Get-ShowUpdate"></entry>
+                <entry key="删除" value="Get-DeleteById"></entry>
+           </map>
+        </property>
+         <property name="operationMap">
+            <map>
+               <entry key="查询" value="Select-ShowList"></entry>
+                <entry key="新增" value="Get-ShowSave"></entry>
+                 <entry key="删除" value="PostConfirm-DeleteListByIdList"></entry>
+                <entry key="返回" value="Get-BackPreviousFirst"></entry>
+            </map>
+        </property>
+         <property name="defaultProceseClassList">
+            <list>
+               <value>framework.services.procese.ShowListProcese</value>
+                <value>framework.services.procese.LevelDataProcese</value>
+                <value>framework.services.procese.ShowListTreeProcese</value>
+		        <value>report.service.procese.DetailedFieldInfoProcese</value>
+		        <value>framework.services.procese.SelectTagSortByNameProcese</value>
+		        <value>framework.services.procese.ShowPowerButtonProcese</value>
+            </list>
+        </property>
+   </bean>
+    
+   <bean id="detailedFieldInfoShowUpdateLevelDetailedFieldInfoService" parent="singleObjectShowUpdateService">
+        <property name="defaultProceseClassList">
+            <list>
+                 <value>framework.services.procese.ShowUpdateProcese</value>
+                <value>framework.services.procese.LevelDataProcese</value>
+                <value>framework.services.procese.SortFieldProcese</value>
+		        <value>report.service.procese.DetailedFieldInfoProcese</value>
+		        <value>framework.services.procese.SelectTagSortByNameProcese</value>
+		        <value>framework.services.procese.ShowPowerButtonProcese</value>
+            </list>
+        </property>
+    </bean>
+    
+    <bean id="detailedFieldInfoShowSaveLevelDetailedFieldInfoService" parent="singleObjectShowSaveService">
+         <property name="defaultProceseClassList">
+            <list>
+                <value>framework.services.procese.ShowSaveProcese</value>
+                <value>framework.services.procese.LevelDataProcese</value>
+		        <value>framework.services.procese.DefaultValueProcese</value>
+		        <value>framework.services.procese.ShowListTreeProcese</value>
+		        <value>framework.services.procese.SortFieldProcese</value>
+		        <value>report.service.procese.DetailedFieldInfoProcese</value>
+		        <value>framework.services.procese.SelectTagSortByNameProcese</value>
+		        <value>framework.services.procese.ShowPowerButtonProcese</value>
+            </list>
+        </property>
+    </bean>
+    
+    
+    <bean id="selectFieldsService" class="report.service.imps.SelectFieldsService" scope="prototype">
+    </bean>
+   
+    
+    <bean id="select-ShowInstSetService" class="report.service.imps.SelectShowInstSetService" scope="prototype">
+    </bean>
+    
+    <bean id="select-ShowFileSetService" class="report.service.imps.SelectShowFileSetService" scope="prototype">
+    </bean>
+    
+    
+    <bean id="select-ShowReportModel_TableSetService" class="report.service.imps.SelectShowReportModel_TableSetService" scope="prototype">
+    </bean>
+    
+    <bean id="initAutoDTOService" class="coresystem.service.imps.InitAutoDTOService" scope="prototype">
+    </bean>
+    <bean id="taskControlService" class="report.service.imps.TaskControlService" scope="prototype">
+    </bean>
+    
+    <bean id="checkInstanceCopyService" class="report.service.imps.CheckInstanceCopyService" scope="prototype">
+    </bean>
+
+    
+   <!-- 校验实例 -->
+    <bean id="checkInstanceShowListService" parent="singleObjectShowListService">
+         <property name="linkedMap">
+            <map>
+                <entry key="修改" value="Get-ShowUpdate"></entry>
+                <entry key="删除" value="Get-DeleteById"></entry>
+            </map>
+        </property>
+        <property name="operationMap">
+            <map>
+                <entry key="查询" value="Select-ShowList"></entry>
+                <entry key="新增" value="Get-ShowSave"></entry>
+           </map>
+        </property>
+    </bean>
+    
+    <bean id="checkNodeShowListLevelCheckNodeService" parent="singleObjectShowListLevelService">
+         <property name="linkedMap">
+            <map>
+                <entry key="修改" value="Get-ShowUpdate"></entry>
+                <entry key="删除" value="Get-DeleteById"></entry>
+                <!--<entry key="设置结点" value="Get-ShowSaveOrUpdateLevelCheckNodea"></entry>
+                --><entry key="设置结点" value="Get-JumpByType"></entry>
+            </map>
+        </property>
+        <property name="typeFieldName" value="checkNodeType"/>
+        <property name="typeFieldValueMap">
+            <map>
+                <entry key="1" value="ShowSaveOrUpdateLevelCheckNodea-report.dto.CheckTable"></entry>
+                <entry key="2" value="ShowSaveOrUpdateLevelCheckNodea-report.dto.CheckFieldAggregationList"></entry>
+                <entry key="3" value="ShowSaveOrUpdateLevelCheckNodea-report.dto.CheckConsistentList"></entry>
+                <entry key="4" value="ShowSaveOrUpdateLevelCheckNodea-report.dto.CheckFieldScopeList"></entry>
+            </map>
+        </property>
+    </bean>
+    
+    <bean id="checkToCalculationExampleInfoShowListService" parent="singleObjectShowListService">
+         <property name="linkedMap">
+            <map>
+                <entry key="修改" value="Get-ShowUpdate"></entry>
+                <entry key="删除" value="Get-DeleteById"></entry>
+            </map>
+        </property>
+    </bean>
+     
+  <bean id="checkTableOneToOneShowUpdateLevelCheckNodeaService" parent="singleObjectShowUpdateService">
+         <property name="operationMap">
+            <map>
+                <entry key="保存" value="Post-OneToOneUpdate"></entry>
+                <entry key="返回" value="Get-BackPreviousFirst"></entry>
+                <entry key="设置Table结点" value="Get1-ShowListLevelCheckTableNode-report.dto.CheckTableNode"></entry>
+            </map>
+        </property>
+  </bean>
+  
+   <bean id="checkFieldAggregationListOneToOneShowUpdateLevelCheckNodeaService" parent="singleObjectShowUpdateService">
+         <property name="operationMap">
+            <map>
+                <entry key="保存" value="Post-OneToOneUpdate"></entry>
+                <entry key="返回" value="Get-BackPreviousFirst"></entry>
+                <entry key="设置集合结点" value="Get1-ShowListLevelCheckFieldAggregation-report.dto.CheckFieldAggregation"></entry>
+            </map>
+        </property>
+  </bean>
+  
+  <bean id="checkFieldAggregationShowListLevelCheckFieldAggregationService" parent="singleObjectShowListLevelService">
+         <property name="linkedMap">
+            <map>
+                <entry key="修改" value="Get-ShowUpdate"></entry>
+                <entry key="左边聚合字段" value="Get-ShowListLevelCheckFieldAggregationLeftField-report.dto.CheckFieldAggregationLeftField"></entry>
+                <entry key="右边聚合字段" value="Get-ShowListLevelCheckFieldAggregationRightField-report.dto.CheckFieldAggregationRightField"></entry>
+            </map>
+        </property>
+  </bean>
+  
+  <bean id="checkConsistentListOneToOneShowUpdateLevelCheckNodeaService" parent="singleObjectShowUpdateService">
+         <property name="operationMap">
+            <map>
+                <entry key="保存" value="Post-OneToOneUpdate"></entry>
+                <entry key="返回" value="Get-BackPreviousFirst"></entry>
+                <entry key="设置一致性/唯一性结点" value="Get1-ShowListLevelCheckConsistentGroup-report.dto.CheckConsistentGroup"></entry>
+            </map>
+        </property>
+  </bean>
+  
+  <bean id="checkFieldScopeListOneToOneShowUpdateLevelCheckNodeaService" parent="singleObjectShowUpdateService">
+         <property name="operationMap">
+            <map>
+                <entry key="保存" value="Post-OneToOneUpdate"></entry>
+                <entry key="返回" value="Get-BackPreviousFirst"></entry>
+                <entry key="设置完整性结点" value="Get1-ShowListLevelCheckFieldScope-report.dto.CheckFieldScope"></entry>
+            </map>
+        </property>
+  </bean>
+  
+  <bean id="checkFieldScopeShowListLevelCheckFieldScopeService" parent="singleObjectShowListLevelService">
+        <property name="linkedMap">
+            <map>
+                <entry key="修改" value="Get-ShowUpdate"></entry>
+                <entry key="左边完整域" value="Get-ShowListLevelCheckFieldScopeLeftField-report.dto.CheckFieldScopeLeftField"></entry>
+                <entry key="右边完整域" value="Get-ShowListLevelCheckFieldScopeRightField-report.dto.CheckFieldScopeRightField"></entry>
+            </map>
+        </property>
+  </bean>
+
+  <bean id="checkTableNodeShowListLevelCheckTableNodeService" parent="singleObjectShowListLevelService">
+         <property name="linkedMap">
+            <map>
+                <entry key="修改" value="Get-ShowUpdate"></entry>
+                <entry key="删除" value="Get-DeleteById"></entry>
+                <entry key="设置结点" value="Get-JumpByType"></entry>
+            </map>
+        </property>
+        <property name="typeFieldName" value="checkTableNodeType"/>
+        <property name="typeFieldValueMap">
+            <map>
+                <entry key="1" value="ShowListLevelCheckUniqueField-report.dto.CheckUniqueField"></entry>
+                <entry key="2" value="ShowListLevelCheckBasic-report.dto.CheckBasic"></entry>
+                <entry key="3" value="ShowListLevelCheckCaseWhen-report.dto.CheckCaseWhen"></entry>
+                <entry key="4" value="ShowListLevelCheckFieldEffective-report.dto.CheckFieldEffective"></entry>
+                <entry key="5" value="ShowListLevelCheckFieldLine-report.dto.CheckFieldLine"></entry>
+             	<entry key="6" value="ShowListLevelCheckFieldOrList-report.dto.CheckFieldOrList"></entry>
+            </map>
+        </property>
+    </bean>
+  
+  	 <bean id="checkCaseWhenShowListLevelCheckCaseWhenService" parent="singleObjectShowListService">
+         <property name="linkedMap">
+            <map>
+                <entry key="修改" value="Get-ShowUpdate"></entry>
+                <entry key="删除" value="Get-DeleteById"></entry>
+                <entry key="设置CaseWhen字段" value="Get-ShowListLevelCheckCaseWhenField-report.dto.CheckCaseWhenField"></entry>
+            </map>
+        </property>
+         <property name="operationMap">
+            <map>
+                <entry key="查询" value="Select-ShowList"></entry>
+                <entry key="新增" value="Get-ShowSave"></entry>
+                <entry key="删除" value="PostConfirm-DeleteListByIdList"></entry>
+                <entry key="返回" value="Get-BackPreviousFirst"></entry>
+           </map>
+        </property>
+    </bean>
+    
+     <bean id="checkFieldEffectiveShowListLevelCheckFieldEffectiveService" parent="singleObjectShowListService">
+         <property name="linkedMap">
+            <map>
+                <entry key="修改" value="Get-ShowUpdate"></entry>
+                <entry key="删除" value="Get-DeleteById"></entry>
+                <entry key="设置有效性值域" value="Get-ShowListLevelCheckFieldEffectiveValues-report.dto.CheckFieldEffectiveValues"></entry>
+            </map>
+        </property>
+        <property name="operationMap">
+            <map>
+                <entry key="查询" value="Select-ShowList"></entry>
+                <entry key="新增" value="Get-ShowSave"></entry>
+                <entry key="删除" value="PostConfirm-DeleteListByIdList"></entry>
+                <entry key="返回" value="Get-BackPreviousFirst"></entry>
+           </map>
+        </property>
+  </bean>
+  
+   <bean id="checkFieldLineShowListLevelCheckFieldLineService" parent="singleObjectShowListService">
+         <property name="linkedMap">
+            <map>
+                <entry key="修改" value="Get-ShowUpdate"></entry>
+                <entry key="删除" value="Get-DeleteById"></entry>
+                <entry key="设置Left" value="Get-ShowListLevelCheckFieldLineLeft-report.dto.CheckFieldLineLeft"></entry>
+                <entry key="设置Right" value="Get-ShowListLevelCheckFieldLineRight-report.dto.CheckFieldLineRight"></entry>
+            </map>
+        </property>
+        <property name="operationMap">
+            <map>
+                <entry key="查询" value="Select-ShowList"></entry>
+                <entry key="新增" value="Get-ShowSave"></entry>
+                <entry key="删除" value="PostConfirm-DeleteListByIdList"></entry>
+                <entry key="返回" value="Get-BackPreviousFirst"></entry>
+           </map>
+        </property>
+  </bean>
+  
+   <bean id="checkFieldOrListShowListLevelCheckFieldOrListService" parent="singleObjectShowListLevelService">
+   		<property name="linkedMap">
+            <map>
+                <entry key="修改" value="Get-ShowUpdate"></entry>
+                <entry key="删除" value="Get-DeleteById"></entry>
+                <entry key="设置条件" value="Get-JumpByType"></entry>
+            </map>
+        </property>
+        <property name="typeFieldName" value="type"/>
+        <property name="typeFieldValueMap">
+            <map>
+                <entry key="1" value="ShowListLevelCheckOrBasic-report.dto.CheckOrBasic"></entry>
+                <entry key="2" value="ShowListLevelCheckOrCaseWhen-report.dto.CheckOrCaseWhen"></entry>
+            </map>
+        </property>
+        <property name="operationMap">
+            <map>
+                <entry key="查询" value="Select-ShowList"></entry>
+                <entry key="新增" value="Get-ShowSave"></entry>
+                <entry key="删除" value="PostConfirm-DeleteListByIdList"></entry>
+                <entry key="返回" value="Get-BackPreviousFirst"></entry>
+           </map>
+        </property>
+  </bean>
+  
+   <bean id="checkOrCaseWhenShowListLevelCheckOrCaseWhenService" parent="singleObjectShowListService">
+         <property name="linkedMap">
+            <map>
+                <entry key="修改" value="Get-ShowUpdate"></entry>
+                <entry key="删除" value="Get-DeleteById"></entry>
+               <entry key="CaseWhenField" value="Get-ShowListLevelCheckOrCaseWhenField-report.dto.CheckOrCaseWhenField"></entry>    
+            </map>                               
+        </property>
+        <property name="operationMap">
+            <map>
+                <entry key="查询" value="Select-ShowList"></entry>
+                <entry key="新增" value="Get-ShowSave"></entry>
+                <entry key="删除" value="PostConfirm-DeleteListByIdList"></entry>
+                <entry key="返回" value="Get-BackPreviousFirst"></entry>
+           </map>
+        </property>
+    </bean>
+    
+   
+    <bean id="suitDeleteByIdService" parent="singleObjectDeleteByIdService">
+        <property name="dependTableList">
+            <list>
+                <value>report.dto.FileFileSet</value>
+                <value>report.dto.InstCodeMap</value>
+                <value>report.dto.ItemInfo</value>
+                <value>report.dto.RptInfo</value>
+            </list>
+        </property>
+    </bean>
+    
+    <bean id="InstInfoShowUpdateListLevelAutoTaskRptInstService" parent="singleObjectForReportShowUpdateListService">
+      <property name="operationMap">
+        <map>
+          <entry key="保存" value="Post-framework/UpdateList"></entry>
+          <entry key="返回" value="Get-framework/BackPreviousFirst"></entry>
+        </map>
+      </property>
+    </bean>
+    
+    
+    
+    
+    
+      <bean id="reportDeleteByIdService" parent="singleObjectDeleteByIdService">
+     </bean>
+     
+    <bean id="singleObjectSaveLevelAutoDTOMXService" parent="singleObjectSaveService">
+     <property name="defaultCheckInstance" value="extend.dto.ReportModel_Table.strCheckInstance"></property>
+        <property name="defaultCheckClassList">
+            <list>
+                <value>framework.services.check.XMLSingleObjectContainClassInstanceCheck</value>
+            </list>
+        </property>
+        <property name="defaultValueMap">
+             <map>
+                <entry key="RPTCheckType" value="2"></entry>
+                <entry key="RPTSendType" value="1"></entry>
+                <entry key="RPTFeedbackType" value="1"></entry>
+             </map>
+        </property>
+          <property name="defaultProceseClassList">
+           <list>
+               <value>report.service.procese.AutoDTOUpdateFlowStatusProcess</value>
+           </list>
+       </property>
+        <property name="defaultAddClassList">
+            <list>
+                <value>framework.services.add.LevelDataAdd</value>
+                <value>framework.services.add.SystemInfoAdd</value>
+				<value>framework.services.add.DefaultValueAdd</value>
+				<value>framework.services.add.IsThousandthAdd</value>
+            </list>
+        </property>
+     </bean>
+     
+     <bean id="singleObjectSHShowUpdateLevelAUTODTOSHService" parent="singleObjectShowUpdateService">
+          <property name="operationMap">
+            <map>
+                <entry key="审核通过" value="Post-ReportRPTVerifyTypeUpdateField"></entry> 
+                <entry key="审核未通过" value="Post-ReportRPTVerifyTypeFalseUpdateField"></entry>
+                <entry key="返回" value="Get-SHShowListLevelAUTODTOSH"></entry>
+            </map>
+        </property>
+         <property name="defaultProceseClassList">
+           <list>
+            <value>report.service.procese.ForReportStatusShowHiddenProcess</value>
+             <value>framework.services.procese.ShowUpdateProcese</value>
+             <value>framework.services.procese.LevelDataProcese</value>
+             <value>framework.services.procese.SortFieldProcese</value>
+             <value>framework.services.procese.ShowViewProcese</value>
+             <value>framework.services.procese.ShowPowerButtonProcese</value>
+             <value>framework.services.procese.SelectExtendProcess</value>
+           </list>
+         </property>
+     </bean>
+       
+    <bean id="singleObjectFKBWShowInputUpdateService" parent="singleObjectShowInputUpdateService">
+    <property name="operationMap">
+            <map>
+               <entry key="保存" value="Post-FKBWValidateUpdateLevelFKBWAutoDTO"></entry>
+            </map>
+        </property>
+        <property name="defaultProceseClassList">
+            <list>
+            <value>report.service.procese.ForReportStatusShowHiddenProcess</value>
+                <value>framework.services.procese.ShowUpdateProcese</value>
+                <value>framework.services.procese.LevelDataProcese</value>
+                <value>framework.services.procese.SortFieldProcese</value>
+                <value>framework.services.procese.SelectTagSortByNameProcese</value>
+                <value>framework.services.procese.ShowPowerButtonProcese</value>
+                <value>framework.services.procese.SelectExtendProcess</value>
+            </list>
+        </property>
+    </bean>
+     
+     <bean id="singleObjectForReportShowUpdateListService" class="report.service.imps.ReportBaseObjectDaoResultService" scope="prototype">
+        <property name="suitListCode" value="NCR,zhangqiu,EAS,PCR,21,22,24,2111,2112,2114,211101,211102,211103,211104,211211,211212,211213,211214,211215,211216,211217,211218,211219,211220,211221,211461,23,245101,245102,243201,243202,2131,2201,2204,2208,WHZH,220A,2209,0001,01,csh"></property>
+        <property name="showInstanceName" value="1"></property>
+        <property name="defaultDaoBeanId" value="singleObjectFindByCriteriaDao"></property>
+        <property name="defaultLogicDaoBeanId" value="singleObjectFindByCriteriaDao"></property>
+        <property name="defaultProceseClassList">
+            <list>
+                <value>framework.services.procese.ShowUpdateListProcese</value>
+                <value>framework.services.procese.LevelDataProcese</value>
+                <value>framework.services.procese.SortFieldProcese</value>
+                <value>framework.services.procese.ShowPowerButtonProcese</value>
+            </list>
+        </property>
+        <property name="defaultTranslateClassList">
+            <list>
+                <value>framework.services.translate.LevelDataTranslate</value>
+                <value>framework.services.translate.ExampleCriteriaTranslate</value>
+                <value>framework.services.translate.DefaultValueTranslate</value>
+            </list>
+        </property>
+         <property name="operationMap">
+            <map>
+                <entry key="保存" value="Post-UpdateList"></entry>
+            </map>
+        </property>
+     </bean>
+     
+       <bean id="reportInstInfoShowListService" parent="singleObjectShowListService">
+         <property name="linkedMap">
+            <map>
+                <entry key="修改" value="Get-ShowUpdate"></entry>
+                <entry key="子机构" value="Get-ShowUpdateListLevelReportInstSubInfo-report.dto.ReportInstSubInfo"></entry>
+           </map>
+        </property>
+    </bean>
+    
+    <bean id="reportInstInfoShowSaveService" parent="singleObjectShowSaveService" scope="prototype">
+        <property name="defaultProceseClassList">
+            <list>
+                <value>framework.services.procese.ShowSaveProcese</value>
+                <value>framework.services.procese.LevelDataProcese</value>
+		        <value>framework.services.procese.DefaultValueProcese</value>
+		        <value>framework.services.procese.ShowListTreeProcese</value>
+		        <value>framework.services.procese.SortFieldProcese</value>
+		        <value>framework.services.procese.SelectTagSortByNameProcese</value>
+		        <value>framework.services.procese.ShowPowerButtonProcese</value>
+		        <value>framework.services.procese.ShowModelListProceses</value>
+                <value>report.service.procese.ShowSuperSuitIProcese</value>
+            </list>
+        </property>
+    </bean>
+
+    <bean id="reportInstInfoShowUpdateService" parent="singleObjectShowUpdateService" scope="prototype">
+        <property name="defaultProceseClassList">
+            <list>
+                <value>framework.services.procese.ShowUpdateProcese</value>
+                <value>framework.services.procese.LevelDataProcese</value>
+                <value>framework.services.procese.SortFieldProcese</value>
+                <value>framework.services.procese.SelectTagSortByNameProcese</value>
+                <value>framework.services.procese.ShowPowerButtonProcese</value>
+                <value>framework.services.procese.ShowModelListProceses</value>
+                <value>report.service.procese.ShowSuperSuitIProcese</value>
+            </list>
+        </property>
+    </bean>
+    
+    <bean id="reportInstInfoSaveService" parent="singleObjectSaveService">
+         <property name="defaultCheckClassList">
+            <list>
+                <value>framework.services.check.ReflectEmptyFieldCheck</value>
+                <value>framework.services.check.ReflectTypeFieldCheck</value>
+                <value>framework.services.check.PrimaryKeyRepeatCheck</value>
+                <value>framework.services.check.XMLSingleObjectInstanceCheck</value>
+                <value>framework.services.check.LogicPrimaryKeyCheck</value>
+                <value>report.service.check.JRJGDMLengthCheck</value> <!-- 报送金融机构代码长度判断，目前担保有判断 -->
+            </list>
+        </property>
+    </bean>
+    
+    <bean id="taskFlowSaveService" parent="singleObjectSaveService">
+    	<property name="defaultCheckInstance" value="TaskFlowCheck"/>
+    </bean>
+    
+    <bean id="taskFlowUpdateService" parent="singleObjectUpdateService">
+    	<property name="defaultCheckInstance" value="TaskFlowCheck"/>
+    </bean>
+    
+    <bean id="taskFlowShowSaveService" parent="singleObjectShowSaveService" scope="prototype">
+        <property name="defaultProceseClassList">
+            <list>
+                <value>framework.services.procese.ShowSaveProcese</value>
+                <value>framework.services.procese.LevelDataProcese</value>
+		        <value>framework.services.procese.DefaultValueProcese</value>
+		        <value>framework.services.procese.ShowListTreeProcese</value>
+		        <value>framework.services.procese.SortFieldProcese</value>
+		        <value>framework.services.procese.SelectTagSortByNameProcese</value>
+		        <value>framework.services.procese.ShowPowerButtonProcese</value>
+		        <value>framework.services.procese.ShowModelListProceses</value>
+                <value>report.service.procese.ShowSuperSuitIProcese</value>
+            </list>
+        </property>
+    </bean>
+
+    <bean id="taskFlowShowUpdateService" parent="singleObjectShowUpdateService" scope="prototype">
+        <property name="defaultProceseClassList">
+            <list>
+                <value>framework.services.procese.ShowUpdateProcese</value>
+                <value>framework.services.procese.LevelDataProcese</value>
+                <value>framework.services.procese.SortFieldProcese</value>
+                <value>framework.services.procese.SelectTagSortByNameProcese</value>
+                <value>framework.services.procese.ShowPowerButtonProcese</value>
+                <value>framework.services.procese.ShowModelListProceses</value>
+                <value>report.service.procese.ShowSuperSuitIProcese</value>
+            </list>
+        </property>
+    </bean>
+    
+     <bean id="autoTaskFlowSaveService" parent="singleObjectSaveService">
+    	<property name="defaultCheckInstance" value="AutoTaskFlowCheck"/>
+    </bean>
+    
+     <bean id="autoTaskFlowUpdateService" parent="singleObjectUpdateService">
+    	<property name="defaultCheckInstance" value="AutoTaskFlowCheck"/>
+    </bean>
+    
+    <bean id="autoTaskFlowShowSaveService" parent="singleObjectShowSaveService" scope="prototype">
+        <property name="defaultProceseClassList">
+            <list>
+                <value>framework.services.procese.ShowSaveProcese</value>
+                <value>framework.services.procese.LevelDataProcese</value>
+		        <value>framework.services.procese.DefaultValueProcese</value>
+		        <value>framework.services.procese.ShowListTreeProcese</value>
+		        <value>framework.services.procese.SortFieldProcese</value>
+		        <value>framework.services.procese.SelectTagSortByNameProcese</value>
+		        <value>framework.services.procese.ShowPowerButtonProcese</value>
+		        <value>framework.services.procese.ShowModelListProceses</value>
+                <value>report.service.procese.ShowSuperSuitIProcese</value>
+            </list>
+        </property>
+    </bean>
+
+    <bean id="autoTaskFlowShowUpdateService" parent="singleObjectShowUpdateService" scope="prototype">
+        <property name="defaultProceseClassList">
+            <list>
+                <value>framework.services.procese.ShowUpdateProcese</value>
+                <value>framework.services.procese.LevelDataProcese</value>
+                <value>framework.services.procese.SortFieldProcese</value>
+                <value>framework.services.procese.SelectTagSortByNameProcese</value>
+                <value>framework.services.procese.ShowPowerButtonProcese</value>
+                <value>framework.services.procese.ShowModelListProceses</value>
+                <value>report.service.procese.ShowSuperSuitIProcese</value>
+            </list>
+        </property>
+    </bean>
+    <bean id="downloadResourceShowListService" class="report.service.imps.DownloadResourceShowListService" scope="prototype">
+        <property name="operationMap">
+            <map>
+                <entry key="查询" value="Select-ShowList"></entry>
+                <entry key="删除" value="PostConfirm-DeleteListByIdList"></entry>
+            </map>
+        </property>
+        <property name="linkedMap">
+        	<map>
+                <entry key="下载" value="Get-report/DownloadResource"></entry>
+<!--                <entry key="删除" value="Get-DeleteById"></entry>-->
+        	</map>
+        </property>
+        <property name="pageSize" value="10"></property>
+        <property name="defaultDaoBeanId" value="singleObjectFindByPageCriteriaDao"></property>
+        <property name="defaultLogicDaoBeanId" value="singleObjectFindByCriteriaDao"></property>
+        <property name="showInstanceName" value="1"></property>
+        <property name="defaultProceseClassList">
+            <list>
+                <value>framework.services.procese.ShowListProcese</value>
+                <value>framework.services.procese.LevelDataProcese</value>
+                <value>framework.services.procese.ShowListTreeProcese</value>
+                <value>framework.services.procese.SelectTagSortByNameProcese</value>
+                <value>framework.services.procese.ShowPowerButtonProcese</value>
+            </list>
+        </property>
+        <property name="defaultTranslateClassList">
+            <list>
+                <value>framework.services.translate.LevelDataTranslate</value>
+                <value>framework.services.translate.ConditionCriteriaTranslate</value>
+                <value>framework.services.translate.ConditionMultipleCriteriaTranslate</value>
+                <value>framework.services.translate.SecurityTranslate</value>
+		        <value>framework.services.translate.DefaultValueTranslate</value>
+		        <value>framework.services.translate.ShowListTreeTranslate</value>
+            </list>
+        </property>
+     </bean>
+     
+     <bean id="downloadResourceDeleteListByIdListService" parent="singleObjectDeleteListByIdListService">
+         <property name="defaultTranslateClassList">
+            <list>
+		        <value>report.service.translate.DeleteDownloadTranslate</value>
+            </list>
+        </property>
+     </bean>
+     
+    <!-- lanyuesheng  校验结果下载 -->
+     <bean id="userInfoDownloadService" class="framework.services.imps.SingleObjectDownloadByPathService" scope="prototype">
+        <property name="path" value="Download\checkResult.txt"></property>
+     </bean>
+     
+    <!-- lanyuesheng  下载资源库下载  -->
+     <bean id="downloadResourceService" class="report.service.imps.DownloadResourceService" scope="prototype">
+    <!--  <property name="bufferSize" value="1024*1024"></property>-->
+     </bean>
+    
+    <bean id="noticeShowListService" parent="singleObjectShowListService">
+ 
+             <property name="operationMap">
+             <map>
+                <entry key="查询" value="Select-ShowList"></entry>
+                <entry key="新增" value="Get-ShowSave"></entry>
+            </map>
+        </property>
+         <property name="linkedMap">
+            <map>
+                <entry key="修改" value="Get-ShowUpdate"></entry>
+                <entry key="删除" value="Get-DeleteById"></entry>
+                <entry key="下载" value="Get-Download"></entry>
+            </map>
+         </property>
+     </bean>
+
+	<bean id="noMXShowSaveLevelAUTODTOService" parent="singleObjectShowSaveLevelAUTODTOService">
+        <property name="operationMap">
+            <map>
+                <entry key="保存" value="Post-NoMXSave"></entry>
+                <entry key="返回" value="Get-ShowListLevelAUTODTO"></entry>
+            </map>
+        </property>
+     </bean>
+	 
+    <bean id="UpdateFieldService" class="report.service.imps.UpdateFieldService" scope="prototype">
+    	<property name="defaultCheckClassList">
+            <list>
+                <value>framework.services.check.ReflectTypeFieldCheck</value>
+                <value>framework.services.check.XMLSingleObjectInstanceCheck</value>
+                <value>framework.services.check.LogicPrimaryKeyCheck</value>
+                <value>framework.services.check.PrimaryKeyRepeatCheck</value>
+            </list>
+        </property>
+    </bean>
+     <bean id="taskFlowShowListService" parent="singleObjectShowListService">
+        <property name="linkedMap">
+            <map>
+            	<entry key="修改" value="Get-ShowUpdate"></entry>
+                <!--<entry key="修改" value="Get-ShowUpdate,90,images/icomeum/16_ActionExcute.png"></entry>
+                <entry key="删除" value="Get-DeleteById"></entry>-->
+                <entry key="统计报表任务设置" value="Get-report/InstInfoShowUpdateListLevelTaskRptInst-report.dto.TaskRptInst"></entry>
+                <entry key="明细表任务设置" value="Get-report/InstInfoShowUpdateListLevelTaskModelInst-report.dto.TaskModelInst"></entry>
+                <!--<entry key="任务查看" value="Get-ShowListLevelTaskRptInst-report.dto.TaskRptInst"></entry>
+                <entry key="任务设置2" value="Get-coresystem/AAAAAAAAAAA-report.dto.TaskRptInst"></entry> -->
+            </map>
+        </property>
+     </bean>
+     
+      <bean id="autoTaskFlowShowListService" parent="singleObjectShowListService">
+        <property name="linkedMap">
+            <map>
+                <entry key="修改" value="Get-ShowUpdate"></entry>
+                <entry key="统计报表任务设置" value="Get-report/InstInfoShowUpdateListLevelAutoTaskRptInst-report.dto.AutoTaskRptInst"></entry>
+                <entry key="明细表任务设置" value="Get-report/InstInfoShowUpdateListLevelAutoTaskModelInst-report.dto.AutoTaskModelInst"></entry>
+            </map>
+        </property>
+     </bean>
+	  
+     
+    <bean id="autoTaskModelInstUpdateListLevelTaskModelInstService"  parent="singleObjectUpdateListService">
+     <property name="defaultValueMap">
+            <map>
+                <entry key="strAllowState" value="1"></entry>
+                <entry key="strCheckState" value="1"></entry>
+                <entry key="SubmitStatus" value="1"></entry>
+                <entry key="RPTSendType" value="1"></entry>
+                <entry key="RPTFeedbackType" value="1"></entry>
+            </map>
+        </property>
+     </bean>
+     <bean id="InstInfoShowUpdateListLevelTaskModelInstService" parent="InstInfoShowUpdateListLevelTaskRptInstService">
+   		<property name="suitListCode" value="NCR,zhangqiu,EAS,PCR,21,22,24,2111,2112,2114,211101,211102,211103,211104,211211,211212,211213,211214,211215,211216,211217,211218,211219,211220,211221,211461,23,245101,245102,243201,243202,2131,2201,2204,2208,WHZH,220A,2209,0001,01,csh"></property>
+    </bean>
+ 
+    <bean id="InstInfoShowUpdateListLevelTaskRptInstService" parent="singleObjectForReportShowUpdateListService">
+      <property name="operationMap">
+        <map>
+          <entry key="保存" value="Post-framework/UpdateList"></entry>
+          <entry key="返回" value="Get-framework/BackPreviousFirst"></entry>
+        </map>
+      </property>
+    </bean>
+
+	<!-- 显示数据汇总页面 service -->
+	<bean id="showTaskRptInstForMegerService" class="report.service.imps.ShowTaskRptInstForMegerService" scope="prototype">
+		<property name="operationMap">
+			<map>
+				<entry key="汇总" value="Post-report/ReportsSummary"></entry>
+			</map>
+		</property>
+	</bean>
+	
+	<!-- 显示数据topN汇总页面 service -->
+	<bean id="showTaskRptInstForTopNService" class="report.service.imps.ShowTaskRptInstForTopNService" scope="prototype">
+		<property name="operationMap">
+			<map>
+				<entry key="汇总" value="Post-report/ReportsTopN"></entry>
+			</map>
+		</property>
+	</bean>
+	
+    
+    <!-- 任务下发重写service开始 -->
+	<bean id="taskRptInstUpdateListLevelTaskRptInstService" parent="singleObjectUpdateListService" scope="prototype">
+		<property name="defaultDaoBeanId" value="singleObjectSaveAllDao"></property>
+		<property name="defaultValueMap">
+			<map>
+				<entry key="strAllowState" value="1"></entry>
+				<entry key="strCheckState" value="1"></entry>
+				<entry key="SubmitStatus" value="1"></entry>
+				<entry key="RPTSendType" value="1"></entry>
+				<entry key="RPTFeedbackType" value="1"></entry>
+			</map>
+		</property>
+	</bean>
+	
+	<bean id="taskModelInstUpdateListLevelTaskModelInstService"  parent="singleObjectUpdateListService">
+		<property name="defaultDaoBeanId" value="singleObjectSaveAllDao"></property>
+		<property name="defaultValueMap">
+			<map>
+				<entry key="strAllowState" value="1"></entry>
+				<entry key="strCheckState" value="1"></entry>
+				<entry key="SubmitStatus" value="1"></entry>
+				<entry key="RPTSendType" value="1"></entry>
+				<entry key="RPTFeedbackType" value="1"></entry>
+			</map>
+		</property>
+	</bean>
+    <!-- 任务下发重写service结束 -->
+    
+  </beans>

@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<securityRoot>
+
+ 	<function>
+	 	 <functionParentId>DeskTop</functionParentId>
+	     <functionCode>BXYW</functionCode>
+	     <functionName>BXYW-保险业务</functionName>
+	     <actionName>Framework/NavigationPage.jsp?id=BXYW</actionName>
+     </function>
+     
+     <function>
+         <functionParentId>BXYW</functionParentId>
+	     <functionCode>BXYWDownload</functionCode>
+	     <functionName>BXYW-报文生成</functionName>
+	     <actionName>framework/ShowList-bxywsystem.dto.BXYWDownload</actionName>
+	     <actionName>*-bxywsystem.dto.BXYWDownload</actionName>
+     </function>
+     
+    <function>
+     <functionParentId>BXYW</functionParentId>
+     <functionCode>BXYWCJFKBW</functionCode>
+     <functionName>BXYW-采集类反馈报文处理</functionName>
+     <actionName>framework/ShowList-bxywsystem.dto.BXYWCJFKBW</actionName>
+     <actionName>framework/UploadBXYWBWJX-bxywsystem.dto.BXYWCJFKBW</actionName>
+     <actionName>*-bxywsystem.dto.BXYWCJFKBW</actionName>
+     <actionName>framework/ShowListLevelBXYWCJFKBWSub-bxywsystem.dto.BXYWCJFKBWSub</actionName>
+     <actionName>*-bxywsystem.dto.BXYWCJFKBWSub</actionName>
+  </function>           
+  
+</securityRoot>

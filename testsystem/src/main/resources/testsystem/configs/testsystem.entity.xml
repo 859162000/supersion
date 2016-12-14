@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<entityRoot>
+   <entityMap>
+      <entityName>product</entityName>
+      <entity>
+	     <code>1</code>
+	     <name>1111111111111</name>
+      </entity>
+      <entity>
+	     <code>2</code>
+	     <name>222222222222</name>
+      </entity>
+       <entity>
+	     <code>3</code>
+	     <name>33333333333333</name>
+      </entity>
+   </entityMap>
+    <entityMap>
+      <entityName>ActivityNodeGroup</entityName>
+      <entity>
+	     <code>DeleteTable,Test1,Test2,Test3</code>
+	     <name>test 导数校验</name>
+      </entity>
+      <entity>
+	     <code>DeleteTable,DB_DBXX_JC_Copy</code>
+	     <name>test 导数校验</name>
+      </entity>
+       <entity>
+	     <code>DB_DBHTXX_Copy,DB_DBXX_JC校验</code>
+	     <name>test 导数校验</name>
+      </entity>
+   </entityMap>
+   
+   
+  <entityMap>
+      <entityName>ShowModelListEntity</entityName>
+      <!--<entity>
+	     <code>zxptsystem.dto.AutoDTO_QY_JKRGKXX,extend.dto.SystemCodeValue</code>
+	     <name>HYFL-0</name>
+      </entity>
+      <entity>
+	     <code>zxptsystem.dto.AutoDTO_JG_JBSX,extend.dto.SystemCodeValue</code>
+	     <name>JJHYFL-0</name>
+      </entity>
+      <entity>
+	     <code>zxptsystem.dto.AutoDTO_QY_JJXX,extend.dto.SystemCodeValue</code>
+	     <name>DKTX-0</name>
+       </entity>-->
+      <entity>
+	    <code>report.dto.ItemsCalculation,extend.dto.ReportModel_Table</code>
+	     <name>reportModel_Table.autoTableID-0</name>
+      </entity>
+      <!--<entity>
+	     <code>wgjreportsystem.dto.AutoDTO_WGJ_EXD_AD,wgjreportsystem.dto.AutoDTO_WGJ_Customer</code>
+	     <name>CREHQCODE-0@CREDITORNAME-2,3,4</name>
+      </entity>
+	-->
+	</entityMap>
+    <entityMap>
+      <entityName>bookColor</entityName>
+      <entity>
+	     <code>red</code>
+	     <name>红色</name>
+      </entity>
+      <entity>
+	     <code>yellow</code>
+	     <name>黄色</name>
+      </entity>
+       <entity>
+	     <code>green</code>
+	     <name>绿色</name>
+      </entity>
+       <entity>
+	     <code>other</code>
+	     <name>其他</name>
+      </entity>
+   </entityMap>
+</entityRoot>

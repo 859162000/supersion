@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:p="http://www.springframework.org/schema/p"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-3.0.xsd">
+
+	<bean id="reportFileImportLogShowZXReportImportViewService" parent="singleObjectShowListService" scope="prototype">
+		<property name="operationMap">
+			<map>
+				<entry key="查询" value="Select-ShowZXReportImportView"></entry>
+				<entry key="报文导入" value="Upload-ConfirmReportImport"></entry>
+				<entry key="数据清空" value="Get-ClearZXBusinessHistoryData"></entry>
+			</map>
+		</property>
+		<property name="defaultProceseClassList">
+            <list>
+                <value>framework.services.procese.ShowListProcese</value>
+                <value>framework.services.procese.LevelDataProcese</value>
+                <value>framework.services.procese.ShowListTreeProcese</value>
+                <value>framework.services.procese.SelectTagSortByNameProcese</value>
+                <value>framework.services.procese.ShowPowerButtonProcese</value>
+                <value>bwdrsystem.service.procese.BWDRProcese</value>
+            </list>
+        </property>
+        <property name="linkedMap">
+            <map></map>
+        </property>
+	</bean>
+
+	<bean id="ConfirmReportImportService" class="bwdrsystem.service.imps.ConfirmReportImportService" scope="prototype">
+		<property name="defaultDaoBeanId" value="singleObjectFindByCriteriaDao"></property>
+	</bean>
+
+	<bean id="ReportImportService" class="bwdrsystem.service.imps.ReportImportService" scope="prototype">
+		<property name="showInstanceName" value="1"></property>
+		<property name="defaultDaoBeanId" value="singleObjectSaveAllDao"></property>
+		<property name="successMessage" value="导入成功"></property>
+		<property name="errorMessage" value="导入失败"></property>
+		<property name="defaultCheckClassList">
+        	<value>bwdrsystem.service.check.ReportFileFormatCheck</value> 
+        </property>
+	</bean>
+
+	<bean id="ClearZXBusinessHistoryDataService" class="bwdrsystem.service.imps.ClearZXBusinessHistoryDataService" scope="prototype">
+		<property name="showInstanceName" value="1"></property>
+		<property name="successMessage" value="操作成功"></property>
+		<property name="errorMessage" value="操作失败"></property>
+	</bean>
+	
+	<bean id="GetInstInfoJsonService" class="bwdrsystem.service.imps.GetInstInfoListService" scope="prototype">
+		<property name="defaultDaoBeanId" value="singleObjectFindAllDao"></property>
+	</bean>
+</beans>
+ 
+ 

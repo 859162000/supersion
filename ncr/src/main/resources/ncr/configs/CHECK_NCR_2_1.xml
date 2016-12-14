@@ -1,0 +1,133 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<reportCheckRoot>   
+	<checkInstance name="Check_NCR_2_1">
+	   <paramValueList>
+	      <paramValue name="DTDATE" value="2013-12-31"></paramValue>
+	      <paramValue name="strInstCode" value=""></paramValue>
+			<!--
+		  <paramValue name="strTaskRptInstID" value="000000"></paramValue>
+			<paramValue name="strFreq" value="000000"></paramValue> 
+			-->
+	   </paramValueList>
+
+	   <freqCode value="4"></freqCode>
+                 
+     <checkTable procedureName="CHECK_NCR_2_1"  procedureParam="DTDATE,strInstCode,rt" procedureDiscription="集团基本情况表" 
+     	originTable="NCR_2_1" errorStateField="RPTCHECKTYPE" errorStateValue="3"  successStateValue="2" 
+			defaultLogicDaoBeanId="oracleProcedureResultSetDao">    
+	  		<paramFieldList>
+	  			<paramField paramName="DTDATE" field="DTDATE" type="2"></paramField>
+	  			<paramField paramName="strInstCode" field="INSTINFO" type="1"></paramField>
+	  		</paramFieldList>
+        <checkUniqueFieldList>
+         	<checkUniqueField name="AUTOID" discription="主键" originField="AUTOID"></checkUniqueField>
+        </checkUniqueFieldList>
+
+       <checkFieldBasicList discription="表内基础性校验">
+					<checkFieldBasic name="A" discription="客户名称" emptyCheck="true" startLength="2"></checkFieldBasic>
+					<checkFieldBasic name="B" discription="客户代码/供应链编码" emptyCheck="true" startLength="2"></checkFieldBasic>
+					<checkFieldBasic name="C" discription="工商注册编号"></checkFieldBasic>
+					<checkFieldBasic name="D" discription="集团成员数" emptyCheck="true" digitalCheck="true" startLength="1"></checkFieldBasic>
+		      <checkFieldBasic name="E" discription="授信类型" emptyCheck="true" digitalCheck="true" startLength="1" endLength="1"></checkFieldBasic>
+					<checkFieldBasic name="F" discription="集团并表财务指标-资产总额" valueDecimalMin="0" valueDecimalLength="2"></checkFieldBasic>
+					<checkFieldBasic name="G" discription="集团并表财务指标-负债总额" valueDecimalMin="0" valueDecimalLength="2" ></checkFieldBasic>
+					<checkFieldBasic name="H" discription="集团并表财务指标-资产负债表类型" digitalCheck="true" startLength="1" endLength="1"></checkFieldBasic>					
+					<checkFieldBasic name="I" discription="集团并表财务指标-资产负债表日期"  startLength="8" endLength="8"></checkFieldBasic>
+		      <checkFieldBasic name="J" discription="预警/评级-风险预警信号" ></checkFieldBasic>
+		      <checkFieldBasic name="K" discription="预警/评级-关注事件" ></checkFieldBasic>
+					<checkFieldBasic name="L" discription="预警/评级-信用评级结果" ></checkFieldBasic>
+					<checkFieldBasic name="M" discription="母公司注册信息-注册国家或地区" startLength="2"></checkFieldBasic>
+	        <checkFieldBasic name="N" discription="母公司注册信息-国别代码" upperCheck="true" startLength="3" endLength="3"></checkFieldBasic>
+	        <checkFieldBasic name="O" discription="母公司注册信息-国内注册地址" startLength="2" ></checkFieldBasic>
+	        <checkFieldBasic name="P" discription="母公司注册信息-母公司行政区划代码"  startLength="6" endLength="6"></checkFieldBasic>
+	        <checkFieldBasic name="Q" discription="母公司注册信息-更新注册信息日期"  startLength="8" endLength="8"></checkFieldBasic>
+					<checkFieldBasic name="R" discription="国内办公地址-办公地址" startLength="2"></checkFieldBasic>
+					<checkFieldBasic name="S" discription="国内办公地址-国内行政区划代码"  startLength="6" endLength="6"></checkFieldBasic>
+					<checkFieldBasic name="T" discription="国内办公地址-更新办公地址日期"  startLength="8" endLength="8"></checkFieldBasic>					
+       </checkFieldBasicList>                           
+
+      <checkFieldEffectiveList>
+       	<checkFieldEffective name="H" discription="集团并表财务指标-资产负债表类型">
+                <value>1</value>
+                <value>2</value>
+                <value>3</value>
+                <value>4</value>
+        </checkFieldEffective>
+       	<checkFieldEffective name="E" discription="授信类型">
+                <value>1</value>
+                <value>2</value>
+        </checkFieldEffective>            
+      </checkFieldEffectiveList>
+
+	    <checkFieldCaseWhenList discription="CaseWhen校验">
+				<checkFieldCaseWhen name="H" discription="集团并表财务指标-资产负债表类型" caseValue="notNull" whenType="2" whenCompareType=">" whenCompareValue="0">
+	              <checkFieldCaseWhenField name="F" discription="集团并表财务指标-资产总额" ></checkFieldCaseWhenField>
+	      </checkFieldCaseWhen>
+				<checkFieldCaseWhen name="H" discription="集团并表财务指标-资产负债表类型" caseValue="notNull" whenType="2" whenCompareType=">" whenCompareValue="0">
+	              <checkFieldCaseWhenField name="G" discription="集团并表财务指标-负债总额" ></checkFieldCaseWhenField>
+	      </checkFieldCaseWhen>
+	      
+				<checkFieldCaseWhen name="I" discription="集团并表财务指标-资产负债表日期" caseValue="notNull" whenType="2" whenCompareType=">" whenCompareValue="0">
+	              <checkFieldCaseWhenField name="F" discription="集团并表财务指标-资产总额" ></checkFieldCaseWhenField>
+	      </checkFieldCaseWhen>
+				<checkFieldCaseWhen name="I" discription="集团并表财务指标-资产负债表日期" caseValue="notNull" whenType="2" whenCompareType=">" whenCompareValue="0">
+	              <checkFieldCaseWhenField name="G" discription="集团并表财务指标-负债总额" ></checkFieldCaseWhenField>
+	      </checkFieldCaseWhen>	            
+				<checkFieldCaseWhen name="I" discription="集团并表财务指标-资产负债表日期" caseValue="yearEndDate" whenValue="1">
+	              <checkFieldCaseWhenField name="H" discription="集团并表财务指标-资产负债表类型" ></checkFieldCaseWhenField>
+	      </checkFieldCaseWhen>
+				<checkFieldCaseWhen name="I" discription="集团并表财务指标-资产负债表日期" caseValue="halfYearEndDate" whenValue="2">
+	              <checkFieldCaseWhenField name="H" discription="集团并表财务指标-资产负债表类型" ></checkFieldCaseWhenField>
+	      </checkFieldCaseWhen>
+				<checkFieldCaseWhen name="I" discription="集团并表财务指标-资产负债表日期" caseValue="seasonEndDate" whenValue="3">
+	              <checkFieldCaseWhenField name="H" discription="集团并表财务指标-资产负债表类型" ></checkFieldCaseWhenField>
+	      </checkFieldCaseWhen>
+				<checkFieldCaseWhen name="I" discription="集团并表财务指标-资产负债表日期" caseValue="monthEndDate" whenValue="4">
+	              <checkFieldCaseWhenField name="H" discription="集团并表财务指标-资产负债表类型" ></checkFieldCaseWhenField>
+	      </checkFieldCaseWhen>
+	  	</checkFieldCaseWhenList> 
+
+      <checkFieldLineList discription="非聚合校验">
+					<checkFieldLine compareType=">=" fieldType="2">								
+						<leftFieldList>	                      
+							<checkFieldLineField name="DTDATE" discription="数据日期"></checkFieldLineField>	                  
+						</leftFieldList>   
+						<rightFieldList>           
+							<checkFieldLineField name="I" discription="资产负债表日期"></checkFieldLineField>	   
+						</rightFieldList>	           
+					</checkFieldLine>
+					
+					<checkFieldLine compareType=">=" fieldType="2">								
+						<leftFieldList>	                      
+							<checkFieldLineField name="DTDATE" discription="数据日期" ignoreVal="99999999"></checkFieldLineField>	                  
+						</leftFieldList>   
+						<rightFieldList>           
+							<checkFieldLineField name="Q" discription="更新注册信息日期"></checkFieldLineField>	   
+						</rightFieldList>	           
+					</checkFieldLine>
+					
+					<checkFieldLine compareType=">=" fieldType="2" ignoreVal="99999999">								
+						<leftFieldList>	                      
+							<checkFieldLineField name="DTDATE" discription="数据日期"></checkFieldLineField>	                  
+						</leftFieldList>   
+						<rightFieldList>           
+							<checkFieldLineField name="T" discription="更新办公地址日期"></checkFieldLineField>	   
+						</rightFieldList>	           
+					</checkFieldLine>
+					
+					<!--  单指标当期数值异常提示  -->
+					<checkFieldLine compareType=">">								
+						<leftFieldList>	                      
+							<checkFieldLineField name="D" discription="集团成员数(提示性信息)">
+							</checkFieldLineField>	                  
+						</leftFieldList>   
+						<rightFieldList>           
+							<checkFieldLineField value="1"></checkFieldLineField>
+						</rightFieldList>	           
+					</checkFieldLine>
+			</checkFieldLineList>
+	     
+     </checkTable>
+
+	</checkInstance>	
+</reportCheckRoot>

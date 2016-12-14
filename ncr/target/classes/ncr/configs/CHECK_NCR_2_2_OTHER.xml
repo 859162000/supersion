@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<reportCheckRoot>  
+	<checkInstance name="CHECK_NCR_2_2_OTHER">
+
+	    <paramValueList>
+	      <paramValue name="DTDATE" value="2013-12-31"></paramValue>
+	      <paramValue name="strInstCode" value=""></paramValue>
+	      <!--
+		    <paramValue name="strTaskRptInstID" value="000000"></paramValue>
+			  <paramValue name="strFreq" value="000000"></paramValue> 
+			  -->
+	    </paramValueList>
+
+	    <freqCode value="4"></freqCode>
+	     
+			<!-- 同一[授信类型]下	[客户代码/供应链编码 同一[授信类型]下	[工商注册编]-->
+		  <checkFieldConsistentList consistenttype="2" discription="唯一性校验">
+	   		<paramFieldList>
+						<paramField paramName="DTDATE" field="DTDATE" type="2"></paramField>
+				</paramFieldList>
+	  	 	<checkFieldConsistent>
+	    			<consistentGroup keyField="E,B,A" keyDiscription="授信类型,客户代码/供应链编码,关系人类型" nameField="D"  nameDiscription="身份证号码" procedureName="CHECK_NCR_2_2_WYX_ALL"  procedureDiscription="高管及重要关联人信息唯一性校验存储过程" procedureParam="rt,DTDATE,strInstCode" ></consistentGroup>
+	    	</checkFieldConsistent>
+	  	 	<checkFieldConsistent>
+	    			<consistentGroup keyField="E,B,A" keyDiscription="授信类型,客户代码/供应链编码,关系人类型" nameField="E_1"  nameDiscription="护照1-护照号码" procedureName="CHECK_NCR_2_2_WYX_ALL"  procedureDiscription="高管及重要关联人信息唯一性校验存储过程" procedureParam="rt,DTDATE,strInstCode"  ></consistentGroup>
+	    	</checkFieldConsistent>
+	  	 	<checkFieldConsistent>
+	    			<consistentGroup keyField="E,B,A" keyDiscription="授信类型,客户代码/供应链编码,关系人类型" nameField="E_2"  nameDiscription="护照2-护照号码" procedureName="CHECK_NCR_2_2_WYX_ALL"  procedureDiscription="高管及重要关联人信息唯一性校验存储过程" procedureParam="rt,DTDATE,strInstCode"  ></consistentGroup>
+	    	</checkFieldConsistent>
+	  	 	<checkFieldConsistent>
+	    			<consistentGroup keyField="E,B,A" keyDiscription="授信类型,客户代码/供应链编码,关系人类型" nameField="E_N"  nameDiscription="护照N-护照号码" procedureName="CHECK_NCR_2_2_WYX_ALL"  procedureDiscription="高管及重要关联人信息唯一性校验存储过程" procedureParam="rt,DTDATE,strInstCode"  ></consistentGroup>
+	    	</checkFieldConsistent>
+	  	 	<checkFieldConsistent>
+	    			<consistentGroup keyField="E,B,A,H_1" keyDiscription="授信类型,客户代码/供应链编码,关系人类型,其他证件1-证件类型" nameField="I_1"  nameDiscription="其他证件1-证件号码" procedureName="CHECK_NCR_2_2_WYX_ALL"  procedureDiscription="高管及重要关联人信息唯一性校验存储过程" procedureParam="rt,DTDATE,strInstCode"  ></consistentGroup>
+	    	</checkFieldConsistent>
+	  	 	<checkFieldConsistent>
+	    			<consistentGroup keyField="E,B,A,H_N" keyDiscription="授信类型,客户代码/供应链编码,关系人类型,其他证件N-证件类型" nameField="I_N"  nameDiscription="其他证件N-证件号码" procedureName="CHECK_NCR_2_2_WYX_ALL"  procedureDiscription="高管及重要关联人信息唯一性校验存储过程" procedureParam="rt,DTDATE,strInstCode"  ></consistentGroup>
+	    	</checkFieldConsistent>
+	    </checkFieldConsistentList>	
+                        
+      <checkTable procedureName="CHECK_NCR_2_2"  procedureParam="DTDATE,strInstCode" 
+      	originTable="NCR_2_2" errorStateField="RPTCHECKTYPE" errorStateValue="3"  successStateValue="2" 
+      	defaultLogicDaoBeanId="oracleProcedureResultSetDao"
+      	procedureDiscription="高管及重要关联人信息表" >    
+	  		<paramFieldList>
+	  			<paramField paramName="DTDATE" field="DTDATE" type="2"></paramField>
+	  			<paramField paramName="strInstCode" field="INSTINFO" type="1"></paramField>
+	  		</paramFieldList>
+
+	       <checkUniqueFieldList>
+	         	<checkUniqueField name="AUTOID" discription="主键" originField="AUTOID"></checkUniqueField>
+	       </checkUniqueFieldList>
+
+      </checkTable>
+    
+	</checkInstance>	
+</reportCheckRoot>

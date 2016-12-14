@@ -1,0 +1,91 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<reportCheckRoot>
+	<checkInstance name="Check_NCR_2_4">
+		<paramValueList>
+			<paramValue name="DTDATE" value="2013-12-09"></paramValue>
+			<paramValue name="strInstCode" value=""></paramValue>
+			<!--
+		  <paramValue name="strTaskRptInstID" value="000000"></paramValue>
+			<paramValue name="strFreq" value="000000"></paramValue> 
+			-->
+		</paramValueList>
+
+		<freqCode value="4"></freqCode>
+
+		  <checkTable procedureName="CHECK_NCR_2_4"  procedureParam="DTDATE,strInstCode,rt" procedureDiscription="实际控制人" 
+    	originTable="NCR_2_4" errorStateField="RPTCHECKTYPE" errorStateValue="3"  successStateValue="2" 
+			defaultLogicDaoBeanId="oracleProcedureResultSetDao">   
+			
+			<paramFieldList>
+  			<paramField paramName="DTDATE" field="DTDATE" type="2"></paramField>
+  			<paramField paramName="strInstCode" field="INSTINFO" type="1"></paramField>
+  		</paramFieldList>
+
+			<checkUniqueFieldList>
+				<checkUniqueField name="AUTOID" discription="主键" originField="AUTOID"></checkUniqueField>
+			</checkUniqueFieldList>
+
+			 <checkFieldBasicList>              
+					<checkFieldBasic name="A" discription="A实际控制人类型" emptyCheck="true" digitalCheck="true" startLength="1" endLength="1"></checkFieldBasic>
+					<checkFieldBasic name="B" discription="B国别代码" upperCheck="true"  emptyCheck="true" startLength="3" endLength="3"></checkFieldBasic>
+					<checkFieldBasic name="C" discription="C实际控制人名称" emptyCheck="true" startLength="2"></checkFieldBasic>
+					<checkFieldBasic name="D" discription="D实际控制人的客户代码" startLength="2"></checkFieldBasic>
+		      <checkFieldBasic name="E" discription="E实际控制人证件类型" emptyCheck="true" startLength="1" endLength="2"></checkFieldBasic>
+					<checkFieldBasic name="F" discription="F实际控制人证件代码" startLength="2"></checkFieldBasic>
+					<checkFieldBasic name="G" discription="G登记注册代码" startLength="2"></checkFieldBasic>
+       </checkFieldBasicList>       
+
+			<checkFieldCaseWhenList discription="caseWhen校验">		
+		        <!--JBL-46   若[实际控制人类型]为“6-自然人”，则G登记注册代码为空。-->
+      			<checkFieldCaseWhen name="G" discription="G登记注册代码" caseValue="null" whenValue="6">
+                    <checkFieldCaseWhenField name="A" discription="实际控制人类型" ></checkFieldCaseWhenField>
+            </checkFieldCaseWhen>	
+            <!--JBL-45  若[实际控制人证件类型]为“1”-“11”，则非空；若[实际控制人证件类型]为“12”，则为F实际控制人证件代码空。-->            
+      			<checkFieldCaseWhen name="F" discription="F实际控制人证件代码" caseValue="notNull" whenValueScope="1,2,3,4,5,6,7,8,9,10,11">
+                    <checkFieldCaseWhenField name="E" discription="实际控制人证件类型" ></checkFieldCaseWhenField>
+            </checkFieldCaseWhen>
+      			<checkFieldCaseWhen name="F" discription="F实际控制人证件代码" caseValue="null" whenValue="12">
+                    <checkFieldCaseWhenField name="E" discription="实际控制人证件类型" ></checkFieldCaseWhenField>
+            </checkFieldCaseWhen>
+            
+            <!--
+      			<checkFieldCaseWhen name="E" discription="实际控制人证件类型" caseValueScope="1,12" whenValueScope="1,2,3,4,5">
+                    <checkFieldCaseWhenField name="A" discription="实际控制人类型" ></checkFieldCaseWhenField>
+            </checkFieldCaseWhen>
+      			<checkFieldCaseWhen name="E" discription="实际控制人证件类型" caseValueScope="2,3,4,5,6,7,8,9,10,11,12" whenValueScope="6">
+                    <checkFieldCaseWhenField name="A" discription="实际控制人类型" ></checkFieldCaseWhenField>
+            </checkFieldCaseWhen>
+            -->
+            
+      </checkFieldCaseWhenList>
+
+			<checkFieldEffectiveList discription="有效性校验"> 
+				<checkFieldEffective name="E" discription="E实际控制人证件类型">
+                  <value>1</value>
+                  <value>2</value>
+                  <value>3</value>
+                  <value>4</value>
+                  <value>5</value>
+                  <value>6</value>
+                  <value>7</value>
+                  <value>8</value>
+                  <value>9</value>
+                  <value>10</value>
+                  <value>11</value>
+                  <value>12</value>
+          </checkFieldEffective>
+         	<checkFieldEffective name="A" discription="A实际控制人类型">
+                  <value>1</value>
+                  <value>2</value>
+                  <value>3</value>
+                  <value>4</value>
+                  <value>5</value>
+                  <value>6</value>
+          </checkFieldEffective>     
+			</checkFieldEffectiveList>
+      <checkFieldOrList discription="条件校验">
+			</checkFieldOrList>			
+		</checkTable>
+		 
+	</checkInstance>
+</reportCheckRoot>

@@ -1,0 +1,88 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE struts PUBLIC "-//Apache Software Foundation//DTD Struts Configuration 2.1//EN" "http://struts.apache.org/dtds/struts-2.1.dtd">
+<struts>
+	 <package name="easForReport" extends="framework.default" namespace="/framework">
+		<action name="EasInstInfoShowUpdateList*-*" class="EasInstInfoShowUpdateListAction">
+            <result name="success">/Report/ShowSaveOrUpdate.jsp</result>
+		</action>
+		
+		<action name="EasShowList*-*" class="taskFlowEasShowListAction">
+			<result name="success">/Framework/ShowList.jsp</result>
+		</action>
+		
+		<action name="EasShowListForTree*-*" class="singleObjectForReportShowListForTreeAction">
+			<result name="success">/Framework/ShowList.jsp</result>
+		</action>
+		
+		<action name="EasShowTree*-*" class="singleObjectShowTreeAction">
+			<result name="success">/Framework/ShowTree.jsp</result>
+		</action>
+		
+	 	<action name="EasReviewShowTree*-*" class="ReviewShowTreeAction">
+			<result name="success">/Framework/ShowTree.jsp</result>
+		</action>
+		    <!--  以下为xiajieli新增 -->
+		 <action name="EasShowSave*-*" class="easShowSaveAction">
+            <result name="success">/Framework/ShowSaveOrUpdate.jsp</result>
+		</action>
+		
+		<action name="EasShowUpdate*-*" class="easShowUpdateAction">
+            <result name="success">/Framework/ShowSaveOrUpdate.jsp</result>
+		</action>
+		
+		<action name="EasSave*-*" class="easSaveAction">
+            <result name="success" type="redirectAction">
+            	<param name="message">${serviceResult.message}</param>
+			    <param name="actionName">ShowAlertMessage</param>
+			    <param name="redirectActionName">EasShowList{1}-{2}</param> 
+			    <param name="redirectActionNamespace">/framework</param>
+			</result>
+			<result name="error" type="redirectAction">
+			    <param name="actionName">ShowAlertMessage</param>
+			    <param name="message">${serviceResult.message}</param>
+			</result>
+			<result name="input" type="chain">
+			    <param name="actionName">EasShowInputSave{1}-{2}</param>
+			</result>
+		</action>
+		
+		<action name="EasUpdate*-*" class="easUpdateAction">
+            <result name="success" type="redirectAction">
+            	<param name="message">${serviceResult.message}</param>
+			    <param name="actionName">ShowAlertMessage.action</param>
+			    <param name="redirectActionName">EasShowList{1}-{2}</param> 
+			    <param name="redirectActionNamespace">/framework</param>
+			</result>
+			<result name="error" type="redirectAction">
+			    <param name="actionName">ShowAlertMessage</param>
+			    <param name="message">${serviceResult.message}</param>
+			</result>
+			<result name="input" type="chain">
+			    <param name="actionName">EasShowInputUpdate{1}-{2}</param>
+			</result>
+		</action>
+		
+		<action name="EasShowInputSave*-*" class="easShowInputSaveAction">
+            <result name="input">/Framework/ShowSaveOrUpdate.jsp</result>
+		</action>
+		
+		<action name="EasShowInputUpdate*-*" class="easShowInputUpdateAction">
+            <result name="input">/Framework/ShowSaveOrUpdate.jsp</result>
+		</action>
+		
+		<action name="EasDeleteListByIdList*-*" class="easDeleteListByIdListAction">
+            <result name="success" type="redirectAction">
+            	<param name="message">${serviceResult.message}</param>
+			    <param name="actionName">ShowAlertMessage.action</param>
+			    <param name="redirectActionName">EasShowList{1}-{2}</param>
+			    <param name="redirectActionNamespace">/framework</param>
+			</result>
+			<result name="error" type="redirectAction">
+            	<param name="message">${serviceResult.message}</param>
+			    <param name="actionName">ShowAlertMessage.action</param>
+			    <param name="redirectActionName">EasShowList{1}-{2}</param>
+			    <param name="redirectActionNamespace">/framework</param>
+			</result>
+		</action>
+	 </package>
+</struts>    

@@ -1,0 +1,319 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<fieldShowsRoot>
+	<fieldShowsEntity>
+      <className>autoETLsystem.dto.AutoETL_ActivityNodeFieldVCa</className>
+      <showInstance>
+        <showInstanceName>1</showInstanceName>
+        <fieldName fieldName="autoETL_ActivityNodeFieldV" fieldShowName="源表字段值"   listVisible="false" ></fieldName>
+      </showInstance>
+	</fieldShowsEntity>
+	<fieldShowsEntity>
+      <className>autoETLsystem.dto.AutoETL_WorkflowPFPVDetail</className>
+      <showInstance>
+        <showInstanceName>1</showInstanceName>
+        <fieldName fieldName="autoETL_WorkflowPFPV" listVisible="false"></fieldName>
+      </showInstance>
+	</fieldShowsEntity>
+	<fieldShowsEntity>
+      <className>autoETLsystem.dto.AutoETL_ActivityNodeForSqlC</className>
+      <showInstance>
+        <showInstanceName>1</showInstanceName>
+        <fieldName fieldName="autoETL_ActivityNodeForSql" listVisible="false"></fieldName>
+      </showInstance>
+	</fieldShowsEntity>
+	<fieldShowsEntity>
+      <className>autoETLsystem.dto.AutoETL_ActivityNodeForSqlCR</className>
+      <showInstance>
+        <showInstanceName>1</showInstanceName>
+        <fieldName fieldName="autoETL_ActivityNodeForSqlC" listVisible="false"></fieldName>
+      </showInstance>
+	</fieldShowsEntity>
+	<fieldShowsEntity>
+      <className>autoETLsystem.dto.AutoETL_ActivityNodeRelationF</className>
+      <showInstance>
+        <showInstanceName>1</showInstanceName>
+        <fieldName fieldName="autoETL_ActivityNodeForCT" listVisible="false"></fieldName>
+        <fieldName fieldName="autoRelationFieldID" width="250"></fieldName>
+        <fieldName fieldName="strValue" width="200" ></fieldName>
+        <fieldName fieldName="intOrder" width="50"></fieldName>
+      </showInstance>
+	</fieldShowsEntity>
+	<fieldShowsEntity>
+      <className>autoETLsystem.dto.AutoETL_ActivityNodeFieldV</className>
+      <showInstance>
+        <showInstanceName>1</showInstanceName>
+        <fieldName fieldName="autoETL_ActivityNodeForCT" listVisible="false"></fieldName>
+        <fieldName fieldName="autoETL_SourceField" width="350"></fieldName>
+        <fieldName fieldName="autoETL_TargetField" width="350"></fieldName>
+      </showInstance>
+	</fieldShowsEntity>
+	<fieldShowsEntity>
+      <className>autoETLsystem.dto.AutoETL_ActivityNodeFieldVCo</className>
+      <showInstance>
+        <showInstanceName>1</showInstanceName>
+        <fieldName fieldName="autoETL_ActivityNodeFieldVCa" listVisible="false"></fieldName>
+      </showInstance>
+	</fieldShowsEntity>
+	
+	<fieldShowsEntity>
+      <className>autoETLsystem.dto.AutoETL_ActivityNodeFieldViewV</className>
+      <showInstance>
+        <showInstanceName>1</showInstanceName>
+        <fieldName fieldName="autoETL_ActivityNodeForCV"   listVisible="false" ></fieldName>
+        <fieldName fieldName="autoETL_SourceViewField" width="250"></fieldName>
+        <fieldName fieldName="reportModel_TagetField" width="250"></fieldName>
+      </showInstance>
+	</fieldShowsEntity>
+	
+	<fieldShowsEntity>
+      <className>autoETLsystem.dto.AutoETL_ActivityNodeFieldVVCa</className>
+      <showInstance>
+        <showInstanceName>1</showInstanceName>
+        <fieldName fieldName="autoETL_ActivityNodeFieldViewV"   listVisible="false" ></fieldName>
+      </showInstance>
+	</fieldShowsEntity>
+	
+	<fieldShowsEntity>
+      <className>autoETLsystem.dto.AutoETL_ActivityNodeFieldVVCon</className>
+      <showInstance>
+        <showInstanceName>1</showInstanceName>
+        <fieldName fieldName="autoETL_ActivityNodeFieldVVCa"   listVisible="false" ></fieldName>
+      </showInstance>
+	</fieldShowsEntity>
+	
+	<fieldShowsEntity>
+      <className>autoETLsystem.dto.AutoETL_ActivityNodeRelationV</className>
+      <showInstance>
+        <showInstanceName>1</showInstanceName>
+        <fieldName fieldName="autoETL_ActivityNodeForCV"   listVisible="false" ></fieldName>
+        <fieldName fieldName="autoActivityNodeRelationVID" width="250"></fieldName>
+        <fieldName fieldName="strValue" width="200" ></fieldName>
+        <fieldName fieldName="intOrder" width="50"></fieldName>
+      </showInstance>
+	</fieldShowsEntity>
+	
+	<fieldShowsEntity>
+      <className>autoETLsystem.dto.AutoETL_ActivityNodeForFileF</className>
+      <showInstance>
+        <showInstanceName>1</showInstanceName>
+        <fieldName fieldName="autoETL_ActivityNodeForFile"   listVisible="false" ></fieldName>
+        <fieldName fieldName="autoETL_SourceField"  width="250" ></fieldName>
+        <fieldName fieldName="intOrder" width="50" ></fieldName>
+      </showInstance>
+	</fieldShowsEntity>
+	
+	<fieldShowsEntity>
+      <className>autoETLsystem.dto.AutoETL_ActivityNodeForFileC</className>
+      <showInstance>
+        <showInstanceName>1</showInstanceName>
+        <fieldName fieldName="autoETL_ActivityNodeForFile"   listVisible="false" ></fieldName>
+        <fieldName fieldName="strValue" width="200" ></fieldName>
+        <fieldName fieldName="intOrder" width="50" ></fieldName>
+        <fieldName fieldName="autoRelationFieldID" width="250" ></fieldName>
+      </showInstance>
+	</fieldShowsEntity>
+	
+	<fieldShowsEntity>
+      <className>autoETLsystem.dto.AutoETL_ActivityNodeForExcelC</className>
+      <showInstance>
+        <showInstanceName>1</showInstanceName>
+        <fieldName fieldName="autoETL_ActivityNodeForExcel"   listVisible="false" ></fieldName>
+      </showInstance>
+	</fieldShowsEntity>
+	 
+	 <fieldShowsEntity>
+      <className>extend.dto.AutoETL_DataSource</className>
+      <showInstance>
+        <showInstanceName>1</showInstanceName>
+        <fieldName fieldName="sessionFactory" width="200"></fieldName>
+        <fieldName fieldName="strDiscription" width="400"></fieldName>
+      </showInstance>
+	</fieldShowsEntity>
+	
+	 <fieldShowsEntity>
+      <className>extend.dto.ReportModel_Table</className>
+      <showInstance>
+        <showInstanceName>1</showInstanceName>
+        <fieldName fieldName="strTableName" width="250"></fieldName>
+        <fieldName fieldName="strChinaName" listVisible="false"></fieldName>
+        <fieldName fieldName="strShowTableName" width="300"></fieldName>
+        <fieldName fieldName="dataSource" width="200"></fieldName>
+        <fieldName fieldName="strDiscription" width="200"></fieldName>
+        <fieldName fieldName="suit" listVisible="false"></fieldName>
+      </showInstance>
+      <showInstance>
+        <showInstanceName>2</showInstanceName>
+        <fieldName fieldName="strTableName" width="250"></fieldName>
+        <fieldName fieldName="strChinaName" listVisible="false"></fieldName>
+        <fieldName fieldName="strShowTableName" width="300"></fieldName>
+        <fieldName fieldName="dataSource" width="200"></fieldName>
+        <fieldName fieldName="strDiscription" width="200"></fieldName>
+        <fieldName fieldName="suit" listVisible="false"></fieldName>
+      </showInstance>
+      <showInstance>
+			<showInstanceName>ExportAllData</showInstanceName>
+			<fieldName fieldName="strShowTableName" listVisible="false"></fieldName>
+      </showInstance>
+	</fieldShowsEntity>
+	
+	 <fieldShowsEntity>
+      <className>extend.dto.AutoETL_View</className>
+      <showInstance>
+        <showInstanceName>1</showInstanceName>
+        <fieldName fieldName="strTableName" width="250"></fieldName>
+        <fieldName fieldName="strChinaName" width="250"></fieldName>
+        <fieldName fieldName="dataSource" width="200"></fieldName>
+        <fieldName fieldName="strDiscription" width="400"></fieldName>
+      </showInstance>
+	</fieldShowsEntity>
+	
+	 <fieldShowsEntity>
+      <className>extend.dto.ReportModel_Field</className>
+      <showInstance>
+        <showInstanceName>1</showInstanceName>
+        <fieldName fieldName="strFieldName" width="250"></fieldName>
+        <fieldName fieldName="strChinaName" width="250"></fieldName>
+        <fieldName fieldName="reportModel_Table" width="250"></fieldName>
+        <fieldName fieldName="nSeq" width="50"></fieldName>
+        <fieldName fieldName="nLength" width="50"></fieldName>
+        <fieldName fieldName="strDiscription" width="300"></fieldName>
+        <fieldName fieldName="strConstList" listVisible="false"></fieldName>
+        <fieldName fieldName="strDBConstList" listVisible="false"></fieldName>
+        <fieldName fieldName="isEnable" listVisible="false"></fieldName>
+      </showInstance>
+	</fieldShowsEntity>
+	
+	 <fieldShowsEntity>
+      <className>extend.dto.AutoETL_ViewField</className>
+      <showInstance>
+        <showInstanceName>1</showInstanceName>
+        <fieldName fieldName="strFieldName" width="250"></fieldName>
+        <fieldName fieldName="strChinaName" width="250"></fieldName>
+        <fieldName fieldName="autoETL_View" width="250"></fieldName>
+        <fieldName fieldName="nSeq" width="50"></fieldName>
+      </showInstance>
+	</fieldShowsEntity>
+	
+	<fieldShowsEntity>
+      <className>autoETLsystem.dto.AutoETL_FTP</className>
+      <showInstance>
+        <showInstanceName>1</showInstanceName>
+        <fieldName fieldName="strServerPath" width="250"></fieldName>
+         <fieldName fieldName="strDiscription" width="200"></fieldName>
+      </showInstance>
+	</fieldShowsEntity>
+	
+	<fieldShowsEntity>
+      <className>autoETLsystem.dto.AutoETL_MAIL</className>
+      <showInstance>
+        <showInstanceName>1</showInstanceName>
+        <fieldName fieldName="strServerPath" width="250"></fieldName>
+        <fieldName fieldName="strUserID" width="200"></fieldName>
+        <fieldName fieldName="strPassword" width="200"></fieldName>
+        <fieldName fieldName="strDiscription" width="200"></fieldName>
+      </showInstance>
+	</fieldShowsEntity>
+	
+	<fieldShowsEntity>
+      <className>autoETLsystem.dto.AutoETL_FTPTrans</className>
+      <showInstance>
+        <showInstanceName>1</showInstanceName>
+        <fieldName fieldName="strLocalPath" width="250"></fieldName>
+         <fieldName fieldName="strDiscription" width="200"></fieldName>
+          <fieldName fieldName="autoETL_FTP" width="250"></fieldName>
+      </showInstance>
+	</fieldShowsEntity>
+	
+	<fieldShowsEntity>
+      <className>autoETLsystem.dto.AutoETL_ActivityNode</className>
+      <showInstance>
+        <showInstanceName>1</showInstanceName>
+        <fieldName fieldName="autoETL_DataSource" listVisible="false"></fieldName>
+        <fieldName fieldName="strSqlCondition" listVisible="false"></fieldName>
+        <fieldName fieldName="autoETL_Procedure" listVisible="false"></fieldName>
+        <fieldName fieldName="strActivityNodeType" width="150"></fieldName>
+        <fieldName fieldName="strActivityNodeName" width="400"></fieldName>
+        <fieldName fieldName="strStartConditionType" width="150"></fieldName>
+        <fieldName fieldName="intOrder" width="50"></fieldName>
+        <fieldName fieldName="strOrderGroup" width="100"></fieldName>
+        <fieldName fieldName="autoETL_Workflow" width="200"></fieldName>
+        <fieldName fieldName="strDiscription" width="400"></fieldName>
+      </showInstance>
+	</fieldShowsEntity>
+	
+	<fieldShowsEntity>
+      <className>autoETLsystem.dto.AutoETL_ActivityNodeLog</className>
+      <showInstance>
+        <showInstanceName windowHeight="1150">1</showInstanceName>
+        <fieldName fieldName="autoETL_ActivityNode" width="300"></fieldName>
+        <fieldName fieldName="strResultType" width="150"></fieldName>
+        <fieldName fieldName="strParam" width="150"></fieldName>
+        <fieldName fieldName="strDiscription" width="300"></fieldName>
+        <fieldName fieldName="strContent" width="300"></fieldName>
+        <fieldName fieldName="autoETL_WorkflowLog" listVisible="false"></fieldName>
+      </showInstance>
+      <showInstance>
+        <showInstanceName windowHeight="1150">2</showInstanceName>
+        <fieldName fieldName="autoETL_ActivityNode" singleTag="textField" width="300"></fieldName>
+        <fieldName fieldName="strResultType" width="150"></fieldName>
+        <fieldName fieldName="strParam" width="150"></fieldName>
+        <fieldName fieldName="strDiscription" width="300"></fieldName>
+        <fieldName fieldName="strContent" width="300"></fieldName>
+        <fieldName fieldName="autoETL_WorkflowLog" listVisible="false"></fieldName>
+      </showInstance>
+	</fieldShowsEntity>
+	
+    <fieldShowsEntity>
+      <className>autoETLsystem.dto.AutoETL_Workflow</className>
+      <showInstance>
+        <showInstanceName>1</showInstanceName>
+        <fieldName  fieldName="strWorkflowName" width="150"></fieldName>
+        <fieldName  fieldName="endTime"></fieldName>
+        <fieldName fieldName="startTime"></fieldName>
+      </showInstance>
+	</fieldShowsEntity>
+	
+	<fieldShowsEntity>
+      <className>autoETLsystem.dto.AutoETL_WorkflowLog</className>
+      <showInstance>
+        <showInstanceName>1</showInstanceName>
+        <fieldName fieldName="autoETL_Workflow" width="150" intOrder="1"></fieldName>
+        <fieldName fieldName="dtDate" width="150" intOrder="2"></fieldName>
+        <fieldName fieldName="strContent" width="250" intOrder="3"></fieldName>
+        <fieldName fieldName="strDiscription" width="200" intOrder="4"></fieldName>
+        <fieldName fieldName="strParam" width="300" intOrder="5"></fieldName>
+        <fieldName fieldName="strCount" width="200" intOrder="6"></fieldName>
+        <fieldName fieldName="strCurrenActivityNode" width="300" intOrder="7"></fieldName>
+      </showInstance>
+	</fieldShowsEntity>
+	
+	<fieldShowsEntity>
+      <className>autoETLsystem.dto.AutoETL_WorkflowParamMV</className>
+      <showInstance>
+        <showInstanceName>1</showInstanceName>
+        <fieldName fieldName="strDiscription" width="400"></fieldName>
+        <fieldName fieldName="autoETL_Workflow" width="150"></fieldName>
+      </showInstance>
+	</fieldShowsEntity>
+	
+	<fieldShowsEntity>
+      <className>extend.dto.AutoETL_Procedure</className>
+      <showInstance>
+        <showInstanceName>1</showInstanceName>
+        <fieldName fieldName="autoETL_DataSource" width="200"></fieldName>
+        <fieldName fieldName="strProcedureName" width="250"></fieldName>
+        <fieldName fieldName="strDiscription" width="400"></fieldName>
+        <fieldName fieldName="strProcedureType" width="150"></fieldName>
+      </showInstance>
+	</fieldShowsEntity>
+	
+	<fieldShowsEntity>
+      <className>autoETLsystem.dto.AutoETL_ActivityNodeForDeleteFileDetail</className>
+      <showInstance>
+        <showInstanceName>1</showInstanceName>
+        <fieldName fieldName="autoETL_ActivityNodeForDeleteFile" listVisible="false"></fieldName>
+      </showInstance>
+	</fieldShowsEntity>
+	
+	
+</fieldShowsRoot>

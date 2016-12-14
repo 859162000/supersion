@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<entityRoot>
+ 	<!--ACC-dto和表单名称关系 -->
+	<entityMap>
+		<entityName>accDtoRptRela</entityName>
+		<entity>
+			<code>szzxpt.dto.AutoDTO_WGJ_ACC_CA</code>
+			<name>(CA)账户开关户信息-(ACCCA)</name>
+		</entity>
+		<entity>
+			<code>szzxpt.dto.AutoDTO_WGJ_ACC_CB</code>
+			<name>(CB)账户收支余信息-(ACCCB)</name>
+		</entity>
+		</entityMap>
+	
+	<!--  通过实体表名获取到命名空间的名称 xiajieli  -->
+    <entityMap>
+		<entityName>GetNamespaceByEntityName</entityName>
+		<entity>
+			<code>WGJ_</code>
+			<name>szzxpt.dto.AutoDTO_</name>
+		</entity>
+	</entityMap>
+	
+	<!-- 系统参数管理（不同模块在各自的模块下配置，互不影响） -->
+	<entityMap>
+     <entityName>configParam</entityName>
+        <entity>
+	      <code>whzh_feedBackXMLPath</code>
+         <name>外汇账户反馈报文存放路径</name>
+       </entity>
+        <entity>
+	      <code>whzh_reportFilePath</code>
+         <name>外汇账户生成报文路径</name>
+       </entity>
+        <entity>
+	      <code>whzh_SendHistoryFilePath</code>
+         <name>外汇账户上报报文历史存放路径</name>
+       </entity>
+        <entity>
+	      <code>whzh_FeedbackHistoryFilePath</code>
+         <name>外汇账户反馈报文历史存放路径</name>
+       </entity>
+   </entityMap>
+	
+</entityRoot>

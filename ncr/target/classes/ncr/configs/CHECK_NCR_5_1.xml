@@ -1,0 +1,354 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<reportCheckRoot> 
+	<checkInstance name="Check_NCR_5_1">
+	    <paramValueList>
+	      <paramValue name="DTDATE" value="2013-12-09"></paramValue>
+	      <paramValue name="strInstCode" value=""></paramValue>
+	      <!--
+		    <paramValue name="strTaskRptInstID" value="000000"></paramValue>
+			  <paramValue name="strFreq" value="000000"></paramValue> 
+			  -->
+	    </paramValueList>
+	    
+	    <freqCode value="4"></freqCode>
+                   
+      <checkTable procedureName="CHECK_NCR_5_1"  procedureParam="DTDATE,strInstCode,rt" procedureDiscription="个人贷款违约情况统计表" 
+      	originTable="NCR_5_1" errorStateField="RPTCHECKTYPE" errorStateValue="3"  successStateValue="2" 
+      	defaultLogicDaoBeanId="oracleProcedureResultSetDao">    
+	  		<paramFieldList>
+	  			<paramField paramName="DTDATE" field="DTDATE" type="2"></paramField>
+	  			<paramField paramName="strInstCode" field="INSTINFO" type="1"></paramField>
+	  		</paramFieldList>
+	  		
+	      <checkUniqueFieldList>
+				<checkUniqueField name="AUTOID" discription="主键" originField="AUTOID"></checkUniqueField>
+			</checkUniqueFieldList>
+
+	      <checkFieldBasicList>
+	      <!--JBL5-003	A	借款人姓名	非空。	长度大于等于2个字符。-->
+	       	<checkFieldBasic name="A" discription="借款人姓名" emptyCheck="true" startLength="2"></checkFieldBasic>
+	      <!-- JBL5-004	B	有效身份证件类型		1或2位数字字符。-->
+	        <checkFieldBasic name="B" discription="有效身份证件类型" emptyCheck="true"  startLength="1" endLength="2"></checkFieldBasic>
+	      <!-- JBL5-005	C	证件号码	符合居民身份证号码校验规则。	长度大于等于2个字符。-->
+	        <checkFieldBasic name="C" discription="证件号码" startLength="2" ></checkFieldBasic>
+	      <!-- JBL5-006	D	贷款发放行代码	银监会非现场监管统计机构编码表。	非空。	17位代码。-->
+	        <checkFieldBasic name="D" discription="贷款发放行代码" emptyCheck="true" startLength="17" endLength="17"></checkFieldBasic>
+	      <!--JBL5-007	E	贷款合同号	非空。	长度大于等于2个字符。-->
+	        <checkFieldBasic name="E" discription="贷款合同号" emptyCheck="true" startLength="2"></checkFieldBasic>
+	      <!-- JBL5-008	F	借据号	非空。	长度大于等于2个字符。-->
+	        <checkFieldBasic name="F" discription="借据号" emptyCheck="true" startLength="2"></checkFieldBasic>
+	      <!-- JBL5-009	G	贷款品种		非空。	1位数字字符。-->
+	        <checkFieldBasic name="G" discription="贷款品种" emptyCheck="true" digitalCheck="true" endLength="1" startLength="1"></checkFieldBasic>
+	      <!-- JBL5-010	H	担保方式		非空。	1位数字字符。-->
+	        <checkFieldBasic name="H" discription="担保方式" emptyCheck="true" digitalCheck="true" startLength="1" endLength="1"></checkFieldBasic>	          
+		    <!-- JBL5-011	I	发放金额	decimal(,2)		数据单位为：元。保留两位小数。-->
+		      <checkFieldBasic name="I" discription="发放金额" valueDecimalLength="2" ></checkFieldBasic>
+		    <!-- JBL5-012	J	贷款余额	decimal(,2)		数据单位为：元。	保留两位小数。-->
+		      <checkFieldBasic name="J" discription="贷款余额"  valueDecimalLength="2" ></checkFieldBasic>
+	      <!-- JBL5-013	K	发放日期	非空。	8位数字字符。-->
+	        <checkFieldBasic name="K" discription="发放日期" emptyCheck="true"  dateCheck="true" startLength="8" endLength="8"></checkFieldBasic>
+	      <!-- JBL5-014	L	到期日期		非空。	8位数字字符。-->
+	        <checkFieldBasic name="L" discription="到期日期" emptyCheck="true"  dateCheck="true" startLength="8" endLength="8"></checkFieldBasic>
+	      <!-- JBL5-015	M	违约金额	decimal(,2)		数据单位为：元。保留两位小数。-->
+	        <checkFieldBasic name="M" discription="违约金额" valueDecimalLength="2" ></checkFieldBasic>
+		    <!-- JBL5-016	N	违约天数		数据单位为：天数。	-->	
+		      <checkFieldBasic name="N" discription="违约天数"></checkFieldBasic>
+	      <!--JBL5-017	O	五级分类		非空。	1位数字字符。-->
+	        <checkFieldBasic name="O" discription="五级分类" emptyCheck="true" digitalCheck="true" endLength="1" startLength="1"></checkFieldBasic>
+        <!--JBL5-018	P	还款方式	非空。	1位数字字符。-->
+          <checkFieldBasic name="P" discription="还款方式"  emptyCheck="true" digitalCheck="true" endLength="1" startLength="1"></checkFieldBasic>
+	       <!--JBL5-019	Q	最近一次还款金额	decimal(,2)		数据单位为：元。保留两位小数。-->
+	        <checkFieldBasic name="Q" discription="最近一次还款金额" valueDecimalLength="2" ></checkFieldBasic>
+         <!-- JBL5-020	R	最近一次还款日期	8位数字字符。-->
+          <checkFieldBasic name="R" discription="最近一次还款日期"  dateCheck="true" startLength="8" endLength="8"></checkFieldBasic>
+         <!--JBL5-021	S	客户住址	非空。-->
+          <checkFieldBasic name="S" discription="客户住址"  emptyCheck="true" startLength="2"></checkFieldBasic>
+         <!--JBL5-022	T	住址行政区划代码 为客户住址行政区划代码。国外客户住址行政区划代码填报999999，港澳台客户根据银行实际掌握情况填报港澳台行政区划代码。	根据《县及县以上行政区划代码》填报。	非空。	6位数字字符。-->
+          <checkFieldBasic name="T" discription="住址行政区划代码"  emptyCheck="true"  endLength="6" startLength="6"></checkFieldBasic>
+          <!--JBL5-023	U	客户其他证件类型	同一客户,其他证件信息可填多条。"	1或2位数字字符。-->
+          <checkFieldBasic name="U" discription="客户其他证件类型" digitalCheck="true" endLength="2" startLength="1"></checkFieldBasic> 
+          <!--JBL5-024	V	客户其他证件号码	长度大于等于2个字符。-->
+          <checkFieldBasic name="V" discription="客户其他证件号码" startLength="2"></checkFieldBasic>
+          <!--JBL5-025	W	共同债务人姓名	同一借款人，可填多个共同债务人信息。		长度大于等于2个字符。-->
+          <checkFieldBasic name="W_1" discription="共同债务人1-姓名" startLength="2"></checkFieldBasic>
+          <!--JBL5-026	X	共同债务人证件类型	同一共同债务人，证件信息可填多条。"		1或2位数字字符。-->
+          <checkFieldBasic name="X_1" discription="共同债务人1-证件类型" digitalCheck="true" startLength="1" endLength="2"></checkFieldBasic>
+          <!--JBL5-027	Y	共同债务人证件号码			大于等于2个字符。-->
+          <checkFieldBasic name="Y_1" discription="共同债务人1-证件号码" startLength="2"></checkFieldBasic>
+          <!--JBL5-025	W	共同债务人姓名	同一借款人，可填多个共同债务人信息。		长度大于等于2个字符。-->
+          <checkFieldBasic name="W_N" discription="共同债务人N-姓名" startLength="2"></checkFieldBasic>
+          <!-- JBL5-026	X	共同债务人证件类型	同一共同债务人，证件信息可填多条。"		1或2位数字字符。-->
+          <checkFieldBasic name="X_N" discription="共同债务人N-证件类型" digitalCheck="true" startLength="1" endLength="2"></checkFieldBasic>
+          <!--JBL5-027	Y	共同债务人证件号码	char()	[共同债务人证件类型]为“2”的情况，符合居民身份证号码校验规则。	长度大于等于2个字符。-->
+          <checkFieldBasic name="Y_N" discription="共同债务人N-证件号码" startLength="2"></checkFieldBasic>
+          <!--JBL5-028	Z	学校名称		长度大于等于2个字符。-->
+          <checkFieldBasic name="Z" discription="学校名称"	></checkFieldBasic>
+          <!--JBL5-029	AA	学校地址	长度大于等于2个字符。-->
+          <checkFieldBasic name="AA" discription="学校地址" startLength="2"></checkFieldBasic>
+          <!--JBL5-030	AB	学校行政区划代码		6位数字字符。-->
+          <checkFieldBasic name="AB" discription="学校行政区划代码"  endLength="6" startLength="6"></checkFieldBasic>
+          <!--JBL5-031	AC	学生证号	长度大于等于2个字符。-->
+          <checkFieldBasic name="AC" discription="学生证号" startLength="2"></checkFieldBasic>
+          <!--JBL5-032	AD	贷款时家庭住址	长度大于等于2个字符。-->
+          <checkFieldBasic name="AD" discription="贷款时家庭住址" startLength="2"></checkFieldBasic>
+          <!--JBL5-033	AE	贷款时家庭住址行政区划代码		根据《县及县以上行政区划代码》填报。	6位数字字符。-->
+          <checkFieldBasic name="AE" discription="贷款时家庭住址行政区划代码" digitalCheck="true" endLength="6" startLength="6"></checkFieldBasic>
+          <!--JBL5-034	AF	助学贷款类型		1位数字字符。-->
+          <checkFieldBasic name="AF" discription="助学贷款类型" digitalCheck="true" endLength="1" startLength="1"></checkFieldBasic>	         
+	      </checkFieldBasicList>
+
+        <checkFieldOrList>
+        </checkFieldOrList>
+        <!--基本类校验中值域类型的检验-->
+        <checkFieldEffectiveList>
+        	<!--JBL5-004	B	有效身份证件类型	2-居民身份证，3-军官证，4-文职干部证，5-警官证，6-士兵证，7-户口本，8-临时身份证，9-其他有效通行旅行证件，10-护照，11-学生证，12-无证件。	"单选。填写2/3/4/5/6/7/8/9/10/11/12中的一个。-->
+         	<checkFieldEffective name="B" discription="有效身份证件类型">
+			                  <value>2</value>
+			                  <value>3</value>
+			                  <value>4</value>
+			                  <value>5</value>
+			                  <value>6</value>
+			                  <value>7</value>
+			                  <value>8</value>
+			                  <value>9</value>
+			                  <value>10</value>
+			                  <value>11</value>
+			                  <value>12</value>
+           </checkFieldEffective>
+           <!--JBL5-009	G	贷款品种		1-住房贷款，2-商用房贷款，3-公积金贷款，4-汽车贷款，5-助学贷款，6-消费贷款，7-个人经营性贷款，8-农户贷款，9-其他。	单选。填写1/2/3/4/5/6/7/8/9中的一个。-->
+					 <checkFieldEffective name="G" discription="贷款品种">
+		                    <value>1</value>
+		                    <value>2</value>
+		                    <value>3</value>
+		                    <value>4</value>
+		                    <value>5</value>
+		                    <value>6</value>
+		                    <value>7</value>
+		                    <value>8</value>
+		                    <value>9</value>
+		       </checkFieldEffective>
+		       <!--JBL5-010	H	担保方式		1-保证，2-抵押，3-质押，4-信用。	单选。填写1/2/3/4中的一个。-->
+					 <checkFieldEffective name="H" discription="担保方式">
+		                    <value>1</value>
+		                    <value>2</value>
+		                    <value>3</value>
+		                    <value>4</value>
+		       </checkFieldEffective>
+		       <!--JBL5-017	O	五级分类	1-正常，2-关注，3-次级，4-可疑，5-损失。	单选。填写1/2/3/4/5中的一个。-->
+					 <checkFieldEffective name="O" discription="五级分类">
+		                    <value>1</value>
+		                    <value>2</value>
+		                    <value>3</value>
+		                    <value>4</value>
+		                    <value>5</value>
+		       </checkFieldEffective>
+		       <!--JBL5-018	P	还款方式	1-按月，2-按季，3-按半年，4-按年，5-利随本清，6-分期付息一次还本，7-其他。-->
+					 <checkFieldEffective name="P" discription="还款方式">
+		                    <value>1</value>
+		                    <value>2</value>
+		                    <value>3</value>
+		                    <value>4</value>
+		                    <value>5</value>
+		       </checkFieldEffective>
+		       <!--JBL5-026	X	共同债务人证件类型		2-居民身份证，3-军官证，4-文职干部证，5-警官证，6-士兵证，7-户口本，8-临时身份证，9-其他有效通行旅行证件，10-护照，11-学生证，12-无证件。	"单选。填写2/3/4/5/6/7/8/9/10/11/12中的一个。-->
+		       <checkFieldEffective name="X_1" discription="共同债务人证件类型1">
+		                    <value>2</value>
+		                    <value>3</value>
+		                    <value>4</value>
+		                    <value>5</value>
+		                    <value>6</value>
+		                    <value>7</value>
+		                    <value>8</value>
+		                    <value>9</value>
+		                    <value>10</value>
+		                    <value>11</value>
+		                    <value>12</value>
+		       </checkFieldEffective>
+		       <!--JBL5-026	X	共同债务人证件类型		2-居民身份证，3-军官证，4-文职干部证，5-警官证，6-士兵证，7-户口本，8-临时身份证，9-其他有效通行旅行证件，10-护照，11-学生证，12-无证件。	"单选。填写2/3/4/5/6/7/8/9/10/11/12中的一个。-->
+		       <checkFieldEffective name="X_N" discription="共同债务人证件类型N">
+		                    <value>2</value>
+		                    <value>3</value>
+		                    <value>4</value>
+		                    <value>5</value>
+		                    <value>6</value>
+		                    <value>7</value>
+		                    <value>8</value>
+		                    <value>9</value>
+		                    <value>10</value>
+		                    <value>11</value>
+		                    <value>12</value>
+		       </checkFieldEffective>
+		       <!--JBL5-034	AF	助学贷款类型	1-高校政策性助学贷款，2-高校商业助学贷款，3生源地政策性助学贷款，4生源地商业助学贷款，5-其他政策性助学贷款，6-其他商业助学贷款。	单选。填写1/2/3/4/5/6中的一个。-->
+		       <checkFieldEffective name="AF" discription="助学贷款类型">
+		                    <value>1</value>
+		                    <value>2</value>
+		                    <value>3</value>
+		                    <value>4</value>
+		                    <value>5</value>
+		                    <value>6</value>
+		       </checkFieldEffective>
+        </checkFieldEffectiveList>
+        <!--基本类校验中的case...when校验-->
+        <!--JBL5-005	C	证件号码	[有效身份证件类型]为“2”的情况，符合居民身份证号码校验规则。		若[有效身份证件类型]为“2”-“11”，则非空；若[有效身份证件类型]为“12”，则为空。-->
+
+        <checkFieldCaseWhenList>
+    			<checkFieldCaseWhen name="C" discription="JBL5-005_C证件号码" caseValue="notNull" whenValueScope="2,3,4,5,6,7,8,9,10,11">
+              <checkFieldCaseWhenField name="B" discription="有效身份证件类型"  ></checkFieldCaseWhenField>
+          </checkFieldCaseWhen>
+    			<checkFieldCaseWhen name="C" discription="JBL5-005_C证件号码" caseValue="null" whenValue="12">
+              <checkFieldCaseWhenField name="B" discription="有效身份证件类型"  ></checkFieldCaseWhenField>
+          </checkFieldCaseWhen>
+         <!-- JBL5-024	V	客户其他证件号码	若[客户其他证件类型]为“2”-“11”，则非空；若[客户其他证件类型]为“12”，则为空。-->
+          <checkFieldCaseWhen name="U" discription="JBL5-024_V客户其他证件号码" caseValue="notNull" whenValueScope="2,3,4,5,6,7,8,9,10,11">
+              <checkFieldCaseWhenField name="V" discription="客户其他证件类型"  ></checkFieldCaseWhenField>
+          </checkFieldCaseWhen>
+          <checkFieldCaseWhen name="U" discription="JBL5-024_V客户其他证件号码" caseValue="null" whenValue="12">
+              <checkFieldCaseWhenField name="V" discription="客户其他证件类型"  ></checkFieldCaseWhenField>
+          </checkFieldCaseWhen>
+          <!--
+          <checkFieldCaseWhen name="W_1" discription="JBL5-025_W_1共同债务人证件号码" caseValue="notNull" whenValueScope="2,3,4,5,6,7,8,9,10,11">
+              <checkFieldCaseWhenField name="V" discription="JBL5-024_V共同债务人证件类型"  ></checkFieldCaseWhenField>
+          </checkFieldCaseWhen>
+          <checkFieldCaseWhen name="W_1" discription="JBL5-025_W_1共同债务人证件号码" caseValue="null" whenValue="12">
+              <checkFieldCaseWhenField name="V" discription="JBL5-024_V共同债务人证件类型"  ></checkFieldCaseWhenField>
+          </checkFieldCaseWhen> -->
+          <!--JBL5-020	R	最近一次还款日期	合法的年月日组合。1-4位：年；5-6位：月，其中1-9月，表示为：01-09；7-8位：日，其中1-9日表示为01-09。		若[最近一次还款金额]大于0，则非空-->。
+			   <checkFieldCaseWhen name="Q" discription="最近一次还款日期" caseValue="notNull"  whenType="2" whenCompareType=">" whenCompareValue="0">
+              <checkFieldCaseWhenField name="R" discription="最近一次还款金额"  ></checkFieldCaseWhenField>
+          </checkFieldCaseWhen>	
+          <!--JBL5-028	Z	学校名称 若贷款品种为“5-助学贷款”，则非空。-->
+	 
+					<checkFieldCaseWhen name="Z" discription="学校名称" caseValue="notNull" whenValue="5">
+              <checkFieldCaseWhenField name="G" discription="贷款品种"  ></checkFieldCaseWhenField>
+          </checkFieldCaseWhen>
+          <!--JBL5-029	AA	学校地址		若贷款品种为“5-助学贷款”，则非空。-->
+					<checkFieldCaseWhen name="AA" discription="学校地址" caseValue="notNull" whenValue="5">
+              <checkFieldCaseWhenField name="G" discription="贷款品种"  ></checkFieldCaseWhenField>
+          </checkFieldCaseWhen>
+          <!--JBL5-030	AB	学校行政区划代码	根据《县及县以上行政区划代码》填报。	若贷款品种为“5-助学贷款”，则非空。-->
+					<checkFieldCaseWhen name="AB" discription="学校行政区划代码" caseValue="notNull" whenValue="5">
+              <checkFieldCaseWhenField name="G" discription="贷款品种"  ></checkFieldCaseWhenField>
+          </checkFieldCaseWhen>
+          <!--JBL5-031	AC	学生证号	若[助学贷款类型]为“1-高校政策性助学贷款”或“2-高校商业助学贷款”，则非空。-->
+					<checkFieldCaseWhen name="AC" discription="学生证号" caseValue="notNull" whenValueScope="1,2">
+              <checkFieldCaseWhenField name="AF" discription="助学贷款类型"  ></checkFieldCaseWhenField>
+          </checkFieldCaseWhen>
+          <!--JBL5-032	AD	贷款时家庭住址	若[助学贷款类型]为'3-生源地政策性助学贷款’，‘4-生源地商业助学贷款'，则非空。-->
+					<checkFieldCaseWhen name="AD" discription="贷款时家庭住址" caseValue="notNull" whenValueScope="3,4">
+              <checkFieldCaseWhenField name="AF" discription="助学贷款类型"  ></checkFieldCaseWhenField>
+          </checkFieldCaseWhen>
+          <!--JBL5-033	AE	贷款时家庭住址行政区划代码	根据《县及县以上行政区划代码》填报。	若[助学贷款类型]为'3-生源地政策性助学贷款’，‘4-生源地商业助学贷款'，则非空。-->
+					<checkFieldCaseWhen name="AE" discription="贷款时家庭住址行政区划代码" caseValue="notNull" whenValueScope="3,4">
+              <checkFieldCaseWhenField name="AF" discription="助学贷款类型"  ></checkFieldCaseWhenField>
+          </checkFieldCaseWhen> 
+          <!--JBL5-034	AF	助学贷款类型		若贷款品种为“5-助学贷款”，则非空。-->           
+					<checkFieldCaseWhen name="AF" discription="助学贷款类型" caseValue="notNull" whenValue="5">
+              <checkFieldCaseWhenField name="G" discription="贷款品种"  ></checkFieldCaseWhenField>
+          </checkFieldCaseWhen>
+        </checkFieldCaseWhenList>
+        <!--基本类校验中值大于0的检验-->
+        <checkFieldLineList>
+        	<!--JBL5-011	I	发放金额		数据单位为：元。		大于0-->
+					<checkFieldLine compareType=">">								
+						<leftFieldList>	                      
+							<checkFieldLineField name="I" discription="发放金额">
+							</checkFieldLineField>	                  
+						</leftFieldList>	                  
+						<rightFieldList>	                      
+							<checkFieldLineField value="0"></checkFieldLineField>
+						</rightFieldList>	           
+					</checkFieldLine>
+					<!--JBL5-012	J	贷款余额		数据单位为：元。		大于等于0 -->
+					<checkFieldLine compareType=">=">								
+						<leftFieldList>	                      
+							<checkFieldLineField name="J" discription="贷款余额">
+							</checkFieldLineField>	                  
+						</leftFieldList>	                  
+						<rightFieldList>	                      
+							<checkFieldLineField value="0"></checkFieldLineField>
+						</rightFieldList>	           
+					</checkFieldLine>
+					<!--JBL5-015	M	违约金额	数据单位为：元。		大于0-->
+					<checkFieldLine compareType=">">								
+						<leftFieldList>	                      
+							<checkFieldLineField name="M" discription="违约金额">
+							</checkFieldLineField>	                  
+						</leftFieldList>	                  
+						<rightFieldList>	                      
+							<checkFieldLineField value="0"></checkFieldLineField>
+						</rightFieldList>	           
+					</checkFieldLine>
+					<!--JBL5-016	N	违约天数  数据单位为：天数。		大于等于90的整数。-->
+					<checkFieldLine compareType=">=">								
+						<leftFieldList>	                      
+							<checkFieldLineField name="N" discription="违约天数">
+							</checkFieldLineField>	                  
+						</leftFieldList>	                  
+						<rightFieldList>	                      
+							<checkFieldLineField value="90"></checkFieldLineField>
+						</rightFieldList>	           
+					</checkFieldLine>
+					<!--JBL5-019	Q	最近一次还款金额	数据单位为：元。		大于等于0 -->
+					<checkFieldLine compareType=">=">								
+						<leftFieldList>	                      
+							<checkFieldLineField name="Q" discription="最近一次还款金额">
+							</checkFieldLineField>	                  
+						</leftFieldList>	                  
+						<rightFieldList>	                      
+							<checkFieldLineField value="0"></checkFieldLineField>
+						</rightFieldList>	           
+					</checkFieldLine>
+					<!--逻辑性校验中比较类型的检验-->
+				
+        <!--LJX-063	表5中[贷款余额]小于等于[发放金额]。	J<=I-->
+					<checkFieldLine compareType=">=">								
+						<leftFieldList>	  	                      
+							<checkFieldLineField name="I" discription="发放金额"></checkFieldLineField>     
+						</leftFieldList>	                  
+						<rightFieldList>	                      
+							<checkFieldLineField name="J" discription="贷款余额"></checkFieldLineField>	 
+						</rightFieldList>	           
+					</checkFieldLine>
+					<!--LJX-065	表5中[到期日期]大于[发放日期]。	L>K -->
+					<checkFieldLine compareType=">=" fieldType="2">								
+						<leftFieldList>	  	                      
+							<checkFieldLineField name="L" discription="到期日期"></checkFieldLineField>     
+						</leftFieldList>	                  
+						<rightFieldList>	                      
+							<checkFieldLineField name="K" discription="发放日期"></checkFieldLineField>	 
+						</rightFieldList>	           
+					</checkFieldLine>
+					<!--LJX-067	表5中[最近一次还款日期]大于[发放日期]。	R>K-->
+					<checkFieldLine compareType=">=" fieldType="2">								
+						<leftFieldList>	  	                      
+							<checkFieldLineField name="R" discription="最近一次还款日期"></checkFieldLineField>     
+						</leftFieldList>	                  
+						<rightFieldList>	                      
+							<checkFieldLineField name="K" discription="发放日期"></checkFieldLineField>	 
+						</rightFieldList>	           
+					</checkFieldLine>
+					<!--LJX-064	表5中[数据日期]-[发放日期]>=90。	[数据日期]-K>=90 -->
+					<checkFieldLine compareType=">=" fieldType="2">								
+						<leftFieldList>	  	                      
+							<checkFieldLineField name="DTDATE" discription="数据日期" joinType="2"></checkFieldLineField>  
+							<checkFieldLineField name="K" discription="发放日期" joinType="2"></checkFieldLineField>	 
+						</leftFieldList>		                  
+						<rightFieldList>	                      
+							<checkFieldLineField value="90"></checkFieldLineField> 
+						</rightFieldList>	            
+					</checkFieldLine>
+					<!--LJX-066	表5中[违约天数]小于等于[数据日期]-[发放日期]。	N<=[数据日期]-K -->
+					<checkFieldLine compareType=">=" fieldType="2">								
+						<leftFieldList>	            
+							<checkFieldLineField name="DTDATE" discription="数据日期" joinType="2"></checkFieldLineField>  
+							<checkFieldLineField name="K" discription="发放日期" joinType="2"></checkFieldLineField>	                 
+						</leftFieldList>	                  
+						<rightFieldList>	                      
+							<checkFieldLineField name="N" discription="违约天数"></checkFieldLineField>	
+						</rightFieldList>	           
+					</checkFieldLine>
+     		</checkFieldLineList>
+      </checkTable>
+      
+	</checkInstance>
+</reportCheckRoot>

@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE struts PUBLIC "-//Apache Software Foundation//DTD Struts Configuration 2.1//EN" "http://struts.apache.org/dtds/struts-2.1.dtd">
+<struts> 
+   <include file="framework/configs/struts.xml"></include>
+   <include file="szzxpt/configs/szzxpt.struts.xml"></include>
+					 <include file="report/configs/reportfor1104.struts.xml"></include>
+					 <include file="report/configs/dataconcentration.struts.xml"></include>
+					 <include file="autoETLsystem/configs/autoETLsystem.struts.xml"></include>
+					 <include file="dbgssystem/configs/dbgssystem.struts.xml"></include>
+					 <include file="bxywsystem/configs/bxywsystem.struts.xml"></include>
+					 <include file="testsystem/configs/testsystem.struts.xml"></include>
+					 <include file="bwdrsystem/configs/bwdrsystem.struts.xml"></include>
+					 <include file="ncr/configs/ncr.struts.xml"></include>
+					 <include file="ncr/configs/ncrForReport.struts.xml"></include>
+					 <include file="eas/configs/eas.struts.xml"></include>
+					 <include file="zdzsystem/configs/zdzsystem.struts.xml"></include>
+					 <include file="jmx/configs/jmx.struts.xml"></include>
+   <include file="autoETLsystem/configs/autoETLsystem.struts.xml"></include>
+   <include file="framework/configs/action.framework.struts.xml"></include>
+ </struts>    

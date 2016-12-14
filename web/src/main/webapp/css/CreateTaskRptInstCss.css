@@ -1,0 +1,137 @@
+﻿.Meum_Tree_Row
+{
+	width:220px; 
+	height:40px; 
+	cursor:pointer;
+	
+}
+.Meum_Tree_Row_Select
+{
+	background-color: #FF3300;
+	font-weight: bolder;
+	padding-left:0px;
+	box-shadow: 0 5px 30px black;
+	border-radius: 5px;
+}
+.Meum_Tree_Row img
+{
+	float:left; 
+	margin-left:30px;
+    margin-top:3px;
+}
+.Meum_Tree_Row div
+{
+	float:left; 
+	line-height:40px;
+	font-family:微软雅黑; 
+	font-size:13px; 
+	margin-left:10px;
+	color:White;
+}
+.MainDiv
+{
+	/*height:100%;
+    left:220px;
+    position:absolute;
+    top:20px;*/
+    position:absolute; 
+    left:220px; 
+    top:0px; 
+    right:0px; 
+    bottom:0px; 
+    
+}
+.TaskCellDiv
+{
+	width:300px; 
+	/*background-color:Aqua; */
+	height:40px; 
+	float:left;
+	margin:10px 10px 5px 10px;
+}/*
+.TaskCellDiv:hover
+{
+	background-color:#0066FF;
+	box-shadow:0 5px 30px Black;
+	color:White;
+	border-radius:5px;
+}*/
+.TaskCellTileDiv
+{
+	width:90px; 
+	height:40px; 
+	text-align:right; 
+	line-height:40px; 
+	/*background-color:Blue;*/
+	float:left;
+	font-family:微软雅黑;
+	font-size:13px;
+	cursor:pointer;
+	padding-right:5px;
+    margin-left:10px;
+}
+.TaskRptDiv
+{
+
+	float:left;
+	margin-left:10px;
+	/*border:solid 1px #CCCCCC;*/
+    overflow:auto;
+    position:absolute; 
+    left:0px; 
+    top:30px; 
+    right:0px; 
+    bottom:0px; 
+    
+}
+.TaskRptInstDiv
+{
+	width: auto;
+	height: 20px;
+	float: left; /*background-color:Aqua; */
+	margin-left: 10px;
+	margin-top: 10px;
+	cursor: pointer;
+	padding-left: 10px;
+	padding-right: 10px;
+	border: 1px solid #FFFFFF;
+	border-radius: 5px;
+	background-color: #B7D3FF; /*CCCCFF*/
+	color: Black;
+}
+.TaskRptInstDiv:hover
+{
+	border: 1px solid black;
+	box-shadow: 0 0px 10px 2px black;
+}
+.TaskRptInstDiv img
+{
+	float:left; 
+	margin-top:2px;
+}
+.TaskRptInstDiv div
+{
+	width:270px; 
+	height:20px; 
+	margin-left:10px; 
+	float:left;
+	font-family: 微软雅黑;
+	font-size: 11px;
+	line-height:20px;
+	text-overflow:ellipsis; 
+	white-space:nowrap; 
+	overflow:hidden;
+	/*white-space:nowrap;*/ 
+}
+.TaskStatusBar
+{
+	height:26px;
+	width: 150px;
+	float: left;
+	margin-top:2px;
+    text-align:center;
+    line-height:26px;
+	font-family:微软雅黑;
+	font-size:12px;
+	margin-left:5px;
+}

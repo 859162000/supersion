@@ -1,0 +1,108 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<reportCheckRoot> 
+	<checkInstance name="CHECK_NCR_5_1_OTHER">
+	    <paramValueList>
+	      <paramValue name="DTDATE" value="2013-12-09"></paramValue>
+	      <paramValue name="strInstCode" value=""></paramValue>
+	      <!--
+		    <paramValue name="strTaskRptInstID" value="000000"></paramValue>
+			  <paramValue name="strFreq" value="000000"></paramValue> 
+			  -->
+	    </paramValueList>
+	    
+	    <freqCode value="4"></freqCode>
+                  
+      <checkTable procedureName="Check_NCR_5_1"  procedureParam="DTDATE,strInstCode" procedureDiscription="个人贷款违约情况统计表" 
+      	originTable="NCR_5_1" errorStateField="RPTCHECKTYPE" errorStateValue="3"  successStateValue="2" 
+      	defaultLogicDaoBeanId="oracleProcedureResultSetDao">    
+	  		<paramFieldList>
+	  			<paramField paramName="DTDATE" field="DTDATE" type="2"></paramField>
+	  			<paramField paramName="strInstCode" field="INSTINFO" type="1"></paramField>
+	  		</paramFieldList>
+	  		
+	      <checkUniqueFieldList>
+				<checkUniqueField name="AUTOID" discription="主键" originField="AUTOID"></checkUniqueField>
+			  </checkUniqueFieldList>
+     </checkTable>
+      <!--统计类指标跨期异常值变动提示 --> 
+     <checkTable procedureName="Check_NCR_5_1_TJL_KQ01_010"  procedureParam="DTDATE,strInstCode,NUM" procedureDiscription="统计类指标跨期异常值变动提示（贷款余额大于1万亿）"  defaultLogicDaoBeanId="oracleProcedureResultSetDao">    
+	  		<paramFieldList>
+	  			<paramField paramName="DTDATE" field="DTDATE" type="2"></paramField>
+	  			<paramField paramName="strInstCode" field="INSTINFO" type="1"></paramField>
+	  			<paramField paramName="NUM" field="NUM" type="1" value="1"></paramField>
+	  		</paramFieldList>
+        <checkUniqueFieldList>
+        </checkUniqueFieldList>
+       	<checkFieldOrList>
+            <checkFieldOr type="1">
+                <checkFieldBasic name="SUBSUM" discription="个贷违约变动笔数" valueMin='-4000' valueMax='4000'></checkFieldBasic>
+                <checkFieldBasic name="RATE" discription="个贷违约笔数变动率" valueMin='-0.05' valueMax='0.05'></checkFieldBasic>
+            </checkFieldOr>
+        </checkFieldOrList>
+     </checkTable>
+
+     <checkTable procedureName="Check_NCR_5_1_TJL_KQ01_010"  procedureParam="DTDATE,strInstCode,NUM" procedureDiscription="统计类指标跨期异常值变动提示（1千亿-1万亿）"  defaultLogicDaoBeanId="oracleProcedureResultSetDao">    
+	  		<paramFieldList>
+	  			<paramField paramName="DTDATE" field="DTDATE" type="2"></paramField>
+	  			<paramField paramName="strInstCode" field="INSTINFO" type="1"></paramField>
+	  			<paramField paramName="NUM" field="NUM" type="1" value="2"></paramField>
+	  		</paramFieldList>
+        <checkUniqueFieldList>
+        </checkUniqueFieldList>
+       	<checkFieldOrList>
+            <checkFieldOr type="1">
+                <checkFieldBasic name="SUBSUM" discription="个贷违约变动笔数" valueMin='-1000' valueMax='1000'></checkFieldBasic>
+                <checkFieldBasic name="RATE" discription="个贷违约笔数变动率" valueMin='-0.10' valueMax='0.10'></checkFieldBasic>
+            </checkFieldOr>
+        </checkFieldOrList>
+     </checkTable>
+
+     <checkTable procedureName="Check_NCR_5_1_TJL_KQ01_010"  procedureParam="DTDATE,strInstCode,NUM" procedureDiscription="统计类指标跨期异常值变动提示（100亿-1千亿）"  defaultLogicDaoBeanId="oracleProcedureResultSetDao">    
+	  		<paramFieldList>
+	  			<paramField paramName="DTDATE" field="DTDATE" type="2"></paramField>
+	  			<paramField paramName="strInstCode" field="INSTINFO" type="1"></paramField>
+	  			<paramField paramName="NUM" field="NUM" type="1" value="3"></paramField>
+	  		</paramFieldList>
+        <checkUniqueFieldList>
+        </checkUniqueFieldList>
+       	<checkFieldOrList>
+            <checkFieldOr type="1">
+                <checkFieldBasic name="SUBSUM" discription="个贷违约变动笔数" valueMin='-100' valueMax='100'></checkFieldBasic>
+                <checkFieldBasic name="RATE" discription="个贷违约笔数变动率" valueMin='-0.02' valueMax='0.02'></checkFieldBasic>
+            </checkFieldOr> 	
+        </checkFieldOrList>
+     </checkTable>
+  
+     <checkTable procedureName="Check_NCR_5_1_TJL_KQ01_010"  procedureParam="DTDATE,strInstCode,NUM" procedureDiscription="统计类指标跨期异常值变动提示（10亿-100亿）"  defaultLogicDaoBeanId="oracleProcedureResultSetDao">    
+	  		<paramFieldList>
+	  			<paramField paramName="DTDATE" field="DTDATE" type="2"></paramField>
+	  			<paramField paramName="strInstCode" field="INSTINFO" type="1"></paramField>
+	  			<paramField paramName="NUM" field="NUM" type="1" value="4"></paramField>
+	  		</paramFieldList>
+        <checkUniqueFieldList>
+        </checkUniqueFieldList>
+       	<checkFieldOrList>
+            <checkFieldOr type="1">
+                <checkFieldBasic name="SUBSUM" discription="个贷违约变动笔数" valueMin='-100' valueMax='100'></checkFieldBasic>
+                <checkFieldBasic name="RATE" discription="个贷违约笔数变动率" valueMin='-0.20' valueMax='0.20'></checkFieldBasic>
+            </checkFieldOr>
+        </checkFieldOrList>
+     </checkTable>
+   
+     <checkTable procedureName="Check_NCR_5_1_TJL_KQ01_010"  procedureParam="DTDATE,strInstCode,NUM" procedureDiscription="统计类指标跨期异常值变动提示（10亿以下）"  defaultLogicDaoBeanId="oracleProcedureResultSetDao">    
+	  		<paramFieldList>
+	  			<paramField paramName="DTDATE" field="DTDATE" type="2"></paramField>
+	  			<paramField paramName="strInstCode" field="INSTINFO" type="1"></paramField>
+	  			<paramField paramName="NUM" field="NUM" type="1" value="5"></paramField>
+	  		</paramFieldList>
+        <checkUniqueFieldList>
+        </checkUniqueFieldList>
+       	<checkFieldOrList>
+            <checkFieldOr type="1">
+                <checkFieldBasic name="SUBSUM" discription="个贷违约变动笔数" valueMin='-50' valueMax='50'></checkFieldBasic>
+                <checkFieldBasic name="RATE" discription="个贷违约笔数变动率" valueMin='-0.20' valueMax='0.20'></checkFieldBasic>
+            </checkFieldOr>
+        </checkFieldOrList>
+     </checkTable>
+	</checkInstance>
+</reportCheckRoot>

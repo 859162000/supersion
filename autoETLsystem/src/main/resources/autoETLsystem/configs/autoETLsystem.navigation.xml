@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<navigationRoot>
+   <navigation>
+     <level>5</level>
+     <navigationName>数据连接配置</navigationName>
+     <navigationUrl>framework/ShowList-extend.dto.AutoETL_DataSource</navigationUrl>
+   </navigation>
+     <navigation>
+     <level>5</level>
+     <navigationName>FTP信息配置</navigationName>
+     <navigationUrl>framework/ShowList-autoETLsystem.dto.AutoETL_FTP</navigationUrl>
+   </navigation>
+   
+   <navigation>
+     <level>5</level>
+     <navigationName>工作流</navigationName>
+     <navigationUrl>framework/ShowList-autoETLsystem.dto.AutoETL_Workflow</navigationUrl>
+   </navigation>
+   
+    <navigation>
+     <level>5</level>
+     <navigationName>执行工作流</navigationName>
+     <navigationUrl>framework/ShowWorkFlow-autoETLsystem.dto.AutoETL_Workflow</navigationUrl>
+   </navigation>
+  
+    <navigation>
+     <level>5</level>
+     <navigationName>工作流日志</navigationName>
+     <navigationUrl>framework/ShowList-autoETLsystem.dto.AutoETL_WorkflowLog</navigationUrl>
+   </navigation>
+    <navigation>
+     <level>5</level>
+     <navigationName>AUTOETL参数配置</navigationName>
+     <navigationUrl>framework/ShowList-extend.dto.AutoETL_Param</navigationUrl>
+   </navigation>
+   <navigation>
+     <level>5</level>
+     <navigationName>MAIL信息配置</navigationName>
+     <navigationUrl>framework/ShowList-extend.dto.AutoETL_MAIL</navigationUrl>
+   </navigation>
+   <navigation>
+     <level>5</level>
+     <navigationName>MSG信息配置</navigationName>
+     <navigationUrl>framework/ShowList-extend.dto.AutoETL_MSG</navigationUrl>
+   </navigation>
+   <!--	 以下注释部分，移植到coresystem.navigation.xml处   	-->
+<!--	<navigationComponentList>-->
+<!--		<navigationComponent id="DeskTop" name="桌面" url="Framework/NavigationPage.jsp"  ico="bg.png" treeIco="bg.png" treeExpandIco="bg.png" des="">-->
+<!--			<navigationComponent id="ParameterConfigurationCenter" name="参数配置中心" url="Framework/NavigationPage.jsp"  ico="128_SystemFunctionManager.png" treeIco="128_SystemFunctionManager.png" treeExpandIco="128_SystemFunctionManager.png" des="">-->
+<!--	    		<navigationComponent id="AUTOETL" name="AUTOETL" url="Framework/NavigationPage.jsp" ico="64_AUTOETL.png" treeIco="32_AUTOETL.png" treeExpandIco="16_AUTOETL.png" des="">-->
+<!--					<navigationComponent id="AutoETL_DataSource" name="数据连接配置" url="framework/ShowList-extend.dto.AutoETL_DataSource" ico="64_AutoETL_Param.png" treeIco="32_AutoETL_Param.png" treeExpandIco="16_AutoETL_Param.png" des=""></navigationComponent>-->
+<!--					<navigationComponent id="AutoETL_FTP" name="FTP信息配置" url="framework/ShowList-autoETLsystem.dto.AutoETL_FTP" ico="64_AutoETL_Param.png" treeIco="32_AutoETL_Param.png" treeExpandIco="16_AutoETL_Param.png" des=""></navigationComponent>-->
+<!--					<navigationComponent id="AutoETL_Param" name="AUTOETL参数配置" url="framework/ShowList-extend.dto.AutoETL_Param" ico="64_AutoETL_Param.png" treeIco="32_AutoETL_Param.png" treeExpandIco="16_AutoETL_Param.png" des=""></navigationComponent>-->
+<!--					<navigationComponent id="AutoETL_Workflow" name="工作流" url="framework/ShowList-autoETLsystem.dto.AutoETL_Workflow" ico="64_AutoETL_Param.png" treeIco="32_AutoETL_Param.png" treeExpandIco="16_AutoETL_Param.png" des=""></navigationComponent>-->
+<!--					<navigationComponent id="AutoETL_Workflow1" name="执行工作流" url="framework/ShowWorkFlow-autoETLsystem.dto.AutoETL_Workflow" ico="64_AutoETL_Param.png" treeIco="32_AutoETL_Param.png" treeExpandIco="16_AutoETL_Param.png" des=""></navigationComponent>-->
+<!--					<navigationComponent id="AutoETL_WorkflowLog" name="工作流日志" url="framework/ShowList-autoETLsystem.dto.AutoETL_WorkflowLog" ico="64_AutoETL_WorkflowLog.png" treeIco="32_AutoETL_WorkflowLog.png" treeExpandIco="16_AutoETL_WorkflowLog.png" des=""></navigationComponent>-->
+<!--				</navigationComponent>-->
+<!--			</navigationComponent>-->
+<!--		</navigationComponent>-->
+<!--	</navigationComponentList>-->
+</navigationRoot>
